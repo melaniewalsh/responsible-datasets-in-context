@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs
 
 website:
   title: "Responsible Datasets in Context"
@@ -8,9 +9,8 @@ website:
       - datasets.qmd
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/melaniewalsh/responsible-datasets-in-context
+
 format:
   html:
     theme: lux
