@@ -3,7 +3,14 @@ title: "National Park Visitation Data"
 date: "2024-02-26"
 categories: [line-plots, data-collection, uncertainty]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
-format: html
+toc: true
+toc-depth: 4
+format: 
+  html: default
+  ipynb: default
+  pdf: default
+  #r: default
+format-links: [ipynb, pdf]
 code-fold: true
 editor: visual
 df-print: kable
