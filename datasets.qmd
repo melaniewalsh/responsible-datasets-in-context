@@ -4,9 +4,10 @@ listing:
   contents: posts
   sort: "date desc"
   type: default
-  categories: true
+  categories: numbered
   sort-ui: false
-  filter-ui: false
+  filter-ui: true
+  image-height: 200px
 page-layout: full
 title-block-banner: true
 ---

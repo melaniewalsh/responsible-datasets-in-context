@@ -1,0 +1,30 @@
+---
+title: "Team"
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mozilla_logo.svg/2560px-Mozilla_logo.svg.png
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+---
+
+"Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education" is supported by the the Responsible Computing Challenge, which is a partnership between Mozilla, Omidyar Network, Schmidt Futures, Craig Newmark Philanthropies, Mellon Foundation, and the Rockefeller Brothers Fund.
+
+# Project Directors
+
+- Sylvia Fernández, PI
+- Miriam Posner, PI
+- Anna Preus, PI
+- Amardeep Singh, PI
+- Melanie Walsh, PI
+
+# Team Members
+
+- Os Keyes
+- Katherine Hennessey
+- Aashna Sheth
+- Paulina Hernandez Trejo
+
+
+
+
+

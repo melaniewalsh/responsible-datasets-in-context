@@ -4,12 +4,29 @@ project:
 
 website:
   title: "Responsible Datasets in Context"
+  favicon: responsible-logo-white.png
   navbar:
+    logo: responsible-logo-white.png
     right:
       - datasets.qmd
-      - about.qmd
+      - text: "About"
+        menu: 
+        - text: "Team"
+          href: team.qmd
+        - text: "Mission"
+          href: mission.qmd
+        - text: "Get Involved"
+          href: get-involved.qmd
       - icon: github
         href: https://github.com/melaniewalsh/responsible-datasets-in-context
+
+  page-footer:
+    background: "#000000"
+    left: |
+      Copyright &copy; 2024 |
+      Supported by Mozilla
+      
+
 
 format:
   html:

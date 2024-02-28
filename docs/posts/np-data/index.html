@@ -65,6 +65,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../responsible-logo-white.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -115,6 +116,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../responsible-logo-white.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
     </a>
@@ -129,10 +133,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../team.html">
+ <span class="dropdown-text">Team</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../../mission.html">
+ <span class="dropdown-text">Mission</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-involved.html">
+ <span class="dropdown-text">Get Involved</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
 </i> 
@@ -184,30 +203,90 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="national-park-visitation-data" class="level1">
+<h1>National Park Visitation Data</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Exercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Discussion &amp; Activities</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Exercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Discussion &amp; Activities</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>This dataset contains the number of visitors, per year, to each of the parks administered by the United States National Park Service (NPS), from 1979 onwards. It is not collected just for fun – rather, it is regularly used by the NPS to inform policymaking decisions and advocacy for things like the size and distribution of NPS budgets.</p>
-<p>Reconstructing how that data is collected, and what decisions are made about its composition, is essential to understanding the information it presents. It’s also surprisingly difficult. In this exploration of the NPS data, then, we will not only step through the dataset, but also the work required to put together how it came to be.</p>
-<section id="visits-and-visitors" class="level2">
-<h2 class="anchored" data-anchor-id="visits-and-visitors">Visits and visitors</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation data for other park units, such as <a href="(https://www.nps.gov/aboutus/national-park-system.htm)">national battlfieds, national rivers, and national monuments</a>. However, information about other park units is not included in this particular dataset.</p>
+<p><br></p>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="30" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">/*Inputs.table(search, data)*/</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(search<span class="op">,</span> {</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"fixed"</span><span class="op">,</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"Year"</span><span class="op">,</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Year</span><span class="op">:</span> x <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">timeFormat</span>(x)<span class="op">,</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    <span class="dt">RecreationVisits</span><span class="op">:</span> x <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div style='background:</span><span class="sc">${</span><span class="fu">color</span>(x)<span class="sc">}</span><span class="vs">'&gt;</span><span class="sc">${</span>d3<span class="op">.</span><span class="fu">format</span>(<span class="st">'.2s'</span>)(x)<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p>This particular dataset is drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an <a href="https://irma.nps.gov/Stats/">NPS data portal</a> that is relatively hard to find, and its documentation is scattered across many different web pages, which is why we believe it is valuable to curate and publish it in a single place here.</p>
+<p>This dataset was curated and published by Melanie Walsh, and the data essay was written by Os Keyes and Melanie Walsh.</p>
+</section>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<p>The National Park Service actually began recording information about park visits in 1904 (more than 100 years ago!). However, at this time, their visit collection methods were mostly <a href="https://www.nps.gov/subjects/socialscience/statistics-history.htm">informal, inconsistent, and low-tech</a>. But over the next century, the NPS worked hard to make their data collection methods more reliable, consistent, and (in some but not all cases) high-tech.</p>
+<p>A big catalyst for the NPS getting serious about data collection was a new law. In 1965, the U.S. Congress passed a federal law that was very important for the NPS and for anybody who loves the outdoors: <a href="https://www.everycrsreport.com/reports/RL33531.html">The Land and Water Conservation Fund Act of 1965</a>. This act created a new source of government money specifically dedicated to protecting natural resources (i.e.&nbsp;to buying up land and water so that condo developers couldn’t do it first) and building up outdoor recreation infrastructure in the U.S.</p>
+<p>One of the clauses in this act stipulated that the amount of money allocated to each recreation area should be <a href="https://www.nps.gov/subjects/socialscience/statistics-history.htm">“proportional to visitor use.”</a> Because the NPS can’t function without money, they buckled down on counting visitor use. According to the NPS, over the next twenty years, they “developed and institutionalized a formal system for collecting, compiling and reporting visitor use data.”</p>
+<p>While today’s visit data collection system is far more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations in this system. These shortcomings are largely unavoidable. Trying to record every single visit to a National Park — across dozens of different parks and geographic regions, many decades of time, countless different weather conditions and funding situations, and hundreds of millions of people — is pretty much impossible. In fact, one of the reasons that this dataset is so useful and illuminating is because it does a good job of communicating an important point: data can <em>never</em> reflect reality precisely.</p>
+<p>However, the NPS visitation data also does a good job of communicating why we might be interested in collecting and analyzing even flawed and approximate data, as we will dig into below.</p>
+</section>
+<section id="where-did-the-data-come-from-who-collected-it" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-the-data-come-from-who-collected-it">Where did the data come from? Who collected it?</h2>
+<p>This National Park visitation data was originally organized and published by the <a href="https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm">NPS Social Science Program</a>, a specific program tasked with coordinating visitor statistics across the parks. Thousands of staff members were also involved in the data collection process for individual parks, as we will elaborate below.</p>
+<p>The original data was made available through the <a href="https://irma.nps.gov/Stats/">NPS Visitor Use Statistics data portal</a>. Through this portal, you can generate reports and download data for <a href="https://irma.nps.gov/Stats/Reports/National">many different park visitation categories</a> and time periods— at both the national and individual park levels.</p>
+<p>To download the data included here, we selected the <a href="https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)">“Query Builder for Public Use Statistics (1979 - Last Calendar Year)”</a> report type. We then selected only National Parks; all possible years (1979-2022); all possible regions; only “Recreation Visits”; the additional fields of “State” and “Region”; as well as the option of an annual summary of visit counts (as opposed to monthly visit counts). We then downloaded this report as a CSV and published it to GitHub for easier access.</p>
+<p><img src="query-builder-csv-screenshot.png" class="img-fluid"></p>
+<p>## Why was the data collected? How is the data used?</p>
+<p>As we’ve already discussed, one of the reasons that the NPS collects visit data is because the government basically requires it. But there are a lot of other reasons that the NPS collects this information.</p>
+<p>As the NPS writes on their website, they use visit data to determine which facilities might need more or less attention, which parks might need more or less staff members and programs, and which hiking trails or bathrooms might need more or less maintenance. This information also helps the communities and businesses surrounding the parks understand how they can best share and support resources in a given area —&nbsp;services like emergency vehicles, sanitation, and water. If there are millions more people going on hikes in a particular area, and thus, inevitably, many more people requiring ambulance trips or rescue helicopters, that would be a very important thing for a community to know. It would be dangerous if visitors to National Parks suddenly and unexpectedly called all the emergency vehicles in town.</p>
+<p>This visitation data also helps the NPS estimate the beneficial impact, economic and otherwise, that the parks have on nearby communities and the nation at large. These estimations are important because they help the parks advocate for more funding, support, attention, and collaboration.</p>
+<p><img src="https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg" class="img-fluid"></p>
+<p>The data can also be used for a variety of other purposes….</p>
+</section>
+<section id="whats-in-the-data-what-counts-as-a-visit" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-the-data-what-counts-as-a-visit">What’s in the data? What “counts” as a visit?</h2>
 <p>If we open the dataset and look at the first few rows, we will find five columns – “ParkName”, “Region”, “State”, “Year”, and “RecreationVisits”:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dply package</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the structure of the dataset</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> np_data, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> np_data, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 39%">
+<col style="width: 20%">
+<col style="width: 8%">
+<col style="width: 7%">
+<col style="width: 24%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">ParkName</th>
@@ -219,74 +298,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Kenai Fjords NP</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2000</td>
-<td style="text-align: right;">254790</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Big Bend NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">TX</td>
-<td style="text-align: right;">2009</td>
-<td style="text-align: right;">363905</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Hot Springs NP</td>
-<td style="text-align: left;">Midwest</td>
-<td style="text-align: left;">AR</td>
-<td style="text-align: right;">2003</td>
-<td style="text-align: right;">1561311</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Zion NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">UT</td>
-<td style="text-align: right;">1989</td>
-<td style="text-align: right;">1998856</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Congaree NP</td>
+<td style="text-align: left;">Virgin Islands NP</td>
 <td style="text-align: left;">Southeast</td>
-<td style="text-align: left;">SC</td>
-<td style="text-align: right;">1990</td>
-<td style="text-align: right;">23223</td>
+<td style="text-align: left;">VI</td>
+<td style="text-align: right;">2001</td>
+<td style="text-align: right;">677401</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Carlsbad Caverns NP</td>
 <td style="text-align: left;">Intermountain</td>
 <td style="text-align: left;">NM</td>
-<td style="text-align: right;">2019</td>
-<td style="text-align: right;">440691</td>
+<td style="text-align: right;">1979</td>
+<td style="text-align: right;">721647</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Grand Teton NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">WY</td>
-<td style="text-align: right;">2006</td>
-<td style="text-align: right;">2406476</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Sequoia NP</td>
+<td style="text-align: left;">Joshua Tree NP</td>
 <td style="text-align: left;">Pacific West</td>
 <td style="text-align: left;">CA</td>
-<td style="text-align: right;">2020</td>
-<td style="text-align: right;">796086</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Mammoth Cave NP</td>
-<td style="text-align: left;">Southeast</td>
-<td style="text-align: left;">KY</td>
-<td style="text-align: right;">2004</td>
-<td style="text-align: right;">1888267</td>
+<td style="text-align: right;">1988</td>
+<td style="text-align: right;">955246</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Kenai Fjords NP</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">243719</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Katmai NP &amp; PRES</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">1990</td>
+<td style="text-align: right;">40778</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hot Springs NP</td>
+<td style="text-align: left;">Midwest</td>
+<td style="text-align: left;">AR</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">1302505</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dry Tortugas NP</td>
+<td style="text-align: left;">Southeast</td>
+<td style="text-align: left;">FL</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">11900</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Arches NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">UT</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">757781</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Theodore Roosevelt NP</td>
 <td style="text-align: left;">Midwest</td>
 <td style="text-align: left;">ND</td>
-<td style="text-align: right;">1998</td>
-<td style="text-align: right;">448286</td>
+<td style="text-align: right;">1981</td>
+<td style="text-align: right;">702873</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Great Sand Dunes NP &amp; PRES</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">CO</td>
+<td style="text-align: right;">2010</td>
+<td style="text-align: right;">283284</td>
 </tr>
 </tbody>
 </table>
@@ -316,53 +395,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which lets us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># And specify the colorblind palette</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>cb_palette <span class="ot">&lt;-</span> <span class="fu">colorblind_pal</span>()(<span class="dv">8</span>)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off scientific notation</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Crater Lake National Park</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>crater_lake <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Crater Lake NP"</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crater_lake) <span class="sc">+</span> </span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">1</span>]) <span class="sc">+</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crater Lake National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>We see a lot of things in this data - not least of which is a tremendous rise in visitors in the 2010s - but one interesting observation is the sudden drop in visits in 2012. This isn’t caused by fewer people visiting: instead, it has more to do with how visitor numbers are counted.</p>
-<p>When it comes to counting visitors, the NPS uses a variety of techniques. At some parks, such as Alcatraz, it is simple: the park is only accessible via (ticketed) boat, and so NPS staff simply count the number of tickets. But other parks may have multiple entrances, and feature visitors arriving via car, bus, or on foot. It quickly becomes impractical to have staff at every entrance, 24 hours a day, just in case someone arrives.</p>
-<p>Instead, the NPS uses a variety of techniques - some automated, some manual. These include:</p>
-<ul>
-<li>Induction loop counters - magnetised coils of wire under the road that “trip” when a vehicle passes over them;</li>
-<li>Traffic counters, which manually increment a…</li>
-<li>Extracting data from ticketing machines;</li>
-</ul>
-<p>Alongside all of that, NPS rangers do, on many occasions, manually count people who arrive - particularly when one of the usual mechanisms doesn’t count. And that’s exactly what happened here; <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA">according to the NPS data logs</a>, the induction loop counter at one of the main entrances simply broke in January, and wasn’t repaired for (at a minimum) several months. You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears visits entirely tail off in 2020, as a result of <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA">the traffic counter being broken</a> for <em>years</em>:</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Carlsbad Caverns National Park</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>carlsbad_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Carlsbad Caverns NP"</span>)</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> carlsbad_data) <span class="sc">+</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits, <span class="at">color =</span> cb_palette[<span class="dv">2</span>])) <span class="sc">+</span> </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which let's us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># And specify the colorblind palette</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>cb_palette <span class="ot">&lt;-</span> <span class="fu">colorblind_pal</span>()(<span class="dv">8</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off scientific notation</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Crater Lake National Park</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>crater_lake <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Crater Lake NP"</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crater_lake) <span class="sc">+</span> </span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">1</span>]) <span class="sc">+</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crater Lake National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -372,24 +423,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-</section>
-<section id="exercise-thinking-about-where-and-how-and-why-mechanisms-are-likely-to-break" class="level2">
-<h2 class="anchored" data-anchor-id="exercise-thinking-about-where-and-how-and-why-mechanisms-are-likely-to-break">Exercise: thinking about where (and how, and why) mechanisms are likely to break</h2>
-<p>Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get <em>fixed</em> at different rates, in different locations.</p>
-</section>
-<section id="data-and-reality" class="level2">
-<h2 class="anchored" data-anchor-id="data-and-reality">Data and reality</h2>
-<p>Changes in data don’t only stem from changes in data collection, but also the underlying reality of what is being measured. Let’s take a look at the visitor data from Kobuk Valley National Park:</p>
+<p>We see a lot of things in this data - not least of which is a tremendous rise in visitors in the 2010s - but one interesting observation is the sudden drop in visits in 2012. This isn’t caused by fewer people visiting: instead, it has more to do with how visitor numbers are counted.</p>
+<p>When it comes to counting visitors, the NPS uses a variety of techniques. At some parks, such as Alcatraz, it is simple: the park is only accessible via (ticketed) boat, and so NPS staff simply count the number of tickets. But other parks may have multiple entrances, and feature visitors arriving via car, bus, or on foot. It quickly becomes impractical to have staff at every entrance, 24 hours a day, just in case someone arrives.</p>
+<p>Instead, the NPS uses a variety of techniques - some automated, some manual. These include:</p>
+<ul>
+<li>Induction loop counters - magnetised coils of wire under the road that “trip” when a vehicle passes over them;</li>
+<li>Traffic counters, which manually increment a counter when a vehicle passes through a gate;</li>
+<li>Extracting data from ticketing machines.</li>
+</ul>
+<p>Alongside all of that, NPS rangers do, on many occasions, manually count people who arrive - particularly when one of the usual mechanisms doesn’t count. And that’s exactly what happened here; <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA">according to the NPS data logs</a>, the induction loop counter at one of the main entrances simply broke in January, and wasn’t repaired for (at a minimum) several months. You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears visits entirely tail off in 2020, as a result of <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA">the traffic counter being broken</a> for <em>years</em>:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Kobuk Valley National Park</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Carlsbad Caverns National Park</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>carlsbad_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Carlsbad Caverns NP"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">3</span>]) <span class="sc">+</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> carlsbad_data) <span class="sc">+</span> </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">2</span>]) <span class="sc">+</span> </span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -399,19 +451,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Most people’s eyes will immediately be drawn to the drastic drop in 2014-15, and for good reason! But the cause is familiar: it’s about data collection. As the park report notes, “<a href="The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.">https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA</a>”.</p>
-<p>But another question would be: why the drop-off in 2018-19? It’s too early for the cause to be COVID. Instead, the cause is administrative; government shut-downs in that era led to a reduction of funding, and correspondingly the closure of various attractions at the park. The result: a lack of funding leads to a reduced visitor count - a visitor count that is often used, remember, to <em>argue for funding</em>. This highlights one of the ways in which seemingly-descriptive data used to make decisions can represent the state of those decisions, more than some natural “baseline”.</p>
-<p>Another kind of issue of “representing reality” can be found if we look at the visitor data for Mount Rainier:</p>
+</section>
+<section id="exercise-thinking-about-where-and-how-and-why-mechanisms-are-likely-to-break" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-thinking-about-where-and-how-and-why-mechanisms-are-likely-to-break">Exercise: thinking about where (and how, and why) mechanisms are likely to break</h2>
+<p><em>Reader note: this exercise, when finished, will invite students to explore the question of how device outages are likely to vary based on location. For example: a traffic counter works best when there are few avenues on to a park. Where, geographically and environmentally, is that the case? Or: an induction loop might break when a heavy vehicle snags it. We would expect to see this more in the case of highly snowy areas - where snowplows need to use the roads - and would also expect that damage would take a while to get fixed due to the geographic location. The point is to enable students to explore how data breakages at different locations occur differentially, as do their consequences.</em> Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get <em>fixed</em> at different rates, in different locations.</p>
+</section>
+<section id="data-and-reality" class="level2">
+<h2 class="anchored" data-anchor-id="data-and-reality">Data and reality</h2>
+<p>Changes in data don’t only stem from changes in data collection, but also the underlying reality of what is being measured. Let’s take a look at the visitor data from Kobuk Valley National Park:</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rainier_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Mount Rainier NP"</span>)</span>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Kobuk Valley National Park</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rainier_data) <span class="sc">+</span> </span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">4</span>]) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mount Rainier National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">3</span>]) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -421,50 +478,143 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<p>Most people’s eyes will immediately be drawn to the drastic drop in 2014-15, and for good reason! But the cause is familiar: it’s about data collection. As the park report notes, ” <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA">The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.</a>“.</p>
+<p>But another question would be: why the drop-off in 2018-19? It’s too early for the cause to be COVID. Instead, the cause is administrative; government shut-downs in that era led to a reduction of funding, and correspondingly the closure of various attractions at the park. The result: a lack of funding leads to a reduced visitor count - a visitor count that is often used, remember, to <em>argue for funding</em>. This highlights one of the ways in which seemingly-descriptive data used to make decisions can represent the state of those decisions, more than some natural “baseline”.</p>
+<p>Another kind of issue of “representing reality” can be found if we look at the visitor data for Mount Rainier:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>rainier_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Mount Rainier NP"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rainier_data) <span class="sc">+</span> </span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">4</span>]) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mount Rainier National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <p>Once again, we see both a COVID-19 dropoff - but also a continued dropoff beyond that. <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA">Looking at the visitation comments</a> explains why; flooding, fires and a blizzard drastically impeded the ability of people to get to the park, and the possibility of areas of the park opening at all.</p>
-</section>
-<section id="exercise" class="level2">
-<h2 class="anchored" data-anchor-id="exercise">Exercise: …?</h2>
 </section>
 <section id="compensating-for-data" class="level2">
 <h2 class="anchored" data-anchor-id="compensating-for-data">Compensating for data</h2>
 <p>As all of this should suggest, NPS data is always somewhat approximate. Reductions in funding, damage to counting equipment, natural events, or simply the inevitably-fallible nature of <em>any</em> data collection means that data requires a certain amount of prediction, guesswork and massaging to look complete.</p>
-<p>Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that’s 2.9. At the Virginia entrance, it’s 3.2</p>
+<p>Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that’s 2.9. At the Virginia entrance, it’s 3.2.</p>
 </section>
 <section id="exerise-compensating-for-data-outages" class="level2">
 <h2 class="anchored" data-anchor-id="exerise-compensating-for-data-outages">Exerise: compensating for data outages</h2>
-<p>What techniques do they use? Go on a scavenger hunt</p>
+<p><em>Reader note: this exercise will direct students, on a group (or individual) basis, to the NPS index of how different parks calculate different multipliers and metrics, and ask them to log or note unusual or unexplained differences in how this is done.</em></p>
 </section>
 <section id="data-decisions" class="level2">
 <h2 class="anchored" data-anchor-id="data-decisions">Data decisions</h2>
-<p>Some places register `zero’ as a number of visitors in years. Why is this, and where? What is the contextual knowledge involved in parks people declaring it to be a zero?</p>
-<p>What are the reasons for doing so? (the limits of computers for data processing/understanding)</p>
+<p>As well as multiplying up, there’s also counting down: some parks register “zero” as the number of visitors they attracted in a year:</p>
+</section>
+<section id="look-at-the-structure-of-the-dataset" class="level2">
+<h2 class="anchored" data-anchor-id="look-at-the-structure-of-the-dataset">Look at the structure of the dataset</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to just zeros</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>zero_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RecreationVisits <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Show some of them</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> zero_data, <span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="table table-sm table-striped small">
+<colgroup>
+<col style="width: 43%">
+<col style="width: 17%">
+<col style="width: 8%">
+<col style="width: 6%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ParkName</th>
+<th style="text-align: left;">Region</th>
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Year</th>
+<th style="text-align: right;">RecreationVisits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">National Park of American Samoa</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">AS</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kobuk Valley NP</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">2014</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Katmai NP &amp; PRES</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kobuk Valley NP</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Looking at the parks and regions, we can maybe infer why; they are all in extremely rural or underresourced areas, and probably see few visitors to begin with. If we look at the visitors over time for one park that has “zero counts”, Kobuk Valley National park, we see it’s hardly overrun with people even when the count <em>isn’t</em> zero:</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">6</span>]) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>If we look at the visitation comments again, <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park">what we see</a> is that “The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.” Which is entirely reasonable, in isolation: but we’ve also seen a <em>lot</em> of parks in more highly-frequented areas that have new systems developed and choose to (for example) average previous years, rather than simply declare that nobody visited. What are the politics of the choices in these scenarios?</p>
 </section>
 <section id="exercise-data-decisions" class="level2">
 <h2 class="anchored" data-anchor-id="exercise-data-decisions">Exercise: data decisions</h2>
-<p>Have them go through public data and try to find proof the counts of 0 are “wrong”</p>
+<p>*Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time Have them go through public data and try to find proof the counts of 0 are “wrong”</p>
 </section>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="180" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 179;"><span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a>viewof search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(data<span class="op">,</span> {</span>
-<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Search"</span></span>
-<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="262" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 261;"><span id="cb9-262"><a href="#cb9-262" aria-hidden="true" tabindex="-1"></a>viewof search <span class="op">=</span> Inputs<span class="op">.</span><span class="fu">search</span>(data<span class="op">,</span> {</span>
+<span id="cb9-263"><a href="#cb9-263" aria-hidden="true" tabindex="-1"></a>  <span class="dt">placeholder</span><span class="op">:</span> <span class="st">"Search"</span></span>
+<span id="cb9-264"><a href="#cb9-264" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell hidden">
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="188" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 187;"><span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> d3<span class="op">.</span><span class="fu">csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2022-National-Park-Visits-By-State.csv"</span><span class="op">,</span> d3<span class="op">.</span><span class="at">autoType</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-2" data-nodetype="declaration">
 
 </div>
@@ -473,10 +623,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="194" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 193;"><span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="270" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 269;"><span id="cb10-270"><a href="#cb10-270" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> d3<span class="op">.</span><span class="fu">csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2022-National-Park-Visits-By-State.csv"</span><span class="op">,</span> d3<span class="op">.</span><span class="at">autoType</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-3" data-nodetype="declaration">
@@ -484,15 +631,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div class="cell">
+<div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="204" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 203;"><span id="cb9-204"><a href="#cb9-204" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> d3</span>
-<span id="cb9-205"><a href="#cb9-205" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">scaleLinear</span>()</span>
-<span id="cb9-206"><a href="#cb9-206" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">5000000</span><span class="op">,</span> <span class="dv">1000000</span><span class="op">,</span> <span class="dv">100000</span>])</span>
-<span id="cb9-207"><a href="#cb9-207" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([<span class="st">"#cafcc2"</span><span class="op">,</span> <span class="st">"#fce7c2"</span><span class="op">,</span> <span class="st">"#eb9494"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="276" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 275;"><span id="cb11-276"><a href="#cb11-276" aria-hidden="true" tabindex="-1"></a>filtered <span class="op">=</span> data<span class="op">.</span><span class="fu">filter</span>(<span class="kw">function</span>(penguin) {</span>
+<span id="cb11-277"><a href="#cb11-277" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> bill_length_min <span class="op">&lt;</span> penguin<span class="op">.</span><span class="at">bill_length_mm</span> <span class="op">&amp;&amp;</span></span>
+<span id="cb11-278"><a href="#cb11-278" aria-hidden="true" tabindex="-1"></a>         islands<span class="op">.</span><span class="fu">includes</span>(penguin<span class="op">.</span><span class="at">island</span>)<span class="op">;</span></span>
+<span id="cb11-279"><a href="#cb11-279" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
-<div class="cell-output cell-output-display">
+<div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-4" data-nodetype="declaration">
 
 </div>
@@ -501,22 +648,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="212" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 211;"><span id="cb10-212"><a href="#cb10-212" aria-hidden="true" tabindex="-1"></a><span class="co">/*Inputs.table(search, data)*/</span></span>
-<span id="cb10-213"><a href="#cb10-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-214"><a href="#cb10-214" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(search<span class="op">,</span> {</span>
-<span id="cb10-215"><a href="#cb10-215" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"fixed"</span><span class="op">,</span></span>
-<span id="cb10-216"><a href="#cb10-216" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
-<span id="cb10-217"><a href="#cb10-217" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"Year"</span><span class="op">,</span></span>
-<span id="cb10-218"><a href="#cb10-218" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
-<span id="cb10-219"><a href="#cb10-219" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
-<span id="cb10-220"><a href="#cb10-220" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
-<span id="cb10-221"><a href="#cb10-221" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Year</span><span class="op">:</span> x <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">timeFormat</span>(x)<span class="op">,</span></span>
-<span id="cb10-222"><a href="#cb10-222" aria-hidden="true" tabindex="-1"></a>    <span class="dt">RecreationVisits</span><span class="op">:</span> x <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div style='background:</span><span class="sc">${</span><span class="fu">color</span>(x)<span class="sc">}</span><span class="vs">'&gt;</span><span class="sc">${</span>d3<span class="op">.</span><span class="fu">format</span>(<span class="st">'.2s'</span>)(x)<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
-<span id="cb10-223"><a href="#cb10-223" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb10-224"><a href="#cb10-224" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="286" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 285;"><span id="cb12-286"><a href="#cb12-286" aria-hidden="true" tabindex="-1"></a>color <span class="op">=</span> d3</span>
+<span id="cb12-287"><a href="#cb12-287" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">scaleLinear</span>()</span>
+<span id="cb12-288"><a href="#cb12-288" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">domain</span>([<span class="dv">5000000</span><span class="op">,</span> <span class="dv">1000000</span><span class="op">,</span> <span class="dv">100000</span>])</span>
+<span id="cb12-289"><a href="#cb12-289" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">range</span>([<span class="st">"#cafcc2"</span><span class="op">,</span> <span class="st">"#fce7c2"</span><span class="op">,</span> <span class="st">"#eb9494"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-5" data-nodetype="expression">
+<div id="ojs-cell-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb13" data-startfrom="294" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 293;"><span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a><span class="co">/*Inputs.table(search, data)*/</span></span>
+<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a>Inputs<span class="op">.</span><span class="fu">table</span>(search<span class="op">,</span> {</span>
+<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a>  <span class="dt">layout</span><span class="op">:</span> <span class="st">"fixed"</span><span class="op">,</span></span>
+<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rows</span><span class="op">:</span> <span class="dv">50</span><span class="op">,</span></span>
+<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a>  <span class="dt">sort</span><span class="op">:</span> <span class="st">"Year"</span><span class="op">,</span></span>
+<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a>  <span class="dt">reverse</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a>  <span class="dt">format</span><span class="op">:</span> {</span>
+<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a>    <span class="co">/*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
+<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a>    <span class="dt">Year</span><span class="op">:</span> x <span class="kw">=&gt;</span> d3<span class="op">.</span><span class="fu">timeFormat</span>(x)<span class="op">,</span></span>
+<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a>    <span class="dt">RecreationVisits</span><span class="op">:</span> x <span class="kw">=&gt;</span> <span class="fu">html</span><span class="vs">`&lt;div style='background:</span><span class="sc">${</span><span class="fu">color</span>(x)<span class="sc">}</span><span class="vs">'&gt;</span><span class="sc">${</span>d3<span class="op">.</span><span class="fu">format</span>(<span class="st">'.2s'</span>)(x)<span class="sc">}</span><span class="vs">&lt;/div&gt;`</span></span>
+<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="expression">
 
 </div>
 </div>
@@ -534,10 +695,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- -->
 
+</section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzZWFyY2ggPSBJbnB1dHMuc2VhcmNoKGRhdGEsIHtcbiAgcGxhY2Vob2xkZXI6IFwiU2VhcmNoXCJcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJkYXRhID0gZDMuY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL21lbGFuaWV3YWxzaC9OZWF0LURhdGFzZXRzL21haW4vMTk3OS0yMDIyLU5hdGlvbmFsLVBhcmstVmlzaXRzLUJ5LVN0YXRlLmNzdlwiLCBkMy5hdXRvVHlwZSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuXG5maWx0ZXJlZCA9IGRhdGEuZmlsdGVyKGZ1bmN0aW9uKHBlbmd1aW4pIHtcbiAgcmV0dXJuIGJpbGxfbGVuZ3RoX21pbiA8IHBlbmd1aW4uYmlsbF9sZW5ndGhfbW0gJiZcbiAgICAgICAgIGlzbGFuZHMuaW5jbHVkZXMocGVuZ3Vpbi5pc2xhbmQpO1xufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNvbG9yID0gZDNcbiAgLnNjYWxlTGluZWFyKClcbiAgLmRvbWFpbihbNTAwMDAwMCwgMTAwMDAwMCwgMTAwMDAwXSlcbiAgLnJhbmdlKFtcIiNjYWZjYzJcIiwgXCIjZmNlN2MyXCIsIFwiI2ViOTQ5NFwiXSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLypJbnB1dHMudGFibGUoc2VhcmNoLCBkYXRhKSovXG5cbklucHV0cy50YWJsZShzZWFyY2gsIHtcbiAgbGF5b3V0OiBcImZpeGVkXCIsXG4gIHJvd3M6IDUwLFxuICBzb3J0OiBcIlllYXJcIixcbiAgcmV2ZXJzZTogdHJ1ZSxcbiAgZm9ybWF0OiB7XG4gICAgLypSZWNyZWF0aW9uVmlzaXRzOiB4ID0+IGQzLmZvcm1hdCgnLjJzJykoeCksKi9cbiAgICBZZWFyOiB4ID0+IGQzLnRpbWVGb3JtYXQoeCksXG4gICAgUmVjcmVhdGlvblZpc2l0czogeCA9PiBodG1sYDxkaXYgc3R5bGU9J2JhY2tncm91bmQ6JHtjb2xvcih4KX0nPiR7ZDMuZm9ybWF0KCcuMnMnKSh4KX08L2Rpdj5gXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3NlYXJjaCcpIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLypJbnB1dHMudGFibGUoc2VhcmNoLCBkYXRhKSovXG5cbklucHV0cy50YWJsZShzZWFyY2gsIHtcbiAgbGF5b3V0OiBcImZpeGVkXCIsXG4gIHJvd3M6IDEwLFxuICBzb3J0OiBcIlllYXJcIixcbiAgcmV2ZXJzZTogdHJ1ZSxcbiAgZm9ybWF0OiB7XG4gICAgLypSZWNyZWF0aW9uVmlzaXRzOiB4ID0+IGQzLmZvcm1hdCgnLjJzJykoeCksKi9cbiAgICBZZWFyOiB4ID0+IGQzLnRpbWVGb3JtYXQoeCksXG4gICAgUmVjcmVhdGlvblZpc2l0czogeCA9PiBodG1sYDxkaXYgc3R5bGU9J2JhY2tncm91bmQ6JHtjb2xvcih4KX0nPiR7ZDMuZm9ybWF0KCcuMnMnKSh4KX08L2Rpdj5gXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2Ygc2VhcmNoID0gSW5wdXRzLnNlYXJjaChkYXRhLCB7XG4gIHBsYWNlaG9sZGVyOiBcIlNlYXJjaFwiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiZGF0YSA9IGQzLmNzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9tZWxhbmlld2Fsc2gvTmVhdC1EYXRhc2V0cy9tYWluLzE5NzktMjAyMi1OYXRpb25hbC1QYXJrLVZpc2l0cy1CeS1TdGF0ZS5jc3ZcIiwgZDMuYXV0b1R5cGUpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuZmlsdGVyZWQgPSBkYXRhLmZpbHRlcihmdW5jdGlvbihwZW5ndWluKSB7XG4gIHJldHVybiBiaWxsX2xlbmd0aF9taW4gPCBwZW5ndWluLmJpbGxfbGVuZ3RoX21tICYmXG4gICAgICAgICBpc2xhbmRzLmluY2x1ZGVzKHBlbmd1aW4uaXNsYW5kKTtcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJjb2xvciA9IGQzXG4gIC5zY2FsZUxpbmVhcigpXG4gIC5kb21haW4oWzUwMDAwMDAsIDEwMDAwMDAsIDEwMDAwMF0pXG4gIC5yYW5nZShbXCIjY2FmY2MyXCIsIFwiI2ZjZTdjMlwiLCBcIiNlYjk0OTRcIl0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcbi8qSW5wdXRzLnRhYmxlKHNlYXJjaCwgZGF0YSkqL1xuXG5JbnB1dHMudGFibGUoc2VhcmNoLCB7XG4gIGxheW91dDogXCJmaXhlZFwiLFxuICByb3dzOiA1MCxcbiAgc29ydDogXCJZZWFyXCIsXG4gIHJldmVyc2U6IHRydWUsXG4gIGZvcm1hdDoge1xuICAgIC8qUmVjcmVhdGlvblZpc2l0czogeCA9PiBkMy5mb3JtYXQoJy4ycycpKHgpLCovXG4gICAgWWVhcjogeCA9PiBkMy50aW1lRm9ybWF0KHgpLFxuICAgIFJlY3JlYXRpb25WaXNpdHM6IHggPT4gaHRtbGA8ZGl2IHN0eWxlPSdiYWNrZ3JvdW5kOiR7Y29sb3IoeCl9Jz4ke2QzLmZvcm1hdCgnLjJzJykoeCl9PC9kaXY+YFxuICB9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWFyY2gnKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -985,239 +1147,332 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "National Park Visitation Data"</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-26"</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [line-plots, data-collection, uncertainty]</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Essay</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>This dataset contains the number of visitors, per year, to each of the parks administered by the United States National Park Service (NPS), from 1979 onwards. It is not collected just for fun -- rather, it is regularly used by the NPS to inform policymaking decisions and advocacy for things like the size and distribution of NPS budgets.</span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>Reconstructing how that data is collected, and what decisions are made about its composition, is essential to understanding the information it presents. It's also surprisingly difficult. In this exploration of the NPS data, then, we will not only step through the dataset, but also the work required to put together how it came to be.</span>
-<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visits and visitors</span></span>
-<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>If we open the dataset and look at the first few rows, we will find five columns -- "ParkName", "Region", "State", "Year", and "RecreationVisits":</span>
-<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dply package</span></span>
-<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
-<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the structure of the dataset</span></span>
-<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> np_data, <span class="at">n =</span> <span class="dv">10</span>)</span>
-<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>The first four are self-explanatory: but why is the fifth labelled "RecreationVisits" rather than "Visits", or "Visitors"?</span>
-<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>The answer is that what this dataset is tracking is more complicated and nuanced than "people who go to NPS properties". People go to the national parks for a lot of reasons. While many are there for recreation, some travel *through* the parks, either because a highway runs through or because they live on "inholdings" (private property that is surrounded by a national park on all sides). Because of this, [the NPS defines](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm) "Recreation Visits" as visits made by people who are *not*:</span>
-<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; using park territory, roads, and facilities for their own convenience or as a part of their occupation. &gt; Reportable non-recreation visits include:</span></span>
-<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
-<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Persons going to and from inholdings across significant parts of park land;</span></span>
-<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;</span></span>
-<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Trades-people with business in the park;</span></span>
-<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Any civilian activity a part of or incidental to the pursuit of a gainful occupation (e.g., guides);</span></span>
-<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Government personnel (other than NPS employees) with business in the park;</span></span>
-<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Citizens using NPS buildings for civic or local government business, or attending public hearings;</span></span>
-<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g. meteorological research).</span></span>
-<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a>What this means is that the counts leave out a lot of people. This is worth thinking about when we evaluate what the numbers mean, and how the NPS achieves them (which we'll discuss more below)</span>
-<span id="cb11-56"><a href="#cb11-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data and data collection</span></span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a>So now we know what is being collected. But let's try to understand *how* it's being collected. We can do this, in part, by exploring and visualising the data.</span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>For example: let's visualise the visits to Crater Lakes National Park, from 1979 to the present:</span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which lets us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a><span class="co"># And specify the colorblind palette</span></span>
-<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>cb_palette <span class="ot">&lt;-</span> <span class="fu">colorblind_pal</span>()(<span class="dv">8</span>)</span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off scientific notation</span></span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Crater Lake National Park</span></span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a>crater_lake <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Crater Lake NP"</span>)</span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crater_lake) <span class="sc">+</span> </span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">1</span>]) <span class="sc">+</span></span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crater Lake National Park Visits (1979 - Present)"</span>)</span>
-<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a>We see a lot of things in this data - not least of which is a tremendous rise in visitors in the 2010s - but one interesting observation is the sudden drop in visits in 2012. This isn't caused by fewer people visiting: instead, it has more to do with how visitor numbers are counted.</span>
-<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>When it comes to counting visitors, the NPS uses a variety of techniques. At some parks, such as Alcatraz, it is simple: the park is only accessible via (ticketed) boat, and so NPS staff simply count the number of tickets. But other parks may have multiple entrances, and feature visitors arriving via car, bus, or on foot. It quickly becomes impractical to have staff at every entrance, 24 hours a day, just in case someone arrives.</span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a>Instead, the NPS uses a variety of techniques - some automated, some manual. These include:</span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Induction loop counters - magnetised coils of wire under the road that "trip" when a vehicle passes over them;</span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Traffic counters, which manually increment a...</span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Extracting data from ticketing machines;</span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>Alongside all of that, NPS rangers do, on many occasions, manually count people who arrive - particularly when one of the usual mechanisms doesn't count. And that's exactly what happened here; <span class="co">[</span><span class="ot">according to the NPS data logs</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA)</span>, the induction loop counter at one of the main entrances simply broke in January, and wasn't repaired for (at a minimum) several months. You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears visits entirely tail off in 2020, as a result of <span class="co">[</span><span class="ot">the traffic counter being broken</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA)</span> for *years*:</span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Carlsbad Caverns National Park</span></span>
-<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>carlsbad_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Carlsbad Caverns NP"</span>)</span>
-<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> carlsbad_data) <span class="sc">+</span> </span>
-<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits, <span class="at">color =</span> cb_palette[<span class="dv">2</span>])) <span class="sc">+</span> </span>
-<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>)</span>
-<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise: thinking about where (and how, and why) mechanisms are likely to break</span></span>
-<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get *fixed* at different rates, in different locations.</span>
-<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data and reality</span></span>
-<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-120"><a href="#cb11-120" aria-hidden="true" tabindex="-1"></a>Changes in data don't only stem from changes in data collection, but also the underlying reality of what is being measured. Let's take a look at the visitor data from Kobuk Valley National Park:</span>
-<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Kobuk Valley National Park</span></span>
-<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
-<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
-<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">3</span>]) <span class="sc">+</span></span>
-<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span>
-<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a>Most people's eyes will immediately be drawn to the drastic drop in 2014-15, and for good reason! But the cause is familiar: it's about data collection. As the park report notes, "<span class="co">[</span><span class="ot">https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA</span><span class="co">](The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.)</span>".</span>
-<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a>But another question would be: why the drop-off in 2018-19? It's too early for the cause to be COVID. Instead, the cause is administrative; government shut-downs in that era led to a reduction of funding, and correspondingly the closure of various attractions at the park. The result: a lack of funding leads to a reduced visitor count - a visitor count that is often used, remember, to *argue for funding*. This highlights one of the ways in which seemingly-descriptive data used to make decisions can represent the state of those decisions, more than some natural "baseline".</span>
-<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a>Another kind of issue of "representing reality" can be found if we look at the visitor data for Mount Rainier:</span>
-<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
-<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a>rainier_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Mount Rainier NP"</span>)</span>
-<span id="cb11-145"><a href="#cb11-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
-<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rainier_data) <span class="sc">+</span> </span>
-<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">4</span>]) <span class="sc">+</span></span>
-<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mount Rainier National Park Visits (1979 - Present)"</span>)</span>
-<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a>Once again, we see both a COVID-19 dropoff - but also a continued dropoff beyond that. <span class="co">[</span><span class="ot">Looking at the visitation comments</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA)</span> explains why; flooding, fires and a blizzard drastically impeded the ability of people to get to the park, and the possibility of areas of the park opening at all.</span>
-<span id="cb11-153"><a href="#cb11-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-154"><a href="#cb11-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise: ...?</span></span>
-<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compensating for data</span></span>
-<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a>As all of this should suggest, NPS data is always somewhat approximate. Reductions in funding, damage to counting equipment, natural events, or simply the inevitably-fallible nature of *any* data collection means that data requires a certain amount of prediction, guesswork and massaging to look complete.</span>
-<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a>Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2</span>
-<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exerise: compensating for data outages</span></span>
-<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a>What techniques do they use? Go on a scavenger hunt</span>
-<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data decisions</span></span>
-<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a>Some places register `zero' as a number of visitors in years. Why is this, and where? What is the contextual knowledge involved in parks people declaring it to be a zero?</span>
-<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-174"><a href="#cb11-174" aria-hidden="true" tabindex="-1"></a>What are the reasons for doing so? (the limits of computers for data processing/understanding)</span>
-<span id="cb11-175"><a href="#cb11-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-176"><a href="#cb11-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-177"><a href="#cb11-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-178"><a href="#cb11-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise: data decisions</span></span>
-<span id="cb11-179"><a href="#cb11-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-180"><a href="#cb11-180" aria-hidden="true" tabindex="-1"></a>Have them go through public data and try to find proof the counts of 0 are "wrong"</span>
-<span id="cb11-181"><a href="#cb11-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-182"><a href="#cb11-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-183"><a href="#cb11-183" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
-<span id="cb11-184"><a href="#cb11-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-185"><a href="#cb11-185" aria-hidden="true" tabindex="-1"></a><span class="in">``` {ojs}</span></span>
-<span id="cb11-186"><a href="#cb11-186" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb11-187"><a href="#cb11-187" aria-hidden="true" tabindex="-1"></a><span class="in">viewof search = Inputs.search(data, {</span></span>
-<span id="cb11-188"><a href="#cb11-188" aria-hidden="true" tabindex="-1"></a><span class="in">  placeholder: "Search"</span></span>
-<span id="cb11-189"><a href="#cb11-189" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
-<span id="cb11-190"><a href="#cb11-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-191"><a href="#cb11-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-194"><a href="#cb11-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb11-195"><a href="#cb11-195" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb11-196"><a href="#cb11-196" aria-hidden="true" tabindex="-1"></a><span class="in">//| output: false</span></span>
-<span id="cb11-197"><a href="#cb11-197" aria-hidden="true" tabindex="-1"></a><span class="in">data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2022-National-Park-Visits-By-State.csv", d3.autoType)</span></span>
-<span id="cb11-198"><a href="#cb11-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-199"><a href="#cb11-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-202"><a href="#cb11-202" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb11-203"><a href="#cb11-203" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb11-204"><a href="#cb11-204" aria-hidden="true" tabindex="-1"></a><span class="in">//| output: false</span></span>
-<span id="cb11-205"><a href="#cb11-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-206"><a href="#cb11-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-207"><a href="#cb11-207" aria-hidden="true" tabindex="-1"></a><span class="in">filtered = data.filter(function(penguin) {</span></span>
-<span id="cb11-208"><a href="#cb11-208" aria-hidden="true" tabindex="-1"></a><span class="in">  return bill_length_min &lt; penguin.bill_length_mm &amp;&amp;</span></span>
-<span id="cb11-209"><a href="#cb11-209" aria-hidden="true" tabindex="-1"></a><span class="in">         islands.includes(penguin.island);</span></span>
-<span id="cb11-210"><a href="#cb11-210" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
-<span id="cb11-211"><a href="#cb11-211" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-212"><a href="#cb11-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-215"><a href="#cb11-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb11-216"><a href="#cb11-216" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb11-217"><a href="#cb11-217" aria-hidden="true" tabindex="-1"></a><span class="in">color = d3</span></span>
-<span id="cb11-218"><a href="#cb11-218" aria-hidden="true" tabindex="-1"></a><span class="in">  .scaleLinear()</span></span>
-<span id="cb11-219"><a href="#cb11-219" aria-hidden="true" tabindex="-1"></a><span class="in">  .domain([5000000, 1000000, 100000])</span></span>
-<span id="cb11-220"><a href="#cb11-220" aria-hidden="true" tabindex="-1"></a><span class="in">  .range(["#cafcc2", "#fce7c2", "#eb9494"])</span></span>
-<span id="cb11-221"><a href="#cb11-221" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-222"><a href="#cb11-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-225"><a href="#cb11-225" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb11-226"><a href="#cb11-226" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb11-227"><a href="#cb11-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-228"><a href="#cb11-228" aria-hidden="true" tabindex="-1"></a><span class="in">/*Inputs.table(search, data)*/</span></span>
-<span id="cb11-229"><a href="#cb11-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-230"><a href="#cb11-230" aria-hidden="true" tabindex="-1"></a><span class="in">Inputs.table(search, {</span></span>
-<span id="cb11-231"><a href="#cb11-231" aria-hidden="true" tabindex="-1"></a><span class="in">  layout: "fixed",</span></span>
-<span id="cb11-232"><a href="#cb11-232" aria-hidden="true" tabindex="-1"></a><span class="in">  rows: 50,</span></span>
-<span id="cb11-233"><a href="#cb11-233" aria-hidden="true" tabindex="-1"></a><span class="in">  sort: "Year",</span></span>
-<span id="cb11-234"><a href="#cb11-234" aria-hidden="true" tabindex="-1"></a><span class="in">  reverse: true,</span></span>
-<span id="cb11-235"><a href="#cb11-235" aria-hidden="true" tabindex="-1"></a><span class="in">  format: {</span></span>
-<span id="cb11-236"><a href="#cb11-236" aria-hidden="true" tabindex="-1"></a><span class="in">    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
-<span id="cb11-237"><a href="#cb11-237" aria-hidden="true" tabindex="-1"></a><span class="in">    Year: x =&gt; d3.timeFormat(x),</span></span>
-<span id="cb11-238"><a href="#cb11-238" aria-hidden="true" tabindex="-1"></a><span class="in">    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`</span></span>
-<span id="cb11-239"><a href="#cb11-239" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb11-240"><a href="#cb11-240" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
-<span id="cb11-241"><a href="#cb11-241" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-242"><a href="#cb11-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-243"><a href="#cb11-243" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
-<span id="cb11-244"><a href="#cb11-244" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-245"><a href="#cb11-245" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion &amp; Activities</span></span>
-<span id="cb11-246"><a href="#cb11-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-247"><a href="#cb11-247" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb11-248"><a href="#cb11-248" aria-hidden="true" tabindex="-1"></a></span>
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "National Park Visitation Data"</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-26"</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [line-plots, data-collection, uncertainty]</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"</span></span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> true</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="fu"># National Park Visitation Data</span></span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Essay</span></span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
+<span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a>This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation data for other park units, such as <span class="co">[</span><span class="ot">national battlfieds, national rivers, and national monuments</span><span class="co">]</span>((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.</span>
+<span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a>&lt;br&gt;</span>
+<span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-31"><a href="#cb14-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb14-32"><a href="#cb14-32" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-33"><a href="#cb14-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-34"><a href="#cb14-34" aria-hidden="true" tabindex="-1"></a><span class="in">/*Inputs.table(search, data)*/</span></span>
+<span id="cb14-35"><a href="#cb14-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-36"><a href="#cb14-36" aria-hidden="true" tabindex="-1"></a><span class="in">Inputs.table(search, {</span></span>
+<span id="cb14-37"><a href="#cb14-37" aria-hidden="true" tabindex="-1"></a><span class="in">  layout: "fixed",</span></span>
+<span id="cb14-38"><a href="#cb14-38" aria-hidden="true" tabindex="-1"></a><span class="in">  rows: 10,</span></span>
+<span id="cb14-39"><a href="#cb14-39" aria-hidden="true" tabindex="-1"></a><span class="in">  sort: "Year",</span></span>
+<span id="cb14-40"><a href="#cb14-40" aria-hidden="true" tabindex="-1"></a><span class="in">  reverse: true,</span></span>
+<span id="cb14-41"><a href="#cb14-41" aria-hidden="true" tabindex="-1"></a><span class="in">  format: {</span></span>
+<span id="cb14-42"><a href="#cb14-42" aria-hidden="true" tabindex="-1"></a><span class="in">    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
+<span id="cb14-43"><a href="#cb14-43" aria-hidden="true" tabindex="-1"></a><span class="in">    Year: x =&gt; d3.timeFormat(x),</span></span>
+<span id="cb14-44"><a href="#cb14-44" aria-hidden="true" tabindex="-1"></a><span class="in">    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`</span></span>
+<span id="cb14-45"><a href="#cb14-45" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb14-46"><a href="#cb14-46" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
+<span id="cb14-47"><a href="#cb14-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-48"><a href="#cb14-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-49"><a href="#cb14-49" aria-hidden="true" tabindex="-1"></a>This particular dataset is drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an <span class="co">[</span><span class="ot">NPS data portal</span><span class="co">](https://irma.nps.gov/Stats/)</span> that is relatively hard to find, and its documentation is scattered across many different web pages, which is why we believe it is valuable to curate and publish it in a single place here.</span>
+<span id="cb14-50"><a href="#cb14-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-51"><a href="#cb14-51" aria-hidden="true" tabindex="-1"></a>This dataset was curated and published by Melanie Walsh, and the data essay was written by Os Keyes and Melanie Walsh.</span>
+<span id="cb14-52"><a href="#cb14-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a><span class="fu">## History</span></span>
+<span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>The National Park Service actually began recording information about park visits in 1904 (more than 100 years ago!). However, at this time, their visit collection methods were mostly <span class="co">[</span><span class="ot">informal, inconsistent, and low-tech</span><span class="co">](https://www.nps.gov/subjects/socialscience/statistics-history.htm)</span>. But over the next century, the NPS worked hard to make their data collection methods more reliable, consistent, and (in some but not all cases) high-tech.</span>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a>A big catalyst for the NPS getting serious about data collection was a new law. In 1965, the U.S. Congress passed a federal law that was very important for the NPS and for anybody who loves the outdoors: <span class="co">[</span><span class="ot">The Land and Water Conservation Fund Act of 1965</span><span class="co">](https://www.everycrsreport.com/reports/RL33531.html)</span>. This act created a new source of government money specifically dedicated to protecting natural resources (i.e. to buying up land and water so that condo developers couldn't do it first) and building up outdoor recreation infrastructure in the U.S.</span>
+<span id="cb14-58"><a href="#cb14-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-59"><a href="#cb14-59" aria-hidden="true" tabindex="-1"></a>One of the clauses in this act stipulated that the amount of money allocated to each recreation area should be <span class="co">[</span><span class="ot">"proportional to visitor use."</span><span class="co">](https://www.nps.gov/subjects/socialscience/statistics-history.htm)</span> Because the NPS can't function without money, they buckled down on counting visitor use. According to the NPS, over the next twenty years, they "developed and institutionalized a formal system for collecting, compiling and reporting visitor use data." </span>
+<span id="cb14-60"><a href="#cb14-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-61"><a href="#cb14-61" aria-hidden="true" tabindex="-1"></a>While today's visit data collection system is far more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations in this system. These shortcomings are largely unavoidable. Trying to record every single visit to a National Park — across dozens of different parks and geographic regions, many decades of time, countless different weather conditions and funding situations, and hundreds of millions of people  — is pretty much impossible. In fact, one of the reasons that this dataset is so useful and illuminating is because it does a good job of communicating an important point: data can *never* reflect reality precisely.</span>
+<span id="cb14-62"><a href="#cb14-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-63"><a href="#cb14-63" aria-hidden="true" tabindex="-1"></a>However, the NPS visitation data also does a good job of communicating why we might be interested in collecting and analyzing even flawed and approximate data, as we will dig into below.</span>
+<span id="cb14-64"><a href="#cb14-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-65"><a href="#cb14-65" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where did the data come from? Who collected it?</span></span>
+<span id="cb14-66"><a href="#cb14-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-67"><a href="#cb14-67" aria-hidden="true" tabindex="-1"></a>This National Park visitation data was originally organized and published by the <span class="co">[</span><span class="ot">NPS Social Science Program</span><span class="co">](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm)</span>, a specific program tasked with coordinating visitor statistics across the parks. Thousands of staff members were also involved in the data collection process for individual parks, as we will elaborate below.</span>
+<span id="cb14-68"><a href="#cb14-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-69"><a href="#cb14-69" aria-hidden="true" tabindex="-1"></a>The original data was made available through the <span class="co">[</span><span class="ot">NPS Visitor Use Statistics data portal</span><span class="co">](https://irma.nps.gov/Stats/)</span>. Through this portal, you can generate reports and download data for <span class="co">[</span><span class="ot">many different park visitation categories</span><span class="co">](https://irma.nps.gov/Stats/Reports/National)</span> and time periods— at both the national and individual park levels.</span>
+<span id="cb14-70"><a href="#cb14-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-71"><a href="#cb14-71" aria-hidden="true" tabindex="-1"></a>To download the data included here, we selected the <span class="co">[</span><span class="ot">"Query Builder for Public Use Statistics (1979 - Last Calendar Year)"</span><span class="co">]</span>(https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) report type. We then selected only National Parks; all possible years (1979-2022); all possible regions; only "Recreation Visits"; the additional fields of "State" and "Region"; as well as the option of an annual summary of visit counts (as opposed to monthly visit counts). We then downloaded this report as a CSV and published it to GitHub for easier access.</span>
+<span id="cb14-72"><a href="#cb14-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-73"><a href="#cb14-73" aria-hidden="true" tabindex="-1"></a><span class="al">![](query-builder-csv-screenshot.png)</span></span>
+<span id="cb14-74"><a href="#cb14-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-75"><a href="#cb14-75" aria-hidden="true" tabindex="-1"></a> ## Why was the data collected? How is the data used?</span>
+<span id="cb14-76"><a href="#cb14-76" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb14-77"><a href="#cb14-77" aria-hidden="true" tabindex="-1"></a> As we've already discussed, one of the reasons that the NPS collects visit data is because the government basically requires it. But there are a lot of other reasons that the NPS collects this information.</span>
+<span id="cb14-78"><a href="#cb14-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-79"><a href="#cb14-79" aria-hidden="true" tabindex="-1"></a> As the NPS writes on their website, they use visit data to determine which facilities might need more or less attention, which parks might need more or less staff members and programs, and which hiking trails or bathrooms might need more or less maintenance. This information also helps the communities and businesses surrounding the parks understand how they can best share and support resources in a given area —&nbsp;services like emergency vehicles, sanitation, and water. If there are millions more people going on hikes in a particular area, and thus, inevitably, many more people requiring ambulance trips or rescue helicopters, that would be a very important thing for a community to know. It would be dangerous if visitors to National Parks suddenly and unexpectedly called all the emergency vehicles in town. </span>
+<span id="cb14-80"><a href="#cb14-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-81"><a href="#cb14-81" aria-hidden="true" tabindex="-1"></a>This visitation data also helps the NPS estimate the beneficial impact, economic and otherwise, that the parks have on nearby communities and the nation at large. These estimations are important because they help the parks advocate for more funding, support, attention, and collaboration.</span>
+<span id="cb14-82"><a href="#cb14-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-83"><a href="#cb14-83" aria-hidden="true" tabindex="-1"></a><span class="al">![](https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg)</span></span>
+<span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>The data can also be used for a variety of other purposes....</span>
+<span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's in the data? What "counts" as a visit?</span></span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a>If we open the dataset and look at the first few rows, we will find five columns -- "ParkName", "Region", "State", "Year", and "RecreationVisits":</span>
+<span id="cb14-90"><a href="#cb14-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-93"><a href="#cb14-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-94"><a href="#cb14-94" aria-hidden="true" tabindex="-1"></a><span class="co"># https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<span id="cb14-95"><a href="#cb14-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-96"><a href="#cb14-96" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
+<span id="cb14-97"><a href="#cb14-97" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-98"><a href="#cb14-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-99"><a href="#cb14-99" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
+<span id="cb14-100"><a href="#cb14-100" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb14-101"><a href="#cb14-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-102"><a href="#cb14-102" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset</span></span>
+<span id="cb14-103"><a href="#cb14-103" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> np_data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb14-104"><a href="#cb14-104" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-105"><a href="#cb14-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-106"><a href="#cb14-106" aria-hidden="true" tabindex="-1"></a>The first four are self-explanatory: but why is the fifth labelled "RecreationVisits" rather than "Visits", or "Visitors"?</span>
+<span id="cb14-107"><a href="#cb14-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-108"><a href="#cb14-108" aria-hidden="true" tabindex="-1"></a>The answer is that what this dataset is tracking is more complicated and nuanced than "people who go to NPS properties". People go to the national parks for a lot of reasons. While many are there for recreation, some travel *through* the parks, either because a highway runs through or because they live on "inholdings" (private property that is surrounded by a national park on all sides). Because of this, [the NPS defines](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm) "Recreation Visits" as visits made by people who are *not*:</span>
+<span id="cb14-109"><a href="#cb14-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-110"><a href="#cb14-110" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; using park territory, roads, and facilities for their own convenience or as a part of their occupation. &gt; Reportable non-recreation visits include:</span></span>
+<span id="cb14-111"><a href="#cb14-111" aria-hidden="true" tabindex="-1"></a><span class="at">&gt;</span></span>
+<span id="cb14-112"><a href="#cb14-112" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Persons going to and from inholdings across significant parts of park land;</span></span>
+<span id="cb14-113"><a href="#cb14-113" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;</span></span>
+<span id="cb14-114"><a href="#cb14-114" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Trades-people with business in the park;</span></span>
+<span id="cb14-115"><a href="#cb14-115" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Any civilian activity a part of or incidental to the pursuit of a gainful occupation (e.g., guides);</span></span>
+<span id="cb14-116"><a href="#cb14-116" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Government personnel (other than NPS employees) with business in the park;</span></span>
+<span id="cb14-117"><a href="#cb14-117" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Citizens using NPS buildings for civic or local government business, or attending public hearings;</span></span>
+<span id="cb14-118"><a href="#cb14-118" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; * Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g. meteorological research).</span></span>
+<span id="cb14-119"><a href="#cb14-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-120"><a href="#cb14-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-121"><a href="#cb14-121" aria-hidden="true" tabindex="-1"></a>What this means is that the counts leave out a lot of people. This is worth thinking about when we evaluate what the numbers mean, and how the NPS achieves them (which we'll discuss more below)</span>
+<span id="cb14-122"><a href="#cb14-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-123"><a href="#cb14-123" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data and data collection</span></span>
+<span id="cb14-124"><a href="#cb14-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-125"><a href="#cb14-125" aria-hidden="true" tabindex="-1"></a>So now we know what is being collected. But let's try to understand *how* it's being collected. We can do this, in part, by exploring and visualising the data.</span>
+<span id="cb14-126"><a href="#cb14-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-127"><a href="#cb14-127" aria-hidden="true" tabindex="-1"></a>For example: let's visualise the visits to Crater Lakes National Park, from 1979 to the present:</span>
+<span id="cb14-128"><a href="#cb14-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-131"><a href="#cb14-131" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-132"><a href="#cb14-132" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
+<span id="cb14-133"><a href="#cb14-133" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb14-134"><a href="#cb14-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-135"><a href="#cb14-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which let's us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
+<span id="cb14-136"><a href="#cb14-136" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb14-137"><a href="#cb14-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-138"><a href="#cb14-138" aria-hidden="true" tabindex="-1"></a><span class="co"># And specify the colorblind palette</span></span>
+<span id="cb14-139"><a href="#cb14-139" aria-hidden="true" tabindex="-1"></a>cb_palette <span class="ot">&lt;-</span> <span class="fu">colorblind_pal</span>()(<span class="dv">8</span>)</span>
+<span id="cb14-140"><a href="#cb14-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-141"><a href="#cb14-141" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off scientific notation</span></span>
+<span id="cb14-142"><a href="#cb14-142" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb14-143"><a href="#cb14-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-144"><a href="#cb14-144" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Crater Lake National Park</span></span>
+<span id="cb14-145"><a href="#cb14-145" aria-hidden="true" tabindex="-1"></a>crater_lake <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Crater Lake NP"</span>)</span>
+<span id="cb14-146"><a href="#cb14-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-147"><a href="#cb14-147" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb14-148"><a href="#cb14-148" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> crater_lake) <span class="sc">+</span> </span>
+<span id="cb14-149"><a href="#cb14-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">1</span>]) <span class="sc">+</span></span>
+<span id="cb14-150"><a href="#cb14-150" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Crater Lake National Park Visits (1979 - Present)"</span>)</span>
+<span id="cb14-151"><a href="#cb14-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-152"><a href="#cb14-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-153"><a href="#cb14-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-154"><a href="#cb14-154" aria-hidden="true" tabindex="-1"></a>We see a lot of things in this data - not least of which is a tremendous rise in visitors in the 2010s - but one interesting observation is the sudden drop in visits in 2012. This isn't caused by fewer people visiting: instead, it has more to do with how visitor numbers are counted.</span>
+<span id="cb14-155"><a href="#cb14-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-156"><a href="#cb14-156" aria-hidden="true" tabindex="-1"></a>When it comes to counting visitors, the NPS uses a variety of techniques. At some parks, such as Alcatraz, it is simple: the park is only accessible via (ticketed) boat, and so NPS staff simply count the number of tickets. But other parks may have multiple entrances, and feature visitors arriving via car, bus, or on foot. It quickly becomes impractical to have staff at every entrance, 24 hours a day, just in case someone arrives.</span>
+<span id="cb14-157"><a href="#cb14-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-158"><a href="#cb14-158" aria-hidden="true" tabindex="-1"></a>Instead, the NPS uses a variety of techniques - some automated, some manual. These include:</span>
+<span id="cb14-159"><a href="#cb14-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-160"><a href="#cb14-160" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Induction loop counters - magnetised coils of wire under the road that "trip" when a vehicle passes over them;</span>
+<span id="cb14-161"><a href="#cb14-161" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Traffic counters, which manually increment a counter when a vehicle passes through a gate;</span>
+<span id="cb14-162"><a href="#cb14-162" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Extracting data from ticketing machines.</span>
+<span id="cb14-163"><a href="#cb14-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-164"><a href="#cb14-164" aria-hidden="true" tabindex="-1"></a>Alongside all of that, NPS rangers do, on many occasions, manually count people who arrive - particularly when one of the usual mechanisms doesn't count. And that's exactly what happened here; <span class="co">[</span><span class="ot">according to the NPS data logs</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA)</span>, the induction loop counter at one of the main entrances simply broke in January, and wasn't repaired for (at a minimum) several months. You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears visits entirely tail off in 2020, as a result of <span class="co">[</span><span class="ot">the traffic counter being broken</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA)</span> for *years*:</span>
+<span id="cb14-165"><a href="#cb14-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-168"><a href="#cb14-168" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-169"><a href="#cb14-169" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Carlsbad Caverns National Park</span></span>
+<span id="cb14-170"><a href="#cb14-170" aria-hidden="true" tabindex="-1"></a>carlsbad_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Carlsbad Caverns NP"</span>)</span>
+<span id="cb14-171"><a href="#cb14-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-172"><a href="#cb14-172" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb14-173"><a href="#cb14-173" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> carlsbad_data) <span class="sc">+</span> </span>
+<span id="cb14-174"><a href="#cb14-174" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">2</span>]) <span class="sc">+</span> </span>
+<span id="cb14-175"><a href="#cb14-175" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>)</span>
+<span id="cb14-176"><a href="#cb14-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-177"><a href="#cb14-177" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-178"><a href="#cb14-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-179"><a href="#cb14-179" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise: thinking about where (and how, and why) mechanisms are likely to break</span></span>
+<span id="cb14-180"><a href="#cb14-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-181"><a href="#cb14-181" aria-hidden="true" tabindex="-1"></a>*Reader note: this exercise, when finished, will invite students to explore the question of how device outages are likely to vary based on location. For example: a traffic counter works best when there are few avenues on to a park. Where, geographically and environmentally, is that the case? Or: an induction loop might break when a heavy vehicle snags it. We would expect to see this more in the case of highly snowy areas - where snowplows need to use the roads - and would also expect that damage would take a while to get fixed due to the geographic location. The point is to enable students to explore how data breakages at different locations occur differentially, as do their consequences.*</span>
+<span id="cb14-182"><a href="#cb14-182" aria-hidden="true" tabindex="-1"></a>Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get *fixed* at different rates, in different locations.</span>
+<span id="cb14-183"><a href="#cb14-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-184"><a href="#cb14-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-185"><a href="#cb14-185" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data and reality</span></span>
+<span id="cb14-186"><a href="#cb14-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-187"><a href="#cb14-187" aria-hidden="true" tabindex="-1"></a>Changes in data don't only stem from changes in data collection, but also the underlying reality of what is being measured. Let's take a look at the visitor data from Kobuk Valley National Park:</span>
+<span id="cb14-188"><a href="#cb14-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-191"><a href="#cb14-191" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-192"><a href="#cb14-192" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Kobuk Valley National Park</span></span>
+<span id="cb14-193"><a href="#cb14-193" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
+<span id="cb14-194"><a href="#cb14-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-195"><a href="#cb14-195" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb14-196"><a href="#cb14-196" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
+<span id="cb14-197"><a href="#cb14-197" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">3</span>]) <span class="sc">+</span></span>
+<span id="cb14-198"><a href="#cb14-198" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span>
+<span id="cb14-199"><a href="#cb14-199" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-200"><a href="#cb14-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-201"><a href="#cb14-201" aria-hidden="true" tabindex="-1"></a>Most people's eyes will immediately be drawn to the drastic drop in 2014-15, and for good reason! But the cause is familiar: it's about data collection. As the park report notes, " <span class="co">[</span><span class="ot">The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA)</span>".</span>
+<span id="cb14-202"><a href="#cb14-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-203"><a href="#cb14-203" aria-hidden="true" tabindex="-1"></a>But another question would be: why the drop-off in 2018-19? It's too early for the cause to be COVID. Instead, the cause is administrative; government shut-downs in that era led to a reduction of funding, and correspondingly the closure of various attractions at the park. The result: a lack of funding leads to a reduced visitor count - a visitor count that is often used, remember, to *argue for funding*. This highlights one of the ways in which seemingly-descriptive data used to make decisions can represent the state of those decisions, more than some natural "baseline".</span>
+<span id="cb14-204"><a href="#cb14-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-205"><a href="#cb14-205" aria-hidden="true" tabindex="-1"></a>Another kind of issue of "representing reality" can be found if we look at the visitor data for Mount Rainier:</span>
+<span id="cb14-206"><a href="#cb14-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-209"><a href="#cb14-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-210"><a href="#cb14-210" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<span id="cb14-211"><a href="#cb14-211" aria-hidden="true" tabindex="-1"></a>rainier_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Mount Rainier NP"</span>)</span>
+<span id="cb14-212"><a href="#cb14-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-213"><a href="#cb14-213" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb14-214"><a href="#cb14-214" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> rainier_data) <span class="sc">+</span> </span>
+<span id="cb14-215"><a href="#cb14-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">4</span>]) <span class="sc">+</span></span>
+<span id="cb14-216"><a href="#cb14-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Mount Rainier National Park Visits (1979 - Present)"</span>)</span>
+<span id="cb14-217"><a href="#cb14-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-218"><a href="#cb14-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-219"><a href="#cb14-219" aria-hidden="true" tabindex="-1"></a>Once again, we see both a COVID-19 dropoff - but also a continued dropoff beyond that. <span class="co">[</span><span class="ot">Looking at the visitation comments</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA)</span> explains why; flooding, fires and a blizzard drastically impeded the ability of people to get to the park, and the possibility of areas of the park opening at all.</span>
+<span id="cb14-220"><a href="#cb14-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-221"><a href="#cb14-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## Compensating for data</span></span>
+<span id="cb14-222"><a href="#cb14-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-223"><a href="#cb14-223" aria-hidden="true" tabindex="-1"></a>As all of this should suggest, NPS data is always somewhat approximate. Reductions in funding, damage to counting equipment, natural events, or simply the inevitably-fallible nature of *any* data collection means that data requires a certain amount of prediction, guesswork and massaging to look complete.</span>
+<span id="cb14-224"><a href="#cb14-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-225"><a href="#cb14-225" aria-hidden="true" tabindex="-1"></a>Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2. </span>
+<span id="cb14-226"><a href="#cb14-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-227"><a href="#cb14-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exerise: compensating for data outages</span></span>
+<span id="cb14-228"><a href="#cb14-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-229"><a href="#cb14-229" aria-hidden="true" tabindex="-1"></a>*Reader note: this exercise will direct students, on a group (or individual) basis, to the NPS index of how different parks calculate different multipliers and metrics, and ask them to log or note unusual or unexplained differences in how this is done.*</span>
+<span id="cb14-230"><a href="#cb14-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-231"><a href="#cb14-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-232"><a href="#cb14-232" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data decisions</span></span>
+<span id="cb14-233"><a href="#cb14-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-234"><a href="#cb14-234" aria-hidden="true" tabindex="-1"></a>As well as multiplying up, there's also counting down: some parks register "zero" as the number of visitors they attracted in a year:</span>
+<span id="cb14-235"><a href="#cb14-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-236"><a href="#cb14-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## Look at the structure of the dataset</span></span>
+<span id="cb14-237"><a href="#cb14-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-240"><a href="#cb14-240" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-241"><a href="#cb14-241" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to just zeros</span></span>
+<span id="cb14-242"><a href="#cb14-242" aria-hidden="true" tabindex="-1"></a>zero_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RecreationVisits <span class="sc">==</span> <span class="dv">0</span>)</span>
+<span id="cb14-243"><a href="#cb14-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-244"><a href="#cb14-244" aria-hidden="true" tabindex="-1"></a><span class="co"># Show some of them</span></span>
+<span id="cb14-245"><a href="#cb14-245" aria-hidden="true" tabindex="-1"></a><span class="fu">slice_sample</span>(<span class="at">.data =</span> zero_data, <span class="at">n =</span> <span class="dv">10</span>)</span>
+<span id="cb14-246"><a href="#cb14-246" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-247"><a href="#cb14-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-248"><a href="#cb14-248" aria-hidden="true" tabindex="-1"></a>Looking at the parks and regions, we can maybe infer why; they are all in extremely rural or underresourced areas, and probably see few visitors to begin with. If we look at the visitors over time for one park that has "zero counts", Kobuk Valley National park, we see it's hardly overrun with people even when the count *isn't* zero:</span>
+<span id="cb14-251"><a href="#cb14-251" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-252"><a href="#cb14-252" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<span id="cb14-253"><a href="#cb14-253" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
+<span id="cb14-254"><a href="#cb14-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-255"><a href="#cb14-255" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb14-256"><a href="#cb14-256" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
+<span id="cb14-257"><a href="#cb14-257" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">6</span>]) <span class="sc">+</span></span>
+<span id="cb14-258"><a href="#cb14-258" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span>
+<span id="cb14-259"><a href="#cb14-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-260"><a href="#cb14-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-261"><a href="#cb14-261" aria-hidden="true" tabindex="-1"></a>If we look at the visitation comments again, <span class="co">[</span><span class="ot">what we see</span><span class="co">](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park)</span> is that "The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place." Which is entirely reasonable, in isolation: but we've also seen a *lot* of parks in more highly-frequented areas that have new systems developed and choose to (for example) average previous years, rather than simply declare that nobody visited. What are the politics of the choices in these scenarios?</span>
+<span id="cb14-262"><a href="#cb14-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-263"><a href="#cb14-263" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-264"><a href="#cb14-264" aria-hidden="true" tabindex="-1"></a><span class="fu">## Exercise: data decisions</span></span>
+<span id="cb14-265"><a href="#cb14-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-266"><a href="#cb14-266" aria-hidden="true" tabindex="-1"></a>*Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time</span>
+<span id="cb14-267"><a href="#cb14-267" aria-hidden="true" tabindex="-1"></a>Have them go through public data and try to find proof the counts of 0 are "wrong"</span>
+<span id="cb14-268"><a href="#cb14-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-269"><a href="#cb14-269" aria-hidden="true" tabindex="-1"></a><span class="fu"># Explore the Data</span></span>
+<span id="cb14-270"><a href="#cb14-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-271"><a href="#cb14-271" aria-hidden="true" tabindex="-1"></a><span class="in">``` {ojs}</span></span>
+<span id="cb14-272"><a href="#cb14-272" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-273"><a href="#cb14-273" aria-hidden="true" tabindex="-1"></a><span class="in">viewof search = Inputs.search(data, {</span></span>
+<span id="cb14-274"><a href="#cb14-274" aria-hidden="true" tabindex="-1"></a><span class="in">  placeholder: "Search"</span></span>
+<span id="cb14-275"><a href="#cb14-275" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
+<span id="cb14-276"><a href="#cb14-276" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-277"><a href="#cb14-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-280"><a href="#cb14-280" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb14-281"><a href="#cb14-281" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-282"><a href="#cb14-282" aria-hidden="true" tabindex="-1"></a><span class="in">//| output: false</span></span>
+<span id="cb14-283"><a href="#cb14-283" aria-hidden="true" tabindex="-1"></a><span class="in">data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2022-National-Park-Visits-By-State.csv", d3.autoType)</span></span>
+<span id="cb14-284"><a href="#cb14-284" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-285"><a href="#cb14-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-288"><a href="#cb14-288" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb14-289"><a href="#cb14-289" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-290"><a href="#cb14-290" aria-hidden="true" tabindex="-1"></a><span class="in">//| output: false</span></span>
+<span id="cb14-291"><a href="#cb14-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-292"><a href="#cb14-292" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-293"><a href="#cb14-293" aria-hidden="true" tabindex="-1"></a><span class="in">filtered = data.filter(function(penguin) {</span></span>
+<span id="cb14-294"><a href="#cb14-294" aria-hidden="true" tabindex="-1"></a><span class="in">  return bill_length_min &lt; penguin.bill_length_mm &amp;&amp;</span></span>
+<span id="cb14-295"><a href="#cb14-295" aria-hidden="true" tabindex="-1"></a><span class="in">         islands.includes(penguin.island);</span></span>
+<span id="cb14-296"><a href="#cb14-296" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
+<span id="cb14-297"><a href="#cb14-297" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-298"><a href="#cb14-298" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-301"><a href="#cb14-301" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb14-302"><a href="#cb14-302" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-303"><a href="#cb14-303" aria-hidden="true" tabindex="-1"></a><span class="in">color = d3</span></span>
+<span id="cb14-304"><a href="#cb14-304" aria-hidden="true" tabindex="-1"></a><span class="in">  .scaleLinear()</span></span>
+<span id="cb14-305"><a href="#cb14-305" aria-hidden="true" tabindex="-1"></a><span class="in">  .domain([5000000, 1000000, 100000])</span></span>
+<span id="cb14-306"><a href="#cb14-306" aria-hidden="true" tabindex="-1"></a><span class="in">  .range(["#cafcc2", "#fce7c2", "#eb9494"])</span></span>
+<span id="cb14-307"><a href="#cb14-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-308"><a href="#cb14-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-311"><a href="#cb14-311" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb14-312"><a href="#cb14-312" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
+<span id="cb14-313"><a href="#cb14-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-314"><a href="#cb14-314" aria-hidden="true" tabindex="-1"></a><span class="in">/*Inputs.table(search, data)*/</span></span>
+<span id="cb14-315"><a href="#cb14-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-316"><a href="#cb14-316" aria-hidden="true" tabindex="-1"></a><span class="in">Inputs.table(search, {</span></span>
+<span id="cb14-317"><a href="#cb14-317" aria-hidden="true" tabindex="-1"></a><span class="in">  layout: "fixed",</span></span>
+<span id="cb14-318"><a href="#cb14-318" aria-hidden="true" tabindex="-1"></a><span class="in">  rows: 50,</span></span>
+<span id="cb14-319"><a href="#cb14-319" aria-hidden="true" tabindex="-1"></a><span class="in">  sort: "Year",</span></span>
+<span id="cb14-320"><a href="#cb14-320" aria-hidden="true" tabindex="-1"></a><span class="in">  reverse: true,</span></span>
+<span id="cb14-321"><a href="#cb14-321" aria-hidden="true" tabindex="-1"></a><span class="in">  format: {</span></span>
+<span id="cb14-322"><a href="#cb14-322" aria-hidden="true" tabindex="-1"></a><span class="in">    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/</span></span>
+<span id="cb14-323"><a href="#cb14-323" aria-hidden="true" tabindex="-1"></a><span class="in">    Year: x =&gt; d3.timeFormat(x),</span></span>
+<span id="cb14-324"><a href="#cb14-324" aria-hidden="true" tabindex="-1"></a><span class="in">    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`</span></span>
+<span id="cb14-325"><a href="#cb14-325" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb14-326"><a href="#cb14-326" aria-hidden="true" tabindex="-1"></a><span class="in">})</span></span>
+<span id="cb14-327"><a href="#cb14-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb14-328"><a href="#cb14-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-329"><a href="#cb14-329" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises</span></span>
+<span id="cb14-330"><a href="#cb14-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-331"><a href="#cb14-331" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion &amp; Activities</span></span>
+<span id="cb14-332"><a href="#cb14-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-333"><a href="#cb14-333" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb14-334"><a href="#cb14-334" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2024 | Supported by Mozilla</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

@@ -1,10 +1,10 @@
 ---
 pagetitle: "Home"
-page-layout: custom
+page-layout: article
 section-divs: false
 editor: source
-sidebar: false
-search: false
+sidebar: true
+search: true
 repo-actions: false
 description: | 
   Responsible Datasets in Context
@@ -12,4 +12,14 @@ description: |
 toc: false
 ---
 
-## Welcome
+# 🚧 Website Under Construction  🚧 
+
+This website is currently under construction. Stay tuned for announcements about its official publication. 
+
+# Responsible Datasets in Context
+This website contains a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources. 
+
+We dig into the **social and historical context** of each dataset, and we provide extensive documentation about the data's **provenance and limitations**. We also include teaching resources for each dataset—such as **programming exercises**, **discussion questions**, **lessons plans**, and more—to enable their seamless integration into the classroom.
+
+By providing these contextual materials, we hope to enable the responsible use of these particular datasets for teaching, research, and general exploration. More broadly, we seek to promote the responsible use of all data —whether in the classroom, industry, or the wider world—by underscoring the essential significance of context in data-related work.
+

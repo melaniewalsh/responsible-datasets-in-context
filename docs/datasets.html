@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./responsible-logo-white.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -138,6 +139,9 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./responsible-logo-white.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
     </a>
@@ -152,10 +156,25 @@ window.Quarto = {
     <a class="nav-link active" href="./datasets.html" aria-current="page"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="./team.html">
+ <span class="dropdown-text">Team</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./mission.html">
+ <span class="dropdown-text">Mission</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./get-involved.html">
+ <span class="dropdown-text">Get Involved</span></a>
+  </li>  
+    </ul>
+  </li>
   <li class="nav-item compact">
     <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
 </i> 
@@ -203,11 +222,17 @@ window.Quarto = {
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="line-plots,data-collection,uncertainty" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709022992247" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1546">
+<div class="quarto-post image-right" data-index="0" data-categories="line-plots,data-collection,uncertainty" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709115183492" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="14" data-listing-word-count-sort="2794">
 <div class="thumbnail">
 <p><a href="./posts/np-data/index.html" class="no-external"></a></p><a href="./posts/np-data/index.html" class="no-external">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
 </a><p><a href="./posts/np-data/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -229,7 +254,7 @@ uncertainty
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/np-data/index.html" class="no-external">This dataset contains the number of visitors, per year, to each of the parks administered by the United States National Park Service (NPS), from 1979 onwards. It is not…</a>
+<a href="./posts/np-data/index.html" class="no-external">This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the…</a>
 </div>
 </div>
 <div class="metadata">
@@ -243,7 +268,7 @@ Feb 26, 2024
 <div class="quarto-post image-right" data-index="1" data-categories="missing-data,trauma,uncertainty,data-collection" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709022788636" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
 <div class="thumbnail">
 <p><a href="./posts/gender-violence/index.html" class="no-external"></a></p><a href="./posts/gender-violence/index.html" class="no-external">
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png" class="thumbnail-image"></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png" class="thumbnail-image" style="height: 200px;"></p>
 </a><p><a href="./posts/gender-violence/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
@@ -672,6 +697,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright © 2024 | Supported by Mozilla</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

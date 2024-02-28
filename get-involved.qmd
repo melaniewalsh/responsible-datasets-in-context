@@ -1,0 +1,10 @@
+---
+title: "Get Involved"
+image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mozilla_logo.svg/2560px-Mozilla_logo.svg.png
+sidebar: false
+page-layout: article
+toc: false
+title-block-banner: true
+---
+
+Get Involved
