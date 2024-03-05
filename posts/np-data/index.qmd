@@ -21,11 +21,8 @@ code-tools: true
 
 # National Park Visitation Data
 
-
-::: {.panel-tabset}
-
+::: panel-tabset
 # Data Essay
-
 
 ## Introduction
 
@@ -61,33 +58,33 @@ The National Park Service actually began recording information about park visits
 
 A big catalyst for the NPS getting serious about data collection was a new law. In 1965, the U.S. Congress passed a federal law that was very important for the NPS and for anybody who loves the outdoors: [The Land and Water Conservation Fund Act of 1965](https://www.everycrsreport.com/reports/RL33531.html). This act created a new source of government money specifically dedicated to protecting natural resources (i.e. to buying up land and water so that condo developers couldn't do it first) and building up outdoor recreation infrastructure in the U.S.
 
-One of the clauses in this act stipulated that the amount of money allocated to each recreation area should be ["proportional to visitor use."](https://www.nps.gov/subjects/socialscience/statistics-history.htm) Because the NPS can't function without money, they buckled down on counting visitor use. According to the NPS, over the next twenty years, they "developed and institutionalized a formal system for collecting, compiling and reporting visitor use data." 
+One of the clauses in this act stipulated that the amount of money allocated to each recreation area should be ["proportional to visitor use."](https://www.nps.gov/subjects/socialscience/statistics-history.htm) Because the NPS can't function without money, they buckled down on counting visitor use. According to the NPS, over the next twenty years, they "developed and institutionalized a formal system for collecting, compiling and reporting visitor use data."
 
-While today's visit data collection system is far more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations in this system. These shortcomings are largely unavoidable. Trying to record every single visit to a National Park — across dozens of different parks and geographic regions, many decades of time, countless different weather conditions and funding situations, and hundreds of millions of people  — is pretty much impossible. In fact, one of the reasons that this dataset is so useful and illuminating is because it does a good job of communicating an important point: data can *never* reflect reality precisely.
+While today's visit data collection system is far more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations in this system. These shortcomings are largely unavoidable. Trying to record every single visit to a National Park --- across dozens of different parks and geographic regions, many decades of time, countless different weather conditions and funding situations, and hundreds of millions of people --- is pretty much impossible. In fact, one of the reasons that this dataset is so useful and illuminating is because it does a good job of communicating an important point: data can *never* reflect reality precisely.
 
 However, the NPS visitation data also does a good job of communicating why we might be interested in collecting and analyzing even flawed and approximate data, as we will dig into below.
 
-## Where did the data come from? Who collected it?
+## Where did the data come from? Who collected it? {#where-did-the-data-come-from-who-collected-it}
 
 This National Park visitation data was originally organized and published by the [NPS Social Science Program](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm), a specific program tasked with coordinating visitor statistics across the parks. Thousands of staff members were also involved in the data collection process for individual parks, as we will elaborate below.
 
-The original data was made available through the [NPS Visitor Use Statistics data portal](https://irma.nps.gov/Stats/). Through this portal, you can generate reports and download data for [many different park visitation categories](https://irma.nps.gov/Stats/Reports/National) and time periods— at both the national and individual park levels.
+The original data was made available through the [NPS Visitor Use Statistics data portal](https://irma.nps.gov/Stats/). Through this portal, you can generate reports and download data for [many different park visitation categories](https://irma.nps.gov/Stats/Reports/National) and time periods--- at both the national and individual park levels.
 
 To download the data included here, we selected the ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) report type. We then selected only National Parks; all possible years (1979-2022); all possible regions; only "Recreation Visits"; the additional fields of "State" and "Region"; as well as the option of an annual summary of visit counts (as opposed to monthly visit counts). We then downloaded this report as a CSV and published it to GitHub for easier access.
 
 ![](query-builder-csv-screenshot.png)
 
- ## Why was the data collected? How is the data used?
- 
- As we've already discussed, one of the reasons that the NPS collects visit data is because the government basically requires it. But there are a lot of other reasons that the NPS collects this information.
+## Why was the data collected? How is the data used?
 
- As the NPS writes on their website, they use visit data to determine which facilities might need more or less attention, which parks might need more or less staff members and programs, and which hiking trails or bathrooms might need more or less maintenance. This information also helps the communities and businesses surrounding the parks understand how they can best share and support resources in a given area — services like emergency vehicles, sanitation, and water. If there are millions more people going on hikes in a particular area, and thus, inevitably, many more people requiring ambulance trips or rescue helicopters, that would be a very important thing for a community to know. It would be dangerous if visitors to National Parks suddenly and unexpectedly called all the emergency vehicles in town. 
+As we've already discussed, one of the reasons that the NPS collects visit data is because the government basically requires it. But there are a lot of other reasons that the NPS collects this information.
+
+As the NPS writes on their website, they use visit data to determine which facilities might need more or less attention, which parks might need more or less staff members and programs, and which hiking trails or bathrooms might need more or less maintenance. This information also helps the communities and businesses surrounding the parks understand how they can best share and support resources in a given area --- services like emergency vehicles, sanitation, and water. If there are millions more people going on hikes in a particular area, and thus, inevitably, many more people requiring ambulance trips or rescue helicopters, that would be a very important thing for a community to know. It would be dangerous if visitors to National Parks suddenly and unexpectedly called all the emergency vehicles in town.
 
 This visitation data also helps the NPS estimate the beneficial impact, economic and otherwise, that the parks have on nearby communities and the nation at large. These estimations are important because they help the parks advocate for more funding, support, attention, and collaboration.
 
 ![](https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg)
 
-The data can also be used for a variety of other purposes....
+The data can also be used for a variety of other purposes.... (such as?)
 
 ## What's in the data? What "counts" as a visit?
 
@@ -111,16 +108,15 @@ The first four are self-explanatory: but why is the fifth labelled "RecreationVi
 
 The answer is that what this dataset is tracking is more complicated and nuanced than "people who go to NPS properties". People go to the national parks for a lot of reasons. While many are there for recreation, some travel *through* the parks, either because a highway runs through or because they live on "inholdings" (private property that is surrounded by a national park on all sides). Because of this, [the NPS defines](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm) "Recreation Visits" as visits made by people who are *not*:
 
-> using park territory, roads, and facilities for their own convenience or as a part of their occupation. > Reportable non-recreation visits include:
+> using park territory, roads, and facilities for their own convenience or as a part of their occupation. \> Reportable non-recreation visits include:
 >
-> * Persons going to and from inholdings across significant parts of park land;
-> * Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;
-> * Trades-people with business in the park;
-> * Any civilian activity a part of or incidental to the pursuit of a gainful occupation (e.g., guides);
-> * Government personnel (other than NPS employees) with business in the park;
-> * Citizens using NPS buildings for civic or local government business, or attending public hearings;
-> * Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g. meteorological research).
-
+> -   Persons going to and from inholdings across significant parts of park land;
+> -   Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;
+> -   Trades-people with business in the park;
+> -   Any civilian activity a part of or incidental to the pursuit of a gainful occupation (e.g., guides);
+> -   Government personnel (other than NPS employees) with business in the park;
+> -   Citizens using NPS buildings for civic or local government business, or attending public hearings;
+> -   Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g. meteorological research).
 
 What this means is that the counts leave out a lot of people. This is worth thinking about when we evaluate what the numbers mean, and how the NPS achieves them (which we'll discuss more below)
 
@@ -159,9 +155,11 @@ When it comes to counting visitors, the NPS uses a variety of techniques. At som
 
 Instead, the NPS uses a variety of techniques - some automated, some manual. These include:
 
-* Induction loop counters - magnetised coils of wire under the road that "trip" when a vehicle passes over them;
-* Traffic counters, which manually increment a counter when a vehicle passes through a gate;
-* Extracting data from ticketing machines.
+-   Induction loop counters - magnetised coils of wire under the road that "trip" when a vehicle passes over them;
+-   Traffic counters, which manually increment a counter when a vehicle passes through a gate;
+-   Extracting data from ticketing machines.
+
+![An example of an induction loop installed under a road](https://upload.wikimedia.org/wikipedia/commons/8/8c/Inductance_detectors.jpg){width="300"}
 
 Alongside all of that, NPS rangers do, on many occasions, manually count people who arrive - particularly when one of the usual mechanisms doesn't count. And that's exactly what happened here; [according to the NPS data logs](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA), the induction loop counter at one of the main entrances simply broke in January, and wasn't repaired for (at a minimum) several months. You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears visits entirely tail off in 2020, as a result of [the traffic counter being broken](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA) for *years*:
 
@@ -179,9 +177,7 @@ ggplot(data = carlsbad_data) +
 
 ## Exercise: thinking about where (and how, and why) mechanisms are likely to break
 
-*Reader note: this exercise, when finished, will invite students to explore the question of how device outages are likely to vary based on location. For example: a traffic counter works best when there are few avenues on to a park. Where, geographically and environmentally, is that the case? Or: an induction loop might break when a heavy vehicle snags it. We would expect to see this more in the case of highly snowy areas - where snowplows need to use the roads - and would also expect that damage would take a while to get fixed due to the geographic location. The point is to enable students to explore how data breakages at different locations occur differentially, as do their consequences.*
-Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get *fixed* at different rates, in different locations.
-
+Now that we've talked about how data is collected (and the fragility of some of those methods), it's a good time to think about how even the same method, deployed at different places, might be differently unreliable. For more, see [Exercise 1](#exercise-1).
 
 ## Data and reality
 
@@ -221,12 +217,11 @@ Once again, we see both a COVID-19 dropoff - but also a continued dropoff beyond
 
 As all of this should suggest, NPS data is always somewhat approximate. Reductions in funding, damage to counting equipment, natural events, or simply the inevitably-fallible nature of *any* data collection means that data requires a certain amount of prediction, guesswork and massaging to look complete.
 
-Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2. 
+Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2.
 
-## Exerise: compensating for data outages
+## Exercise: compensating for data outages
 
 *Reader note: this exercise will direct students, on a group (or individual) basis, to the NPS index of how different parks calculate different multipliers and metrics, and ask them to log or note unusual or unexplained differences in how this is done.*
-
 
 ## Data decisions
 
@@ -244,6 +239,7 @@ slice_sample(.data = zero_data, n = 10)
 ```
 
 Looking at the parks and regions, we can maybe infer why; they are all in extremely rural or underresourced areas, and probably see few visitors to begin with. If we look at the visitors over time for one park that has "zero counts", Kobuk Valley National park, we see it's hardly overrun with people even when the count *isn't* zero:
+
 ```{r}
 
 # Filter down to Mount Rainier National Park
@@ -257,15 +253,13 @@ ggplot(data = kobuk_data) +
 
 If we look at the visitation comments again, [what we see](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park) is that "The park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place." Which is entirely reasonable, in isolation: but we've also seen a *lot* of parks in more highly-frequented areas that have new systems developed and choose to (for example) average previous years, rather than simply declare that nobody visited. What are the politics of the choices in these scenarios?
 
-
 ## Exercise: data decisions
 
-*Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time
-Have them go through public data and try to find proof the counts of 0 are "wrong"
+*Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time Have them go through public data and try to find proof the counts of 0 are "wrong"*
 
 # Explore the Data
 
-``` {ojs}
+```{ojs}
 //| echo: false
 viewof search = Inputs.search(data, {
   placeholder: "Search"
@@ -317,8 +311,19 @@ Inputs.table(search, {
 
 # Exercises
 
+## Exercise 1 {#exercise-1}
+
+Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get *fixed* at different rates, in different locations. There are a lot of reasons for this, but some of the big ones might be geography and resources. The more remote a park, the harder it is to get a repair team to it---and the less-resourced a park, the lower the likelihood they have on-site repair teams, or are prioritised by the repair teams that can be dispatched.
+
+Thinking about this, look at the locations of the following parks. Suppose that each one has an outage in their induction loop: which ones would you expect to be fixed first, and why? Research the parks, and rank them on a scale of 1 to 5 (1 being highest, and 5 being lowest) of which would be fixed quickest.
+
+| Park               | Priority (1-5) | Reason |
+|--------------------|----------------|--------|
+| Acadia NP          |                |        |
+| Lassen Volcanic NP |                |        |
+| Saguaro NP         |                |        |
+| Yosemite NP        |                |        |
+| Mammoth Cave NP    |                |        |
+
 # Discussion & Activities
-
 :::
-
-
