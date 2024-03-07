@@ -1,10 +1,22 @@
 ---
 title: "National Park Visitation Data"
+listing:
+  id: exercise-posts
+  contents: exercises
+  exclude:
+    categories: "dataset"
+  sort: "date desc"
+  type: table
+  fields: [date, title, categories]
+  categories: false
+  sort-ui: false
+  filter-ui: true
+  image-height: 200px
 date: "2024-02-26"
 categories: [line-plots, data-collection, uncertainty]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
 toc: true
-toc-depth: 4
+toc-depth: 1
 format: 
   html: default
   ipynb: default
@@ -21,10 +33,12 @@ code-tools: true
 
 # National Park Visitation Data
 
-::: panel-tabset
-# Data Essay
 
-## Introduction
+::: {.panel-tabset .nav-pills}
+
+# Data Essay {#data-essay}
+
+## Introduction 
 
 This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation data for other park units, such as [national battlfieds, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
 
@@ -101,7 +115,7 @@ library(dplyr, warn = FALSE)
 np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv", stringsAsFactors = FALSE)
 
 ## Look at the structure of the dataset
-slice_sample(.data = np_data, n = 10)
+np_data %>% slice_sample(n = 10)
 ```
 
 The first four are self-explanatory: but why is the fifth labelled "RecreationVisits" rather than "Visits", or "Visitors"?
@@ -142,9 +156,11 @@ options(scipen = 999)
 # Filter down to Crater Lake National Park
 crater_lake <- np_data %>% filter(ParkName == "Crater Lake NP")
 
-# Visualise it
+# Visualize it
 ggplot(data = crater_lake) + 
-  geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[1]) +
+  geom_line(aes(x = 
+  Year, y = RecreationVisits), 
+  color = cb_palette[1]) +
   labs(title = "Crater Lake National Park Visits (1979 - Present)")
 
 ```
@@ -257,7 +273,7 @@ If we look at the visitation comments again, [what we see](https://irma.nps.gov/
 
 *Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time Have them go through public data and try to find proof the counts of 0 are "wrong"*
 
-# Explore the Data
+# Explore the Data  {#tabset-1-2}
 
 ```{ojs}
 //| echo: false
@@ -309,9 +325,23 @@ Inputs.table(search, {
 })
 ```
 
-# Exercises
+# Exercises  {#exercises}
 
-## Exercise 1 {#exercise-1}
+::: {.panel-tabset .nav-pills}
+
+# R
+
+:::{#exercise-posts}
+:::
+
+
+
+# Python
+:::
+
+# Discussion & Activities {#discussion-and-activities}
+
+## Activity 1 {#exercise-1}
 
 Devices breaking is inevitable - but as the different scales of the Carlsbad and Crater Lake outages indicate, they get *fixed* at different rates, in different locations. There are a lot of reasons for this, but some of the big ones might be geography and resources. The more remote a park, the harder it is to get a repair team to it---and the less-resourced a park, the lower the likelihood they have on-site repair teams, or are prioritised by the repair teams that can be dispatched.
 
@@ -324,6 +354,4 @@ Thinking about this, look at the locations of the following parks. Suppose that 
 | Saguaro NP         |                |        |
 | Yosemite NP        |                |        |
 | Mammoth Cave NP    |                |        |
-
-# Discussion & Activities
 :::

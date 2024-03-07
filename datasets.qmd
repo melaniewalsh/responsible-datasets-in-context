@@ -2,6 +2,8 @@
 title: "Datasets"
 listing:
   contents: posts
+  exclude:
+    categories: "exercise"
   sort: "date desc"
   type: default
   categories: numbered
