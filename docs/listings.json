@@ -3,13 +3,17 @@
     "listing": "/datasets.html",
     "items": [
       "/posts/np-data/index.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
+      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
       "/posts/gender-violence/index.html"
     ]
   },
   {
     "listing": "/posts/np-data/index.html",
     "items": [
-      "/posts/np-data/exercises/NP-Data-v2-AU23.html"
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
+      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   }
 ]
