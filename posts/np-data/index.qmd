@@ -33,12 +33,10 @@ code-tools: true
 
 # National Park Visitation Data
 
-
 ::: {.panel-tabset .nav-pills}
-
 # Data Essay {#data-essay}
 
-## Introduction 
+## Introduction
 
 This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation data for other park units, such as [national battlfieds, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
 
@@ -229,21 +227,17 @@ ggplot(data = rainier_data) +
 
 Once again, we see both a COVID-19 dropoff - but also a continued dropoff beyond that. [Looking at the visitation comments](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=MORA) explains why; flooding, fires and a blizzard drastically impeded the ability of people to get to the park, and the possibility of areas of the park opening at all.
 
-## Compensating for data
+## Compensating for data {#data-compensating}
 
 As all of this should suggest, NPS data is always somewhat approximate. Reductions in funding, damage to counting equipment, natural events, or simply the inevitably-fallible nature of *any* data collection means that data requires a certain amount of prediction, guesswork and massaging to look complete.
 
-Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2.
+Sometimes this leads to odd-looking decisions. For example: at Assateague Island National Seashore, there are two entrances (one in Maryland, and one in Virginia). At both entrances, they use a traffic counter to count vehicles. At both entrances, they get from vehicles to visitors by multiplying the number of vehicles by an estimate of how many people each vehicle contains. But at the Maryland entrance, that's 2.9. At the Virginia entrance, it's 3.2. We will talk about that more in [our second exercise](#exercise-2).
 
-## Exercise: compensating for data outages
 
-*Reader note: this exercise will direct students, on a group (or individual) basis, to the NPS index of how different parks calculate different multipliers and metrics, and ask them to log or note unusual or unexplained differences in how this is done.*
 
 ## Data decisions
 
 As well as multiplying up, there's also counting down: some parks register "zero" as the number of visitors they attracted in a year:
-
-## Look at the structure of the dataset
 
 ```{r}
 
@@ -273,7 +267,7 @@ If we look at the visitation comments again, [what we see](https://irma.nps.gov/
 
 *Reader note: in this exercise, users will try to use public data - twitter posts, flickr photos, etc, etc - to try and find situations where people are identifying themselves as being at a park that, officially, has 0 people present at that time Have them go through public data and try to find proof the counts of 0 are "wrong"*
 
-# Explore the Data  {#tabset-1-2}
+# Explore the Data {#tabset-1-2}
 
 ```{ojs}
 //| echo: false
@@ -325,16 +319,13 @@ Inputs.table(search, {
 })
 ```
 
-# Exercises  {#exercises}
+# Exercises {#exercises}
 
 ::: {.panel-tabset .nav-pills}
-
 # R
 
-:::{#exercise-posts}
+::: {#exercise-posts}
 :::
-
-
 
 # Python
 :::
@@ -355,3 +346,9 @@ Thinking about this, look at the locations of the following parks. Suppose that 
 | Yosemite NP        |                |        |
 | Mammoth Cave NP    |                |        |
 :::
+
+## Activity 2 {#exercise-2}
+
+In "[compensating for data]({#data-compensating})", we talked about how the NPS fills in missing data or approximates data with uncertain values (such as the number of people per car). This is necessary work, but it's also under-explained work in the examples we used - and it goes far beyond those examples.
+
+To see this in action, take a look at [the NPS page that documents park reports](https://irma.nps.gov/Stats/Reports/Park) and select a park. You'll see, with most of the parks, that one possible report covers "Visitor Use Counting Procedures". Open it, and look at how the NPS calculates visitors for that park; if you do this with multiple parks, you can see the (often-unexplained) variations between different parks' procedures.
