@@ -33,7 +33,7 @@ toc: false
 # Responsible Datasets in Context
 
 ```{=html}
-<a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this website on Github</a><script async defer src="https://buttons.github.io/buttons.js"></script>
+<a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this project on Github</a><script async defer src="https://buttons.github.io/buttons.js"></script>
 ```
 
 <br>
