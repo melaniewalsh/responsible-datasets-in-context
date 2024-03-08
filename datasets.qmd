@@ -3,7 +3,7 @@ title: "Datasets"
 listing:
   contents: posts
   exclude:
-    categories: "exercise"
+    categories: ["exercise", "solution"]
   sort: "date desc"
   type: default
   categories: numbered

@@ -32,6 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./responsible-logo-white.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,7 +70,65 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-datasets .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-datasets'] = new List('listing-datasets', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -134,17 +194,127 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
 
-<h1 id="website-under-construction">🚧 Website Under Construction 🚧</h1>
-<p>This website is currently under construction. Stay tuned for announcements about its official publication.</p>
-<h1 id="responsible-datasets-in-context">Responsible Datasets in Context</h1>
+<div id="hero-banner" class="column-screen page-columns page-full">
+<div class="grid column-page">
+<section id="responsible-datasets-in-context" class="headline g-col-lg-6 g-col-12 g-col-md-12">
+<h1>Responsible Datasets in Context</h1>
+<a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this website on Github</a><script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
+<p><br></p>
 <p>This website contains a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources.</p>
 <p>We dig into the <strong>social and historical context</strong> of each dataset, and we provide extensive documentation about the data’s <strong>provenance and limitations</strong>. We also include teaching resources for each dataset—such as <strong>programming exercises</strong>, <strong>discussion questions</strong>, <strong>lessons plans</strong>, and more—to enable their seamless integration into the classroom.</p>
 <p>By providing these contextual materials, we hope to promote the responsible use of these particular datasets for teaching, research, and general exploration. We also seek to promote the responsible use of data more broadly—whether in the classroom, industry, or the wider world—by underscoring the significance of context in all data-related work.</p>
+<p><br></p>
+</section>
+<div class="g-col-lg-6 g-col-12 g-col-md-12">
+<p><img src="responsible-logo.png" class="img-fluid"></p>
+<h1 id="website-under-construction">🚧 Website Under Construction 🚧</h1>
+<p>This website is currently under construction. Stay tuned for announcements about its official publication.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<hr>
+<h1 id="datasets">Datasets</h1>
+<div id="listing-datasets" class="quarto-listing quarto-listing-container-default">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="line-plots,data-collection,uncertainty" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709919750650" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3137">
+<div class="thumbnail">
+<p><a href="./posts/np-data/with-tabs.html" class="no-external"></a></p><a href="./posts/np-data/with-tabs.html" class="no-external">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./posts/np-data/with-tabs.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/np-data/with-tabs.html" class="no-external">National Park Visitation Data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/np-data/with-tabs.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/np-data/with-tabs.html" class="no-external">This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/np-data/with-tabs.html" class="no-external">
+<div class="listing-date">
+Feb 26, 2024
+</div>
+<div class="listing-author">
+Melanie Walsh and Os Keyes
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="line-plots,data-collection,uncertainty" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709921199739" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3127">
+<div class="thumbnail">
+<p><a href="./posts/np-data/index.html" class="no-external"></a></p><a href="./posts/np-data/index.html" class="no-external">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./posts/np-data/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/np-data/index.html" class="no-external">National Park Visitation Data</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/np-data/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/np-data/index.html" class="no-external">This dataset contains the number of visits, per year, to each of the 63 National Parks administered by the United States National Park Service (NPS), from 1979 to the…</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/np-data/index.html" class="no-external">
+<div class="listing-date">
+Feb 26, 2024
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="2" data-categories="missing-data,trauma,uncertainty,data-collection" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1709921363625" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="113">
+<div class="thumbnail">
+<p><a href="./posts/gender-violence/index.html" class="no-external"></a></p><a href="./posts/gender-violence/index.html" class="no-external">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png" class="thumbnail-image" style="height: 200px;"></p>
+</a><p><a href="./posts/gender-violence/index.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/gender-violence/index.html" class="no-external">Gender Violence at the Border</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/gender-violence/index.html" class="no-external"></a>
+</div>
+<div class="listing-description">
+<a href="./posts/gender-violence/index.html" class="no-external">These datasets include information about gender violence and feminicides at the U.S-Mexico Border.</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/gender-violence/index.html" class="no-external">
+<div class="listing-date">
+Feb 26, 2024
+</div>
+<div class="listing-author">
+Sylvia Fernández and Paulina Hernandez Trejo
+</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
 
 
 

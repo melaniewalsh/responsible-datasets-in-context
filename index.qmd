@@ -5,6 +5,17 @@ section-divs: false
 editor: source
 sidebar: true
 search: true
+listing:
+  id: datasets
+  contents: posts
+  exclude:
+    categories: ["exercise", "solution"]
+  sort: "date desc"
+  type: default
+  categories: false
+  sort-ui: false
+  filter-ui: true
+  image-height: 200px
 repo-actions: false
 description: | 
   Responsible Datasets in Context
@@ -12,14 +23,55 @@ description: |
 toc: false
 ---
 
-# 🚧 Website Under Construction  🚧 
+::: {#hero-banner .column-screen}
 
-This website is currently under construction. Stay tuned for announcements about its official publication. 
+:::: {.grid .column-page}
+
+::::: {.headline .g-col-lg-6 .g-col-12 .g-col-md-12}
+
 
 # Responsible Datasets in Context
+
+```{=html}
+<a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this website on Github</a><script async defer src="https://buttons.github.io/buttons.js"></script>
+```
+
+<br>
+
 This website contains a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources. 
 
 We dig into the **social and historical context** of each dataset, and we provide extensive documentation about the data's **provenance and limitations**. We also include teaching resources for each dataset—such as **programming exercises**, **discussion questions**, **lessons plans**, and more—to enable their seamless integration into the classroom.
 
 By providing these contextual materials, we hope to promote the responsible use of these particular datasets for teaching, research, and general exploration. We also seek to promote the responsible use of data more broadly—whether in the classroom, industry, or the wider world—by underscoring the significance of context in all data-related work.
+
+
+
+<br>
+
+
+:::::
+
+
+
+::::: {.g-col-lg-6 .g-col-12 .g-col-md-12}
+![](responsible-logo.png)
+
+# 🚧 Website Under Construction  🚧 
+
+This website is currently under construction. Stay tuned for announcements about its official publication. 
+:::::
+
+::::
+
+:::
+
+<br>
+
+
+---
+
+# Datasets
+
+::: {#datasets}
+:::
 

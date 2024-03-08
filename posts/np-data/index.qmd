@@ -1,5 +1,10 @@
 ---
 title: "National Park Visitation Data"
+format: 
+  html: default
+  ipynb: default
+  pdf: default
+  #r: default
 listing:
   id: exercise-posts
   contents: exercises
@@ -16,13 +21,14 @@ date: "2024-02-26"
 categories: [line-plots, data-collection, uncertainty]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
 toc: true
-toc-depth: 1
-format: 
-  html: default
-  ipynb: default
-  pdf: default
-  #r: default
-format-links: [ipynb, pdf]
+toc-title: ""
+toc-depth: 6
+sidebar: 
+  style: "docked"
+  collapse-level: 3
+  #alignment: left
+  #pinned: true
+format-links: [ipynb, pdf, docx]
 code-fold: true
 editor: visual
 df-print: kable
@@ -31,9 +37,6 @@ R.options:
 code-tools: true
 ---
 
-# National Park Visitation Data
-
-::: {.panel-tabset .nav-pills}
 # Data Essay {#data-essay}
 
 ## Introduction
@@ -345,10 +348,11 @@ Thinking about this, look at the locations of the following parks. Suppose that 
 | Saguaro NP         |                |        |
 | Yosemite NP        |                |        |
 | Mammoth Cave NP    |                |        |
-:::
 
 ## Activity 2 {#exercise-2}
 
 In "[compensating for data]({#data-compensating})", we talked about how the NPS fills in missing data or approximates data with uncertain values (such as the number of people per car). This is necessary work, but it's also under-explained work in the examples we used - and it goes far beyond those examples.
 
 To see this in action, take a look at [the NPS page that documents park reports](https://irma.nps.gov/Stats/Reports/Park) and select a park. You'll see, with most of the parks, that one possible report covers "Visitor Use Counting Procedures". Open it, and look at how the NPS calculates visitors for that park; if you do this with multiple parks, you can see the (often-unexplained) variations between different parks' procedures.
+
+

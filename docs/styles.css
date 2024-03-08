@@ -1,0 +1,29 @@
+.navbar-logo {
+    max-height: 60px;
+    width: auto;
+    padding-right: 4px;
+}
+
+.quarto-title-banner {
+    margin-bottom: 1em;
+    color: #000000;
+    background: #a2d58b;
+}
+
+.quarto-title-banner h1 {
+   
+    color: #000000;
+  
+}
+
+#hero-banner {
+    padding-top: 35px;
+    background-color: #a2d58b;
+    color: black;
+}
+
+.quarto-title-banner .code-tools-button {
+   
+    color: #000000;
+  
+}
