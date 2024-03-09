@@ -10,6 +10,7 @@ listing:
   contents: posts
   exclude:
     categories: ["exercise", "solution"]
+    title: "National Park Visitation Data"
   sort: "date desc"
   type: default
   categories: false
