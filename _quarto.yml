@@ -5,6 +5,11 @@ project:
 website:
   title: "Responsible Datasets in Context"
   favicon: responsible-logo-white.png
+  comments: 
+    hypothesis:
+      theme: clean
+      openSidebar: false
+      showHighlights: whenSidebarOpen
   navbar:
     logo: responsible-logo-white.png
     right:
