@@ -1,5 +1,21 @@
 [
   {
+    "listing": "/index.html",
+    "items": [
+      "/posts/top-500-novels/top-500-novels.html",
+      "/posts/np-data/with-tabs.html",
+      "/posts/gender-violence/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/np-data/with-tabs.html",
+    "items": [
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
+      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
+    ]
+  },
+  {
     "listing": "/posts/top-500-novels/top-500-novels.html",
     "items": [
       "/posts/top-500-novels/exercises/Intro-to-DPLYR-NP.html"
@@ -7,22 +23,6 @@
   },
   {
     "listing": "/posts/np-data/index.html",
-    "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
-      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
-    ]
-  },
-  {
-    "listing": "/posts/np-data/np-data.html",
-    "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
-      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
-    ]
-  },
-  {
-    "listing": "/posts/np-data/with-tabs.html",
     "items": [
       "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",

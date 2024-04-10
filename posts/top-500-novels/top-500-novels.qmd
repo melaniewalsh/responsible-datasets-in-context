@@ -52,13 +52,15 @@ This dataset contains information on the top 500 novels most widely held in libr
 
 Inputs.table(search, {
   layout: "fixed",
-  rows: 10,
-  sort: "Year",
-  reverse: true,
+  rows: 50,
+  sort: "top_500_rank",
+  reverse: false,
   format: {
     /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+    pub_year: x => d3.timeFormat(x),
+    author_birth: x => d3.timeFormat(x),
+    author_death: x => d3.timeFormat(x),
+    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
   }
 })
 ```
@@ -284,7 +286,7 @@ Although each library or library system usually has its own browsing website, th
 ```{ojs}
 //| echo: false
 //| output: false
-library_data = d3.csv("https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/top-500-novels/library_top_500%20-%20fields_for_full_dataset.csv", d3.autoType)
+library_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv", d3.autoType)
 
 use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
 ```
@@ -304,7 +306,7 @@ filtered = library_data.filter(function(penguin) {
 //| echo: false
 color = d3
   .scaleLinear()
-  .domain([0, 3, 5])
+  .domain([0, 100, 300])
   .range(["#cafcc2", "#fce7c2", "#eb9494"])
 ```
 <br>
@@ -328,50 +330,19 @@ viewof search = Inputs.search(library_data, {
 Inputs.table(search, {
   layout: "fixed",
   rows: 50,
-  sort: "Year",
-  reverse: true,
+  sort: "top_500_rank",
+  reverse: false,
   format: {
     /*RecreationVisits: x => d3.format('.2s')(x),*/
     pub_year: x => d3.timeFormat(x),
-    gr_avg_rating: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+    author_birth: x => d3.timeFormat(x),
+    author_death: x => d3.timeFormat(x),
+    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
   }
 })
 ```
 
-<a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
-
-## U.S. National Park Use (Monthly) — 1979-2023
-
-```{ojs}
-//| echo: false
-viewof use_search = Inputs.search(use_data, {
-  placeholder: "Search"
-})
-```
-
-<br>
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(use_search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-<a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv" download class="btn btn-outline-primary btn" role="button" >
+<a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv" download class="btn btn-outline-primary btn" role="button" >
 Download Data <i class="bi bi-download"></i>
  </a>
 
