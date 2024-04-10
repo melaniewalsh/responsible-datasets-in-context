@@ -129,7 +129,7 @@ To get started, let's load the dataset and examine a random sample of rows.
 library(dplyr, warn = FALSE)
 
 # Load National Park Visitation data
-np_data <- read.csv("https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", stringsAsFactors = FALSE)
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", stringsAsFactors = FALSE)
 
 ## Look at the structure of the dataset, randomly sample 10 rows
 np_data %>% slice_sample(n = 10)

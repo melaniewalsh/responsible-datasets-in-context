@@ -398,7 +398,7 @@ Figure&nbsp;2: 2021 report on NPS economic impact // <a href="https://www.nps.go
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset, randomly sample 10 rows</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>np_data <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -417,74 +417,74 @@ Figure&nbsp;2: 2021 report on NPS economic impact // <a href="https://www.nps.go
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Arches NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">UT</td>
+<td style="text-align: right;">2013</td>
+<td style="text-align: right;">1082866</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">North Cascades NP</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">WA</td>
+<td style="text-align: right;">2011</td>
+<td style="text-align: right;">19208</td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">Everglades NP</td>
 <td style="text-align: left;">Southeast</td>
 <td style="text-align: left;">FL</td>
-<td style="text-align: right;">2017</td>
-<td style="text-align: right;">1018557</td>
+<td style="text-align: right;">1983</td>
+<td style="text-align: right;">577439</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Voyageurs NP</td>
-<td style="text-align: left;">Midwest</td>
-<td style="text-align: left;">MN</td>
-<td style="text-align: right;">1987</td>
-<td style="text-align: right;">201727</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Saguaro NP</td>
+<td style="text-align: left;">Mesa Verde NP</td>
 <td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">AZ</td>
-<td style="text-align: right;">1987</td>
-<td style="text-align: right;">689933</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Cuyahoga Valley NP</td>
-<td style="text-align: left;">Midwest</td>
-<td style="text-align: left;">OH</td>
-<td style="text-align: right;">1996</td>
-<td style="text-align: right;">3455878</td>
+<td style="text-align: left;">CO</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">516865</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cuyahoga Valley NP</td>
-<td style="text-align: left;">Midwest</td>
-<td style="text-align: left;">OH</td>
-<td style="text-align: right;">1980</td>
-<td style="text-align: right;">563300</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Denali NP &amp; PRES</td>
+<td style="text-align: left;">Glacier Bay NP &amp; PRES</td>
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: left;">AK</td>
-<td style="text-align: right;">1993</td>
-<td style="text-align: right;">505565</td>
+<td style="text-align: right;">1984</td>
+<td style="text-align: right;">108297</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Indiana Dunes NP</td>
+<td style="text-align: left;">Midwest</td>
+<td style="text-align: left;">IN</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">1833596</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Channel Islands NP</td>
+<td style="text-align: left;">Glacier Bay NP &amp; PRES</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">252265</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rocky Mountain NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">CO</td>
+<td style="text-align: right;">2003</td>
+<td style="text-align: right;">3067256</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Guadalupe Mountains NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: right;">1999</td>
+<td style="text-align: right;">219591</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pinnacles NP</td>
 <td style="text-align: left;">Pacific West</td>
 <td style="text-align: left;">CA</td>
-<td style="text-align: right;">2021</td>
-<td style="text-align: right;">319252</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Carlsbad Caverns NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">NM</td>
-<td style="text-align: right;">2007</td>
-<td style="text-align: right;">409560</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Rocky Mountain NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">CO</td>
-<td style="text-align: right;">2018</td>
-<td style="text-align: right;">4590493</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Rocky Mountain NP</td>
-<td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">CO</td>
-<td style="text-align: right;">1998</td>
-<td style="text-align: right;">3035422</td>
+<td style="text-align: right;">1997</td>
+<td style="text-align: right;">171971</td>
 </tr>
 </tbody>
 </table>
@@ -654,20 +654,6 @@ Activity 1
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">National Park of American Samoa</td>
-<td style="text-align: left;">Pacific West</td>
-<td style="text-align: left;">AS</td>
-<td style="text-align: right;">2003</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kobuk Valley NP</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2015</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Katmai NP &amp; PRES</td>
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: left;">AK</td>
@@ -679,6 +665,20 @@ Activity 1
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: left;">AK</td>
 <td style="text-align: right;">2014</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Kobuk Valley NP</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">2015</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">National Park of American Samoa</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">AS</td>
+<td style="text-align: right;">2003</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -1618,7 +1618,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset, randomly sample 10 rows</span></span>
 <span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>np_data <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span>
