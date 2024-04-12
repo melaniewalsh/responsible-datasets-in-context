@@ -80,20 +80,17 @@ The dataset was created by Anna Preus and Aashna Sheth, who are also the authors
 
 ## **HISTORY**
 
-To start, what is a novel? Today, novels are so prevalent that the term is often applied to a much wider range of books than it actually describes. “Novel” is an umbrella term that applies to works of longform fiction in a range of genres: romance, sci-fi, historical fiction, horror, detective fiction, westerns, etc. The term generally does not apply– although these distinctions can sometimes be fuzzy–to short fiction, poetry, plays, biographies, or other non-fiction forms. The term novel was first used to describe a “long fictional prose narrative” [in the 1600s](https://www.oed.com/dictionary/novel_n?tab=meaning_and_use#34331062), and the form increased in popularity across the eighteenth and nineteenth centuries. Interestingly, OCLC’s list of top 500 novels extends much further back than this. The oldest work on the list is _The Tale of Genji_, a classic work of Japanese literature written over 1,000 years ago.
+To start, what is a novel? Today, novels are so prevalent that the term is often applied to a much wider range of books than it actually describes. “Novel” is an umbrella term for works of longform fiction in a range of genres: romance, sci-fi, historical fiction, horror, detective fiction, westerns, etc. The term generally does not apply–although these distinctions can sometimes be fuzzy–to short fiction, poetry, plays, biographies, or other non-fiction forms. The word “novel” was first used to describe a “long fictional prose narrative” in the 1600s, and the form increased in popularity across the eighteenth and nineteenth centuries. Interestingly, OCLC’s list of top 500 novels extends much further back than this. The oldest work on the list is *The Tale of Genji*, a classic work of Japanese literature written over 1,000 years ago.
 
 A key issue in literary studies is which books from the past we continue to read in the present, and which books from the present we will continue to read in the future. The vast majority of novels fall out of circulation shortly after they are published, quickly becoming part of what Margaret Cohen has called “the great unread.” When teachers assign texts in their classes and when literary scholars conduct research, they’re making choices about which texts continue to be valuable and important for people to read and study. 
 
-The term “canon” in literary studies refers to texts that continue to be considered important over time. Ankhi Mukherjee defines the canon as “a set of texts whose value and readability have borne the test of time” and notes that it “ involves not merely a work’s admission into an elite club, but its induction into ongoing critical dialogue and contestations of literary value.” Canonical works continue to be read, taught, and discussed, and in popular terminology they’re often considered “classics.” These are works you might read in a high school English class: F. Scott Fitzgerald’s _The Great Gatsby, _for example, or Harper Lee’s _To Kill a Mockingbird. _
+The term “canon” in literary studies refers to texts that continue to be considered important over time. Ankhi Mukherjee defines the canon as “a set of texts whose value and readability have borne the test of time” noting that this “ involves not merely a work’s admission into an elite club, but its induction into ongoing critical dialogue and contestations of literary value.” Canonical works continue to be read, taught, and discussed, and in popular terminology they’re often considered “classics.” These are works you might read in a high school English class: F. Scott Fitzgerald’s *The Great Gatsby*, for example, or Harper Lee’s *To Kill a Mockingbird*. 
 
-One of the things that defines a classic is the fact that it stays in print for a long period of time. When a print book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years. If it becomes a classic, it is likely to be issued in dozens or hundreds of editions even long after the author’s death. 
+One of the things that defines a classic is the fact that it stays in print for a long period of time. When a book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years, and edited repeatedly by different scholars across time. If it becomes a classic, it is likely to be issued in dozens or hundreds of editions even long after the author’s death. 
 
-In addition to classics, libraries are invested in making popular new novels available to readers. The Top 500 list includes many recently published best-sellers, including books in the _Harry Potter_, _Twilight_, and _Hunger Games_ series. Some of these popular books go on to become classics–Charles Dickens’s _Great Expectations_, which was wildly successful in its day, is a good example. Many popular texts, though, do not become canonical. 
+In addition to classics, libraries are invested in making popular new novels available to readers. The Top 500 list includes many recently published best-sellers, including books in the *Harry Potter*, *Twilight*, and *Hunger Games* series. Some highly popular books go on to become classics–Charles Dickens’s *Great Expectations*, which was wildly successful in its day, is a good example. Many popular texts, though, do not become canonical. 
 
-By focusing on the books that librarians around the world have chosen to continue to make available to readers, OCLC was able to create a list of widely read novels that includes both classic works and more recent, popular works that may not have received the same levels of literary acclaim. This represents a unique opportunity to look at…. 
-
-We wondered, though, how did OCLC’s data compare to other potential indicators of popularity or canonicity? And, for that matter, how was the list actually constructed?
-
+By focusing on the books that librarians around the world have chosen to continue to make available to readers, OCLC was able to create a list of widely read novels that includes both classic works and more recent, popular works that may not have received the same levels of literary acclaim. We wondered, though, how did OCLC’s data compare to other potential indicators of popularity or canonicity? And, for that matter, how was the list actually constructed?
 
 ## **WHERE DID THE DATA COME FROM? WHO COLLECTED IT?**
 
@@ -107,7 +104,7 @@ Building on this list, we compiled data from a number of other databases, includ
 OCLC’s goal in producing the Top 500 list seems to be to encourage library patronage and reading. The website for the list includes a “Librarians Kit” with a variety of publicity materials–from printable bookmarks to Instagram tiles-that can help bring attention to books in the Top 500 list within libraries’ collections. 
 
 `Need to link to local image file or to image URL`
-`![alt_text](images/image1.png "image_tooltip")`
+`![alt_text](top_500_kit.png "image_tooltip")`
 
 
 Our goal was to collect additional data to understand better how the list was constructed, and to contextualize and nuance its claims about literary greatness.
@@ -123,9 +120,9 @@ The Top 500 list represents a massive data extraction and analysis effort on the
 
   > The Library 100 is based on the total number of holdings for a specific novel across all libraries that have registered that information in WorldCat. When a library tells OCLC, “We have a copy of that book available,” that counts as a holding, and in the case of The Library 100, counts as +1 toward its ranking on the list.
 
-This process initially sounds straightforward: to create the Top 500 list, the OCLC team presumably searched the title of a work, counted the number of libraries that held each title, and published the first 500. But it turns out it’s actually much more complicated than that. In WorldCat, records are stored by edition, meaning that each edition has its own catalog record, and an individual title like, say, Miguel de Cervantes’s _Don Quixote_, may have been released in hundreds or thousands of editions since its initial publication. In the U.S., the most common format for digital library records is MARC, which stands for MAchine Readable Cataloging. Librarians with specialized training create detailed MARC records for each edition of a book, and librarians at public libraries, academic libraries, cultural heritage institutions, and private collections tag individual copies of the book that their library holds to that record. 
+This process initially sounds straightforward: to create the Top 500 list, the OCLC team presumably searched the title of a work, counted the number of libraries that held each title, and published the first 500. But it turns out it’s actually much more complicated than that. In WorldCat, records are stored by edition, meaning that each edition of a particular title has its own catalog record. An individual title like, say, Miguel de Cervantes’s *Don Quixote*, may have been released in hundreds or thousands of editions since its initial publication. 
 
-This means that when developing the list, the OCLC team actually had to find all the editions of a specific title and sum the number of libraries that hold that edition across all editions. **Thus the top 500 list is not only a representation of how many libraries carry the work, but a representation of how many times a book has been re-edited and re-issued; the more editions a book has, the more records are created.** Often, there are duplicate records for individual editions, which may affect the overall count of copies tallied by the OCLC. And when a work is translated into different languages, all the editions of all the translations are also recorded in WorldCat, which also figures into the count of total holdings for each novel. 
+This means that when developing the list, the OCLC team actually had to find all the editions of a specific title and sum the number of libraries that hold that edition across all editions. **Thus the top 500 list is not only a representation of how many libraries carry the work, but a representation of how many times a book has been re-edited and re-issued; the more editions a book has, the more records are created and the more copies of a book a library may hold.** Often, there are duplicate records for individual editions, which may affect the overall count of copies tallied by the OCLC. And when a work is translated into different languages, all the editions of all the translations are also recorded in WorldCat, which also figures into the count of total holdings for each novel. 
 
 
 ##  **HOW WAS THE DATA COLLECTED? WHAT ADDITIONAL DATA WAS ADDED?**
@@ -138,7 +135,7 @@ We wanted to contextualize the Library Top 500 list by compiling additional info
 
 
 `Need to link to local image file or to image URL`
-`![alt_text](images/image2.png "image_tooltip")`
+`![alt_text](viaf_example.png "image_tooltip")`
 
 
 **Wikipedia: **we used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.
@@ -150,78 +147,219 @@ We wanted to contextualize the Library Top 500 list by compiling additional info
 Our work creating this dataset not only builds on the work of the OCLC team who compiled the Top 500 list, but on the labor of the thousands of librarians who created records held in WorldCat and VIAF, of the volunteers who transcribed texts for Project Gutenberg and wrote articles for Wikipedia, and of the social media users who reviewed and rated books on Goodreads. 
 
 
-## **ACKNOWLEDGING BIAS [METADATA ANALYSIS?]**
+## **ACKNOWLEDGING BIAS**
 
-The Top 500 List provides an unprecedented opportunity to consider what works libraries around the world have on their shelves. This, in turn, serves as an important indicator of books’ continued relevance to readers. As OCLC points out, “libraries offer access to trendy and popular books. But, they don’t keep them on the shelf if they’re not repeatedly requested by their communities over the years.” Looking at what novels are held by the most libraries provides a sense of which works librarians consider important to continue to make available to readers.
+The Top 500 List provides an unprecedented opportunity to consider what works libraries around the world have on their shelves. This, in turn, serves as an important indicator of books’ continued relevance to readers. As OCLC points out, “libraries offer access to trendy and popular books. But, they don’t keep them on the shelf if they’re not repeatedly requested by their communities over the years.” 
 
-At the same time, there are distinct biases in what gets kept on library shelves, and in which library shelves are being considered. The libraries that OCLC works with are disproportionately located in Europe and North America and OCLC uses cataloging systems developed in English-language contexts. The list is distinctly skewed toward works by White, European and American men, as is English literary history, but it would be impossible[difficult?] to tease apart this historical bias from potential compounding biases in WorldCat’s underlying data, the data collection process, or library cataloging systems more broadly.
+At the same time, there are biases in what gets kept on library shelves, and in which library shelves are being considered. The libraries that OCLC works with are disproportionately located in Europe and North America and OCLC uses cataloging systems developed in English-language contexts. The list is distinctly skewed toward works by White, European and American men, as is much of the history of English literary production, but it is also difficult to tease apart this historical bias from potential compounding biases in the underlying data, in the data collection process, or in library cataloging systems more broadly.
 
-OCLC acknowledges broad biases in the list in a section titled, “Why isn’t the list more diverse?”writing, “The list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.” Although OCLC acknowledges this general bias towards works considered classics, more specific forms of bias aren’t made apparent in the list itself, which only includes the title and author for each novel. 
+OCLC acknowledges broad biases in the list in a section titled, “Why isn’t the list more diverse?” writing, “The list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.” Although OCLC acknowledges this general bias towards works considered classics, more specific forms of bias aren’t made apparent in the list itself, which only includes the title and author for each novel. 
 
 `Need to link to local image file or to image URL`
-`![alt_text](images/image3.png "image_tooltip")`
-
+`![alt_text](top_ten_complete_500.png "image_tooltip")`
 
 Each of these works and authors, of course, deserves careful consideration in their own right, but by compiling additional information into dataset, we can begin to see some of these biases as well as trends across the list more clearly.
 
-[ Metadata analysis prompts?
-
-Over 85% of the novels on the top 500 list were originally published in English
-
-Over 80% were written by authors from the U.S. or Great Britain
-
-Over 70% were written by men]
-
-We collected this data because we were interested in contextualizing the top 500 list. The top 500 list itself was compiled because… It is used….. We hope that our dataset will be used like…
-
-
-* Reinforces what books are read (people pay more attention to the books that are labeled as “top 500”), could overshadow other important books
-* OCLC put out this list to encourage publicity / reading. Wasn’t made for academics to use!
-
-## **WHAT’S IN THE DATA? WHAT MAKES A BOOK A “TOP NOVEL”? [Metadata Analysis?]**
-
+## **WHAT’S IN THE DATA? WHAT MAKES A BOOK A “TOP NOVEL”?**
 
 By building on OCLC’s initial list and adding a range of information from other databases, we wanted to create a dataset that would offer opportunities to connect metadata analysis and full-text analysis in relation to a historically significant corpus of texts. To this end, we’ve included a brief exploration of the data below, as well as suggested activities, and some ideas for future areas of inquiry.
 
-For starters, let’s look into some author metadata. Who is represented in the most popular works and what may this reveal about literary canonization?
+We split up our analysis into three portions: metadata analysis, rank analysis, and full-text analysis. You can follow our analysis in the notebook [here](https://drive.google.com/file/d/1gnina8FoyERuin3sDW57GoKh2d6ew1Mt/view?usp=sharing). We first ask questions about the authors represented in the current top 500 list. Then, we compare rankings based on editions, holdings, and GoodReads popularity with the top 500 list. In [another notebook](https://drive.google.com/file/d/1FgPq4nDUmqsaWBkYMEfDEb1OPFuqOYGi/view?usp=sharing), we analyze the full text of works split up by genre.
 
-1. Author Gender
-2. Which author names are most represented
-3. Author Map
-4. Number of books in each time period (buckets for 1800-1900, 1900-2000, etc).
-5. Rank vs number of editions 
-6. Author languages/language of books?
+## **METADATA ANALYSIS**
+
+Let's start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.
+
+```{Python}
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df = pd.read_csv("final_merged_dataset_no_full_text.tsv", sep='\t', header=0, low_memory=False)
+```
+Now, we can answer various questions using this structure, which we've named `df`.
+
+For example, let's look at counts related to author gender and name.
+
+```{Python}
+df["author_gender"].value_counts()
+```
+We see that about 70% of authors on the list are male and 30% are female.
+
+```{Python}
+df["author"].value_counts().head(10)
+```
+Above are the top 10 authors and the number of times they appear. John Grisham appears a stunning 19 times!
+
+Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.
+
+```{Python}
+import numpy as np
+
+bins = np.arange(1000, 2060, 50)
+bars = df['pub_year'].plot.hist(bins=bins, edgecolor='w')
+plt.xticks(rotation='vertical');
+plt.xticks(bins);
+```
+We can see that most books on the list were published between 1950 and 2000. Let's take a look at information about the oldest and newest books on the list.
+
+```{Python}
+from IPython.display import display
+
+print("Oldest Book(s):")
+display(df[df["pub_year"]==df["pub_year"].min()])
+print("Newest Book(s):")
+display(df[df["pub_year"]==df["pub_year"].max()])
+```
+Let's take a look at where the authors are from!
+
+```{Python}
+df["author_nationality"].value_counts().head(5)
+```
+Finally, let's unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?
+
+For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.
+
+```{Python}
+def top_5_comparison(col_name):
+  print(df[["title", "author", "top_500_rank", col_name]].head(5))
+
+  sorted = df.sort_values(by=[col_name])
+  print(sorted[["title", "author", "top_500_rank", col_name]].head(5))
+
+top_5_comparison("gr_num_ratings_rank")
+```
+
+Above you can see that the GoodReads rankings and the top 500 rankings aren't very aligned! What factors affect popularity on GoodReads compared to OCLC?
+
+```{Python}
+import math
+
+def print_rankings(d, col_name):
+    rank_B = d[col_name]
+    rank_A = d["top_500_rank"]
+    title = d["title"]
+    points_moved = 0
+    if (math.isnan(rank_B)):
+      points_moved = 501
+    else:
+      if rank_B > int(rank_A):
+          points_moved = rank_B - rank_A
+          print(f"\u001b[31m ▼ -{int(points_moved)} {title}")
+      elif rank_B < rank_A:
+          points_moved = rank_A - rank_B
+          print(f"\u001b[32m ▲ +{int(points_moved)} {title}")
+      else:
+          print(f"\u001b[30m ● {int(points_moved)} {title}")
+    d["points_moved"] = int(points_moved)
+    return d
+
+df = df.apply(lambda d: print_rankings(d, "gr_num_ratings_rank"), axis=1)
+```
+
+Let's see which novels had the most movement up or down!
+
+```{Python}
+sorted = df.sort_values(by=['points_moved'])
+print(sorted[["title", "author", "points_moved", "top_500_rank", "gr_num_ratings_rank"]].head(10).to_string(index=False))
+
+sorted = df.sort_values(by=['points_moved'], ascending=False)
+print(sorted[["title", "author", "points_moved", "top_500_rank", "gr_num_ratings_rank"]].head(10).to_string(index=False))
+```
+
+Above we see that Steinbeck's *The Winter of Our Discontent*, stayed at the same ranking of 397. *Pride and Prejudice* remained quite high as well.
+
+*20,000 Leagues Under the Sea* dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! *Harry Potter and The Half-Blood Prince* and *The Sea of Monsters* rose the most.
+
+df['points_moved'].mean()
+
+```{Python}
+df['points_moved'].mean()
+```
+
+Let's take a look at some of these metrics for rankings based on number of editions and total holdings.
+
+```{Python}
+df = df.apply(lambda d: print_rankings(d, "oclc_editions_rank"), axis=1)
+
+df = df[df["points_moved"] <= 500]
+top_5_comparison("oclc_editions_rank")
+
+df['points_moved'].mean()
+smaller_df = df.head(10)
+smaller_df['points_moved'].mean()
+
+df = df.apply(lambda d: print_rankings(d, "oclc_holdings_rank"), axis=1)
+
+top_5_comparison("oclc_holdings_rank")
+
+df['points_moved'].mean()
+smaller_df = df.head(10)
+smaller_df['points_moved'].mean()
+```
+Comparing the average points of movement between the top 500 and 3 other ranking lists, we can see that the novels moved the least when compared to the number of holdings ranking (45 pts). Novels were 2x more likely to move positions when compared to the number of editions ranking (82 pts) and 3x more likely to move when compared to GoodReads rankings (137 pts).
+
+<TODO: how to show significant relationship between num holdings, top 500 and num holdings, num editions, but NOT goodreads?>
+
+Within the top 10 rankings specifically, only 2 books were not the same when compared to number of holdings, 4 books were not the same when compared to editions rankings, and 9 books were not the same when compared to GoodReads rankings.
+
+## **FULL-TEXT ANALYSIS**
+
+Now we can look at the `final_merged_dataset.tsv` file, which also includes the full-text of all the novels on the list that are in the public domain. We will be working with the  `full_text` column, which is a cleaned version of each book.
+
+```{Python}
+import pandas as pd
+import requests
+import re
+from bs4 import BeautifulSoup
+import random
+```
+
+Let's start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.
+
+The type-token ratio is a simple expression that calculates # of unique words / total words in a selection. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.
+
+It's helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we're converting all the information in the column "text" into a list.
+
+```{Python}
+def get_ttr(text):
+  if (pd.isnull(text)):
+    return 1.1 # a ratio greater than 1 is impossible, so we won't count these when doing our averages
+  else:
+    text = text.lower()
+    punctuations = "-,.?!;#: \n\t"
+    no_punct = text.strip(punctuations)
+    tokens = text.split()
+
+    trial = 0
+    avg_ttr = 0
+    while (trial < 10):
+      random_token_num = random.randrange(0, len(tokens)-1000)
+      sample = tokens[random_token_num:(random_token_num+1000)]
+      trial += 1
+      avg_ttr += float(len(set(sample)))/1000
+
+    return avg_ttr/10
+
+    import csv
+
+df = pd.read_csv("final_merged_dataset.tsv", sep='\t', header=0, low_memory=False)
+df["ttr"] = df["full_text"].apply(get_ttr)
+
+cleaned = df[df["ttr"] <= 1] # drop all rows where ttr is not applicable
+grouped = cleaned.groupby('genre')
+avg_ttr = grouped["ttr"].mean().sort_values(ascending=False)
+print(avg_ttr)
+
+sorted = cleaned.sort_values(by=['ttr'], ascending=False)
+print(sorted[["title", "author", "ttr", "genre"]].head(10).to_string(index=False))
+```
+
 
 ::: {.callout-tip}
 ## Activity 1
 
-    &lt;**Activity** about looking into what “unnamed gender” may mean and discussion about power of labels?> For more, see [Activity 1](#exercise-1).
+    &lt;**Activity** looking into the original languages of novels in the dataset?> For more, see [Activity 1](#exercise-1).
 :::
-
-
-From our initial metadata analysis, we find that canonized works are those that are (1) written by white men, (2) primarily between 1900-2000, (3) primarily of x genre, and (4) have at least x editions.
-
-Let’s take a look at how OCLC books stack up against GoodReads rankings.
-
-
-**Activity** about whether num_ratings or average_rating would be better to use. What factors affect them?>
-
-We decide to use num_ratings as a fair comparison against OCLC num_libraries. Do the number of copies really match the number of people that check it out and read it, at least according to goodreads?
-
-
-
-1. Look at top 5 goodreads num_ratings vs top 5 oclc
-2. Stock chart of books that moved up and down
-
- **Activity:** Which books had the most movement? Which had the least? Are there any trends?>
-
-
-    *ebook vs on shelf, translations into english or other languages
-
-
-Now that we’ve explored questions of representation and popularity, let’s dive into some full text analysis.
-
-**THIS IS VERY TBD**
 
 
 ## **CONCLUSION**
@@ -230,35 +368,6 @@ Text text.
 
 
 
-* Goodreads data is skewed towards younger users (average goodreads demographic), and people who actually rate (also younger people)
-* Relating goodreads num ratings is similar to how many libraries… how many libraries is inadvertently trying to measure, how many people read it ?
-    * “How many libraries have the book on their shelves”
-    * But there is a gap between publishing proliferation (canonization) and true popularity (people reading it).
-    * [https://www.tckpublishing.com/the-literary-canon/](https://www.tckpublishing.com/the-literary-canon/) 
-
-QUESTIONS:
-
-
-
-* Fighting words
-* Genres
-* Activities in laid with data essay? What do we wanna have as exercise and what in metadata analysis?
-
-Possible activities:
-
-
-
-1. Let’s plot gender information, we see this 3rd category, what do you think it represents?
-    1. Refer back to data, look up the history of a couple authors tagged with this? Make a point about how labels are important to provide context and can also be diminishing/obscuring/normative
-2. Goodreads: 
-    2. What factors affect popularity on goodreads? Why do you think the top5 books are so different?
-    3. Who liked vs number of ratings? What’s the difference? What’s fair to compare with OCLC?
-    4. Which books had the largest change in ranking? What do you think this means?
-    5. Incorporating voyant 
-
-Cut from history section:
-
-Libraries keep records of the works they hold in their collections, and they create and organize these records in accordance with particular cataloging systems. Historically, these catalogs have been drawers of physical cards containing information about each book. 
 
 
 <p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
@@ -273,11 +382,6 @@ Libraries keep records of the works they hold in their collections, and they cre
 `![alt_text](images/image5.png "image_tooltip")`
 
 
-When data storage on computers became powerful and popular in the mid-to-late 1900s, these cards were re-written to meet the MAchine Readable Cataloging (MARC) format. This format made it easier to digitize and standardize physical cards. Once a book’s MARC record was online, libraries could print and distribute the same card.
-
-Later on, as libraries gained personal computers, the physical cards themselves became obsolete and patrons could search an online database for book information. The contents of the LOC’s MARC record database are the foundation of modern library browsing systems. The contents of the MARC record help populate a webpage about each book. Nowadays, more information is added to these webpages like reviews, star-ratings, and even some digitized pages.
-
-Although each library or library system usually has its own browsing website, there are key central entities that contain information from many libraries. The current largest global database of library information  is called WorldCat, which is maintained by OCLC and allows for searching across 2.7 billion records from libraries in over 100 countries. 
 
 
 # Explore the Data {#tabset-1-2}
