@@ -3,7 +3,7 @@ title: "Library Top 500"
 author: Anna Preus and Aashna Sheth
 format: 
   html: default
-  ipynb: default
+  #ipynb: default
   pdf: default
   #docx: default
   #r: default
@@ -26,12 +26,11 @@ toc: true
 toc-depth: 5
 sidebar: 
   contents: auto
-format-links: [ipynb, pdf, docx]
+format-links: [pdf, docx]
 code-fold: true
 editor: visual
 df-print: kable
-R.options:
-  warn: false
+jupyter: python3
 code-tools: true
 bibliography: references.bib
 ---
@@ -65,7 +64,7 @@ Inputs.table(search, {
 })
 ```
 
- <a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv" download class="btn btn-outline-primary btn" role="button" >
+ <a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.cs" download class="btn btn-outline-primary btn" role="button" >
 Download Data <i class="bi bi-download"></i>
  </a>
 
@@ -103,8 +102,8 @@ Building on this list, we compiled data from a number of other databases, includ
 
 OCLC’s goal in producing the Top 500 list seems to be to encourage library patronage and reading. The website for the list includes a “Librarians Kit” with a variety of publicity materials–from printable bookmarks to Instagram tiles-that can help bring attention to books in the Top 500 list within libraries’ collections. 
 
-`Need to link to local image file or to image URL`
-`![alt_text](top_500_kit.png "image_tooltip")`
+
+![alt_text](top_500_kit.png "image_tooltip")
 
 
 Our goal was to collect additional data to understand better how the list was constructed, and to contextualize and nuance its claims about literary greatness.
@@ -133,10 +132,7 @@ We wanted to contextualize the Library Top 500 list by compiling additional info
 
 **VIAF: **The Virtual International Authority File is an OCLC-run database that contains structured records–called “name authority files”–for individual authors and creators. We used VIAF to gather information on authors whose novels were included on the list, including their birth and death dates, nationalities, genders, and occupations.
 
-
-`Need to link to local image file or to image URL`
-`![alt_text](viaf_example.png "image_tooltip")`
-
+![alt_text](viaf_example.png "image_tooltip")
 
 **Wikipedia: **we used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.
 
@@ -155,8 +151,8 @@ At the same time, there are biases in what gets kept on library shelves, and in 
 
 OCLC acknowledges broad biases in the list in a section titled, “Why isn’t the list more diverse?” writing, “The list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.” Although OCLC acknowledges this general bias towards works considered classics, more specific forms of bias aren’t made apparent in the list itself, which only includes the title and author for each novel. 
 
-`Need to link to local image file or to image URL`
-`![alt_text](top_ten_complete_500.png "image_tooltip")`
+
+![alt_text](top_ten_complete_500.png "image_tooltip")
 
 Each of these works and authors, of course, deserves careful consideration in their own right, but by compiling additional information into dataset, we can begin to see some of these biases as well as trends across the list more clearly.
 
@@ -170,29 +166,29 @@ We split up our analysis into three portions: metadata analysis, rank analysis, 
 
 Let's start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.
 
-```{Python}
+```{python}
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("final_merged_dataset_no_full_text.tsv", sep='\t', header=0, low_memory=False)
+df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv", sep=',', header=0, low_memory=False)
 ```
 Now, we can answer various questions using this structure, which we've named `df`.
 
 For example, let's look at counts related to author gender and name.
 
-```{Python}
+```{python}
 df["author_gender"].value_counts()
 ```
 We see that about 70% of authors on the list are male and 30% are female.
 
-```{Python}
+```{python}
 df["author"].value_counts().head(10)
 ```
 Above are the top 10 authors and the number of times they appear. John Grisham appears a stunning 19 times!
 
 Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.
 
-```{Python}
+```{python}
 import numpy as np
 
 bins = np.arange(1000, 2060, 50)
@@ -202,7 +198,7 @@ plt.xticks(bins);
 ```
 We can see that most books on the list were published between 1950 and 2000. Let's take a look at information about the oldest and newest books on the list.
 
-```{Python}
+```{python}
 from IPython.display import display
 
 print("Oldest Book(s):")
@@ -212,14 +208,14 @@ display(df[df["pub_year"]==df["pub_year"].max()])
 ```
 Let's take a look at where the authors are from!
 
-```{Python}
+```{python}
 df["author_nationality"].value_counts().head(5)
 ```
 Finally, let's unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?
 
 For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.
 
-```{Python}
+```{python}
 def top_5_comparison(col_name):
   print(df[["title", "author", "top_500_rank", col_name]].head(5))
 
@@ -231,7 +227,7 @@ top_5_comparison("gr_num_ratings_rank")
 
 Above you can see that the GoodReads rankings and the top 500 rankings aren't very aligned! What factors affect popularity on GoodReads compared to OCLC?
 
-```{Python}
+```{python}
 import math
 
 def print_rankings(d, col_name):
@@ -258,7 +254,7 @@ df = df.apply(lambda d: print_rankings(d, "gr_num_ratings_rank"), axis=1)
 
 Let's see which novels had the most movement up or down!
 
-```{Python}
+```{python}
 sorted = df.sort_values(by=['points_moved'])
 print(sorted[["title", "author", "points_moved", "top_500_rank", "gr_num_ratings_rank"]].head(10).to_string(index=False))
 
@@ -272,13 +268,13 @@ Above we see that Steinbeck's *The Winter of Our Discontent*, stayed at the same
 
 df['points_moved'].mean()
 
-```{Python}
+```{python}
 df['points_moved'].mean()
 ```
 
 Let's take a look at some of these metrics for rankings based on number of editions and total holdings.
 
-```{Python}
+```{python}
 df = df.apply(lambda d: print_rankings(d, "oclc_editions_rank"), axis=1)
 
 df = df[df["points_moved"] <= 500]
@@ -306,7 +302,7 @@ Within the top 10 rankings specifically, only 2 books were not the same when com
 
 Now we can look at the `final_merged_dataset.tsv` file, which also includes the full-text of all the novels on the list that are in the public domain. We will be working with the  `full_text` column, which is a cleaned version of each book.
 
-```{Python}
+```{python}
 import pandas as pd
 import requests
 import re
@@ -320,7 +316,7 @@ The type-token ratio is a simple expression that calculates # of unique words / 
 
 It's helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we're converting all the information in the column "text" into a list.
 
-```{Python}
+```{python}
 def get_ttr(text):
   if (pd.isnull(text)):
     return 1.1 # a ratio greater than 1 is impossible, so we won't count these when doing our averages
@@ -363,24 +359,6 @@ print(sorted[["title", "author", "ttr", "genre"]].head(10).to_string(index=False
 
 
 ## **CONCLUSION**
-
-Text text.
-
-
-
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-`Need to link to local image file or to image URL`
-`![alt_text](images/image4.png "image_tooltip")`
-
-
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-`Need to link to local image file or to image URL`
-`![alt_text](images/image5.png "image_tooltip")`
-
 
 
 
