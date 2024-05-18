@@ -4,7 +4,7 @@ author: Melanie Walsh and Os Keyes
 format: 
   html: default
   ipynb: default
-  pdf: default
+  #pdf: default
   #docx: default
   #r: default
 listing:
@@ -173,7 +173,7 @@ For example, at Everglades National Park, at the Shark Valley Entrance, there is
 
 What's more, the devices that the NPS uses to count visits, like pneumatic tube counters or induction loop counters (magnetised coils of wire that are installed under a road, and that "trip" when a vehicle passes over them) sometimes break. 
 
-![An example of a pneumatic tube traffic counter, installed above the road](https://upload.wikimedia.org/wikipedia/commons/d/d3/Metrocount_vehicle_classifier_system_on_B3033_-_geograph.org.uk_-_1033728.jpg?20110223182337)
+![An example of a pneumatic tube traffic counter, installed above the road](https://upload.wikimedia.org/wikipedia/commons/d/d3/Metrocount_vehicle_classifier_system_on_B3033_-_geograph.org.uk_-_1033728.jpg?20110223182337){width="300"}
 
 ![An example of an induction loop, installed beneath a road (making it harder to detect when it breaks!)](https://upload.wikimedia.org/wikipedia/commons/8/8c/Inductance_detectors.jpg){width="300"}
 

@@ -2,7 +2,8 @@
 title: "African American Periodical Poetry: 1900-1928"
 author: Amardeep Singh and Kate Hennessey
 format: 
-  html: default
+  html:
+    page-layout: full
   #ipynb: default
   pdf: default
   #docx: default
@@ -47,25 +48,28 @@ This dataset is a collection of poetry published in magazines by African America
 
 ```{ojs}
 //| echo: false
-
-/*Inputs.table(search, data)*/
-
 Inputs.table(search, {
+   width: [50, 50, 50, 50, 50],
   layout: "fixed",
-  rows: 50,
-  sort: "top_500_rank",
+  rows: 25,
+  sort: "year",
   reverse: false,
+
   format: {
     /*RecreationVisits: x => d3.format('.2s')(x),*/
-    pub_year: x => d3.timeFormat(x),
-    author_birth: x => d3.timeFormat(x),
-    author_death: x => d3.timeFormat(x),
-    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+    year: x => d3.timeFormat(x),
+    text: x => {
+      const words = x.split(' ');
+      return words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
+    }
+    // author_birth: x => d3.timeFormat(x),
+    // author_death: x => d3.timeFormat(x),
+    // gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
   }
 })
 ```
 
- <a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.cs" download class="btn btn-outline-primary btn" role="button" >
+ <a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv" download class="btn btn-outline-primary btn" role="button" >
 Download Data <i class="bi bi-download"></i>
  </a>
 
@@ -116,9 +120,8 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 ```{ojs}
 //| echo: false
 //| output: false
-library_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv", d3.autoType)
+aa_poetry_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv", d3.autoType)
 
-use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
 ```
 
 ```{ojs}
@@ -126,7 +129,7 @@ use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-da
 //| output: false
 
 
-filtered = library_data.filter(function(penguin) {
+filtered = aa_poetry_data.filter(function(penguin) {
   return bill_length_min < penguin.bill_length_mm &&
          islands.includes(penguin.island);
 })
@@ -141,11 +144,11 @@ color = d3
 ```
 <br>
 
-## Library Top 500
+## African American Periodical Poetry
 
 ```{ojs}
 //| echo: false
-viewof search = Inputs.search(library_data, {
+viewof search = Inputs.search(aa_poetry_data, {
   placeholder: "Search"
 })
 ```
@@ -160,19 +163,21 @@ viewof search = Inputs.search(library_data, {
 Inputs.table(search, {
   layout: "fixed",
   rows: 50,
-  sort: "top_500_rank",
+  sort: "year",
   reverse: false,
   format: {
     /*RecreationVisits: x => d3.format('.2s')(x),*/
-    pub_year: x => d3.timeFormat(x),
-    author_birth: x => d3.timeFormat(x),
-    author_death: x => d3.timeFormat(x),
-    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+    year: x => d3.timeFormat(x),
+    text: x => {
+      const words = x.split(' ');
+      return words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
+    }
+  
   }
 })
 ```
 
-<a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv" download class="btn btn-outline-primary btn" role="button" >
+<a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv" download class="btn btn-outline-primary btn" role="button" >
 Download Data <i class="bi bi-download"></i>
  </a>
 
@@ -195,7 +200,7 @@ As of this writing, we are unaware of any African American poets from this perio
 
 **The Impact of Editors and Author-Editors.** Editors played a huge role in encouraging African American poets in these various magazines. Some editors were also poets themselves. The poet Countee Cullen was on the masthead as an Associate Editor at _Opportunity_ during the peak of his fame (1927-1928); he also guest-edited a special issue of the little magazine _Palms_ in 1926, which probably informed his subsequent decision to edit the 1927 collection, _Caroling Dusk_. Jessie Fauset, Gwendolyn Bennett, and Lewis Alexander were all poets who also served as guest-editors or associate editors in various magazines during this period. 
 
-**Predominantly Black vs. Predominantly White Publications. **We have marked whether the magazines where poems where published were “predominantly White” or “predominantly Black.” In the 1920s in particular, there was a striking increase in the number of predominantly White publications that ran special issues devoted to African American poetry. Some of these were especially high-impact events (especially the special issue of _Survey Graphic_ in March 1925). This too could be studied, especially in connection with other attributes (for instance, one sees that the _Survey Graphic _special issue mentioned above was especially influential; but the issue is far more lopsided towards poets who were men than one sees in predominantly Black publications from the same time period). 
+**Predominantly Black vs. Predominantly White Publications. **We have marked whether the magazines where poems where published were “predominantly White” or “predominantly Black.” In the 1920s in particular, there was a striking increase in the number of predominantly White publications that ran special issues devoted to African American poetry. Some of these were especially high-impact events (especially the special issue of _Survey Graphic_ in March 1925). This too could be studied, especially in connection with other attributes (for instance, one sees that the _Survey Graphic_ special issue mentioned above was especially influential; but the issue is far more lopsided towards poets who were men than one sees in predominantly Black publications from the same time period). 
 
 **White poets? **As magazines like _The Crisis_ and _Opportunity_ became more prominent as national publications in the 1920s, they also had a substantial readership that was White. And with Countee Cullen playing a prominent role as an Associate Editor at _Opportunity_ in 1927-1928, there were quite a few poets who were White publishing in these magazines. At present, we have excluded these writers from the collection. A future version of this project might include White poets who engaged with racial justice issues in the Black press (there were many who did, and their work has not been given much critical attention).   
 
@@ -212,7 +217,7 @@ First, sort the dataset by year. For each decade, check the gender of the poet. 
 
 By venue. First, sort by Venue. Then compare the gender distribution in _The Crisis_ against other predominantly Black publications like _The Messenger_ or _Opportunity_. Were there magazines that tended to publish more poets who were women? 
 
-Another question to ask might be the influence of Editors who were women. Magazines like _Black Opals _and _The Crisis _between 1919-1926 had Editors or Associate Editors who were women. Did the presence of female Editors lead to more women getting published in the magazine? 
+Another question to ask might be the influence of Editors who were women. Magazines like _Black Opals_ and _The Crisis_ between 1919-1926 had Editors or Associate Editors who were women. Did the presence of female Editors lead to more women getting published in the magazine? 
 
 Another venue question: how did gender distribution look in the special issues of predominantly White magazines like _The Carolina Magazine_, _Palms_, _or _Survey Graphic_? 
 
@@ -240,7 +245,7 @@ _If you discover any poems that you believe are incorrectly tagged, or where we 
 
 We have tagged poems by Theme, with a focus on themes relating to social justice topics. In part, this area of focus relates to patterns that are observable within the poetry itself. That said, we also expect that these themes may help readers today see how these poems might be relevant to our present moment. As with form, this process of tagging by theme is admittedly somewhat subjective – it comes out of our own personal interpretations of the poems. Readers might disagree or think of very different ways of organizing the poems by theme.
 
-(For example, we have not tagged the many seasonal and occasional poems in this collection – poems celebrating Christmas, Easter, Thanksgiving, etc. – though readers interested in those topics would likely find them simply by searching the collection for those keywords. We have also not tagged poems related to romantic love in the collection – there are many!). The general approach we have taken comes from the main _African American Poetry: A Digital Anthology _website, and a list of some of the prominent thematic tags (as well as an explanation of how we’re defining them) can be found on the “Glossary of Themes and Forms” Tab.
+(For example, we have not tagged the many seasonal and occasional poems in this collection – poems celebrating Christmas, Easter, Thanksgiving, etc. – though readers interested in those topics would likely find them simply by searching the collection for those keywords. We have also not tagged poems related to romantic love in the collection – there are many!). The general approach we have taken comes from the main _African American Poetry: A Digital Anthology_ website, and a list of some of the prominent thematic tags (as well as an explanation of how we’re defining them) can be found on the “Glossary of Themes and Forms” Tab.
 
 Sort the collection by “Theme,” and explore some of the Themes we have labeled. Do you agree or disagree with our approach? 
 
@@ -248,9 +253,9 @@ Take a look at some poems that are currently un-Tagged. How might you tag them?
 
 (_Again – any work researchers / students do here would be of interest to us, so please send it our way!_) 
 
-### 4. The Crossover Phenomenon**
+### 4. The Crossover Phenomenon
 
-As mentioned above, the 1920s was a moment when predominantly White magazines and publishers opened their doors to African American writers for the first time – one might think of it as the seeds of integration of the publishing industry. Three such magazines that feature prominently in our dataset are _Survey Graphic, Palms, _and _The Carolina Magazine_. 
+As mentioned above, the 1920s was a moment when predominantly White magazines and publishers opened their doors to African American writers for the first time – one might think of it as the seeds of integration of the publishing industry. Three such magazines that feature prominently in our dataset are _Survey Graphic_, _Palms_, and _The Carolina Magazine_. 
 
 We have tagged magazines in the dataset by Type of Venue, and the different venues could be compared and studied. 
 
@@ -268,7 +273,7 @@ A more complex visualization could focus on the relationship between editors and
 
 As mentioned above, there are a number of authors in the collection about whom little is known. All told, there are about 100 poems in this collection, by 70 different authors, whose personal biographies have not been verified. 
 
-We have typically spent _some _time attempting to locate each of the unknown authors, but there is probably more that could be done, especially using reference texts like _Encylcopedia of the Harlem Renaissance _(a print reference text), “Who’s Who?” type books, and Census information. 
+We have typically spent _some_ time attempting to locate each of the unknown authors, but there is probably more that could be done, especially using reference texts like _Encylcopedia of the Harlem Renaissance_ (a print reference text), “Who’s Who?” type books, and Census information. 
 
 Pick an author about whom we haven’t been able to find anything concrete (the “Author Bio” column is left blank for these). Try various ways of searching, including simple Google searches, searches in HathiTrust, WorldCat, and VIAF searches. Does anything come up? Can you verify the identity of the author? 
 
@@ -314,7 +319,7 @@ As we've been adding poetry to this collection, we've been marking various thema
 
 * **Sonnet**. Poems using the sonnet form. The sonnet form was highly prevalent in African American poetry during this period. Claude McKay famously used sonnets in many of his most influential political poems. Writers like Georgia Douglas Johnson and Carrie Williams Clifford also found the sonnet form appealing, again, in connection with social justice-oriented poetry. _(approx. 75 poems with this tag)_
 * Various other poetic forms: **Common Measure**, **Villanelle**, **Terza Rima**, **Elegy**, **Ode**, **Haiku**, **Ballad**, **Free Verse**, **Blues**
-* **Prize-winning poems. **Poems that won one of the poetry prize competitions from the mid-1920s, sponsored by either _The Crisis _or _Opportunity _magazine. _(32 poems with this tag)_
+* **Prize-winning poems. **Poems that won one of the poetry prize competitions from the mid-1920s, sponsored by either _The Crisis_ or _Opportunity_ magazine. _(32 poems with this tag)_
 * **Music**. The emphasis on music in poems by Langston Hughes is well-known, but in fact many Black poets from this period were interested in the connections between music and lyricism. 
 * **Intertextual**. Poems that allude to other authors, including white authors.
 * **Black Vernacular (AAVE). **Poems using AAVE. There were active debates at the time among Black poets about the use of language that was sometimes seen as caricaturing Black voices.
