@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/top-500-novels/top-500-novels.html",
       "/posts/np-data/with-tabs.html",
       "/posts/gender-violence/index.html"
@@ -32,9 +33,16 @@
   {
     "listing": "/datasets.html",
     "items": [
+      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/top-500-novels/top-500-novels.html",
       "/posts/np-data/with-tabs.html",
       "/posts/gender-violence/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+    "items": [
+      "/posts/african-american-periodical-poetry/exercises/Intro-to-DPLYR-NP.html"
     ]
   }
 ]
