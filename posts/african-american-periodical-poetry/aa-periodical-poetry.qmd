@@ -69,9 +69,7 @@ Inputs.table(search, {
 })
 ```
 
- <a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
+{{< downloadthis ../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" type = info >}}
 
 Magazines were a crucial part of the landscape of literary publishing in the U.S. during the early twentieth century. Magazines with often very large national readerships helped writers find their audience, and opportunities to work as editors help position established writers in positions of power and authority in the American publishing industry. 
 
@@ -177,10 +175,7 @@ Inputs.table(search, {
 })
 ```
 
-<a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
-
+{{< downloadthis ../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" type = info >}}
 
 # How to Use {#how-to-use}
 

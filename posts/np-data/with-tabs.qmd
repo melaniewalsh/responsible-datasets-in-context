@@ -41,7 +41,7 @@ bibliography: references.bib
 
 ## Introduction
 
-This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation and use data about other park units, such as [national battlfieds, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
+This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation and use data about other park units, such as [national battlefields, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
 
 <br>
 
@@ -61,11 +61,10 @@ Inputs.table(search, {
     RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
   }
 })
+
 ```
 
- <a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
+{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = info >}}
 
 The National Park datasets included on this website are drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find, and the documentation is distributed across many different web pages, PDFs, and other documents, so we believe it is valuable to curate and publish in a single place here.
 
@@ -297,6 +296,27 @@ To-do
 visit_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", d3.autoType)
 
 use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
+
+button = (data, filename = 'data.csv') => {
+  if (!data) throw new Error('Array of data required as first argument');
+
+  let downloadData;
+  if (filename.includes('.csv')) {
+    downloadData = new Blob([d3.csvFormat(data)], { type: "text/csv" });
+  } else {
+    downloadData = new Blob([JSON.stringify(data, null, 2)], {
+      type: "application/json"
+    });
+  }
+
+  const size = (downloadData.size / 1024).toFixed(0);
+  const button = DOM.download(
+    downloadData,
+    filename,
+    `Download ${filename} (~${size} KB)`
+  );
+  return button;
+}
 ```
 
 ```{ojs}
@@ -348,10 +368,7 @@ Inputs.table(search, {
 })
 ```
 
-<a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
-
+{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = info >}}
 ## U.S. National Park Use (Monthly) — 1979-2023
 
 ```{ojs}
@@ -381,9 +398,7 @@ Inputs.table(use_search, {
 })
 ```
 
-<a href="https://github.com/melaniewalsh/responsible-datasets-in-context/raw/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
+{{< downloadthis ../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" type = info >}}
 
 
 # Exercises {#exercises}

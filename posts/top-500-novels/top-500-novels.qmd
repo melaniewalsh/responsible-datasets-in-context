@@ -64,9 +64,8 @@ Inputs.table(search, {
 })
 ```
 
- <a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.cs" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
+{{< downloadthis ../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" type = info >}}
+
 
 This dataset is based on a list of the [Top 500 Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library Top 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
 
@@ -424,9 +423,7 @@ Inputs.table(search, {
 })
 ```
 
-<a href="https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv" download class="btn btn-outline-primary btn" role="button" >
-Download Data <i class="bi bi-download"></i>
- </a>
+{{< downloadthis ../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" type = info >}}
 
 
 # Exercises {#exercises}
