@@ -2,7 +2,7 @@
 title: "Gender Violence at the Border"
 author: Sylvia Fernández and Paulina Hernandez Trejo
 date: "2024-02-26"
-categories: [missing-data, uncertainty, data-collection]
+categories: [gender, human rights, social justice activism, missing-data, communities]
 image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
 format: html
 code-fold: true

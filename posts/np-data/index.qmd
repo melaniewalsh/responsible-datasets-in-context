@@ -3,7 +3,7 @@ title: "National Park Visitation Data"
 format: 
   html: default
   ipynb: default
-  pdf: default
+  #pdf: default
   #r: default
 listing:
   id: exercise-posts

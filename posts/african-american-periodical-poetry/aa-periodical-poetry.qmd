@@ -8,20 +8,20 @@ format:
   pdf: default
   #docx: default
   #r: default
-# listing:
-#   id: exercise-posts
-#   contents: exercises
-#   exclude:
-#     categories: "dataset"
-#   sort: "date desc"
-#   type: table
-#   fields: [date, title, categories]
-#   categories: false
-#   sort-ui: false
-#   filter-ui: true
+listing:
+  id: exercise-posts
+  contents: exercises
+  exclude:
+    categories: "dataset"
+  sort: "date desc"
+  type: table
+  fields: [date, title, categories]
+  categories: false
+  sort-ui: false
+  filter-ui: true
 #   image-height: 200px
 date: "2024-05-17"
-categories: [line-plots, data-collection, uncertainty]
+categories: [literature, poetry, gender, race, metadata, full-text, public domain]
 image: "aa-anthology.png"
 toc: true
 toc-depth: 5
@@ -69,7 +69,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" type = info >}}
+{{< downloadthis ../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
 Magazines were a crucial part of the landscape of literary publishing in the U.S. during the early twentieth century. Magazines with often very large national readerships helped writers find their audience, and opportunities to work as editors help position established writers in positions of power and authority in the American publishing industry. 
 
@@ -203,6 +203,16 @@ As of this writing, we are unaware of any African American poets from this perio
 
 **Exploring lesser-known authors. **Many poems in the dataset were published by poets who did not aspire to have careers as poets; they may have only published one or two poems. Others (such as Edward S. Silvera and Lewis Alexander) were accomplished poets who were well-known to their peers, but might have dropped off abruptly (Edward Silvera died quite young, at age 31). And there are a few authors who published five or more poems included in this collection about whom we have been able to find nothing (one such name might be Ann Lawrence [also known as Ann Lawrence-Lucas]; she published several thoughtful poems in _The Messenger_ in the mid-1920s). 
 
+# Exercises {#exercises}
+
+::: {.panel-tabset .nav-pills}
+# Python
+
+::: {#exercise-posts}
+:::
+
+# R
+:::
 
 # Discussion & Activities {#discussion-and-activities}
 

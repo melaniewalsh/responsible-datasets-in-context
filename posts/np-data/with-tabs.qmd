@@ -2,7 +2,8 @@
 title: "U.S. National Park Visit Data"
 author: Melanie Walsh and Os Keyes
 format: 
-  html: default
+  html:
+    toc: true
   ipynb: default
   #pdf: default
   #docx: default
@@ -20,10 +21,10 @@ listing:
   filter-ui: true
   image-height: 200px
 date: "2024-03-09"
-categories: [line-plots, data-collection, uncertainty]
+categories: [nature, environment, government, uncertainty, missing-data]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
 toc: true
-toc-depth: 5
+toc-depth: 1
 sidebar: 
   contents: auto
 format-links: [ipynb, pdf, docx]
@@ -64,7 +65,7 @@ Inputs.table(search, {
 
 ```
 
-{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = info >}}
+{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id=downloadbutton >}}
 
 The National Park datasets included on this website are drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find, and the documentation is distributed across many different web pages, PDFs, and other documents, so we believe it is valuable to curate and publish in a single place here.
 
