@@ -7,7 +7,7 @@ listing:
     title: "National Park Visitation Data"
   sort: "date desc"
   type: default
-  categories: numbered
+  categories: unnumbered
   sort-ui: false
   filter-ui: true
   image-height: 200px
