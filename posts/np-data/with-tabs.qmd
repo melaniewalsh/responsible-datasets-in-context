@@ -1,5 +1,5 @@
 ---
-title: "U.S. National Park Visit Data"
+title: "U.S. National Park Visit Data (1979-2023)"
 author: Melanie Walsh and Os Keyes
 format: 
   html:

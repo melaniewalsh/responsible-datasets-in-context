@@ -1,5 +1,5 @@
 ---
-title: "Library Top 500"
+title: "Top 500 \"Greatest\" Novels (1021-2015)"
 author: Anna Preus and Aashna Sheth
 format: 
   html: default

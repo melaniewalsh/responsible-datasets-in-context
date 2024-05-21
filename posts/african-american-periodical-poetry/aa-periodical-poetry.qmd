@@ -1,5 +1,5 @@
 ---
-title: "African American Periodical Poetry: 1900-1928"
+title: "African American Periodical Poetry (1900-1928)"
 author: Amardeep Singh and Kate Hennessey
 format: 
   html:
