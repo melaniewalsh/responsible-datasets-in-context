@@ -1,0 +1,19 @@
+{
+  "listingMap": {
+    "posts/top-500-novels/top-500-novels.qmd": [
+      "exercises"
+    ],
+    "posts/african-american-periodical-poetry/aa-periodical-poetry.qmd": [
+      "exercises"
+    ],
+    "posts/np-data/with-tabs.qmd": [
+      "exercises"
+    ],
+    "index.qmd": [
+      "posts"
+    ],
+    "datasets.qmd": [
+      "posts"
+    ]
+  }
+}

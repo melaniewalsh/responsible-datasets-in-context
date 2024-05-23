@@ -1,0 +1,97 @@
+{
+  "index.qmd": {
+    "index.html": "13188f94"
+  },
+  "posts/post-with-code/index.qmd": {
+    "index.html": "909ea27a"
+  },
+  "posts/welcome/index.qmd": {
+    "index.html": "3fe8b6b1"
+  },
+  "about.qmd": {
+    "about.html": "01a70a4c"
+  },
+  "datasets.qmd": {
+    "datasets.html": "257bba7f"
+  },
+  "posts/np-data/index.qmd": {
+    "index.html": "e52ab95c",
+    "index.ipynb": "530e2f45",
+    "index.tex": "adb51091",
+    "index.docx": "d97c739e"
+  },
+  "posts/gender-violence/index.qmd": {
+    "index.html": "52335b1e"
+  },
+  "people.qmd": {
+    "people.html": "e0371b86"
+  },
+  "team.qmd": {
+    "team.html": "5fda9b41"
+  },
+  "mission.qmd": {
+    "mission.html": "e66d633b"
+  },
+  "get-involved.qmd": {
+    "get-involved.html": "eec86e14"
+  },
+  "posts/np-data/exercises/index.qmd": {
+    "index.html": "b9b09523"
+  },
+  "posts/np-data/exercises/NP-Data-v2-AU23.qmd": {
+    "NP-Data-v2-AU23.html": "ed4c8e59"
+  },
+  "posts/np-data/exercises/Intro-to-DPLYR-NP.qmd": {
+    "Intro-to-DPLYR-NP.html": "e2c725ba"
+  },
+  "posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.qmd": {
+    "Intro-to-DPLYR-NP-Solutions.html": "80595c21",
+    "Intro-to-DPLYR-NP-Solutions.adoc": "ec4a4357"
+  },
+  "posts/np-data/exercises/Ggplot-Customization-NP-Solutions.qmd": {
+    "Ggplot-Customization-NP-Solutions.html": "7d12a860",
+    "Ggplot-Customization-NP-Solutions.ipynb": "20620d78",
+    "Ggplot-Customization-NP-Solutions.tex": "67b289ac",
+    "Ggplot-Customization-NP-Solutions.docx": "722543ea"
+  },
+  "posts/np-data/np-data.qmd": {
+    "np-data.html": "7a8a1d0b",
+    "np-data.ipynb": "fef6d205",
+    "np-data.tex": "8a2b99e2",
+    "np-data.docx": "301c184b"
+  },
+  "posts/np-data/index.ipynb": {
+    "index.html": "75ed538d"
+  },
+  "posts/np-data/with-tabs.qmd": {
+    "with-tabs.html": "afa42817",
+    "with-tabs.ipynb": "cc53e2f3",
+    "with-tabs.tex": "9a8857ed",
+    "with-tabs.docx": "d2d43dc1"
+  },
+  "posts/top-500-novels/top-500-novels.qmd": {
+    "top-500-novels.html": "69de4a8d",
+    "top-500-novels.ipynb": "c801b6a2",
+    "top-500-novels.tex": "75f13824"
+  },
+  "posts/top-500-novels/exercises/Intro-to-DPLYR-NP.qmd": {
+    "Intro-to-DPLYR-NP.html": "df666939"
+  },
+  "posts/african-american-periodical-poetry/aa-periodical-poetry.qmd": {
+    "aa-periodical-poetry.html": "57ae734c",
+    "aa-periodical-poetry.tex": "a562774c"
+  },
+  "posts/african-american-periodical-poetry/exercises/Intro-to-DPLYR-NP.qmd": {
+    "Intro-to-DPLYR-NP.html": "3305af91"
+  },
+  "posts/african-american-periodical-poetry/aa_eda.ipynb": {
+    "aa_eda.html": "674779d6"
+  },
+  "posts/african-american-periodical-poetry/exercises/aa_eda.qmd": {
+    "aa_eda.html": "e9ffaf2c",
+    "aa_eda.ipynb": "95415ab2"
+  },
+  "posts/np-data/index-with-no-tabs.qmd": {
+    "index-with-no-tabs.html": "c6517ea4"
+  }
+}
