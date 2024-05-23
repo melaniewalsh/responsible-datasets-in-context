@@ -21,7 +21,7 @@ listing:
   image-height: 200px
 date: "2024-04-10"
 categories: [libraries, literature, readers, gender, metadata, full-text, public domain ]
-image: "library-top-500-screenshot.png"
+image: "images/library-top-500-screenshot.png"
 toc: true
 toc-depth: 5
 sidebar: 
@@ -32,7 +32,7 @@ editor: visual
 df-print: kable
 jupyter: python3
 code-tools: true
-bibliography: references.bib
+bibliography: references/references.bib
 ---
 
 ::: {.panel-tabset .nav-pills}
@@ -44,7 +44,8 @@ This dataset contains information on the top 500 novels most widely held in libr
 
 <br>
 
-```{ojs}
+```{ojs .content-visible when-format="html" unless-format="pdf"}
+
 //| echo: false
 
 /*Inputs.table(search, data)*/
@@ -64,7 +65,8 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
+
+{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
 
 
 This dataset is based on a list of the [Top 500 Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library Top 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
@@ -102,7 +104,7 @@ Building on this list, we compiled data from a number of other databases, includ
 OCLC’s goal in producing the Top 500 list seems to be to encourage library patronage and reading. The website for the list includes a “Librarians Kit” with a variety of publicity materials–from printable bookmarks to Instagram tiles-that can help bring attention to books in the Top 500 list within libraries’ collections. 
 
 
-![alt_text](top_500_kit.png "image_tooltip")
+![](images/top_500_kit.png "image_tooltip")
 
 
 Our goal was to collect additional data to understand better how the list was constructed, and to contextualize and nuance its claims about literary greatness.
@@ -131,7 +133,7 @@ We wanted to contextualize the Library Top 500 list by compiling additional info
 
 **VIAF: **The Virtual International Authority File is an OCLC-run database that contains structured records–called “name authority files”–for individual authors and creators. We used VIAF to gather information on authors whose novels were included on the list, including their birth and death dates, nationalities, genders, and occupations.
 
-![alt_text](viaf_example.png "image_tooltip")
+![Examplf of author VIAF](images/viaf_example.png "image_tooltip")
 
 **Wikipedia: **we used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.
 
@@ -151,7 +153,7 @@ At the same time, there are biases in what gets kept on library shelves, and in 
 OCLC acknowledges broad biases in the list in a section titled, “Why isn’t the list more diverse?” writing, “The list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.” Although OCLC acknowledges this general bias towards works considered classics, more specific forms of bias aren’t made apparent in the list itself, which only includes the title and author for each novel. 
 
 
-![alt_text](top_ten_complete_500.png "image_tooltip")
+![](images/top_ten_complete_500.png "image_tooltip")
 
 Each of these works and authors, of course, deserves careful consideration in their own right, but by compiling additional information into dataset, we can begin to see some of these biases as well as trends across the list more clearly.
 
@@ -423,7 +425,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" type = info >}}
+{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" type = downloadbutton >}}
 
 
 # Exercises {#exercises}

@@ -65,7 +65,7 @@ Inputs.table(search, {
 
 ```
 
-{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id=downloadbutton >}}
+{{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id=downloadbutton >}}
 
 The National Park datasets included on this website are drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find, and the documentation is distributed across many different web pages, PDFs, and other documents, so we believe it is valuable to curate and publish in a single place here.
 
@@ -93,7 +93,7 @@ The National Park data on this website was originally organized and published by
 
 The original data was made available through the NPS's [Visitor Use Statistics data portal](https://irma.nps.gov/Stats/). Through this portal, you can generate reports and download data for [many different park visitation categories](https://irma.nps.gov/Stats/Reports/National) and time periods — at both national and individual park levels. To download the data included here, we first selected ["National Reports"](https://irma.nps.gov/Stats/Reports/National) in the data portal, and we then selected the ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) report type. 
 
-![Selections for National Park visit data generated with ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) ](query-builder-csv-screenshot.png){#fig-query-builder fig-alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics" width=90%}
+![Selections for National Park visit data generated with ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) ](images/query-builder-csv-screenshot.png){#fig-query-builder fig-alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics" width=90%}
 
 For "Park Types," we selected only "National Parks"; for "Years," we selected all possible years (1979-2023); for "Regions," we selected all possible regions; for "Field Type," we selected only "Recreation Visits" (excluding "NonRecreation Visits,"" "Recreation Hours," "NonRecreation Hours," "Concessioner Lodging," "Concessioner Camping," "Tent Campers," "RV Campers," "Backcountry Campers," "NonRecreation Overnight Stays," and "Miscellaneous Overnight Stays"); for "Additional Fields," we selected "State" and "Region". We also selected the option of viewing the report as an annual summary of visit counts (as opposed to monthly visit counts). 
 
@@ -165,7 +165,7 @@ If you go to the ["Park Reports"](https://irma.nps.gov/Stats/Reports/Park) tab i
 
 To count visits, most parks use a combination of automatic traffic counters and manual counting—that is, staff members who use their eyeballs to literally count the number of people arriving by foot, bike, bus, cross-country skis, snowmobile, boat, canoe, etc. Perhaps most interesting, they usually take those counts and then apply a specifically designed mathematical formula to arrive at the most accurate estimate of number of recreation visits — adding, subtracting, and multiplying the counts based on a variety of factors, such as the season or the entrance (e.g. assuming that more people would likely be arriving in a car in the summer months at the most popular gate than in the winter months at the least popular gate) or how many non-recreation visits they expect are a confounding factor.
 
-{{< pdf Everglades_Visitor-Use-Counting-Procedures_2023.pdf width=100% height=500 >}}
+{{< pdf other_docs/Everglades_Visitor-Use-Counting-Procedures_2023.pdf width=100% height=500 >}}
 
 For example, at Everglades National Park, at the Shark Valley Entrance, there is a pneumatic tube traffic counter that counts the number of cars that pass over it. The staff members then apply different mathematical operations to this number in order to arrive at what they think is the most accurate estimate of recreation visits:
 
@@ -298,26 +298,6 @@ visit_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-
 
 use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
 
-button = (data, filename = 'data.csv') => {
-  if (!data) throw new Error('Array of data required as first argument');
-
-  let downloadData;
-  if (filename.includes('.csv')) {
-    downloadData = new Blob([d3.csvFormat(data)], { type: "text/csv" });
-  } else {
-    downloadData = new Blob([JSON.stringify(data, null, 2)], {
-      type: "application/json"
-    });
-  }
-
-  const size = (downloadData.size / 1024).toFixed(0);
-  const button = DOM.download(
-    downloadData,
-    filename,
-    `Download ${filename} (~${size} KB)`
-  );
-  return button;
-}
 ```
 
 ```{ojs}
@@ -369,7 +349,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = info >}}
+{{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = downloadbutton >}}
 ## U.S. National Park Use (Monthly) — 1979-2023
 
 ```{ojs}
@@ -399,7 +379,7 @@ Inputs.table(use_search, {
 })
 ```
 
-{{< downloadthis ../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" type = info >}}
+{{< downloadthis ../../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" type = downloadbutton >}}
 
 
 # Exercises {#exercises}

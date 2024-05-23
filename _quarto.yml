@@ -4,14 +4,14 @@ project:
 
 website:
   title: "Responsible Datasets in Context"
-  favicon: responsible-logo-white.png
+  favicon: images/responsible-logo-white.png
   comments: 
     hypothesis:
       theme: clean
       openSidebar: false
       showHighlights: whenSidebarOpen
   navbar:
-    logo: responsible-logo-white.png
+    logo: images/responsible-logo-white.png
     right:
       - datasets.qmd
       - text: "About"
