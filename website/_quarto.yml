@@ -27,9 +27,11 @@ website:
 
   page-footer:
     background: "#000000"
-    left: |
-      Copyright &copy; 2024 |
-      Supported by Mozilla
+    right: <p style="color:white">Copyright &copy; 2024</p>
+    left:   <p style="color:white">Supported by[![](https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg){fig-alt="Mozilla" width=65px}](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/)</p>
+    center: 
+      <p style="color:white">Made with [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)</p>
+    
       
 
 
