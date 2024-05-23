@@ -55,7 +55,7 @@ By providing these contextual materials, we hope to promote the responsible use 
 
 
 ::::: {.g-col-lg-6 .g-col-12 .g-col-md-12}
-![](responsible-logo.png){width=50%}
+![](images/responsible-logo.png){width=50%}
 
 # 🚧 Website Under Construction  🚧 
 

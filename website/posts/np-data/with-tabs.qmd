@@ -34,7 +34,7 @@ df-print: kable
 R.options:
   warn: false
 code-tools: true
-bibliography: references.bib
+bibliography: references/references.bib
 ---
 
 ::: {.panel-tabset .nav-pills}

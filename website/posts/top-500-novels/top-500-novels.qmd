@@ -425,7 +425,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" type = downloadbutton >}}
+{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton >}}
 
 
 # Exercises {#exercises}
