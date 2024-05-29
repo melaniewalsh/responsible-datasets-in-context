@@ -2,6 +2,10 @@ project:
   type: website
   output-dir: ../docs
 
+render:
+  - team:
+      output-dir: ../docs/team
+
 website:
   title: "Responsible Datasets in Context"
   favicon: images/responsible-logo-white.png

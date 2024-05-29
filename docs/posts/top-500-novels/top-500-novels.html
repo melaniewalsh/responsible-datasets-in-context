@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -152,7 +152,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
+
+
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -406,7 +409,7 @@ window.Quarto = {
 <section id="metadata-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="metadata-analysis"><strong>METADATA ANALYSIS</strong></h2>
 <p>Let’s start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.</p>
-<div id="342d6a61" class="cell" data-execution_count="1">
+<div id="1eb0fb34" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -417,7 +420,7 @@ window.Quarto = {
 </div>
 <p>Now, we can answer various questions using this structure, which we’ve named <code>df</code>.</p>
 <p>For example, let’s look at counts related to author gender and name.</p>
-<div id="2d4c437f" class="cell" data-execution_count="2">
+<div id="fd0e5d29" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -430,7 +433,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We see that about 70% of authors on the list are male and 30% are female.</p>
-<div id="7982de49" class="cell" data-execution_count="3">
+<div id="74829c41" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts().head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -452,7 +455,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Above are the top 10 authors and the number of times they appear. John Grisham appears a stunning 19 times!</p>
 <p>Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.</p>
-<div id="5057add7" class="cell" data-execution_count="4">
+<div id="a22d4171" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -471,7 +474,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can see that most books on the list were published between 1950 and 2000. Let’s take a look at information about the oldest and newest books on the list.</p>
-<div id="11a4b019" class="cell" data-execution_count="5">
+<div id="e157b8a5" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
@@ -639,7 +642,7 @@ Newest Book(s):</code></pre>
 </div>
 </div>
 <p>Let’s take a look at where the authors are from!</p>
-<div id="38cddfad" class="cell" data-execution_count="6">
+<div id="55903241" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts().head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -656,7 +659,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Finally, let’s unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="61538513" class="cell" data-execution_count="7">
+<div id="db185b45" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -697,7 +700,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the GoodReads rankings and the top 500 rankings aren’t very aligned! What factors affect popularity on GoodReads compared to OCLC?</p>
-<div id="d33c35e1" class="cell" data-execution_count="8">
+<div id="2ba78d13" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1227,7 +1230,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s see which novels had the most movement up or down!</p>
-<div id="ca93d1e4" class="cell" data-execution_count="9">
+<div id="60f5bbe2" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>])</span>
@@ -1264,7 +1267,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <p>Above we see that Steinbeck’s <em>The Winter of Our Discontent</em>, stayed at the same ranking of 397. <em>Pride and Prejudice</em> remained quite high as well.</p>
 <p><em>20,000 Leagues Under the Sea</em> dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! <em>Harry Potter and The Half-Blood Prince</em> and <em>The Sea of Monsters</em> rose the most.</p>
 <p>df[‘points_moved’].mean()</p>
-<div id="0fa9a007" class="cell" data-execution_count="10">
+<div id="f3763f9e" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1274,7 +1277,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </div>
 </div>
 <p>Let’s take a look at some of these metrics for rankings based on number of editions and total holdings.</p>
-<div id="f4f6cac5" class="cell" data-execution_count="11">
+<div id="e56be1ae" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_editions_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -2349,7 +2352,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <section id="full-text-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="full-text-analysis"><strong>FULL-TEXT ANALYSIS</strong></h2>
 <p>Now we can look at the <code>final_merged_dataset.tsv</code> file, which also includes the full-text of all the novels on the list that are in the public domain. We will be working with the <code>full_text</code> column, which is a cleaned version of each book.</p>
-<div id="e6005cd1" class="cell" data-execution_count="12">
+<div id="763a7905" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -2362,7 +2365,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <p>Let’s start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.</p>
 <p>The type-token ratio is a simple expression that calculates # of unique words / total words in a selection. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.</p>
 <p>It’s helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we’re converting all the information in the column “text” into a list.</p>
-<div id="9977d9c9" class="cell" data-execution_count="13">
+<div id="ab10bfac" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_ttr(text):</span>
@@ -2399,30 +2402,30 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>genre
-political     0.512071
-history       0.505068
-bildung       0.501140
-scifi         0.498860
-na            0.496025
-romance       0.490967
-mystery       0.488100
-autobio       0.486067
-action        0.484900
-fantasy       0.480014
-horror        0.478050
-allegories    0.470267
+political     0.514800
+history       0.505359
+bildung       0.502000
+scifi         0.498620
+mystery       0.495150
+na            0.494159
+autobio       0.491800
+romance       0.488783
+action        0.485060
+fantasy       0.481571
+horror        0.479500
+allegories    0.462067
 Name: ttr, dtype: float64
-                title              author    ttr   genre
-              Ulysses         James Joyce 0.5645      na
-  Captains Courageous     Rudyard Kipling 0.5555 bildung
-This Side of Paradise F. Scott Fitzgerald 0.5497 bildung
-    Wuthering Heights        Emily Brontë 0.5468      na
-            Moby Dick     Herman Melville 0.5444      na
-          Main Street      Sinclair Lewis 0.5434      na
-           Arrowsmith      Sinclair Lewis 0.5416      na
-              Babbitt      Sinclair Lewis 0.5376      na
-                  Kim     Rudyard Kipling 0.5370  action
-             Villette    Charlotte Brontë 0.5362      na</code></pre>
+                        title               author    ttr   genre
+                      Ulysses          James Joyce 0.5852      na
+          Captains Courageous      Rudyard Kipling 0.5569 bildung
+            Wuthering Heights         Emily Brontë 0.5560      na
+        This Side of Paradise  F. Scott Fitzgerald 0.5541 bildung
+                      Shirley     Charlotte Brontë 0.5448 history
+                     Villette     Charlotte Brontë 0.5425      na
+     The Last Days of Pompeii Edward Bulwer Lytton 0.5405 history
+                  Main Street       Sinclair Lewis 0.5394      na
+                   Arrowsmith       Sinclair Lewis 0.5368      na
+The House of the Seven Gables  Nathaniel Hawthorne 0.5364      na</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2574,7 +2577,7 @@ Categories
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="dplyr,exercise" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1712773114322" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Introduction to DPLYR with Top 500 Novels" data-listing-filename-sort="Intro-to-DPLYR-NP.qmd">
+<tr data-index="0" data-categories="dplyr,exercise" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1716687236508" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Introduction to DPLYR with Top 500 Novels" data-listing-filename-sort="Intro-to-DPLYR-NP.qmd">
 <td>
 <span class="listing-date">Feb 26, 2024</span>
 </td>

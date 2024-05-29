@@ -13,18 +13,19 @@ The Responsible Computing Challenge is a partnership between Mozilla, Omidyar Ne
 
 # Project Directors
 
-- Sylvia Fernández, PI
-- Miriam Posner, PI
-- Anna Preus, PI
-- Amardeep Singh, PI
-- Melanie Walsh, PI
+- [Sylvia Fernández, PI](team/sylvia-fernandez.qmd)
+- [Miriam Posner, PI](team/miriam-posner.qmd)
+- [Anna Preus, PI](team/anna-preus.qmd)
+- [Amardeep Singh, PI](team/amardeep-singh.qmd)
+- [Melanie Walsh, PI](team/melanie-walsh.qmd)
 
 # Team Members
 
-- Os Keyes
-- Katherine Hennessey
-- Aashna Sheth
-- Paulina Hernandez Trejo
+- [Os Keyes](team/os-reyes.qmd)
+- [Katherine Hennessey](team/katherine-hennessey.qmd)
+- [Aashna Sheth](team/aashna-sheth.qmd)
+- [Paulina Hernandez Trejo](team/paulina-hernandez-trejo.qmd)
+- [Juan Carlos Garcia](team/juan-carlos-garcia.qmd)
 
 
 
