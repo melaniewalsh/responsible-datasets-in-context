@@ -4,6 +4,8 @@ author: Amardeep Singh and Kate Hennessey
 format: 
   html:
     page-layout: full
+    #include-after-body:
+     # - tabs.js
   #ipynb: default
   pdf: default
   #docx: default
@@ -112,7 +114,7 @@ The lead researcher on this project is Amardeep Singh, a professor of English at
 Kate Hennessey, a Lehigh University graduate student, assisted with the collection of the data as well as the editing and formatting of poems during the spring of 2024. Other Lehigh graduate students have been involved with the project, either as paid graduate research assistants or as students in seminars, whose research and editing skills have at times been added to the project (with full credit and permission). Other recent students who have contributed to the project include Miranda Alvarez Guillen and Christian Farrior. Several of the students involved in the project are people who identify as Black. 
 
 
-# Explore the Data {#tabset-1-2}
+# Explore the Data {#explore-the-data}
 
 
 ```{ojs}

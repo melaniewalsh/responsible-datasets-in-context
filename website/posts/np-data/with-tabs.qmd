@@ -4,7 +4,11 @@ author: Melanie Walsh and Os Keyes
 format: 
   html:
     toc: true
-  ipynb: default
+    toc-location: right
+    toc-depth: 3
+    page-layout: full
+    #toc: true
+    ipynb: true
   #pdf: default
   #docx: default
   #r: default
@@ -23,10 +27,8 @@ listing:
 date: "2024-03-09"
 categories: [nature, environment, government, uncertainty, missing-data]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
-toc: true
-toc-depth: 1
 sidebar: 
-  contents: auto
+  contents: [toc, tabset-contents]
 format-links: [ipynb, pdf, docx]
 code-fold: true
 editor: visual
@@ -37,7 +39,9 @@ code-tools: true
 bibliography: references/references.bib
 ---
 
+
 ::: {.panel-tabset .nav-pills}
+
 # Data Essay {#data-essay}
 
 ## Introduction
@@ -395,7 +399,7 @@ Inputs.table(use_search, {
 
 # Discussion & Activities {#discussion-and-activities}
 
-## Activity 1 {#exercise-1}
+## Activity 1 
 
 It is inevitable that the devices that the National Park Service uses to count visits to the parks — like induction loop counters installed on the road — will break. But they will also get *fixed* at different rates, in different locations, as we could see in the case of Crater Lake National Park (where a counter was fixed quickly) and Carlsbad Caverns National Park (where a broken counter from 2019 still has not been fixed).
 
@@ -411,8 +415,7 @@ With this in mind, look at the locations of the following parks. Suppose that ea
 | Yosemite NP        |                |        |
 | Mammoth Cave NP    |                |        |
 
-## Activity 2 {#exercise-2}
-
+## Activity 2 
 The National Park Service sometimes fills in missing data with hard numbers or approximates data by applying special mathematical formulas. This is necessary work, but it is also under-explained work.
 
 To see this in action, go to [the NPS page that documents park reports](https://irma.nps.gov/Stats/Reports/Park) and down the "Visitor Use Counting Procedures" PDF for three different parks.
