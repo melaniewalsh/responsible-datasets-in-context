@@ -5,27 +5,42 @@ sidebar: false
 page-layout: article
 toc: false
 title-block-banner: true
+
+listing:
+  - id: pi
+    include:
+      people_group: "pi"
+    exclude:
+      external: true
+    template: embedded_js/people-card.ejs
+    sort: last
+    type: grid
+    fields: [title, subtitle, image, education]
+  - id: member
+    include:
+      people_group: "member"
+    exclude:
+      external: true
+    template: embedded_js/people-card.ejs
+    sort: last
+    type: grid
+    fields: [title, subtitle, image, education]
 ---
 
 "Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education" was supported by the Responsible Computing Challenge (2023-2024). Read [the press release here](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/).
 
 The Responsible Computing Challenge is a partnership between Mozilla, Omidyar Network, Schmidt Futures, Craig Newmark Philanthropies, Mellon Foundation, and the Rockefeller Brothers Fund.
 
-# Project Directors
+# Principal Investigator
 
-- [Sylvia Fernández, PI](team/sylvia-fernandez.qmd)
-- [Miriam Posner, PI](team/miriam-posner.qmd)
-- [Anna Preus, PI](team/anna-preus.qmd)
-- [Amardeep Singh, PI](team/amardeep-singh.qmd)
-- [Melanie Walsh, PI](team/melanie-walsh.qmd)
+::: {#pi}
+:::
+
 
 # Team Members
 
-- [Os Keyes](team/os-reyes.qmd)
-- [Katherine Hennessey](team/katherine-hennessey.qmd)
-- [Aashna Sheth](team/aashna-sheth.qmd)
-- [Paulina Hernandez Trejo](team/paulina-hernandez-trejo.qmd)
-- [Juan Carlos Garcia](team/juan-carlos-garcia.qmd)
+:::{#member}
+:::
 
 
 

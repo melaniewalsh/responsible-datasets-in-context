@@ -1,0 +1,969 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={African American Periodical Poetry (1900-1928)},
+  pdfauthor={Amardeep Singh and Kate Hennessey},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{African American Periodical Poetry (1900-1928)}
+\author{Amardeep Singh and Kate Hennessey}
+\date{2024-05-17}
+
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{5}
+\tableofcontents
+}
+\section{Data Essay}
+
+\subsection{Introduction}\label{introduction}
+
+This dataset is a collection of poetry published in magazines by African
+American writers in the early twentieth century. The collection
+currently contains about 750 poems, all of which are out of copyright in
+the U.S., with the bulk of the poetry published in fourteen different
+magazines, including both Black-oriented and edited magazines like
+\emph{The Crisis}, \emph{Opportunity}, and \emph{Black Opals} as well as
+`mainstream' (predominantly White) magazines like \emph{Survey Graphic},
+\emph{The Liberator}, and \emph{Palms}. The dataset includes information
+on authors' biographies, poetic form, topics and themes, the names of
+editors (including guest editors and co-editors), as well as
+republication information.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{Inputs.table(search, \{}
+\NormalTok{   width: [50, 50, 50, 50, 50],}
+\NormalTok{  layout: "fixed",}
+\NormalTok{  rows: 25,}
+\NormalTok{  sort: "year",}
+\NormalTok{  reverse: false,}
+
+\NormalTok{  format: \{}
+\NormalTok{    /*RecreationVisits: x =\textgreater{} d3.format(\textquotesingle{}.2s\textquotesingle{})(x),*/}
+\NormalTok{    year: x =\textgreater{} d3.timeFormat(x),}
+\NormalTok{    text: x =\textgreater{} \{}
+\NormalTok{      const words = x.split(\textquotesingle{} \textquotesingle{});}
+\NormalTok{      return words.slice(0, 15).join(\textquotesingle{} \textquotesingle{}) + (words.length \textgreater{} 15 ? \textquotesingle{}...\textquotesingle{} : \textquotesingle{}\textquotesingle{});}
+\NormalTok{    \}}
+\NormalTok{    // author\_birth: x =\textgreater{} d3.timeFormat(x),}
+\NormalTok{    // author\_death: x =\textgreater{} d3.timeFormat(x),}
+\NormalTok{    // gr\_num\_ratings\_rank: x =\textgreater{} html\textasciigrave{}\textless{}div style=\textquotesingle{}background:$\{color(x)\}\textquotesingle{}\textgreater{}$\{d3.format(\textquotesingle{}.2s\textquotesingle{})(x)\}\textless{}/div\textgreater{}\textasciigrave{}}
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+Magazines were a crucial part of the landscape of literary publishing in
+the U.S. during the early twentieth century. Magazines with often very
+large national readerships helped writers find their audience, and
+opportunities to work as editors help position established writers in
+positions of power and authority in the American publishing industry.
+
+The broader goal is to collect materials from both predominantly Black
+and predominantly White (or ``mainstream'') magazines, to enable
+researchers to understand the changing shape of African American poetry
+in and out of the American mainstream. We'll explain some specific
+dimensions of the collection we've put together below, including how to
+search and sort through the material. Under a separate tab, we'll also
+suggest some possible classroom exercises that might make this
+collection useful for students who are learning about African American
+poetry for the first time. However, first we'll briefly introduce the
+concept of African American American Periodical Poetry.
+
+\subsection{African American Periodical Poetry: a Bit of
+Background}\label{african-american-periodical-poetry-a-bit-of-background}
+
+In their poetry, African American writers argued for Civil Rights,
+challenged the unjust practices and racialized violence that were
+prevalent in American life, and worked out new and distinctive aesthetic
+concepts. At the beginning of the twentieth century, African American
+poetry was not so much a `literary' movement as it was a part of popular
+culture, with hugely popular and influential figures like Paul Laurence
+Dunbar and an important element of African American Vernacular writing
+and performance linked to the oral tradition (Ramey, \emph{A History of
+African American Poetry}, 2019). However, by the 1920s, changes in the
+style and function of the poetry was evident, and these changes can be
+readily traced in poetry published in periodicals.
+
+The overall conception of this project borrows from Modernist Periodical
+Studies, led by scholars such as Sean Latham (``The Rise of Periodical
+Studies,'' 2006), Robert Scholes and Clifford Wulfman (\emph{Modernism
+in the Magazines}, 2010), and Adam McKible and Suzanne Churchill
+(\emph{Little Magazines and Modernism}, 2005). It is also deeply
+invested in the field that has come to be known as Black Digital
+Humanities scholarship; we hope our work will be legible as in the vein
+of Kim Gallon's ``technology of recovery'' (``Making a Case for the
+Black Digital Humanities, 2016), where an important goal is to make
+under-studied materials accessible and legible to a broad readership,
+including readers outside of academia. Other scholarship that has
+influenced our own includes the \emph{Colored Conventions Project}
+(Foreman, Casey, and Patterson, 2021), and Roopika Risam's \emph{New
+Digital Worlds}(2018). And more generally, we see our work as continuing
+to fill in a continuing problem of the ``Archive Gap,'' where
+minoritized writers often continue to be under-studied and under-curated
+in major digital collections, with knock-on effects for quantitative
+analysis based on textual corpora (see Singh, ``Beyond the Archive
+Gap,'' 2020).
+
+\subsection{Why These Particular Periodicals? The Black Press and the
+Advent of ``Crossover''
+Publications}\label{why-these-particular-periodicals-the-black-press-and-the-advent-of-crossover-publications}
+
+We have attempted to build a comprehensive collection of African
+American periodical poetry from the early 20th century, arranging it so
+that visitors to this site can search and sort based on their own
+research questions. We believe that the creation of this collection will
+allow both serous scholars as well as students and those new to the
+field to see the full richness and range of African American poetry from
+this period in new ways.
+
+\textbf{The Black Press.} First and foremost, we believe that in order
+to understand how African American poetry developed and grew in the
+years covered by this project, it's important to engage with the primary
+venue through which that poetry was published and read -- the Black
+press. For many poets in this Anthology, African American-oriented
+periodicals were the first destination for poetry. Magazine publication
+was how Black poets found readers and developed a sense of community,
+and the collections we have produced for this project hopefully show
+some powerful emerging networks and conversations about the role of
+literature in civil rights activism, questions of aesthetics, and
+questions of language. Also, at least until the mid-1920s, publication
+in mainstream venues like \emph{Poetry} or \emph{Vanity Fair} was
+extremely rare for African American poets, so venues like \emph{The
+Crisis} and \emph{Opportunity} were often the best way to get published.
+
+To be sure, the poetry published by these magazines is of quite varying
+quality and importance to literary historians. Rather than evaluate or
+curate the materials based on our particular tastes or preexisting
+consensus, our aspiration here is to make \_all\_of the periodical
+poetry we can find accessible to readers with the hope that it will be
+helpful to different kinds of research projects and questions. Putting
+everything together in one place, as we have attempted to do here, can
+sometimes reveal alignments and patterns that might not have previously
+been visible. What might readers discover? What new questions can we
+ask?
+
+\textbf{1900-1920: A somewhat overlooked era in African American
+poetry.} The field of African American periodical poetry was quite
+active in the first two decades of the 20th century, though many of the
+magazines where poetry was published were not well-preserved, and are
+today only available in fragments. Two important magazines from the
+first decade of the twentieth century that have been been well-preserved
+and digitized are \emph{Voice of the Negro} (Atlanta and Chicago,
+1904-1907) and \emph{Colored American Magazine} (Boston and New York,
+1900-1908). Both printed a considerable amount of poetry, and we have
+included a substantial number of poems from these magazines in our
+current collection (note: our collection of poetry from these two
+magazines is not quite complete). W.E.B. Du Bois also edited two
+magazines that appeared only briefly in this period, \emph{Moon
+Illustrated Weekly} (1905-1906), and \emph{Horizon: A Journal of the
+Color Line} (1907-1910). \emph{Horizon} did not appear to print much in
+the way of poetry; \emph{Moon Illustrated Weekly} printed poems only
+occasionally. Both magazines have only been partially preserved. At
+present, those magazines are sparsely represented in our collection.
+
+\emph{The Crisis} became a major vehicle for poetry publication starting
+in 1910, under Du Bois' editorship. It was an especially important venue
+for Georgia Douglas Johnson, who published more than 30 poems in the
+magazine during this period; we also see substantial numbers of poems
+published by writers like James D. Corrothers, Joseph S. Cotter, and
+Lucian B. Watkins -- writers who were well known at this time, but who
+subsequently dropped off the critical radar. Du Bois himself published
+several notable poems in \emph{The Crisis} during this period, and these
+poems are included in our collection. One particularly active theme in
+late 1910s poetry is World War I (see the Glossary in a separate tab for
+other themes).
+
+\textbf{The 1920s: \emph{The Crisis}, \emph{Opportunity}, and \emph{The
+Messenger}. } There were three very large and successful African
+American magazines in the 1920s, all published in New York but with
+national circulations: \emph{The Crisis}, \emph{Opportunity}, \_and
+\emph{The Messenger}. With \emph{The Crisis}, there appears to have been
+a steady build-up of interest in poetry through the 1910s, leading up to
+Jessie Fauset's taking on the role of literary editor between 1919-1926.
+With her work at \emph{The Crisis}, Fauset brought a serious literary
+sensibility to the magazine and a considerable increase in quality.
+
+With regards to \emph{Opportunity}: as biographers for writers like Zora
+Neale Hurston and Langston Hughes have documented, the
+racially-integrated \emph{Opportunity }``prize'' dinners in 1924, 1925,
+and 1926 seemed to function at least in part as coming out parties for
+emerging writers, helping to create a sense of excitement about African
+American poetry both within the Black community and beyond it. White
+editors and publishers like Paul Kellogg and Horace Liveright attended a
+particularly important dinner at the Harlem Civic Club in March of 1924,
+which led to the idea of the special issue devoted to African American
+writing in \emph{Survey Graphic }(March 1925), guest-edited by Alain
+Locke.
+
+\textbf{The mid-1920s as tipping point for African American poetry.} As
+we've developed our collection of African American periodical poetry,
+it's become clearer and clearer that the mid- and late-1920s was a
+special moment of growth and recognition. First and foremost, there is
+the remarkable proliferation of African American general interest
+magazines like \emph{The Crisis} and \emph{Opportunity}, as mentioned
+above. The same period also saw the emergence of several African
+American \emph{literary} magazines, including \emph{Fire!!} in New York
+in 1926, \emph{Black Opals} in Philadelphia in 1927-1928, and
+\emph{Saturday Evening Quill} in Boston from 1928-1930. \emph{Fire!!}
+ran for only a single issue; \emph{Black Opals} ran for four issues, and
+featured many prominent names despite having a fairly tiny print run
+(250 copies of each issue were printed). \emph{Saturday Evening Quill},
+for its part, was essentially the house magazine for a vibrant African
+American literary social club active in the late 1920s in Boston. In the
+present collection, we have collected poems from each of these
+magazines.
+
+Last but not least, several mainstream publications open their pages to
+special issues devoted to African American poetry during this period.
+The most prominent of these is undoubtedly the special March 1925 issue
+of \emph{Survey Graphic} guest-edited by Alain Locke, which would become
+the basis for the hugely influential anthology \emph{The New Negro: an
+Interpretation} (1925). There were also special issues dedicated to
+African American poetry published by modernist little magazines like
+\emph{Palms} (guest-edited by Countee Cullen), as well as \emph{The
+Carolina Magazine}, which did excellent issues on African American
+poetry, guest-edited by Lewis Alexander. This growing engagement from
+the mainstream was also reflected of course in the fact that mainstream
+commercial publishers in New York and Boston were also publishing
+significant quantities of African American poetry during this time
+period. Success in periodical publication often led to book-length
+poetry collections -- Langston Hughes, Countee Cullen, and James Weldon
+Johnosn all published book-length collections of poetry with mainstream
+New York publishers in the subsequent years. (Sadly, writers who were
+women did not appear to have this same benefit.)
+
+Alongside the Special Issues described above, Claude McKay published a
+number of poems, especially in Max Eastman-edited magazine, \emph{The
+Liberator} (not to be confused with William Lloyd Garrison's magazine of
+the same name from the mid-19th century). McKay is somewhat anomalous in
+that he published much more outside of the Black press than he did
+within it (though he is certainly well-represented in \emph{The
+Crisis}).
+
+\subsection{\texorpdfstring{\textbf{Where Did the Data Come From? Who
+Collected It?
+}}{Where Did the Data Come From? Who Collected It? }}\label{where-did-the-data-come-from-who-collected-it}
+
+The texts that form the basis of the data in this dataset come from a
+variety of sources, including publicly available resources like
+\_HathiTrust \_and \emph{Archive.org}. We also relied on the digitized
+versions of \_Saturday Evening Quill \_at the University of Delaware's
+library. And a colleague at North Carolina State University, Madhusudan
+Kutti, was kind enough to send us a digitized copy of the 1926 special
+issue of \emph{Palms} we have included in the collection; it was not
+available elsewhere. Our own work entailed reading the issues, locating
+poetry published in them, and creating text versions. We also made an
+effort to describe the poetic form, mark down thematic tags (``Progress
+and Racial Uplift''; ``Motherhood''; etc.). (See the Glossary of Themes
+and Forms Tab for more)
+
+The lead researcher on this project is Amardeep Singh, a professor of
+English at Lehigh University. He has been creating digital projects
+related to minoritized writers for several years, beginning with
+projects like ``Claude McKay's Early Poetry'' and ``Women of the Early
+Harlem Renaissance.'' Since 2022, he has been developing a larger
+project called ``African American Poetry: A Digital Anthology''
+(AAPADA), a Scalar project that aims to be a comprehensive collection of
+poetry by Black writers that is out of copyright. The poems collected
+for this dataset are also presented in simple text versions on AAPADA.
+
+Kate Hennessey, a Lehigh University graduate student, assisted with the
+collection of the data as well as the editing and formatting of poems
+during the spring of 2024. Other Lehigh graduate students have been
+involved with the project, either as paid graduate research assistants
+or as students in seminars, whose research and editing skills have at
+times been added to the project (with full credit and permission). Other
+recent students who have contributed to the project include Miranda
+Alvarez Guillen and Christian Farrior. Several of the students involved
+in the project are people who identify as Black.
+
+\section{Explore the Data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{//| output: false}
+\NormalTok{aa\_poetry\_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible{-}datasets{-}in{-}context/main/datasets/aa{-}periodical{-}poetry/AAPADA{-}Periodical{-}Poetry\_1900{-}1928.csv", d3.autoType)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{//| output: false}
+
+
+\NormalTok{filtered = aa\_poetry\_data.filter(function(penguin) \{}
+\NormalTok{  return bill\_length\_min \textless{} penguin.bill\_length\_mm \&\&}
+\NormalTok{         islands.includes(penguin.island);}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{color = d3}
+\NormalTok{  .scaleLinear()}
+\NormalTok{  .domain([0, 100, 300])}
+\NormalTok{  .range(["\#cafcc2", "\#fce7c2", "\#eb9494"])}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{African American Periodical
+Poetry}\label{african-american-periodical-poetry}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+\NormalTok{viewof search = Inputs.search(aa\_poetry\_data, \{}
+\NormalTok{  placeholder: "Search"}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{//| echo: false}
+
+\NormalTok{/*Inputs.table(search, data)*/}
+
+\NormalTok{Inputs.table(search, \{}
+\NormalTok{  layout: "fixed",}
+\NormalTok{  rows: 50,}
+\NormalTok{  sort: "year",}
+\NormalTok{  reverse: false,}
+\NormalTok{  format: \{}
+\NormalTok{    /*RecreationVisits: x =\textgreater{} d3.format(\textquotesingle{}.2s\textquotesingle{})(x),*/}
+\NormalTok{    year: x =\textgreater{} d3.timeFormat(x),}
+\NormalTok{    text: x =\textgreater{} \{}
+\NormalTok{      const words = x.split(\textquotesingle{} \textquotesingle{});}
+\NormalTok{      return words.slice(0, 15).join(\textquotesingle{} \textquotesingle{}) + (words.length \textgreater{} 15 ? \textquotesingle{}...\textquotesingle{} : \textquotesingle{}\textquotesingle{});}
+\NormalTok{    \}}
+  
+\NormalTok{  \}}
+\NormalTok{\})}
+\end{Highlighting}
+\end{Shaded}
+
+\section{How to Use}
+
+\subsection{\texorpdfstring{\textbf{How might this dataset -- and the
+collection of texts behind it -- be used?
+}}{How might this dataset -- and the collection of texts behind it -- be used? }}\label{how-might-this-dataset-and-the-collection-of-texts-behind-it-be-used}
+
+There are any number of ways this collection might be used.
+
+\textbf{Literary Prestige and Canonization.} While some poets saw their
+careers and reputations take off during the peak years of the Harlem
+Renaissance, other writers were largely left by the wayside. By
+examining the \textbf{``Prize-Winning'' }keyword under ``Themes,'' users
+can zoom in on poems and poets who dominated the literary prize contests
+at magazines like \_Opportunity \_and \_The Crisis \_starting in the
+mid-1920s. Another way of exploring the impact of individual poems might
+be to note poems that were republished in multiple venues (see the
+column \textbf{``Second Venue''} in the dataset along those lines). The
+fact that a poem was repeatedly reprinted might be an indication of its
+literary cachet and social impact.
+
+\textbf{Gender.} Another use might be to study changing gender
+distributions over the time period at issue. In the early years of the
+20th century, poetry published in magazines like \_Colored American
+Magazine \_and \emph{Voice of the Negro} was overwhelmingly dominated by
+poets who were men. By the 1920s, there was a significant uptick in
+poetry by women; how and where this was occurring could be studied in
+greater detail.
+
+Another intriguing question is the role of editors who were women.
+Jessie Fauset played an important role at \emph{The Crisis} through the
+1910s through the mid-1920s; editors who were women also played
+important roles at \emph{Colored American Magazine} (Pauline Hopkins),
+and \emph{Black Opals} (Nellie Bright, Gwendolyn Bennett).
+
+As of this writing, we are unaware of any African American poets from
+this period who identified as transgender or non-binary in our
+collection. If we come to learn more about authors' gender identity that
+might lead us to add additional gender identity categories, we will do
+that.
+
+\textbf{Poetic Form.} Scholars interested in the evolution of African
+American poetic forms in the early 20th century might want to explore
+our Poetic Form column. At the beginning of this period, most published
+poetry by Black poets was in rhymed, accented verse (often using the
+\textbf{Common Measure}); following the dominant trend in American
+poetry in the mid-1920s, there was an explosion of \textbf{Free Verse}
+in many of the magazines. The collection also contains a large number of
+African American \textbf{Sonnets} (written throughout the period), as
+well as experiments with the \textbf{Blues}, \textbf{Elegies}, and a
+number of other forms.
+
+\textbf{The Impact of Editors and Author-Editors.} Editors played a huge
+role in encouraging African American poets in these various magazines.
+Some editors were also poets themselves. The poet Countee Cullen was on
+the masthead as an Associate Editor at \emph{Opportunity} during the
+peak of his fame (1927-1928); he also guest-edited a special issue of
+the little magazine \emph{Palms} in 1926, which probably informed his
+subsequent decision to edit the 1927 collection, \emph{Caroling Dusk}.
+Jessie Fauset, Gwendolyn Bennett, and Lewis Alexander were all poets who
+also served as guest-editors or associate editors in various magazines
+during this period.
+
+\textbf{Predominantly Black vs.~Predominantly White Publications. }We
+have marked whether the magazines where poems where published were
+``predominantly White'' or ``predominantly Black.'' In the 1920s in
+particular, there was a striking increase in the number of predominantly
+White publications that ran special issues devoted to African American
+poetry. Some of these were especially high-impact events (especially the
+special issue of \emph{Survey Graphic} in March 1925). This too could be
+studied, especially in connection with other attributes (for instance,
+one sees that the \emph{Survey Graphic} special issue mentioned above
+was especially influential; but the issue is far more lopsided towards
+poets who were men than one sees in predominantly Black publications
+from the same time period).
+
+\textbf{White poets? }As magazines like \emph{The Crisis} and
+\emph{Opportunity} became more prominent as national publications in the
+1920s, they also had a substantial readership that was White. And with
+Countee Cullen playing a prominent role as an Associate Editor at
+\emph{Opportunity} in 1927-1928, there were quite a few poets who were
+White publishing in these magazines. At present, we have excluded these
+writers from the collection. A future version of this project might
+include White poets who engaged with racial justice issues in the Black
+press (there were many who did, and their work has not been given much
+critical attention).
+
+\textbf{Frequency of publication and authorial prestige. }Poets like
+Langston Hughes and Countee Cullen published many poems in several
+different magazines during this period (both predominantly Black and
+predominantly White magazines). But poets who are less well-known today
+were also highly prolific -- one thinks especially of Georgia Douglas
+Johnson (who has approximately 50 poems represented in this dataset).
+However, some writers who published much less went on to have an
+outsized impact on the basis of relatively few poems -- one thinks of
+Helene Johnson, Mae V. Cowdery, and Arna Bontemps along those lines.
+
+\textbf{Exploring lesser-known authors. }Many poems in the dataset were
+published by poets who did not aspire to have careers as poets; they may
+have only published one or two poems. Others (such as Edward S. Silvera
+and Lewis Alexander) were accomplished poets who were well-known to
+their peers, but might have dropped off abruptly (Edward Silvera died
+quite young, at age 31). And there are a few authors who published five
+or more poems included in this collection about whom we have been able
+to find nothing (one such name might be Ann Lawrence {[}also known as
+Ann Lawrence-Lucas{]}; she published several thoughtful poems in
+\emph{The Messenger} in the mid-1920s).
+
+\section{Exercises}
+
+\section{Python}
+
+\phantomsection\label{exercise-posts}
+
+\section{R}
+
+\section{Discussion \& Activities}
+
+\subsubsection{1. Gender distribution over time or by
+venue.}\label{gender-distribution-over-time-or-by-venue.}
+
+First, sort the dataset by year. For each decade, check the gender of
+the poet. Is there an increase in poets who are women?
+
+By venue. First, sort by Venue. Then compare the gender distribution in
+\emph{The Crisis} against other predominantly Black publications like
+\emph{The Messenger} or \emph{Opportunity}. Were there magazines that
+tended to publish more poets who were women?
+
+Another question to ask might be the influence of Editors who were
+women. Magazines like \emph{Black Opals} and \emph{The Crisis} between
+1919-1926 had Editors or Associate Editors who were women. Did the
+presence of female Editors lead to more women getting published in the
+magazine?
+
+Another venue question: how did gender distribution look in the special
+issues of predominantly White magazines like \emph{The Carolina
+Magazine}, \emph{Palms}, \_or \emph{Survey Graphic}?
+
+\subsubsection{2. Studying Poetic Form.}\label{studying-poetic-form.}
+
+Poetic form has been tagged, somewhat subjectively and admittedly
+imperfectly, by the creators of this dataset, often with reference to
+Lewis Turco's \emph{Book of Forms}(2020) as a guide.
+
+\textbf{Free verse.} In the dataset, sort by Poetic form. Was there an
+increase in the number of poems tagged as Free Verse poems over time?
+When did that increase happen, and which magazines really seemed to
+embrace and encourage it?
+
+\textbf{Sonnets.} One really striking feature of this collection is the
+prevalence of sonnets. Sonnets are often studied as a form associated
+with early modern love poetry -- one thinks of Shakespeare's famous
+Sonnets along those lines. However, it was a form that was hugely
+popular among African American poets as well, including throughout the
+early part of the 20th century. Many African American poets adapted the
+form to align it with social justice themes.
+
+First, sort the dataset by ``Form,'' and perhaps paste just the poems
+tagged as
+
+Sonnets into a new Google Sheet (there should be about 70 such poems).
+
+Now, sort again by ``Theme,'' and pick a Theme that you are especially
+interested in. (One we might recommend exploring might be ``Progress and
+Racial Uplift'').
+
+Now, read some of the poems themselves. What patterns do you see?
+
+\textbf{No form -- can you find one?} Take a look at some poems that are
+currently not tagged according to form. Can you ascertain a form
+yourself? (Note: sometimes it can be interesting to paste the entire
+text of a poem into ChatGPT or another generative AI platform and ask
+for help determining poetic form. The answers are sometimes accurate.)
+
+\emph{If you discover any poems that you believe are incorrectly tagged,
+or where we have not put down a tag, we would be grateful if you would
+let us know!}
+
+\subsubsection{3. Themes and Topics.}\label{themes-and-topics.}
+
+We have tagged poems by Theme, with a focus on themes relating to social
+justice topics. In part, this area of focus relates to patterns that are
+observable within the poetry itself. That said, we also expect that
+these themes may help readers today see how these poems might be
+relevant to our present moment. As with form, this process of tagging by
+theme is admittedly somewhat subjective -- it comes out of our own
+personal interpretations of the poems. Readers might disagree or think
+of very different ways of organizing the poems by theme.
+
+(For example, we have not tagged the many seasonal and occasional poems
+in this collection -- poems celebrating Christmas, Easter, Thanksgiving,
+etc. -- though readers interested in those topics would likely find them
+simply by searching the collection for those keywords. We have also not
+tagged poems related to romantic love in the collection -- there are
+many!). The general approach we have taken comes from the main
+\emph{African American Poetry: A Digital Anthology} website, and a list
+of some of the prominent thematic tags (as well as an explanation of how
+we're defining them) can be found on the ``Glossary of Themes and
+Forms'' Tab.
+
+Sort the collection by ``Theme,'' and explore some of the Themes we have
+labeled. Do you agree or disagree with our approach?
+
+Take a look at some poems that are currently un-Tagged. How might you
+tag them?
+
+(\emph{Again -- any work researchers / students do here would be of
+interest to us, so please send it our way!})
+
+\subsubsection{4. The Crossover
+Phenomenon}\label{the-crossover-phenomenon}
+
+As mentioned above, the 1920s was a moment when predominantly White
+magazines and publishers opened their doors to African American writers
+for the first time -- one might think of it as the seeds of integration
+of the publishing industry. Three such magazines that feature
+prominently in our dataset are \emph{Survey Graphic}, \emph{Palms}, and
+\emph{The Carolina Magazine}.
+
+We have tagged magazines in the dataset by Type of Venue, and the
+different venues could be compared and studied.
+
+As a more advanced query, one could layer this question over top of the
+thematic question: did the poems published by African American authors
+in predominantly White venues look different thematically than poems
+published in predominantly Black venues like \emph{The Crisis}. And how
+did the gender distribution compare?
+
+\subsubsection{5. Social Network
+Analysis.}\label{social-network-analysis.}
+
+This is a more advanced topic, but the seeds of a fairly complex social
+network should be visible in this dataset.
+
+Researchers (and students) with skills constructing data visualizations
+using software like Gephi or Tableau might wish to extract just author
+information and venue information.
+
+A more complex visualization could focus on the relationship between
+editors and authors (which gets even more interesting when the authors
+become editors).
+
+\subsubsection{5. Researching Unknown
+Authors.}\label{researching-unknown-authors.}
+
+As mentioned above, there are a number of authors in the collection
+about whom little is known. All told, there are about 100 poems in this
+collection, by 70 different authors, whose personal biographies have not
+been verified.
+
+We have typically spent \emph{some} time attempting to locate each of
+the unknown authors, but there is probably more that could be done,
+especially using reference texts like \emph{Encylcopedia of the Harlem
+Renaissance} (a print reference text), ``Who's Who?'' type books, and
+Census information.
+
+Pick an author about whom we haven't been able to find anything concrete
+(the ``Author Bio'' column is left blank for these). Try various ways of
+searching, including simple Google searches, searches in HathiTrust,
+WorldCat, and VIAF searches. Does anything come up? Can you verify the
+identity of the author?
+
+\section{Glossary of Topics}
+
+\subsection{Glossary: Topics, Themes, and
+Forms}\label{glossary-topics-themes-and-forms}
+
+As we've been adding poetry to this collection, we've been marking
+various thematic areas of interest. These tags can be a good way to
+explore our collection and see patterns and begin to emerge between and
+among authors featured on this site.
+
+\textbf{Historical Events and Tribute Poems}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{World War I}. This tag will be especially interesting to
+  readers interested in African American writers responding to World War
+  I, especially in the 1910s. Some writers took a critical eye to how
+  Black soldiers were treated, and the difficulty of mustering patriotic
+  feeling in a society that treated Black folks as second-class
+  citizens. \emph{(14 poems with this tag)}
+\item
+  \textbf{Spanish-American War}. Poems dealing with African American
+  soldiers fighting in the Spanish-American war, including the
+  Philippine War that followed (mainly 1900-1910).\\
+\item
+  \textbf{Slavery}. Many of these writers were writing in living memory
+  of the slavery era, and had relatives who had been enslaved. Paul
+  Laurence Dunbar, for instance, was born to parents who had been
+  enslaved. For Black writers in this period, grappling with the legacy
+  of slavery was an important and ongoing topic. \emph{(33 poems with
+  this tag)}
+\item
+  \textbf{Lynching and Racialized Violence}. Thousands of African
+  American people were brutally murdered in extrajudicial mob killings
+  -- lynchings -- in this period. This was a topic that was widely
+  covered in the Black press, especially in magazines like \emph{The
+  Crisis}. A few poems directly address this horrific phenomenon. Under
+  this tag, we also include poems dealing with racialized violence (such
+  as race riots) that might not strictly speaking be understood as
+  lynchings. \emph{(21 poems with this tag)}
+\item
+  \textbf{Frederick Douglass}. Tribute poems for Frederick Douglass.
+\item
+  \textbf{Paul Laurence Dunbar}. Tribute poems for Paul Laurence Dunbar.
+\item
+  \textbf{Abraham Lincoln}. Poems by Black poets commemorating President
+  Abraham Lincoln.
+\item
+  \textbf{Civil War}. Poems by Black poets reflecting on the Civil War
+  (1861-1865).
+\end{itemize}
+
+\textbf{Social and Political Themes}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Race}. Many, many poems in this collection might be tagged as
+  dealing with race in some way, so over time we have added additional
+  differentiations for two especially important subtopics:
+  \textbf{``Race: Identity formation''} and \textbf{``Race: Black
+  Beauty.''} \emph{(100+ poems with some version of this tag)}
+\item
+  \textbf{Racism}. Poems tagged with ``racism'' deal explicitly with
+  racialized hostility, segregation, and its effects on the African
+  American community.
+\item
+  \textbf{Progress and Racial Uplift}. Poems thematizing racial
+  progress, uplift, and the civil rights movement. \emph{(Approximately
+  44 poems in the collection are tagged this way)}
+\item
+  \textbf{Queer and Homoerotic}. Poems dealing with same-sex desire or
+  LGBTQIA identities. Several important writers from this period are
+  known from biographical evidence to have been LGBTQIA; here we have
+  tagged only poems that seem to explicitly reflect same-sex or queer
+  desire.
+\item
+  \textbf{Motherhood}. This is a rich topic, especially for poets from
+  the 1910s. Some of the most memorable poetry thematizing motherhood is
+  written by Georgia Douglas Johnson. \emph{(18 poems with this tag)}
+\item
+  \textbf{Interracial, Multiracial, and Race Relations}. Poems dealing
+  with relationships that cross racial borders, including friendships,
+  antagonistic relationships, and romances. We also use this category
+  for poems that reference mixed-race people, such as Georgia Douglas
+  Johnson's ``The Octoroon.'' \emph{(21 poems with this tag)}
+\item
+  \textbf{Religion}. Poems representing engagement with religion,
+  including both the affirmative embrace of Christianity in the interest
+  of civil rights and more critical engagements.
+\item
+  \textbf{Labor. }Poems dealing with class and labor relations.
+  \emph{(approx. 30 poems with this tag)}
+\item
+  \textbf{Travel, Migration and Great Migration}. This was a period in
+  which many African American writers were on the move, and this tag
+  references poems that deal with travel in Europe or Africa. It is also
+  used for poems dealing with the Great Migration, the massive movement
+  of Black folks from the U.S. south to northern amd midwestern cities
+  that began in the early 1900s and continued through the 1940s.
+  \emph{(approx. 28 poems with this tag)}
+\item
+  \textbf{Patriotism}. Poems exploring the often conflicted relationship
+  many African American writers had with questions of patriotism and
+  national pride.
+\end{itemize}
+
+\textbf{Places / Regions / Institutions}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Harlem}. As is well-known, Harlem was the epicenter of the
+  Black cultural community that emerged in the 1920s, and many poets
+  celebrated it in their writing, including Claude McKay, Langston
+  Hughes, and many others.
+\item
+  \textbf{HBCU}. Many Black writers from this period were associated
+  with Historically Black Colleges and Universities in some way. Some --
+  notably Langston Hughes -- attended HBCUs and received degrees there.
+  Others, including Alain Locke, W.E.B. Du Bois, Charles Johnson, and
+  Zora Neale Hurston, taught at HBCUs. There are many references to
+  universities like Fisk University, Howard University, Atlanta
+  University, and so on in the poetry of this period.
+\item
+  \textbf{Africa}. Poems that thematize Africa in some way. Imagining
+  Africa was an important theme for many Black poets in the early 20th
+  century -- both those involved with the UNIA and Garveyism and more
+  broadly. Africa was especially vivid to Langston Hughes, as he had a
+  memorable visit to West Africa early in his career.\\
+\item
+  \textbf{Caribbean. }Writers like Claude McKay and Eric Walrond had
+  direct Caribbean connections, and often wrote about it in their works.
+  But others -- especially Langston Hughes -- also engaged the Caribbean
+  in their writing. The Caribbean was also important to Arthur
+  Schomburg, who immigrated to the U.S. from Puerto Rico in 1891.
+\end{itemize}
+
+\textbf{Other Themes and Forms}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Sonnet}. Poems using the sonnet form. The sonnet form was
+  highly prevalent in African American poetry during this period. Claude
+  McKay famously used sonnets in many of his most influential political
+  poems. Writers like Georgia Douglas Johnson and Carrie Williams
+  Clifford also found the sonnet form appealing, again, in connection
+  with social justice-oriented poetry. \emph{(approx. 75 poems with this
+  tag)}
+\item
+  Various other poetic forms: \textbf{Common Measure},
+  \textbf{Villanelle}, \textbf{Terza Rima}, \textbf{Elegy},
+  \textbf{Ode}, \textbf{Haiku}, \textbf{Ballad}, \textbf{Free Verse},
+  \textbf{Blues}
+\item
+  \textbf{Prize-winning poems. }Poems that won one of the poetry prize
+  competitions from the mid-1920s, sponsored by either \emph{The Crisis}
+  or \emph{Opportunity} magazine. \emph{(32 poems with this tag)}
+\item
+  \textbf{Music}. The emphasis on music in poems by Langston Hughes is
+  well-known, but in fact many Black poets from this period were
+  interested in the connections between music and lyricism.
+\item
+  \textbf{Intertextual}. Poems that allude to other authors, including
+  white authors.
+\item
+  \textbf{Black Vernacular (AAVE). }Poems using AAVE. There were active
+  debates at the time among Black poets about the use of language that
+  was sometimes seen as caricaturing Black voices.
+\item
+  \textbf{Poetry for children}. Many well-known African American writers
+  of this period wrote poems for children on occasion, including
+  especially Langston Hughes and Jessie Fauset.
+\end{itemize}
+
+
+
+\end{document}

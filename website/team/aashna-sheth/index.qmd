@@ -1,6 +1,12 @@
 ---
-title: "Amardeep Singh"
-about:
+title: "Aashna Sheth"
+last: Sheth
+first: Aashna
+people_group: member
+education: Master's Computer Science | University of Washington
+subtitle: Something
+image: profile.jpg
+about: 
   template: trestles
   image: profile.jpg
   links:

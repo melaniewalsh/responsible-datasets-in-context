@@ -1,5 +1,11 @@
 ---
-title: "Aashna Sheth"
+title: "Miriam Posner"
+last: Posner
+first: Miriam
+people_group: pi
+education: PhD Film Studies and American Studies | Yale University
+subtitle: Assistant Professor
+image: profile.jpg
 about:
   template: trestles
   image: profile.jpg

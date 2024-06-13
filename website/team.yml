@@ -1,0 +1,11 @@
+team:
+  - title: "Sylvia Fernández, PI"
+    subtitle: "Principal Investigator"
+    image: "path/to/sylvia-image.jpg"
+    education: "stuff"
+    path: "team/sylvia-fernandez/index.qmd"
+  - title: "Miriam Posner, PI"
+    subtitle: "Principal Investigator"
+    image: "path/to/miriam-image.jpg"
+    education: "stuff"
+    path: "team/miriam-posner/index.qmd"

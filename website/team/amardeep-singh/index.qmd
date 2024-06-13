@@ -1,0 +1,14 @@
+---
+title: "Amardeep Singh"
+last: Singh
+first: Amardeep
+people_group: pi
+education: PhD | Duke University
+subtitle: Professor, English
+image: profile.jpg
+about:
+  template: trestles
+  image: profile.jpg
+---
+
+Amardeep Singh is the author of two scholarly books and the editor of numerous digital collections, including ["The Kiplings and India,"](https://urldefense.com/v3/__https://scalar.lehigh.edu/kiplings/__;!!K-Hz7m0Vt54!jIuNLbHZQfCP1rOZOHYR1gDL1oj3gacXK7bcMFRwFbARFNywel1jEw8XelTzfjai82jNHnuwuTj9eQ$) ["Claude McKay's Early Poetry,"](https://urldefense.com/v3/__https://scalar.lehigh.edu/mckay/__;!!K-Hz7m0Vt54!jIuNLbHZQfCP1rOZOHYR1gDL1oj3gacXK7bcMFRwFbARFNywel1jEw8XelTzfjai82jNHnv_-txZjg$) and ["African American Poetry: A Digital Anthology."](https://urldefense.com/v3/__https://scalar.lehigh.edu/african-american-poetry-a-digital-anthology/index__;!!K-Hz7m0Vt54!jIuNLbHZQfCP1rOZOHYR1gDL1oj3gacXK7bcMFRwFbARFNywel1jEw8XelTzfjai82jNHntb4MFAJA$) He has published several essays in the Digital Humanities area in particular, including "Beyond the Archive Gap: The Kiplings and the Famines of British Colonial India" (_South Asian Review_, 2019), and "The Modernist Archive Gap: Black Writers and Canonicity in the Digital Era" (forthcoming in _The Bloomsbury Handbook to Modernist Archives,_ 2024). 

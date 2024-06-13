@@ -1,8 +1,14 @@
 ---
-title: "Juan Carlos Garcia"
+title: "Katherine Hennessey"
+last: Hennessey
+first: Katherine
+people_group: member
+education: B.A. English Literature | Lehigh University
+subtitle: Research Assistant
+image: profile.jpg
 about:
   template: trestles
-  image: profile.jpg
+  image: profile.jpg.heic
   links:
     - icon: twitter
       text: twitter

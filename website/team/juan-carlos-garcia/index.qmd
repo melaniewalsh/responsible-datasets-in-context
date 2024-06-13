@@ -1,5 +1,11 @@
 ---
-title: "Anna Preus"
+title: "Juan Carlos Garcia"
+first: Juan
+last: Garcia
+people_group: member
+education: B.S. Informatics | University of Washington
+subtitle: Student Assistant
+image: profile.jpg
 about:
   template: trestles
   image: profile.jpg

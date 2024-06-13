@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -31,6 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -67,6 +69,63 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-pi .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-image','listing-education',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-render","listing-website","listing-format","listing-language","listing-comments","listing-title","listing-last","listing-first","listing-people_group","listing-education","listing-subtitle","listing-image","listing-about","listing-path","listing-outputHref","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-pi'] = new List('listing-pi', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-member .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-image','listing-education',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      
+      searchColumns: ["listing-project","listing-render","listing-website","listing-format","listing-language","listing-comments","listing-title","listing-last","listing-first","listing-people_group","listing-education","listing-subtitle","listing-image","listing-about","listing-path","listing-outputHref","listing-author","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-member'] = new List('listing-member', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
 <script type="application/json" class="js-hypothesis-config">
 {
   "theme": "clean",
@@ -81,6 +140,35 @@ ul.task-list li input[type="checkbox"] {
   });
 </script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -170,116 +258,459 @@ ul.task-list li input[type="checkbox"] {
 
 <p>“Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education” was supported by the Responsible Computing Challenge (2023-2024). Read <a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/">the press release here</a>.</p>
 <p>The Responsible Computing Challenge is a partnership between Mozilla, Omidyar Network, Schmidt Futures, Craig Newmark Philanthropies, Mellon Foundation, and the Rockefeller Brothers Fund.</p>
-<section id="project-directors" class="level1">
-<h1>Project Directors</h1>
-<ul>
-<li><a href="./team/sylvia-fernandez.html">Sylvia Fernández, PI</a></li>
-<li><a href="./team/miriam-posner.html">Miriam Posner, PI</a></li>
-<li><a href="./team/anna-preus.html">Anna Preus, PI</a></li>
-<li><a href="./team/amardeep-singh.html">Amardeep Singh, PI</a></li>
-<li><a href="./team/melanie-walsh.html">Melanie Walsh, PI</a></li>
-</ul>
+<section id="principal-investigator" class="level1">
+<h1>Principal Investigator</h1>
+<div id="listing-pi" class="quarto-listing quarto-listing-container-custom">
+<div class="quarto-listing quarto-listing-container-grid">
+    <div class="list grid quarto-listing-cols-3"> 
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/sylvia-fernandez/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Sylvia Fernandez" src="./team/sylvia-fernandez/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Sylvia Fernandez<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Assistant Professor<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    PhD Hispanic Studies | University of Houston<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/miriam-posner/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Miriam Posner" src="./team/miriam-posner/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Miriam Posner<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Assistant Professor<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    PhD Film Studies and American Studies | Yale University<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/anna-preus/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Anna Preus" src="./team/anna-preus/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Anna Preus<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Assistant Professor<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    PhD English | Washingtono University in St. Louis<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/amardeep-singh/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Amardeep Singh" src="./team/amardeep-singh/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Amardeep Singh<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Professor, English<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    PhD | Duke University<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/melanie-walsh/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Melanie Walsh" src="./team/melanie-walsh/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Melanie Walsh<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Assistant Professor, Information School, University of Washington<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    PhD English Literature | Washington University St. Louis<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+      
+    </div>
+  </div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
 </section>
 <section id="team-members" class="level1">
 <h1>Team Members</h1>
-<ul>
-<li><a href="./team/os-reyes.html">Os Keyes</a></li>
-<li><a href="./team/katherine-hennessey.html">Katherine Hennessey</a></li>
-<li><a href="./team/aashna-sheth.html">Aashna Sheth</a></li>
-<li><a href="./team/paulina-hernandez-trejo.html">Paulina Hernandez Trejo</a></li>
-<li><a href="./team/juan-carlos-garcia.html">Juan Carlos Garcia</a></li>
-</ul>
+<div id="listing-member" class="quarto-listing quarto-listing-container-custom">
+<div class="quarto-listing quarto-listing-container-grid">
+    <div class="list grid quarto-listing-cols-3"> 
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/juan-carlos-garcia/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Juan Carlos Garcia" src="./team/juan-carlos-garcia/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Juan Carlos Garcia<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Student Assistant<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    B.S. Informatics | University of Washington<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/katherine-hennessey/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Katherine Hennessey" src="./team/katherine-hennessey/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Katherine Hennessey<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Research Assistant<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    B.A. English Literature | Lehigh University<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/paulina-hernandez-trejo/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Paulina Hernandez Trejo" src="./team/paulina-hernandez-trejo/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Paulina Hernandez Trejo<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Doctoral Student<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    M.A. English | UT San Antonio - B.A. English | UT Austin<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/os-keyes/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Os Keyes" src="./team/os-keyes/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Os Keyes<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Doctoral Student<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    Placeholder<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+       
+        <div class="g-col-1 listing-box">
+          <a href="./team/aashna-sheth/index.html" role="button" class="quarto-grid-link">
+            <div class="quarto-grid-item card h-100 card-left">
+              <div class="card-img-top">
+                
+                  <img alt="Aashna Sheth" src="./team/aashna-sheth/profile.jpg" class="thumbnail-image card-img listing-box-image">
+                
+              </div>
+              <div class="card-body post-contents">
+                <div class="listing-box-title">
+                  Aashna Sheth<br> 
+                </div>
+                <div class="listing-box-subtitle">
+                  Something<br>
+                </div>
+                <div class="listing-box-education">
+                  
+                    Master's Computer Science | University of Washington<br>
+                  
+                </div>  
+              </div>  
+            </div>  
+          </a>
+        </div>
+      
+    </div>
+  </div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+
 
 
 </section>
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
+
 $(document).ready(function () {
+
     // Assign data-tab-name attribute based on the inner text of the tab links
+
     $('.nav-tabs .nav-link').each(function () {
+
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+
         $(this).attr('data-tab-name', tabName);
+
     });
+
+
 
     function activaTab(tabName, container = document) {
+
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+
         if (tabLink.length) {
+
             tabLink.tab('show');
+
             tabLink.trigger('click'); // Explicitly trigger the click event
+
         }
+
     }
+
+
 
     function scrollToAnchor(anchorId) {
+
         var element = $('[data-anchor-id="' + anchorId + '"]');
+
         if (element.length) {
+
             $('html, body').animate({
+
                 scrollTop: element.offset().top
+
             }, 500);
+
         }
+
     }
+
+
 
     function activateTabAndHeaderFromUrl() {
+
         var urlParams = new URLSearchParams(window.location.search);
+
         var tabName = urlParams.get('tab');
+
         var anchorId = urlParams.get('anchor');
+
         var nestedTabName = urlParams.get('nested-tab');
 
+
+
         if (tabName) {
+
             activaTab(tabName);
+
             if (anchorId) {
+
                 setTimeout(function() {
+
                     scrollToAnchor(anchorId);
+
                 }, 100); // Delay to ensure tab content is visible
+
             }
+
             if (nestedTabName) {
+
                 setTimeout(function() {
+
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+
                 }, 200); // Delay to ensure parent tab content is visible
+
             }
+
         } else {
+
             // Default to the first tab if no tab is specified
+
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+
             activaTab(firstTabName);
+
         }
+
     }
+
+
 
     function clearPreviousAnchor() {
+
         var url = new URL(window.location.href);
+
         url.hash = ''; // Clear the hash part of the URL
+
         history.replaceState(null, null, url.toString());
+
     }
 
+
+
     // Activate the tab and scroll to anchor based on the URL when the page loads
+
     activateTabAndHeaderFromUrl();
 
+
+
     // Update URL query parameters when a tab is shown
+
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
+
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+
         var tabName = $(e.target).attr('data-tab-name');
+
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+
         var url = new URL(window.location.href);
 
+
+
         if (parentTabPane) {
+
             url.searchParams.set('tab', parentTabPane);
+
             url.searchParams.set('nested-tab', tabName);
+
         } else {
+
             url.searchParams.set('tab', tabName);
+
             url.searchParams.delete('nested-tab');
+
         }
 
+
+
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+
         history.replaceState(null, null, url.toString());
+
     });
 
+
+
     // Re-activate the tab and scroll to anchor if the query parameters change
+
     $(window).on('popstate', function () {
+
         activateTabAndHeaderFromUrl();
+
     });
+
 });
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

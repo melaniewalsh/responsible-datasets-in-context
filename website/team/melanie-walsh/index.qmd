@@ -1,0 +1,24 @@
+---
+title: "Melanie Walsh"
+last: Walsh
+first: Melanie
+people_group: pi
+education: PhD English Literature | Washington University St. Louis
+subtitle: Assistant Professor, Information School, University of Washington
+image: profile.jpg
+about:
+  template: trestles
+  image: profile.jpg
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://x.com/mellymeldubs
+    - icon: github
+      text: Github
+      href: https://github.com/melaniewalsh
+    - icon: person-circle
+      text: Personal Website
+      href: https://melaniewalsh.org/
+---
+
+Melanie Walsh is an Assistant Professor in the Information School at the University of Washington. Her research interests include data science, digital humanities, cultural analytics, contemporary literature, and library and information science. She received her PhD in English Literature from Washington University in St. Louis. Walsh is co-editor of the[ Post45 Data Collective](https://urldefense.com/v3/__https://data.post45.org/__;!!K-Hz7m0Vt54!l2qYpCc8mQGIJc9s8FpvheLeEo-Qq1hqOOF4dU37bErVdNeSQuVl7WwPF9hp5UYdms50VJ9kPZhPggg$), a peer-reviewed, open-access repository for literary and cultural data from 1945 to the present. She is also the author of _[Introduction to Cultural Analytics & Python](https://urldefense.com/v3/__https://melaniewalsh.github.io/Intro-Cultural-Analytics/__;!!K-Hz7m0Vt54!l2qYpCc8mQGIJc9s8FpvheLeEo-Qq1hqOOF4dU37bErVdNeSQuVl7WwPF9hp5UYdms50VJ9knQOzuPs$)_, an online programming textbook geared toward humanities and social science audiences. 

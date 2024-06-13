@@ -1,5 +1,11 @@
 ---
-title: "Sylvia Fernande"
+title: "Os Keyes"
+last: Keyes
+first: Os
+people_group: member
+education: Placeholder
+subtitle: Doctoral Student
+image: profile.jpg
 about:
   template: trestles
   image: profile.jpg

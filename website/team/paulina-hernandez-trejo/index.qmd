@@ -1,0 +1,14 @@
+---
+title: "Paulina Hernandez Trejo"
+last: Hernandez Trejo
+first: Paulina
+people_group: member
+education: M.A. English | UT San Antonio - B.A. English | UT Austin
+subtitle: Doctoral Student
+image: profile.jpg
+about:
+  template: trestles
+  image: profile.jpg
+---
+
+Paulina (she/her/ella) is from the Ciudad Juárez/El Paso U.S.-Mexico Borderland region. Having graduated in 2018 with her English B.A. from UT Austin and in 2023 with her English M.A. from UT San Antonio, Paulina will be starting her English Ph.D. program at the University of Notre Dame in Fall 2024. She researches (im)migrant multiethnic literature from the U.S.-Mexico Borderlands, focusing on folklore and other forms of haunting within literature and cultural expressions. Paulina’s research intersects public and digital humanities with her literary study, having worked on literary digital mapping and archival projects during her Master’s

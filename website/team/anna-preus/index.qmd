@@ -1,5 +1,11 @@
 ---
-title: "Paulina Hernandez Trejo"
+title: "Anna Preus"
+last: Preus
+first: Anna
+people_group: pi
+education: PhD English | Washingtono University in St. Louis
+subtitle: Assistant Professor
+image: profile.jpg
 about:
   template: trestles
   image: profile.jpg

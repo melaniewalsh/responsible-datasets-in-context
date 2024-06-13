@@ -1,0 +1,18 @@
+---
+title: "Sylvia Fernandez"
+last: Fernandez
+first: Sylvia
+people_group: pi
+education: PhD Hispanic Studies | University of Houston
+subtitle: Assistant Professor
+image: profile.jpg
+about:
+  template: trestles
+  image: profile.jpg
+  links:
+    - icon: github
+      text: Github
+      href: https://urldefense.com/v3/__https://unitedfronteras.github.io/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3SrbdNHA$
+---
+
+Sylvia Fernández Quintanilla was born and raised in El Paso-Cd. Juárez. She is currently an Assistant Professor of Public and Digital Humanities in the College of Liberal and Fine Arts at the University of Texas at San Antonio. Her research, teaching, and community work lie at the intersection of interdisciplinary studies focused on U.S.-Latinx and Mexico-United States transborder literature, archives, cultures, and languages, gender violence and feminicides, transnational and intersectional feminisms, and the intersections with the use of digital technologies to analyze, design, and develop digital and public academic and creative work through ethical and inclusive practices. Over the past decade, she has been a producer and contributing member of numerous recognized multilingual and transnational digital humanities projects, including [Borderlands Archives Cartography](https://urldefense.com/v3/__https://www.bacartography.org/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3pt10CxQ$), [Torn Apart/Separados](https://urldefense.com/v3/__https://xpmethod.columbia.edu/torn-apart/volume/1/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3DW0KUBA$), [United Fronteras](https://urldefense.com/v3/__https://unitedfronteras.github.io/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3SrbdNHA$), [Huellas Incomodas](https://urldefense.com/v3/__https://idrhku.org/huellasincomodas/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3MfLiOd8$), among other ongoing projects.
