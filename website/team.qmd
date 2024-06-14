@@ -31,7 +31,7 @@ listing:
 
 The Responsible Computing Challenge is a partnership between Mozilla, Omidyar Network, Schmidt Futures, Craig Newmark Philanthropies, Mellon Foundation, and the Rockefeller Brothers Fund.
 
-# Principal Investigator
+# Project Directors
 
 ::: {#pi}
 :::
