@@ -65,10 +65,9 @@ In Fall 2023 with the support of the “Responsible Computing Challenge” of th
 
 Throughout the course, relevant social, historical, cultural readings, digital material, visual aids, interviews and workshops with writers, critics, activists, project creators and data specialists were included to help students in their comprehension of the distinct and complex approaches and perspectives of humanities data in relationship with gender violence, transnational border issues and human rights. Overall, students engage in ethical and responsible ways of thinking and producing at the intersection of feminist studies, literary analysis, digital mapping and data science.
 
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.jpg). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image1.jpg "image_tooltip")
+![Poster of Responsable and Ethical Digital Memory Making in the Context of Crossborder Gender Violence & Femenicide](images/poster-image1.jpg "Poster Image")
 _Image 1. Poster presented by the course instructors at the Academic Data Science Alliance on October 24-27, 2023 at the University of Texas at San Antonio’s Data Science School. _
 
 
@@ -82,19 +81,17 @@ The course was divided into five modules and the final module. In every module t
 
     
 
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image2.png "image_tooltip")
+![Identity and Intersectionality visualization using Miro](images/miro-visualization-image2.png "Identity and Intersectionality visualization")
 
 
 
     
 
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image3.png "image_tooltip")
+![Anastasia Sasha Krouk Blanco comment on Identity and Intersectionality visualization she made](images/visualization-comment-image3.png "nastasia Sasha Krouk Blanco comment on visualization")
 _Image 2. Example of identity and intersectionality visualization using Miro, created by Anastasia Sasha Krouk Blanco_
 
 
@@ -104,10 +101,9 @@ _Image 2. Example of identity and intersectionality visualization using Miro, cr
 
     
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image4.png "image_tooltip")
+![Word graph poem of Layla R. Smith with extra context below it](images/word-graph-image4.png "Word graph poem")
 
 
 
@@ -117,34 +113,30 @@ _Image 2. Example of identity and intersectionality visualization using Miro, cr
 
     
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image5.png "image_tooltip")
-
-
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image6.png "image_tooltip")
+![Desert Blood by Alicia Gaspar de Alba book cover](images/desert-blood-image5.png "Desert Blood by Alicia Gaspar de Alba book cover")
 
 
 
-    
 
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
+![Señorita Extravida (Missing Young Woman) documentary cover](images/senorita-extravida-image6.png "Señorita Extravida (Missing Young Woman) documentary cover")
 
 
 
     
 
-<p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image8.png "image_tooltip")
+![Carloina Y. Vlaun giving thoughts and further context into the book Desert Blood by Alicia Gaspar de Alba](images/carolina-vlaun-image7.png "Carolina Y Vlaun comments on Desert Blood by Alicia Gaspar de Alba")
+
+
+
+    
+
+
+
+![Map Visualization of Femenicide using Google My Maps created by Carolina Y. Vlaun](images/map-visualization-image8.png "Map Visualization of Femenicide")
 
 
 
@@ -154,10 +146,9 @@ _Image 2. Example of identity and intersectionality visualization using Miro, cr
 
     
 
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image9.png "image_tooltip")
+![Example of a corpus of hashtags analyzed and visualized](images/corpus-hashtags-image9.png "Corupus of hashtags analyzed and visualized")
 
 
 
@@ -167,34 +158,30 @@ _Image 2. Example of identity and intersectionality visualization using Miro, cr
 
 
 
-<p id="gdcalert10" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image10.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert11">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image10.png "image_tooltip")
+![Map visualization of a femenist counter dataset](images/femenist-counter-image10.png "Map visualization of a femenist counter dataset")
 
 
-<p id="gdcalert11" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image11.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert12">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image11.png "image_tooltip")
+![Niloufar Esmaeili giving context to the spreadsheet used to create the map visualization](images/niloufar-esmaeili-image11.png "Niloufar Esmaeili giving context to the data used")
 _Image 6. Example of a feminist counter dataset, collected from social media and visualized in a digital map using StoryMaps, created by Niloufar Esmaeili._
 
 
     
 
-<p id="gdcalert12" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image12.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert13">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image12.png "image_tooltip")
+![Map visualization of a femenist counter dataset showing where murder happened, who it was, and the newspaper talking about the murder](images/femenist-counter-image12.png "Map visualization of a femenist counter dataset")
 
 
 
     
 
-<p id="gdcalert13" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image13.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert14">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image13.png "image_tooltip")
+![Jessica V Corona commenting on the spreadsheet used to create the map visualization](images/jessica-corona-image13.png "Jessica V Corona context on data used")
 _Image 7. Example of a feminist counter dataset, collected from archival sources and visualized in a digital map using StoryMaps , created by Jessica Corona._
 
 
@@ -245,10 +232,9 @@ As part of the assigned reading material, students read _El Silencio Que La Voz 
 
 
 
-<p id="gdcalert14" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image14.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert15">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image14.png "image_tooltip")
+![Front page of the book _El silencio que la voz de todas_](images/el-silencio-que-la-voz-de-todas-image14.png "Front page of the book _El silencio que la voz de todas_")
 
 
 _Image 8. The front page of the book, El silencio que la de todas quiebra._
@@ -257,29 +243,26 @@ At the end of the [book](https://elperiodicodelassenoras.wordpress.com/wp-conten
 
 
 
-<p id="gdcalert15" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image15.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert16">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image15.png "image_tooltip")
+![Map created by authors mapping all the cases included in the spreadsheet](images/cases-map-image15.png "Map visualization of all cases included in the spreadsheet")
 
 
-_Image 9. A hands-on map created by the authors mapping all the cases included in the spreadsheet. This map is available at the end of El Silencio. _
+_Image 9. A hands-on map created by the authors mapping all the cases included in the spreadsheet. This map is available at the end of El Silencio._
 
 
 
-<p id="gdcalert16" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image16.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert17">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image16.png "image_tooltip")
+![Part one of the spreadsheet at the end of the book with total cases and metadata for each case](images/spreadsheet-part1-image16.png "Part one of the spreadsheet at the end of the book")
 
 
-<p id="gdcalert17" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image17.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert18">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image17.png "image_tooltip")
+![Part two of the spreadsheet at the end of the book with total cases and metadata for each case](images/spreadsheet-part2-image17.png "Part two of the spreadsheet at the end of the book")
 
 
-_Image 10 & 11. The spreadsheet included at the end of the book with a total of 137 cases and metadata related to each case. _
+_Image 10 & 11. The spreadsheet included at the end of the book with a total of 137 cases and metadata related to each case._
 
 This spreadsheet is only accessible through this book, ultimately making it very hard to obtain for any other people looking to advance this cause. Currently, there is a scanned version circulating on the internet, but the spreadsheet is not complete, and the printed book is not on sale anymore and it requires a special process to request the book from libraries that have a copy. Therefore, our group was tasked to:
 
@@ -435,6 +418,7 @@ Inputs.table(search, {
 ```
 
 
+
 # Discussion & Activities
 ### ASSIGNMENT #1
 
@@ -472,7 +456,7 @@ As you interacted with the data in this multimodal project, consider the followi
 
 ### ASSIGNMENT #2
 
-![alt_text](images/image18.png "image_tooltip")
+![Text mining a Sancho Paz newspaper with red rectangles around parts of text](images/text-mining-image18.png "Text mining of a newspaper")
 
 #### Part #1: Text Mining Analog Periodicals
 
@@ -499,7 +483,7 @@ Briefly describe the following questions:
 
 ### ASSIGNMENT #3
 
-![alt_text](images/image19.png "image_tooltip")
+![Who or What is to Blame? Assignment #3 intro](images/who-or-what-is-to-blame-image19.png "Who or What is to Blame?")
 
 #### Part #1: Analyzing Feminicide Data Using the Ester Chavez Collection
 

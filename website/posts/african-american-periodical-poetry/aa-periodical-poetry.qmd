@@ -73,7 +73,7 @@ Inputs.table(search, {
 })
 ```
 <br>
-### Summary Table
+
 ```{ojs}
 //| echo: false
 import { SummaryTable } from "@observablehq/summary-table"

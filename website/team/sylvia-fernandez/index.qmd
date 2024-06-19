@@ -10,8 +10,8 @@ about:
   template: trestles
   image: profile.jpg
   links:
-    - icon: github
-      text: Github
+    - icon: box-arrow-up-right
+      text: United Fronteras
       href: https://urldefense.com/v3/__https://unitedfronteras.github.io/__;!!K-Hz7m0Vt54!nRbLH5LJ5j2LAMnemGJDm1gU9yVXSQ0U82Qz5SlOGmb_YXzKZYaoxTRzSOIOVLKmEDxT1ZDMDii7R_ESvKr3SrbdNHA$
 ---
 
