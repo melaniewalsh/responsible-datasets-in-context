@@ -18,6 +18,7 @@ R.options:
   warn: false
 code-tools: true
 bibliography: references/references.bib
+encoding: UTF-8
 ---
 
 ::: {.panel-tabset .nav-pills}
@@ -417,6 +418,37 @@ Inputs.table(search, {
 })
 ```
 
+## Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection
+```{ojs}
+//| echo: false
+//| output: false
+tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Tracing_Feminicides_in_El_Paso,_Texas_Using_Newsbank's_Hispanic_American_Newspaper_Collection(Violencia_Violence_Feminicida_Fem).csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_femenicide_data = Inputs.search(tracing_femenicide_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_femenicide_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
 
 
 # Discussion & Activities

@@ -565,5 +565,12 @@
     "title": "Sylvia Fernandez",
     "section": "",
     "text": "Sylvia Fernández Quintanilla was born and raised in El Paso-Cd. Juárez. She is currently an Assistant Professor of Public and Digital Humanities in the College of Liberal and Fine Arts at the University of Texas at San Antonio. Her research, teaching, and community work lie at the intersection of interdisciplinary studies focused on U.S.-Latinx and Mexico-United States transborder literature, archives, cultures, and languages, gender violence and feminicides, transnational and intersectional feminisms, and the intersections with the use of digital technologies to analyze, design, and develop digital and public academic and creative work through ethical and inclusive practices. Over the past decade, she has been a producer and contributing member of numerous recognized multilingual and transnational digital humanities projects, including Borderlands Archives Cartography, Torn Apart/Separados, United Fronteras, Huellas Incomodas, among other ongoing projects."
+  },
+  {
+    "objectID": "posts/gender-violence/index.html#dataset-1-tracing-feminicide-in-el-paso-texas-using-the-hispanic-american-newspaper-newsbank-readex-collection",
+    "href": "posts/gender-violence/index.html#dataset-1-tracing-feminicide-in-el-paso-texas-using-the-hispanic-american-newspaper-newsbank-readex-collection",
+    "title": "Gender Violence at the Border (1993-1998)",
+    "section": "Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection",
+    "text": "Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection\n\n\nCode\ntracing_femenicide_data = d3.csv(\"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Tracing_Feminicides_in_El_Paso,_Texas_Using_Newsbank's_Hispanic_American_Newspaper_Collection(Violencia_Violence_Feminicida_Fem).csv\", d3.autoType)\n\n\n\n\n\n\n\n\n\nCode\nviewof search_femenicide_data = Inputs.search(tracing_femenicide_data, {\n  placeholder: \"Search\"\n})\n\n\n\n\n\n\n\n\n\nCode\n/*Inputs.table(search, data)*/\n\nInputs.table(search_femenicide_data, {\n  layout: \"fixed\",\n  rows: 50,\n  sort: \"Year\",\n  reverse: true,\n  format: {\n    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/\n    Year: x =&gt; d3.timeFormat(x),\n    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`\n  }\n})"
   }
 ]
