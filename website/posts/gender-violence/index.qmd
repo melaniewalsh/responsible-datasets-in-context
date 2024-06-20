@@ -450,6 +450,201 @@ Inputs.table(search_femenicide_data, {
 })
 ```
 
+<-- Put both spanish and English data set for this one. -->
+## Dataset #2: Digital and Translated Version of "El Silencio De La Voz Que a Todos Nos Quiebra Feminicidio" Printed Spreadsheet
+
+### Spanish Data Table
+```{ojs}
+//| echo: false
+//| output: false
+spanish_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_spanish_silencio_de_la_voz_data = Inputs.search(spanish_silencio_de_la_voz_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_spanish_silencio_de_la_voz_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+### English Data Table
+```{ojs}
+//| echo: false
+//| output: false
+english_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_english_silencio_de_la_voz_data = Inputs.search(english_silencio_de_la_voz_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_english_silencio_de_la_voz_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+## Dataset #3: Geotestimonios Literary Dataset (Woman Hollering Creek by Sandra Cisneros and Stories of Survival by Alicia Gaspar de Alba)
+
+```{ojs}
+//| echo: false
+//| output: false
+geotestimonios_literary_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Geographical_Metadata_Women_Hollering&Mystery_of_Survival(Woman_Hollering_Creek).csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_geotestimonios_literary_data = Inputs.search(geotestimonios_literary_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_geotestimonios_literary_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+
+## Dataset #4: Films of Feminicide and/or Gender Violence Around the World
+```{ojs}
+//| echo: false
+//| output: false
+film_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Film_Dataset.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_film_data = Inputs.search(film_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_film_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "ID NO.",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+## Dataset #5: Books and Articles from Mexico and the U.S. Related to Feminicide and Gender Violence
+```{ojs}
+//| echo: false
+//| output: false
+literature_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_literature_data = Inputs.search(literature_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_literature_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "ID NO.",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+## Dataset #6: Murals and Public Monuments Related to Feminicide and Gender Violence
+```{ojs}
+//| echo: false
+//| output: false
+anti_gender_art_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Art_of_Anti_Gender_Violence_and_Femincides_Database.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_anti_gender_art_data = Inputs.search(anti_gender_art_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(anti_gender_art_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "ID NO.",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
 
 # Discussion & Activities
 ### ASSIGNMENT #1
@@ -525,7 +720,7 @@ Choose ONE newspaper clipping from the [Ester Chavez Collection](https://nmarchi
 
 Choose ONE of the collections from the following project: [Archiving Feminicide](https://archivingfeminicidio.omeka.net/collections/browse). Note that each collection has a different theme. **Analyze** the collection and the items included in each collection. **Reflect on the message your chosen collection provides, considering that the archival curation was to convey the message of the pattern of "who or what is to blame?"** and the pattern depicting the genealogy of the mother fighting for justice. Now that you have interacted with the newspaper clipping and other sources from the Esther Chavez Collection in Part 1, **consider** the different data stories that can be told through the digital archival curation of larger collections such as the Ester Chavez Cano Collection. **What kind of data story through a curated collection would you propose?** Write a reflection of 500 words that responds to the prompt, referencing the readings and materials discussed.
 
-# Suggest Reading and Projects
+# Suggested Reading and Projects
 
 [Ellas tienen nombre](https://www.ellastienennombre.org/)
 
