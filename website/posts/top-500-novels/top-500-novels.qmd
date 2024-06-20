@@ -65,6 +65,29 @@ Inputs.table(search, {
 })
 ```
 
+<br>
+
+```{ojs}
+//| echo: false
+formatted_library_data = library_data.map(d => {
+  return Object.fromEntries(
+    Object.entries(d).map(([key, value]) => [
+      key,
+      key === "pub_year" || key === "author_birth" || key === "author_death" ? new Date(value, 0, 1) : value
+    ])
+  );
+});
+
+```
+
+```{ojs}
+//| echo: false
+import { SummaryTable } from "@observablehq/summary-table"
+viewof summary_data = SummaryTable(formatted_library_data, {
+  label: "Top 500 Novels Summary"
+});
+```
+
 
 {{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
 

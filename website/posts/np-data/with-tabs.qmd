@@ -69,6 +69,29 @@ Inputs.table(search, {
 
 ```
 
+<br>
+
+```{ojs}
+//| echo: false
+formatted_visit_data = visit_data.map(d => {
+  return Object.fromEntries(
+    Object.entries(d).map(([key, value]) => [
+      key,
+      value === null || value === undefined || value === "" ? null : key === "Year" ? new Date(value, 0, 1) : value
+    ])
+  );
+});
+
+```
+
+```{ojs}
+//| echo: false
+import { SummaryTable } from "@observablehq/summary-table"
+viewof summary_data = SummaryTable(formatted_visit_data, {
+  label: "National Park Data Summary"
+});
+```
+
 {{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id=downloadbutton >}}
 
 The National Park datasets included on this website are drawn from data published by the NPS. Most (but not all) of the contextual information included here draws from material published by the NPS, as well. However, the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find, and the documentation is distributed across many different web pages, PDFs, and other documents, so we believe it is valuable to curate and publish in a single place here.
@@ -255,8 +278,11 @@ If you filter the data and examine the least visited National Parks across these
 # Filter for minimum RecVisits
 least_visited <- np_data %>% filter(RecreationVisits == min(RecreationVisits))
 
+# Number of rows for least visited
+num_rows <- nrow(least_visited)
+
 # Show some of them
-least_visited  %>% slice_sample(n = 10)
+least_visited  %>% slice_sample(n = min(10, num_rows))
 ```
 
 You might guess that there are no visits in these years because these parks are all located in remote places that are hard to get to, like rural Alaska or American Samoa. 
