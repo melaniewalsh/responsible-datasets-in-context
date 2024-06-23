@@ -3,8 +3,8 @@ title: "Paulina Hernandez Trejo"
 last: Hernandez Trejo
 first: Paulina
 people_group: member
-education: M.A. English | UT San Antonio - B.A. English | UT Austin
-subtitle: Doctoral Student
+education: M.A. English
+subtitle: Doctoral Student | University of Notre Dame
 image: profile.jpg
 about:
   template: trestles

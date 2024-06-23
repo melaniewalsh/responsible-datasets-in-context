@@ -3,8 +3,8 @@ title: "Sylvia Fernandez"
 last: Fernandez
 first: Sylvia
 people_group: pi
-education: PhD Hispanic Studies | University of Houston
-subtitle: Assistant Professor
+education: PhD Hispanic Studies
+subtitle: Assistant Professor | The University of Texas at San Antonio
 image: profile.jpg
 about:
   template: trestles

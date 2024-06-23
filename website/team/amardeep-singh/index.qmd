@@ -3,8 +3,8 @@ title: "Amardeep Singh"
 last: Singh
 first: Amardeep
 people_group: pi
-education: PhD | Duke University
-subtitle: Professor, English
+education: PhD
+subtitle: Professor | Lehigh Universiy
 image: profile.jpg
 about:
   template: trestles

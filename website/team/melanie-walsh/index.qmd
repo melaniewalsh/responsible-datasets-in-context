@@ -3,8 +3,8 @@ title: "Melanie Walsh"
 last: Walsh
 first: Melanie
 people_group: pi
-education: PhD English Literature | Washington University St. Louis
-subtitle: Assistant Professor, Information School, University of Washington
+education: PhD English Literature
+subtitle: Assistant Professor | Information School, University of Washington
 image: profile.jpg
 about:
   template: trestles

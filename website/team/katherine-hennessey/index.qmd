@@ -3,19 +3,12 @@ title: "Katherine Hennessey"
 last: Hennessey
 first: Katherine
 people_group: member
-education: B.A. English Literature | Lehigh University
-subtitle: Graduate Research Assistant
+education: B.A. English Literature
+subtitle: Graduate Research Assistant | Lehigh University
 image: profile.jpg
 about:
   template: trestles
-  image: profile.jpg.heic
-  links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+  image: profile.jpg
 ---
 
 Kate Hennessey was an English Literature major at Lehigh University. She graduated in May 2024. Her interests included the fields of digital humanities, public humanities, and 19th century Gothic literature.
