@@ -496,15 +496,17 @@ Inputs.table(search, {
 ```
 
 ## Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection
+
+### Violencia (violence) Feminicida (Femicide)
 ```{ojs}
 //| echo: false
 //| output: false
-tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Tracing_Feminicides_in_El_Paso,_Texas_Using_Newsbank's_Hispanic_American_Newspaper_Collection(Violencia_Violence_Feminicida_Fem).csv", d3.autoType)
+violence_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/violencia_violence_tracing_femenicide_in_el_paso.csv", d3.autoType)
 ```
 
 ``` {ojs}
 //| echo: false
-viewof search_femenicide_data = Inputs.search(tracing_femenicide_data, {
+viewof search_violence_tracing_femenicide_data = Inputs.search(violence_tracing_femenicide_data, {
   placeholder: "Search"
 })
 ```
@@ -514,7 +516,71 @@ viewof search_femenicide_data = Inputs.search(tracing_femenicide_data, {
 
 /*Inputs.table(search, data)*/
 
-Inputs.table(search_femenicide_data, {
+Inputs.table(violence_tracing_femenicide_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+### Cultura (Culture)
+```{ojs}
+//| echo: false
+//| output: false
+culture_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/culture_cultura_tracing_feminicides_in_el_paso.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_culture_tracing_femenicide_data = Inputs.search(culture_tracing_femenicide_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(culture_tracing_femenicide_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
+
+## Fenemismo (Fenemism)
+```{ojs}
+//| echo: false
+//| output: false
+fenemism_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/fenemismo_fenemism_tracing_femenicide_in_el_paso.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_fenemism_tracing_femenicide_data = Inputs.search(fenemism_tracing_femenicide_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(fenemism_tracing_femenicide_data, {
   layout: "fixed",
   rows: 50,
   sort: "Year",
@@ -595,15 +661,16 @@ Inputs.table(search_english_silencio_de_la_voz_data, {
 ```
 ## Dataset #3: Geotestimonios Literary Dataset (Woman Hollering Creek by Sandra Cisneros and Stories of Survival by Alicia Gaspar de Alba)
 
+### Woman Hollering Creek
 ```{ojs}
 //| echo: false
 //| output: false
-geotestimonios_literary_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Geographical_Metadata_Women_Hollering&Mystery_of_Survival(Woman_Hollering_Creek).csv", d3.autoType)
+woman_hollering_creek_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Woman_Hollering_Geographical_Metadata.csv", d3.autoType)
 ```
 
 ``` {ojs}
 //| echo: false
-viewof search_geotestimonios_literary_data = Inputs.search(geotestimonios_literary_data, {
+viewof search_woman_hollering_creek_data = Inputs.search(woman_hollering_creek_data, {
   placeholder: "Search"
 })
 ```
@@ -613,7 +680,7 @@ viewof search_geotestimonios_literary_data = Inputs.search(geotestimonios_litera
 
 /*Inputs.table(search, data)*/
 
-Inputs.table(search_geotestimonios_literary_data, {
+Inputs.table(search_woman_hollering_creek_data, {
   layout: "fixed",
   rows: 50,
   sort: "Year",
@@ -626,6 +693,37 @@ Inputs.table(search_geotestimonios_literary_data, {
 })
 ```
 
+### Stories of Survival 
+```{ojs}
+//| echo: false
+//| output: false
+stories_of_survival_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Mystery_of_Survival_Geographical_Metadata.csv", d3.autoType)
+```
+
+``` {ojs}
+//| echo: false
+viewof search_stories_of_survival_data = Inputs.search(stories_of_survival_data, {
+  placeholder: "Search"
+})
+```
+
+```{ojs}
+//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search_stories_of_survival_data, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x => d3.format('.2s')(x),*/
+    Year: x => d3.timeFormat(x),
+    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+  }
+})
+```
 
 ## Dataset #4: Films of Feminicide and/or Gender Violence Around the World
 ```{ojs}
