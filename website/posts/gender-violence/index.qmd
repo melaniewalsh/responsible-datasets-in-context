@@ -77,6 +77,8 @@ viewof spanish_summary_data = SummaryTable(formatted_spanish_silencio_de_la_voz_
 });
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv dname = Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
+
 ### Translation and digital version (2023)
 ```{ojs}
 //| echo: false
@@ -115,6 +117,8 @@ viewof english_summary_data = SummaryTable(formatted_english_silencio_de_la_voz_
   label: "Original dataset (1999)"
 });
 ```
+
+{{< downloadthis ../../../datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv dname = English_Bilingual_Database_of_El Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
 
 ## THE HISTORICAL CONTEXT
 
@@ -510,6 +514,7 @@ Inputs.table(violence_tracing_femenicide_data, {
   }
 })
 ```
+{{< downloadthis ../../../datasets/gender-violence/violencia_violence_tracing_femenicide_in_el_paso.csv dname = violencia_violence_tracing_femenicide_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
 
 ### Cultura (Culture)
 ```{ojs}
@@ -543,6 +548,8 @@ Inputs.table(culture_tracing_femenicide_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/culture_cultura_tracing_feminicides_in_el_paso.csv dname = culture_cultura_tracing_feminicides_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
+
 ## Fenemismo (Fenemism)
 ```{ojs}
 //| echo: false
@@ -575,6 +582,7 @@ Inputs.table(fenemism_tracing_femenicide_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/fenemismo_fenemism_tracing_femenicide_in_el_paso.csv dname = fenemismo_fenemism_tracing_femenicide_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
 
 ## Dataset #2: Digital and Translated Version of "El Silencio De La Voz Que a Todos Nos Quiebra Feminicidio" Printed Spreadsheet
 
@@ -610,6 +618,8 @@ Inputs.table(search_spanish_silencio_de_la_voz_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv dname = Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
+
 ### English Data Table
 ```{ojs}
 //| echo: false
@@ -641,6 +651,9 @@ Inputs.table(search_english_silencio_de_la_voz_data, {
   }
 })
 ```
+
+{{< downloadthis ../../../datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv dname = English_Bilingual_Database_of_El Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
+
 ## Dataset #3: Geotestimonios Literary Dataset (Woman Hollering Creek by Sandra Cisneros and Stories of Survival by Alicia Gaspar de Alba)
 
 ### Woman Hollering Creek
@@ -675,6 +688,8 @@ Inputs.table(search_woman_hollering_creek_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/Woman_Hollering_Geographical_Metadata.csv dname = Woman_Hollering_Geographical_Metadata.csv label = "Download Data" id=downloadbutton >}}
+
 ### Stories of Survival 
 ```{ojs}
 //| echo: false
@@ -706,6 +721,8 @@ Inputs.table(search_stories_of_survival_data, {
   }
 })
 ```
+
+{{< downloadthis ../../../datasets/gender-violence/Mystery_of_Survival_Geographical_Metadata.csv dname = Mystery_of_Survival_Geographical_Metadata.csv label = "Download Data" id=downloadbutton >}}
 
 ## Dataset #4: Films of Feminicide and/or Gender Violence Around the World
 ```{ojs}
@@ -739,6 +756,8 @@ Inputs.table(search_film_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/Film_Dataset.csv dname = Film_Dataset.csv label = "Download Data" id=downloadbutton >}}
+
 ## Dataset #5: Books and Articles from Mexico and the U.S. Related to Feminicide and Gender Violence
 ```{ojs}
 //| echo: false
@@ -771,16 +790,18 @@ Inputs.table(search_literature_data, {
 })
 ```
 
+{{< downloadthis ../../../datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv dname = Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv label = "Download Data" id=downloadbutton >}}
+
 ## Dataset #6: Murals and Public Monuments Related to Feminicide and Gender Violence
 ```{ojs}
 //| echo: false
 //| output: false
-anti_gender_art_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Art_of_Anti_Gender_Violence_and_Femincides_Database.csv", d3.autoType)
+anti_gender_violence_art_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Art_of_Anti_Gender_Violence_and_Femincides_Database.csv", d3.autoType)
 ```
 
 ``` {ojs}
 //| echo: false
-viewof search_anti_gender_art_data = Inputs.search(anti_gender_art_data, {
+viewof search_anti_gender_violence_art_data = Inputs.search(anti_gender_violence_art_data, {
   placeholder: "Search"
 })
 ```
@@ -790,7 +811,7 @@ viewof search_anti_gender_art_data = Inputs.search(anti_gender_art_data, {
 
 /*Inputs.table(search, data)*/
 
-Inputs.table(anti_gender_art_data, {
+Inputs.table(anti_gender_violence_art_data, {
   layout: "fixed",
   rows: 50,
   sort: "ID NO.",
@@ -802,6 +823,8 @@ Inputs.table(anti_gender_art_data, {
   }
 })
 ```
+
+{{< downloadthis ../../../datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv dname = Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv label = "Download Data" id=downloadbutton >}}
 
 # Discussion & Activities
 ### ASSIGNMENT #1
