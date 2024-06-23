@@ -379,7 +379,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" type = downloadbutton >}}
+{{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id = downloadbutton >}}
 ## U.S. National Park Use (Monthly) — 1979-2023
 
 ```{ojs}
@@ -409,7 +409,7 @@ Inputs.table(use_search, {
 })
 ```
 
-{{< downloadthis ../../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" type = downloadbutton >}}
+{{< downloadthis ../../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" id = downloadbutton >}}
 
 
 # Exercises {#exercises}

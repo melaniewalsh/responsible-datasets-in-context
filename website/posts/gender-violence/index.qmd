@@ -477,24 +477,6 @@ color = d3
   .range(["#cafcc2", "#fce7c2", "#eb9494"])
 ```
 
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
 ## Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection
 
 ### Violencia (violence) Feminicida (Femicide)
@@ -593,7 +575,7 @@ Inputs.table(fenemism_tracing_femenicide_data, {
 })
 ```
 
-<-- Put both spanish and English data set for this one. -->
+
 ## Dataset #2: Digital and Translated Version of "El Silencio De La Voz Que a Todos Nos Quiebra Feminicidio" Printed Spreadsheet
 
 ### Spanish Data Table

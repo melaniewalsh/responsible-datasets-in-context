@@ -200,7 +200,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" type = downloadbutton >}}
+{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
 # How to Use {#how-to-use}
 
