@@ -74,6 +74,7 @@ Inputs.table(search, {
 ```
 <br>
 
+
 ```{ojs}
 //| echo: false
 formatted_poetry_data = aa_poetry_data.map(d => {
@@ -86,9 +87,11 @@ formatted_poetry_data = aa_poetry_data.map(d => {
 });
 ```
 
+
 ```{ojs}
 //| echo: false
-import { SummaryTable } from "@observablehq/summary-table"
+
+import {SummaryTable} from "./st.qmd"
 viewof summary_data = SummaryTable(formatted_poetry_data, {
   label: "AA Poetry Data"
 });

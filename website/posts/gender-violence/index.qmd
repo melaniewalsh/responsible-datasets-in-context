@@ -71,7 +71,7 @@ formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(
 
 ```{ojs}
 //| echo: false
-import { SummaryTable } from "@observablehq/summary-table"
+import { SummaryTable } from "./st.qmd"
 viewof spanish_summary_data = SummaryTable(formatted_spanish_silencio_de_la_voz_data, {
   label: "Original dataset (1999)"
 });

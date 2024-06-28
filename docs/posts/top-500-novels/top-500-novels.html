@@ -353,7 +353,7 @@ window.Quarto = {
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="85" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { SummaryTable } <span class="im">from</span> <span class="st">"@observablehq/summary-table"</span></span>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="85" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 84;"><span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> { SummaryTable } <span class="im">from</span> <span class="st">"./st.qmd"</span></span>
 <span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>viewof summary_data <span class="op">=</span> <span class="fu">SummaryTable</span>(formatted_library_data<span class="op">,</span> {</span>
 <span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>  <span class="dt">label</span><span class="op">:</span> <span class="st">"Top 500 Novels Summary"</span></span>
 <span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -451,7 +451,7 @@ window.Quarto = {
 <section id="metadata-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="metadata-analysis"><strong>METADATA ANALYSIS</strong></h2>
 <p>Let’s start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.</p>
-<div id="b1cf61bb" class="cell" data-execution_count="1">
+<div id="a226b848" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -462,7 +462,7 @@ window.Quarto = {
 </div>
 <p>Now, we can answer various questions using this structure, which we’ve named <code>df</code>.</p>
 <p>For example, let’s look at counts related to author gender and name.</p>
-<div id="807acce0" class="cell" data-execution_count="2">
+<div id="8112a401" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -475,7 +475,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We see that about 70% of authors on the list are male and 30% are female.</p>
-<div id="51f9909e" class="cell" data-execution_count="3">
+<div id="8442291a" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts().head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -497,7 +497,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Above are the top 10 authors and the number of times they appear. John Grisham appears a stunning 19 times!</p>
 <p>Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.</p>
-<div id="4e0fd2e7" class="cell" data-execution_count="4">
+<div id="1e9dde8e" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -516,7 +516,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can see that most books on the list were published between 1950 and 2000. Let’s take a look at information about the oldest and newest books on the list.</p>
-<div id="66828195" class="cell" data-execution_count="5">
+<div id="c5b07df4" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
@@ -684,7 +684,7 @@ Newest Book(s):</code></pre>
 </div>
 </div>
 <p>Let’s take a look at where the authors are from!</p>
-<div id="9ae96223" class="cell" data-execution_count="6">
+<div id="36998245" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts().head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -701,7 +701,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>Finally, let’s unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="a1fddb92" class="cell" data-execution_count="7">
+<div id="2e0cdd18" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -742,7 +742,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the GoodReads rankings and the top 500 rankings aren’t very aligned! What factors affect popularity on GoodReads compared to OCLC?</p>
-<div id="eaf2f2aa" class="cell" data-execution_count="8">
+<div id="9e443249" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1272,7 +1272,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s see which novels had the most movement up or down!</p>
-<div id="ca63dcb0" class="cell" data-execution_count="9">
+<div id="60f47958" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>])</span>
@@ -1309,7 +1309,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <p>Above we see that Steinbeck’s <em>The Winter of Our Discontent</em>, stayed at the same ranking of 397. <em>Pride and Prejudice</em> remained quite high as well.</p>
 <p><em>20,000 Leagues Under the Sea</em> dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! <em>Harry Potter and The Half-Blood Prince</em> and <em>The Sea of Monsters</em> rose the most.</p>
 <p>df[‘points_moved’].mean()</p>
-<div id="621ff167" class="cell" data-execution_count="10">
+<div id="e2ff685f" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1319,7 +1319,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </div>
 </div>
 <p>Let’s take a look at some of these metrics for rankings based on number of editions and total holdings.</p>
-<div id="dd2652d0" class="cell" data-execution_count="11">
+<div id="a4fcbe65" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_editions_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
@@ -2394,7 +2394,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <section id="full-text-analysis" class="level2">
 <h2 class="anchored" data-anchor-id="full-text-analysis"><strong>FULL-TEXT ANALYSIS</strong></h2>
 <p>Now we can look at the <code>final_merged_dataset.tsv</code> file, which also includes the full-text of all the novels on the list that are in the public domain. We will be working with the <code>full_text</code> column, which is a cleaned version of each book.</p>
-<div id="f3ac5a19" class="cell" data-execution_count="12">
+<div id="97e141f5" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -2407,7 +2407,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 <p>Let’s start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.</p>
 <p>The type-token ratio is a simple expression that calculates # of unique words / total words in a selection. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.</p>
 <p>It’s helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we’re converting all the information in the column “text” into a list.</p>
-<div id="64b3594e" class="cell" data-execution_count="13">
+<div id="1265bbf6" class="cell" data-execution_count="13">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_ttr(text):</span>
@@ -2444,30 +2444,30 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>genre
-political     0.509757
-history       0.505777
-bildung       0.503840
-scifi         0.498500
-na            0.494988
-romance       0.490192
-horror        0.489400
-autobio       0.487300
-action        0.486970
-mystery       0.484850
-fantasy       0.477829
-allegories    0.459267
+political     0.513243
+history       0.503623
+bildung       0.502290
+scifi         0.499180
+mystery       0.497225
+na            0.495071
+romance       0.491183
+autobio       0.487600
+action        0.482820
+fantasy       0.480057
+horror        0.476550
+allegories    0.464567
 Name: ttr, dtype: float64
-                                     title               author    ttr   genre
-                       Captains Courageous      Rudyard Kipling 0.5622 bildung
-                     This Side of Paradise  F. Scott Fitzgerald 0.5569 bildung
-                         Wuthering Heights         Emily Brontë 0.5554      na
-                               Main Street       Sinclair Lewis 0.5517      na
-                                   Ulysses          James Joyce 0.5455      na
-                                  Villette     Charlotte Brontë 0.5400      na
-                                   Shirley     Charlotte Brontë 0.5370 history
-                  The Last Days of Pompeii Edward Bulwer Lytton 0.5363 history
-                                   Babbitt       Sinclair Lewis 0.5346      na
-Madame Bovary: Patterns of Provincial life     Gustave Flaubert 0.5337      na</code></pre>
+                        title              author    ttr   genre
+                      Ulysses         James Joyce 0.5687      na
+          Captains Courageous     Rudyard Kipling 0.5591 bildung
+                     Villette    Charlotte Brontë 0.5522      na
+            Wuthering Heights        Emily Brontë 0.5515      na
+                  Main Street      Sinclair Lewis 0.5416      na
+        This Side of Paradise F. Scott Fitzgerald 0.5397 bildung
+                   Arrowsmith      Sinclair Lewis 0.5387      na
+                      Shirley    Charlotte Brontë 0.5374 history
+    The Prince and the Pauper          Mark Twain 0.5327 history
+The House of the Seven Gables Nathaniel Hawthorne 0.5319      na</code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -2881,7 +2881,7 @@ $(document).ready(function () {
 </script>
 
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy98IGVjaG86IGZhbHNlXG5cbi8qSW5wdXRzLnRhYmxlKHNlYXJjaCwgZGF0YSkqL1xuXG5JbnB1dHMudGFibGUoc2VhcmNoLCB7XG4gIGxheW91dDogXCJmaXhlZFwiLFxuICByb3dzOiA1MCxcbiAgc29ydDogXCJ0b3BfNTAwX3JhbmtcIixcbiAgcmV2ZXJzZTogZmFsc2UsXG4gIGZvcm1hdDoge1xuICAgIC8qUmVjcmVhdGlvblZpc2l0czogeCA9PiBkMy5mb3JtYXQoJy4ycycpKHgpLCovXG4gICAgcHViX3llYXI6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBhdXRob3JfYmlydGg6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBhdXRob3JfZGVhdGg6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBncl9udW1fcmF0aW5nc19yYW5rOiB4ID0+IGh0bWxgPGRpdiBzdHlsZT0nYmFja2dyb3VuZDoke2NvbG9yKHgpfSc+JHtkMy5mb3JtYXQoJy4ycycpKHgpfTwvZGl2PmBcbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZvcm1hdHRlZF9saWJyYXJ5X2RhdGEgPSBsaWJyYXJ5X2RhdGEubWFwKGQgPT4ge1xuICByZXR1cm4gT2JqZWN0LmZyb21FbnRyaWVzKFxuICAgIE9iamVjdC5lbnRyaWVzKGQpLm1hcCgoW2tleSwgdmFsdWVdKSA9PiBbXG4gICAgICBrZXksXG4gICAgICBrZXkgPT09IFwicHViX3llYXJcIiB8fCBrZXkgPT09IFwiYXV0aG9yX2JpcnRoXCIgfHwga2V5ID09PSBcImF1dGhvcl9kZWF0aFwiID8gbmV3IERhdGUodmFsdWUsIDAsIDEpIDogdmFsdWVcbiAgICBdKVxuICApO1xufSk7XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IFN1bW1hcnlUYWJsZSB9IGZyb20gXCJAb2JzZXJ2YWJsZWhxL3N1bW1hcnktdGFibGVcIlxudmlld29mIHN1bW1hcnlfZGF0YSA9IFN1bW1hcnlUYWJsZShmb3JtYXR0ZWRfbGlicmFyeV9kYXRhLCB7XG4gIGxhYmVsOiBcIlRvcCA1MDAgTm92ZWxzIFN1bW1hcnlcIlxufSk7XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJsaWJyYXJ5X2RhdGEgPSBkMy5jc3YoXCJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vbWVsYW5pZXdhbHNoL3Jlc3BvbnNpYmxlLWRhdGFzZXRzLWluLWNvbnRleHQvbWFpbi9kYXRhc2V0cy90b3AtNTAwLW5vdmVscy9saWJyYXJ5X3RvcF81MDAuY3N2XCIsIGQzLmF1dG9UeXBlKVxuXG51c2VfZGF0YSA9IGQzLmNzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9tZWxhbmlld2Fsc2gvcmVzcG9uc2libGUtZGF0YXNldHMtaW4tY29udGV4dC9tYWluL2RhdGFzZXRzL25hdGlvbmFsLXBhcmtzL1VTLU5hdGlvbmFsLVBhcmtzX1VzZV8xOTc5LTIwMjNfQnktTW9udGguY3N2XCIsIGQzLmF1dG9UeXBlKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG5cbmZpbHRlcmVkID0gbGlicmFyeV9kYXRhLmZpbHRlcihmdW5jdGlvbihwZW5ndWluKSB7XG4gIHJldHVybiBiaWxsX2xlbmd0aF9taW4gPCBwZW5ndWluLmJpbGxfbGVuZ3RoX21tICYmXG4gICAgICAgICBpc2xhbmRzLmluY2x1ZGVzKHBlbmd1aW4uaXNsYW5kKTtcbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJjb2xvciA9IGQzXG4gIC5zY2FsZUxpbmVhcigpXG4gIC5kb21haW4oWzAsIDEwMCwgMzAwXSlcbiAgLnJhbmdlKFtcIiNjYWZjYzJcIiwgXCIjZmNlN2MyXCIsIFwiI2ViOTQ5NFwiXSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzZWFyY2ggPSBJbnB1dHMuc2VhcmNoKGxpYnJhcnlfZGF0YSwge1xuICBwbGFjZWhvbGRlcjogXCJTZWFyY2hcIlxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLypJbnB1dHMudGFibGUoc2VhcmNoLCBkYXRhKSovXG5cbklucHV0cy50YWJsZShzZWFyY2gsIHtcbiAgbGF5b3V0OiBcImZpeGVkXCIsXG4gIHJvd3M6IDUwLFxuICBzb3J0OiBcInRvcF81MDBfcmFua1wiLFxuICByZXZlcnNlOiBmYWxzZSxcbiAgZm9ybWF0OiB7XG4gICAgLypSZWNyZWF0aW9uVmlzaXRzOiB4ID0+IGQzLmZvcm1hdCgnLjJzJykoeCksKi9cbiAgICBwdWJfeWVhcjogeCA9PiBkMy50aW1lRm9ybWF0KHgpLFxuICAgIGF1dGhvcl9iaXJ0aDogeCA9PiBkMy50aW1lRm9ybWF0KHgpLFxuICAgIGF1dGhvcl9kZWF0aDogeCA9PiBkMy50aW1lRm9ybWF0KHgpLFxuICAgIGdyX251bV9yYXRpbmdzX3Jhbms6IHggPT4gaHRtbGA8ZGl2IHN0eWxlPSdiYWNrZ3JvdW5kOiR7Y29sb3IoeCl9Jz4ke2QzLmZvcm1hdCgnLjJzJykoeCl9PC9kaXY+YFxuICB9XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzdW1tYXJ5X2RhdGEnKSJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldFF1aWV0Iiwic291cmNlIjoic2hpbnlJbnB1dCgnc2VhcmNoJykifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxuLy98IGVjaG86IGZhbHNlXG5cbi8qSW5wdXRzLnRhYmxlKHNlYXJjaCwgZGF0YSkqL1xuXG5JbnB1dHMudGFibGUoc2VhcmNoLCB7XG4gIGxheW91dDogXCJmaXhlZFwiLFxuICByb3dzOiA1MCxcbiAgc29ydDogXCJ0b3BfNTAwX3JhbmtcIixcbiAgcmV2ZXJzZTogZmFsc2UsXG4gIGZvcm1hdDoge1xuICAgIC8qUmVjcmVhdGlvblZpc2l0czogeCA9PiBkMy5mb3JtYXQoJy4ycycpKHgpLCovXG4gICAgcHViX3llYXI6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBhdXRob3JfYmlydGg6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBhdXRob3JfZGVhdGg6IHggPT4gZDMudGltZUZvcm1hdCh4KSxcbiAgICBncl9udW1fcmF0aW5nc19yYW5rOiB4ID0+IGh0bWxgPGRpdiBzdHlsZT0nYmFja2dyb3VuZDoke2NvbG9yKHgpfSc+JHtkMy5mb3JtYXQoJy4ycycpKHgpfTwvZGl2PmBcbiAgfVxufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImZvcm1hdHRlZF9saWJyYXJ5X2RhdGEgPSBsaWJyYXJ5X2RhdGEubWFwKGQgPT4ge1xuICByZXR1cm4gT2JqZWN0LmZyb21FbnRyaWVzKFxuICAgIE9iamVjdC5lbnRyaWVzKGQpLm1hcCgoW2tleSwgdmFsdWVdKSA9PiBbXG4gICAgICBrZXksXG4gICAgICBrZXkgPT09IFwicHViX3llYXJcIiB8fCBrZXkgPT09IFwiYXV0aG9yX2JpcnRoXCIgfHwga2V5ID09PSBcImF1dGhvcl9kZWF0aFwiID8gbmV3IERhdGUodmFsdWUsIDAsIDEpIDogdmFsdWVcbiAgICBdKVxuICApO1xufSk7XG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7IFN1bW1hcnlUYWJsZSB9IGZyb20gXCIuL3N0LnFtZFwiXG52aWV3b2Ygc3VtbWFyeV9kYXRhID0gU3VtbWFyeVRhYmxlKGZvcm1hdHRlZF9saWJyYXJ5X2RhdGEsIHtcbiAgbGFiZWw6IFwiVG9wIDUwMCBOb3ZlbHMgU3VtbWFyeVwiXG59KTtcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImxpYnJhcnlfZGF0YSA9IGQzLmNzdihcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9tZWxhbmlld2Fsc2gvcmVzcG9uc2libGUtZGF0YXNldHMtaW4tY29udGV4dC9tYWluL2RhdGFzZXRzL3RvcC01MDAtbm92ZWxzL2xpYnJhcnlfdG9wXzUwMC5jc3ZcIiwgZDMuYXV0b1R5cGUpXG5cbnVzZV9kYXRhID0gZDMuY3N2KFwiaHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL21lbGFuaWV3YWxzaC9yZXNwb25zaWJsZS1kYXRhc2V0cy1pbi1jb250ZXh0L21haW4vZGF0YXNldHMvbmF0aW9uYWwtcGFya3MvVVMtTmF0aW9uYWwtUGFya3NfVXNlXzE5NzktMjAyM19CeS1Nb250aC5jc3ZcIiwgZDMuYXV0b1R5cGUpXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJcblxuZmlsdGVyZWQgPSBsaWJyYXJ5X2RhdGEuZmlsdGVyKGZ1bmN0aW9uKHBlbmd1aW4pIHtcbiAgcmV0dXJuIGJpbGxfbGVuZ3RoX21pbiA8IHBlbmd1aW4uYmlsbF9sZW5ndGhfbW0gJiZcbiAgICAgICAgIGlzbGFuZHMuaW5jbHVkZXMocGVuZ3Vpbi5pc2xhbmQpO1xufSlcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImNvbG9yID0gZDNcbiAgLnNjYWxlTGluZWFyKClcbiAgLmRvbWFpbihbMCwgMTAwLCAzMDBdKVxuICAucmFuZ2UoW1wiI2NhZmNjMlwiLCBcIiNmY2U3YzJcIiwgXCIjZWI5NDk0XCJdKVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHNlYXJjaCA9IElucHV0cy5zZWFyY2gobGlicmFyeV9kYXRhLCB7XG4gIHBsYWNlaG9sZGVyOiBcIlNlYXJjaFwiXG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG4vKklucHV0cy50YWJsZShzZWFyY2gsIGRhdGEpKi9cblxuSW5wdXRzLnRhYmxlKHNlYXJjaCwge1xuICBsYXlvdXQ6IFwiZml4ZWRcIixcbiAgcm93czogNTAsXG4gIHNvcnQ6IFwidG9wXzUwMF9yYW5rXCIsXG4gIHJldmVyc2U6IGZhbHNlLFxuICBmb3JtYXQ6IHtcbiAgICAvKlJlY3JlYXRpb25WaXNpdHM6IHggPT4gZDMuZm9ybWF0KCcuMnMnKSh4KSwqL1xuICAgIHB1Yl95ZWFyOiB4ID0+IGQzLnRpbWVGb3JtYXQoeCksXG4gICAgYXV0aG9yX2JpcnRoOiB4ID0+IGQzLnRpbWVGb3JtYXQoeCksXG4gICAgYXV0aG9yX2RlYXRoOiB4ID0+IGQzLnRpbWVGb3JtYXQoeCksXG4gICAgZ3JfbnVtX3JhdGluZ3NfcmFuazogeCA9PiBodG1sYDxkaXYgc3R5bGU9J2JhY2tncm91bmQ6JHtjb2xvcih4KX0nPiR7ZDMuZm9ybWF0KCcuMnMnKSh4KX08L2Rpdj5gXG4gIH1cbn0pXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXRRdWlldCIsInNvdXJjZSI6InNoaW55SW5wdXQoJ3N1bW1hcnlfZGF0YScpIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0UXVpZXQiLCJzb3VyY2UiOiJzaGlueUlucHV0KCdzZWFyY2gnKSJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -3435,7 +3435,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb34-84"><a href="#cb34-84" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-87"><a href="#cb34-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
 <span id="cb34-88"><a href="#cb34-88" aria-hidden="true" tabindex="-1"></a><span class="in">//| echo: false</span></span>
-<span id="cb34-89"><a href="#cb34-89" aria-hidden="true" tabindex="-1"></a><span class="in">import { SummaryTable } from "@observablehq/summary-table"</span></span>
+<span id="cb34-89"><a href="#cb34-89" aria-hidden="true" tabindex="-1"></a><span class="in">import { SummaryTable } from "./st.qmd"</span></span>
 <span id="cb34-90"><a href="#cb34-90" aria-hidden="true" tabindex="-1"></a><span class="in">viewof summary_data = SummaryTable(formatted_library_data, {</span></span>
 <span id="cb34-91"><a href="#cb34-91" aria-hidden="true" tabindex="-1"></a><span class="in">  label: "Top 500 Novels Summary"</span></span>
 <span id="cb34-92"><a href="#cb34-92" aria-hidden="true" tabindex="-1"></a><span class="in">});</span></span>
