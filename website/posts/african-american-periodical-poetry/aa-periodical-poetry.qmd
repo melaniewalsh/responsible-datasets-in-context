@@ -91,7 +91,7 @@ formatted_poetry_data = aa_poetry_data.map(d => {
 ```{ojs}
 //| echo: false
 
-import {SummaryTable} from "./st.qmd"
+import {SummaryTable} from "05930c2f8350fb92"
 viewof summary_data = SummaryTable(formatted_poetry_data, {
   label: "AA Poetry Data"
 });

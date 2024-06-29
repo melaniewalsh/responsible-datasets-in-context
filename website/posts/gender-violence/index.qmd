@@ -70,8 +70,20 @@ formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(
 ```
 
 ```{ojs}
+tableContainer = html `<div id="table-container" style="height: 600px">
+</div>`
+```
+
+```{ojs}
+import {table} from "@randomfractals/tabular-data-viewer"
+
+
+```
+
+
+```{ojs}
 //| echo: false
-import { SummaryTable } from "./st.qmd"
+import {SummaryTable} from "05930c2f8350fb92"
 viewof spanish_summary_data = SummaryTable(formatted_spanish_silencio_de_la_voz_data, {
   label: "Original dataset (1999)"
 });
@@ -449,12 +461,6 @@ Additionally, these types of courses are very urgent and necessary in higher edu
 
 # Explore the Data
 
-``` {ojs}
-//| echo: false
-viewof search = Inputs.search(data, {
-  placeholder: "Search"
-})
-```
 
 ```{ojs}
 //| echo: false
@@ -507,16 +513,15 @@ Inputs.table(violence_tracing_femenicide_data, {
   rows: 50,
   sort: "Year",
   reverse: true,
+  width: 1000,
   format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
+    Year: x => d3.timeFormat(x)
   }
 })
 ```
 {{< downloadthis ../../../datasets/gender-violence/violencia_violence_tracing_femenicide_in_el_paso.csv dname = violencia_violence_tracing_femenicide_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
 
-### Cultura (Culture)
+
 ```{ojs}
 //| echo: false
 //| output: false

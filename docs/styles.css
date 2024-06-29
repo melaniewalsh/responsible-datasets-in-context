@@ -33,3 +33,11 @@
   
 } 
 b,strong {font-weight: bold; color: black}
+
+.pretty-table tbody tr {
+    border-top: 2px solid #000000;
+}
+
+.pretty-table td, .pretty-table th {
+    border-right: 1px solid #ddd;
+}
