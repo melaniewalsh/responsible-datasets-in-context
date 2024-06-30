@@ -73,12 +73,28 @@ Inputs.table(search, {
 })
 ```
 <br>
-### Summary Table
+
+
 ```{ojs}
 //| echo: false
-import { SummaryTable } from "@observablehq/summary-table"
-viewof summary_data = SummaryTable(search, {label: "AA Poetry Data"})
-//summary_data
+formatted_poetry_data = aa_poetry_data.map(d => {
+  return Object.fromEntries(
+    Object.entries(d).map(([key, value]) => [
+      key,
+      value === null || value === undefined || value === "" ? null : key === "year" ? new Date(value, 0, 1) : value
+    ])
+  );
+});
+```
+
+
+```{ojs}
+//| echo: false
+
+import {SummaryTable} from "05930c2f8350fb92"
+viewof summary_data = SummaryTable(formatted_poetry_data, {
+  label: "AA Poetry Data"
+});
 ```
 
 {{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
@@ -187,7 +203,7 @@ Inputs.table(search, {
 })
 ```
 
-{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" type = downloadbutton >}}
+{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
 # How to Use {#how-to-use}
 

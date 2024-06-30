@@ -3,8 +3,8 @@ title: "Anna Preus"
 last: Preus
 first: Anna
 people_group: pi
-education: PhD English | Washingtono University in St. Louis
-subtitle: Assistant Professor
+education: PhD English
+subtitle: Assistant Professor | University of Washington
 image: profile.jpg
 about:
   template: trestles

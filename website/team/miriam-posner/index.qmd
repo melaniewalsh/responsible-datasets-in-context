@@ -3,19 +3,16 @@ title: "Miriam Posner"
 last: Posner
 first: Miriam
 people_group: pi
-education: PhD Film Studies and American Studies | Yale University
-subtitle: Assistant Professor
+education: PhD Film Studies and American Studies
+subtitle: Assistant Professor | University of California, Los Angeles, Department of Information Studies
 image: profile.jpg
 about:
   template: trestles
   image: profile.jpg
   links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+    - icon: person-circle
+      text: Personal Website
+      href: miriamposner.com
 ---
 
-This would be the message portion
+Miriam Posner is an assistant professor at the UCLA Department of Information Studies. She’s also a digital humanities scholar with interests in labor, race, feminism, and the history and philosophy of data. Miriam has published widely on technology, data, and the humanities, including pieces in _Logic_, _The Guardian_, and _The New Yorker_. She is at work on a book about how multinational corporations make use of data in their supply chains, under contract with Yale University Press.
