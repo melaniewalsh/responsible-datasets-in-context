@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -168,193 +168,112 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="mission-under-construction" class="level1">
-<h1>🚧 Mission Under Construction 🚧</h1>
-<p>We are opposed to treating datasets like grab-and-go fast food, or like random meat to be stuffed into a machine learning algorithm’s grinder. We promote the slow curation of data and the careful evaluation and understanding of data.</p>
-<p>In this project, we also highlight the importance of the following:</p>
-<ul>
-<li><p>Challenging Received Knowledge</p></li>
-<li><p>Engaging Communities</p></li>
-<li><p>Producing Counterdata</p></li>
-<li><p>Resisting Data Extraction</p></li>
-</ul>
+<section id="mission" class="level1">
+<h1>Mission</h1>
+<p>Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data — from academic researchers to industry professionals — will know this claim to be true.</p>
+<p>But even though understanding the social and historical context of data is one of the most <strong><em>essential</em></strong> skills for responsible designers, engineers, and technologists, it is one of the most <strong><em>neglected</em></strong> skills in undergraduate computing education. When students are asked to find their own datasets in classes, they often go to websites like Kaggle and end up downloading and working with data that they don’t fully understand —&nbsp;a recipe for irresponsible data work, a bad habit that can become a dangerous habit as the stakes get higher.</p>
+<p>We believe there are two main reasons for this neglect:</p>
+<ol type="1">
+<li><p>STEM education has not, broadly speaking, invested in the kinds of critical cultural and historicist approaches that have characterized humanities education.</p></li>
+<li><p>Meaningful datasets that are both richly documented and well-suited for undergraduate computing education are difficult to find and very time-consuming to produce.</p></li>
+</ol>
+<p><strong>“Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education”</strong> seeks to strengthen students’ capacity to work with data responsibly by addressing both of these issues. We are a team of digital humanities and information science scholars and students who all share common investment and training in the humanities. On this website, we provide curated datasets that are carefully documented and paired with long-form essays, which both explore and interrogate each dataset’s construction, history, quirks, flaws, and strengths from different humanistic perspectives. We also provide lesson plans, programming exercises, discussion questions, and activities that can help instructors integrate the datasets into their teaching. Beyond our specific educational goals, we also hope these datasets, essays, and accompanying materials will be useful and informative for the broader public.</p>
+<p>Based on our work and conversations, we also offer the following principles to help guide ethically responsible dataset curation, consumption, and analysis:</p>
+<p>–<strong>Tell the Data’s Story / Know the Data’s Story.</strong> As scholars like Johanna Drucker and others have been arguing for more than a decade, data is not simply objectively “there” in the world. Datasets have human-oriented stories behind them and implicit within them, and insofar as we are invested in curating helpful datasets for scholars and students to use, the stories of how and why data was created ought to be integrally connected to the datasets themselves. What are the constraints of the source material? What material might be simply absent from the historical record, and how do those absences shape what data we can effectively construct? Also, where are there elements of uncertainty or fuzziness in the data? If choices had to be made regarding, for instance, the dating of a creative work, how were those choices made, and why?</p>
+<p><strong>–Provide and Describe Metadata / Understand Metadata.</strong> Metadata is often overlooked. But understanding what each datapoint and feature represents is fundamental to ethically responsible data workso it is important to gives users a way to access and understand that metadata. Which categories were deemed important to catalog and measure, and which were excluded? If, for instance, data is with gender as an aspect of metadata, is gender only available under binarized categories? Is race included or discussed – and why?</p>
+<p><strong>–Touch Every Spreadsheet Cell.</strong> For creators and users of datasets, it is important to actually explore and try out datasets to make sure they’re accurate and glitch-free, and that they represent what we think they represent — in other words, it is important to actually open a dataset in Excel, Google Sheets, etc., and touch/examine individual cells. When data is too large for these kinds of applications, it is important to examine individual data points in other ways. This is a basic yet surprisingly radical concept in some computing circles! And it is especially important when we use automated processes to create datasets, like web scraping), which certainly have their affordances but are also more likely to distance us from individual data points.</p>
+<p><strong>– Consider When Data Should Remain Off-Limits or Private.</strong> There is a growing movement in data science to think carefully about who can ethically access certain kinds of data. Representations of tribal rituals among indigenous communities is often only meant for members of those communities, so accessing photographs or other sorts of quantitative data about that traditional knowledge should probably be restricted. Projects like <a href="https://mukurtu.org/">Mukurtu</a> have specifically addressed this issue and developed platforms where communities can choose who they share their data with. Similarly, the editors of sites like the <a href="https://coloredconventions.org/">Colored Conventions Project</a> have argued that data about enslaved people and their descendents has historically “served in the processes and recording of the destruction and devaluation of Black lives and communities.” They main that there is an urgent need to affirm “the Black humanity inherent in Black data/curation.” In other words, insofar as data is about real people who may have been marginalized or oppressed, it is important that those people be named and recognized.</p>
 
 
 </section>
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
-
 $(document).ready(function () {
-
     // Assign data-tab-name attribute based on the inner text of the tab links
-
     $('.nav-tabs .nav-link').each(function () {
-
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
-
         $(this).attr('data-tab-name', tabName);
-
     });
-
-
 
     function activaTab(tabName, container = document) {
-
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
-
         if (tabLink.length) {
-
             tabLink.tab('show');
-
             tabLink.trigger('click'); // Explicitly trigger the click event
-
         }
-
     }
-
-
 
     function scrollToAnchor(anchorId) {
-
         var element = $('[data-anchor-id="' + anchorId + '"]');
-
         if (element.length) {
-
             $('html, body').animate({
-
                 scrollTop: element.offset().top
-
             }, 500);
-
         }
-
     }
-
-
 
     function activateTabAndHeaderFromUrl() {
-
         var urlParams = new URLSearchParams(window.location.search);
-
         var tabName = urlParams.get('tab');
-
         var anchorId = urlParams.get('anchor');
-
         var nestedTabName = urlParams.get('nested-tab');
 
-
-
         if (tabName) {
-
             activaTab(tabName);
-
             if (anchorId) {
-
                 setTimeout(function() {
-
                     scrollToAnchor(anchorId);
-
                 }, 100); // Delay to ensure tab content is visible
-
             }
-
             if (nestedTabName) {
-
                 setTimeout(function() {
-
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
-
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
-
                 }, 200); // Delay to ensure parent tab content is visible
-
             }
-
         } else {
-
             // Default to the first tab if no tab is specified
-
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
-
             activaTab(firstTabName);
-
         }
-
     }
-
-
 
     function clearPreviousAnchor() {
-
         var url = new URL(window.location.href);
-
         url.hash = ''; // Clear the hash part of the URL
-
         history.replaceState(null, null, url.toString());
-
     }
 
-
-
     // Activate the tab and scroll to anchor based on the URL when the page loads
-
     activateTabAndHeaderFromUrl();
 
-
-
     // Update URL query parameters when a tab is shown
-
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
-
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
-
         var tabName = $(e.target).attr('data-tab-name');
-
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
-
         var url = new URL(window.location.href);
 
-
-
         if (parentTabPane) {
-
             url.searchParams.set('tab', parentTabPane);
-
             url.searchParams.set('nested-tab', tabName);
-
         } else {
-
             url.searchParams.set('tab', tabName);
-
             url.searchParams.delete('nested-tab');
-
         }
 
-
-
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
-
         history.replaceState(null, null, url.toString());
-
     });
-
-
 
     // Re-activate the tab and scroll to anchor if the query parameters change
-
     $(window).on('popstate', function () {
-
         activateTabAndHeaderFromUrl();
-
     });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
