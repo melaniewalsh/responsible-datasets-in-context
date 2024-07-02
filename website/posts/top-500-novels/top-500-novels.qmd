@@ -42,6 +42,11 @@ bibliography: references/references.bib
 
 This dataset contains information on the top 500 novels most widely held in libraries, according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab), a global library organization with over 16,000 member libraries in over 100 countries. The dataset includes information on authors’ biographies, library holdings, and online engagement for each novel, as well as the full text for all works that are not currently under copyright (190 novels).
 
+::: {.callout-tip icon=false}
+## Brief Survey
+If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
+:::
+
 <br>
 
 ```{ojs .content-visible when-format="html" unless-format="pdf"}
@@ -88,9 +93,12 @@ viewof summary_data = SummaryTable(formatted_library_data, {
 });
 ```
 
+::: {.callout-tip icon=false}
+## Creative Commons License
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+:::
 
 {{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
-
 
 This dataset is based on a list of the [Top 500 Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library Top 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
 

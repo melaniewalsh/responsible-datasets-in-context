@@ -3,8 +3,9 @@ title: "African American Periodical Poetry (1900-1928)"
 author: Amardeep Singh and Kate Hennessey
 format: 
   html:
-    toc: true
+    toc: false
     toc-depth: 5
+    toc-float: true
     toc-title: "Table of Contents"
     toc-expand: true
     page-layout: full
@@ -44,9 +45,14 @@ bibliography: references/references.bib
 
 # Data Essay {#data-essay}
 
-## Introduction
+## Introduction {#introduction}
 
 This dataset is a collection of poetry published in magazines by African American writers in the early twentieth century. The collection currently contains about 750 poems, all of which are out of copyright in the U.S., with the bulk of the poetry published in fourteen different magazines, including both Black-oriented and edited magazines like _The Crisis_, _Opportunity_, and _Black Opals_ as well as ‘mainstream’ (predominantly White) magazines like _Survey Graphic_, _The Liberator_, and _Palms_. The dataset includes information on authors’ biographies, poetic form, topics and themes, the names of editors (including guest editors and co-editors), as well as republication information. 
+
+::: {.callout-tip icon=false}
+## Brief Survey
+If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
+:::
 
 <br>
 
@@ -96,6 +102,11 @@ viewof summary_data = SummaryTable(formatted_poetry_data, {
   label: "AA Poetry Data"
 });
 ```
+
+::: {.callout-tip icon=false}
+## Creative Commons License
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+:::
 
 {{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 

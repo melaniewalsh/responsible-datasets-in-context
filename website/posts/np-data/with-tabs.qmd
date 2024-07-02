@@ -48,6 +48,11 @@ bibliography: references/references.bib
 
 This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation and use data about other park units, such as [national battlefields, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
 
+::: {.callout-tip icon=false}
+## Brief Survey
+If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
+:::
+
 <br>
 
 ```{ojs}
@@ -91,6 +96,11 @@ viewof summary_data = SummaryTable(formatted_visit_data, {
   label: "National Park Data Summary"
 });
 ```
+
+::: {.callout-tip icon=false}
+## Creative Commons License
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+:::
 
 {{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id=downloadbutton >}}
 
@@ -265,7 +275,7 @@ But the NPS logs also show that the main induction loop counter at Carlsbad Cave
 ::: {.callout-tip}
 ## Activity 1
 
-Now that we've talked about how data is collected (and the fragility of some of those methods), it's a good time to think about how even the same method, deployed at different places, might be differently unreliable. For more, see [Activity 1](#exercise-1).
+Now that we've talked about how data is collected (and the fragility of some of those methods), it's a good time to think about how even the same method, deployed at different places, might be differently unreliable. For more, see [Activity 1](?tab=discussion-%26-activities#activity-1-1).
 :::
 
 
