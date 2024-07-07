@@ -26,11 +26,6 @@ bibliography: references/references.bib
 
 ## DATASET TITLE: _El Silencio de la Voz Que a Todas Nos Quiebra (1999)_ Feminicides Digital & Bilingual (Spanish & English) Dataset (2024)
 
-::: {.callout-tip icon=false}
-## Brief Survey
-If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
-:::
-
 
 ## THE PEOPLE
 
@@ -42,25 +37,20 @@ If you use our materials in your class or another setting, we would love to [hea
 
 **Course students (2023): **Jessica Corona, Johanna León, Aislinn Reichle, Sara Mosher, Jasbeth Medrano, Judith Ordonez, Carolina Vlaun, Alex Sanchez, Samuel Hille, Genesis Esquilin (Leader), Layla Smith, Kiri Avelar, Paris Cantu, Nicolas Rodriguez, Madee Puente-Bonilla, Julian Dehoyos, Jada Thomas, Lily Morrill, Jared Pond, Emily Malloy, Erin Garza, Joshua Scott, Ambonnay Rodriguez, Nilou Esmaeili, Jairo Samuda, Kai Pheonix, Anastasia Blanco, & Branden Jackson
 
-### Original Spanish Data Table
+
+<br>
+
+## Tabular table
+
+
+<!-- Importing ojs variables from https://observablehq.com/d/43c63c0752531267 -->
 ```{ojs}
 //| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_spanish_silencio_de_la_voz_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
+import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "43c63c0752531267"
 ```
 
+
+<!-- Formatting data -->
 ```{ojs}
 //| echo: false
 formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(d => {
@@ -71,28 +61,33 @@ formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(
     ])
   );
 });
-
-```
-
-```{ojs}
-tableContainer = html `<div id="table-container" style="height: 600px">
-</div>`
-```
-
-```{ojs}
-import {table} from "@randomfractals/tabular-data-viewer"
-
-
 ```
 
 
 ```{ojs}
-//| echo: false
-import {SummaryTable} from "05930c2f8350fb92"
-viewof spanish_summary_data = SummaryTable(formatted_spanish_silencio_de_la_voz_data, {
-  label: "Original dataset (1999)"
-});
+//|echo: false
+viewof dataSet
+viewof dataUrl
+tableContainer
 ```
+
+
+```{ojs}
+//|echo: false
+//|output: false
+table
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
+```
+
+<br>
+
+```{ojs}
+//|echo: false
+viewof dataSummaryView
+
+```
+
 
 ::: {.callout-tip icon=false}
 ## Creative Commons License
@@ -100,47 +95,6 @@ viewof spanish_summary_data = SummaryTable(formatted_spanish_silencio_de_la_voz_
 :::
 
 {{< downloadthis ../../../datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv dname = Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
-
-### Translation and digital version (2023)
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_english_silencio_de_la_voz_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-```{ojs}
-//| echo: false
-formatted_english_silencio_de_la_voz_data = english_silencio_de_la_voz_data.map(d => {
-  return Object.fromEntries(
-    Object.entries(d).map(([key, value]) => [
-      key,
-      value === null || value === undefined || value === "" ? null : key === "Year" ? new Date(value, 0, 1) : value
-    ])
-  );
-});
-
-```
-
-```{ojs}
-//| echo: false
-viewof english_summary_data = SummaryTable(formatted_english_silencio_de_la_voz_data, {
-  label: "Original dataset (1999)"
-});
-```
-
-{{< downloadthis ../../../datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv dname = English_Bilingual_Database_of_El Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
 
 ## THE HISTORICAL CONTEXT
 

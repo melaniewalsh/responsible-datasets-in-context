@@ -3,7 +3,7 @@ title: "African American Periodical Poetry (1900-1928)"
 author: Amardeep Singh and Kate Hennessey
 format: 
   html:
-    toc: false
+    toc: true
     toc-depth: 5
     toc-float: true
     toc-title: "Table of Contents"
@@ -55,53 +55,39 @@ If you use our materials in your class or another setting, we would love to [hea
 :::
 
 <br>
+<!-- Importing ojs variable from https://observablehq.com/d/206a0a693c40b3fa -->
 
 ```{ojs}
-//| echo: false
-Inputs.table(search, {
-   width: [50, 50, 50, 50, 50],
-  layout: "fixed",
-  rows: 25,
-  sort: "year",
-  reverse: false,
-
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    year: x => d3.timeFormat(x),
-    text: x => {
-      const words = x.split(' ');
-      return words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
-    }
-    // author_birth: x => d3.timeFormat(x),
-    // author_death: x => d3.timeFormat(x),
-    // gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
+//|echo: false
+import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "206a0a693c40b3fa"
 ```
+
+```{ojs}
+//|echo: false
+viewof dataSet
+viewof dataUrl
+tableContainer
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+table
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
+```
+
 <br>
 
-
 ```{ojs}
-//| echo: false
-formatted_poetry_data = aa_poetry_data.map(d => {
-  return Object.fromEntries(
-    Object.entries(d).map(([key, value]) => [
-      key,
-      value === null || value === undefined || value === "" ? null : key === "year" ? new Date(value, 0, 1) : value
-    ])
-  );
-});
+//|echo: false
+viewof dataSummaryView
+
 ```
 
 
-```{ojs}
-//| echo: false
+<br>
 
-import {SummaryTable} from "05930c2f8350fb92"
-viewof summary_data = SummaryTable(formatted_poetry_data, {
-  label: "AA Poetry Data"
-});
-```
 
 ::: {.callout-tip icon=false}
 ## Creative Commons License
@@ -160,59 +146,30 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 aa_poetry_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv", d3.autoType)
 
 ```
-
-```{ojs}
-//| echo: false
-//| output: false
-
-
-filtered = aa_poetry_data.filter(function(penguin) {
-  return bill_length_min < penguin.bill_length_mm &&
-         islands.includes(penguin.island);
-})
-```
-
-```{ojs}
-//| echo: false
-color = d3
-  .scaleLinear()
-  .domain([0, 100, 300])
-  .range(["#cafcc2", "#fce7c2", "#eb9494"])
-```
 <br>
 
 ## African American Periodical Poetry
 
-```{ojs}
-//| echo: false
-viewof search = Inputs.search(aa_poetry_data, {
-  placeholder: "Search"
-})
-```
 
-<br>
 
 ```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "year",
-  reverse: false,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    year: x => d3.timeFormat(x),
-    text: x => {
-      const words = x.split(' ');
-      return words.slice(0, 15).join(' ') + (words.length > 15 ? '...' : '');
-    }
-  
-  }
-})
+//|echo: false
+import {exploreTable, exploreTableContainer} from "206a0a693c40b3fa"
 ```
+
+```{ojs}
+//|echo: false
+exploreTableContainer
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+exploreTable
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
+```
+
 
 {{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
