@@ -219,7 +219,7 @@ Looking at the AUTHOR_GENDER column, we can count the number of authors identifi
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("final_merged_dataset_no_full_text.tsv", sep='\t', header=0, low_memory=False)
+df = pd.read_csv("final_merged_dataset.tsv", sep='\t', header=0, low_memory=False)
 
 df["author_gender"].value_counts(dropna=False)
 
