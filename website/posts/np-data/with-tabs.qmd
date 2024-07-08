@@ -54,47 +54,34 @@ If you use our materials in your class or another setting, we would love to [hea
 :::
 
 <br>
+<!-- Importing from https://observablehq.com/d/d85c628332300765 -->
 
 ```{ojs}
-//| echo: false
+import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d85c628332300765"
+```
 
-/*Inputs.table(search, data)*/
+```{ojs}
+//|echo: false
+viewof dataSet
+viewof dataUrl
+tableContainer
+```
 
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 10,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
 
+```{ojs}
+//|echo: false
+//|output: false
+table
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
 ```
 
 <br>
 
 ```{ojs}
-//| echo: false
-formatted_visit_data = visit_data.map(d => {
-  return Object.fromEntries(
-    Object.entries(d).map(([key, value]) => [
-      key,
-      value === null || value === undefined || value === "" ? null : key === "Year" ? new Date(value, 0, 1) : value
-    ])
-  );
-});
+//|echo: false
+viewof dataSummaryView
 
-```
-
-```{ojs}
-//| echo: false
-import { SummaryTable } from "@observablehq/summary-table"
-viewof summary_data = SummaryTable(formatted_visit_data, {
-  label: "National Park Data Summary"
-});
 ```
 
 ::: {.callout-tip icon=false}

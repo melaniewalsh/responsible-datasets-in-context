@@ -48,49 +48,34 @@ If you use our materials in your class or another setting, we would love to [hea
 :::
 
 <br>
+<!-- Importing from https://observablehq.com/d/4a39c8f7f8be9561 -->
 
-```{ojs .content-visible when-format="html" unless-format="pdf"}
+```{ojs}
+import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "4a39c8f7f8be9561"
+```
 
-//| echo: false
+```{ojs}
+//|echo: false
+viewof dataSet
+viewof dataUrl
+tableContainer
+```
 
-/*Inputs.table(search, data)*/
 
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "top_500_rank",
-  reverse: false,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    pub_year: x => d3.timeFormat(x),
-    author_birth: x => d3.timeFormat(x),
-    author_death: x => d3.timeFormat(x),
-    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
+```{ojs}
+//|echo: false
+//|output: false
+table
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
 ```
 
 <br>
 
 ```{ojs}
-//| echo: false
-formatted_library_data = library_data.map(d => {
-  return Object.fromEntries(
-    Object.entries(d).map(([key, value]) => [
-      key,
-      key === "pub_year" || key === "author_birth" || key === "author_death" ? new Date(value, 0, 1) : value
-    ])
-  );
-});
+//|echo: false
+viewof dataSummaryView
 
-```
-
-```{ojs}
-//| echo: false
-import {SummaryTable} from "05930c2f8350fb92"
-viewof summary_data = SummaryTable(formatted_library_data, {
-  label: "Top 500 Novels Summary"
-});
 ```
 
 ::: {.callout-tip icon=false}

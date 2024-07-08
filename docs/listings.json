@@ -23,8 +23,8 @@
   {
     "listing": "/posts/np-data/with-tabs.html",
     "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   },

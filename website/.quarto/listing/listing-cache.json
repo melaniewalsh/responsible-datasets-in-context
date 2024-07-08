@@ -17,6 +17,12 @@
     ],
     "datasets.qmd": [
       "posts"
+    ],
+    "posts\\np-data\\with-tabs.qmd": [
+      "exercises"
+    ],
+    "posts\\top-500-novels\\top-500-novels.qmd": [
+      "exercises"
     ]
   }
 }

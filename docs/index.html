@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -244,7 +244,7 @@ This website is currently under construction. Stay tuned for announcements about
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="literature,poetry,gender,race,metadata,full-text,public domain" data-listing-date-sort="1715929200000" data-listing-file-modified-sort="1720387151619" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5293">
+<div class="quarto-post image-right" data-index="0" data-categories="literature,poetry,gender,race,metadata,full-text,public domain" data-listing-date-sort="1715929200000" data-listing-file-modified-sort="1720328186734" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5293">
 <div class="thumbnail">
 <p><a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external"></a></p><a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external">
 <p><img src="./posts/african-american-periodical-poetry/images/aa-anthology.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -295,7 +295,7 @@ Amardeep Singh and Kate Hennessey
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1720387340132" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5708">
+<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1720413000171" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5607">
 <div class="thumbnail">
 <p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external"></a></p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external">
 <p><img src="./posts/top-500-novels/images/library-top-500-screenshot.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -346,7 +346,7 @@ Anna Preus and Aashna Sheth
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1720019979801" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="21" data-listing-word-count-sort="4044">
+<div class="quarto-post image-right" data-index="2" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1720413043097" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="20" data-listing-word-count-sort="3952">
 <div class="thumbnail">
 <p><a href="./posts/np-data/with-tabs.html" class="no-external"></a></p><a href="./posts/np-data/with-tabs.html" class="no-external">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -391,7 +391,7 @@ Melanie Walsh and Os Keyes
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="gender,human rights,social justice activism,missing-data,communities" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1720387151620" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="51" data-listing-word-count-sort="10007">
+<div class="quarto-post image-right" data-index="3" data-categories="gender,human rights,social justice activism,missing-data,communities" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1720328035083" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="51" data-listing-word-count-sort="10007">
 <div class="thumbnail">
 <p><a href="./posts/gender-violence/index.html" class="no-external"></a></p><a href="./posts/gender-violence/index.html" class="no-external">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -447,91 +447,177 @@ No matching items
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
+
 $(document).ready(function () {
+
     // Assign data-tab-name attribute based on the inner text of the tab links
+
     $('.nav-tabs .nav-link').each(function () {
+
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+
         $(this).attr('data-tab-name', tabName);
+
     });
+
+
 
     function activaTab(tabName, container = document) {
+
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+
         if (tabLink.length) {
+
             tabLink.tab('show');
+
             tabLink.trigger('click'); // Explicitly trigger the click event
+
         }
+
     }
+
+
 
     function scrollToAnchor(anchorId) {
+
         var element = $('[data-anchor-id="' + anchorId + '"]');
+
         if (element.length) {
+
             $('html, body').animate({
+
                 scrollTop: element.offset().top
+
             }, 500);
+
         }
+
     }
+
+
 
     function activateTabAndHeaderFromUrl() {
+
         var urlParams = new URLSearchParams(window.location.search);
+
         var tabName = urlParams.get('tab');
+
         var anchorId = urlParams.get('anchor');
+
         var nestedTabName = urlParams.get('nested-tab');
 
+
+
         if (tabName) {
+
             activaTab(tabName);
+
             if (anchorId) {
+
                 setTimeout(function() {
+
                     scrollToAnchor(anchorId);
+
                 }, 100); // Delay to ensure tab content is visible
+
             }
+
             if (nestedTabName) {
+
                 setTimeout(function() {
+
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+
                 }, 200); // Delay to ensure parent tab content is visible
+
             }
+
         } else {
+
             // Default to the first tab if no tab is specified
+
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+
             activaTab(firstTabName);
+
         }
+
     }
+
+
 
     function clearPreviousAnchor() {
+
         var url = new URL(window.location.href);
+
         url.hash = ''; // Clear the hash part of the URL
+
         history.replaceState(null, null, url.toString());
+
     }
 
+
+
     // Activate the tab and scroll to anchor based on the URL when the page loads
+
     activateTabAndHeaderFromUrl();
 
+
+
     // Update URL query parameters when a tab is shown
+
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
+
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+
         var tabName = $(e.target).attr('data-tab-name');
+
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+
         var url = new URL(window.location.href);
 
+
+
         if (parentTabPane) {
+
             url.searchParams.set('tab', parentTabPane);
+
             url.searchParams.set('nested-tab', tabName);
+
         } else {
+
             url.searchParams.set('tab', tabName);
+
             url.searchParams.delete('nested-tab');
+
         }
 
+
+
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+
         history.replaceState(null, null, url.toString());
+
     });
 
+
+
     // Re-activate the tab and scroll to anchor if the query parameters change
+
     $(window).on('popstate', function () {
+
         activateTabAndHeaderFromUrl();
+
     });
+
 });
+
 </script>
+
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
