@@ -5,7 +5,8 @@ sidebar: false
 page-layout: article
 toc: false
 title-block-banner: true
-
+body-classes: team
+css: styles.css
 listing:
   - id: pi
     include:

@@ -3,19 +3,14 @@ title: "Aashna Sheth"
 last: Sheth
 first: Aashna
 people_group: member
-education: Master's Computer Science | University of Washington
-subtitle: Something
+education: 
+subtitle: Master's Computer Science | University of Washington
 image: profile.jpg
 about: 
   template: trestles
   image: profile.jpg
-  links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+  image-shape: rectangle
+
 ---
 
-This would be the message portion
+Aashna Sheth studied Computer Science at the University of Washington for both her B.S. and M.S. Through her minor in Comparative History, she became especially interested in intersections of culture, history, and technology. Prior to this project, she worked on research that explored the metadata associated with the Chronicling America newspaper dataset. 

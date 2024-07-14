@@ -60,3 +60,7 @@ p { color: #000000;
 .fixed-top {
     width: 100%;
 }
+
+body.team img {
+    width: 10em;
+}

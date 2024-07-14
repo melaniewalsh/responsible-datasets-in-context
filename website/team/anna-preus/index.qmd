@@ -10,12 +10,9 @@ about:
   template: trestles
   image: profile.jpg
   links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+    - icon: book
+      text: _The Paris Project_
+      href: https://urldefense.com/v3/__https://www.paris-a-poem.com/__;!!K-Hz7m0Vt54!nR0cugMDSnt4j3Egv2zz-2wK5ZNZRbTpUcmUvMvppuWG6V7aWCiEeatIMFEzPVWxMiE3YXaAfbOc$
 ---
 
-This would be the message portion
+Anna Preus is an assistant professor in the English Department at the University of Washington and director of UW’s Humanities Data Lab. Her interests include early 20th-century Anglophone literature, British publishing culture, and the digital humanities. She is a co-editor of _[The Paris Project](https://urldefense.com/v3/__https://www.paris-a-poem.com/__;!!K-Hz7m0Vt54!nR0cugMDSnt4j3Egv2zz-2wK5ZNZRbTpUcmUvMvppuWG6V7aWCiEeatIMFEzPVWxMiE3YXaAfbOc$)_, a digital edition of Hope Mirrlees’s groundbreaking modernist long poem, _Paris_, and her work has appeared or is forthcoming in _Feminist Modernist Studies_, _ELH_, _Modernism/modernity_ Print+, and the edited collection _Expressive Networks: Poetry and Platform Cultures_.
