@@ -301,6 +301,7 @@ Above you can see that the GoodReads rankings and the top 500 rankings aren't ve
 ```{python}
 
 import math
+from IPython.core.display import HTML
 
 def print_rankings(d, col_name):
     rank_B = d[col_name]
@@ -309,19 +310,23 @@ def print_rankings(d, col_name):
     points_moved = 0
     if (math.isnan(rank_B)):
       points_moved = 501
+      d["html_output"] = f'<span style="color:black"> ● {title}</span>'
     else:
       if rank_B > int(rank_A):
           points_moved = rank_B - rank_A
-          print(f"\u001b[31m ▼ -{int(points_moved)} {title}")
+          d["html_output"] = f'<span style="color:red"> ▼ -{int(points_moved)} {title}</span>'
       elif rank_B < rank_A:
           points_moved = rank_A - rank_B
-          print(f"\u001b[32m ▲ +{int(points_moved)} {title}")
+          d["html_output"] = f'<span style="color:green"> ▲ +{int(points_moved)} {title}</span>'
       else:
-          print(f"\u001b[30m ● {int(points_moved)} {title}")
+          d["html_output"] = f'<span style="color:black"> ● {title}</span>'
     d["points_moved"] = int(points_moved)
     return d
 
 df = df.apply(lambda d: print_rankings(d, "gr_num_ratings_rank"), axis=1)
+
+html_output = "<br>".join(df["html_output"].tolist())
+HTML(html_output)
 
 ```
 
