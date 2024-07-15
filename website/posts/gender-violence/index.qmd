@@ -46,7 +46,8 @@ bibliography: references/references.bib
 <!-- Importing ojs variables from https://observablehq.com/d/43c63c0752531267 -->
 ```{ojs}
 //| echo: false
-import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "43c63c0752531267"
+import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles, viewof selectedColumns} from "43c63c0752531267"
+
 ```
 
 
@@ -84,6 +85,7 @@ tabulator.min.css`
 
 ```{ojs}
 //|echo: false
+viewof selectedColumns
 viewof dataSummaryView
 
 ```

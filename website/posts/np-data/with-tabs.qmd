@@ -57,7 +57,7 @@ If you use our materials in your class or another setting, we would love to [hea
 <!-- Importing from https://observablehq.com/d/d85c628332300765 -->
 
 ```{ojs}
-import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d85c628332300765"
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d85c628332300765"
 ```
 
 ```{ojs}
@@ -80,6 +80,7 @@ tabulator.min.css`
 
 ```{ojs}
 //|echo: false
+viewof selectedColumns
 viewof dataSummaryView
 
 ```
