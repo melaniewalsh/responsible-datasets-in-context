@@ -9,6 +9,7 @@ image: profile.jpg
 about:
   template: trestles
   image: profile.jpg
+  image-shape: rectangle
 ---
 
 Kate Hennessey was an English Literature major at Lehigh University. She graduated in May 2024. Her interests included the fields of digital humanities, public humanities, and 19th century Gothic literature.

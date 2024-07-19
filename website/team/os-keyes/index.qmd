@@ -3,19 +3,16 @@ title: "Os Keyes"
 last: Keyes
 first: Os
 people_group: member
-education: Placeholder
-subtitle: Doctoral Student
+education: 
+subtitle: PhD Candidate | University of Washington
 image: profile.jpg
 about:
   template: trestles
   image: profile.jpg
   links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+    - icon: person-circle
+      text: Personal Website
+      href: https://ironholds.org/
 ---
 
-This would be the message portion
+Os Keyes is a PhD candidate at the University of Washington's Department of Human-Centered Design and Engineering. The author of over 30 publications, their work on critical data studies resulted in the awarding of an inaugural Ada Lovelace Fellowship. Their current work focuses on the history of scientific research in transgender medicine.

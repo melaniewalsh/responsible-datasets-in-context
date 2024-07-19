@@ -9,6 +9,7 @@ render:
 website:
   title: "Responsible Datasets in Context"
   favicon: images/responsible-logo-white.png
+  google-analytics: G-N0Y0SC740G
   comments: 
     hypothesis:
       theme: clean

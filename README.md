@@ -1,7 +1,7 @@
 
 # Responsible Datasets in Context
 
-Website: https://melaniewalsh.github.io/responsible-datasets-in-context/
+Website: http://www.responsible-datasets-in-context.com/
 
 This website contains a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources. 
 

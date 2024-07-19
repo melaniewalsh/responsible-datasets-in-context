@@ -1,7 +1,7 @@
 .navbar-logo {
     max-height: 60px;
     width: auto;
-    padding-right: 4px;
+    /* padding-right: 4px; */
 }
 
 .quarto-title-banner {
@@ -55,4 +55,12 @@ b,strong {font-weight: bold; color: black}
 
 p { color: #000000;
   
+}
+
+.fixed-top {
+    width: 100%;
+}
+
+body.team img {
+    width: 10em;
 }
