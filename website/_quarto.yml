@@ -9,7 +9,7 @@ render:
 website:
   title: "Responsible Datasets in Context"
   favicon: images/responsible-logo-white.png
-  google-analytics: G-N0Y0SC740G
+  google-analytics:  G-MZHBEJTWJ4
   comments: 
     hypothesis:
       theme: clean
@@ -25,17 +25,17 @@ website:
           href: team.qmd
         - text: "Mission"
           href: mission.qmd
-        - text: "Get Involved"
-          href: get-involved.qmd
+        - text: "Get In Touch"
+          href: get-in-touch.qmd
       - icon: github
         href: https://github.com/melaniewalsh/responsible-datasets-in-context
 
   page-footer:
     background: "#000000"
     right: <p style="color:white">Copyright &copy; 2024</p>
-    left:   <p style="color:white">Supported by[![](https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg){fig-alt="Mozilla" width=65px}](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/)</p>
+    left:   <p style="color:white">Supported by[![](https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg){fig-alt="Mozilla" width=65px}](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/)and partners</p>
     center: 
-      <p style="color:white">Made with [![](https://quarto.org/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)</p>
+      <p style="color:white">Made with [![](https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png){fig-alt="Quarto" width=65px}](https://quarto.org/)</p>
     
       
 

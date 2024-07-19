@@ -26,7 +26,7 @@ toc: true
 toc-depth: 5
 sidebar: 
   contents: auto
-format-links: [pdf, docx]
+format-links: [pdf, docx, ipynb]
 code-fold: true
 editor: visual
 df-print: kable
@@ -47,20 +47,34 @@ This dataset contains information on the top 500 novels most widely held in libr
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
-<br>
-<!-- Importing from https://observablehq.com/d/4a39c8f7f8be9561 -->
+<!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
 
 ```{ojs}
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "4a39c8f7f8be9561"
+//|echo: false
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
 ```
 
 ```{ojs}
 //|echo: false
-viewof dataSet
-viewof dataUrl
+// viewof dataSet
+//viewof dataUrl
 tableContainer
 ```
 
+
+::: {.callout-tip icon=false}
+## Creative Commons License
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+:::
+
+```{ojs}
+//|echo: false
+// viewof dataSet
+//tableContainer
+viewof dataUrl
+```
+
+{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
 
 ```{ojs}
 //|echo: false
@@ -79,12 +93,6 @@ viewof dataSummaryView
 
 ```
 
-::: {.callout-tip icon=false}
-## Creative Commons License
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
-:::
-
-{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
 
 This dataset is based on a list of the [Top 500   Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
 
@@ -111,10 +119,10 @@ By focusing on books that librarians have chosen to continue to make available t
 
 ## **WHERE DID THE DATA COME FROM? WHO COLLECTED IT?**
 
-###**The Top 500 list** 
+### **The Top 500 list** 
 The initial list of Top 500 novels was collected by a team at OCLC, the non-profit organization that manages WorldCat. It was compiled based on analysis of data in WorldCat, which consists of catalog records created and entered by librarians at OCLC member libraries. 
 
-###**Our curated dataset** 
+### **Our curated dataset** 
 Building on this list, we compiled data from a number of other databases, including Project Gutenberg, VIAF, Wikipedia, and Goodreads–a process that is described in greater detail below. 
 
 ##  **WHY WAS THE DATA COLLECTED? HOW IS THE DATA USED?**
@@ -122,8 +130,7 @@ Building on this list, we compiled data from a number of other databases, includ
 ### **The Top 500 list**:
 OCLC’s goal in producing the Top 500 list seems to be to share information about an important set of texts based on the unprecedented amount of information in their database, as well as to encourage library patronage and reading. The website for the list includes a “[Librarians Kit](https://www.oclc.org/en/worldcat/library100/promote.html)” with a variety of publicity materials–from printable bookmarks to Instagram tiles–that can help bring attention to books in the Top 500 list within libraries’ collections. 
 
-`Need to link to local image file or to image URL`
-`![alt_text](top_500_kit.png "image_tooltip")`
+![Screenshot of "The Library Top 100"](images/top_500_kit.png "image_tooltip")
 
 ### **Our curated dataset**:
 Our goal as researchers was to collect data from additional sources in order to understand how the list was constructed and to contextualize and question its claims about literary greatness.
@@ -177,10 +184,7 @@ We chose to contextualize the Library Top 500 List by compiling additional infor
 [^2]: For more on how editions of works are clustered in WorldCat see "Clustering WorldCat Discovery."
 **VIAF**: The Virtual International Authority File is an OCLC-run database that contains structured records–called “name authority files”–for individual authors and creators. We used VIAF to gather information on authors whose novels were included on the list, including their birth and death dates, nationalities, genders, and occupations.
 
-
-`Need to link to local image file or to image URL`
-`![alt_text](viaf_example.png "image_tooltip")`
-
+![VIAF example of Toni Morrison's novel *Beloved*](images/viaf_example.png "image_tooltip")
 
 **Wikipedia**: We used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.
 
