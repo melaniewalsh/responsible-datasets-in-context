@@ -1,3 +1,38 @@
+#hero-banner {
+    position: relative;
+    background-image: url("https://www.nps.gov/npgallery/GetAsset/c66dc9e9-1dd8-b71c-0709-7fbc019c9c2a/proxy/hires?");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 50px 0; /* Adjust padding as needed */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center;
+    text-align: center; */
+}
+
+#hero-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255 / 50%); /* Semi-transparent overlay */
+    z-index: 1;
+}
+
+#hero-banner .content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    /* background-color: #79b0dc;  */
+    color: black; /* Text color */
+    /* max-width: 800px; Adjust width as needed */
+    margin: auto; 
+    border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+
 .navbar-logo {
     max-height: 60px;
     width: auto;
@@ -27,16 +62,40 @@ background-repeat: no-repeat;
 opacity: 0.5;
 }
   
-
+/* 
 #hero-banner {
     /* padding-top: 35px;
     background-color: #a2d58b;
-    color: black; */
+    color: black; *//*
     background-image: url("https://www.nps.gov/npgallery/GetAsset/c66dc9e9-1dd8-b71c-0709-7fbc019c9c2a/proxy/hires?");
     background-size: cover;
     background-repeat: no-repeat;
     background-opacity: 0.5;
+/* } */
+/* #hero-banner {
+    position: relative;
+    background-image: url("https://www.nps.gov/npgallery/GetAsset/c66dc9e9-1dd8-b71c-0709-7fbc019c9c2a/proxy/hires?");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
 }
+
+#hero-banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 1;
+}*/
+
+/* .hero-banner .content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+ */
 
 .quarto-title-banner .code-tools-button {
    
@@ -55,6 +114,58 @@ b,strong {font-weight: bold; color: black}
 
 p { color: #000000;
   
+}
+
+button.code-tools-button {
+    /* background-color: black; Sets the background color to black */
+    color: black; /* Sets the text color to black */
+    /* border-color: black; Sets the border color to black, optional if you want the border to be the same color */
+}
+
+
+/* Set the default font color for the entire site */
+body {
+    color: black !important; /* Ensures that the text color is black */
+}
+
+/* Override the color for other common text-containing elements */
+p, h1, h2, h3, h4, h5, h6, a, span, div {
+    color: black !important; /* Ensures that the text color is black */
+}
+
+/* Exclude navbar and footer elements */
+.navbar, .navbar a, .navbar p, .navbar h1, .navbar h2, .navbar h3, .navbar h4, .navbar h5, .navbar h6, .navbar span, .navbar div,
+.footer, .footer a, .footer p, .footer h1, .footer h2, .footer h3, .footer h4, .footer h5, .footer h6, .footer span, .footer div {
+    color: white !important; /* Ensures that navbar and footer elements retain their original color */
+}
+
+/* Exclude navbar and footer elements */
+.nav-link.active {
+    color: white !important; /* Ensures that navbar and footer elements retain their original color */
+}
+
+button#quarto-code-tools-menu i::before {
+    content: "" !important;
+    display: none !important;
+    /* color: black !important; Sets the icon color to black */
+
+}
+
+
+/* Color magnifying glass white */
+
+.navbar #quarto-search.type-overlay .aa-Autocomplete svg.aa-SubmitIcon {
+    color: white !important;
+}
+
+/* Ensure navbar dropdown items have black font color */
+.navbar .dropdown-item {
+    color: black !important; /* Ensures that the dropdown items have black font color */
+}
+
+/* Ensure span inside navbar dropdown items also have black font color */
+.navbar .dropdown-item .dropdown-text {
+    color: black !important; /* Ensures that the text inside dropdown items has black font color */
 }
 
 .fixed-top {

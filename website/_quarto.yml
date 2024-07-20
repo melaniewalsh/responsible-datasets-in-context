@@ -25,6 +25,8 @@ website:
           href: team.qmd
         - text: "Mission"
           href: mission.qmd
+        - text: "Sponsors"
+          href: sponsors.qmd
         - text: "Get In Touch"
           href: get-in-touch.qmd
       - icon: github

@@ -28,10 +28,6 @@ listing:
     fields: [title, subtitle, image, education]
 ---
 
-"Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education" was supported by the Responsible Computing Challenge (2023-2024). Read [the press release here](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/).
-
-The Responsible Computing Challenge is a partnership between Mozilla, Omidyar Network, Schmidt Futures, Craig Newmark Philanthropies, Mellon Foundation, and the Rockefeller Brothers Fund.
-
 # Project Directors
 
 ::: {#pi}

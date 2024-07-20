@@ -171,5 +171,11 @@
   },
   "get-in-touch.qmd": {
     "get-in-touch.html": "230cb23f"
+  },
+  "posts/gender-violence/all_datasets.qmd": {
+    "all_datasets.html": "59ef9f8a"
+  },
+  "sponsors.qmd": {
+    "sponsors.html": "13d98633"
   }
 }

@@ -3,7 +3,7 @@ title: "Datasets"
 listing:
   contents: posts
   exclude:
-    categories: ["exercise", "solution"]
+    categories: ["exercise", "solution", "included-content"]
     title: "National Park Visitation Data"
   sort: "date desc"
   type: default

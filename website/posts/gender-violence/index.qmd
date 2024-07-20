@@ -38,10 +38,10 @@ This dataset includes information about feminicdes, or cases of women who have b
 //| echo: false
 import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles, viewof selectedColumns} from "93035b1c4fe02eed"
 
+spanish_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv", d3.autoType)
 ```
 
 
-<!-- Formatting data -->
 ```{ojs}
 //| echo: false
 formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(d => {
@@ -260,13 +260,7 @@ The course was divided into five modules and the final module. In every module t
 
     
 
-
-
 ![Identity and Intersectionality visualization using Miro](images/miro-visualization-image2.png "Identity and Intersectionality visualization")
-
-
-
-    
 
 
 
@@ -274,44 +268,31 @@ The course was divided into five modules and the final module. In every module t
 _Image 2. Example of identity and intersectionality visualization using Miro, created by Anastasia Sasha Krouk Blanco_
 
 
-     
-
 * **Module #2 _Text Analysis à Female Identity Representations in Poetry & Newspapers:_** Introduction to text analysis and text mining with poems, songs and newspapers through a historical gender representation, cultural gender roles and gender violence lens.
 
-    
-
-
+  
 
 ![Word graph poem of Layla R. Smith with extra context below it](images/word-graph-image4.png "Word graph poem")
-
-
 
   _Image 3. Example of poem analyzed and visualized using Voyant, created by Layla R. Smith_
 
 * **Module #3** **_Geographical Data_** **_à  CounterData of Transborder Gender Violence in Literature, Films, Archives & Testimonio_**: Identification and analysis of geographical counterdata of feminicides and gender violence in printed texts and films. 
 
-    
-
+  
 
 
 ![Desert Blood by Alicia Gaspar de Alba book cover](images/desert-blood-image5.png "Desert Blood by Alicia Gaspar de Alba book cover")
-
-
 
 
 ![Señorita Extravida (Missing Young Woman) documentary cover](images/senorita-extravida-image6.png "Señorita Extravida (Missing Young Woman) documentary cover")
 
 
 
-    
-
 
 
 ![Carloina Y. Vlaun giving thoughts and further context into the book Desert Blood by Alicia Gaspar de Alba](images/carolina-vlaun-image7.png "Carolina Y Vlaun comments on Desert Blood by Alicia Gaspar de Alba")
 
 
-
-    
 
 
 
@@ -407,352 +388,8 @@ different variations and levels of violence, intersectionality of present, it sh
 
 # Explore All the Datasets
 
+{{< include all_datasets.qmd >}}
 
-
-
-## Dataset #1: Tracing Feminicide in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection
-
-### Violencia (violence) Feminicida (Femicide)
-```{ojs}
-//| echo: false
-//| output: false
-violence_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/violencia_violence_tracing_femenicide_in_el_paso.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_violence_tracing_femenicide_data = Inputs.search(violence_tracing_femenicide_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(violence_tracing_femenicide_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  width: 1000,
-  format: {
-    Year: x => d3.timeFormat(x)
-  }
-})
-```
-{{< downloadthis ../../../datasets/gender-violence/violencia_violence_tracing_femenicide_in_el_paso.csv dname = violencia_violence_tracing_femenicide_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
-
-
-```{ojs}
-//| echo: false
-//| output: false
-culture_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/culture_cultura_tracing_feminicides_in_el_paso.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_culture_tracing_femenicide_data = Inputs.search(culture_tracing_femenicide_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(culture_tracing_femenicide_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/culture_cultura_tracing_feminicides_in_el_paso.csv dname = culture_cultura_tracing_feminicides_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
-
-## Fenemismo (Fenemism)
-```{ojs}
-//| echo: false
-//| output: false
-fenemism_tracing_femenicide_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/fenemismo_fenemism_tracing_femenicide_in_el_paso.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_fenemism_tracing_femenicide_data = Inputs.search(fenemism_tracing_femenicide_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(fenemism_tracing_femenicide_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/fenemismo_fenemism_tracing_femenicide_in_el_paso.csv dname = fenemismo_fenemism_tracing_femenicide_in_el_paso.csv label = "Download Data" id=downloadbutton >}}
-
-## Dataset #2: Digital and Translated Version of "El Silencio De La Voz Que a Todos Nos Quiebra Feminicidio" Printed Spreadsheet
-
-### Spanish Data Table
-```{ojs}
-//| echo: false
-//| output: false
-spanish_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_spanish_silencio_de_la_voz_data = Inputs.search(spanish_silencio_de_la_voz_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_spanish_silencio_de_la_voz_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz.csv dname = Spanish_Bilingual_Database_of_El_Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
-
-### English Data Table
-```{ojs}
-//| echo: false
-//| output: false
-english_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_english_silencio_de_la_voz_data = Inputs.search(english_silencio_de_la_voz_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_english_silencio_de_la_voz_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/English_Bilingual_Database_of_El Silencio_de_la_Voz.csv dname = English_Bilingual_Database_of_El Silencio_de_la_Voz label = "Download Data" id=downloadbutton >}}
-
-## Dataset #3: Geotestimonios Literary Dataset (Woman Hollering Creek by Sandra Cisneros and Stories of Survival by Alicia Gaspar de Alba)
-
-### Woman Hollering Creek
-```{ojs}
-//| echo: false
-//| output: false
-woman_hollering_creek_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Woman_Hollering_Geographical_Metadata.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_woman_hollering_creek_data = Inputs.search(woman_hollering_creek_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_woman_hollering_creek_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Woman_Hollering_Geographical_Metadata.csv dname = Woman_Hollering_Geographical_Metadata.csv label = "Download Data" id=downloadbutton >}}
-
-### Stories of Survival 
-```{ojs}
-//| echo: false
-//| output: false
-stories_of_survival_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Mystery_of_Survival_Geographical_Metadata.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_stories_of_survival_data = Inputs.search(stories_of_survival_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_stories_of_survival_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Mystery_of_Survival_Geographical_Metadata.csv dname = Mystery_of_Survival_Geographical_Metadata.csv label = "Download Data" id=downloadbutton >}}
-
-## Dataset #4: Films of Feminicide and/or Gender Violence Around the World
-```{ojs}
-//| echo: false
-//| output: false
-film_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Film_Dataset.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_film_data = Inputs.search(film_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_film_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "ID NO.",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Film_Dataset.csv dname = Film_Dataset.csv label = "Download Data" id=downloadbutton >}}
-
-## Dataset #5: Books and Articles from Mexico and the U.S. Related to Feminicide and Gender Violence
-```{ojs}
-//| echo: false
-//| output: false
-literature_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_literature_data = Inputs.search(literature_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(search_literature_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "ID NO.",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv dname = Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv label = "Download Data" id=downloadbutton >}}
-
-## Dataset #6: Murals and Public Monuments Related to Feminicide and Gender Violence
-```{ojs}
-//| echo: false
-//| output: false
-anti_gender_violence_art_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/Art_of_Anti_Gender_Violence_and_Femincides_Database.csv", d3.autoType)
-```
-
-``` {ojs}
-//| echo: false
-viewof search_anti_gender_violence_art_data = Inputs.search(anti_gender_violence_art_data, {
-  placeholder: "Search"
-})
-```
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(anti_gender_violence_art_data, {
-  layout: "fixed",
-  rows: 50,
-  sort: "ID NO.",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/gender-violence/Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv dname = Literature_Review_of_Gender_Violence_&_Feminicides_Database.csv label = "Download Data" id=downloadbutton >}}
 
 # Discussion & Activities
 ### ASSIGNMENT #1
