@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -238,7 +238,7 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="18" data-source-offset="-18"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>viewof alldataUrl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="18" data-source-offset="-19"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>viewof alldataUrl</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-2" data-nodetype="expression">
@@ -246,7 +246,7 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="19" data-source-offset="-36"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="19" data-source-offset="-38"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 18;"><span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-2-3" data-nodetype="expression">
@@ -264,7 +264,7 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="27" data-source-offset="-9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 26;"><span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="27" data-source-offset="-10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 26;"><span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
 <span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display hidden">
 <div>
@@ -284,7 +284,7 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="36" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="36" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-4-2" data-nodetype="expression">
@@ -298,93 +298,179 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <script>
+
 $(document).ready(function () {
+
     // Assign data-tab-name attribute based on the inner text of the tab links
+
     $('.nav-tabs .nav-link').each(function () {
+
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+
         $(this).attr('data-tab-name', tabName);
+
     });
+
+
 
     function activaTab(tabName, container = document) {
+
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+
         if (tabLink.length) {
+
             tabLink.tab('show');
+
             tabLink.trigger('click'); // Explicitly trigger the click event
+
         }
+
     }
+
+
 
     function scrollToAnchor(anchorId) {
+
         var element = $('[data-anchor-id="' + anchorId + '"]');
+
         if (element.length) {
+
             $('html, body').animate({
+
                 scrollTop: element.offset().top
+
             }, 500);
+
         }
+
     }
+
+
 
     function activateTabAndHeaderFromUrl() {
+
         var urlParams = new URLSearchParams(window.location.search);
+
         var tabName = urlParams.get('tab');
+
         var anchorId = urlParams.get('anchor');
+
         var nestedTabName = urlParams.get('nested-tab');
 
+
+
         if (tabName) {
+
             activaTab(tabName);
+
             if (anchorId) {
+
                 setTimeout(function() {
+
                     scrollToAnchor(anchorId);
+
                 }, 100); // Delay to ensure tab content is visible
+
             }
+
             if (nestedTabName) {
+
                 setTimeout(function() {
+
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+
                 }, 200); // Delay to ensure parent tab content is visible
+
             }
+
         } else {
+
             // Default to the first tab if no tab is specified
+
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+
             activaTab(firstTabName);
+
         }
+
     }
+
+
 
     function clearPreviousAnchor() {
+
         var url = new URL(window.location.href);
+
         url.hash = ''; // Clear the hash part of the URL
+
         history.replaceState(null, null, url.toString());
+
     }
 
+
+
     // Activate the tab and scroll to anchor based on the URL when the page loads
+
     activateTabAndHeaderFromUrl();
 
+
+
     // Update URL query parameters when a tab is shown
+
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
+
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+
         var tabName = $(e.target).attr('data-tab-name');
+
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+
         var url = new URL(window.location.href);
 
+
+
         if (parentTabPane) {
+
             url.searchParams.set('tab', parentTabPane);
+
             url.searchParams.set('nested-tab', tabName);
+
         } else {
+
             url.searchParams.set('tab', tabName);
+
             url.searchParams.delete('nested-tab');
+
         }
 
+
+
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+
         history.replaceState(null, null, url.toString());
+
     });
 
+
+
     // Re-activate the tab and scroll to anchor if the query parameters change
+
     $(window).on('popstate', function () {
+
         activateTabAndHeaderFromUrl();
+
     });
+
 });
+
 </script>
+
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGFsbGRhdGFVcmwsIHZpZXdvZiBhbGxkYXRhU2V0LCBhbGx0YWJsZUNvbnRhaW5lciwgYWxsdGFibGUsIGFsbHRhYmxlU3R5bGVzLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zfSBmcm9tIFwiNjYyMzE1YjA2MmQ2NjhmYlwiXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBhbGxkYXRhU2V0XG52aWV3b2YgYWxsZGF0YVVybFxuYWxsdGFibGVDb250YWluZXJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHNlbGVjdGVkQ29sdW1uc1xudmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlld1xuXG4ifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGFsbGRhdGFVcmwsIHZpZXdvZiBhbGxkYXRhU2V0LCBhbGx0YWJsZUNvbnRhaW5lciwgYWxsdGFibGUsIGFsbHRhYmxlU3R5bGVzLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zfSBmcm9tIFwiNjYyMzE1YjA2MmQ2NjhmYlwiXHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsZGF0YVNldFxyXG52aWV3b2YgYWxsZGF0YVVybFxyXG5hbGx0YWJsZUNvbnRhaW5lclxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhbGx0YWJsZVxyXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cclxudGFidWxhdG9yLm1pbi5jc3NgXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBhbGxzZWxlY3RlZENvbHVtbnNcclxudmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlld1xyXG5cclxuIn1dfQ==
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

@@ -87,7 +87,7 @@ opacity: 0.5;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-    z-index: 1;
+    /* z-index: 1;
 }*/
 
 /* .hero-banner .content {
@@ -175,3 +175,25 @@ button#quarto-code-tools-menu i::before {
 body.team img {
     width: 10em;
 }
+.toc {
+    width: auto;
+    background: #eee;
+    font-size: 0.8px;
+    padding: 1em 2em;
+    margin: 0 0 0.5em 0.5em;
+    }
+   
+    .toc ul>li {
+    margin: 0 0 .6em 0;
+    list-style-type: none;
+    }
+
+
+    .toc h2 {
+        font-size: .08em;
+    }
+   
+    .toc a {
+    text-decoration: none;
+    color: #3D5AFE;
+    }
