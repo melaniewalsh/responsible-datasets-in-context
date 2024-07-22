@@ -178,22 +178,22 @@ body.team img {
 .toc {
     width: auto;
     background: #eee;
-    font-size: 0.8px;
+    font-size: 0.8em;
     padding: 1em 2em;
     margin: 0 0 0.5em 0.5em;
-    }
+}
    
-    .toc ul>li {
+.toc ul>li {
     margin: 0 0 .6em 0;
     list-style-type: none;
-    }
+}
 
 
-    .toc h2 {
-        font-size: .08em;
-    }
+.toc li {
+    font-size: 1em;
+}
    
-    .toc a {
+.toc a {
     text-decoration: none;
     color: #3D5AFE;
-    }
+}
