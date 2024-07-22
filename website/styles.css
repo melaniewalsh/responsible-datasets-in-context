@@ -320,3 +320,79 @@ body.team img {
     text-decoration: none;
     color: #3D5AFE;
 }
+
+.listing-box:hover {
+    background-color: transparent;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.1), 
+              0px 2px 4px rgba(0,0,0,0.1), 
+              0px 4px 8px rgba(0,0,0,0.1), 
+              0px 8px 16px rgba(0,0,0,0.1);
+  }
+  
+  .listing-box-title {
+    max-width: 80%;
+    margin-top: 10px;
+    margin-bottom: 12px;
+    color: #222;
+    font-size: 18px;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  
+  .listing-box-subtitle {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #757883;
+    line-height: 1.5;
+  }
+  
+  .listing-box-education {
+    margin-bottom: 0;
+    color: #757883;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .listing-box-button a[role="button"] {
+    width: 140px;
+    min-height: 150px;
+    color: rgb(55, 58, 60);
+    text-align: center;
+    border: 1px solid rgb(222, 226, 230);
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    margin-top: 10px;
+    font-size: 0.9em;
+  }
+  
+  .listing-box-section {
+    margin-bottom: 30px;
+    box-sizing: border-box;
+  }
+  
+  
+  .listing-box-image {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .quarto-listing-cols-3 {
+      padding-left: 10px;
+      padding-right: 10px;
+  
+  }
+  
+  .quarto-listing-cols-4 {
+      padding-left: 10px;
+      padding-right: 10px;
+  
+  }
+  
+  .anchored {
+    padding-top: 8px;
+    padding-left: 10px;
+  }
