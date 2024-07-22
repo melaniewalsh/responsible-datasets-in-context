@@ -21,6 +21,105 @@
     z-index: 1;
 }
 
+.floating-toc {
+    position: fixed;
+    right: 20px;
+    top: 0px;
+    width: 250px;
+    max-height: 80vh;
+    /* overflow-y: auto; */
+    /* background: #f8f9fa;
+    border: 1px solid #ddd; */
+    padding: 10px;
+    /* border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
+    text-align: left; /* Ensure the text is left-aligned */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Adjust the font size */
+.floating-toc ul {
+    font-size: 0.9em;  /* Adjust the font size as needed */
+}
+
+@media (max-width: 788px) {
+  .floating-toc {
+    margin-bottom: 42px;
+    position: static;
+    width: 100%;
+  }
+  .floating-toc .nav .nav {
+    display: block;
+  }
+}
+
+.btn-quarto {
+    background-color: #a2d58b;
+
+    color: white;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .toc ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .toc ul li {
+    padding: 5px 0;
+  }
+  
+  .toc ul li a {
+    display: block; /* Ensures the entire area of the list item is clickable */
+    text-decoration: none;
+    color: #007bff; /* Customize the link color */
+  }
+  
+  .toc ul li a:hover {
+    text-decoration: underline;
+  }
+  
+.btn-quarto:hover {
+background-color: #7da869;
+}
+
+
+/* nav[data-toggle="toc"] ul {
+    font-size: 0.9em; 
+}
+
+nav[data-toggle="toc"] {
+    position: fixed;
+    right: 20px;
+    top: 100px;
+    width: 250px;
+    max-height: 80vh;
+    overflow-y: auto;
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    text-align: left; /* Ensure the text is left-aligned */
+} */
+
+/* @media (max-width: 768px) {
+  nav[data-toggle="toc"] {
+    margin-bottom: 42px;
+    position: static;
+    width: 100%;
+  }
+  nav[data-toggle='toc'] .nav .nav {
+    display: block;
+  }
+} */
+
+
+
 #hero-banner .content {
     position: relative;
     z-index: 2;
@@ -170,6 +269,30 @@ button#quarto-code-tools-menu i::before {
 
 .fixed-top {
     width: 100%;
+}
+
+ /* Ensure the TOC container is on top
+ #quarto-margin-sidebar {
+    /* position: fixed;
+    top: 0px; */
+    /* top: 150px; /* Adjust as needed to match navbar height */
+    /* max-height: calc(100vh - 150px); /* Adjust max-height to account for navbar */
+    /* z-index: 1000; /* Ensure it's above other elements */
+    /* overflow-y: auto; /* Allow scrolling if content exceeds height */
+/* } */
+
+ /* Ensure the TOC container is on top */
+ #quarto-margin-sidebar {
+    /* position: fixed; */
+    top: 64px; /* Adjust as needed to match navbar height */
+    max-height: calc(100vh - 64px); /* Adjust max-height to account for navbar */
+    z-index: 1000; /* Ensure it's above other elements */
+    overflow-y: auto; /* Allow scrolling if content exceeds height */
+}
+
+/* Add some padding to the toc container to ensure it looks nice */
+#toc-container {
+    padding: 10px;
 }
 
 body.team img {

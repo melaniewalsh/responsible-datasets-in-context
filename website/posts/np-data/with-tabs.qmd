@@ -3,73 +3,14 @@ title: "U.S. National Park Visit Data (1979-2023)"
 author: Melanie Walsh and Os Keyes
 format: 
   html:
-    css: styles.css
+    css: ../../styles.css
     include-in-header:
       - text: |
-          <script>
-          function htmlTableOfContents(documentRef) {
-              var documentRef = documentRef || document;
-              var toc = documentRef.getElementById('toc');
-              if (!toc) return;
-              toc.innerHTML = '';
-
-
-              var activeTabPane = documentRef.querySelector('.tab-pane.active');
-              if (!activeTabPane) return;
-              var headings = [].slice.call(activeTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6'));
-              if (headings.length === 0) return;
-
-
-              var title = document.createElement('h3');
-              title.textContent = 'Table of Contents:';
-              toc.appendChild(title);
-
-
-              var ul = document.createElement('ul'); // Create a list for the ToC entries
-
-
-              headings.forEach(function (heading, index) {
-                  var anchor = documentRef.createElement('a');
-                  anchor.setAttribute('name', 'toc' + index);
-                  anchor.setAttribute('id', 'toc' + index);
-
-
-                  var link = document.createElement('a');
-                  link.setAttribute('href', '#toc' + index);
-                  link.textContent = heading.textContent;
-
-
-                  var li = document.createElement('li');
-                  li.setAttribute('class', heading.tagName.toLowerCase());
-
-
-                  li.appendChild(link);
-                  ul.appendChild(li);
-                  heading.parentNode.insertBefore(anchor, heading);
-              });
-
-
-              toc.appendChild(ul); // Append the list to the ToC div
-          }
-
-
-          // Run the ToC generation on page load
-          window.addEventListener('load', function() {
-              htmlTableOfContents();
-          });
-
-
-          // Listen for tab changes to regenerate the ToC
-          document.addEventListener('click', function(event) {
-              if (event.target.matches('.nav.nav-tabs .nav-item .nav-link')) {
-                  setTimeout(htmlTableOfContents, 100);  // Delay to wait for the tab to become active
-              }
-          });
-          </script>
+            
     toc: true
     toc-location: right
     toc-depth: 3
-    page-layout: full
+    # page-layout: full
     #toc: true
     ipynb: true
   #pdf: default
@@ -102,11 +43,15 @@ code-tools: true
 bibliography: references/references.bib
 ---
 
-<div id="toc" class="toc"></div>
+<div id="floating-toc" class="floating-toc"></div>
+
+<!-- <body data-bs-spy="scroll" data-bs-target="#toc">
+
+<nav id="toc" data-toggle="toc" class="sticky-top"></nav> -->
 
 ::: {.panel-tabset .nav-pills}
 
-# Data Essay {#data-essay}
+# Data Essay {#data-essay .tab-pane}
 
 ## Introduction
 
@@ -118,16 +63,24 @@ If you use our materials in your class or another setting, we would love to [hea
 :::
 
 <br>
-<!-- Importing from https://observablehq.com/d/d85c628332300765 -->
+<!-- Importing from https://observablehq.com/d//ac13d95a907715bf (forked, collaborative) -->
 
 ```{ojs}
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d85c628332300765"
+//|echo: false
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof tableOptions, tableStyles} from "ac13d95a907715bf"
 ```
 
 ```{ojs}
 //|echo: false
 viewof dataSet
 viewof dataUrl
+viewof tableOptions
+```
+
+<br>
+
+```{ojs}
+//|echo: false
 tableContainer
 ```
 
@@ -376,9 +329,14 @@ Why would you or wouldn't you want to record a question mark in this dataset? Wh
 
 The decision not to record visits in certain years seems reasonable on its face, but we've also seen a *lot* of parks in more highly-frequented areas that, when faced with a similar situation, chose to provide an estimate for a certain year based on average counts from previous years, rather than simply declare that nobody visited. This matters because, as we've discussed, there are financial, political, and social ramifications of these visit count numbers.
 
-## Conclucion
+## Conclusion
 
 To-do
+
+## References
+
+::: {#refs}
+:::
 
 # Explore the Data {#tabset-1-2}
 
@@ -519,4 +477,75 @@ Use publicly available internet data - Twitter posts, Flickr photos, etc - to tr
 Based on your findings, how do you think, differently, if at all, about Kobuk Valley's decision to record zero visits and about alternative methods for counting visits?
 
 :::
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to generate TOC
+        function generateTOC(tabId, tocContainerId) {
+            const tabContent = document.querySelector(tabId);
+            const tocContainer = document.querySelector(tocContainerId);
+            tocContainer.innerHTML = ''; // Clear previous TOC content
+            
+            // Add "Table of Contents" heading
+            const tocHeading = document.createElement("h6");
+            tocHeading.textContent = "Table of Contents";
+            tocContainer.appendChild(tocHeading);
+            
+            const headers = tabContent.querySelectorAll("h2, h3, h4, h5, h6");
+            const tocList = document.createElement("ul");
+
+            headers.forEach((header) => {
+                // Ensure each header has a meaningful id for linking
+                if (!header.id) {
+                    header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+                }
+                const tocItem = document.createElement("li");
+                const tocLink = document.createElement("a");
+                tocLink.href = `#${header.id}`;
+                tocLink.textContent = header.textContent;
+                tocItem.appendChild(tocLink);
+                tocList.appendChild(tocItem);
+            });
+
+            tocContainer.appendChild(tocList);
+        }
+
+        // Generate TOCs for the active tab
+        function updateActiveTabTOC() {
+            const activeTab = document.querySelector('.tab-pane.active');
+            const tocContainer = document.querySelector('#floating-toc');
+            if (activeTab) {
+                generateTOC(`#${activeTab.id}`, '#floating-toc');
+            }
+        }
+
+        // Adjust initial position of TOC and handle scrolling
+        function adjustTOCPosition() {
+            const toc = document.querySelector('#floating-toc');
+            const initialOffsetTop = 350; // Initial offset value
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > initialOffsetTop) {
+                toc.style.top = '120px'; // Fixed position near the top
+            } else {
+                toc.style.top = `${initialOffsetTop - scrollTop}px`; // Adjust as you scroll
+            }
+        }
+
+        // Run the TOC generation and adjust position on page load
+        updateActiveTabTOC();
+        adjustTOCPosition();
+
+        // Listen for tab changes to regenerate the TOC
+        document.addEventListener('shown.bs.tab', function(event) {
+            setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+        });
+
+        // Listen to scroll events to adjust TOC position
+        window.addEventListener('scroll', adjustTOCPosition);
+    });
+</script>
+
+
 

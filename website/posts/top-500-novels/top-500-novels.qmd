@@ -3,7 +3,7 @@ title: "Top 500 \"Greatest\" Novels (1021-2015)"
 author: Anna Preus and Aashna Sheth
 format: 
   html:
-    css: styles.css
+    css: ../../styles.css
     include-in-header:
       - text: |
           <script>
@@ -97,8 +97,6 @@ jupyter: python3
 code-tools: true
 bibliography: references/references.bib
 ---
-
-<div id="toc" class="toc"></div>
 
 ::: {.panel-tabset .nav-pills}
 # Data Essay {#data-essay}
@@ -488,12 +486,12 @@ Inputs.table(search, {
 # Exercises {#exercises}
 
 ::: {.panel-tabset .nav-pills}
-# R
+# R {#exercise-posts-r}
 
 ::: {#exercise-posts}
 :::
 
-# Python
+# Python {#exercise-posts-python}
 :::
 
 # Discussion & Activities {#discussion-and-activities}

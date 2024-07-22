@@ -7,6 +7,7 @@ image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_ma
 format:
   html:
     css: styles.css
+    pdf: default
     include-in-header:
       - text: |
           <script>
@@ -72,9 +73,10 @@ format:
     toc: true
     toc-location: right
     toc-depth: 3
-    page-layout: full
+    page-layout: article
     ipynb: true
 code-fold: true
+format-links: [pdf, docx, ipynb]
 editor: visual
 df-print: kable
 R.options:
@@ -99,7 +101,7 @@ This dataset includes information about feminicdes, or cases of women who have b
 
 
 <!-- Importing ojs variables from https://observablehq.com/d/93035b1c4fe02eed (forked, collaborative) -->
-```{ojs}
+```{ojs when-format="html"}
 //| echo: false
 import {viewof dataSummaryView, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles, viewof selectedColumns} from "93035b1c4fe02eed"
 
@@ -107,7 +109,7 @@ spanish_silencio_de_la_voz_data = d3.csv("https://raw.githubusercontent.com/mela
 ```
 
 
-```{ojs}
+```{ojs when-format="html"}
 //| echo: false
 formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(d => {
   return Object.fromEntries(
@@ -120,7 +122,7 @@ formatted_spanish_silencio_de_la_voz_data = spanish_silencio_de_la_voz_data.map(
 ```
 
 
-```{ojs}
+```{ojs when-format="html"}
 //|echo: false
 viewof dataSet
 viewof dataUrl
@@ -128,7 +130,7 @@ tableContainer
 ```
 
 
-```{ojs}
+```{ojs when-format="html"}
 //|echo: false
 //|output: false
 table
@@ -138,7 +140,7 @@ tabulator.min.css`
 
 <br>
 
-```{ojs}
+```{ojs when-format="html"}
 //|echo: false
 viewof selectedColumns
 viewof dataSummaryView

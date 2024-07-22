@@ -1,22 +1,22 @@
 {
   "listingMap": {
-    "datasets.qmd": [
-      "posts"
-    ],
-    "index.qmd": [
-      "posts"
-    ],
-    "posts\\african-american-periodical-poetry\\aa-periodical-poetry.qmd": [
+    "posts/top-500-novels/top-500-novels.qmd": [
       "exercises"
     ],
-    "posts\\np-data\\with-tabs.qmd": [
+    "posts/african-american-periodical-poetry/aa-periodical-poetry.qmd": [
       "exercises"
     ],
-    "posts\\top-500-novels\\top-500-novels.qmd": [
+    "posts/np-data/with-tabs.qmd": [
       "exercises"
     ],
     "team.qmd": [
       "B3049D40"
+    ],
+    "index.qmd": [
+      "posts"
+    ],
+    "datasets.qmd": [
+      "posts"
     ]
   }
 }

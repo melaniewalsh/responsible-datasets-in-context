@@ -46,8 +46,11 @@ format:
   html:
     theme: lux
     css: styles.css
+    include-in-header: 
+      - tabs-tocs.js
     include-after-body:
       - tabs-to-urls.js
+    
     #  - dynamic-toc.js
 
 

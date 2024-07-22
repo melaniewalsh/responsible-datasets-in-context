@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -123,6 +123,73 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Function to generate TOC
+        function generateTOC(tabId, tocContainerId) {
+            const tabContent = document.querySelector(tabId);
+            const tocContainer = document.querySelector(tocContainerId);
+            tocContainer.innerHTML = ''; // Clear previous TOC content
+            
+            // Add "Table of Contents" heading
+            const tocHeading = document.createElement("h6");
+            tocHeading.textContent = "Table of Contents";
+            tocContainer.appendChild(tocHeading);
+            
+            const headers = tabContent.querySelectorAll("h2");
+            const tocList = document.createElement("ul");
+
+            headers.forEach((header) => {
+                // Ensure each header has a meaningful id for linking
+                if (!header.id) {
+                    header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+                }
+                const tocItem = document.createElement("li");
+                const tocLink = document.createElement("a");
+                tocLink.href = `#${header.id}`;
+                tocLink.textContent = header.textContent;
+                tocItem.appendChild(tocLink);
+                tocList.appendChild(tocItem);
+            });
+
+            tocContainer.appendChild(tocList);
+        }
+
+        // Generate TOCs for the active tab
+        function updateActiveTabTOC() {
+            const activeTab = document.querySelector('.tab-pane.active');
+            const tocContainer = document.querySelector('#quarto-margin-sidebar');
+            if (activeTab) {
+                generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar');
+            }
+        }
+
+        // Adjust initial position of TOC and handle scrolling
+        function adjustTOCPosition() {
+            const toc = document.querySelector('#quarto-margin-sidebar');
+            const initialOffsetTop = 122; // Initial offset value
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (scrollTop > initialOffsetTop) {
+                toc.style.top = '0px'; // Fixed position near the top
+            } else {
+                toc.style.top = `${initialOffsetTop - scrollTop}px`; // Adjust as you scroll
+            }
+        }
+
+        // Run the TOC generation and adjust position on page load
+        updateActiveTabTOC();
+        adjustTOCPosition();
+
+        // Listen for tab changes to regenerate the TOC
+        document.addEventListener('shown.bs.tab', function(event) {
+            setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+        });
+
+        // Listen to scroll events to adjust TOC position
+        window.addEventListener('scroll', adjustTOCPosition);
+    });
 </script>
 
 
@@ -421,177 +488,91 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
-
 $(document).ready(function () {
-
     // Assign data-tab-name attribute based on the inner text of the tab links
-
     $('.nav-tabs .nav-link').each(function () {
-
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
-
         $(this).attr('data-tab-name', tabName);
-
     });
-
-
 
     function activaTab(tabName, container = document) {
-
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
-
         if (tabLink.length) {
-
             tabLink.tab('show');
-
             tabLink.trigger('click'); // Explicitly trigger the click event
-
         }
-
     }
-
-
 
     function scrollToAnchor(anchorId) {
-
         var element = $('[data-anchor-id="' + anchorId + '"]');
-
         if (element.length) {
-
             $('html, body').animate({
-
                 scrollTop: element.offset().top
-
             }, 500);
-
         }
-
     }
-
-
 
     function activateTabAndHeaderFromUrl() {
-
         var urlParams = new URLSearchParams(window.location.search);
-
         var tabName = urlParams.get('tab');
-
         var anchorId = urlParams.get('anchor');
-
         var nestedTabName = urlParams.get('nested-tab');
 
-
-
         if (tabName) {
-
             activaTab(tabName);
-
             if (anchorId) {
-
                 setTimeout(function() {
-
                     scrollToAnchor(anchorId);
-
                 }, 100); // Delay to ensure tab content is visible
-
             }
-
             if (nestedTabName) {
-
                 setTimeout(function() {
-
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
-
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
-
                 }, 200); // Delay to ensure parent tab content is visible
-
             }
-
         } else {
-
             // Default to the first tab if no tab is specified
-
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
-
             activaTab(firstTabName);
-
         }
-
     }
-
-
 
     function clearPreviousAnchor() {
-
         var url = new URL(window.location.href);
-
         url.hash = ''; // Clear the hash part of the URL
-
         history.replaceState(null, null, url.toString());
-
     }
 
-
-
     // Activate the tab and scroll to anchor based on the URL when the page loads
-
     activateTabAndHeaderFromUrl();
 
-
-
     // Update URL query parameters when a tab is shown
-
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
-
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
-
         var tabName = $(e.target).attr('data-tab-name');
-
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
-
         var url = new URL(window.location.href);
 
-
-
         if (parentTabPane) {
-
             url.searchParams.set('tab', parentTabPane);
-
             url.searchParams.set('nested-tab', tabName);
-
         } else {
-
             url.searchParams.set('tab', tabName);
-
             url.searchParams.delete('nested-tab');
-
         }
 
-
-
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
-
         history.replaceState(null, null, url.toString());
-
     });
-
-
 
     // Re-activate the tab and scroll to anchor if the query parameters change
-
     $(window).on('popstate', function () {
-
         activateTabAndHeaderFromUrl();
-
     });
-
 });
-
 </script>
-
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,5 +1,4 @@
 ---
-title: "inlcuded content"
 categories: [included-content]
 ---
 
