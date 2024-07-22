@@ -3,19 +3,13 @@ title: "Juan Carlos Garcia"
 first: Juan
 last: Garcia
 people_group: member
-education: B.S. Informatics | University of Washington
-subtitle: Student Assistant
+education: B.S. Informatics
+subtitle: Web Developer | University of Washington
 image: profile.jpg
 about:
   template: trestles
   image: profile.jpg
-  links:
-    - icon: twitter
-      text: twitter
-      href: https://twitter.com
-    - icon: github
-      text: Github
-      href: https://github.com
+
 ---
 
-This would be the message portion
+Juan Garcia is an Informatics major with a focus on software development at the University of Washington. He has an interest in web development and data accessibility, aiming to create user-friendly and inclusive digital experiences.
