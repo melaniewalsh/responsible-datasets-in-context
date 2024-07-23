@@ -1,10 +1,10 @@
 ---
 pagetitle: "Home"
-page-layout: full
+# page-layout: full
 section-divs: false
 editor: source
-sidebar: true
-search: true
+sidebar: false
+search: false
 listing:
   id: datasets
   contents: posts
@@ -20,16 +20,14 @@ listing:
 repo-actions: false
 description: | 
   Responsible Datasets in Context
-
 toc: false
 ---
 
 
-
 ::: {#hero-banner .column-screen}
 
-::: grid
-::: {.g-col-lg-8 .column-page}
+:::: grid
+:::: {.g-col-lg-8 .column-page}
 
 
 ::::: { .overlay .content  }
@@ -40,23 +38,22 @@ toc: false
 ```{=html}
 <a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this project on Github</a><script async defer src="https://buttons.github.io/buttons.js"></script>
 ```
+Understanding the social and historical context of data is essential for all responsible data work. 
 
-This website hosts a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources. Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis. 
+On this website, we host datasets that are paired with rich documentation, data essays, and teaching resources, which <span style="font-weight: 700 !important; text-decoration: underline;">foreground context</span> and draw on <span style="font-weight: 700 !important; text-decoration: underline;">humanistic perspectives and methods</span>.
 
-We do so by:
+Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis.
+
+<!-- We do so by:
 
 * Digging into each dataset's **social and historical context.** 
 * Investigating each dataset's **provenance, flaws, and limitations.**
 * Hosting each dataset as an interactive, explorable data table.
-* Pairing each dataset with teaching resources—such as **programming exercises**, **discussion questions**, and **activites.**
+* Pairing each dataset with teaching resources—such as **programming exercises**, **discussion questions**, and **activites.** -->
 
-Learn more about our [Datasets](datasets.qmd), [Team](team.qmd), [Mission](mission.qmd), and [Sponsors](sponsors.qmd). Check us out on [GitHub](https://github.com/melaniewalsh/responsible-datasets-in-context) or [get in touch](get-in-touch.qmd).
-
-<br>
-
-
+Learn more about our [Datasets](datasets.qmd), [Team](team.qmd), [Mission](mission.qmd), and [Sponsors](sponsors.qmd). Find us on [GitHub](https://github.com/melaniewalsh/responsible-datasets-in-context) <i class="bi bi-github" role="img">
+</i>, or [get in touch](get-in-touch.qmd).
 :::::
-
 
 
 <!-- ![](images/responsible-logo.png){width=50%}
@@ -64,9 +61,15 @@ Learn more about our [Datasets](datasets.qmd), [Team](team.qmd), [Mission](missi
 # 🚧 Website Under Construction  🚧 
 
 This website is currently under construction. Stay tuned for announcements about its official publication.  -->
-:::::
+
+<figcaption style="text-align: right; font-style: italic; color: white;">Kobuk Valley National Park by <a style= "color: white !important;" href= "https://www.nps.gov/npgallery/AssetDetail/c555a78f-1dd8-b71c-0763-9b47d4eb8eaf">U.S. NPS</a></figcaption>
 
 ::::
+
+
+::::
+
+
 
 :::
 
@@ -75,11 +78,9 @@ This website is currently under construction. Stay tuned for announcements about
 By providing these contextual materials, we hope to promote the responsible use of these particular datasets for teaching and research in humanities and data science contexts. We also seek to promote the responsible use of data more broadly—whether in the classroom, industry, or the wider world—by underscoring the significance of context in all data-related work. -->
 
 
-
 ---
 
 # Datasets
 
 ::: {#datasets}
 :::
-

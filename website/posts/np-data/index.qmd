@@ -43,7 +43,7 @@ code-tools: true
 bibliography: references/references.bib
 ---
 
-<div id="floating-toc" class="floating-toc"></div>
+<!-- <div id="floating-toc" class="floating-toc"></div> -->
 
 <!-- <body data-bs-spy="scroll" data-bs-target="#toc">
 

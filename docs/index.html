@@ -128,13 +128,87 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
             const tabContent = document.querySelector(tabId);
             const tocContainer = document.querySelector(tocContainerId);
             tocContainer.innerHTML = ''; // Clear previous TOC content
-            
+
+            console.log(`Generating TOC for: ${tabId}`);
+
             // Add "Table of Contents" heading
             const tocHeading = document.createElement("h6");
             tocHeading.textContent = "Table of Contents";
             tocContainer.appendChild(tocHeading);
-            
+
+            // Select only h2 headers, including nested tabsets
             const headers = tabContent.querySelectorAll("h2");
+            console.log(`Found ${headers.length} h2 headers`);
+
+            const tocList = document.createElement("ul");
+            headers.forEach((header) => {
+                console.log(`Header: ${header.textContent}`);
+                if (!header.id) {
+                    header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+                }
+                const tocItem = document.createElement("li");
+                tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+                const tocLink = document.createElement("a");
+                tocLink.href = `#${header.id}`;
+                tocLink.textContent = header.textContent; // No title case conversion
+                tocItem.appendChild(tocLink);
+                tocList.appendChild(tocItem);
+            });
+
+            tocContainer.appendChild(tocList);
+        }
+
+        // Function to update TOC when tab changes
+        function updateActiveTabTOC() {
+            const activeTab = document.querySelector('.tab-pane.active');
+            const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+            if (activeTab) {
+                generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+            }
+        }
+
+        // Create and insert TOC container if it doesn't exist
+        function createTOCContainer() {
+            const sidebar = document.querySelector('#quarto-margin-sidebar');
+            if (sidebar) {
+                const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+                if (!existingTOC) {
+                    const tocContainer = document.createElement('div');
+                    tocContainer.id = 'quarto-margin-sidebar-toc';
+                    tocContainer.style.position = 'relative';
+                    tocContainer.style.padding = '10px';
+                    // tocContainer.style.border = '1px solid #ddd';
+                    sidebar.appendChild(tocContainer);
+                }
+            }
+        }
+
+        // Initialize TOC container and run the TOC generation
+        createTOCContainer();
+        updateActiveTabTOC();
+
+        // Listen for tab changes to regenerate the TOC
+        document.addEventListener('shown.bs.tab', function(event) {
+            setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+        });
+    });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (document.body.classList.contains('custom-sidebar')) {
+        // Function to generate TOC
+        function generateTOC(tabId, tocContainerId) {
+            const tabContent = document.querySelector(tabId);
+            const tocContainer = document.querySelector(tocContainerId);
+            tocContainer.innerHTML = ''; // Clear previous TOC content
+            
+            // Add "Table of Contents" heading
+            const tocHeading = document.createElement("h2");
+            tocHeading.textContent = "Table of Contents";
+            tocContainer.appendChild(tocHeading);
+            
+            // Select headers in tab content, including nested headers within tabsets
+            const headers = tabContent.querySelectorAll("h2, h3, h4, h5, h6");
             const tocList = document.createElement("ul");
 
             headers.forEach((header) => {
@@ -156,22 +230,25 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
         // Generate TOCs for the active tab
         function updateActiveTabTOC() {
             const activeTab = document.querySelector('.tab-pane.active');
-            const tocContainer = document.querySelector('#quarto-margin-sidebar');
+            const tocContainer = document.querySelector('#toc-container');
             if (activeTab) {
-                generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar');
+                generateTOC(`#${activeTab.id}`, '#toc-container');
             }
         }
 
         // Adjust initial position of TOC and handle scrolling
         function adjustTOCPosition() {
             const toc = document.querySelector('#quarto-margin-sidebar');
-            const initialOffsetTop = 122; // Initial offset value
+            const navbarHeight = document.querySelector('.navbar').offsetHeight || 64; // Use 64 as a default value if navbar is not found
+            const initialOffsetTop = navbarHeight; // Adjust to match navbar height
             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
             if (scrollTop > initialOffsetTop) {
                 toc.style.top = '0px'; // Fixed position near the top
+                toc.style.maxHeight = '100vh';
             } else {
                 toc.style.top = `${initialOffsetTop - scrollTop}px`; // Adjust as you scroll
+                toc.style.maxHeight = `calc(100vh - ${initialOffsetTop}px)`;
             }
         }
 
@@ -186,7 +263,8 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
 
         // Listen to scroll events to adjust TOC position
         window.addEventListener('scroll', adjustTOCPosition);
-    });
+    }
+});
 </script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
@@ -282,13 +360,13 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
     <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-unnumbered"><div class="category" data-category="communities">communities</div><div class="category" data-category="environment">environment</div><div class="category" data-category="full-text">full-text</div><div class="category" data-category="gender">gender</div><div class="category" data-category="government">government</div><div class="category" data-category="human rights">human rights</div><div class="category" data-category="libraries">libraries</div><div class="category" data-category="literature">literature</div><div class="category" data-category="metadata">metadata</div><div class="category" data-category="missing-data">missing-data</div><div class="category" data-category="nature">nature</div><div class="category" data-category="poetry">poetry</div><div class="category" data-category="public domain">public domain</div><div class="category" data-category="race">race</div><div class="category" data-category="readers">readers</div><div class="category" data-category="social justice activism">social justice activism</div><div class="category" data-category="uncertainty">uncertainty</div></div></div>
 <!-- main -->
-<main class="content page-columns page-full column-body" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
@@ -299,22 +377,25 @@ window.Quarto = {
 <section id="responsible-datasets-in-context" class="overlay content">
 <h1>Responsible Datasets in Context</h1>
 <a class="github-button" href="https://github.com/melaniewalsh/responsible-datasets-in-context" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this project on Github">Star this project on Github</a><script async="" defer="" src="https://buttons.github.io/buttons.js"></script>
-<p>This website hosts a repository of curated datasets that are paired with rich documentation, related essays, and teaching resources. Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis.</p>
-<p>We do so by:</p>
-<ul>
-<li>Digging into each dataset’s <strong>social and historical context.</strong></li>
-<li>Investigating each dataset’s <strong>provenance, flaws, and limitations.</strong></li>
-<li>Hosting each dataset as an interactive, explorable data table.</li>
-<li>Pairing each dataset with teaching resources—such as <strong>programming exercises</strong>, <strong>discussion questions</strong>, and <strong>activites.</strong></li>
-</ul>
-<p>Learn more about our <a href="./datasets.html">Datasets</a>, <a href="./team.html">Team</a>, <a href="./mission.html">Mission</a>, and <a href="./sponsors.html">Sponsors</a>. Check us out on <a href="https://github.com/melaniewalsh/responsible-datasets-in-context">GitHub</a> or <a href="./get-in-touch.html">get in touch</a>.</p>
-<p><br></p>
+<p>Understanding the social and historical context of data is essential for all responsible data work.</p>
+<p>On this website, we host datasets that are paired with rich documentation, data essays, and teaching resources, which <span style="font-weight: 700 !important; text-decoration: underline;">foreground context</span> and draw on <span style="font-weight: 700 !important; text-decoration: underline;">humanistic perspectives and methods</span>.</p>
+<p>Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis.</p>
+<!-- We do so by:
+
+* Digging into each dataset's **social and historical context.** 
+* Investigating each dataset's **provenance, flaws, and limitations.**
+* Hosting each dataset as an interactive, explorable data table.
+* Pairing each dataset with teaching resources—such as **programming exercises**, **discussion questions**, and **activites.** -->
+<p>Learn more about our <a href="./datasets.html">Datasets</a>, <a href="./team.html">Team</a>, <a href="./mission.html">Mission</a>, and <a href="./sponsors.html">Sponsors</a>. Find us on <a href="https://github.com/melaniewalsh/responsible-datasets-in-context">GitHub</a> <i class="bi bi-github" role="img"> </i>, or <a href="./get-in-touch.html">get in touch</a>.</p>
 </section>
 <!-- ![](images/responsible-logo.png){width=50%}
 
 # 🚧 Website Under Construction  🚧 
 
 This website is currently under construction. Stay tuned for announcements about its official publication.  -->
+<figcaption style="text-align: right; font-style: italic; color: white;">
+Kobuk Valley National Park by <a style="color: white !important;" href="https://www.nps.gov/npgallery/AssetDetail/c555a78f-1dd8-b71c-0763-9b47d4eb8eaf">U.S. NPS</a>
+</figcaption>
 </div>
 </div>
 </div>
@@ -381,7 +462,7 @@ Amardeep Singh and Kate Hennessey
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1721666786012" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5638">
+<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1721760442342" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="29" data-listing-word-count-sort="5644">
 <div class="thumbnail">
 <p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external"></a></p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external">
 <p><img src="./posts/top-500-novels/images/library-top-500-screenshot.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -432,18 +513,18 @@ Anna Preus and Aashna Sheth
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1721683548925" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4807">
+<div class="quarto-post image-right" data-index="2" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1721691690609" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="25" data-listing-word-count-sort="4809">
 <div class="thumbnail">
-<p><a href="./posts/np-data/with-tabs.html" class="no-external"></a></p><a href="./posts/np-data/with-tabs.html" class="no-external">
+<p><a href="./posts/np-data/index.html" class="no-external"></a></p><a href="./posts/np-data/index.html" class="no-external">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
-</a><p><a href="./posts/np-data/with-tabs.html" class="no-external"></a></p>
+</a><p><a href="./posts/np-data/index.html" class="no-external"></a></p>
 </div>
 <div class="body">
 <h3 class="no-anchor listing-title">
-<a href="./posts/np-data/with-tabs.html" class="no-external">U.S. National Park Visit Data (1979-2023)</a>
+<a href="./posts/np-data/index.html" class="no-external">U.S. National Park Visit Data (1979-2023)</a>
 </h3>
 <div class="listing-subtitle">
-<a href="./posts/np-data/with-tabs.html" class="no-external"></a>
+<a href="./posts/np-data/index.html" class="no-external"></a>
 </div>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('nature'); return false;">
@@ -463,11 +544,11 @@ missing-data
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/np-data/with-tabs.html" class="no-external">This dataset contains the number of visits, per year, to each of the current 63 National Parks administered by the United States National Park Service (NPS), from 1979 to…</a>
+<a href="./posts/np-data/index.html" class="no-external">This dataset contains the number of visits, per year, to each of the current 63 National Parks administered by the United States National Park Service (NPS), from 1979 to…</a>
 </div>
 </div>
 <div class="metadata">
-<a href="./posts/np-data/with-tabs.html" class="no-external">
+<a href="./posts/np-data/index.html" class="no-external">
 <div class="listing-date">
 Mar 9, 2024
 </div>

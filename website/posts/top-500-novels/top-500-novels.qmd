@@ -85,10 +85,10 @@ listing:
 date: "2024-04-10"
 categories: [libraries, literature, readers, gender, metadata, full-text, public domain ]
 image: "images/library-top-500-screenshot.png"
-toc: true
-toc-depth: 5
-sidebar: 
-  contents: auto
+# toc: true
+# toc-depth: 5
+# sidebar: 
+#   contents: auto
 format-links: [pdf, docx, ipynb]
 code-fold: true
 editor: visual
@@ -98,7 +98,9 @@ code-tools: true
 bibliography: references/references.bib
 ---
 
+
 ::: {.panel-tabset .nav-pills}
+
 # Data Essay {#data-essay}
 
 ## Introduction
@@ -404,7 +406,7 @@ You can find more metadata analysis [here](HOLD_FOR_LINK_TO_ACTIVITIES_SECTION).
 
 In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this [Colab notebook](HOLD_FOR_LINK_TO_ACTIVITIES_SECTION), but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.  
 
-## **CONCLUSION**
+## **Conclusion**
 
 The Top 500 List is presented in a straightforward manner. It is just a list of 500 novels that are widely held in library collections along with their authors. But when you start to dig into the data underlying the list, it gets much, much more complicated. 
 
@@ -415,6 +417,16 @@ The list also represents the disproportionate influence of academics and publish
 In pointing out these biases we do not intend to criticize OCLC for producing the list, which provides a useful snapshot of some of the most widely held works in their database and represents a tremendous data curation and analysis effort. We do, however, want to question the notion that “literary greatness” can be measured by the number of physical copies of a book held on library shelves. It is important to dig into data that is used to make universal claims, especially when it evidences such strong biases toward a single linguistic tradition, toward particular geographic regions, and toward individual authors. John Grisham’s work appears nineteen times on this list, Charles Dickens’s work appears fifteen times, and John Steinbeck and C.S. Lewis’s work each appears eight times. Do we really want to posit that these four men wrote ten percent of the greatest novels across all languages and cultures across all time? 
 
 While each of these works deserves individual attention, looking at literary data in aggregate can help to reveal some of these biases and trends across a larger number of texts, and across library collections. We hope this dataset provides fruitful opportunities for exploration, and we have included a few more suggestions for analysis here. 
+
+## References
+
+::: {#refs}
+:::
+
+## Footnotes
+
+::: {#footnotes}
+:::
 
 
 
@@ -483,17 +495,6 @@ Inputs.table(search, {
 {{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton >}}
 
 
-# Exercises {#exercises}
-
-::: {.panel-tabset .nav-pills}
-# R {#exercise-posts-r}
-
-::: {#exercise-posts}
-:::
-
-# Python {#exercise-posts-python}
-:::
-
 # Discussion & Activities {#discussion-and-activities}
 
 ## Activity 1 {#exercise-1}
@@ -528,5 +529,18 @@ Use publicly available internet data - Twitter posts, Flickr photos, etc - to tr
 
 Based on your findings, how do you think, differently, if at all, about Kobuk Valley's decision to record zero visits and about alternative methods for counting visits?
 
+
+# Exercises {#exercises}
+
+::: {.panel-tabset .nav-pills}
+## R {#exercise-posts-r}
+
+::: {#exercise-posts}
 :::
 
+## Python {#exercise-posts-python}
+:::
+
+:::
+<!-- 
+</body> -->
