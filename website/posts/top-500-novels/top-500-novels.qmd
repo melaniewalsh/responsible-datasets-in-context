@@ -4,68 +4,8 @@ author: Anna Preus and Aashna Sheth
 format: 
   html:
     css: ../../styles.css
-    include-in-header:
-      - text: |
-          <script>
-          function htmlTableOfContents(documentRef) {
-              var documentRef = documentRef || document;
-              var toc = documentRef.getElementById('toc');
-              if (!toc) return;
-              toc.innerHTML = '';
-
-
-              var activeTabPane = documentRef.querySelector('.tab-pane.active');
-              if (!activeTabPane) return;
-              var headings = [].slice.call(activeTabPane.querySelectorAll('h1, h2'));
-              if (headings.length === 0) return;
-
-
-              var title = document.createElement('h3');
-              title.textContent = 'Table of Contents:';
-              toc.appendChild(title);
-
-
-              var ul = document.createElement('ul'); // Create a list for the ToC entries
-
-
-              headings.forEach(function (heading, index) {
-                  var anchor = documentRef.createElement('a');
-                  anchor.setAttribute('name', 'toc' + index);
-                  anchor.setAttribute('id', 'toc' + index);
-
-
-                  var link = document.createElement('a');
-                  link.setAttribute('href', '#toc' + index);
-                  link.textContent = heading.textContent;
-
-
-                  var li = document.createElement('li');
-                  li.setAttribute('class', heading.tagName.toLowerCase());
-
-
-                  li.appendChild(link);
-                  ul.appendChild(li);
-                  heading.parentNode.insertBefore(anchor, heading);
-              });
-
-
-              toc.appendChild(ul); // Append the list to the ToC div
-          }
-
-
-          // Run the ToC generation on page load
-          window.addEventListener('load', function() {
-              htmlTableOfContents();
-          });
-
-
-          // Listen for tab changes to regenerate the ToC
-          document.addEventListener('click', function(event) {
-              if (event.target.matches('.nav.nav-tabs .nav-item .nav-link')) {
-                  setTimeout(htmlTableOfContents, 1);  // Delay to wait for the tab to become active
-              }
-          });
-          </script>    
+    # include-in-header:
+    #   - text: 
   #ipynb: default
   pdf: default
   #docx: default
@@ -112,52 +52,60 @@ This dataset contains information on the top 500 novels most widely held in libr
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
+-------
 <!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
+import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, viewof dataUrl, viewof tableOptions, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
 ```
 
 ```{ojs}
 //|echo: false
 // viewof dataSet
 //viewof dataUrl
+//|error: false
+//|warning: false
 tableContainer
 ```
 
+```{ojs}
+//|echo: false
+// viewof dataSet
+//tableContainer
+//|error: false
+//|warning: false
+viewof tableOptions
+viewof copyUrlButton
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+//|error: false
+//|warning: false
+table
+html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+tabulator.min.css`
+```
+
+
+```{ojs}
+//|echo: false
+//|error: false
+//|warning: false
+
+viewof selectedColumns
+viewof dataSummaryView
+```
 
 ::: {.callout-tip icon=false}
 ## Creative Commons License
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 :::
 
-```{ojs}
-//|echo: false
-// viewof dataSet
-//tableContainer
-viewof dataUrl
-```
 
-{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id=downloadbutton >}}
-
-```{ojs}
-//|echo: false
-//|output: false
-table
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
-```
-
-<br>
-
-```{ojs}
-//|echo: false
-viewof selectedColumns
-viewof dataSummaryView
-
-```
-
+----- 
 
 This dataset is based on a list of the [Top 500   Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
 
@@ -423,11 +371,8 @@ While each of these works deserves individual attention, looking at literary dat
 ::: {#refs}
 :::
 
-## Footnotes
-
-::: {#footnotes}
+::: {#custom-footnotes}
 :::
-
 
 
 # Explore the Data {#tabset-1-2}

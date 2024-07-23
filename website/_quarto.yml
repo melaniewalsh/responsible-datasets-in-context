@@ -48,9 +48,10 @@ format:
     css: styles.css
     include-in-header: 
       - tabs-tocs.js
-      - custom-toc.js
+      - fontawesome.js
     include-after-body:
       - tabs-to-urls.js
+      - custom-footnotes.js
     
     #  - dynamic-toc.js
 

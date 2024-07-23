@@ -125,150 +125,86 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        // Function to generate TOC
-        function generateTOC(tabId, tocContainerId) {
-            const tabContent = document.querySelector(tabId);
-            const tocContainer = document.querySelector(tocContainerId);
-            tocContainer.innerHTML = ''; // Clear previous TOC content
-
-            console.log(`Generating TOC for: ${tabId}`);
-
-            // Add "Table of Contents" heading
-            const tocHeading = document.createElement("h6");
-            tocHeading.textContent = "Table of Contents";
-            tocContainer.appendChild(tocHeading);
-
-            // Select only h2 headers, including nested tabsets
-            const headers = tabContent.querySelectorAll("h2");
-            console.log(`Found ${headers.length} h2 headers`);
-
-            const tocList = document.createElement("ul");
-            headers.forEach((header) => {
-                console.log(`Header: ${header.textContent}`);
-                if (!header.id) {
-                    header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-                }
-                const tocItem = document.createElement("li");
-                tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
-                const tocLink = document.createElement("a");
-                tocLink.href = `#${header.id}`;
-                tocLink.textContent = header.textContent; // No title case conversion
-                tocItem.appendChild(tocLink);
-                tocList.appendChild(tocItem);
-            });
-
-            tocContainer.appendChild(tocList);
-        }
-
-        // Function to update TOC when tab changes
-        function updateActiveTabTOC() {
-            const activeTab = document.querySelector('.tab-pane.active');
-            const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
-            if (activeTab) {
-                generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
-            }
-        }
-
-        // Create and insert TOC container if it doesn't exist
-        function createTOCContainer() {
-            const sidebar = document.querySelector('#quarto-margin-sidebar');
-            if (sidebar) {
-                const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
-                if (!existingTOC) {
-                    const tocContainer = document.createElement('div');
-                    tocContainer.id = 'quarto-margin-sidebar-toc';
-                    tocContainer.style.position = 'relative';
-                    tocContainer.style.padding = '10px';
-                    // tocContainer.style.border = '1px solid #ddd';
-                    sidebar.appendChild(tocContainer);
-                }
-            }
-        }
-
-        // Initialize TOC container and run the TOC generation
-        createTOCContainer();
-        updateActiveTabTOC();
-
-        // Listen for tab changes to regenerate the TOC
-        document.addEventListener('shown.bs.tab', function(event) {
-            setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
-        });
-    });
-</script>
-<script>
 document.addEventListener("DOMContentLoaded", function () {
-    if (document.body.classList.contains('custom-sidebar')) {
-        // Function to generate TOC
-        function generateTOC(tabId, tocContainerId) {
-            const tabContent = document.querySelector(tabId);
-            const tocContainer = document.querySelector(tocContainerId);
-            tocContainer.innerHTML = ''; // Clear previous TOC content
-            
-            // Add "Table of Contents" heading
-            const tocHeading = document.createElement("h2");
-            tocHeading.textContent = "Table of Contents";
-            tocContainer.appendChild(tocHeading);
-            
-            // Select headers in tab content, including nested headers within tabsets
-            const headers = tabContent.querySelectorAll("h2, h3, h4, h5, h6");
-            const tocList = document.createElement("ul");
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
 
-            headers.forEach((header) => {
-                // Ensure each header has a meaningful id for linking
-                if (!header.id) {
-                    header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-                }
-                const tocItem = document.createElement("li");
-                const tocLink = document.createElement("a");
-                tocLink.href = `#${header.id}`;
-                tocLink.textContent = header.textContent;
-                tocItem.appendChild(tocLink);
-                tocList.appendChild(tocItem);
-            });
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
 
-            tocContainer.appendChild(tocList);
-        }
+    console.log(`Generating TOC for: ${tabId}`);
 
-        // Generate TOCs for the active tab
-        function updateActiveTabTOC() {
-            const activeTab = document.querySelector('.tab-pane.active');
-            const tocContainer = document.querySelector('#toc-container');
-            if (activeTab) {
-                generateTOC(`#${activeTab.id}`, '#toc-container');
-            }
-        }
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
 
-        // Adjust initial position of TOC and handle scrolling
-        function adjustTOCPosition() {
-            const toc = document.querySelector('#quarto-margin-sidebar');
-            const navbarHeight = document.querySelector('.navbar').offsetHeight || 64; // Use 64 as a default value if navbar is not found
-            const initialOffsetTop = navbarHeight; // Adjust to match navbar height
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
 
-            if (scrollTop > initialOffsetTop) {
-                toc.style.top = '0px'; // Fixed position near the top
-                toc.style.maxHeight = '100vh';
-            } else {
-                toc.style.top = `${initialOffsetTop - scrollTop}px`; // Adjust as you scroll
-                toc.style.maxHeight = `calc(100vh - ${initialOffsetTop}px)`;
-            }
-        }
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
 
-        // Run the TOC generation and adjust position on page load
-        updateActiveTabTOC();
-        adjustTOCPosition();
+    tocContainer.appendChild(tocList);
+  }
 
-        // Listen for tab changes to regenerate the TOC
-        document.addEventListener('shown.bs.tab', function(event) {
-            setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
-        });
-
-        // Listen to scroll events to adjust TOC position
-        window.addEventListener('scroll', adjustTOCPosition);
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const activeTab = document.querySelector('.tab-pane.active');
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
     }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
 });
+
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
 
 <link rel="stylesheet" href="../../../styles.css">
@@ -543,6 +479,23 @@ $(document).ready(function () {
     });
 });
 </script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

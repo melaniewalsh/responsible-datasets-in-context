@@ -75,8 +75,11 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin: 10px 10px 10px 10px !important;
   }
-
+.observablehq table {
+    overflow: hidden !important ;
+}
   .toc ul {
     list-style-type: none;
     padding: 0;
@@ -289,9 +292,13 @@ button#quarto-code-tools-menu i::before {
 #quarto-margin-sidebar-toc  {
     /* position: fixed; */
     top: 0px !important; 
+    margin-left: -10px;
 
 }
 
+.observablehq--error {
+    display: none;
+}
 /* Add some padding to the toc container to ensure it looks nice */
 #toc-container {
     padding: 10px;
