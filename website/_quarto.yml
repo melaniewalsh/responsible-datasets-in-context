@@ -7,6 +7,7 @@ render:
       output-dir: ../docs/team
 
 website:
+  bread-crumbs: false
   title: "Responsible Datasets in Context"
   favicon: images/responsible-logo-white.png
   google-analytics:  G-MZHBEJTWJ4
@@ -31,7 +32,43 @@ website:
           href: get-in-touch.qmd
       - icon: github
         href: https://github.com/melaniewalsh/responsible-datasets-in-context
+  sidebar:
+    - id: np-data
+      # logo: images/responsible-logo.png
+      # title: "NP Data"
+      # subtitle: "NP Data"
+      style: "docked"
+      search: true
+      background: "white"
+      type: light
+      border: true
+      pinned: false
+      # tools:
+      # - icon: github
+      #   href: https://github.com/sta210-s22
+      #   text: "GitHub organization"
+      # - icon: code-square
+      #   href: https://cmgr.oit.duke.edu/containers
+      #   text: "RStudio Containers"
+      # - icon: person-fill
+      #   text: "Sakai"
+      #   menu:
+      #     - text: Discussion forum
+      #       url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b
+      #     - text: Gradescope
+      #       url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889
+      #     - text: Gradebook
+      #       url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/69078433-67a6-4054-a2e7-9e6c202ecdc3/
+      contents:
+        - section: "Related Materials"
+        - href: posts/np-data/data-essay.qmd
+          contents:
+            - text: "Data Essay"
+              href: posts/np-data/data-essay.qmd
+            - text: "Discussion Questions and Activities"
+              href: posts/np-data/discussion-activities.qmd
 
+               
   page-footer:
     background: "#000000"
     right: <p style="color:white">Copyright &copy; 2024</p>
@@ -44,8 +81,12 @@ website:
 
 format:
   html:
-    theme: lux
+    theme:
+        light: [lux, theme.scss]
+        dark: [lux, theme-dark.scss]
     css: styles.css
+    code-copy: true
+    code-overflow: wrap
     include-in-header: 
       - tabs-tocs.js
       - fontawesome.js

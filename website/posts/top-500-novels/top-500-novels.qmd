@@ -239,7 +239,7 @@ df["author_nationality"].value_counts(dropna=False)
 
 ```
 
-![Choropleth map representing the number of works by authors of particular nationalities represented on the Top 500 List](images/library_top_500_by_nationality_of_author.png "image_tooltip")
+![Choropleth map representing the number of works by authors of particular nationalities represented on the Top 500 List](images/library_top_500_by_nationality_of_author.jpg "image_tooltip")
 
 To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.
 

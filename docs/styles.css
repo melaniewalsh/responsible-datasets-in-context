@@ -33,8 +33,7 @@
     border-radius: 10px; /* Optional: adds rounded corners */
 }
 
-
-.floating-toc {
+ .floating-toc {
     position: fixed;
     right: 20px;
     top: 0px;
@@ -47,8 +46,8 @@
     /* border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
     text-align: left; /* Ensure the text is left-aligned */
-    z-index: 1000; /* Ensure it's above other elements */
-}
+    z-index: 1000; 
+} 
 
 /* Adjust the font size */
 .floating-toc ul {
@@ -77,6 +76,9 @@
     cursor: pointer;
     margin: 10px 10px 10px 10px !important;
   }
+
+  /* prevent scroll with Observable tables */
+
 .observablehq table {
     overflow: hidden !important ;
 }
@@ -158,12 +160,7 @@ nav[data-toggle="toc"] {
     background-color: #a2d58b;
   }
 
-.cmm-background {
-background-image: url("https://images.pexels.com/photos/2675061/pexels-photo-2675061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-background-size: cover;
-background-repeat: no-repeat;
-opacity: 0.5;
-}
+
   
 /* 
 #hero-banner {
@@ -270,10 +267,10 @@ button#quarto-code-tools-menu i::before {
 .navbar .dropdown-item .dropdown-text {
     color: black !important; /* Ensures that the text inside dropdown items has black font color */
 }
-
+/* 
 .fixed-top {
     width: 100%;
-}
+} */
 
  /* Ensure the TOC container is on top
  #quarto-margin-sidebar {
@@ -299,6 +296,7 @@ button#quarto-code-tools-menu i::before {
 .observablehq--error {
     display: none;
 }
+
 /* Add some padding to the toc container to ensure it looks nice */
 #toc-container {
     padding: 10px;

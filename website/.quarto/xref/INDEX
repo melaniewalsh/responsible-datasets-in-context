@@ -178,5 +178,11 @@
   },
   "sponsors.qmd": {
     "sponsors.html": "13d98633"
+  },
+  "posts/np-data/data-essay.qmd": {
+    "data-essay.html": "713995c3"
+  },
+  "posts/np-data/discussion-activities.qmd": {
+    "discussion-activities.html": "0a2a0acf"
   }
 }
