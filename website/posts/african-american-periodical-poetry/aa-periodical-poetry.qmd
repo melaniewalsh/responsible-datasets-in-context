@@ -124,7 +124,7 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "206a0a693c40b3fa"
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d26a73a377141f3c"
 ```
 
 ```{ojs}

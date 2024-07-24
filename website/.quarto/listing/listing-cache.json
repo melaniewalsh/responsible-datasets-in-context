@@ -23,6 +23,15 @@
     ],
     "datasets.qmd": [
       "posts"
+    ],
+    "posts\\african-american-periodical-poetry\\aa-periodical-poetry.qmd": [
+      "exercises"
+    ],
+    "posts\\np-data\\data-essay.qmd": [
+      "exercises"
+    ],
+    "posts\\np-data\\programming-exercises.qmd": [
+      "exercises"
     ]
   }
 }
