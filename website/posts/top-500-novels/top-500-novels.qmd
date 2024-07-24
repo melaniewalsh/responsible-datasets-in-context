@@ -124,7 +124,9 @@ This long time span is one of the things that makes OCLC’s data, and the list 
 
 [^1]: Franco Moretti also uses this term, borrowing it from Cohen. We follow Cohen’s use of the term.
 
-One of the things that defines a classic is the fact that it stays in print for a long period of time. When a book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years and edited repeatedly by different scholars across time. If it becomes canonical, it is likely to be issued in dozens or hundreds of editions even long after the author’s death, leading to more physical copies of the book in circulation. Importantly, though, there is not just one canon or one stable set of classics. Canons are constructed and reinforced by people; they are socially and historically defined and are bound up in power relationships and in histories of exclusion and erasure. This is what makes OCLC’s task of defining the top 500 greatest novels of all time so potentially problematic: their data reflects a history of canonization that has influenced library collections, and which has long been biased toward English-language texts, White male authors, and works produced in Europe and North America.   
+One of the things that defines a classic is the fact that it stays in print for a long period of time. When a book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years and edited repeatedly by different scholars across time. If it becomes canonical, it is likely to be issued in dozens or hundreds of editions even long after the author’s death, leading to more physical copies of the book in circulation. Importantly, though, there is not just one canon or one stable set of classics. Canons are constructed and reinforced by people; they are socially and historically defined and are bound up in power relationships and in histories of exclusion and erasure. This is what makes OCLC’s task of defining the top 500 greatest novels of all time so potentially problematic: their data reflects a history of canonization that has influenced library collections, and which has long been biased toward English-language texts, White male authors, and works produced in Europe and North America.[^2]   
+
+[^2]: We capitalize "White" following Sonita Sarker, who writes, "The capital letter 'W' indicates that White is a collective identity.  The term has mostly indicated individuals, in the use of the lower case ‘w,’ signifying at once the unique humanity of (white) personhood and absolving them of collective responsibility in White supremacy." See [Sarker_citation].
 
 The newer works included on the list are books that have achieved immense popularity and widespread sales in recent years. These works, which were published during the period that Dan Sinykin has termed the “Conglomerate Era,” are usually issued by publishers that operate as part of large, multinational corporations, and which have the resources to print and distribute millions of books around the world (@sinykin_big_2023). Many of these novels have also been adapted into major films or TV series. 
 
@@ -143,7 +145,7 @@ Building on this list, we compiled data from a number of other databases, includ
 ### **The Top 500 list**:
 OCLC’s goal in producing the Top 500 list seems to be to share information about an important set of texts based on the unprecedented amount of information in their database, as well as to encourage library patronage and reading. The website for the list includes a “[Librarians Kit](https://www.oclc.org/en/worldcat/library100/promote.html)” with a variety of publicity materials–from printable bookmarks to Instagram tiles–that can help bring attention to books in the Top 500 list within libraries’ collections. 
 
-![Screenshot of "The Library Top 100"](images/top_500_kit.png "image_tooltip")
+![Screenshot of promotional materials for "The Library Top 100"](images/top_500_kit.png "image_tooltip")
 
 ### **Our curated dataset**:
 Our goal as researchers was to collect data from additional sources in order to understand how the list was constructed and to contextualize and question its claims about literary greatness.
@@ -167,11 +169,11 @@ According to OCLC, “WorldCat holdings information represents the collective in
 
 In order to get a general sense of the geographic distribution of OCLC member libraries, we dug into the organization’s [directory](https://www.oclc.org/en/contacts/libraries.html) and conducted filtered searches for libraries in each country. We found that over 70% of OCLC’s members are in the U.S., followed by 7% in Germany, 4% in Australia, 2.6% in Canada, and 1.5% in the U.K. Clearly, OCLC is most well represented in the U.S., where it is based, and the fact that three of the other top four countries in terms of membership have English as a national language helps to explain why English-language materials are disproportionately represented in the catalog and in the Top 500 List.
 
-`Need to link to local image file or to image URL - pie chart`
+![Number of libraries in OCLC's member database by country](images/oclc_libraries_by_country.png "image_tooltip")
 
 We used a similar approach to look at what kinds of institutions are represented in WorldCat, this time filtering by “Library Type.” We found that most OCLC members are school libraries (29%), public libraries (29%), or academic libraries (25%) and that membership is fairly evenly distributed across these categories. The prominence of school libraries and academic libraries raises the issue of which patrons have access to these libraries–and thus whose conception of popularity is being represented in the holdings data. It also points to the influence of educators on this picture of the Top 500 novels.   
 
-`Need to link to local image file or to image URL - bar chart`
+![Number of libraries in OCLC's member database by institution type](images/oclc_libraries_by_institution_type.png "image_tooltip")
 
 #### Which books are represented?
 
@@ -195,9 +197,10 @@ We chose to contextualize the Library Top 500 List by compiling additional infor
 **WorldCat**: we used the now-shuttered OCLC tool Classify to gather data from WorldCat based on an OWI (OCLC Work ID) for each of the 500 novels on the list.[^2] We recorded total physical and eholdings for this work. The Top 500 list only considers physical holdings. The number of holdings in our curated dataset is not perfectly descending as the top 500 rank decreases, as one would expect. This is likely due to complications with the OWI number and with the inclusion of translations; the top 500 list uses multiple OWIs to calculate total holdings, while we only use one. Which OWIs the top 500 curators use for each work is unclear. 
 
 [^2]: For more on how editions of works are clustered in WorldCat see "Clustering WorldCat Discovery."
+
 **VIAF**: The Virtual International Authority File is an OCLC-run database that contains structured records–called “name authority files”–for individual authors and creators. We used VIAF to gather information on authors whose novels were included on the list, including their birth and death dates, nationalities, genders, and occupations.
 
-![VIAF example of Toni Morrison's novel *Beloved*](images/viaf_example.png "image_tooltip")
+![Example of Toni Morrison's authority record in VIAF](images/viaf_example.png "image_tooltip")
 
 **Wikipedia**: We used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.
 
@@ -292,7 +295,7 @@ The sources we have used, of course, have biases of their own. VIAF relies on a 
 
 We urge researchers using this dataset to consider its biases when drawing conclusions, and to seek other sources to expand it, question it, and/or to fill in information that may be missing or lacking.
 
-You can find more metadata analysis [here](https://drive.google.com/file/d/1gnina8FoyERuin3sDW57GoKh2d6ew1Mt/view?usp=sharing).
+You can find more metadata analysis in this [colab notebook](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing).
 
 ## **POPULARITY VS CANONICITY**
 
@@ -314,7 +317,7 @@ top_5_comparison("gr_num_ratings_rank")
 
 ```
 
-Above you can see that the GoodReads rankings and the top 500 rankings aren't very aligned! What factors might affect popularity on Goodreads compared to OCLC?
+Above you can see that the Goodreads rankings and the top 500 rankings aren't very aligned! What factors might affect popularity on Goodreads compared to OCLC?
 
 ```{python}
 
@@ -350,9 +353,9 @@ HTML(html_output)
 
 You can find more metadata analysis [here](HOLD_FOR_LINK_TO_ACTIVITIES_SECTION).
 
-## **USING FULL TEXT DATA**
+## **FULL TEXT DATA**
 
-In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this [Colab notebook](HOLD_FOR_LINK_TO_ACTIVITIES_SECTION), but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.  
+In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this [Colab notebook](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing), but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.  
 
 ## **Conclusion**
 
@@ -362,9 +365,9 @@ The list draws on hundreds of millions of library records representing billions 
 
 The list also represents the disproportionate influence of academics and publishers, who chose to re-edit and re-issue certain texts and not others. The correlation we found between number of editions and number of holdings is likely to make intuitive sense to library users–especially users of academic libraries, which tend to hold many editions of classic texts, and which often continue to purchase these texts as they are re-edited and re-issued. Histories of canonization in the U.S. and Europe have long been biased toward works by White, male, middle and upper class authors–a fact which clearly influenced the composition of the list.
 
-In pointing out these biases we do not intend to criticize OCLC for producing the list, which provides a useful snapshot of some of the most widely held works in their database and represents a tremendous data curation and analysis effort. We do, however, want to question the notion that “literary greatness” can be measured by the number of physical copies of a book held on library shelves. It is important to dig into data that is used to make universal claims, especially when it evidences such strong biases toward a single linguistic tradition, toward particular geographic regions, and toward individual authors. John Grisham’s work appears nineteen times on this list, Charles Dickens’s work appears fifteen times, and John Steinbeck and C.S. Lewis’s work each appears eight times. Do we really want to posit that these four men wrote ten percent of the greatest novels across all languages and cultures across all time? 
+In pointing out these biases we do not intend to criticize OCLC for producing the list, which provides a useful snapshot of some of the most widely held works in their database and represents a tremendous data curation and analysis effort. We do, however, want to question the notion that “literary greatness” can be measured by the number of physical copies of a book held on library shelves. It is important to dig into data that is used to make universal claims, especially when it evidences such strong biases toward a single linguistic tradition, toward particular geographic regions, and toward individual authors. John Grisham’s work appears nineteen times on this list, Charles Dickens’s work appears fifteen times, and John Steinbeck and C.S. Lewis’s work each appears eight times. What does it mean to posit that these four men wrote ten percent of the greatest novels across all languages and cultures across all time? 
 
-While each of these works deserves individual attention, looking at literary data in aggregate can help to reveal some of these biases and trends across a larger number of texts, and across library collections. We hope this dataset provides fruitful opportunities for exploration, and we have included a few more suggestions for analysis here. 
+While each of these works deserves individual attention, looking at literary data in aggregate can help to reveal some of these biases and trends across a larger number of texts, and across library collections. We hope this dataset provides fruitful opportunities for exploration, and we have included a few more suggestions for analysis here [LINK_TO_ACTIVITIES_TAB]. 
 
 ## References
 
