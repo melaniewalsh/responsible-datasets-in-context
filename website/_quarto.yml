@@ -88,12 +88,12 @@ format:
     css: styles.css
     code-copy: true
     code-overflow: wrap
-    # include-in-header: 
-    #   - tabs-tocs.js
-    #   - fontawesome.js
-    # include-after-body:
-    #   - tabs-to-urls.js
-    #   - custom-footnotes.js
+    include-in-header: 
+      - tabs-tocs.js
+      - fontawesome.js
+    include-after-body:
+      - tabs-to-urls.js
+      - custom-footnotes.js
     
     #  - dynamic-toc.js
 

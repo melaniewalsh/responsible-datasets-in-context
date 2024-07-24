@@ -40,7 +40,7 @@ toc: false
 ```
 Understanding the social and historical context of data is essential for all responsible data work. 
 
-On this website, we host datasets that are paired with rich documentation, data essays, and teaching resources, which <span style="font-weight: 700 !important; text-decoration: underline;">foreground context</span> and draw on <span style="font-weight: 700 !important; text-decoration: underline;">humanistic perspectives and methods</span>.
+On this website, we host datasets that are paired with rich documentation, data essays, and teaching resources, which <span style="font-weight: 700 !important; text-decoration: underline;">foregrounding context</span> and drawing on <span style="font-weight: 700 !important; text-decoration: underline;">humanistic perspectives and methods</span>.
 
 Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis.
 
