@@ -126,9 +126,9 @@ This long time span is one of the things that makes OCLC’s data, and the list 
 
 One of the things that defines a classic is the fact that it stays in print for a long period of time. When a book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years and edited repeatedly by different scholars across time. If it becomes canonical, it is likely to be issued in dozens or hundreds of editions even long after the author’s death, leading to more physical copies of the book in circulation. Importantly, though, there is not just one canon or one stable set of classics. Canons are constructed and reinforced by people; they are socially and historically defined and are bound up in power relationships and in histories of exclusion and erasure. This is what makes OCLC’s task of defining the top 500 greatest novels of all time so potentially problematic: their data reflects a history of canonization that has influenced library collections, and which has long been biased toward English-language texts, White male authors, and works produced in Europe and North America.[^2]   
 
-[^2]: We capitalize "White" following Sonita Sarker, who writes, "The capital letter 'W' indicates that White is a collective identity.  The term has mostly indicated individuals, in the use of the lower case ‘w,’ signifying at once the unique humanity of (white) personhood and absolving them of collective responsibility in White supremacy." See [Sarker_citation].
+[^2]: We capitalize "White" following Sonita Sarker, who writes, "The capital letter 'W' indicates that White is a collective identity.  The term has mostly indicated individuals, in the use of the lower case ‘w,’ signifying at once the unique humanity of (white) personhood and absolving them of collective responsibility in White supremacy" [@sarker_whiteness_2023]
 
-The newer works included on the list are books that have achieved immense popularity and widespread sales in recent years. These works, which were published during the period that Dan Sinykin has termed the “Conglomerate Era,” are usually issued by publishers that operate as part of large, multinational corporations, and which have the resources to print and distribute millions of books around the world (@sinykin_big_2023). Many of these novels have also been adapted into major films or TV series. 
+The newer works included on the list are books that have achieved immense popularity and widespread sales in recent years. These works, which were published during the period that Dan Sinykin has termed the “Conglomerate Era,” are usually issued by publishers that operate as part of large, multinational corporations, and which have the resources to print and distribute millions of books around the world [@sinykin_big_2023]. Many of these novels have also been adapted into major films or TV series. 
 
 By focusing on books that librarians have chosen to continue to make available to readers, OCLC was able to create a list of widely read novels that includes both classic texts and more recent, popular works by living authors. The list, though, also reflects various forms of bias rooted in literary history, in library collections, and in the data itself. We wondered, whose conception of “literary greatness” is being represented? How does OCLC’s data compare to other potential indicators of popularity or canonicity? And, for that matter, how was the list actually constructed?
 
@@ -165,7 +165,7 @@ This process initially sounds straightforward: to create the Top 500 list, the O
 
 #### Which libraries are represented?
 
-According to OCLC, “WorldCat holdings information represents the collective inventory of OCLC member libraries” (@noauthor_worldcat_2021). But who are these member libraries? And where are they? OCLC publishes some summary data about WorldCat, revealing, for example, that it currently holds over 548 million bibliographic records representing over 3.3 billion library holdings in 490 languages. But while OCLC stresses its position as “The worldwide catalog of library resources” and emphasizes the membership of libraries in over one hundred countries, it doesn’t provide much specific information on where these libraries are located or what kinds of institutions they are (@noauthor_worldcat_2021). 
+According to OCLC, “WorldCat holdings information represents the collective inventory of OCLC member libraries” [@noauthor_worldcat_2021]. But who are these member libraries? And where are they? OCLC publishes some summary data about WorldCat, revealing, for example, that it currently holds over 548 million bibliographic records representing over 3.3 billion library holdings in 490 languages. But while OCLC stresses its position as “The worldwide catalog of library resources” and emphasizes the membership of libraries in over one hundred countries, it doesn’t provide much specific information on where these libraries are located or what kinds of institutions they are [@noauthor_worldcat_2021]. 
 
 In order to get a general sense of the geographic distribution of OCLC member libraries, we dug into the organization’s [directory](https://www.oclc.org/en/contacts/libraries.html) and conducted filtered searches for libraries in each country. We found that over 70% of OCLC’s members are in the U.S., followed by 7% in Germany, 4% in Australia, 2.6% in Canada, and 1.5% in the U.K. Clearly, OCLC is most well represented in the U.S., where it is based, and the fact that three of the other top four countries in terms of membership have English as a national language helps to explain why English-language materials are disproportionately represented in the catalog and in the Top 500 List.
 
@@ -179,11 +179,11 @@ We used a similar approach to look at what kinds of institutions are represented
 
 Since the list focuses specifically on *novels* in these libraries’ collections, it is also narrowed by genre. OCLC discusses its process for identifying novels on its FAQ page, noting that they began with “everything in WorldCat that counts broadly as ‘fiction’” and then winnowed the list down through the removal of known categories like “children’s books, poetry, drama, folklore, comics,” and “short stories.” The final list was later “reviewed by an editorial team.”
 
-Importantly, the Top 500 List is also based only on holdings of physical books, and it “does not include e-books, audiobooks, children’s adaptations, film adaptations, etc.” This exclusive focus on print books puts emphasis on the choices of librarians, since libraries have limited shelf space and periodically have to cull their print collections. As OCLC puts it, “libraries offer access to trendy and popular books. But, they don’t keep them on the shelf if they’re not repeatedly requested by their communities over the years.” By contrast, they suggest that ebooks are often incorporated via “automatic links to free collections on the web,” which do not “represent a specific decision to add a particular novel to a library’s collection” (FAQ). While this may be the case, given the popularity of eBooks (@zhang_ebooks_2013), a focus on print must have influenced the overall makeup of the list, and, again, whose idea of popularity or “greatness” it represents. 
+Importantly, the Top 500 List is also based only on holdings of physical books, and it “does not include e-books, audiobooks, children’s adaptations, film adaptations, etc.” This exclusive focus on print books puts emphasis on the choices of librarians, since libraries have limited shelf space and periodically have to cull their print collections. As OCLC puts it, “libraries offer access to trendy and popular books. But, they don’t keep them on the shelf if they’re not repeatedly requested by their communities over the years.” By contrast, they suggest that ebooks are often incorporated via “automatic links to free collections on the web,” which do not “represent a specific decision to add a particular novel to a library’s collection” [@noauthor_library_2023]. While this may be the case, given the popularity of eBooks [@zhang_ebooks_2013], a focus on print must have influenced the overall makeup of the list, and, again, whose idea of popularity or “greatness” it represents. 
 
 #### How are editions and translations counted?
 
-One further complication is that in WorldCat, records are stored by edition, meaning that each edition of a particular novel has its own catalog record. An individual title like, say, Miguel de Cervantes’s *Don Quixote*, may have been released in hundreds or thousands of editions since its initial publication. 
+One further complication is that in WorldCat, records are stored by edition, meaning that each edition of a particular novel has its own catalog record. An individual title may have been released in hundreds or thousands of editions since its initial publication. Miguel de Cervantes’s *Don Quixote*, for example, has over 9,000 editions listed in WorldCat.
 
 This means that when developing the list, the OCLC team actually had to find all the editions of a specific title and sum the number of libraries that hold that edition across all editions. **Thus the top 500 list is not only a representation of how many libraries carry the work, but a representation of how many times a book has been re-edited and re-issued; the more editions a book has, the more records are created and the more copies of a book a library may hold.** Often, there are duplicate records for individual editions, which may affect the overall count of copies tallied by OCLC. And when a work is translated into different languages, all the editions of all the translations are also recorded in WorldCat, which also figures into the count of total holdings for each novel. 
 
@@ -238,6 +238,8 @@ We can use a similar approach to look at the nationalities of authors whose work
 df["author_nationality"].value_counts(dropna=False)
 
 ```
+
+![Choropleth map representing the number of works by authors of particular nationalities represented on the Top 500 List](images/library_top_500_by_nationality_of_author.png "image_tooltip")
 
 To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.
 
@@ -447,36 +449,20 @@ Inputs.table(search, {
 
 ## Activity 1 {#exercise-1}
 
-It is inevitable that the devices that the National Park Service uses to count visits to the parks — like induction loop counters installed on the road — will break. But they will also get *fixed* at different rates, in different locations, as we could see in the case of Crater Lake National Park (where a counter was fixed quickly) and Carlsbad Caverns National Park (where a broken counter from 2019 still has not been fixed).
+The Top 500 List represents a history of literary reception that favors works by White, European and American men who wrote in English or were widely translated into English. We share the code we used to analyze these forms of bias in our Metadata Analysis colab notebook. What other forms of bias would you want to consider in relation to this dataset? What categories of information (or columns) can we look at within the dataset to help us understand different forms of bias represented in the Top 500 List? What kinds of information are missing from the dataset? 
 
-There are many reasons for these disparities, but some of the big ones might be geography and resources. The more remote a park, the harder it is to get a repair team to it. The less-resourced a park, the lower the likelihood they have on-site repair teams, or are prioritized by the repair teams that can be dispatched.
+Try adapting the code in this [Metadata Analysis notebook](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing) to consider other forms of bias in the Top 500 List. 
 
-With this in mind, look at the locations of the following parks. Suppose that each one has an outage in their induction loop counter: which ones would you expect to be fixed first, and why? Research the parks, and rank them on a scale of 1 to 5 (1 being highest, and 5 being lowest) of which would be fixed quickest.
-
-| Park               | Priority (1-5) | Reason |
-|--------------------|----------------|--------|
-| Acadia NP          |                |        |
-| Lassen Volcanic NP |                |        |
-| Saguaro NP         |                |        |
-| Yosemite NP        |                |        |
-| Mammoth Cave NP    |                |        |
 
 ## Activity 2 {#exercise-2}
 
-The National Park Service sometimes fills in missing data with hard numbers or approximates data by applying special mathematical formulas. This is necessary work, but it is also under-explained work.
+In our data essay, we compared two different ways of ranking the Top 500 List: first by OCLC’s original order (based on number of library holdings for particular titles), and second by number of ratings on the social media site Goodreads. Which works rose or fell the most according to Goodreads rankings? Do you notice any commonalities among the books that rose or fell the most? The dataset also includes multiple other options for ranking the list. How do these other rankings compare to OCLC’s ranking of the titles? 
 
-To see this in action, go to [the NPS page that documents park reports](https://irma.nps.gov/Stats/Reports/Park) and down the "Visitor Use Counting Procedures" PDF for three different parks.
-
-How are the procedures for these three parks similar or different? What kind of effect do you think this has on the resulting data? What do you think is the best of documenting this information and communicating it to users of the data?
+Try adapting the code in the “Rank Analysis” section of the [Metadata Analysis notebook](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing) to compare OCLC’s initial ranking of the list to another ranking metric (for example, OCLC_EDITIONS_RANK or GR_AVG_RATING_RANK). 
 
 ## Activity 3
 
-In 2014 and 2015, Kobuk Valley National Park reported that there were zero visitors to the park.
-
-Use publicly available internet data - Twitter posts, Flickr photos, etc - to try and find evidence of people visiting the park (there is existing evidence!). 
-
-Based on your findings, how do you think, differently, if at all, about Kobuk Valley's decision to record zero visits and about alternative methods for counting visits?
-
+In addition to the dataset of metadata, we have also created a dataset that includes the full text of all the novels that are not currently under copyright (190 texts). With this dataset, it’s possible to connect full-text and metadata analysis. In our [Full Text Analysis notebook](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing), we’ve included suggestions for analyzing texts according to type-token ratio, a basic measure of lexical complexity that compares the ratio of unique words to total words in a text. What other quantitative measures could you apply to the full-text of these novels? How can we connect these measures to our metadata analysis? For example, what is the average length of novels on the list written by authors labeled as male, vs. those labeled as female?
 
 # Exercises {#exercises}
 
