@@ -60,13 +60,14 @@ website:
       #     - text: Gradebook
       #       url: https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/69078433-67a6-4054-a2e7-9e6c202ecdc3/
       contents:
-        - section: "Related Materials"
-        - href: posts/np-data/data-essay.qmd
+        - section: "Guide"
           contents:
             - text: "Data Essay"
               href: posts/np-data/data-essay.qmd
             - text: "Discussion Questions and Activities"
               href: posts/np-data/discussion-activities.qmd
+            - text: "Programming Exercises"
+              href: posts/np-data/programming-exercises.qmd
 
                
   page-footer:
@@ -87,12 +88,12 @@ format:
     css: styles.css
     code-copy: true
     code-overflow: wrap
-    include-in-header: 
-      - tabs-tocs.js
-      - fontawesome.js
-    include-after-body:
-      - tabs-to-urls.js
-      - custom-footnotes.js
+    # include-in-header: 
+    #   - tabs-tocs.js
+    #   - fontawesome.js
+    # include-after-body:
+    #   - tabs-to-urls.js
+    #   - custom-footnotes.js
     
     #  - dynamic-toc.js
 

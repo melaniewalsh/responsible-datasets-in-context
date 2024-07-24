@@ -180,9 +180,13 @@
     "sponsors.html": "13d98633"
   },
   "posts/np-data/data-essay.qmd": {
-    "data-essay.html": "713995c3"
+    "data-essay.html": "713995c3",
+    "data-essay.tex": "a5d368f3"
   },
   "posts/np-data/discussion-activities.qmd": {
     "discussion-activities.html": "0a2a0acf"
+  },
+  "posts/np-data/programming-exercises.qmd": {
+    "programming-exercises.html": "1e730731"
   }
 }

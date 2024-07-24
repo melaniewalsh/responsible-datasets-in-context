@@ -18,11 +18,9 @@
     ]
   },
   {
-    "listing": "/posts/np-data/index.html",
+    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
     "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
-      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
+      "/posts/african-american-periodical-poetry/exercises/aa_eda.html"
     ]
   },
   {
@@ -32,9 +30,19 @@
     ]
   },
   {
-    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+    "listing": "/posts/np-data/index.html",
     "items": [
-      "/posts/african-american-periodical-poetry/exercises/aa_eda.html"
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
+      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
+    ]
+  },
+  {
+    "listing": "/posts/np-data/programming-exercises.html",
+    "items": [
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
+      "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   },
   {

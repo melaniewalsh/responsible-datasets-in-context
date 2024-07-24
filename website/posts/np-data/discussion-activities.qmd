@@ -1,5 +1,5 @@
 ---
-title: "Discussion Questions and Activities"
+title: "U.S. National Park Visit Data (1979-2023)"
 format: 
   html:
     css: ../../styles.css
