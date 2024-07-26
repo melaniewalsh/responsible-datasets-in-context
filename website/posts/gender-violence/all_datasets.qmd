@@ -14,14 +14,17 @@ import {viewof alldataSummaryView, viewof alltwobuttons, viewof alldataSet, allt
 ```{ojs}
 //|echo: false
 viewof alldataSet
-viewof alltwobuttons
 ```
-
-<br>
 
 ```{ojs}
 //|echo: false
 alltableContainer
+```
+
+
+```{ojs}
+//|echo: false
+viewof alltwobuttons
 ```
 
 

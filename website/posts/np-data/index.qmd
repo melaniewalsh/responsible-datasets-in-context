@@ -73,16 +73,17 @@ import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof d
 ```{ojs}
 //|echo: false
 viewof dataSet
-viewof twobuttons
 ```
-
-<br>
 
 ```{ojs}
 //|echo: false
 tableContainer
 ```
 
+```{ojs}
+//|echo: false
+viewof twobuttons
+```
 
 ```{ojs}
 //|echo: false
@@ -343,23 +344,20 @@ To-do
 import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
 ```
 
-
 ```{ojs}
 //|echo: false
 viewof alldataSet
-viewof alltwobuttons
 ```
-
-
-<br>
-
 
 ```{ojs}
 //|echo: false
 alltableContainer
 ```
 
-
+```{ojs}
+//|echo: false
+viewof alltwobuttons
+```
 
 ```{ojs}
 //|echo: false

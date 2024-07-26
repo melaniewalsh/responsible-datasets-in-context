@@ -106,22 +106,20 @@ This dataset includes information about feminicdes, or cases of women who have b
 import {viewof dataSummaryView, viewof dataSet, tableContainer, table, tableStyles, viewof selectedColumns, viewof twobuttons} from "93035b1c4fe02eed"
 ```
 
-
-
-
 ```{ojs}
 //|echo: false
 viewof dataSet
-viewof twobuttons
 ```
-
-<br>
 
 ```{ojs when-format="html"}
 //|echo: false
 tableContainer
 ```
 
+```{ojs}
+//|echo: false
+viewof twobuttons
+```
 
 ```{ojs when-format="html"}
 //|echo: false
