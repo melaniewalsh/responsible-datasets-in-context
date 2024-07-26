@@ -67,14 +67,13 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof tableOptions, tableStyles} from "ac13d95a907715bf"
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, tableStyles} from "ac13d95a907715bf"
 ```
 
 ```{ojs}
 //|echo: false
 viewof dataSet
-viewof dataUrl
-viewof tableOptions
+viewof twobuttons
 ```
 
 <br>
@@ -341,15 +340,14 @@ To-do
 
 ```{ojs}
 //|echo: false
-import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataUrl, viewof alldataSet, alltableContainer, alltable, viewof alltableOptions, alltableStyles} from "878f51be5dd541f5"
+import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
 ```
 
 
 ```{ojs}
 //|echo: false
 viewof alldataSet
-viewof alldataUrl
-viewof alltableOptions
+viewof alltwobuttons
 ```
 
 

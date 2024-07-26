@@ -124,13 +124,18 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "d26a73a377141f3c"
+import {viewof dataSummaryView, viewof selectedColumns, viewof twobuttons, viewof dataSet, tableContainer, table, tableStyles, viewof tableOptions} from "d26a73a377141f3c"
 ```
 
 ```{ojs}
 //|echo: false
-viewof dataSet
-viewof dataUrl
+viewof twobuttons
+```
+
+<br>
+
+```{ojs}
+//|echo: false
 tableContainer
 ```
 
@@ -211,12 +216,16 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 
 ```{ojs}
 //|echo: false
-import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataUrl, viewof alldataSet, alltableContainer, alltable} from "148d50bd9dc1ad8f"
+import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons} from "148d50bd9dc1ad8f"
 ```
 
 ```{ojs}
 //|echo: false
-viewof alldataUrl
+viewof alltwobuttons
+```
+
+```{ojs}
+//|echo: false
 alltableContainer
 ```
 

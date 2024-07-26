@@ -6,7 +6,7 @@ categories: [included-content]
 <!-- Importing ojs variables from https://observablehq.com/d/662315b062d668fb (forked, collaborative) -->
 ```{ojs}
 //| echo: false
-import {viewof alldataSummaryView, viewof alldataUrl, viewof alldataSet, alltableContainer, alltable, alltableStyles, viewof allselectedColumns} from "662315b062d668fb"
+import {viewof alldataSummaryView, viewof alltwobuttons, viewof alldataSet, alltableContainer, alltable, alltableStyles, viewof allselectedColumns} from "662315b062d668fb"
 
 ```
 
@@ -14,7 +14,13 @@ import {viewof alldataSummaryView, viewof alldataUrl, viewof alldataSet, alltabl
 ```{ojs}
 //|echo: false
 viewof alldataSet
-viewof alldataUrl
+viewof alltwobuttons
+```
+
+<br>
+
+```{ojs}
+//|echo: false
 alltableContainer
 ```
 
