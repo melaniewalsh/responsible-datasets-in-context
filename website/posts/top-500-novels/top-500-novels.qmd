@@ -414,8 +414,6 @@ viewof allcopyUrlButton
 //|error: false
 //|warning: false
 alltable
-// html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-// tabulator.min.css`
 ```
 
 

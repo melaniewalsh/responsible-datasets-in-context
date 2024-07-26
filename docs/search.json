@@ -445,7 +445,7 @@
     "href": "posts/african-american-periodical-poetry/aa-periodical-poetry.html#african-american-periodical-poetry",
     "title": "African American Periodical Poetry (1900-1928)",
     "section": "African American Periodical Poetry",
-    "text": "African American Periodical Poetry\n\n\nCode\nimport {exploreTable, exploreTableContainer} from \"206a0a693c40b3fa\"\n\n\n\n\n\n\n\n\n\nCode\nexploreTableContainer\n\n\n\n\n\n\n\n\n\nCode\nexploreTable\n\n\n\n\n\n\n\n\n\nCode\nhtml`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;\ntabulator.min.css`\n\n\n\n\n\n\n\n\n\n Download Data"
+    "text": "African American Periodical Poetry\n\n\nCode\nimport {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataUrl, viewof alldataSet, alltableContainer, alltable} from \"148d50bd9dc1ad8f\"\n\n\n\n\n\n\n\n\n\nCode\nviewof alldataUrl\n\n\n\n\n\n\n\n\n\nCode\nalltableContainer\n\n\n\n\n\n\n\n\n\n\n\nCode\nalltable\n\n\n\n\n\n\n\n\n\n\nCode\nviewof allselectedColumns\n\n\n\n\n\n\n\n\n\nCode\nviewof alldataSummaryView\n\n\n\n\n\n\n\n\n\n Download Data"
   },
   {
     "objectID": "posts/african-american-periodical-poetry/aa-periodical-poetry.html#how-might-this-dataset-and-the-collection-of-texts-behind-it-be-used",

@@ -206,34 +206,33 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 # Explore the Data {#explore-the-data}
 
 
-```{ojs}
-//| echo: false
-//| output: false
-aa_poetry_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv", d3.autoType)
-
-```
-<br>
 
 ## African American Periodical Poetry
 
-
-
 ```{ojs}
 //|echo: false
-import {exploreTable, exploreTableContainer} from "206a0a693c40b3fa"
+import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataUrl, viewof alldataSet, alltableContainer, alltable} from "148d50bd9dc1ad8f"
 ```
 
 ```{ojs}
 //|echo: false
-exploreTableContainer
+viewof alldataUrl
+alltableContainer
 ```
 
 ```{ojs}
 //|echo: false
 //|output: false
-exploreTable
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
+alltable
+```
+
+<br>
+
+```{ojs}
+//|echo: false
+viewof allselectedColumns
+viewof alldataSummaryView
+
 ```
 
 

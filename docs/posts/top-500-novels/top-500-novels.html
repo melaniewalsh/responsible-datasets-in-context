@@ -345,10 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-
-
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -738,7 +735,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 <p>The OCLC’s definition of “literary greatness” is biased based on the libraries that OCLC represents, the list’s exclusive focus on physical books, and its emphasis on raw number of holdings, which is influenced by number of editions. OCLC acknowledges potential biases in their claims, noting that “The [top 500] list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.”</p>
 <p>A key reason we decided to collect additional data related to the list was to explore what kinds of works, and especially whose works, it represents. Drawing on author data gathered from VIAF, we can calculate some overall descriptive statistics for the list.</p>
 <p>Looking at the AUTHOR_GENDER column, we can count the number of authors identified as male and the number identified as female (VIAF only includes options for binary genders, which is discussed further below), and we can see that over 70% of the novels were written by men.</p>
-<div id="0e9f1ca9" class="cell" data-execution_count="1">
+<div id="3e8acf1d" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -757,7 +754,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can use a similar approach to look at the nationalities of authors whose works are represented on the list. Focusing on the AUTHOR_NATIONALITY column, we can count how many times each country code appears, and see that over 80% of the novels were written by authors from the U.S. or the U.K.</p>
-<div id="4a3f21c0" class="cell" data-execution_count="2">
+<div id="74b18dad" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -798,7 +795,7 @@ Name: count, dtype: int64</code></pre>
 </figure>
 </div>
 <p>To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.</p>
-<div id="9d5bd9be" class="cell" data-execution_count="3">
+<div id="13b90c47" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -817,7 +814,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also get a sense of the immense influence of individual authors who appear on the list numerous times. The most represented authors are John Grisham (19 novels) and Charles Dickens (15 novels).</p>
-<div id="cf425cc2" class="cell" data-execution_count="4">
+<div id="d3c4318f" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -838,7 +835,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Drawing on slightly more complex techniques, we can see that there is a strong positive correlation (p=1.1165e-73, r=0.6985) between the current ranking of the Top 500 List and a ranking based on the total number of editions for each novel. This suggests that the more editions a novel has, the more likely it is to be higher on the list, which is relevant because European and American editing practices have long favored authors occupying dominant social positions. Historically, works by White authors and male authors are more likely to have been re-edited and re-issued and to be considered literary classics (Gates; Mandell).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="d2293c0f" class="cell" data-execution_count="5">
+<div id="9c27ff31" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -862,7 +859,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Similarly, we confirm that there is a very strong positive correlation (p=5.6541e-96, r=0.7642) between number of editions and number of holdings of a novel; the more editions a book has, the more total holdings are reported in OCLC.</p>
-<div id="f0c2f52d" class="cell" data-execution_count="6">
+<div id="5e4f36fb" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
@@ -894,7 +891,7 @@ Name: count, dtype: int64</code></pre>
 <p>Because we were interested in whose opinions are represented on the list, we wanted to bring in an alternate measure of popularity, and we decided to use information from Goodreads. Goodreads was appealing because of its prominence online (over 130 million users), which we hoped might help us consider the opinions of a somewhat different set of readers than those theoretically represented through the physical holdings of libraries. Melanie Walsh and Maria Antoniak, for example, have drawn on Goodreads reviews to analyze how social media users define the “Classics.” Drawing on this work, we compare the ranking of novels on OCLC’s original list of Top 500 novels to the rankings of those same novels based on Goodreads ratings and number of reviews. Through this comparison we aim to consider how social media users engage with “classic” and “popular” novels and to interrogate the relationship between canonicity and popularity, using information from different data sources.</p>
 <p>To unpack the differences between the Goodreads data and the Top 500 rankings, we first need to think about how we want to compare the two lists. Given that we have recorded Goodread rankings by average star rating and total number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use total number of ratings instead of average rating, since it seemed most closely related to how OCLC measures popularity–by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="e764cc0c" class="cell" data-execution_count="7">
+<div id="ff975b11" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -935,7 +932,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the Goodreads rankings and the top 500 rankings aren’t very aligned! What factors might affect popularity on Goodreads compared to OCLC?</p>
-<div id="36f42cf3" class="cell" data-execution_count="8">
+<div id="307b2f3a" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1075,9 +1072,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 <div class="cell hidden" data-error="false" data-warning="false">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb27" data-startfrom="415" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 414;"><span id="cb27-415"><a href="#cb27-415" aria-hidden="true" tabindex="-1"></a>alltable</span>
-<span id="cb27-416"><a href="#cb27-416" aria-hidden="true" tabindex="-1"></a><span class="co">// html`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
-<span id="cb27-417"><a href="#cb27-417" aria-hidden="true" tabindex="-1"></a><span class="co">// tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb27" data-startfrom="415" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 414;"><span id="cb27-415"><a href="#cb27-415" aria-hidden="true" tabindex="-1"></a>alltable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-9" data-nodetype="expression">
@@ -1088,7 +1083,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 <div class="cell" data-error="false" data-warning="false">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb28" data-startfrom="427" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 426;"><span id="cb28-427"><a href="#cb28-427" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb28" data-startfrom="425" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 424;"><span id="cb28-425"><a href="#cb28-425" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1099,7 +1094,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb29" data-startfrom="428" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 427;"><span id="cb29-428"><a href="#cb29-428" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb29" data-startfrom="426" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 425;"><span id="cb29-426"><a href="#cb29-426" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1413,7 +1408,7 @@ $(document).ready(function () {
 
           </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGNvcHlVcmxCdXR0b24sIHZpZXdvZiBzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiBkYXRhVXJsLCB2aWV3b2YgdGFibGVPcHRpb25zLCB2aWV3b2YgZGF0YVNldCwgdGFibGVDb250YWluZXIsIHRhYmxlLCB0YWJsZVN0eWxlc30gZnJvbSBcImFjNWZjNzRjMjBlZjM2YTZcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbnRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIHRhYmxlT3B0aW9uc1xudmlld29mIGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2Ygc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgZGF0YVN1bW1hcnlWaWV3XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQge3ZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXcsIHZpZXdvZiBhbGxjb3B5VXJsQnV0dG9uLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zLCB2aWV3b2YgYWxsZGF0YVVybCwgdmlld29mIGFsbHRhYmxlT3B0aW9ucywgdmlld29mIGFsbGRhdGFTZXQsIGFsbHRhYmxlQ29udGFpbmVyLCBhbGx0YWJsZX0gZnJvbSBcImQ1YWRlZDk1ODU0YWRhOWRcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbmFsbHRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIGFsbHRhYmxlT3B0aW9uc1xudmlld29mIGFsbGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG4vLyBodG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbi8vIHRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ilxudmlld29mIGFsbHNlbGVjdGVkQ29sdW1uc1xudmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlld1xuIn1dfQ==
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGNvcHlVcmxCdXR0b24sIHZpZXdvZiBzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiBkYXRhVXJsLCB2aWV3b2YgdGFibGVPcHRpb25zLCB2aWV3b2YgZGF0YVNldCwgdGFibGVDb250YWluZXIsIHRhYmxlLCB0YWJsZVN0eWxlc30gZnJvbSBcImFjNWZjNzRjMjBlZjM2YTZcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbnRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIHRhYmxlT3B0aW9uc1xudmlld29mIGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2Ygc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgZGF0YVN1bW1hcnlWaWV3XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQge3ZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXcsIHZpZXdvZiBhbGxjb3B5VXJsQnV0dG9uLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zLCB2aWV3b2YgYWxsZGF0YVVybCwgdmlld29mIGFsbHRhYmxlT3B0aW9ucywgdmlld29mIGFsbGRhdGFTZXQsIGFsbHRhYmxlQ29udGFpbmVyLCBhbGx0YWJsZX0gZnJvbSBcImQ1YWRlZDk1ODU0YWRhOWRcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbmFsbHRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIGFsbHRhYmxlT3B0aW9uc1xudmlld29mIGFsbGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEwIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgYWxsZGF0YVN1bW1hcnlWaWV3XG4ifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -2435,56 +2430,54 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb30-440"><a href="#cb30-440" aria-hidden="true" tabindex="-1"></a><span class="in">//|error: false</span></span>
 <span id="cb30-441"><a href="#cb30-441" aria-hidden="true" tabindex="-1"></a><span class="in">//|warning: false</span></span>
 <span id="cb30-442"><a href="#cb30-442" aria-hidden="true" tabindex="-1"></a><span class="in">alltable</span></span>
-<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a><span class="in">// html`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
-<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a><span class="in">// tabulator.min.css`</span></span>
-<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb30-446"><a href="#cb30-446" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-447"><a href="#cb30-447" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-450"><a href="#cb30-450" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb30-451"><a href="#cb30-451" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb30-452"><a href="#cb30-452" aria-hidden="true" tabindex="-1"></a><span class="in">//|error: false</span></span>
-<span id="cb30-453"><a href="#cb30-453" aria-hidden="true" tabindex="-1"></a><span class="in">//|warning: false</span></span>
-<span id="cb30-454"><a href="#cb30-454" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-455"><a href="#cb30-455" aria-hidden="true" tabindex="-1"></a><span class="in">viewof allselectedColumns</span></span>
-<span id="cb30-456"><a href="#cb30-456" aria-hidden="true" tabindex="-1"></a><span class="in">viewof alldataSummaryView</span></span>
-<span id="cb30-457"><a href="#cb30-457" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-443"><a href="#cb30-443" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-444"><a href="#cb30-444" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-445"><a href="#cb30-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-448"><a href="#cb30-448" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb30-449"><a href="#cb30-449" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
+<span id="cb30-450"><a href="#cb30-450" aria-hidden="true" tabindex="-1"></a><span class="in">//|error: false</span></span>
+<span id="cb30-451"><a href="#cb30-451" aria-hidden="true" tabindex="-1"></a><span class="in">//|warning: false</span></span>
+<span id="cb30-452"><a href="#cb30-452" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-453"><a href="#cb30-453" aria-hidden="true" tabindex="-1"></a><span class="in">viewof allselectedColumns</span></span>
+<span id="cb30-454"><a href="#cb30-454" aria-hidden="true" tabindex="-1"></a><span class="in">viewof alldataSummaryView</span></span>
+<span id="cb30-455"><a href="#cb30-455" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb30-456"><a href="#cb30-456" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-457"><a href="#cb30-457" aria-hidden="true" tabindex="-1"></a>{{&lt; downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton &gt;}}</span>
 <span id="cb30-458"><a href="#cb30-458" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-459"><a href="#cb30-459" aria-hidden="true" tabindex="-1"></a>{{&lt; downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton &gt;}}</span>
-<span id="cb30-460"><a href="#cb30-460" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-459"><a href="#cb30-459" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-460"><a href="#cb30-460" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion &amp; Activities {#discussion-and-activities}</span></span>
 <span id="cb30-461"><a href="#cb30-461" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-462"><a href="#cb30-462" aria-hidden="true" tabindex="-1"></a><span class="fu"># Discussion &amp; Activities {#discussion-and-activities}</span></span>
+<span id="cb30-462"><a href="#cb30-462" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 1 {#exercise-1}</span></span>
 <span id="cb30-463"><a href="#cb30-463" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-464"><a href="#cb30-464" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 1 {#exercise-1}</span></span>
+<span id="cb30-464"><a href="#cb30-464" aria-hidden="true" tabindex="-1"></a>The Top 500 List represents a history of literary reception that favors works by White, European and American men who wrote in English or were widely translated into English. We share the code we used to analyze these forms of bias in our Metadata Analysis colab notebook. What other forms of bias would you want to consider in relation to this dataset? What categories of information (or columns) can we look at within the dataset to help us understand different forms of bias represented in the Top 500 List? What kinds of information are missing from the dataset? </span>
 <span id="cb30-465"><a href="#cb30-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-466"><a href="#cb30-466" aria-hidden="true" tabindex="-1"></a>The Top 500 List represents a history of literary reception that favors works by White, European and American men who wrote in English or were widely translated into English. We share the code we used to analyze these forms of bias in our Metadata Analysis colab notebook. What other forms of bias would you want to consider in relation to this dataset? What categories of information (or columns) can we look at within the dataset to help us understand different forms of bias represented in the Top 500 List? What kinds of information are missing from the dataset? </span>
+<span id="cb30-466"><a href="#cb30-466" aria-hidden="true" tabindex="-1"></a>Try adapting the code in this <span class="co">[</span><span class="ot">Metadata Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing)</span> to consider other forms of bias in the Top 500 List. </span>
 <span id="cb30-467"><a href="#cb30-467" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-468"><a href="#cb30-468" aria-hidden="true" tabindex="-1"></a>Try adapting the code in this <span class="co">[</span><span class="ot">Metadata Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing)</span> to consider other forms of bias in the Top 500 List. </span>
-<span id="cb30-469"><a href="#cb30-469" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-468"><a href="#cb30-468" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-469"><a href="#cb30-469" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 2 {#exercise-2}</span></span>
 <span id="cb30-470"><a href="#cb30-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-471"><a href="#cb30-471" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 2 {#exercise-2}</span></span>
+<span id="cb30-471"><a href="#cb30-471" aria-hidden="true" tabindex="-1"></a>In our data essay, we compared two different ways of ranking the Top 500 List: first by OCLC’s original order (based on number of library holdings for particular titles), and second by number of ratings on the social media site Goodreads. Which works rose or fell the most according to Goodreads rankings? Do you notice any commonalities among the books that rose or fell the most? The dataset also includes multiple other options for ranking the list. How do these other rankings compare to OCLC’s ranking of the titles? </span>
 <span id="cb30-472"><a href="#cb30-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-473"><a href="#cb30-473" aria-hidden="true" tabindex="-1"></a>In our data essay, we compared two different ways of ranking the Top 500 List: first by OCLC’s original order (based on number of library holdings for particular titles), and second by number of ratings on the social media site Goodreads. Which works rose or fell the most according to Goodreads rankings? Do you notice any commonalities among the books that rose or fell the most? The dataset also includes multiple other options for ranking the list. How do these other rankings compare to OCLC’s ranking of the titles? </span>
+<span id="cb30-473"><a href="#cb30-473" aria-hidden="true" tabindex="-1"></a>Try adapting the code in the “Rank Analysis” section of the <span class="co">[</span><span class="ot">Metadata Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing)</span> to compare OCLC’s initial ranking of the list to another ranking metric (for example, OCLC_EDITIONS_RANK or GR_AVG_RATING_RANK). </span>
 <span id="cb30-474"><a href="#cb30-474" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-475"><a href="#cb30-475" aria-hidden="true" tabindex="-1"></a>Try adapting the code in the “Rank Analysis” section of the <span class="co">[</span><span class="ot">Metadata Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing)</span> to compare OCLC’s initial ranking of the list to another ranking metric (for example, OCLC_EDITIONS_RANK or GR_AVG_RATING_RANK). </span>
+<span id="cb30-475"><a href="#cb30-475" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 3</span></span>
 <span id="cb30-476"><a href="#cb30-476" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-477"><a href="#cb30-477" aria-hidden="true" tabindex="-1"></a><span class="fu">## Activity 3</span></span>
+<span id="cb30-477"><a href="#cb30-477" aria-hidden="true" tabindex="-1"></a>In addition to the dataset of metadata, we have also created a dataset that includes the full text of all the novels that are not currently under copyright (190 texts). With this dataset, it’s possible to connect full-text and metadata analysis. In our <span class="co">[</span><span class="ot">Full Text Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing)</span>, we’ve included suggestions for analyzing texts according to type-token ratio, a basic measure of lexical complexity that compares the ratio of unique words to total words in a text. What other quantitative measures could you apply to the full-text of these novels? How can we connect these measures to our metadata analysis? For example, what is the average length of novels on the list written by authors labeled as male, vs. those labeled as female?</span>
 <span id="cb30-478"><a href="#cb30-478" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-479"><a href="#cb30-479" aria-hidden="true" tabindex="-1"></a>In addition to the dataset of metadata, we have also created a dataset that includes the full text of all the novels that are not currently under copyright (190 texts). With this dataset, it’s possible to connect full-text and metadata analysis. In our <span class="co">[</span><span class="ot">Full Text Analysis notebook</span><span class="co">](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing)</span>, we’ve included suggestions for analyzing texts according to type-token ratio, a basic measure of lexical complexity that compares the ratio of unique words to total words in a text. What other quantitative measures could you apply to the full-text of these novels? How can we connect these measures to our metadata analysis? For example, what is the average length of novels on the list written by authors labeled as male, vs. those labeled as female?</span>
+<span id="cb30-479"><a href="#cb30-479" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises {#exercises}</span></span>
 <span id="cb30-480"><a href="#cb30-480" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-481"><a href="#cb30-481" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises {#exercises}</span></span>
-<span id="cb30-482"><a href="#cb30-482" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-483"><a href="#cb30-483" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset .nav-pills}</span>
-<span id="cb30-484"><a href="#cb30-484" aria-hidden="true" tabindex="-1"></a><span class="fu">## R {#exercise-posts-r}</span></span>
-<span id="cb30-485"><a href="#cb30-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-486"><a href="#cb30-486" aria-hidden="true" tabindex="-1"></a>::: {#exercise-posts}</span>
-<span id="cb30-487"><a href="#cb30-487" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb30-488"><a href="#cb30-488" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-489"><a href="#cb30-489" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python {#exercise-posts-python}</span></span>
+<span id="cb30-481"><a href="#cb30-481" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset .nav-pills}</span>
+<span id="cb30-482"><a href="#cb30-482" aria-hidden="true" tabindex="-1"></a><span class="fu">## R {#exercise-posts-r}</span></span>
+<span id="cb30-483"><a href="#cb30-483" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-484"><a href="#cb30-484" aria-hidden="true" tabindex="-1"></a>::: {#exercise-posts}</span>
+<span id="cb30-485"><a href="#cb30-485" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb30-486"><a href="#cb30-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-487"><a href="#cb30-487" aria-hidden="true" tabindex="-1"></a><span class="fu">## Python {#exercise-posts-python}</span></span>
+<span id="cb30-488"><a href="#cb30-488" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb30-489"><a href="#cb30-489" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-490"><a href="#cb30-490" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb30-491"><a href="#cb30-491" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-492"><a href="#cb30-492" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb30-493"><a href="#cb30-493" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span></span>
-<span id="cb30-494"><a href="#cb30-494" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;/body&gt; --&gt;</span></span>
+<span id="cb30-491"><a href="#cb30-491" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- </span></span>
+<span id="cb30-492"><a href="#cb30-492" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;/body&gt; --&gt;</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
