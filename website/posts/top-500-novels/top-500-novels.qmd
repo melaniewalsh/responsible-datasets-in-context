@@ -382,64 +382,50 @@ While each of these works deserves individual attention, looking at literary dat
 
 # Explore the Data {#tabset-1-2}
 
+<!-- Importing from https://observablehq.com/d/d5aded95854ada9d (forked, collaborative notebook) -->
 
 ```{ojs}
-//| echo: false
-//| output: false
-library_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv", d3.autoType)
-
-use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
+//|echo: false
+import {viewof alldataSummaryView, viewof allcopyUrlButton, viewof allselectedColumns, viewof alldataUrl, viewof alltableOptions, viewof alldataSet, alltableContainer, alltable} from "d5aded95854ada9d"
 ```
 
 ```{ojs}
-//| echo: false
-//| output: false
-
-
-filtered = library_data.filter(function(penguin) {
-  return bill_length_min < penguin.bill_length_mm &&
-         islands.includes(penguin.island);
-})
+//|echo: false
+// viewof dataSet
+//viewof dataUrl
+//|error: false
+//|warning: false
+alltableContainer
 ```
 
 ```{ojs}
-//| echo: false
-color = d3
-  .scaleLinear()
-  .domain([0, 100, 300])
-  .range(["#cafcc2", "#fce7c2", "#eb9494"])
-```
-<br>
-
-## Library Top 500
-
-```{ojs}
-//| echo: false
-viewof search = Inputs.search(library_data, {
-  placeholder: "Search"
-})
+//|echo: false
+// viewof dataSet
+//tableContainer
+//|error: false
+//|warning: false
+viewof alltableOptions
+viewof allcopyUrlButton
 ```
 
-<br>
+```{ojs}
+//|echo: false
+//|output: false
+//|error: false
+//|warning: false
+alltable
+// html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
+// tabulator.min.css`
+```
+
 
 ```{ojs}
-//| echo: false
+//|echo: false
+//|error: false
+//|warning: false
 
-/*Inputs.table(search, data)*/
-
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "top_500_rank",
-  reverse: false,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    pub_year: x => d3.timeFormat(x),
-    author_birth: x => d3.timeFormat(x),
-    author_death: x => d3.timeFormat(x),
-    gr_num_ratings_rank: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
+viewof allselectedColumns
+viewof alldataSummaryView
 ```
 
 {{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton >}}
