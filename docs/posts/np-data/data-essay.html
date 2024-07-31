@@ -203,9 +203,27 @@ document.addEventListener("DOMContentLoaded", function () {
     tocContainer.appendChild(tocList);
   }
 
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+  
+
   // Function to update TOC when tab changes
   function updateActiveTabTOC() {
-    const activeTab = document.querySelector('.tab-pane.active');
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
     const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
     if (activeTab) {
       generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');

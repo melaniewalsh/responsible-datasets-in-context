@@ -427,8 +427,6 @@ viewof allselectedColumns
 viewof alldataSummaryView
 ```
 
-{{< downloadthis ../../../datasets/top-500-novels/library_top_500.csv dname = library_top_500 label = "Download Data" id = downloadbutton >}}
-
 
 # Discussion & Activities {#discussion-and-activities}
 

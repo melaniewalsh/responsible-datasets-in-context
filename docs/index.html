@@ -211,11 +211,47 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+  // Gets the highest number of the layer of the tabsets
+
+  function getMaxTabsetNumber() {
+
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+
+    let maxTabsetNumber = 1;
+
+    tabPanes.forEach(tabPane => {
+
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+
+      if (match) {
+
+        const number = parseInt(match[1], 10);
+
+        if (number > maxTabsetNumber) {
+
+          maxTabsetNumber = number;
+
+        }
+
+      }
+
+    });
+
+    return maxTabsetNumber;
+
+  }
+
+  
+
+
+
   // Function to update TOC when tab changes
 
   function updateActiveTabTOC() {
 
-    const activeTab = document.querySelector('.tab-pane.active');
+    const maxTabsetNumber = getMaxTabsetNumber();
+
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
 
     const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
 
@@ -431,7 +467,7 @@ By providing these contextual materials, we hope to promote the responsible use 
     </div>
 </div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="literature,poetry,gender,race,metadata,full-text,public domain" data-listing-date-sort="1715929200000" data-listing-file-modified-sort="1722024435590" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5267">
+<div class="quarto-post image-right" data-index="0" data-categories="literature,poetry,gender,race,metadata,full-text,public domain" data-listing-date-sort="1715929200000" data-listing-file-modified-sort="1722390869331" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="27" data-listing-word-count-sort="5267">
 <div class="thumbnail">
 <p><a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external"></a></p><a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external">
 <p><img src="./posts/african-american-periodical-poetry/images/aa-anthology.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -468,7 +504,7 @@ public domain
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/african-american-periodical-poetry/aa-periodical-poetry.html --></a>
+<a href="./posts/african-american-periodical-poetry/aa-periodical-poetry.html" class="no-external">This dataset is a collection of poetry published in magazines by African American writers in the early twentieth century. The collection currently contains about 1000 poems…<em></em><em></em><em></em><em></em><em></em><em></em></a>
 </div>
 </div>
 <div class="metadata">
@@ -482,7 +518,7 @@ Amardeep Singh and Kate Hennessey
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1722023186644" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5474">
+<div class="quarto-post image-right" data-index="1" data-categories="libraries,literature,readers,gender,metadata,full-text,public domain" data-listing-date-sort="1712732400000" data-listing-file-modified-sort="1722391504715" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="28" data-listing-word-count-sort="5461">
 <div class="thumbnail">
 <p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external"></a></p><a href="./posts/top-500-novels/top-500-novels.html" class="no-external">
 <p><img src="./posts/top-500-novels/images/library-top-500-screenshot.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -519,7 +555,7 @@ public domain
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/top-500-novels/top-500-novels.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/top-500-novels/top-500-novels.html --></a>
+<a href="./posts/top-500-novels/top-500-novels.html" class="no-external">This dataset contains information on the top 500 novels most widely held in libraries, according to OCLC, a library organization with over 16,000 member libraries in over…</a>
 </div>
 </div>
 <div class="metadata">
@@ -564,7 +600,7 @@ missing-data
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/np-data/data-essay.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/np-data/data-essay.html --></a>
+<a href="./posts/np-data/data-essay.html" class="no-external">To access all materials associated with this dataset, be sure to check the “Guide” in the sidebar.</a>
 </div>
 </div>
 <div class="metadata">
@@ -578,7 +614,7 @@ Melanie Walsh and Os Keyes
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1722023933162" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4635">
+<div class="quarto-post image-right" data-index="3" data-categories="nature,environment,government,uncertainty,missing-data" data-listing-date-sort="1709971200000" data-listing-file-modified-sort="1722391179938" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="24" data-listing-word-count-sort="4635">
 <div class="thumbnail">
 <p><a href="./posts/np-data/index.html" class="no-external"></a></p><a href="./posts/np-data/index.html" class="no-external">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -609,7 +645,7 @@ missing-data
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/np-data/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/np-data/index.html --></a>
+<a href="./posts/np-data/index.html" class="no-external">This dataset contains the number of visits, per year, to each of the current 63 National Parks administered by the United States National Park Service (NPS), from 1979 to…</a>
 </div>
 </div>
 <div class="metadata">
@@ -623,7 +659,7 @@ Melanie Walsh and Os Keyes
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="gender,human rights,social justice activism,missing-data,communities" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1722024525566" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="45" data-listing-word-count-sort="8972">
+<div class="quarto-post image-right" data-index="4" data-categories="gender,human rights,social justice activism,missing-data,communities" data-listing-date-sort="1708934400000" data-listing-file-modified-sort="1722390558892" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="45" data-listing-word-count-sort="8972">
 <div class="thumbnail">
 <p><a href="./posts/gender-violence/index.html" class="no-external"></a></p><a href="./posts/gender-violence/index.html" class="no-external">
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png" class="thumbnail-image" style="height: 200px;"></p>
@@ -654,7 +690,7 @@ communities
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/gender-violence/index.html" class="no-external"><!-- desc(5A0113B34292)[max=175]:posts/gender-violence/index.html --></a>
+<a href="./posts/gender-violence/index.html" class="no-external">This dataset includes information about feminicdes, or cases of women who have been murdered based on their gender, at the U.S.-Mexico border between 1993-1998. The original…<em></em></a>
 </div>
 </div>
 <div class="metadata">
