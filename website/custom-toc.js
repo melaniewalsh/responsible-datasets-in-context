@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Generate TOCs for the active tab
         function updateActiveTabTOC() {
-            const activeTab = document.querySelector('.tab-pane.active');
+            const activeTab = document.querySelector('.tab-pane[id^="tabset-2-"].active.show');
             const tocContainer = document.querySelector('#toc-container');
             if (activeTab) {
                 generateTOC(`#${activeTab.id}`, '#toc-container');

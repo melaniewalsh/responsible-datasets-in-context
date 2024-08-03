@@ -67,23 +67,23 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof tableOptions, tableStyles} from "ac13d95a907715bf"
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, tableStyles} from "ac13d95a907715bf"
 ```
 
 ```{ojs}
 //|echo: false
 viewof dataSet
-viewof dataUrl
-viewof tableOptions
 ```
-
-<br>
 
 ```{ojs}
 //|echo: false
 tableContainer
 ```
 
+```{ojs}
+//|echo: false
+viewof twobuttons
+```
 
 ```{ojs}
 //|echo: false
@@ -340,94 +340,39 @@ To-do
 
 
 ```{ojs}
-//| echo: false
-//| output: false
-visit_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", d3.autoType)
-
-use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
-
+//|echo: false
+import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
 ```
 
 ```{ojs}
-//| echo: false
-//| output: false
-
-
-filtered = visit_data.filter(function(penguin) {
-  return bill_length_min < penguin.bill_length_mm &&
-         islands.includes(penguin.island);
-})
+//|echo: false
+viewof alldataSet
 ```
 
 ```{ojs}
-//| echo: false
-color = d3
-  .scaleLinear()
-  .domain([5000000, 1000000, 100000])
-  .range(["#cafcc2", "#fce7c2", "#eb9494"])
+//|echo: false
+alltableContainer
 ```
-<br>
-
-## U.S. National Park Visits — 1979-2023
 
 ```{ojs}
-//| echo: false
-viewof search = Inputs.search(visit_data, {
-  placeholder: "Search"
-})
+//|echo: false
+viewof alltwobuttons
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+alltable
 ```
 
 <br>
 
 ```{ojs}
-//| echo: false
+//|echo: false
+viewof allselectedColumns
+viewof alldataSummaryView
 
-/*Inputs.table(search, data)*/
-
-Inputs.table(search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
 ```
-
-{{< downloadthis ../../../datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv dname = US-National-Parks_RecreationVisits_1979-2023 label = "Download Data" id = downloadbutton >}}
-## U.S. National Park Use (Monthly) — 1979-2023
-
-```{ojs}
-//| echo: false
-viewof use_search = Inputs.search(use_data, {
-  placeholder: "Search"
-})
-```
-
-<br>
-
-```{ojs}
-//| echo: false
-
-/*Inputs.table(search, data)*/
-
-Inputs.table(use_search, {
-  layout: "fixed",
-  rows: 50,
-  sort: "Year",
-  reverse: true,
-  format: {
-    /*RecreationVisits: x => d3.format('.2s')(x),*/
-    Year: x => d3.timeFormat(x),
-    RecreationVisits: x => html`<div style='background:${color(x)}'>${d3.format('.2s')(x)}</div>`
-  }
-})
-```
-
-{{< downloadthis ../../../datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv dname = US-National-Parks_Use_1979-2023_By-Month label = "Download Data" id = downloadbutton >}}
 
 
 # Exercises {#exercises}

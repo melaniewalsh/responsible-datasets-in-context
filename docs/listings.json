@@ -4,16 +4,16 @@
     "items": [
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/top-500-novels/top-500-novels.html",
-      "/posts/np-data/index.html",
       "/posts/np-data/data-essay.html",
+      "/posts/np-data/index.html",
       "/posts/gender-violence/index.html"
     ]
   },
   {
     "listing": "/posts/np-data/data-essay.html",
     "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   },
@@ -32,16 +32,16 @@
   {
     "listing": "/posts/np-data/index.html",
     "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   },
   {
     "listing": "/posts/np-data/programming-exercises.html",
     "items": [
-      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Ggplot-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises/Intro-to-DPLYR-NP.html"
     ]
   },
@@ -65,8 +65,8 @@
     "items": [
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/top-500-novels/top-500-novels.html",
-      "/posts/np-data/index.html",
       "/posts/np-data/data-essay.html",
+      "/posts/np-data/index.html",
       "/posts/gender-violence/index.html"
     ]
   }

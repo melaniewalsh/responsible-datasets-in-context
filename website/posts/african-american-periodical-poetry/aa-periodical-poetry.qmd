@@ -4,68 +4,6 @@ author: Amardeep Singh and Kate Hennessey
 format: 
   html:
     css: styles.css
-    include-in-header:
-      - text: |
-          <script>
-          function htmlTableOfContents(documentRef) {
-              var documentRef = documentRef || document;
-              var toc = documentRef.getElementById('toc');
-              if (!toc) return;
-              toc.innerHTML = '';
-
-
-              var activeTabPane = documentRef.querySelector('.tab-pane.active');
-              if (!activeTabPane) return;
-              var headings = [].slice.call(activeTabPane.querySelectorAll('h1, h2, h3, h4, h5, h6'));
-              if (headings.length === 0) return;
-
-
-              var title = document.createElement('h3');
-              title.textContent = 'Table of Contents:';
-              toc.appendChild(title);
-
-
-              var ul = document.createElement('ul'); // Create a list for the ToC entries
-
-
-              headings.forEach(function (heading, index) {
-                  var anchor = documentRef.createElement('a');
-                  anchor.setAttribute('name', 'toc' + index);
-                  anchor.setAttribute('id', 'toc' + index);
-
-
-                  var link = document.createElement('a');
-                  link.setAttribute('href', '#toc' + index);
-                  link.textContent = heading.textContent;
-
-
-                  var li = document.createElement('li');
-                  li.setAttribute('class', heading.tagName.toLowerCase());
-
-
-                  li.appendChild(link);
-                  ul.appendChild(li);
-                  heading.parentNode.insertBefore(anchor, heading);
-              });
-
-
-              toc.appendChild(ul); // Append the list to the ToC div
-          }
-
-
-          // Run the ToC generation on page load
-          window.addEventListener('load', function() {
-              htmlTableOfContents();
-          });
-
-
-          // Listen for tab changes to regenerate the ToC
-          document.addEventListener('click', function(event) {
-              if (event.target.matches('.nav.nav-tabs .nav-item .nav-link')) {
-                  setTimeout(htmlTableOfContents, 100);  // Delay to wait for the tab to become active
-              }
-          });
-          </script>
     toc: true
     toc-depth: 5
     toc-float: true
@@ -104,7 +42,6 @@ code-tools: true
 bibliography: references/references.bib
 ---
 
-<div id="toc" class="toc"></div>
 
 ::: {.panel-tabset .nav-pills}
 
@@ -124,15 +61,20 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, tableStyles} from "206a0a693c40b3fa"
+import {viewof dataSummaryView, viewof selectedColumns, viewof twobuttons, viewof dataSet, tableContainer, table, tableStyles, viewof tableOptions} from "d26a73a377141f3c"
+```
+
+
+```{ojs}
+//|echo: false
+tableContainer
 ```
 
 ```{ojs}
 //|echo: false
-viewof dataSet
-viewof dataUrl
-tableContainer
+viewof twobuttons
 ```
+
 
 ```{ojs}
 //|echo: false
@@ -159,8 +101,6 @@ viewof dataSummaryView
 ## Creative Commons License
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
 :::
-
-{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
 Magazines were a crucial part of the landscape of literary publishing in the U.S. during the early twentieth century. Magazines with often very large national readerships helped writers find their audience, and opportunities to work as editors help position established writers in positions of power and authority in the American publishing industry. 
 
@@ -206,38 +146,40 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 # Explore the Data {#explore-the-data}
 
 
-```{ojs}
-//| echo: false
-//| output: false
-aa_poetry_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv", d3.autoType)
-
-```
-<br>
 
 ## African American Periodical Poetry
 
-
-
 ```{ojs}
 //|echo: false
-import {exploreTable, exploreTableContainer} from "206a0a693c40b3fa"
+import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons} from "148d50bd9dc1ad8f"
 ```
 
 ```{ojs}
 //|echo: false
-exploreTableContainer
+alltableContainer
+```
+
+```{ojs}
+//|echo: false
+viewof alltwobuttons
 ```
 
 ```{ojs}
 //|echo: false
 //|output: false
-exploreTable
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
+alltable
+```
+
+<br>
+
+```{ojs}
+//|echo: false
+viewof allselectedColumns
+viewof alldataSummaryView
+
 ```
 
 
-{{< downloadthis ../../../datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv dname = AAPADA-Periodical-Poetry_1900-1928 label = "Download Data" id=downloadbutton >}}
 
 # How to Use {#how-to-use}
 
