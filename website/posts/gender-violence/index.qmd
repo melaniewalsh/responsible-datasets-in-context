@@ -7,12 +7,8 @@ image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_ma
 format:
   html:
     css: styles.css
-    pdf: default
-    toc: true
-    toc-location: right
-    toc-depth: 3
     page-layout: article
-    ipynb: true
+  pdf: default
 code-fold: true
 format-links: [pdf, docx, ipynb]
 editor: visual
@@ -36,6 +32,7 @@ This dataset includes information about feminicdes, or cases of women who have b
 
 **Translated and digized dataset (2023):** Jasbeth Medrano (Leader), Judith Ordonez, Carolina Vlaun, Alex Sanchez, and Samuel Hille
 
+::: {.content-hidden when-format="pdf"}
 
 <!-- Importing ojs variables from https://observablehq.com/d/93035b1c4fe02eed (forked, collaborative) -->
 ```{ojs when-format="html"}
@@ -66,15 +63,18 @@ html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min
 tabulator.min.css`
 ```
 
-<br>
+::: {.callout-note icon="false" collapse="true"}
 
-```{ojs when-format="html"}
+## View Summary of Columns
+```{ojs}
 //|echo: false
 viewof selectedColumns
 viewof dataSummaryView
 
 ```
+:::
 
+:::
 
 ::: {.callout-tip icon=false}
 ## Creative Commons License

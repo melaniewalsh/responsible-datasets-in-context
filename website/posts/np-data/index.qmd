@@ -4,13 +4,9 @@ author: Melanie Walsh and Os Keyes
 format: 
   html:
     css: ../../styles.css
-    toc: true
-    toc-location: right
-    toc-depth: 3
     # page-layout: full
-    #toc: true
-    ipynb: true
-  #pdf: default
+  # ipynb: default
+  pdf: default
   #docx: default
   #r: default
 listing:
@@ -64,6 +60,8 @@ If you use our materials in your class or another setting, we would love to [hea
 <br>
 <!-- Importing from https://observablehq.com/d//ac13d95a907715bf (forked, collaborative) -->
 
+::: {.content-hidden when-format="pdf"}
+
 ```{ojs}
 //|echo: false
 import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles} from "ac13d95a907715bf"
@@ -93,6 +91,7 @@ table
 html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
 tabulator.min.css`
 ```
+:::
 
 ::: {.callout-note icon="false" collapse="true"}
 
@@ -480,6 +479,9 @@ The NPS's visitation data is a valuable resource that gives us a glimpse into th
 
 ## Explore the Data
 
+::: {.content-hidden when-format="pdf"}
+
+
 ```{ojs}
 //|echo: false
 import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
@@ -512,7 +514,7 @@ viewof allselectedColumns
 viewof alldataSummaryView
 
 ```
-
+:::
 
 # Exercises {#exercises}
 

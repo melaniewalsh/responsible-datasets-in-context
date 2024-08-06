@@ -3,12 +3,7 @@ title: "African American Periodical Poetry (1900-1928)"
 author: Amardeep Singh and Kate Hennessey
 format: 
   html:
-    css: styles.css
-    toc: true
-    toc-depth: 5
-    toc-float: true
-    toc-title: "Table of Contents"
-    toc-expand: true
+    css: ../../styles.css
     #include-after-body:
      # - tabs.js
   #ipynb: default
@@ -38,7 +33,7 @@ editor: visual
 df-print: kable
 jupyter: python3
 code-tools: true
-bibliography: references/references.bib
+bibliography: ../../references/references.bib
 ---
 
 
@@ -55,7 +50,8 @@ This dataset is a collection of poetry published in magazines by African America
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
-<br>
+::: {.content-hidden when-format="pdf"}
+
 <!-- Importing ojs variable from https://observablehq.com/d/206a0a693c40b3fa -->
 
 ```{ojs}
@@ -83,18 +79,18 @@ html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min
 tabulator.min.css`
 ```
 
-<br>
+::: {.callout-note icon="false" collapse="true"}
 
+## View Summary of Columns
 ```{ojs}
 //|echo: false
 viewof selectedColumns
 viewof dataSummaryView
 
 ```
+:::
 
-
-<br>
-
+:::
 
 ::: {.callout-tip icon=false}
 ## Creative Commons License
@@ -148,6 +144,8 @@ Kate Hennessey, a Lehigh University graduate student, assisted with the collecti
 
 ## African American Periodical Poetry
 
+::: {.content-hidden when-format="pdf"}
+
 ```{ojs}
 //|echo: false
 import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons} from "148d50bd9dc1ad8f"
@@ -169,8 +167,6 @@ viewof alltwobuttons
 alltable
 ```
 
-<br>
-
 ```{ojs}
 //|echo: false
 viewof allselectedColumns
@@ -178,6 +174,7 @@ viewof alldataSummaryView
 
 ```
 
+:::
 
 
 # How to Use {#how-to-use}

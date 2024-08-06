@@ -22,7 +22,8 @@
   },
   "posts/gender-violence/index.qmd": {
     "index.html": "52335b1e",
-    "index.tex": "9ce0962a"
+    "index.tex": "9ce0962a",
+    "index.ipynb": "4fc00fa2"
   },
   "people.qmd": {
     "people.html": "e0371b86"
