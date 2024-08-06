@@ -188,5 +188,40 @@
   },
   "posts/np-data/programming-exercises.qmd": {
     "programming-exercises.html": "1e730731"
+  },
+  "posts/np-data/exercises/NP-Data-Groupby.qmd": {
+    "NP-Data-Groupby.html": "3a991bfe"
+  },
+  "posts/np-data/sidebar-version/discussion-activities.qmd": {
+    "discussion-activities.html": "f48b483e"
+  },
+  "posts/np-data/sidebar-version/programming-exercises.qmd": {
+    "programming-exercises.html": "b4cf0077"
+  },
+  "posts/np-data/sidebar-version/data-essay.qmd": {
+    "data-essay.html": "4bf0abd3"
+  },
+  "posts/np-data/exercises-python/NP-Data-Groupby-Pandas.qmd": {
+    "NP-Data-Groupby-Pandas.html": "38b8dc22",
+    "NP-Data-Groupby-Pandas.ipynb": "2732c20c"
+  },
+  "posts/np-data/exercises-python/NP-Data-Groupby-Pandas-Solutions.qmd": {
+    "NP-Data-Groupby-Pandas-Solutions.html": "94f0927a",
+    "NP-Data-Groupby-Pandas-Solutions.ipynb": "7290c413"
+  },
+  "posts/np-data/exercises-r/Intro-to-DPLYR-NP-Solutions.qmd": {
+    "Intro-to-DPLYR-NP-Solutions.html": "91c07e07"
+  },
+  "posts/np-data/exercises-r/Ggplot-Customization-NP-Solutions.qmd": {
+    "Ggplot-Customization-NP-Solutions.html": "cdbbb16b",
+    "Ggplot-Customization-NP-Solutions.ipynb": "580ce92f",
+    "Ggplot-Customization-NP-Solutions.tex": "5187358e",
+    "Ggplot-Customization-NP-Solutions.docx": "69c7b20e"
+  },
+  "posts/np-data/exercises-r/NP-Data-Groupby.qmd": {
+    "NP-Data-Groupby.html": "eb45f201"
+  },
+  "posts/np-data/exercises-r/Intro-to-DPLYR-NP.qmd": {
+    "Intro-to-DPLYR-NP.html": "36fa6c6a"
   }
 }

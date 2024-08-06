@@ -25,7 +25,7 @@ import pandas as pd
 
 # Read in CSV
 ```{python}
-aa_df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/AAPADA-Periodical-Poetry_1900-1928.csv")
+aa_df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928.-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.-Revised-Version-July-2024.csv",  quotechar='"', escapechar='\\')
 ```
 
 # View first 5 rows

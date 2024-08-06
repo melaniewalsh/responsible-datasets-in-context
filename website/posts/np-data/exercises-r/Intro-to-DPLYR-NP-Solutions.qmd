@@ -1,0 +1,96 @@
+---
+title: "Introduction to DPLYR with National Park Visitation Data (Solution)"
+date: "2024-02-26"
+categories: [dplyr, solution]
+
+#image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
+format: 
+  html: default
+format-links:
+  - html
+  - text: Other Links
+    href: Intro-to-DPLYR-NP-Solutions.R
+    icon: file-code
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: true
+---
+
+# <span style="color:red;"> Solution </span>
+
+<a href="Intro-to-DPLYR-NP-Solutions.R" download="Intro-to-DPLYR-NP-Solutions.R">Download as R Script</a>  
+
+<span style="color:green;"> [Exercise Without Solutions](Intro-to-DPLYR-NP.qmd) </span>
+
+## Load National Park Visitation data
+```{r}
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv",
+ stringsAsFactors = FALSE)
+```
+
+View the np_data dataframe by clicking on the spreadsheet icon in the Global Environment
+
+## Install tidyverse
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+## Load dplyr library
+```{r}
+#| message: false
+library(dplyr)
+```
+
+## Exercise 1
+Select 2 columns from the data using a DPLYR function.  
+Save this 2-column dataframe to the variable smaller_df.  
+Make sure to use the pipe %>% operator!  
+```{r}
+smaller_df <- np_data %>% select(Year, RecreationVisits)
+
+head(smaller_df)
+```
+
+# Question: How does the number of visits to Washington national parks compare to another state?
+
+## Exercise 2
+Filter the dataframe for only values in the state of Washington and save to the variable wa_parks
+
+```{r} 
+wa_parks <- np_data %>% filter(State == "WA")
+
+head(wa_parks)
+```
+
+## Exercise 3
+Calculate the sum total of RecreationVisits to Washington by using summarize() on the smaller dataframe wa_parks
+
+```{r}
+wa_parks %>% summarize(sum(RecreationVisits))
+
+```
+# Exercise 4
+
+Filter the dataframe for only values in another state (your choice) and save to a variable.
+Calculate the sum total of RecreationVisits to this state by using summarize(). 
+
+```{r}
+ca_parks <- np_data %>% filter(State == "CA")
+ca_parks %>% summarize(sum(RecreationVisits))
+```
+
+# Question: How do the number of visits to these 2 states compare to one another?
+
+```{r}
+(wa_parks %>% summarize(sum(RecreationVisits))) -
+ca_parks %>% summarize(sum(RecreationVisits))
+```
+

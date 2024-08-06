@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.554">
+<meta name="generator" content="quarto-1.5.47">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Sylvia Fernández and Paulina Hernandez Trejo">
 <meta name="dcterms.date" content="2024-02-26">
 
-<title>Responsible Datasets in Context - Gender Violence at the Border (1993-1998)</title>
+<title>Gender Violence at the Border (1993-1998) – Responsible Datasets in Context</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,7 +35,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -72,12 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -128,203 +126,104 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
-
 document.addEventListener("DOMContentLoaded", function () {
-
   // Function to convert string to title case
-
   function toTitleCase(str) {
-
     return str.replace(/\w\S*/g, function(txt){
-
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-
     });
-
   }
 
-
-
   // Function to generate TOC
-
   function generateTOC(tabId, tocContainerId) {
-
     const tabContent = document.querySelector(tabId);
-
     const tocContainer = document.querySelector(tocContainerId);
-
     tocContainer.innerHTML = ''; // Clear previous TOC content
-
-
 
     console.log(`Generating TOC for: ${tabId}`);
 
-
-
     // Add "Table of Contents" heading
-
     const tocHeading = document.createElement("h6");
-
     tocHeading.textContent = "Table of Contents";
-
     tocContainer.appendChild(tocHeading);
 
-
-
     // Select only h2 headers, including nested tabsets
-
     const headers = tabContent.querySelectorAll("h2");
-
     console.log(`Found ${headers.length} h2 headers`);
 
-
-
     const tocList = document.createElement("ul");
-
     headers.forEach((header) => {
-
       console.log(`Header: ${header.textContent}`);
-
       if (!header.id) {
-
         header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
-
       }
-
       const tocItem = document.createElement("li");
-
       tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
-
       const tocLink = document.createElement("a");
-
       tocLink.href = `#${header.id}`;
-
       tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
-
       tocItem.appendChild(tocLink);
-
       tocList.appendChild(tocItem);
-
     });
-
-
 
     tocContainer.appendChild(tocList);
-
   }
-
-
 
   // Gets the highest number of the layer of the tabsets
-
   function getMaxTabsetNumber() {
-
     const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
-
     let maxTabsetNumber = 1;
-
     tabPanes.forEach(tabPane => {
-
       const match = tabPane.id.match(/^tabset-(\d+)/);
-
       if (match) {
-
         const number = parseInt(match[1], 10);
-
         if (number > maxTabsetNumber) {
-
           maxTabsetNumber = number;
-
         }
-
       }
-
     });
-
     return maxTabsetNumber;
-
   }
-
   
 
-
-
   // Function to update TOC when tab changes
-
   function updateActiveTabTOC() {
-
     const maxTabsetNumber = getMaxTabsetNumber();
-
     const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
-
     const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
-
     if (activeTab) {
-
       generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
-
     }
-
   }
-
-
 
   // Create and insert TOC container if it doesn't exist
-
   function createTOCContainer() {
-
     const sidebar = document.querySelector('#quarto-margin-sidebar');
-
     if (sidebar) {
-
       const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
-
       if (!existingTOC) {
-
         const tocContainer = document.createElement('div');
-
         tocContainer.id = 'quarto-margin-sidebar-toc';
-
         tocContainer.style.position = 'relative';
-
         tocContainer.style.padding = '10px';
-
         // tocContainer.style.border = '1px solid #ddd';
-
         sidebar.appendChild(tocContainer);
-
       }
-
     }
-
   }
 
-
-
   // Initialize TOC container and run the TOC generation
-
   createTOCContainer();
-
   updateActiveTabTOC();
 
-
-
   // Listen for tab changes to regenerate the TOC
-
   document.addEventListener('shown.bs.tab', function(event) {
-
     setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
-
   });
-
 });
 
-
-
 </script>
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
@@ -348,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -358,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
@@ -387,8 +286,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+            <div class="quarto-navbar-tools">
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -428,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function () {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
         
     </div>
 <!-- main -->
@@ -506,7 +404,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="65" data-source-offset="-7"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="65" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 64;"><span id="cb6-65"><a href="#cb6-65" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
 <span id="cb6-66"><a href="#cb6-66" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display hidden">
@@ -532,7 +430,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="74" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>viewof dataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="74" data-source-offset="-23"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>viewof dataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -877,7 +775,7 @@ different variations and levels of violence, intersectionality of present, it sh
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="3" data-source-offset="-10"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<div class="sourceCode cell-code hidden" id="cb14" data-startfrom="3" data-source-offset="-9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display hidden">
@@ -903,7 +801,7 @@ different variations and levels of violence, intersectionality of present, it sh
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb16" data-startfrom="2" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb16" data-startfrom="2" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 1;"><span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1024,212 +922,110 @@ different variations and levels of violence, intersectionality of present, it sh
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
 <script>
-
 $(document).ready(function () {
-
     // Assign data-tab-name attribute based on the inner text of the tab links
-
     $('.nav-tabs .nav-link').each(function () {
-
         var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
-
         $(this).attr('data-tab-name', tabName);
-
     });
-
-
 
     function activaTab(tabName, container = document) {
-
         var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
-
         if (tabLink.length) {
-
             tabLink.tab('show');
-
             tabLink.trigger('click'); // Explicitly trigger the click event
-
         }
-
     }
-
-
 
     function scrollToAnchor(anchorId) {
-
         var element = $('[data-anchor-id="' + anchorId + '"]');
-
         if (element.length) {
-
             $('html, body').animate({
-
                 scrollTop: element.offset().top
-
             }, 500);
-
         }
-
     }
-
-
 
     function activateTabAndHeaderFromUrl() {
-
         var urlParams = new URLSearchParams(window.location.search);
-
         var tabName = urlParams.get('tab');
-
         var anchorId = urlParams.get('anchor');
-
         var nestedTabName = urlParams.get('nested-tab');
 
-
-
         if (tabName) {
-
             activaTab(tabName);
-
             if (anchorId) {
-
                 setTimeout(function() {
-
                     scrollToAnchor(anchorId);
-
                 }, 100); // Delay to ensure tab content is visible
-
             }
-
             if (nestedTabName) {
-
                 setTimeout(function() {
-
                     var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
-
                     activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
-
                 }, 200); // Delay to ensure parent tab content is visible
-
             }
-
         } else {
-
             // Default to the first tab if no tab is specified
-
             var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
-
             activaTab(firstTabName);
-
         }
-
     }
-
-
 
     function clearPreviousAnchor() {
-
         var url = new URL(window.location.href);
-
         url.hash = ''; // Clear the hash part of the URL
-
         history.replaceState(null, null, url.toString());
-
     }
 
-
-
     // Activate the tab and scroll to anchor based on the URL when the page loads
-
     activateTabAndHeaderFromUrl();
 
-
-
     // Update URL query parameters when a tab is shown
-
     $('.nav-tabs a').on('shown.bs.tab', function (e) {
-
         clearPreviousAnchor(); // Clear any previous anchors before switching tabs
-
         var tabName = $(e.target).attr('data-tab-name');
-
         var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
-
         var url = new URL(window.location.href);
 
-
-
         if (parentTabPane) {
-
             url.searchParams.set('tab', parentTabPane);
-
             url.searchParams.set('nested-tab', tabName);
-
         } else {
-
             url.searchParams.set('tab', tabName);
-
             url.searchParams.delete('nested-tab');
-
         }
 
-
-
         url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
-
         history.replaceState(null, null, url.toString());
-
     });
-
-
 
     // Re-activate the tab and scroll to anchor if the query parameters change
-
     $(window).on('popstate', function () {
-
         activateTabAndHeaderFromUrl();
-
     });
-
 });
-
 </script>
-
 <script>
-
             document.addEventListener("DOMContentLoaded", function() {
-
               // Select the original footnotes container
-
               var originalFootnotes = document.querySelector(".footnotes");
 
-
-
               // Select the custom footnotes placeholder
-
               var customFootnotes = document.getElementById("custom-footnotes");
 
-
-
               // If both elements exist, move the footnotes
-
               if (originalFootnotes && customFootnotes) {
-
                 customFootnotes.innerHTML = originalFootnotes.innerHTML;
 
-
-
                 // Optionally, remove the original footnotes
-
                 originalFootnotes.remove();
-
               }
-
             });
-
           </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGRhdGFTZXQsIHRhYmxlQ29udGFpbmVyLCB0YWJsZSwgdGFibGVTdHlsZXMsIHZpZXdvZiBzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiB0d29idXR0b25zfSBmcm9tIFwiOTMwMzViMWM0ZmUwMmVlZFwiXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBkYXRhU2V0XHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlQ29udGFpbmVyXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB0d29idXR0b25zXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlXHJcbmh0bWxgPGxpbmsgaHJlZj0naHR0cHM6Ly91bnBrZy5jb20vdGFidWxhdG9yLXRhYmxlc0A1LjMuMS9kaXN0L2Nzcy90YWJ1bGF0b3IubWluLmNzcycgcmVsPSdzdHlsZXNoZWV0JyAvPlxyXG50YWJ1bGF0b3IubWluLmNzc2BcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHNlbGVjdGVkQ29sdW1uc1xyXG52aWV3b2YgZGF0YVN1bW1hcnlWaWV3XHJcblxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQge3ZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXcsIHZpZXdvZiBhbGx0d29idXR0b25zLCB2aWV3b2YgYWxsZGF0YVNldCwgYWxsdGFibGVDb250YWluZXIsIGFsbHRhYmxlLCBhbGx0YWJsZVN0eWxlcywgdmlld29mIGFsbHNlbGVjdGVkQ29sdW1uc30gZnJvbSBcIjY2MjMxNWIwNjJkNjY4ZmJcIlxyXG5cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbGRhdGFTZXRcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC05IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYWxsdGFibGVDb250YWluZXJcclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0xMCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBhbGx0d29idXR0b25zXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTEiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhbGx0YWJsZVxyXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cclxudGFidWxhdG9yLm1pbi5jc3NgXHJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zXHJcbnZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXdcclxuXHJcbiJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGRhdGFTZXQsIHRhYmxlQ29udGFpbmVyLCB0YWJsZSwgdGFibGVTdHlsZXMsIHZpZXdvZiBzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiB0d29idXR0b25zfSBmcm9tIFwiOTMwMzViMWM0ZmUwMmVlZFwiXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgZGF0YVNldFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidGFibGVDb250YWluZXJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiB0d29idXR0b25zXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ0YWJsZVxuaHRtbGA8bGluayBocmVmPSdodHRwczovL3VucGtnLmNvbS90YWJ1bGF0b3ItdGFibGVzQDUuMy4xL2Rpc3QvY3NzL3RhYnVsYXRvci5taW4uY3NzJyByZWw9J3N0eWxlc2hlZXQnIC8+XG50YWJ1bGF0b3IubWluLmNzc2BcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBzZWxlY3RlZENvbHVtbnNcbnZpZXdvZiBkYXRhU3VtbWFyeVZpZXdcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiaW1wb3J0IHt2aWV3b2YgYWxsZGF0YVN1bW1hcnlWaWV3LCB2aWV3b2YgYWxsdHdvYnV0dG9ucywgdmlld29mIGFsbGRhdGFTZXQsIGFsbHRhYmxlQ29udGFpbmVyLCBhbGx0YWJsZSwgYWxsdGFibGVTdHlsZXMsIHZpZXdvZiBhbGxzZWxlY3RlZENvbHVtbnN9IGZyb20gXCI2NjIzMTViMDYyZDY2OGZiXCJcblxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbGRhdGFTZXRcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEwIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHR3b2J1dHRvbnNcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTEiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhbGx0YWJsZVxuaHRtbGA8bGluayBocmVmPSdodHRwczovL3VucGtnLmNvbS90YWJ1bGF0b3ItdGFibGVzQDUuMy4xL2Rpc3QvY3NzL3RhYnVsYXRvci5taW4uY3NzJyByZWw9J3N0eWxlc2hlZXQnIC8+XG50YWJ1bGF0b3IubWluLmNzc2BcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgYWxsZGF0YVN1bW1hcnlWaWV3XG5cbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1259,150 +1055,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
-    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
-    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
-    let newTheme = '';
-    if(darkModeDefault) {
-      newTheme = isAlternate ? baseTheme : alternateTheme;
-    } else {
-      newTheme = isAlternate ? alternateTheme : baseTheme;
-    }
-    const changeGiscusTheme = () => {
-      // From: https://github.com/giscus/giscus/issues/336
-      const sendMessage = (message) => {
-        const iframe = document.querySelector('iframe.giscus-frame');
-        if (!iframe) return;
-        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
-      }
-      sendMessage({
-        setConfig: {
-          theme: newTheme
-        }
-      });
-    }
-    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
-    if (isGiscussLoaded) {
-      changeGiscusTheme();
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  const darkModeDefault = false;
-  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-    toggleGiscusIfUsed(toAlternate, darkModeDefault);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1418,18 +1070,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1461,7 +1102,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
   const viewSource = window.document.getElementById('quarto-view-source') ||
                      window.document.getElementById('quarto-code-tools-source');
   if (viewSource) {
@@ -1520,7 +1183,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -2324,7 +1987,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb17-483"><a href="#cb17-483" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-484"><a href="#cb17-484" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-485"><a href="#cb17-485" aria-hidden="true" tabindex="-1"></a>:::</span>
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

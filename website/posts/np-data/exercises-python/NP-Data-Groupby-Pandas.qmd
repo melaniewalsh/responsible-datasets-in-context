@@ -1,0 +1,57 @@
+---
+title: "Pandas Groupby with National Park Visitation Data"
+date: "2024-08-01"
+categories: [pandas, exercise, solution]
+format: 
+  html: default
+  ipynb: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+execute:
+  eval: true
+---
+
+# Load the data
+
+```python
+import pandas as pd
+
+np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv")
+```
+
+# Exercise 1
+
+What is the average number of visits for *each state*?
+
+Save as `avg_state_visits` and then view the resulting dataframe.
+
+```python
+Your code here
+```
+
+Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?
+
+# Exercise 2
+
+What is the average number of visits for *each National Park*?
+
+Save as `avg_park_visits` and then view the resulting dataframe.
+
+```python
+Your code here
+```
+
+Discuss/consider: Which National Park has the most and least average visits? What patterns or surprises do you notice?
+
+# Exercise 3: 
+
+How many National Parks are there in *each state*?
+
+Save your answer as `distinct_parks`.
+
+```python
+Your code here
+```
+
+Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?

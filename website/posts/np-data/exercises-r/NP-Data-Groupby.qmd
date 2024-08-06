@@ -1,0 +1,59 @@
+---
+title: "Groupby with National Park Visitation Data"
+date: "2024-08-01"
+categories: [dplyr, exercise]
+format: html
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: true
+---
+# Load the data
+
+```{r} 
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv", stringsAsFactors = FALSE)
+```
+
+# Load dplyr library
+```{r warning="ignore"} 
+library("dplyr")
+```
+# Exercise 1
+
+What is the average number of visits for *each state*?
+
+Save as `avg_state_visits` and then view the resulting dataframe.
+
+```{r} 
+# Your code here
+```
+
+Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?
+
+# Exercise 2
+What is the average number of visits for *each National Park*?
+
+Save as `avg_park_visits` and then view the resulting dataframe.
+
+```{r} 
+# Your code here
+```
+
+Discuss/consider: Which National Park has the most and least average visits? What patterns or surprises do you notice?
+
+# Exercise 3: 
+How many National Parks are there in *each state*?
+
+Save your answer as `distinct_parks`.
+
+```{r} 
+# Your code here
+```
+
+Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?
+

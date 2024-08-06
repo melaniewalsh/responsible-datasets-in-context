@@ -1,0 +1,1387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.47">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>data-essay – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+  
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script type="module" src="../../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../team.html">
+ <span class="dropdown-text">Team</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../mission.html">
+ <span class="dropdown-text">Mission</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+<!-- <!-- ---
+title: "U.S. National Park Visit Data (1979-2023) (No Tabs Version)"
+author: Melanie Walsh and Os Keyes
+format: 
+  html:
+    css: ../../styles.css
+    toc: true
+    toc-location: right
+    toc-depth: 3
+    # page-layout: full
+    #toc: true
+  # ipynb: default
+  pdf: default
+  #docx: default
+  #r: default
+page-layout: article
+listing:
+  id: exercise-posts
+  contents: exercises
+  exclude:
+    categories: "dataset"
+  sort: "date desc"
+  type: table
+  fields: [date, title, categories]
+  categories: false
+  sort-ui: false
+  filter-ui: true
+  image-height: 200px
+date: "2024-03-09"
+categories: [nature, environment, government, uncertainty, missing-data]
+image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
+format-links: [ipynb, pdf, docx]
+code-fold: true
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+sidebar: np-data
+bibliography: references/references.bib -->
+<hr>
+<!-- 
+::: {.callout-warning icon=false}
+# Find All Materials in "Guide"
+To access all materials associated with this dataset, be sure to check the "Guide" in the sidebar.
+:::
+
+## Introduction
+
+This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to the present. The NPS also collects visitation and use data about other park units, such as [national battlefields, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
+
+::: {.callout-tip icon=false}
+## Brief Survey
+If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
+:::
+
+<br>
+<!-- Importing from https://observablehq.com/d//ac13d95a907715bf (forked, collaborative) -->
+<pre class="{ojs}"><code>//|echo: false
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof tableOptions, tableStyles} from "ac13d95a907715bf"</code></pre>
+<pre class="{ojs}"><code>//|echo: false
+viewof dataSet
+viewof dataUrl
+viewof tableOptions</code></pre>
+<p><br></p>
+<pre class="{ojs}"><code>//|echo: false
+tableContainer</code></pre>
+<pre class="{ojs}"><code>//|echo: false
+//|output: false
+table
+html`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;
+tabulator.min.css`</code></pre>
+<p><br></p>
+<pre class="{ojs}"><code>//|echo: false
+viewof selectedColumns
+viewof dataSummaryView
+</code></pre>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creative Commons License
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p xmlns:cc="http://creativecommons.org/ns#">
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a>
+</p>
+</div>
+</div>
+<p>The National Park datasets included on this website are drawn from data published by the National Park Service. Most (but not all) of the contextual information included here draws from material published by the National Park Service, as well. However, the original data is made available in an <a href="https://irma.nps.gov/Stats/">NPS data portal</a> that is relatively hard to find, and the documentation is distributed across many different web pages, PDFs, and other documents. Thus, we believe it is valuable to publish a synthesized verison of the documentation here and to tell a narrative version of how this data came to be, what its flaws are, and why it matters.</p>
+<p>The datasets were curated and published by Melanie Walsh, and the data essay was written by Os Keyes and Melanie Walsh.</p>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<p>The very first National Park —&nbsp;Yellowstone National Park, in Wyoming —&nbsp;was signed into law by President Ulysses S. Grant in 1872. A handful of other parks —&nbsp;Sequoia, Yosemite, Mt. Rainier, Crater Lake&nbsp;— joined the system in the next several decades. While the National Parks were originally created to protect precious, beautiful lands and to make them accessible to the public — a noble goal — it’s important to remember that these lands were taken, often forcibly, from Native American people who already owned, lived, and worked on them <span class="citation" data-cites="beauchamp_beyond_2020">[@beauchamp_beyond_2020]</span>. Today, there are still calls for the NPS to <a href="https://www.theatlantic.com/magazine/archive/2021/05/return-the-national-parks-to-the-tribes/618395/">return the lands of the National Parks to Indigenous people.</a></p>
+<p>Scholars have similarly shown that early conservation movements, which spurred the development of the National Parks, were troublingly intertwined with racism and eugenics movements <span class="citation" data-cites="beauchamp_beyond_2020">[@beauchamp_beyond_2020]</span>. These prejudiced origins, combined with continuing forms of environmental racism, have contributed to the marginalization of people of color and other minorities in the parks; research has shown that white people visit the parks much more than other demographic groups<span class="citation" data-cites="weber_why_2013 alba_covid-19s_2022 floyd_coming_2002">[@weber_why_2013; @alba_covid-19s_2022; @floyd_coming_2002]</span>. The National Parks are not equally accessible to everyone in the same way, and these exclusions shape the park visitation data even before it’s counted.</p>
+<p>Visit counting, according to the NPS, started a long time ago — <a href="https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm">as early as 1904</a> (more than 10 years before the National Park Service itself was officially created). However, at this time, their data collection methods were mostly <a href="https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm">informal, inconsistent, and low-tech</a>. But over the next century, the NPS worked hard to make their methods more reliable, consistent, and technologically advanced.</p>
+<p>A big catalyst for the NPS getting serious about data collection was a new law. In 1965, the U.S. Congress passed <a href="https://www.everycrsreport.com/reports/RL33531.html">The Land and Water Conservation Fund Act of 1965</a>. This act created a new source of government money specifically dedicated to protecting natural resources (i.e.&nbsp;to buying up more land and water so that condo developers couldn’t do it first) and to expanding outdoor recreation infrastructure in the U.S.</p>
+<p>Because this act stipulated that the amount of money allocated to each area should be <a href="https://www.nps.gov/subjects/socialscience/statistics-history.htm">“proportional to visitor use,”</a> the NPS buckled down on counting visitor use. Over the next twenty years, they accordingly <a href="https://www.nps.gov/subjects/socialscience/statistics-history.htm">“developed and institutionalized a formal system for collecting, compiling and reporting visitor use data.”</a></p>
+<p>While today’s National Park data collection system is more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations. These shortcomings are largely unavoidable. Think about it. Would it be possible to record *every* *single* *visit* to *every* *single* National Park… *ever*? We’re talking about 60 different parks and dozens of different geographic areas (mountains, volcanoes, deserts, canyons, wetlands, forests, islands, and more); over 40 years; in countless changing weather conditions; amidst various economic fluctuation and National Park staff support and funding; and hundreds of millions of people who are walking, hiking, backpacking, driving, boating, biking, skiing, and more. It’s just not possible. However, we believe this data is useful to study precisely for this reason: because it helps demonstrate that <strong><em>data never reflects reality precisely</em></strong>.</p>
+<p>And yet the National Park visit data also demonstrates why collecting and analyzing data, even if it is flawed and approximate, is sometimes worthwhile — if (big if) you fully understand the data’s flaws, limitations, and history, and if you incorporate these considerations into all subsequent analyses, interpretations, and takeaways.</p>
+</section>
+<section id="where-did-the-data-come-from-who-collected-it" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-the-data-come-from-who-collected-it">Where did the data come from? Who collected it?</h2>
+<p>The National Park data on this website was originally organized and published by the <a href="https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm">NPS Social Science Program</a>, a specific program tasked with coordinating visitor statistics across the parks. Thousands of staff members across all 63 parks were also involved in the data collection process.</p>
+<p>The original data was made available through the NPS’s <a href="https://irma.nps.gov/Stats/">Visitor Use Statistics data portal</a>. Through this portal, you can generate reports and download data for <a href="https://irma.nps.gov/Stats/Reports/National">many different park visitation categories</a> and time periods&nbsp;—&nbsp;at both national and individual park levels. To download the data included here, we first selected <a href="https://irma.nps.gov/Stats/Reports/National">“National Reports”</a> in the data portal, and we then selected the <a href="https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)">“Query Builder for Public Use Statistics (1979 - Last Calendar Year)”</a> report type.</p>
+<div id="fig-query-builder" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-query-builder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/query-builder-csv-screenshot.png" class="img-fluid figure-img" style="width:90.0%" alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-query-builder-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Selections for National Park visit data generated with <a href="https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)">“Query Builder for Public Use Statistics (1979 - Last Calendar Year)”</a>
+</figcaption>
+</figure>
+</div>
+<p>For “Park Types,” we selected only “National Parks”; for “Years,” we selected all possible years (1979-2023); for “Regions,” we selected all possible regions; for “Field Type,” we selected only “Recreation Visits” (excluding “NonRecreation Visits,”” “Recreation Hours,” “NonRecreation Hours,” “Concessioner Lodging,” “Concessioner Camping,” “Tent Campers,” “RV Campers,” “Backcountry Campers,” “NonRecreation Overnight Stays,” and “Miscellaneous Overnight Stays”); for “Additional Fields,” we selected “State” and “Region”. We also selected the option of viewing the report as an annual summary of visit counts (as opposed to monthly visit counts).</p>
+<p>If you choose to download this report as a CSV file, it will unfortunately not look exactly like the report pictured in <a href="#fig-query-builder" class="quarto-xref">Figure&nbsp;1</a>; instead, the CSV will include all visit and use types, and it will include visit/use information by month rather than aggregated by year. When I have compiled this data to share with my students in the past, I have sometimes downloaded the CSV file and then removed the columns that I’m not interested in and aggregated the data by year programatically. In other cases, I have simply copied and pasted the annual summary report into a CSV file.</p>
+<p>In either case, it is usually necessary to explicitly transform the format of the “RecreationVisits” column into a number and to remove the commas that separate the numbers by thousands (a transformation that you can do with spreadsheet applications like Excel or Google Sheets or with a programming language) Finally, we published the data to this project’s GitHub repository for easier storage and access.</p>
+</section>
+<section id="why-was-the-data-collected-how-is-the-data-used" class="level2">
+<h2 class="anchored" data-anchor-id="why-was-the-data-collected-how-is-the-data-used">Why was the data collected? How is the data used?</h2>
+<p>The NPS collects visit data partly because the government requires it, as we’ve already discussed. But the NPS also uses the visit data for other internal purposes —&nbsp;to determine which parks need more staff members and programming, which hiking trails need more maintenance, or which visitor centers need more bathrooms.</p>
+<p>The visit data also helps the communities and businesses surrounding the parks understand how they can best provide and share resources, like emergency vehicles, sanitation, and water. If millions more hikers started to come to Mt. Rainier, for example, that would be a very important thing for the surrounding community to know. To consider just one consequence of this increase, those hikers would likely need more ambulance trips and rescue helicopters, and you wouldn’t want visitors to the local National Park booking up all the emergency vehicles in town.</p>
+<div id="fig-economic-benefit" class="quarto-float quarto-figure quarto-figure-center anchored" alt="2021 report on NPS economic impact — [graphic by NPS](https://www.nps.gov/orgs/1207/vse2020.htm)" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-economic-benefit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%" alt="2021 report on NPS economic impact — [graphic by NPS](https://www.nps.gov/orgs/1207/vse2020.htm)">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-economic-benefit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: 2021 report on NPS economic impact // <a href="https://www.nps.gov/orgs/1207/vse2020.htm">Graphic by NPS</a>
+</figcaption>
+</figure>
+</div>
+<p>The visitation data also helps the NPS estimate the beneficial impact—economic and otherwise—that the parks have on nearby communities and the nation at large (<a href="#fig-economic-benefit" class="quarto-xref">Figure&nbsp;2</a>). These estimations are important because they help the parks advocate for more funding, support, and attention.</p>
+<p>The data is also frequently reported on by journalists, who use it to highlight the most popular parks and noteworthy visitation records, as well as to point their readers to parks where they might be able to find some peace and quiet (see articles in <a href="https://www.thrillist.com/news/nation/most-visited-national-parks-ranked-nps">Thrillist</a>, <a href="https://www.smithsonianmag.com/smart-news/most-and-least-popular-national-parks-2023-180983850/">Smithsonian</a>, and <a href="https://www.cnn.com/travel/article/most-visited-us-national-park-sites-2022/index.html">CNN</a>).</p>
+</section>
+<section id="whats-in-the-data-what-counts-as-a-visit" class="level2">
+<h2 class="anchored" data-anchor-id="whats-in-the-data-what-counts-as-a-visit">What’s in the data? What “counts” as a visit?</h2>
+<p>Now that we know how the data is used, let’s dive into the data itself. What’s actually in this dataset, and what “counts” as a visit?</p>
+<p>To get started, let’s load the dataset and examine a random sample of rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset, randomly sample 10 rows</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>np_data <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        ParkName        Region State Year RecreationVisits
+1                 Canyonlands NP Intermountain    UT 1997           432697
+2          Theodore Roosevelt NP       Midwest    ND 1987           424846
+3                    Biscayne NP     Southeast    FL 1987           607968
+4          Theodore Roosevelt NP       Midwest    ND 2013           545090
+5                 Joshua Tree NP  Pacific West    CA 1998          1410312
+6  Gates of the Arctic NP &amp; PRES        Alaska    AK 2018             9591
+7             Lassen Volcanic NP  Pacific West    CA 2015           468092
+8                     Glacier NP Intermountain    MT 1980          1474578
+9          Theodore Roosevelt NP       Midwest    ND 2007           456588
+10                Yellowstone NP Intermountain    WY 2020          3806306</code></pre>
+</div>
+</div>
+<p>Here we see five columns – “ParkName”, “Region”, “State”, “Year”, and “RecreationVisits.” The first four are pretty self-explanatory, but why is the fifth labelled “RecreationVisits” rather than “Visits” or “Visitors”?</p>
+<p>It turns out that the NPS distinguishes between <em>kinds</em> of visits to their parks. There are “recreation” visits —&nbsp;when people are visiting the parks for fun, vacation, exercise, etc. — and there are “non-recreation” visits —&nbsp;when people are visiting the parks for other reasons. For example, some people need to travel <em>through</em> the parks, either because a highway runs through the park, or because they live on “inholdings” (private property that is surrounded by a National Park on all sides). Other people are visiting the parks because they have actual business to conduct in the parks.</p>
+<p>Here’s a <a href="https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm">full list of “reportable non-recreation” visits</a>according to the NPS:</p>
+<blockquote class="blockquote">
+<ul>
+<li>Persons going to and from inholdings across significant parts of park land;</li>
+<li>Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;</li>
+<li>Trades-people with business in the park;</li>
+<li>Any civilian activity a part of or incidental to the pursuit of a gainful occupation (e.g., guides);</li>
+<li>Government personnel (other than NPS employees) with business in the park;</li>
+<li>Citizens using NPS buildings for civic or local government business, or attending public hearings;</li>
+<li>Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g.&nbsp;meteorological research).</li>
+</ul>
+</blockquote>
+<p>What this means is that “recreation visit” counts leave out a lot of people. This is worth thinking about when we evaluate what the numbers mean, and how the NPS achieves them (which we’ll discuss more below).</p>
+<p>It also means that they’re not counting individual people. This data doesn’t tell us anything <em>about</em> the people who are visiting.</p>
+<p>(Note: The Pine Ridge Indian Reservation in South Dakota is located inside Badlands National Park (the visitor center is on the reservation), which could be worth discussing here.)</p>
+</section>
+<section id="how-was-the-data-collected" class="level2">
+<h2 class="anchored" data-anchor-id="how-was-the-data-collected">How was the data collected?</h2>
+<p>So how does the NPS actually count these recreation visits? Take a moment and see if you come up with a few guesses…</p>
+<p>It turns out that each park counts visits differently. And at many parks, <em>each entrance</em> at each park even counts visits differently.</p>
+<p>If you go to the <a href="https://irma.nps.gov/Stats/Reports/Park">“Park Reports”</a> tab in the NPS Data Portal, you can look up an individual park and download a PDF file called “Visitor Use Counting Procedures,” which details exactly what procedures they use to count visits at this park. Most of the parks have several PDFs because their counting procedures have changed many times over the years!</p>
+<p>To count visits, most parks use a combination of automatic traffic counters and manual counting—that is, staff members who use their eyeballs to literally count the number of people arriving by foot, bike, bus, cross-country skis, snowmobile, boat, canoe, etc. Perhaps most interesting, they usually take those counts and then apply a specifically designed mathematical formula to arrive at the most accurate estimate of number of recreation visits — adding, subtracting, and multiplying the counts based on a variety of factors, such as the season or the entrance (e.g.&nbsp;assuming that more people would likely be arriving in a car in the summer months at the most popular gate than in the winter months at the least popular gate) or how many non-recreation visits they expect are a confounding factor.</p>
+<p><object data="other_docs/Everglades_Visitor-Use-Counting-Procedures_2023.pdf" type="application/pdf" width="100%" height="500"><iframe src="other_docs/Everglades_Visitor-Use-Counting-Procedures_2023.pdf" width="100%" height="500">This browser does not support PDFs. Please download the PDF to view it: <a href="other_docs/Everglades_Visitor-Use-Counting-Procedures_2023.pdf">Download PDF</a></iframe></object></p>
+<p>For example, at Everglades National Park, at the Shark Valley Entrance, there is a pneumatic tube traffic counter that counts the number of cars that pass over it. The staff members then apply different mathematical operations to this number in order to arrive at what they think is the most accurate estimate of recreation visits:</p>
+<blockquote class="blockquote">
+<p>The traffic count is divided by 2 to account for entry and exit. The adjusted traffic count is reduced by the number of buses, the number of bicycles counted when the entrance station is open, 127 bicycles per month to account for after-hours use, and by 200 non-recreation vehicles per month October through May and 100 non-recreation vehicles per month June through September. The traffic count is further reduced by 350 non-reportable (NPS) vehicles per month. The reduced count is multiplied by 2.17 persons per vehicle.</p>
+</blockquote>
+<p>What’s more, the devices that the NPS uses to count visits, like pneumatic tube counters or induction loop counters (magnetised coils of wire that are installed under a road, and that “trip” when a vehicle passes over them) sometimes break.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Metrocount_vehicle_classifier_system_on_B3033_-_geograph.org.uk_-_1033728.jpg?20110223182337" class="img-fluid figure-img" width="300"></p>
+<figcaption>An example of a pneumatic tube traffic counter, installed above the road</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/8c/Inductance_detectors.jpg" class="img-fluid figure-img" width="300"></p>
+<figcaption>An example of an induction loop, installed beneath a road (making it harder to detect when it breaks!)</figcaption>
+</figure>
+</div>
+<p>For example, <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA">according to the NPS data logs</a>, the induction loop counter at one of the main entrances at Crater Lakes National Park broke in 2012 and wasn’t repaired for at least a year:</p>
+<blockquote class="blockquote">
+<p>2/1/2012 | The Traffic Counter at Annie Springs Entrance Station was not functioning properly and therefore we have a count of zero.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>3/1/2012 | Broken counter at Annie Springs Entrance, unable to record numbers.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>4/1/2012 | Traffic counter was broken for the beginning of the month and may have low numbers.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>10/1/2012 | Counts estimated by Butch</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>11/1/2012 | TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>12/1/2012 | TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>1/1/2013 | Traffic count at Annie Springs estimated.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>2/1/2013 | Traffic count at Annie Springs estimated.</p>
+</blockquote>
+<p>You can see a similar, but more severe, example at Carlsbad Caverns National Park, where it appears that visits have been declining since around 2019:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which let's us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggthemes)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># And specify the colorblind palette</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>cb_palette <span class="ot">&lt;-</span> <span class="fu">colorblind_pal</span>()(<span class="dv">8</span>)</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn off scientific notation</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Carlsbad Caverns National Park</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>carlsbad_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Carlsbad Caverns NP"</span>)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> carlsbad_data) <span class="sc">+</span> </span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">2</span>]) <span class="sc">+</span> </span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data-essay_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>This decline may, in part, be due to the COVID-19 pandemic.</p>
+<p>But the NPS logs also show that the main induction loop counter at Carlsbad Caverns <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CAVE">broke in 2019 and has remained broken for multiple years</a>:</p>
+<blockquote class="blockquote">
+<p>9/1/2019 | Traffic counter apparently has been broken since July. Traffic counts are estimated.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>4/1/2020 | Main road traffic counter is broken, I have estimated the count.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>12/1/2020 | Corona virus closure that began in November ended on December 4th. Main road traffic counter remains broken.Possible problem with Loop Road counter.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>4/1/2022 Main road traffic counter remains broken. Rattlesnake Springs traffic counter seems to be off, I will henceforth provide estimates.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>9/1/2023 | Loop Road and backcountry closed due to flood damage. Slaughter Canyon Cave remains closed Traffic counter on main road remains broken.</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Activity 1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Now that we’ve talked about how data is collected (and the fragility of some of those methods), it’s a good time to think about how even the same method, deployed at different places, might be differently unreliable. For more, see <a href="?tab=discussion-%26-activities#activity-1-1">Activity 1</a>.</p>
+</div>
+</div>
+</section>
+<section id="what-data-is-missing-how-is-uncertainty-handled" class="level2">
+<h2 class="anchored" data-anchor-id="what-data-is-missing-how-is-uncertainty-handled">What data is missing? How is uncertainty handled?</h2>
+<p>If you filter the data and examine the least visited National Parks across these many decades, you’ll notice that there are some parks that had <em>zero</em> visitors in a given year.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for minimum RecVisits</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>least_visited <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RecreationVisits <span class="sc">==</span> <span class="fu">min</span>(RecreationVisits))</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows for least visited</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>num_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(least_visited)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show some of them</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>least_visited  <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fu">min</span>(<span class="dv">10</span>, num_rows))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         ParkName       Region State Year RecreationVisits
+1 National Park of American Samoa Pacific West    AS 2003                0
+2                 Kobuk Valley NP       Alaska    AK 2014                0
+3                Katmai NP &amp; PRES       Alaska    AK 1995                0
+4                 Kobuk Valley NP       Alaska    AK 2015                0</code></pre>
+</div>
+</div>
+<p>You might guess that there are no visits in these years because these parks are all located in remote places that are hard to get to, like rural Alaska or American Samoa.</p>
+<p>If we look at the visitation trends for Kobuk Valley National Park, for example, we can see that a couple of years with zero visits isn’t a huge aberration:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> kobuk_data) <span class="sc">+</span> </span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits ), <span class="at">color =</span> cb_palette[<span class="dv">6</span>]) <span class="sc">+</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="data-essay_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>But it turns out that in 2014 and 2015, Kobuk Valley National Park actually didn’t count visitors at all.</p>
+<p>If we look at the <a href="https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=KOVA">visitation reports for Kobuk Valley in 2014</a>, they say that “the park is developing a new counting system and has made the decision not to report visitor counts until the new system is in place.” But even though they didn’t count visitors at all, they still recorded a zero in those two years. This hard number makes it seem conclusive, like there really were zero people people who stepped onto the park lands in those years.</p>
+<p>In 2015, John Quinley, the Alaska regional spokesperson for the NPS, spoke with the Anchorage Daily News about this issue, and he admitted that “it might have been better if park statisticians had put something other than a zero in the visitor box for 2014 — say maybe a question mark.”</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Discussion
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Why would you or wouldn’t you want to record a question mark in this dataset? What else could you use to record uncertainty?</p>
+</div>
+</div>
+<p>The decision not to record visits in certain years seems reasonable on its face, but we’ve also seen a <em>lot</em> of parks in more highly-frequented areas that, when faced with a similar situation, chose to provide an estimate for a certain year based on average counts from previous years, rather than simply declare that nobody visited. This matters because, as we’ve discussed, there are financial, political, and social ramifications of these visit count numbers.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>To-do</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" role="list">
+
+</div>
+</section>
+<section id="tabset-1-2" class="level1">
+<h1>Explore the Data</h1>
+<pre class="{ojs}"><code>//| echo: false
+//| output: false
+visit_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", d3.autoType)
+
+use_data = d3.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_Use_1979-2023_By-Month.csv", d3.autoType)
+</code></pre>
+<pre class="{ojs}"><code>//| echo: false
+//| output: false
+
+
+filtered = visit_data.filter(function(penguin) {
+  return bill_length_min &lt; penguin.bill_length_mm &amp;&amp;
+         islands.includes(penguin.island);
+})</code></pre>
+<pre class="{ojs}"><code>//| echo: false
+color = d3
+  .scaleLinear()
+  .domain([5000000, 1000000, 100000])
+  .range(["#cafcc2", "#fce7c2", "#eb9494"])</code></pre>
+<p><br></p>
+<section id="u.s.-national-park-visits-1979-2023" class="level2">
+<h2 class="anchored" data-anchor-id="u.s.-national-park-visits-1979-2023">U.S. National Park Visits —&nbsp;1979-2023</h2>
+<pre class="{ojs}"><code>//| echo: false
+viewof search = Inputs.search(visit_data, {
+  placeholder: "Search"
+})</code></pre>
+<p><br></p>
+<pre class="{ojs}"><code>//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(search, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/
+    Year: x =&gt; d3.timeFormat(x),
+    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`
+  }
+})</code></pre>
+<p> ## U.S. National Park Use (Monthly) —&nbsp;1979-2023</p>
+<pre class="{ojs}"><code>//| echo: false
+viewof use_search = Inputs.search(use_data, {
+  placeholder: "Search"
+})</code></pre>
+<p><br></p>
+<pre class="{ojs}"><code>//| echo: false
+
+/*Inputs.table(search, data)*/
+
+Inputs.table(use_search, {
+  layout: "fixed",
+  rows: 50,
+  sort: "Year",
+  reverse: true,
+  format: {
+    /*RecreationVisits: x =&gt; d3.format('.2s')(x),*/
+    Year: x =&gt; d3.timeFormat(x),
+    RecreationVisits: x =&gt; html`&lt;div style='background:${color(x)}'&gt;${d3.format('.2s')(x)}&lt;/div&gt;`
+  }
+})</code></pre>
+</section>
+</section>
+<section id="exercises" class="level1">
+<h1>Exercises</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="exercise-posts">
+
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+</div>
+</div>
+</section>
+<section id="discussion-and-activities" class="level1">
+<h1>Discussion &amp; Activities</h1>
+<section id="activity-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="activity-1-1">Activity 1</h2>
+<p>It is inevitable that the devices that the National Park Service uses to count visits to the parks —&nbsp;like induction loop counters installed on the road —&nbsp;will break. But they will also get <em>fixed</em> at different rates, in different locations, as we could see in the case of Crater Lake National Park (where a counter was fixed quickly) and Carlsbad Caverns National Park (where a broken counter from 2019 still has not been fixed).</p>
+<p>There are many reasons for these disparities, but some of the big ones might be geography and resources. The more remote a park, the harder it is to get a repair team to it. The less-resourced a park, the lower the likelihood they have on-site repair teams, or are prioritized by the repair teams that can be dispatched.</p>
+<p>With this in mind, look at the locations of the following parks. Suppose that each one has an outage in their induction loop counter: which ones would you expect to be fixed first, and why? Research the parks, and rank them on a scale of 1 to 5 (1 being highest, and 5 being lowest) of which would be fixed quickest.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Park</th>
+<th>Priority (1-5)</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Acadia NP</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Lassen Volcanic NP</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Saguaro NP</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Yosemite NP</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Mammoth Cave NP</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-2" class="level2">
+<h2 class="anchored" data-anchor-id="activity-2">Activity 2</h2>
+<p>The National Park Service sometimes fills in missing data with hard numbers or approximates data by applying special mathematical formulas. This is necessary work, but it is also under-explained work.</p>
+<p>To see this in action, go to <a href="https://irma.nps.gov/Stats/Reports/Park">the NPS page that documents park reports</a> and down the “Visitor Use Counting Procedures” PDF for three different parks.</p>
+<p>How are the procedures for these three parks similar or different? What kind of effect do you think this has on the resulting data? What do you think is the best of documenting this information and communicating it to users of the data?</p>
+</section>
+<section id="activity-3" class="level2">
+<h2 class="anchored" data-anchor-id="activity-3">Activity 3</h2>
+<p>In 2014 and 2015, Kobuk Valley National Park reported that there were zero visitors to the park.</p>
+<p>Use publicly available internet data - Twitter posts, Flickr photos, etc - to try and find evidence of people visiting the park (there is existing evidence!).</p>
+<p>Based on your findings, how do you think, differently, if at all, about Kobuk Valley’s decision to record zero visits and about alternative methods for counting visits?</p>
+<p>:::</p>
+<p>–&gt;</p>
+<p>–&gt;</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W119
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/np-data/sidebar-version";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

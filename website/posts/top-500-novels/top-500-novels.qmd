@@ -35,9 +35,8 @@ editor: visual
 df-print: kable
 jupyter: python3
 code-tools: true
-bibliography: references/references.bib
+bibliography: ../../references/references.bib
 ---
-
 
 ::: {.panel-tabset .nav-pills}
 

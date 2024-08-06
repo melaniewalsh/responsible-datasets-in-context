@@ -40,9 +40,9 @@ toc: false
 ```
 Understanding the social and historical context of data is essential for all responsible data work. 
 
-On this website, we host datasets that are paired with rich documentation, data essays, and teaching resources, which <span style="font-weight: 700 !important; text-decoration: underline;">foregrounding context</span> and drawing on <span style="font-weight: 700 !important; text-decoration: underline;">humanistic perspectives and methods</span>.
+We host datasets that are paired with rich documentation, data essays, and teaching resources, all of which draw on <span style="font-weight: 700 !important; text-decoration: underline;">context</span> and <span style="font-weight: 700 !important; text-decoration: underline;">humanities perspectives and methods</span>.
 
-Through these resources, we provide models for responsible data curation, documentation, story-telling, and analysis.
+We provide models for responsible data curation, documentation, story-telling, and analysis.
 
 <!-- We do so by:
 
@@ -53,8 +53,9 @@ Through these resources, we provide models for responsible data curation, docume
 
 Learn more about our [Datasets](datasets.qmd), [Team](team.qmd), [Mission](mission.qmd), and [Sponsors](sponsors.qmd). Find us on [GitHub](https://github.com/melaniewalsh/responsible-datasets-in-context) <i class="bi bi-github" role="img">
 </i>, or [get in touch](get-in-touch.qmd).
-:::::
 
+<span style="text-align: right; font-style: italic; color: red !important;">This website is in development and open to user feedback and discussion. To leave a comment, highlight any text, click "Annotate," and log into/sign up Hypothesis.</span>
+:::::
 
 <!-- ![](images/responsible-logo.png){width=50%}
 

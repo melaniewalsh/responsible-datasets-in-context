@@ -9,7 +9,6 @@ format:
     toc-float: true
     toc-title: "Table of Contents"
     toc-expand: true
-    page-layout: full
     #include-after-body:
      # - tabs.js
   #ipynb: default
@@ -220,17 +219,17 @@ As of this writing, we are unaware of any African American poets from this perio
 
 # Discussion & Activities {#discussion-and-activities}
 
-### 1. Gender distribution over time or by venue.
+## 1. Gender distribution over time or by venue.
 
-First, sort the dataset by year. For each decade, check the gender of the poet. Is there an increase in poets who are women? 
+**By year.** First, sort the dataset by year. For each decade, check the gender breakdown of the poets. Is there an increase in poets who are women? 
 
-By venue. First, sort by Venue. Then compare the gender distribution in _The Crisis_ against other predominantly Black publications like _The Messenger_ or _Opportunity_. Were there magazines that tended to publish more poets who were women? 
+**By venue.** First, sort by venue. Then compare the gender distribution in _The Crisis_ against other predominantly Black publications like _The Messenger_ or _Opportunity_. Were there magazines that tended to publish more poets who were women? 
 
 Another question to ask might be the influence of Editors who were women. Magazines like _Black Opals_ and _The Crisis_ between 1919-1926 had Editors or Associate Editors who were women. Did the presence of female Editors lead to more women getting published in the magazine? 
 
 Another venue question: how did gender distribution look in the special issues of predominantly White magazines like _The Carolina Magazine_, _Palms_, _or _Survey Graphic_? 
 
-### 2. Studying Poetic Form.
+## 2. Studying Poetic Form.
 
 Poetic form has been tagged, somewhat subjectively and admittedly imperfectly, by the creators of this dataset, often with reference to Lewis Turco’s _Book of Forms_(2020) as a guide. 
 
@@ -238,9 +237,7 @@ Poetic form has been tagged, somewhat subjectively and admittedly imperfectly, b
 
 **Sonnets.** One really striking feature of this collection is the prevalence of sonnets. Sonnets are often studied as a form associated with early modern love poetry – one thinks of Shakespeare’s famous Sonnets along those lines. However, it was a form that was hugely popular among African American poets as well, including throughout the early part of the 20th century. Many African American poets adapted the form to align it with social justice themes. 
 
-First, sort the dataset by “Form,” and perhaps paste just the poems tagged as 
-
-Sonnets into a new Google Sheet (there should be about 70 such poems).
+First, sort the dataset by “Form,” and separate the Sonnets (perhaps paste just the poems tagged as Sonnets into a new Google Sheet---there should be about 70 such poems).
 
 Now, sort again by “Theme,” and pick a Theme that you are especially interested in. (One we might recommend exploring might be “Progress and Racial Uplift”). 
 
@@ -250,7 +247,7 @@ Now, read some of the poems themselves. What patterns do you see?
 
 _If you discover any poems that you believe are incorrectly tagged, or where we have not put down a tag, we would be grateful if you would let us know!_
 
-### 3. Themes and Topics.
+## 3. Themes and Topics.
 
 We have tagged poems by Theme, with a focus on themes relating to social justice topics. In part, this area of focus relates to patterns that are observable within the poetry itself. That said, we also expect that these themes may help readers today see how these poems might be relevant to our present moment. As with form, this process of tagging by theme is admittedly somewhat subjective – it comes out of our own personal interpretations of the poems. Readers might disagree or think of very different ways of organizing the poems by theme.
 
@@ -262,7 +259,7 @@ Take a look at some poems that are currently un-Tagged. How might you tag them?
 
 (_Again – any work researchers / students do here would be of interest to us, so please send it our way!_) 
 
-### 4. The Crossover Phenomenon
+## 4. The Crossover Phenomenon
 
 As mentioned above, the 1920s was a moment when predominantly White magazines and publishers opened their doors to African American writers for the first time – one might think of it as the seeds of integration of the publishing industry. Three such magazines that feature prominently in our dataset are _Survey Graphic_, _Palms_, and _The Carolina Magazine_. 
 
@@ -270,7 +267,7 @@ We have tagged magazines in the dataset by Type of Venue, and the different venu
 
 As a more advanced query, one could layer this question over top of the thematic question: did the poems published by African American authors in predominantly White venues look different thematically than poems published in predominantly Black venues like _The Crisis_. And how did the gender distribution compare? 
 
-### 5. Social Network Analysis.
+## 5. Social Network Analysis.
 
 This is a more advanced topic, but the seeds of a fairly complex social network should be visible in this dataset. 
 
@@ -278,7 +275,7 @@ Researchers (and students) with skills constructing data visualizations using so
 
 A more complex visualization could focus on the relationship between editors and authors (which gets even more interesting when the authors become editors). 
 
-### 5. Researching Unknown Authors.
+## 5. Researching Unknown Authors.
 
 As mentioned above, there are a number of authors in the collection about whom little is known. All told, there are about 100 poems in this collection, by 70 different authors, whose personal biographies have not been verified. 
 
@@ -293,7 +290,7 @@ Pick an author about whom we haven’t been able to find anything concrete (the 
 
 As we've been adding poetry to this collection, we've been marking various thematic areas of interest. These tags can be a good way to explore our collection and see patterns and begin to emerge between and among authors featured on this site. 
 
-**Historical Events and Tribute Poems**
+## **Historical Events and Tribute Poems**
 
 * **World War I**. This tag will be especially interesting to readers interested in African American writers responding to World War I, especially in the 1910s. Some writers took a critical eye to how Black soldiers were treated, and the difficulty of mustering patriotic feeling in a society that treated Black folks as second-class citizens. _(14 poems with this tag)_
 * **Spanish-American War**. Poems dealing with African American soldiers fighting in the Spanish-American war, including the Philippine War that followed (mainly 1900-1910).  
@@ -304,7 +301,7 @@ As we've been adding poetry to this collection, we've been marking various thema
 * **Abraham Lincoln**. Poems by Black poets commemorating President Abraham Lincoln. 
 * **Civil War**. Poems by Black poets reflecting on the Civil War (1861-1865). 
 
-**Social and Political Themes**
+## **Social and Political Themes**
 
 * **Race**. Many, many poems in this collection might be tagged as dealing with race in some way, so over time we have added additional differentiations for two especially important subtopics: **“Race: Identity formation”** and **“Race: Black Beauty.”** _(100+ poems with some version of this tag)_
 * **Racism**. Poems tagged with "racism" deal explicitly with racialized hostility, segregation, and its effects on the African American community. 
@@ -317,18 +314,18 @@ As we've been adding poetry to this collection, we've been marking various thema
 * **Travel, Migration and Great Migration**. This was a period in which many African American writers were on the move, and this tag references poems that deal with travel in Europe or Africa. It is also used for poems dealing with the Great Migration, the massive movement of Black folks from the U.S. south to northern amd midwestern cities that began in the early 1900s and continued through the 1940s. _(approx. 28 poems with this tag)_
 * **Patriotism**. Poems exploring the often conflicted relationship many African American writers had with questions of patriotism and national pride. 
 
-**Places / Regions / Institutions**
+## Places / Regions / Institutions
 
 * **Harlem**. As is well-known, Harlem was the epicenter of the Black cultural community that emerged in the 1920s, and many poets celebrated it in their writing, including Claude McKay, Langston Hughes, and many others. 
 * **HBCU**. Many Black writers from this period were associated with Historically Black Colleges and Universities in some way. Some -- notably Langston Hughes -- attended HBCUs and received degrees there. Others, including Alain Locke, W.E.B. Du Bois, Charles Johnson, and Zora Neale Hurston, taught at HBCUs. There are many references to universities like Fisk University, Howard University, Atlanta University, and so on in the poetry of this period. 
 * **Africa**. Poems that thematize Africa in some way. Imagining Africa was an important theme for many Black poets in the early 20th century -- both those involved with the UNIA and Garveyism and more broadly. Africa was especially vivid to Langston Hughes, as he had a memorable visit to West Africa early in his career.  
 * **Caribbean. **Writers like Claude McKay and Eric Walrond had direct Caribbean connections, and often wrote about it in their works. But others -- especially Langston Hughes -- also engaged the Caribbean in their writing. The Caribbean was also important to Arthur Schomburg, who immigrated to the U.S. from Puerto Rico in 1891.
 
-**Other Themes and Forms**
+## Other Themes and Forms
 
 * **Sonnet**. Poems using the sonnet form. The sonnet form was highly prevalent in African American poetry during this period. Claude McKay famously used sonnets in many of his most influential political poems. Writers like Georgia Douglas Johnson and Carrie Williams Clifford also found the sonnet form appealing, again, in connection with social justice-oriented poetry. _(approx. 75 poems with this tag)_
 * Various other poetic forms: **Common Measure**, **Villanelle**, **Terza Rima**, **Elegy**, **Ode**, **Haiku**, **Ballad**, **Free Verse**, **Blues**
-* **Prize-winning poems. **Poems that won one of the poetry prize competitions from the mid-1920s, sponsored by either _The Crisis_ or _Opportunity_ magazine. _(32 poems with this tag)_
+* **Prize-winning poems.** Poems that won one of the poetry prize competitions from the mid-1920s, sponsored by either _The Crisis_ or _Opportunity_ magazine. _(32 poems with this tag)_
 * **Music**. The emphasis on music in poems by Langston Hughes is well-known, but in fact many Black poets from this period were interested in the connections between music and lyricism. 
 * **Intertextual**. Poems that allude to other authors, including white authors.
 * **Black Vernacular (AAVE). **Poems using AAVE. There were active debates at the time among Black poets about the use of language that was sometimes seen as caricaturing Black voices.

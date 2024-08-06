@@ -33,37 +33,8 @@
     border-radius: 10px; /* Optional: adds rounded corners */
 }
 
- .floating-toc {
-    position: fixed;
-    right: 20px;
-    top: 0px;
-    width: 250px;
-    max-height: 80vh;
-    /* overflow-y: auto; */
-    /* background: #f8f9fa;
-    border: 1px solid #ddd; */
-    padding: 10px;
-    /* border-radius: 5px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1); */
-    text-align: left; /* Ensure the text is left-aligned */
-    z-index: 1000; 
-} 
 
-/* Adjust the font size */
-.floating-toc ul {
-    font-size: 0.9em;  /* Adjust the font size as needed */
-}
 
-@media (max-width: 788px) {
-  .floating-toc {
-    margin-bottom: 42px;
-    position: static;
-    width: 100%;
-  }
-  .floating-toc .nav .nav {
-    display: block;
-  }
-}
 
 .btn-quarto {
     background-color: #a2d58b;
@@ -143,6 +114,19 @@ nav[data-toggle="toc"] {
     width: auto;
     /* padding-right: 4px; */
 }
+
+@media (max-width: 788px) {
+    .navbar-brand {
+        /* overflow: scroll; */
+        width: auto;
+        /* padding-right: 4px; */
+    }
+    .navbar-logo {
+        max-height: 0px;
+        width: auto;
+        /* padding-right: 4px; */
+    }
+  }
 
 .quarto-title-banner {
     margin-bottom: 1em;
@@ -282,15 +266,6 @@ button#quarto-code-tools-menu i::before {
     width: 100%;
 } */
 
- /* Ensure the TOC container is on top
- #quarto-margin-sidebar {
-    /* position: fixed;
-    top: 0px; */
-    /* top: 150px; /* Adjust as needed to match navbar height */
-    /* max-height: calc(100vh - 150px); /* Adjust max-height to account for navbar */
-    /* z-index: 1000; /* Ensure it's above other elements */
-    /* overflow-y: auto; /* Allow scrolling if content exceeds height */
-/* } */
 
 .sidebar {
     overflow-y: hidden;
@@ -300,6 +275,7 @@ button#quarto-code-tools-menu i::before {
     /* position: fixed; */
     top: 0px !important; 
     margin-left: -10px;
+    z-index: 1000;
 
 }
 
