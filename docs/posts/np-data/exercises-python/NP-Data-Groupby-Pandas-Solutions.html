@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -124,6 +124,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
@@ -223,9 +240,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
 
 <link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Pandas Groupby with National Park Visitation Data (Solution) – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="images/responsible-logo.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -252,19 +276,19 @@ document.addEventListener("DOMContentLoaded", function () {
     <a class="nav-link" href="../../../datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="../../../team.html">
- <span class="dropdown-text">Team</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../../mission.html">
- <span class="dropdown-text">Mission</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="../../../sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
@@ -330,32 +354,462 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div id="6208db05" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np_data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="exercise-1" class="level1">
 <h1>Exercise 1</h1>
 <p>What is the average number of visits for <em>each state</em>?</p>
 <p>Save as <code>avg_state_visits</code> and then view the resulting dataframe.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_state_visits <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
+<div id="43c7da9a" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_state_visits <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>avg_state_visits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">RecreationVisits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AK</td>
+<td>1.377887e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>AR</td>
+<td>1.336286e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>AS</td>
+<td>1.627135e+04</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>AZ</td>
+<td>1.840670e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CA</td>
+<td>9.730535e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>CO</td>
+<td>1.029783e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>FL</td>
+<td>4.722664e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>HI</td>
+<td>1.307400e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>IN</td>
+<td>1.776658e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>KY</td>
+<td>1.342024e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>ME</td>
+<td>2.909380e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>MI</td>
+<td>1.965193e+04</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>MN</td>
+<td>2.218540e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>MO</td>
+<td>2.465409e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>MT</td>
+<td>2.006450e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>ND</td>
+<td>5.174973e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>NM</td>
+<td>5.423827e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>NV</td>
+<td>8.123107e+04</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>OH</td>
+<td>2.153601e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>OR</td>
+<td>4.796753e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20</td>
+<td>SC</td>
+<td>8.927681e+04</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21</td>
+<td>SD</td>
+<td>8.144197e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22</td>
+<td>TN</td>
+<td>9.506039e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">23</td>
+<td>TX</td>
+<td>2.421379e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24</td>
+<td>UT</td>
+<td>1.090876e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25</td>
+<td>VA</td>
+<td>1.518425e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26</td>
+<td>VI</td>
+<td>5.735757e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">27</td>
+<td>WA</td>
+<td>1.498398e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">28</td>
+<td>WV</td>
+<td>9.854926e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29</td>
+<td>WY</td>
+<td>2.719573e+06</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <p>Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?</p>
 </section>
 <section id="exercise-2" class="level1">
 <h1>Exercise 2</h1>
 <p>What is the average number of visits for <em>each National Park</em>?</p>
 <p>Save as <code>avg_park_visits</code> and then view the resulting dataframe.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_park_visits <span class="op">=</span> np_data.groupby(<span class="st">'ParkName'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
+<div id="655989e4" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_park_visits <span class="op">=</span> np_data.groupby(<span class="st">'ParkName'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>avg_park_visits</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">ParkName</th>
+<th data-quarto-table-cell-role="th">RecreationVisits</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>Acadia NP</td>
+<td>2.909380e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>Arches NP</td>
+<td>8.315601e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>Badlands NP</td>
+<td>1.016205e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>Big Bend NP</td>
+<td>3.064676e+05</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>Biscayne NP</td>
+<td>4.485172e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">58</td>
+<td>Wind Cave NP</td>
+<td>6.126346e+05</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">59</td>
+<td>Wrangell-St. Elias NP &amp; PRES</td>
+<td>4.733967e+04</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">60</td>
+<td>Yellowstone NP</td>
+<td>3.017686e+06</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">61</td>
+<td>Yosemite NP</td>
+<td>3.448971e+06</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">62</td>
+<td>Zion NP</td>
+<td>2.494319e+06</td>
+</tr>
+</tbody>
+</table>
+
+<p>63 rows × 2 columns</p>
+</div>
+</div>
+</div>
 <p>Discuss/consider: Which National Park has the most and least average visits? What patterns or surprises do you notice?</p>
 </section>
 <section id="exercise-3" class="level1">
 <h1>Exercise 3:</h1>
 <p>How many National Parks are there in <em>each state</em>?</p>
 <p>Save your answer as <code>distinct_parks</code>.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>distinct_parks <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'ParkName'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'NumParks'</span>)</span>
+<div id="71b9a0ca" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>distinct_parks <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'ParkName'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'NumParks'</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>distinct_parks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">State</th>
+<th data-quarto-table-cell-role="th">NumParks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">0</td>
+<td>AK</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">1</td>
+<td>AR</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">2</td>
+<td>AS</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">3</td>
+<td>AZ</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">4</td>
+<td>CA</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">5</td>
+<td>CO</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">6</td>
+<td>FL</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">7</td>
+<td>HI</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">8</td>
+<td>IN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">9</td>
+<td>KY</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">10</td>
+<td>ME</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">11</td>
+<td>MI</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">12</td>
+<td>MN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">13</td>
+<td>MO</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">14</td>
+<td>MT</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">15</td>
+<td>ND</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">16</td>
+<td>NM</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">17</td>
+<td>NV</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">18</td>
+<td>OH</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">19</td>
+<td>OR</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">20</td>
+<td>SC</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">21</td>
+<td>SD</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">22</td>
+<td>TN</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">23</td>
+<td>TX</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">24</td>
+<td>UT</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">25</td>
+<td>VA</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">26</td>
+<td>VI</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">27</td>
+<td>WA</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">28</td>
+<td>WV</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">29</td>
+<td>WY</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 <p>Discuss/consider: What state has the most and least average visits? What patterns or surprises do you notice?</p>
 
 
@@ -448,23 +902,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Amardeep Singh and Kate Hennessey">
-<meta name="dcterms.date" content="2024-05-17">
+<meta name="dcterms.date" content="2024-07-01">
 
 <title>African American Periodical Poetry (1900-1928) – Responsible Datasets in Context</title>
 <style>
@@ -157,6 +157,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
   function toTitleCase(str) {
@@ -289,6 +306,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="../../styles.css">
+<meta name="twitter:title" content="African American Periodical Poetry (1900-1928) – Responsible Datasets in Context">
+<meta name="twitter:image" content="images/aa-anthology.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -315,19 +335,19 @@ window.Quarto = {
     <a class="nav-link" href="../../datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="../../team.html">
- <span class="dropdown-text">Team</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../mission.html">
- <span class="dropdown-text">Mission</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="../../sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
@@ -380,7 +400,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">May 17, 2024</p>
+        <p class="date">July 1, 2024</p>
       </div>
     </div>
     
@@ -678,7 +698,7 @@ Categories
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="seaborn,plotly,interactive,line-plot,bar-plot,groupby,python,solution" data-listing-date-sort="1708923600000" data-listing-file-modified-sort="1722952020095" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="370" data-listing-title-sort="Visualize Author Gender By Year (Solution)" data-listing-filename-sort="aa_eda.qmd">
+<tr data-index="0" data-categories="seaborn,plotly,interactive,line-plot,bar-plot,groupby,python,solution,exercise" data-listing-date-sort="1708923600000" data-listing-file-modified-sort="1723046245493" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="363" data-listing-title-sort="Visualize Author Gender By Year (Solution)" data-listing-filename-sort="aa_eda.qmd">
 <td>
 <span class="listing-date">Feb 26, 2024</span>
 </td>
@@ -686,7 +706,7 @@ Categories
 <a href="../../posts/african-american-periodical-poetry/exercises/aa_eda.html" class="title listing-title">Visualize Author Gender By Year (Solution)</a>
 </td>
 <td>
-<span class="listing-categories">seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution</span>
+<span class="listing-categories">seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution, exercise</span>
 </td>
 </tr>
 </tbody>
@@ -900,23 +920,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script type="ojs-module-contents">
 eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIHNlbGVjdGVkQ29sdW1ucywgdmlld29mIHR3b2J1dHRvbnMsIHZpZXdvZiBkYXRhU2V0LCB0YWJsZUNvbnRhaW5lciwgdGFibGUsIHRhYmxlU3R5bGVzLCB2aWV3b2YgdGFibGVPcHRpb25zfSBmcm9tIFwiZDI2YTczYTM3NzE0MWYzY1wiXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ0YWJsZUNvbnRhaW5lclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHR3b2J1dHRvbnNcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIHNlbGVjdGVkQ29sdW1uc1xudmlld29mIGRhdGFTdW1tYXJ5Vmlld1xuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQge3ZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXcsIHZpZXdvZiBhbGxzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiBhbGxkYXRhU2V0LCBhbGx0YWJsZUNvbnRhaW5lciwgYWxsdGFibGUsIHZpZXdvZiBhbGx0d29idXR0b25zfSBmcm9tIFwiMTQ4ZDUwYmQ5ZGMxYWQ4ZlwiXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTciLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhbGx0YWJsZUNvbnRhaW5lclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC04IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHR3b2J1dHRvbnNcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEwIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHNlbGVjdGVkQ29sdW1uc1xudmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlld1xuXG4ifV19
 </script>
@@ -1423,7 +1426,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="co">  sort-ui: false</span></span>
 <span id="cb14-23"><a href="#cb14-23" aria-hidden="true" tabindex="-1"></a><span class="co">  filter-ui: true</span></span>
 <span id="cb14-24"><a href="#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="co">#   image-height: 200px</span></span>
-<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-05-17"</span></span>
+<span id="cb14-25"><a href="#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-07"</span></span>
 <span id="cb14-26"><a href="#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [literature, poetry, gender, race, metadata, full-text, public domain]</span></span>
 <span id="cb14-27"><a href="#cb14-27" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "images/aa-anthology.png"</span></span>
 <span id="cb14-28"><a href="#cb14-28" aria-hidden="true" tabindex="-1"></a><span class="an">sidebar:</span><span class="co"> </span></span>

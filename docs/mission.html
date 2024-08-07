@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -89,6 +109,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
     document.body.classList.add('hypothesis-enabled');
   });
 </script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
@@ -191,9 +228,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="Mission – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mozilla_logo.svg/2560px-Mozilla_logo.svg.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -217,19 +258,19 @@ document.addEventListener("DOMContentLoaded", function () {
     <a class="nav-link" href="./datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./mission.html" aria-current="page"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="./team.html">
- <span class="dropdown-text">Team</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./mission.html">
- <span class="dropdown-text">Mission</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
@@ -272,7 +313,18 @@ document.addEventListener("DOMContentLoaded", function () {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#our-goals" id="toc-our-goals" class="nav-link active" data-scroll-target="#our-goals">Our Goals</a></li>
+  <li><a href="#related-work" id="toc-related-work" class="nav-link" data-scroll-target="#related-work">Related Work</a></li>
+  <li><a href="#our-data-essays" id="toc-our-data-essays" class="nav-link" data-scroll-target="#our-data-essays">Our Data Essays</a></li>
+  <li><a href="#our-data-principles" id="toc-our-data-principles" class="nav-link" data-scroll-target="#our-data-principles">Our Data Principles</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -280,29 +332,86 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<section id="mission" class="level1">
-<h1>Mission</h1>
-<p>Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data — from academic researchers to industry professionals — will know this claim to be true.</p>
-<p>Here’s the problem. Though we can all agree that understanding the social and historical context of data is one of the most <strong><em>essential</em></strong> skills for responsible designers, engineers, and technologists, it is one of the most <strong><em>neglected</em></strong> skills in undergraduate computing education.</p>
-<p>When students are asked to find their own datasets in classes, they often go to websites like Kaggle and end up downloading and working with data that they don’t fully understand —&nbsp;a recipe for irresponsible data work, a bad habit that can become a dangerous habit as the stakes get higher.</p>
-<p>We believe there are two main reasons for this neglect:</p>
-<ol type="1">
-<li><p>STEM education has not, broadly speaking, invested in the kinds of critical cultural and historicist approaches that have characterized humanities education.</p></li>
-<li><p>Meaningful datasets that are both richly documented and well-suited for undergraduate computing education are difficult to find and very time-consuming to produce.</p></li>
-</ol>
-<p><strong>“Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education”</strong> seeks to strengthen students’ capacity to work with data responsibly by addressing both of these issues. On this website, we provide curated datasets that are carefully documented and paired with long-form essays, which both explore and interrogate each dataset’s construction, history, quirks, flaws, and strengths from different humanistic perspectives.</p>
-<p>We also provide lesson plans, programming exercises, discussion questions, and activities that can help instructors integrate the datasets into their teaching. Beyond our specific educational goals, we also hope these datasets, essays, and accompanying materials will be useful and informative for the broader public.</p>
+<section id="our-goals" class="level2">
+<h2 class="anchored" data-anchor-id="our-goals">Our Goals</h2>
+<p>Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data—from academic researchers to industry professionals—will know this claim to be true.</p>
+<p>But despite its significance, social and historical knowledge and methodologies are one of the most <strong><em>neglected</em></strong> areas in undergraduate computing education. In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is&nbsp;a recipe for irresponsible data work and a bad habit that can become a dangerous habit as the stakes get higher.</p>
+<p>Our project, <strong>“Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education,”</strong> seeks to strengthen students’ capacity to work with data responsibly. We provide curated datasets that are carefully documented and paired with long-form essays, which both explore and interrogate each dataset’s construction, history, quirks, flaws, and strengths from different humanistic perspectives. We thus provide useable datasets and models for responsible data curation, documentation, story-telling, and analysis.</p>
+<!-- We believe there are two main reasons for this neglect:
+
+1)  STEM education has not, broadly speaking, invested in the kinds of critical cultural and historicist approaches that have characterized humanities education.
+
+2)  Meaningful datasets that are both richly documented and well-suited for undergraduate computing education are difficult to find and very time-consuming to produce. -->
+<p>Additionally, we offer lesson plans, programming exercises, discussion questions, and activities that can help instructors integrate our datasets into their teaching. Beyond our specific educational goals, we also hope these datasets, essays, and accompanying materials will be useful and informative for the broader public.</p>
+</section>
+<section id="related-work" class="level2">
+<h2 class="anchored" data-anchor-id="related-work">Related Work</h2>
+<p>Our project builds on foundational papers and projects that have addressed the urgency of dataset documentation and documentation broadly.</p>
+<ul>
+<li>Datasheets for Datasets: <span class="citation" data-cites="gebru_datasheets_2021">Gebru et al. (<a href="#ref-gebru_datasheets_2021" role="doc-biblioref">2021</a>)</span></li>
+<li>Data Statements for NLP: <span class="citation" data-cites="bender_data_2018">Bender and Friedman (<a href="#ref-bender_data_2018" role="doc-biblioref">2018</a>)</span></li>
+<li>Model Cards for Model Reporting: <span class="citation" data-cites="mitchell_model_2019">Mitchell et al. (<a href="#ref-mitchell_model_2019" role="doc-biblioref">2019</a>)</span></li>
+<li><a href="https://huggingface.co/docs/hub/en/datasets-cards">HuggingFace Dataset Cards</a></li>
+<li>FAIR Guiding Principles: <span class="citation" data-cites="wilkinson_fair_2016">Wilkinson et al. (<a href="#ref-wilkinson_fair_2016" role="doc-biblioref">2016</a>)</span></li>
+<li>Cultural Data Collectives: <a href="https://data.post45.org/">Post45 Data Collective</a>, <a href="https://c19datacollective.com/">C19 Data Collective</a></li>
+</ul>
+</section>
+<section id="our-data-essays" class="level2">
+<h2 class="anchored" data-anchor-id="our-data-essays">Our Data Essays</h2>
+<p>The general structure of our data essays are inspired by Heather Krause’s concept of <a href="https://gijn.org/stories/data-biographies-getting-to-know-your-data/">a data biography.</a></p>
+<p>A data essay will and should differ depending on the data it describes, but most of our data essays try to address the following questions:</p>
+<ul>
+<li>What is the historical context of the data?</li>
+<li>Where did the data come from? Who collected it?</li>
+<li>Why was the data collected?</li>
+<li>How was the data collected?</li>
+<li>How is the data used?</li>
+<li>What’s in the data?</li>
+<li>What “counts” as a data point?</li>
+<li>What data is missing?</li>
+<li>How is uncertainty handled?</li>
+</ul>
+</section>
+<section id="our-data-principles" class="level2">
+<h2 class="anchored" data-anchor-id="our-data-principles">Our Data Principles</h2>
 <p>Based on our work and conversations, we also offer the following principles to help guide ethically responsible dataset curation, consumption, and analysis:</p>
-<p>–<strong>Tell the Data’s Story / Know the Data’s Story.</strong> As scholars like Johanna Drucker and others have been arguing for more than a decade, data is not simply objectively “there” in the world. Datasets have human-oriented stories behind them and implicit within them, and insofar as we are invested in curating helpful datasets for scholars and students to use, the stories of how and why data was created ought to be integrally connected to the datasets themselves. What are the constraints of the source material? What material might be simply absent from the historical record, and how do those absences shape what data we can effectively construct? Also, where are there elements of uncertainty or fuzziness in the data? If choices had to be made regarding, for instance, the dating of a creative work, how were those choices made, and why?</p>
-<p><strong>–Provide and Describe Metadata / Understand Metadata.</strong> Metadata is often overlooked. But understanding what each datapoint and feature represents is fundamental to ethically responsible data work, so it is important to gives users a way to access and understand that metadata. Which categories were deemed important to catalog and measure, and which were excluded? If gender is an aspect of metadata, is gender only available under binarized categories? Is race included or discussed – and why?</p>
-<p><strong>–Touch Every Spreadsheet Cell.</strong> For creators and users of datasets, it is important to actually explore and try out datasets to make sure they’re accurate and glitch-free, and that they represent what we think they represent — in other words, it is important to actually open a dataset in Excel, Google Sheets, etc., and touch/examine individual cells. When data is too large for these kinds of applications, it is important to examine individual data points in other ways. This is a basic yet surprisingly radical concept! And it is especially important when we use automated processes to create datasets, like web scraping, which are also more likely to distance us from individual data points.</p>
-<p><strong>– Consider When Data Should Remain Off-Limits or Private.</strong> There is a growing movement in data science to think carefully about who can ethically access certain kinds of data. Representations of tribal rituals among indigenous communities is often only meant for members of those communities, so accessing photographs or other sorts of quantitative data about that traditional knowledge should probably be restricted. Projects like <a href="https://mukurtu.org/">Mukurtu</a> have specifically addressed this issue and developed platforms where communities can choose who they share their data with.</p>
-<p>Similarly, the editors of sites like the <a href="https://coloredconventions.org/">Colored Conventions Project</a> have argued that data about enslaved people and their descendents has historically “served in the processes and recording of the destruction and devaluation of Black lives and communities.” They main that there is an urgent need to affirm “the Black humanity inherent in Black data/curation.” In other words, insofar as data is about real people who may have been marginalized or oppressed, it is important that those people be named and recognized.</p>
+<section id="tell-the-datas-story-know-the-datas-story" class="level4">
+<h4 class="anchored" data-anchor-id="tell-the-datas-story-know-the-datas-story">Tell the Data’s Story / Know the Data’s Story</h4>
+<p>As scholars like Johanna Drucker and others have been arguing for more than a decade, data is not simply objectively “there” in the world. Datasets have human-oriented stories behind them and implicit within them, and the stories of how and why data was created ought to be integrally connected to the datasets themselves.</p>
+<p>What are the constraints of the source material? What material might be simply absent from the historical record, and how do those absences shape what data we can effectively construct? Also, where are there elements of uncertainty or fuzziness in the data? If choices had to be made regarding, for instance, the dating of a creative work, how were those choices made, and why?</p>
+</section>
+<section id="provide-metadata-understand-metadata" class="level4">
+<h4 class="anchored" data-anchor-id="provide-metadata-understand-metadata">Provide Metadata / Understand Metadata</h4>
+<p>Metadata is often overlooked. But understanding what each data point and feature represents is fundamental to ethically responsible data work, so it is important to gives users a way to access and understand that metadata. Which categories were deemed important to catalog and measure, and which were excluded? If gender is an aspect of metadata, is gender only available under binarized categories? Is race included or discussed – and why?</p>
+</section>
+<section id="touch-every-data-point" class="level4">
+<h4 class="anchored" data-anchor-id="touch-every-data-point">Touch Every Data Point</h4>
+<p>For creators and users of datasets, it is important to actually explore and try out datasets to make sure they’re accurate and glitch-free, and that they represent what we think they represent—in other words, it is important to actually open a dataset in Excel, Google Sheets, etc., and examine individual cells. When data is too large for these kinds of applications, it is important to examine individual data points in other ways. This is a basic yet surprisingly radical concept! It is especially important when we use automated processes to create datasets, like web scraping, which are also more likely to distance us from individual data points.</p>
+</section>
+<section id="consider-when-data-should-remain-off-limits-or-private" class="level4">
+<h4 class="anchored" data-anchor-id="consider-when-data-should-remain-off-limits-or-private">Consider When Data Should Remain Off-Limits or Private</h4>
+<p>There is a growing movement in data science to think carefully about who can ethically access certain kinds of data. Representations of tribal rituals among indigenous communities are often only meant for members of those communities, so accessing photographs or other sorts of quantitative data about that traditional knowledge should probably be restricted. Projects like <a href="https://mukurtu.org/">Mukurtu</a> have specifically addressed this issue and developed platforms where communities can choose who they share their data with.</p>
+<p>Similarly, the editors of sites like the <a href="https://coloredconventions.org/">Colored Conventions Project</a> have argued that data about enslaved people and their descendents has historically “served in the processes and recording of the destruction and devaluation of Black lives and communities.” They maintain that there is an urgent need to affirm “the Black humanity inherent in Black data/curation.” In other words, when data is about real people who may have been marginalized or oppressed, it is important that those people be named and recognized.</p>
+
 
 
 </section>
+</section>
 
-</main> <!-- /main -->
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-bender_data_2018" class="csl-entry" role="listitem">
+Bender, Emily M., and Batya Friedman. 2018. <span>“Data <span>Statements</span> for <span>Natural</span> <span>Language</span> <span>Processing</span>: <span>Toward</span> <span>Mitigating</span> <span>System</span> <span>Bias</span> and <span>Enabling</span> <span>Better</span> <span>Science</span>.”</span> Edited by Lillian Lee, Mark Johnson, Kristina Toutanova, and Brian Roark. <em>Transactions of the Association for Computational Linguistics</em> 6: 587–604. <a href="https://doi.org/10.1162/tacl_a_00041">https://doi.org/10.1162/tacl_a_00041</a>.
+</div>
+<div id="ref-gebru_datasheets_2021" class="csl-entry" role="listitem">
+Gebru, Timnit, Jamie Morgenstern, Briana Vecchione, Jennifer Wortman Vaughan, Hanna Wallach, Hal Daumé III, and Kate Crawford. 2021. <span>“Datasheets for <span>Datasets</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.1803.09010">https://doi.org/10.48550/arXiv.1803.09010</a>.
+</div>
+<div id="ref-mitchell_model_2019" class="csl-entry" role="listitem">
+Mitchell, Margaret, Simone Wu, Andrew Zaldivar, Parker Barnes, Lucy Vasserman, Ben Hutchinson, Elena Spitzer, Inioluwa Deborah Raji, and Timnit Gebru. 2019. <span>“Model <span>Cards</span> for <span>Model</span> <span>Reporting</span>.”</span> In <em>Proceedings of the <span>Conference</span> on <span>Fairness</span>, <span>Accountability</span>, and <span>Transparency</span></em>, 220–29. <a href="https://doi.org/10.1145/3287560.3287596">https://doi.org/10.1145/3287560.3287596</a>.
+</div>
+<div id="ref-wilkinson_fair_2016" class="csl-entry" role="listitem">
+Wilkinson, Mark D., Michel Dumontier, IJsbrand Jan Aalbersberg, Gabrielle Appleton, Myles Axton, Arie Baak, Niklas Blomberg, et al. 2016. <span>“The <span>FAIR</span> <span>Guiding</span> <span>Principles</span> for Scientific Data Management and Stewardship.”</span> <em>Scientific Data</em> 3 (1): 160018. <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a>.
+</div>
+</div></section></div></main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
@@ -389,23 +498,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

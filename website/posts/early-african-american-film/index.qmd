@@ -1,0 +1,31 @@
+---
+title: "Early African American Film"
+author: Miriam Posner
+format: 
+  html:
+    css: ../../styles.css
+    # page-layout: full
+  # ipynb: default
+  pdf: default
+  #docx: default
+  #r: default
+categories: [film, metadata, race]
+image: "images/early-african-american-film.png"
+format-links: [ipynb, pdf, docx]
+code-fold: true
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+bibliography: ../../references/references.bib
+---
+
+::: {.panel-tabset .nav-pills}
+
+# Data Essay {#data-essay .tab-pane}
+
+## Introduction
+
+Coming soon. This dataset will include information about early African American silent race film.
+:::

@@ -1,0 +1,31 @@
+---
+title: "Dolma---Exploring LLM Pretraining Data"
+author: Coming Soon
+format: 
+  html:
+    css: ../../styles.css
+    # page-layout: full
+  # ipynb: default
+  pdf: default
+  #docx: default
+  #r: default
+categories: [llms, pretraining data, audit]
+image: "https://raw.githubusercontent.com/allenai/dolma/main/docs/assets/AI2_Blog_1400x685_2x.webp"
+format-links: [ipynb, pdf, docx]
+code-fold: true
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+bibliography: ../../references/references.bib
+---
+
+::: {.panel-tabset .nav-pills}
+
+# Data Essay {#data-essay .tab-pane}
+
+## Introduction
+
+Coming soon. This dataset will include information about [Dolma,](https://github.com/allenai/dolma) "an open dataset of 3 trillion tokens from a diverse mix of web content, academic publications, code, books, and encyclopedic materials," which was used to train the OLMo model from the Allen Institute for AI (AI2).
+:::

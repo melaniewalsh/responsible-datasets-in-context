@@ -124,6 +124,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
   function toTitleCase(str) {
@@ -319,9 +336,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<section id="explore-all-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="explore-all-datasets">Explore All Datasets</h2>
+<p>This page includes all the datasets that were created by students in “Border Women Literature &amp; Feminist Cartographies” (Fall 2023) at the University of Texas at San Antonio. Descriptions and authors of each dataset are included below.</p>
 <!-- Importing ojs variables from https://observablehq.com/d/662315b062d668fb (forked, collaborative) -->
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="8" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 7;"><span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof alldataSummaryView<span class="op">,</span> viewof alltwobuttons<span class="op">,</span> viewof alldataSet<span class="op">,</span> alltableContainer<span class="op">,</span> alltable<span class="op">,</span> alltableStyles<span class="op">,</span> viewof allselectedColumns} <span class="im">from</span> <span class="st">"662315b062d668fb"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="11" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 10;"><span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof alldataSummaryView<span class="op">,</span> viewof alltwobuttons<span class="op">,</span> viewof alldataSet<span class="op">,</span> alltableContainer<span class="op">,</span> alltable<span class="op">,</span> alltableStyles<span class="op">,</span> viewof allselectedColumns<span class="op">,</span> viewof alldatasetHeader} <span class="im">from</span> <span class="st">"662315b062d668fb"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
 
@@ -329,7 +349,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="15" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 14;"><span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>viewof alldataSet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="18" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 17;"><span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>viewof alldataSet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
 
@@ -337,15 +357,25 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="20" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 19;"><span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="24" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 23;"><span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a>viewof alldatasetHeader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="expression">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="expression">
 
 </div>
 </div>
 </div>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="25" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 24;"><span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="26" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 25;"><span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>viewof alltwobuttons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="30" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>viewof alltwobuttons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-4" data-nodetype="expression">
 
@@ -353,7 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 <div class="cell hidden">
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="34" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 33;"><span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>alltable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="38" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>alltable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-5-1" data-nodetype="expression">
@@ -361,8 +391,8 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="35" data-source-offset="-9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 34;"><span id="cb6-35"><a href="#cb6-35" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
-<span id="cb6-36"><a href="#cb6-36" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="39" data-source-offset="-9"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 38;"><span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display hidden">
 <div>
 <div id="ojs-cell-5-2" data-nodetype="expression">
@@ -373,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="43" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 42;"><span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="47" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 46;"><span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-1" data-nodetype="expression">
@@ -381,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="44" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 43;"><span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="48" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 47;"><span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
 <div id="ojs-cell-6-2" data-nodetype="expression">
@@ -390,8 +420,48 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 </div>
 </div>
+<ul>
+<li><strong>Dataset #1: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/ERRyEGE0CLtCpx2UwXke8hgBA-WigVSJKZz6E7iSB_EvkA?e=5dUC0k">Tracing Feminicides in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection</a></em></strong>
+<ul>
+<li><strong>Team:</strong> <span style="text-decoration:underline;">Jessica Corona (Leader), Johanna León, Aislinn Reichle, &amp; Sara Mosher</span></li>
+<li><strong>Dataset description:</strong> Since the beginning of society in the United States, stereotypes and representations of women have been created to oppress them. Among the most deeply rooted stereotypes in North American society about Latina women, we find those that have been most widely spread in newspaper sections: sections for the home where the differences between men and women are discussed, the praise of short hair as this represents a form of evolution to women but for society it removes a woman’s femininity etc. Sexist language within culture, customs and linguistic heritage means that we do not use language correctly and when we talk about gender equality, sexist language refers to those expressions that denigrate people because of their sex and regarding a series of attributes or functions within society, causing one gender to be positioned above the other. Therefore, sexist language is understood to be language that discriminates, above all, against women. This dataset organizes the data surrounding feminicide violence, language through culture, and feminism from the Hispanic American Newspapers in El Paso, Texas from 1900-1980. Making a counter database of what is happening in the US is important because creating work like this will allow us to understand and inform that gender violence is not only the death in the mexican side of the border but also the way that women are forced to behave or their roles in patriarchal society across borders. Collecting this data into dataset, allows for this information to become more accessible to a broader audience, and can be influential in the work of other students, scholars, activists, community, etc. Bringing awareness to how long gender violence has been occurring, specifically in El Paso, can show patterns and changes in how both feminicide is discussed, as well as how women are generally portrayed and spoken about in the media. It is important that this data is collected and made known of, to better understand the role that publications and news sources play in perpetuating gender violence through the way that they handle discussing these topics.</li>
+<li><strong>Dataset dissemination:</strong> mapping, timeline, text analysis, digital exhibits, policy making</li>
+</ul></li>
+<li><strong>Dataset #2: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/Ee3DNzkSz9pCtA4PLwtsr4kBvnAHBWdAwTis0iiNpXDkHg?e=NRwgPc">Digital and Translated Version of “El Silencio De La Voz Que a Todos Nos Quiebra Feminicidio” Printed Spreadsheet</a></em></strong>
+<ul>
+<li><strong>Team: <span style="text-decoration:underline;">Jasbeth Medrano (Leader), Judith Ordonez, Carolina Vlaun, Alex Sanchez, &amp; Samuel Hille</span></strong></li>
+<li><strong>Dataset Description:</strong> As part of our assigned reading material, our class read “El Silencio Que La Voz De Todas Quiebra” by Rohry Benitez, Adriana Candia, Patricia Cabrera, Guadalupe de la Mora, Josefina Martínez, Isabel Velázques, and Ramona Ortiz. This book was created to bring awareness to the severe under-reporting of femicide, with an emphasis of providing a platform for mothers to tell their daughter’s stories. This book wanted to humanize the cases of these victims due to the lack of emotion spreadsheets tend to convey. With this purpose in mind, our group decided to model our project with humanization at the forefront. At the end of the book, the authors provided a spreadsheet of all the cases they were able to locate. The spreadsheet was very grassroots and needed to fit the book page format. Additionally, it was only accessible through this book, ultimately making it very hard to obtain for any other people looking to advance this cause. Therefore, this group took on transcribing all cases on the spreadsheet onto an Excel sheet that could be accessible to anyone. We also translated this material from Spanish to English to ensure that people could read this data. However, apart from accessibility, we wanted to provide the contribution of finding articles and pictures of the mentioned victims to highlight the person rather than the details of the case. Though it was tough to find information on all the women, we found a couple links that have been included in the dataset.</li>
+<li><strong>Dataset dissemination: </strong>visualizations, mapping, and policy-making</li>
+</ul></li>
+<li><strong>Dataset #3: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/EbmXffhLIvNClcOd_Mzl_PcBE8k0G6dwgQlvheM_FX7xFQ?e=lpoirv">Geotestimonios Literary Dataset (Woman Hollering Creek by Sandra Cisneros and Stories of Survival by Alicia Gaspar de Alba).</a></em></strong>
+<ul>
+<li>Team: <span style="text-decoration:underline;">Genesis Esquilin (Leader), Layla Smith, </span>Kiri Avelar, &amp; <span style="text-decoration:underline;">Paris Cantu</span></li>
+<li><strong>Dataset Description:</strong> The project’s purpose is to collect data of two stories and structure it in a spreadsheet. The two stories assigned to work on were <em>Woman Hollering Creek</em> (1991) by Sandra Cisneros and <em>The Mystery of Survival and Other Stories </em>(1993) by Alicia Gaspar de Alba. These two literary texts contain a collection of short stories, so the group was assigned to work on specific short stories books and find the locations mentioned in them. In the Excel spread sheet there are two data sets; one that shows the locations mentioned in stories from <em>Woman Hollering Creek</em> and one that shows the locations that were mentioned in <em>The Mystery of Survival</em>. Since there were four of us, we split into two between the two stories and decided which stories we were going to cover. The purpose for these is to map the journey’s, each one painting different narratives of these individual women’s lives. In addition to collecting and organizing data from <em>Woman Hollering Creek</em> and <em>The Mystery of Survival</em>, the overarching purpose of our project extends beyond just the collection and compilation of the locations mentioned in the stories. To make these locations specific, the locations mentioned were checked if they were either real, fiction, or personal to the storyteller. For each entry it was added in the line the<br>
+location mentioned as well as the page number the line is from in the book, and the longitude and latitude coordinates if the location mentioned is real. Some notes were added on a few locations to make the audience know a bit more about the location or for them to have context on what the location means. Finally, some links were included with an image of what the real-life location looks like. Since most of the locations are either fictional or personal, they don’t have longitude and latitude coordinates tie with them. This was an important discussion within the team since one of the objectives was to create a comprehensive and visually engaging map that captures the journeys of the characters within these narratives. This dataset was the beginning steps as we encountered how to map data when we do not have exact coordinates. For instance, by pinpointing the specific locations referenced in each story, the project aims to provide a physical representation of the characters’ experiences, offering insights into the cultural and geographical contexts that shape their lives. This mapping project not only enhances our understanding of the individual stories but also allows for a broader exploration of the interconnected themes and shared elements between <em>Woman Hollering Creek</em> and <em>The Mystery of Survival</em> as both women authors are Latinas from Texas with a border identity reclaimed by both. Ultimately, the project seeks to offer a perspective on the diverse narratives within these two books, emphasizing the importance of women geographies, spaces of violence, and mapping the journey the women narrated in literature go through.</li>
+<li><strong>Dataset dissemination:</strong> mapping, literary analysis, spatial analysis, city planning</li>
+</ul></li>
+<li><strong>Dataset #4: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/Ed5N9T-imoNNgKv2VBVDfNQBbLQwjHmvYXOR0s9XNZdZeQ?e=5CM5Jz">Films of Feminicide and/or Gender Violence Around the World</a></em></strong>
+<ul>
+<li><strong>Team: <span style="text-decoration:underline;">Nicolas Rodriguez (Leader), Madee Puente-Bonilla</span></strong>, <span style="text-decoration:underline;">Julian Dehoyos, Jada Thomas, &amp; Lily Morrill</span></li>
+<li><strong>Dataset Description: </strong>In the beginning of our dataset project, we wanted to focus on showcasing the wide range of films that showcase either the gratuitous violence toward women or show the mentality of how women would be treated in that era, we found more films to showcase in our project than expected. Though we are still predominantly shining our light on women and gender-based violence, we found other marginalized communities that can have their messages shared. Films like <em>Killers of the Flower Moon</em> showcase violence based on the Osage community and other similar native American communities, and Milk which shows an openly gay politician fighting to break out of the glass ceiling. These films, though show<br>
+different variations and levels of violence, intersectionality of present, it shows the trials these marginalized communities have faced. While engaged in the data collection and analysis we wanted to highlight these stories as well as leave it strictly to gender-based violence toward women. At the end, the dataset evolved and can be defined into four main takeaways/themes: personification of violence, definitions of violence, representation of genre, and missing stories. The first takeaway was the personification of violence; breaking this down into the on-screen, almost jarring reality of the possible glorification, stylization, and informative analysis of violence on screen. Our team felt that many of the films listed on the dataset could be argued and grouped into any one of the said narratives. This allows the audience to further their own definitions of gender violence in film. This does lead to the next takeaway, definitions. Throughout the construction of the dataset, we noticed a common theme with films depicting gender violence and/or having a main plot point be that of gendered violence. Many of the films listed are defined and categorized as “romances”. Films like <em>Urban Cowboy</em>, <em>I</em>, <em>Tonya</em>, and <em>Lolita</em> are all defined as romances; all these films depict graphic scenes of abuse, both physical and mental. Our question as a group is how does depicting and defining this film impact viewers? Are they glorifying? Are they stylizing? Are they informing? Our third takeaway was the cross-representation of genre. The dataset is broad - it includes films, biopics, documentaries, docuseries, horror, historical dramas, science fiction, and many more. We discovered that genre can be a visual but also narrative aid and representation with overall thematic analysis in relation to a film. Many of the films that we listed focused on and outlined meaningful, non-voyeuristic representational work on the issue of violence against women. All the films, across genres, in most ways, were symbolic of violating the heteronormative values of women and other marginalized groups in media; all following the steppingstones of action, resistance, and retribution. The last takeaway was the missing stories that we, as a group, found that were absent after completing the dataset. Again, it is a broad dataset, but there are still not enough individual, personal stories being represented. Many of our films fall under two categories: white, cis-female representation and wide-releases in English-speaking countries. There is a gap in our data that we must be aware of for the future of the dataset. The stories these films captured span from 1918 to the present, but there are still missing stories, missing people who need to be heard through the media of film.</li>
+<li><strong>Dataset dissemination:</strong> app, visualizations, image analysis, digital repository and digital exhibit</li>
+</ul></li>
+<li><strong>Dataset #5: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/EeZ2sbQ96GJNhqHVMzF9tZUByPzNOhcozSshn6dqJjLiNA?e=SoagHc">Books and Articles from Mexico and the U.S. Related to Feminicide and Gender Violence</a></em></strong>
+<ul>
+<li><strong>Team:</strong> <span style="text-decoration:underline;">Jared Pond (Leader), Emily Malloy (Leader), Erin Garza, Joshua Scott, &amp; Ambonnay Rodriguez</span></li>
+<li><strong>Dataset Description:<span style="text-decoration:underline;"> </span></strong>This dataset project was to call attention to feminicide and gender violence in scholarly literature. We wanted to show that these women are remembered and were failed by their society and protectors. To make people uncomfortable enough to understand the seriousness of this topic, and to show that there are people keeping track and those who care. Our dataset tracks information on pieces of scholarly literature primarily from the U.S. and Mexico that relate to femicide and gender violence. This dataset can be used to compare the types of literature and how it is represented across different publishing houses and countries. And the noticeable absence of information from publishing houses in Mexico. Some of our findings include the trait of Chicano, Hispanic, and Mexican authors publishing in areas other than Mexico, leading to the question of how much, and how hard the government and society itself tries to hide this violence. For example, some of the first books touching on these topics like <em>El Silencio Que La Voz De Todas Quiebra</em> or <em>Cosecha de Mujeres</em> had trouble finding a publisher and had even issues with some editors in charge. Our limitations included: authors not being on the internet, authors being hidden by other authors’ articles by other interpretations, and not being able to fully investigate and read every single piece of literature we listed. We also understand that we did not incorporate as many essays, articles, and books as there are in other databases as well. The next step for this project is to keep expanding on these works in any way possible. Those who work on this dataset may be able to make more connections between the data than we were able to see as their background knowledge is different than ours; or maybe even more resources than we do. We also recognize that we are missing data and possibly have inaccuracies, but it’s clear that femicide has become more apparent globally and is something that nobody should be quiet about.</li>
+</ul></li>
+<li><strong>Dataset #6: <em><a href="https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/EX7_WITUvZVPhcbk0c-dsXUBfdtoDdsMeU610vx_W7dnUw?e=MXlHGt">Murals and Public Monuments Related to Feminicide and Gender Violence</a></em></strong>
+<ul>
+<li><strong>Team:</strong> <span style="text-decoration:underline;">Nilou Esmaeili (Leader), Jairo Samuda, Kai Pheonix, Anastasia Blanco, &amp; Branden Jackson</span></li>
+<li><strong>Dataset Description: </strong>For this final dataset project, as a group we scavenged data pertaining to murals and monuments placed throughout Ciudad Juarez, Mexico, other various cities throughout Mexico, and internationally. The purpose of this dataset is to hopefully bring awareness to how frequently gender-based violence occurs especially in hotspots such as areas around the US-Mexican border, throughout Mexican cities, other countries of more conservative nature, more populated countries, etc… The list can go on, but the point is, that gender-based violence happens worldwide every day whether we witness it or not. Most of the data sources were from social media sites such as Instagram and X (Twitter). We encountered that when scrolling through these applications, there are a lot of bots, inappropriate content, threats, and unrelated posts. It was frustrating because social media is a good source to pull current information and data from, but navigating was annoying. Originally, our purpose would’ve been to create a program (code) to help the team members easily navigate and pick out the data needed throughout the loads of data and posts we go through on articles and social media sites. Unfortunately, it requires more advanced coding skills to create this program because it utilizes AI databases and even creating databases for the AI coding working with this data requires field work to process this data. Student comment: “I encounter having to interact with data in a way I have not even begun learning nor brushed up on in any of my classes. For reasons such as that, I scrapped my program completely and just manually mined data for our project. It would’ve been a nice way to make it easier for not only me and my groupmates, but my other classmates to use.”</li>
+<li><strong>Dataset dissemination: </strong>mapping, image analysis, digital and 3D exhibits, virtual reality</li>
+</ul></li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -480,25 +550,8 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGFsbHR3b2J1dHRvbnMsIHZpZXdvZiBhbGxkYXRhU2V0LCBhbGx0YWJsZUNvbnRhaW5lciwgYWxsdGFibGUsIGFsbHRhYmxlU3R5bGVzLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zfSBmcm9tIFwiNjYyMzE1YjA2MmQ2NjhmYlwiXG5cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InZpZXdvZiBhbGxkYXRhU2V0XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJhbGx0YWJsZUNvbnRhaW5lclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC00IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHR3b2J1dHRvbnNcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC02IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbHNlbGVjdGVkQ29sdW1uc1xudmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlld1xuXG4ifV19
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGFsbGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGFsbHR3b2J1dHRvbnMsIHZpZXdvZiBhbGxkYXRhU2V0LCBhbGx0YWJsZUNvbnRhaW5lciwgYWxsdGFibGUsIGFsbHRhYmxlU3R5bGVzLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zLCB2aWV3b2YgYWxsZGF0YXNldEhlYWRlcn0gZnJvbSBcIjY2MjMxNWIwNjJkNjY4ZmJcIlxuXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsZGF0YVNldFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoidmlld29mIGFsbGRhdGFzZXRIZWFkZXJcbmFsbHRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsdHdvYnV0dG9uc1xuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYWxsdGFibGVcbmh0bWxgPGxpbmsgaHJlZj0naHR0cHM6Ly91bnBrZy5jb20vdGFidWxhdG9yLXRhYmxlc0A1LjMuMS9kaXN0L2Nzcy90YWJ1bGF0b3IubWluLmNzcycgcmVsPSdzdHlsZXNoZWV0JyAvPlxudGFidWxhdG9yLm1pbi5jc3NgXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgYWxsZGF0YVN1bW1hcnlWaWV3XG5cbiJ9XX0=
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }

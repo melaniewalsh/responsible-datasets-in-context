@@ -7,6 +7,8 @@ render:
       output-dir: ../docs/team
 
 website:
+  image: images/responsible-logo.png
+  twitter-card: true
   bread-crumbs: false
   title: "Responsible Datasets in Context"
   favicon: images/responsible-logo-white.png
@@ -20,12 +22,12 @@ website:
     logo: images/responsible-logo-white.png
     right:
       - datasets.qmd
+      - text: "Mission"
+        href: mission.qmd
+      - text: "Team"
+        href: team.qmd
       - text: "About"
         menu: 
-        - text: "Team"
-          href: team.qmd
-        - text: "Mission"
-          href: mission.qmd
         - text: "Sponsors"
           href: sponsors.qmd
         - text: "Get In Touch"
@@ -88,11 +90,12 @@ format:
     code-copy: true
     code-overflow: wrap
     include-in-header: 
+      - custom-footnotes.js
       - tabs-tocs.js
       - fontawesome.js
     include-after-body:
       - tabs-to-urls.js
-      - custom-footnotes.js
+      
     
     #  - dynamic-toc.js
 

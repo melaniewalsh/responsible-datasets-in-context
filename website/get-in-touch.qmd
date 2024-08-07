@@ -7,4 +7,6 @@ toc: false
 title-block-banner: true
 ---
 
-If you use our datasets or resources, we would love to hear from you! We are open to feedback, suggestions, and potentially collaborating with or assisting you. Feel free to reach out to melwalsh@uw.edu.  
+If you use our datasets or resources, we would love to hear from you! We have a brief survey here: https://docs.google.com/forms/d/e/1FAIpQLSdTNZ40mu2RxJhQ4cON2z2hbV2msLg-4ejp1_luBZp3hfivrw/viewform
+
+We are also open to other feedback and suggestions, and to potentially collaborating with or assisting you. You can find us on [GitHub](https://github.com/melaniewalsh/responsible-datasets-in-context) or get in touch via email (melwalsh@uw.edu).  

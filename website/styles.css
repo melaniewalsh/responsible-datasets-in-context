@@ -50,9 +50,9 @@
 
   /* prevent scroll with Observable tables */
 
-.observablehq table {
+/* .observablehq table {
     overflow: hidden !important ;
-}
+} */
   .toc ul {
     list-style-type: none;
     padding: 0;
@@ -288,9 +288,9 @@ button#quarto-code-tools-menu i::before {
     padding: 10px;
 }
 
-body.team img {
+/* body.team img {
     width: 10em;
-}
+} */
 .toc {
     width: auto;
     background: #eee;

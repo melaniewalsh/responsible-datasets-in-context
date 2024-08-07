@@ -149,6 +149,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
   function toTitleCase(str) {
@@ -279,6 +296,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="Team – Responsible Datasets in Context">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Mozilla_logo.svg/2560px-Mozilla_logo.svg.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed team fullcontent">
@@ -305,19 +325,19 @@ window.Quarto = {
     <a class="nav-link" href="./datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./team.html" aria-current="page"> 
+<span class="menu-text">Team</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="./team.html">
- <span class="dropdown-text">Team</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./mission.html">
- <span class="dropdown-text">Mission</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="./sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
@@ -735,23 +755,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

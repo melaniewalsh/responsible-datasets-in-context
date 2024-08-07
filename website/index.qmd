@@ -9,9 +9,9 @@ listing:
   id: datasets
   contents: posts
   exclude:
-    categories: ["exercise", "solution", "included-content", "discussion", "activities"]
+    categories: ["exercise", "solution", "included-content", "discussion", "activities", "audit"]
     title: "National Park Visitation Data"
-  sort: "date desc"
+  sort: "date asc"
   type: default
   categories: unnumbered 
   sort-ui: false
@@ -54,7 +54,7 @@ We provide models for responsible data curation, documentation, story-telling, a
 Learn more about our [Datasets](datasets.qmd), [Team](team.qmd), [Mission](mission.qmd), and [Sponsors](sponsors.qmd). Find us on [GitHub](https://github.com/melaniewalsh/responsible-datasets-in-context) <i class="bi bi-github" role="img">
 </i>, or [get in touch](get-in-touch.qmd).
 
-<span style="text-align: right; font-style: italic; color: red !important;">This website is in development and open to user feedback and discussion. To leave a comment, highlight any text, click "Annotate," and log into/sign up Hypothesis.</span>
+<span style="text-align: right; font-style: italic; color: red !important;">This website is in development and open to user feedback and discussion. To leave a comment, highlight any text, click "Annotate," and log into/sign up for Hypothesis.</span>
 :::::
 
 <!-- ![](images/responsible-logo.png){width=50%}

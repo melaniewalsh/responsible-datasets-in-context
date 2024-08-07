@@ -5,10 +5,11 @@ categories: [ggplot, advanced, solution]
 
 #image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
 format: 
-  html: default
-  ipynb: default
-  pdf: default
-  docx: default
+  html: 
+    code-links:
+      - text: R Script
+        href: Ggplot-Customization-NP-Solutions.R
+        icon: file-code
 code-overflow: wrap
 code-fold: show
 editor: visual

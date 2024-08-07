@@ -1,7 +1,7 @@
 ---
-title: "Pandas Groupby with National Park Visitation Data"
+title: "Pandas Groupby with National Park Visitation Data (Exercise)"
 date: "2024-08-01"
-categories: [pandas, exercise, solution]
+categories: [pandas, exercise]
 format: 
   html: default
   ipynb: default

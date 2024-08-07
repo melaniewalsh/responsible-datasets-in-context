@@ -1,8 +1,13 @@
 ---
-title: "Groupby with National Park Visitation Data"
+title: "DPLYR Groupby with National Park Visitation Data (Exercise)"
 date: "2024-08-01"
 categories: [dplyr, exercise]
-format: html
+format: 
+  html: 
+    code-links:
+      - text: R Script
+        href: NP-Data-Groupby.R
+        icon: file-code
 code-overflow: wrap
 code-fold: show
 editor: visual

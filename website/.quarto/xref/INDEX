@@ -224,5 +224,26 @@
   },
   "posts/np-data/exercises-r/Intro-to-DPLYR-NP.qmd": {
     "Intro-to-DPLYR-NP.html": "36fa6c6a"
+  },
+  "posts/early-african-american-film/index.qmd": {
+    "index.html": "bbd03daa",
+    "index.tex": "d7c2b67e"
+  },
+  "posts/top-500-novels/top-500-novels.quarto.ipynb": {
+    "top-500-novels.quarto.html": "b96e3ab9"
+  },
+  "posts/dolma/index.qmd": {
+    "index.html": "89edad4b",
+    "index.tex": "b7f05a42"
+  },
+  "posts/top-500-novels/exercises/Metadata_Analysis.ipynb": {
+    "Metadata_Analysis.html": "c4934eab"
+  },
+  "posts/top-500-novels/exercises/Metadata_Analysis.qmd": {
+    "Metadata_Analysis.html": "4025ab1a",
+    "Metadata_Analysis.ipynb": "9d33cabd"
+  },
+  "posts/np-data/exercises-r/NP-Data-Groupby-Solutions.qmd": {
+    "NP-Data-Groupby-Solutions.html": "9b1666af"
   }
 }

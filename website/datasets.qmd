@@ -5,7 +5,7 @@ listing:
   exclude:
     categories: ["exercise", "solution", "included-content", "discussion", "activities"]
     title: "National Park Visitation Data"
-  sort: "date desc"
+  sort: "date asc"
   type: default
   categories: unnumbered
   sort-ui: false

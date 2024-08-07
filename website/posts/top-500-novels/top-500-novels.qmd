@@ -22,7 +22,7 @@ listing:
   sort-ui: false
   filter-ui: true
   image-height: 200px
-date: "2024-04-10"
+date: "2024-07"
 categories: [libraries, literature, readers, gender, metadata, full-text, public domain ]
 image: "images/library-top-500-screenshot.png"
 # toc: true
@@ -132,6 +132,58 @@ The newer works included on the list are books that have achieved immense popula
 
 By focusing on books that librarians have chosen to continue to make available to readers, OCLC was able to create a list of widely read novels that includes both classic texts and more recent, popular works by living authors. The list, though, also reflects various forms of bias rooted in literary history, in library collections, and in the data itself. We wondered, whose conception of “literary greatness” is being represented? How does OCLC’s data compare to other potential indicators of popularity or canonicity? And, for that matter, how was the list actually constructed?
 
+## What's in the data?
+
+The columns in our expanded version of the Library Top 500 Novels dataset include information in the following categories:
+
+The columns in our expanded version of the Library Top 500 Novels dataset include information in the following categories:
+
+### Basic info on novels:
+
+- **TOP_500_RANK:** Numeric rank of text in OCLC’s original Top 500 List.
+- **TITLE:** Title of text, as recorded in OCLC’s original Top 500 List.
+- **AUTHOR:** Author of text, as recorded in OCLC’s original Top 500 List.
+- **PUB_YEAR:** Year of first publication of text, according to Wikipedia.
+- **ORIG_LANG:** Original language of text, according to Wikipedia.
+- **GENRE:** Genre of text, as recorded in OCLC’s original Top 500 List (filtered by the ‘Choose Genre’ dropdown). 
+
+### Author demographic info:
+
+- **AUTHOR_BIRTH:** Author year of birth, according to VIAF. 
+- **AUTHOR_DEATH:** Author year of death, according to VIAF.
+- **AUTHOR_GENDER:** Author gender, according to VIAF. Note: VIAF only includes binary gender categories, with an alternate option of “Unknown.” Although we want to resist binary categorizations of gender, we have used VIAF because it provides the most comprehensive and accurate information we could find for authors on this list, and because it can be difficult if historical authors held non-binary identities. If we find evidence that any of the authors on the list identified or identify as non-binary, we will change the gender categories to reflect their identifications. 
+- **AUTHOR_PRIMARY_LANG:** Author’s primary language of publication, according to VIAF.
+- **AUTHOR_NATIONALITY:** Author’s nationality according to VIAF. VIAF includes multiple national associations for many authors, but we have only collected information on the first country associated with each author. Importantly, this does not include information on tribal citizenship or on changes in nationality across an author’s lifetime.
+- **AUTHOR_FIELD_OF_ACTIVITY:** Author’s primary fields of activity, according to VIAF. VIAF includes data from multiple global partner institutions, but we only collect VIAF data associated with the Library of Congress (LOC).
+- **AUTHOR_OCCUPATION:** Author’s primary occupations, according to VIAF. VIAF includes data from multiple global partner institutions, but we only collect VIAF data associated with the Library of Congress (LOC).
+
+### Library holdings info:
+
+- **OCLC_HOLDINGS:** Total physical library holdings listed in WorldCat for an individual work (OWI), according to Classify. 
+- **OCLC_EHOLDINGS:** Total digital library holdings listed in WorldCat for an individual work (OWI), according to OCLC. 
+- **OCLC_TOTAL_EDITIONS:** Total editions of an individual work–physical and digital–listed in WorldCat according to OCLC.
+- **OCLC_HOLDINGS_RANK:** Numeric rank of text based on total holdings recorded in WorldCat. 
+- **OCLC_EDITIONS_RANK:** Numeric rank of text based on total number of editions recorded in WorldCat.
+
+### Online popularity info:
+
+- **GR_AVG_RATING:** Average star rating for a text on Goodreads.
+- **GR_NUM_RATINGS:** Total number of ratings for a text on Goodreads.
+- **GR_NUM_REVIEWS:** Total number of reviews for a text on Goodreads.
+- **GR_AVG_RATING_RANK:** Numeric rank of text based on average Goodreads rating.
+- **GR_NUM_RATINGS_RANK:** Numeric rank of text based on overall number of ratings on Goodreads.
+
+### Unique Identifiers and URLS:
+
+- **OCLC_OWI:** Work ID on OCLC. A work ID represents a cluster based on “author and title information from bibliographic and authority records.” A title can be represented by multiple clusters, and therefore multiple OWIs. More information about OCLC work clustering can be found here.
+- **AUTHOR_VIAF:** Author VIAF ID.
+- **GR_URL:** URL for text on Goodreads.
+- **WIKI_URL:** URL for text on Wikipedia.
+- **PG_ENG_URL:** URL for English-language text on Project Gutenberg.
+- **PG_ORIG_URL:** URL for original-language text (where applicable) on Project Gutenberg.
+- **FULL_TEXT:** Full text of the novel, if it is in the public domain.
+
+
 ## **WHERE DID THE DATA COME FROM? WHO COLLECTED IT?**
 
 ### **The Top 500 list** 
@@ -225,7 +277,7 @@ Looking at the AUTHOR_GENDER column, we can count the number of authors identifi
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("final_merged_dataset.tsv", sep='\t', header=0, low_memory=False)
+df = pd.read_csv("../../../datasets/top-500-novels/full-text/final_merged_dataset.tsv", sep='\t', header=0, low_memory=False)
 
 df["author_gender"].value_counts(dropna=False)
 
@@ -353,7 +405,11 @@ HTML(html_output)
 
 ```
 
-You can find more metadata analysis [here](HOLD_FOR_LINK_TO_ACTIVITIES_SECTION).
+::: {.callout-tip}
+## Metadata Activities
+
+You can find more metadata analysis in [Activities](?tab=discussion-%26-activities).
+:::
 
 ## **FULL TEXT DATA**
 
@@ -449,12 +505,13 @@ In addition to the dataset of metadata, we have also created a dataset that incl
 # Exercises {#exercises}
 
 ::: {.panel-tabset .nav-pills}
-## R {#exercise-posts-r}
+
+## Python {#exercise-posts-python}
+
 
 ::: {#exercise-posts}
 :::
-
-## Python {#exercise-posts-python}
+## R {#exercise-posts-r}
 :::
 
 :::

@@ -22,7 +22,7 @@ listing:
   sort-ui: false
   filter-ui: true
 #   image-height: 200px
-date: "2024-05-17"
+date: "2024-07"
 categories: [literature, poetry, gender, race, metadata, full-text, public domain]
 image: "images/aa-anthology.png"
 sidebar: 

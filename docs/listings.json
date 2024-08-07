@@ -2,15 +2,17 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
-      "/posts/top-500-novels/top-500-novels.html",
       "/posts/np-data/index.html",
-      "/posts/gender-violence/index.html"
+      "/posts/top-500-novels/top-500-novels.html",
+      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+      "/posts/gender-violence/index.html",
+      "/posts/early-african-american-film/index.html"
     ]
   },
   {
     "listing": "/posts/np-data/index.html",
     "items": [
+      "/posts/np-data/exercises-r/NP-Data-Groupby-Solutions.html",
       "/posts/np-data/exercises-r/NP-Data-Groupby.html",
       "/posts/np-data/exercises-r/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises-r/Ggplot-Customization-NP-Solutions.html",
@@ -28,7 +30,7 @@
   {
     "listing": "/posts/top-500-novels/top-500-novels.html",
     "items": [
-      "/posts/top-500-novels/exercises/Intro-to-DPLYR-NP.html"
+      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
     ]
   },
   {
@@ -49,10 +51,12 @@
   {
     "listing": "/datasets.html",
     "items": [
-      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
-      "/posts/top-500-novels/top-500-novels.html",
       "/posts/np-data/index.html",
-      "/posts/gender-violence/index.html"
+      "/posts/top-500-novels/top-500-novels.html",
+      "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+      "/posts/gender-violence/index.html",
+      "/posts/early-african-american-film/index.html",
+      "/posts/dolma/index.html"
     ]
   }
 ]

@@ -1,7 +1,7 @@
 ---
 title: "Introduction to DPLYR with National Park Visitation Data (Solution)"
 date: "2024-02-26"
-categories: [dplyr, solution]
+categories: [dplyr, exercise, solution]
 
 #image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
 format: 

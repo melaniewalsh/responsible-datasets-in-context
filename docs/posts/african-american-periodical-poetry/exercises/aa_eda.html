@@ -125,6 +125,23 @@ gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
   });
 </script>
 <script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert string to title case
   function toTitleCase(str) {
@@ -245,6 +262,9 @@ require(['plotly'], function(Plotly) {
 
 
 <link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Visualize Author Gender By Year (Solution) – Responsible Datasets in Context">
+<meta name="twitter:image" content="images/responsible-logo.png">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed">
@@ -271,19 +291,19 @@ require(['plotly'], function(Plotly) {
     <a class="nav-link" href="../../../datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">About</span>
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
-        <li>
-    <a class="dropdown-item" href="../../../team.html">
- <span class="dropdown-text">Team</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../../mission.html">
- <span class="dropdown-text">Mission</span></a>
-  </li>  
         <li>
     <a class="dropdown-item" href="../../../sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
@@ -320,6 +340,7 @@ require(['plotly'], function(Plotly) {
                 <div class="quarto-category">groupby</div>
                 <div class="quarto-category">python</div>
                 <div class="quarto-category">solution</div>
+                <div class="quarto-category">exercise</div>
               </div>
                   </div>
   </div>
@@ -353,7 +374,6 @@ require(['plotly'], function(Plotly) {
   <li><a href="#convert-year-to-datetime-value" id="toc-convert-year-to-datetime-value" class="nav-link" data-scroll-target="#convert-year-to-datetime-value">Convert year to datetime value</a></li>
   <li><a href="#group-by-year-count-instances-of-author-by-gender" id="toc-group-by-year-count-instances-of-author-by-gender" class="nav-link" data-scroll-target="#group-by-year-count-instances-of-author-by-gender">Group by year, count instances of author by gender</a></li>
   <li><a href="#make-this-grouping-into-a-dataframe" id="toc-make-this-grouping-into-a-dataframe" class="nav-link" data-scroll-target="#make-this-grouping-into-a-dataframe">Make this grouping into a dataframe</a></li>
-  <li><a href="#add-missing-years" id="toc-add-missing-years" class="nav-link" data-scroll-target="#add-missing-years">Add missing years</a></li>
   <li><a href="#visualize-with-seaborn" id="toc-visualize-with-seaborn" class="nav-link" data-scroll-target="#visualize-with-seaborn">Visualize with seaborn</a></li>
   <li><a href="#make-interactive-visualizations-with-plotly" id="toc-make-interactive-visualizations-with-plotly" class="nav-link" data-scroll-target="#make-interactive-visualizations-with-plotly">Make interactive visualizations with plotly</a></li>
   </ul>
@@ -368,7 +388,7 @@ require(['plotly'], function(Plotly) {
 
 <section id="import-pandas" class="level1">
 <h1>Import pandas</h1>
-<div id="244b77ab" class="cell" data-execution_count="1">
+<div id="02d7a0ef" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -377,326 +397,137 @@ require(['plotly'], function(Plotly) {
 </section>
 <section id="read-in-csv" class="level1">
 <h1>Read in CSV</h1>
-<div id="e455fd4d" class="cell" data-execution_count="2">
+<div id="dbeb3bf1" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>aa_df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928.-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.-Revised-Version-July-2024.csv"</span>,  quotechar<span class="op">=</span><span class="st">'"'</span>, escapechar<span class="op">=</span><span class="st">'</span><span class="ch">\\</span><span class="st">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>aa_df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="view-first-5-rows" class="level1">
 <h1>View first 5 rows</h1>
-<div id="36fbd2bf" class="cell" data-execution_count="3">
+<div id="56bfbc45" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>aa_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>aa_df.head()</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'gender (if known)'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">title</th>
-<th data-quarto-table-cell-role="th">author (first last)</th>
-<th data-quarto-table-cell-role="th">author (last name)</th>
-<th data-quarto-table-cell-role="th">text</th>
-<th data-quarto-table-cell-role="th">month</th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">venue</th>
-<th data-quarto-table-cell-role="th">edited by</th>
-<th data-quarto-table-cell-role="th">form (if known)</th>
-<th data-quarto-table-cell-role="th">gender (if known)</th>
-<th data-quarto-table-cell-role="th">themes</th>
-<th data-quarto-table-cell-role="th">second venue</th>
-<th data-quarto-table-cell-role="th">published in (city)</th>
-<th data-quarto-table-cell-role="th">Magazine Type</th>
-<th data-quarto-table-cell-role="th">Author Bio.</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">New Wars</td>
-<td data-quarto-table-cell-role="th">Benjamin Griffith Brawley</td>
-<td data-quarto-table-cell-role="th">Brawley</td>
-<td data-quarto-table-cell-role="th">HURL on the lance! Break up the ancient peace!\nNow let the arrow hiss in air and sing;\nNow let the spear-point on the armor ring;\nSound forth the call to wars that never cease!\n\nYe hoot the yellow Mongol from your land;\nBut forth to regions all his own ye go\nTo reap the riches of his overflow,\nAnd just ye call the working of your hand!\n\nNow see the scramble of the Christian host--\nThem all press forward for the spoil that's won;\nNew wars! new wars! ris'n on the olden one--\nAnd this, this the enlightened freeman's boast!\n\nBut greater is the strife than here would seem,\nAnd wider realms embracing than the East,\nFor that is but the remnant of the feast.\nI had a vision. (Was it all a dream?)\n\nThe weary Titan groaned beneath the weight\nOf nations growing weaker day by day,\nWhose men he deemed but men of minor clay,\nAnd destinies he wrought for them their fate.\n\nAnd why, methought, does not the giant's creed\nCast off the weaklings that would warp his might,\nAnd leave alone the wretches in their plight?\nNo answer save "I would not" from his greed.\n\nSo freedom hails th' advance of king and queen;\nThe march of mind goes on o'er field and flood;\nRepublics curb the weak with shows of blood;\nAnd lordly priests profess the Nazarene!\n\nYet hear the trumpet and the cannon's roar,\nThe orphan's crying and the widow's wail;\nBut what of them? Unfurl the sail! flay! flail!\nOn! on! on to the mighty breach once more!\n</td>
-<td data-quarto-table-cell-role="th">November</td>
-<td data-quarto-table-cell-role="th">1900</td>
-<td data-quarto-table-cell-role="th">Colored American</td>
-<td data-quarto-table-cell-role="th">Walter W. Wallace</td>
-<td data-quarto-table-cell-role="th">Common Measure</td>
-<td data-quarto-table-cell-role="th">male</td>
-<td data-quarto-table-cell-role="th">Spanish-American War, Empire</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">Boston</td>
-<td data-quarto-table-cell-role="th">Predom. Black</td>
-<td data-quarto-table-cell-role="th">https://en.wikipedia.org/wiki/Benjamin_Griffith_Brawley</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">A Picture</td>
-<td data-quarto-table-cell-role="th">Olivia Ward Bush-Banks</td>
-<td data-quarto-table-cell-role="th">Bush-Banks</td>
-<td data-quarto-table-cell-role="th">I drew a picture long ago —\nA picture of a sullen sea;\nA picture that I value now\nBecause it clears Life’s mystery.\nMy sea was dark and full of gloom;\nI painted rocks of sombre hue.\nMy sky alone bespoke of light,\nAnd that I painted palest blue.\nBut e’en across my sky of blue\nStretched troubled clouds of sodden gray,\nThrough which the sun shone weak and dim,\nWith only here and there a ray.\nAround my rocks the yellow foam\nSeemed surging, moaning in despair\nAs if the waves, their fury spent,\nLeft naught but desolation there.\nThree crafts with fluttering sails I drew,\nAnd one sailed near the rocks of gray,\nThe other on its westward course,\nWent speeding out of danger’s way.\nThe other still outdistanced them\nWhere sky and water seemed to meet.\nI painted that with sails full set,\nAnd then my picture was complete.\nMy life was like the sullen sea,\nMisfortune’s woes, my rocks of gray;\nThe crafts portrayed Life’s changing scenes,\nThe clouded sky Life’s troubled Day\nI long to paint that picture o’er,\nWithout the rocks of sombre hue;\nWithout the troubled clouds of gray,\nI’ll paint the sky of brightest blue.\nMy sea shall lay in calm repose,\nNo hint of surging, moaning sigh.\nMy crafts, unhindered by the rocks,\nShall speed in joyous swiftness by.\nBut this will be when brightest hours\nOf hope and cheer are given me.\nI’ll paint this picture when Life’s sun\nShines clear upon Prosperity.</td>
-<td data-quarto-table-cell-role="th">June</td>
-<td data-quarto-table-cell-role="th">1900</td>
-<td data-quarto-table-cell-role="th">Colored American</td>
-<td data-quarto-table-cell-role="th">Walter W. Wallace</td>
-<td data-quarto-table-cell-role="th">Common Measure</td>
-<td data-quarto-table-cell-role="th">female</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">Boston</td>
-<td data-quarto-table-cell-role="th">Predom. Black</td>
-<td data-quarto-table-cell-role="th">https://en.wikipedia.org/wiki/Olivia_Ward_Bush-Banks</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">The Christmas Reunion</td>
-<td data-quarto-table-cell-role="th">Augustus M. Hodges</td>
-<td data-quarto-table-cell-role="th">Hodges</td>
-<td data-quarto-table-cell-role="th">Twas a bright Christmas morning in "Ole Kentuck";\nAunt Sallie was busy disrobing a duck-\nA featherless turkey close by her side lay,\nPrepared for the dinner that bright Christmas day.\n'Twas a family reunion, and Uncle Joe Moore\nAnd his good wife Aunt Sallie, both ten and threescore,\nHad gathered around them their "girls" and their "boys,"\nWith these "children's" children - the grandparents' joys.\nThe "girls" (all past thirty) were helping to make\nThe "sweet tater puddin's," the pies, and the cake;\nThe "boys" and the grand-boys the fires were making,\nThe oldest granddaughter the biscuits was baking,\nThe little grandchildren a dozen or more\nWere tumbling about just outside of the door;\nWhile Uncle Joe Moore, the venerable sire,\nSat smoking his pipe with his back to the fire.\nWhen the clock tolled the midday the feast was complete,\nAnd after each member had taken his seat,\nThe venerable sire rose up from his chair,\nAnd with uplifted arms he offered this prayer:\n"We thank Thee, our Father in heaven," he said,\n"For the abundance of good things before us now spread;\nWe thank Thee, dear Lord, that I and my wife\nHave been spared by thy goodness to reach an old life;\nWe thank Thee, of all things, the sweetest and best,\nFor our dear children's presence from North, South and West.\nContinue Thy blessings, Thy goodness, Thy love,\nAnd prepare us to meet Thee in heaven above."\nThe grace being over the feast was begun.\nThe duck and the turkey were carved one by one;\nThe big chicken pot-pie received the same fate,\nAnd a generous helping was piled on each plate.\nAfter the meats came the puddings and pies;\nThen how the grandchildren all opened their eyes\nWhen one of their uncles from far Illinois\nBrought out from the closet a basket of toys.\nAs dinner was over, the venerable sire\nRose up from his seat and stood by the fire,\nWhere he called to his side each lamb of his fold,\nAnd blessed and caressed them like Jacob of old.\n"What changes we've seen, Sal," remarked Uncle Joe,\n"These years we've been married, some forty or so.\nNow let me see, forty? Yes, forty-one years\nToday, since we met at Uncle Bill Steer's.\nI remember, ole 'oman, you looked mighty gran',\nAnd I was then, children, er good-lookin' man.\nI walked with your mother from Clayton that night,\nAnd 'fore we got home, why I got in a fight.\nTom Scott, a 'patroller,' insulted your mother,\nSo I knocked him down, and Ed, his big brother.\nI then asked your mother if she'd be my wife.\nHer answer was: 'Yes, Joe, since you risked your life\nFor me up the road, and licked old Tom Scott,\nYes, I'll be your wife; why, Joseph, why not?'\nBut the next day, my children, my master sold me\nTo an ole Nigger trader' from East Tennessee,\nWhere I worked on a farm without seeing your mother\nFor eighty long days, till me and another.\nPlantation hand run away and met with good luck,\nFor we soon found ourselves on the soil of Kentuck.\n'Fore my ole master knowed I run erway\nWe two was married that same Christmas day.\nWe was married at Scottsville by ole Peter Brown,\nWho was a white minister that lived in the town,\nAnd would marry us slave folks no matter or not\nIf our masters was willing, if we only had got\nA couple of chickens or a barrel of corn.\nThe very next Christmas our Lucy was born,\nAnd the next of the past that I now can remember\nIs when we moved here the following September.\nThen came the war, Sal, and ole marster died,\nWhile Missus and you, Sal, stood by his side.\nThen I left you and children, and went out to fight\nFor the Union and Freedom one warm summer's night.\nThen good Abr'am Lincoln, he sot us all free,\nAnd we had in the county a big jubilee.\nThen you boys and you girls all worked hand to hand\nTo buy me and your mother this house and this land.\nThen some of you married, and some went out West,\nWhile me and your mother, along with the rest,\nStayed on the old homestead and worked night and day,\nA farming and trucking, and made the work pay.\nWe are glad for to meet you all back here once more,\nAnd see your dear babies together, before\n\nSat smoking his pipe with his back to the fire.\nMe and your mother (we are both old and gray)\nReceive old Death's summons to call us away.\nGod bless you, my children, through life, is my prayer,"\nAnd the venerable sire sat down in his chair.\nThe rest of the evening was passed in a measure\nReceiving old friends or by chatting in pleasure\nTill long after midnight, with hearts light and gay.\n'Twas a happy reunion that bright Christmas day.</td>
-<td data-quarto-table-cell-role="th">December</td>
-<td data-quarto-table-cell-role="th">1900</td>
-<td data-quarto-table-cell-role="th">Colored American</td>
-<td data-quarto-table-cell-role="th">Walter W. Wallace</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">male</td>
-<td data-quarto-table-cell-role="th">Slavery</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">Boston</td>
-<td data-quarto-table-cell-role="th">Predom. Black</td>
-<td data-quarto-table-cell-role="th">https://en.wikipedia.org/wiki/Augustus_M._Hodges</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">A Memorial of Frederick Douglass</td>
-<td data-quarto-table-cell-role="th">C. Henry Holmes</td>
-<td data-quarto-table-cell-role="th">Holmes</td>
-<td data-quarto-table-cell-role="th">He was a noble hero, born in an humble state,\nBut with a will like Nero, his cruel chains did break.\nIf in the glorious transept, worth and fitness reign,\nIf in the unknown regions, all are rewarded the same,\nIf to the hero modern, honor is rightly given,\nHis is a sapphired crown in the bright kingdom of heaven.\nTell of sagacious raids on the black tiller of soil,\nBringing from under-byways\nInto freedom's sunshine and joy.\nTell of the noble plea the companion of martyred John Brown,\nEarth but records - heaven rewards\nThe worthy with worthy renown.\nTell of the noble traits of character true as steel,\nTell of the fear-fraught days which every true patriot feels.\nTell of the powerful mind that forces the just decree,\nFair Ethiope placed with thee her hopes in blessed security.\nWet are the cheeks of millions; loudly do they lament,\nWhence thou art swiftly riven from the mundane transient.\nDeath- unsatiable devourer thou checkmate of good men's\ndeeds,\n-\nVisiting earth each hour, unmindful of worldly needs,\nBut to thy name and prestige, posterity ever lauds,\nHonor in life, happy in death, near the throne of the living God.\n</td>
-<td data-quarto-table-cell-role="th">September</td>
-<td data-quarto-table-cell-role="th">1900</td>
-<td data-quarto-table-cell-role="th">Colored American</td>
-<td data-quarto-table-cell-role="th">Walter W. Wallace</td>
-<td data-quarto-table-cell-role="th">Elegy</td>
-<td data-quarto-table-cell-role="th">male</td>
-<td data-quarto-table-cell-role="th">Frederick Douglass</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">Boston</td>
-<td data-quarto-table-cell-role="th">Predom. Black</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">The Negro's Worth</td>
-<td data-quarto-table-cell-role="th">Alonzo Milton Skrine</td>
-<td data-quarto-table-cell-role="th">Skrine</td>
-<td data-quarto-table-cell-role="th">Who casts a slur on Negro worth, a stain on Negro fame?\nWho dreads to own his Negro blood, or hear his Negro name?\nWho scorns the warmth of Negro hearts [illegible] the clasp of Negro hands?\nIf he but shows his traitor's face, we [illegible] him where he stands.\n\nThe Negro's blood! Its crimson tide has watered hill and plain\nWherever there were wrongs to crush, or freemen's rights to gain.\nNo dastard thought, no cowardly fear his had it tamely by\nWhen there were noble deeds to do [illegible] to die.&nbsp;\n\nThe Negro's heart! The Negro's heart! God keeping pure and free\nThe fullness of its kindly thought its wealth of honest glee;\nIts generous strength; its ardent faith; its uncomplaining trust;\nThough every worshipped idol break and crumble into dust.\n\nThe Negro's hands! Ah, lift them up. made strong by honest toil.\nThe champion of the Civil War and of the Cuban soil:\nTheir battle swords they flash aloft, though death in front they see ;\nThe Negro's hands did valiant deeds tot brave Cuba free.\n\nThey bore the old flag bravely, and were there at Lincoln's call.\nThey stood beside the foremost rank, with the bravest of them all.\nAnd when before the enemy's guns they held the Gray at bay —\nO never could the Afric heart beat prouder than that day.\n\nSo if some proud Caucasian cavils at the darkness of your race,\nOr speaks in scorn of Africa before her children's face,\nThen lay aside the flag of truce, and denounce him where he stands&nbsp;\nFor Negro's worth and Negro's fame were won by Negro's hands.\n\n\nPublished in&nbsp;Colored American Magazine,&nbsp;December 1900</td>
-<td data-quarto-table-cell-role="th">December</td>
-<td data-quarto-table-cell-role="th">1900</td>
-<td data-quarto-table-cell-role="th">Colored American</td>
-<td data-quarto-table-cell-role="th">Walter W. Wallace</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">male</td>
-<td data-quarto-table-cell-role="th">Civil War, Spanish-American War, Labor, Slavery, Progress and Racial Uplift</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">Boston</td>
-<td data-quarto-table-cell-role="th">Predom. Black</td>
-<td data-quarto-table-cell-role="th">https://scalar.lehigh.edu/african-american-poetry-a-digital-anthology/charles-frederick-white-author-page</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td data-quarto-table-cell-role="th">NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-<td>NaN</td>
-</tr>
-</tbody>
-</table>
-
-</div>
+<pre><code>gender (if known)
+male      657
+female    317
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
 <section id="convert-year-to-datetime-value" class="level1">
 <h1>Convert year to datetime value</h1>
-<div id="91fe9b57" class="cell" data-execution_count="4">
+<div id="982fff03" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(aa_df[<span class="st">'year'</span>], <span class="bu">format</span> <span class="op">=</span> <span class="st">"%Y"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_df.set_index('year').reindex(pd.date_range('1900-01-01', '1930-12-31', freq='Y'))</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>].sort_values().unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(aa_df[<span class="st">'year'</span>], <span class="bu">format</span> <span class="op">=</span> <span class="st">"%Y"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_df.set_index('year').reindex(pd.date_range('1900-01-01', '1930-12-31', freq='Y'))</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>].sort_values().unique()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>&lt;DatetimeArray&gt;
-['NaT']
-Length: 1, dtype: datetime64[ns]</code></pre>
+['1900-01-01 00:00:00', '1901-01-01 00:00:00', '1902-01-01 00:00:00',
+ '1903-01-01 00:00:00', '1904-01-01 00:00:00', '1905-01-01 00:00:00',
+ '1906-01-01 00:00:00', '1907-01-01 00:00:00', '1908-01-01 00:00:00',
+ '1909-01-01 00:00:00', '1910-01-01 00:00:00', '1911-01-01 00:00:00',
+ '1912-01-01 00:00:00', '1913-01-01 00:00:00', '1914-01-01 00:00:00',
+ '1915-01-01 00:00:00', '1916-01-01 00:00:00', '1917-01-01 00:00:00',
+ '1918-01-01 00:00:00', '1919-01-01 00:00:00', '1920-01-01 00:00:00',
+ '1921-01-01 00:00:00', '1922-01-01 00:00:00', '1923-01-01 00:00:00',
+ '1924-01-01 00:00:00', '1925-01-01 00:00:00', '1926-01-01 00:00:00',
+ '1927-01-01 00:00:00', '1928-01-01 00:00:00']
+Length: 29, dtype: datetime64[ns]</code></pre>
 </div>
 </div>
-<p>It looks like we have some missing year values… we may need to add them back in shortly.</p>
 </section>
 <section id="group-by-year-count-instances-of-author-by-gender" class="level1">
 <h1>Group by year, count instances of author by gender</h1>
-<div id="21e97211" class="cell" data-execution_count="5">
+<div id="86b9561f" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="5">
-<pre><code>Series([], Name: count, dtype: int64)</code></pre>
+<pre><code>year        gender (if known)
+1900-01-01  male                  5
+            female                1
+1901-01-01  male                 31
+            female                3
+1902-01-01  male                  5
+            female                1
+1903-01-01  male                 15
+            female                6
+1904-01-01  male                 12
+1905-01-01  male                 44
+            female               24
+1906-01-01  male                 55
+            female               22
+1907-01-01  male                 37
+            female                8
+1908-01-01  male                 10
+            female                1
+1909-01-01  male                 14
+            female                2
+1910-01-01  male                  4
+            female                1
+1911-01-01  male                  5
+1912-01-01  male                  3
+            female                2
+1913-01-01  male                  7
+1914-01-01  male                  6
+            female                1
+1915-01-01  male                  8
+            female                3
+1916-01-01  female               11
+            male                  8
+1917-01-01  female               11
+            male                 11
+1918-01-01  male                  8
+            female                4
+1919-01-01  male                 14
+            female                7
+1920-01-01  male                  8
+            female                7
+1921-01-01  male                 30
+            female                6
+1922-01-01  female                8
+            male                  5
+1923-01-01  male                 22
+            female                8
+1924-01-01  female               32
+            male                 26
+1925-01-01  male                 57
+            female               27
+1926-01-01  male                 47
+            female               30
+1927-01-01  male                 94
+            female               58
+1928-01-01  male                 66
+            female               33
+Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </section>
 <section id="make-this-grouping-into-a-dataframe" class="level1">
 <h1>Make this grouping into a dataframe</h1>
-<div id="7e6c9177" class="cell" data-execution_count="6">
+<div id="53ab9cc7" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts().reset_index()</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'] = aa_gender_by_year['year'].astype(int)</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts().reset_index()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'] = aa_gender_by_year['year'].astype(int)</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="6">
-<div>
-
-
-<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">year</th>
-<th data-quarto-table-cell-role="th">gender (if known)</th>
-<th data-quarto-table-cell-role="th">count</th>
-</tr>
-</thead>
-<tbody>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</section>
-<section id="add-missing-years" class="level1">
-<h1>Add missing years</h1>
-<div id="5297bcaa" class="cell" data-execution_count="7">
-<details open="" class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with a complete range of years from 1900 to 1930</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> pd.DataFrame({<span class="st">'year'</span>: pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)})</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with existing dataframe</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> pd.merge(years, aa_gender_by_year, on<span class="op">=</span><span class="st">'year'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill NaN values</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['gender (if known)'] = aa_gender_by_year['gender (if known)'].fillna("no author recorded")</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['count'] = aa_gender_by_year['count'].fillna(0)</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year[<span class="st">'year'</span>].sort_values().unique()</span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -713,188 +544,332 @@ Length: 1, dtype: datetime64[ns]</code></pre>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">0</td>
 <td>1900-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>male</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">1</td>
-<td>1901-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1900-01-01</td>
+<td>female</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">2</td>
-<td>1902-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1901-01-01</td>
+<td>male</td>
+<td>31</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">3</td>
-<td>1903-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1901-01-01</td>
+<td>female</td>
+<td>3</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">4</td>
-<td>1904-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1902-01-01</td>
+<td>male</td>
+<td>5</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">5</td>
-<td>1905-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1902-01-01</td>
+<td>female</td>
+<td>1</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">6</td>
-<td>1906-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1903-01-01</td>
+<td>male</td>
+<td>15</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">7</td>
-<td>1907-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1903-01-01</td>
+<td>female</td>
+<td>6</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">8</td>
-<td>1908-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1904-01-01</td>
+<td>male</td>
+<td>12</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">9</td>
-<td>1909-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1905-01-01</td>
+<td>male</td>
+<td>44</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">10</td>
-<td>1910-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1905-01-01</td>
+<td>female</td>
+<td>24</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">11</td>
-<td>1911-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1906-01-01</td>
+<td>male</td>
+<td>55</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">12</td>
-<td>1912-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1906-01-01</td>
+<td>female</td>
+<td>22</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">13</td>
-<td>1913-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1907-01-01</td>
+<td>male</td>
+<td>37</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">14</td>
-<td>1914-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1907-01-01</td>
+<td>female</td>
+<td>8</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">15</td>
-<td>1915-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1908-01-01</td>
+<td>male</td>
+<td>10</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">16</td>
-<td>1916-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1908-01-01</td>
+<td>female</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">17</td>
-<td>1917-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1909-01-01</td>
+<td>male</td>
+<td>14</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">18</td>
-<td>1918-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1909-01-01</td>
+<td>female</td>
+<td>2</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">19</td>
-<td>1919-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1910-01-01</td>
+<td>male</td>
+<td>4</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">20</td>
-<td>1920-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1910-01-01</td>
+<td>female</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">21</td>
-<td>1921-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1911-01-01</td>
+<td>male</td>
+<td>5</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">22</td>
-<td>1922-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1912-01-01</td>
+<td>male</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">23</td>
-<td>1923-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1912-01-01</td>
+<td>female</td>
+<td>2</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">24</td>
-<td>1924-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1913-01-01</td>
+<td>male</td>
+<td>7</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">25</td>
-<td>1925-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1914-01-01</td>
+<td>male</td>
+<td>6</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">26</td>
-<td>1926-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1914-01-01</td>
+<td>female</td>
+<td>1</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">27</td>
-<td>1927-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1915-01-01</td>
+<td>male</td>
+<td>8</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">28</td>
-<td>1928-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1915-01-01</td>
+<td>female</td>
+<td>3</td>
 </tr>
 <tr class="even">
 <td data-quarto-table-cell-role="th">29</td>
-<td>1929-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1916-01-01</td>
+<td>female</td>
+<td>11</td>
 </tr>
 <tr class="odd">
 <td data-quarto-table-cell-role="th">30</td>
-<td>1930-01-01</td>
-<td>NaN</td>
-<td>NaN</td>
+<td>1916-01-01</td>
+<td>male</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">31</td>
+<td>1917-01-01</td>
+<td>female</td>
+<td>11</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">32</td>
+<td>1917-01-01</td>
+<td>male</td>
+<td>11</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">33</td>
+<td>1918-01-01</td>
+<td>male</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">34</td>
+<td>1918-01-01</td>
+<td>female</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">35</td>
+<td>1919-01-01</td>
+<td>male</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">36</td>
+<td>1919-01-01</td>
+<td>female</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">37</td>
+<td>1920-01-01</td>
+<td>male</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">38</td>
+<td>1920-01-01</td>
+<td>female</td>
+<td>7</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">39</td>
+<td>1921-01-01</td>
+<td>male</td>
+<td>30</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">40</td>
+<td>1921-01-01</td>
+<td>female</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">41</td>
+<td>1922-01-01</td>
+<td>female</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">42</td>
+<td>1922-01-01</td>
+<td>male</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">43</td>
+<td>1923-01-01</td>
+<td>male</td>
+<td>22</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">44</td>
+<td>1923-01-01</td>
+<td>female</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">45</td>
+<td>1924-01-01</td>
+<td>female</td>
+<td>32</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">46</td>
+<td>1924-01-01</td>
+<td>male</td>
+<td>26</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">47</td>
+<td>1925-01-01</td>
+<td>male</td>
+<td>57</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">48</td>
+<td>1925-01-01</td>
+<td>female</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">49</td>
+<td>1926-01-01</td>
+<td>male</td>
+<td>47</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">50</td>
+<td>1926-01-01</td>
+<td>female</td>
+<td>30</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">51</td>
+<td>1927-01-01</td>
+<td>male</td>
+<td>94</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">52</td>
+<td>1927-01-01</td>
+<td>female</td>
+<td>58</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">53</td>
+<td>1928-01-01</td>
+<td>male</td>
+<td>66</td>
+</tr>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">54</td>
+<td>1928-01-01</td>
+<td>female</td>
+<td>33</td>
 </tr>
 </tbody>
 </table>
@@ -902,55 +877,76 @@ Length: 1, dtype: datetime64[ns]</code></pre>
 </div>
 </div>
 </div>
+<div id="0e913393" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If there were missing years, this is how you might handle it</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with a complete range of years from 1900 to 1930</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co"># years = pd.DataFrame({'year': pd.date_range(start='1900', end='1930', freq='YS')})</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with existing dataframe</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># aa_gender_by_year = pd.merge(years, aa_gender_by_year, on='year', how='left')</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill NaN values</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['gender (if known)'] = aa_gender_by_year['gender (if known)'].fillna("no author recorded")</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['count'] = aa_gender_by_year['count'].fillna(0)</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'].sort_values().unique()</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
 </section>
 <section id="visualize-with-seaborn" class="level1">
 <h1>Visualize with seaborn</h1>
-<div id="45591cfd" class="cell" data-execution_count="8">
+<div id="1edc11e0" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the line plot</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.lineplot(data<span class="op">=</span>aa_gender_by_year, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks to every 5 years</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(mdates.YearLocator(<span class="dv">5</span>))</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the x-axis labels to show the year only</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the line plot</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.lineplot(data<span class="op">=</span>aa_gender_by_year, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks to every 5 years</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(mdates.YearLocator(<span class="dv">5</span>))</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the x-axis labels to show the year only</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="aa_eda_files/figure-html/cell-9-output-1.png" width="589" height="434" class="figure-img"></p>
+<p><img src="aa_eda_files/figure-html/cell-9-output-1.png" width="585" height="429" class="figure-img"></p>
 </figure>
 </div>
 </div>
 </div>
-<div id="649cfbb0" class="cell" data-execution_count="9">
+<div id="d8352769" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MultipleLocator</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">13.7</span>, <span class="fl">8.27</span>))</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>aa_gender_by_year, </span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out just the year</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>aa_gender_by_year[<span class="st">"year"</span>].dt.year, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks every 1 year</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(MultipleLocator(<span class="dv">1</span>))</span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis labels to the desired format (only show every 5th year)</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([date.year <span class="cf">for</span> date <span class="kw">in</span> pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)], rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MultipleLocator</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">13.7</span>, <span class="fl">8.27</span>))</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>aa_gender_by_year, </span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out just the year</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>aa_gender_by_year[<span class="st">"year"</span>].dt.year, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks every 1 year</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(MultipleLocator(<span class="dv">1</span>))</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis labels to the desired format (only show every 5th year)</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([date.year <span class="cf">for</span> date <span class="kw">in</span> pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)], rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/06/y6vmvyfj0wg08vb3rszcfy080000gn/T/ipykernel_62701/3665439903.py:14: UserWarning:
+<pre><code>/var/folders/06/y6vmvyfj0wg08vb3rszcfy080000gn/T/ipykernel_97692/3665439903.py:14: UserWarning:
 
 set_ticklabels() should only be used with a fixed number of ticks, i.e. after set_ticks() or using a FixedLocator.
 </code></pre>
@@ -958,7 +954,7 @@ set_ticklabels() should only be used with a fixed number of ticks, i.e. after se
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="aa_eda_files/figure-html/cell-10-output-2.png" width="1087" height="696" class="figure-img"></p>
+<p><img src="aa_eda_files/figure-html/cell-10-output-2.png" width="1083" height="691" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -966,23 +962,23 @@ set_ticklabels() should only be used with a fixed number of ticks, i.e. after se
 </section>
 <section id="make-interactive-visualizations-with-plotly" class="level1">
 <h1>Make interactive visualizations with plotly</h1>
-<div id="9ae94491" class="cell" data-execution_count="10">
+<div id="54f20654" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the interactive line plot with Plotly</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(aa_gender_by_year, </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>              x<span class="op">=</span><span class="st">'year'</span>, </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>              y<span class="op">=</span><span class="st">'count'</span>, </span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span><span class="st">'gender (if known)'</span>,</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>              title<span class="op">=</span><span class="st">'Author Gender by Year'</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the interactive line plot with Plotly</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.line(aa_gender_by_year, </span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>              x<span class="op">=</span><span class="st">'year'</span>, </span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>              y<span class="op">=</span><span class="st">'count'</span>, </span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>              color<span class="op">=</span><span class="st">'gender (if known)'</span>,</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>              title<span class="op">=</span><span class="st">'Author Gender by Year'</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>                            <div id="38a1334b-c57d-4dae-a756-cc7348a3ec46" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("38a1334b-c57d-4dae-a756-cc7348a3ec46")) {                    Plotly.newPlot(                        "38a1334b-c57d-4dae-a756-cc7348a3ec46",                        [{"hovertemplate":"gender (if known)=nan\u003cbr\u003eyear=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"nan","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"nan","orientation":"v","showlegend":true,"x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1904-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1911-01-01T00:00:00","1912-01-01T00:00:00","1913-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00","1929-01-01T00:00:00","1930-01-01T00:00:00"],"xaxis":"x","y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"title":{"text":"gender (if known)"},"tracegroupgap":0},"title":{"text":"Author Gender by Year"}},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="50d43af9-bcad-4401-b07b-2e04b705fe79" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("50d43af9-bcad-4401-b07b-2e04b705fe79")) {                    Plotly.newPlot(                        "50d43af9-bcad-4401-b07b-2e04b705fe79",                        [{"hovertemplate":"gender (if known)=male\u003cbr\u003eyear=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"male","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"male","orientation":"v","showlegend":true,"x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1904-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1911-01-01T00:00:00","1912-01-01T00:00:00","1913-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00"],"xaxis":"x","y":[5,31,5,15,12,44,55,37,10,14,4,5,3,7,6,8,8,11,8,14,8,30,5,22,26,57,47,94,66],"yaxis":"y","type":"scatter"},{"hovertemplate":"gender (if known)=female\u003cbr\u003eyear=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"female","line":{"color":"#EF553B","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"female","orientation":"v","showlegend":true,"x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1912-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00"],"xaxis":"x","y":[1,3,1,6,24,22,8,1,2,1,2,1,3,11,11,4,7,7,6,8,8,32,27,30,58,33],"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"title":{"text":"gender (if known)"},"tracegroupgap":0},"title":{"text":"Author Gender by Year"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('38a1334b-c57d-4dae-a756-cc7348a3ec46');
+var gd = document.getElementById('50d43af9-bcad-4401-b07b-2e04b705fe79');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1007,22 +1003,22 @@ if (outputEl) {{
                         })                };                });            </script>        </div>
 </div>
 </div>
-<div id="dbe13ef1" class="cell" data-execution_count="11">
+<div id="dcf94d71" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(aa_gender_by_year, </span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>             x<span class="op">=</span><span class="st">'year'</span>, </span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>             y<span class="op">=</span><span class="st">'count'</span>, </span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'gender (if known)'</span>,</span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">'Gender Count by Year'</span>)</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.bar(aa_gender_by_year, </span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>             x<span class="op">=</span><span class="st">'year'</span>, </span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>             y<span class="op">=</span><span class="st">'count'</span>, </span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>             color<span class="op">=</span><span class="st">'gender (if known)'</span>,</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>             title<span class="op">=</span><span class="st">'Author Gender by Year'</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div>                            <div id="ace55647-f569-4f10-bd47-7de572c6ce01" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("ace55647-f569-4f10-bd47-7de572c6ce01")) {                    Plotly.newPlot(                        "ace55647-f569-4f10-bd47-7de572c6ce01",                        [{"alignmentgroup":"True","hovertemplate":"year=%{x}\u003cbr\u003ecount=%{y}\u003cbr\u003egender (if known)=%{marker.color}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","marker":{"color":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"coloraxis":"coloraxis","pattern":{"shape":""}},"name":"","offsetgroup":"","orientation":"v","showlegend":false,"textposition":"auto","x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1904-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1911-01-01T00:00:00","1912-01-01T00:00:00","1913-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00","1929-01-01T00:00:00","1930-01-01T00:00:00"],"xaxis":"x","y":[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"coloraxis":{"colorbar":{"title":{"text":"gender (if known)"}},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"legend":{"tracegroupgap":0},"title":{"text":"Gender Count by Year"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
+<div>                            <div id="012edaad-6320-467e-9234-203c7b10d053" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                require(["plotly"], function(Plotly) {                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("012edaad-6320-467e-9234-203c7b10d053")) {                    Plotly.newPlot(                        "012edaad-6320-467e-9234-203c7b10d053",                        [{"alignmentgroup":"True","hovertemplate":"gender (if known)=male\u003cbr\u003eyear=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"male","marker":{"color":"#636efa","pattern":{"shape":""}},"name":"male","offsetgroup":"male","orientation":"v","showlegend":true,"textposition":"auto","x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1904-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1911-01-01T00:00:00","1912-01-01T00:00:00","1913-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00"],"xaxis":"x","y":[5,31,5,15,12,44,55,37,10,14,4,5,3,7,6,8,8,11,8,14,8,30,5,22,26,57,47,94,66],"yaxis":"y","type":"bar"},{"alignmentgroup":"True","hovertemplate":"gender (if known)=female\u003cbr\u003eyear=%{x}\u003cbr\u003ecount=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"female","marker":{"color":"#EF553B","pattern":{"shape":""}},"name":"female","offsetgroup":"female","orientation":"v","showlegend":true,"textposition":"auto","x":["1900-01-01T00:00:00","1901-01-01T00:00:00","1902-01-01T00:00:00","1903-01-01T00:00:00","1905-01-01T00:00:00","1906-01-01T00:00:00","1907-01-01T00:00:00","1908-01-01T00:00:00","1909-01-01T00:00:00","1910-01-01T00:00:00","1912-01-01T00:00:00","1914-01-01T00:00:00","1915-01-01T00:00:00","1916-01-01T00:00:00","1917-01-01T00:00:00","1918-01-01T00:00:00","1919-01-01T00:00:00","1920-01-01T00:00:00","1921-01-01T00:00:00","1922-01-01T00:00:00","1923-01-01T00:00:00","1924-01-01T00:00:00","1925-01-01T00:00:00","1926-01-01T00:00:00","1927-01-01T00:00:00","1928-01-01T00:00:00"],"xaxis":"x","y":[1,3,1,6,24,22,8,1,2,1,2,1,3,11,11,4,7,7,6,8,8,32,27,30,58,33],"yaxis":"y","type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"year"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"count"}},"legend":{"title":{"text":"gender (if known)"},"tracegroupgap":0},"title":{"text":"Author Gender by Year"},"barmode":"relative"},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('ace55647-f569-4f10-bd47-7de572c6ce01');
+var gd = document.getElementById('012edaad-6320-467e-9234-203c7b10d053');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -1140,23 +1136,6 @@ $(document).ready(function () {
     });
 });
 </script>
-<script>
-            document.addEventListener("DOMContentLoaded", function() {
-              // Select the original footnotes container
-              var originalFootnotes = document.querySelector(".footnotes");
-
-              // Select the custom footnotes placeholder
-              var customFootnotes = document.getElementById("custom-footnotes");
-
-              // If both elements exist, move the footnotes
-              if (originalFootnotes && customFootnotes) {
-                customFootnotes.innerHTML = originalFootnotes.innerHTML;
-
-                // Optionally, remove the original footnotes
-                originalFootnotes.remove();
-              }
-            });
-          </script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -1628,155 +1607,153 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Visualize Author Gender By Year (Solution)"</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-26"</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution]</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">   html: default</span></span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co">   ipynb: default</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
-<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
-<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
-<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
-<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
-<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
-<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a><span class="fu">#  Import pandas</span></span>
-<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Read in CSV</span></span>
-<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>aa_df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928.-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.-Revised-Version-July-2024.csv"</span>,  quotechar<span class="op">=</span><span class="st">'"'</span>, escapechar<span class="op">=</span><span class="st">'</span><span class="ch">\\</span><span class="st">'</span>)</span>
-<span id="cb15-33"><a href="#cb15-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-34"><a href="#cb15-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-35"><a href="#cb15-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># View first 5 rows</span></span>
-<span id="cb15-36"><a href="#cb15-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-39"><a href="#cb15-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-40"><a href="#cb15-40" aria-hidden="true" tabindex="-1"></a>aa_df.head()</span>
-<span id="cb15-41"><a href="#cb15-41" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-42"><a href="#cb15-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-43"><a href="#cb15-43" aria-hidden="true" tabindex="-1"></a><span class="fu"># Convert year to datetime value</span></span>
-<span id="cb15-44"><a href="#cb15-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-47"><a href="#cb15-47" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-48"><a href="#cb15-48" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(aa_df[<span class="st">'year'</span>], <span class="bu">format</span> <span class="op">=</span> <span class="st">"%Y"</span>)</span>
-<span id="cb15-49"><a href="#cb15-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-50"><a href="#cb15-50" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_df.set_index('year').reindex(pd.date_range('1900-01-01', '1930-12-31', freq='Y'))</span></span>
-<span id="cb15-51"><a href="#cb15-51" aria-hidden="true" tabindex="-1"></a>      </span>
-<span id="cb15-52"><a href="#cb15-52" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
-<span id="cb15-53"><a href="#cb15-53" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>].sort_values().unique()</span>
-<span id="cb15-54"><a href="#cb15-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-55"><a href="#cb15-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-56"><a href="#cb15-56" aria-hidden="true" tabindex="-1"></a>It looks like we have some missing year values... we may need to add them back in shortly.</span>
-<span id="cb15-57"><a href="#cb15-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-58"><a href="#cb15-58" aria-hidden="true" tabindex="-1"></a><span class="fu"># Group by year, count instances of author by gender</span></span>
-<span id="cb15-59"><a href="#cb15-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-62"><a href="#cb15-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-63"><a href="#cb15-63" aria-hidden="true" tabindex="-1"></a>aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts()</span>
-<span id="cb15-64"><a href="#cb15-64" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-65"><a href="#cb15-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-66"><a href="#cb15-66" aria-hidden="true" tabindex="-1"></a><span class="fu"># Make this grouping into a dataframe</span></span>
-<span id="cb15-67"><a href="#cb15-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-70"><a href="#cb15-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-71"><a href="#cb15-71" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts().reset_index()</span>
-<span id="cb15-72"><a href="#cb15-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-73"><a href="#cb15-73" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'] = aa_gender_by_year['year'].astype(int)</span></span>
-<span id="cb15-74"><a href="#cb15-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-75"><a href="#cb15-75" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span>
-<span id="cb15-76"><a href="#cb15-76" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-77"><a href="#cb15-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-78"><a href="#cb15-78" aria-hidden="true" tabindex="-1"></a><span class="fu"># Add missing years</span></span>
-<span id="cb15-79"><a href="#cb15-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-82"><a href="#cb15-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-83"><a href="#cb15-83" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with a complete range of years from 1900 to 1930</span></span>
-<span id="cb15-84"><a href="#cb15-84" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> pd.DataFrame({<span class="st">'year'</span>: pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)})</span>
-<span id="cb15-85"><a href="#cb15-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-86"><a href="#cb15-86" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with existing dataframe</span></span>
-<span id="cb15-87"><a href="#cb15-87" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> pd.merge(years, aa_gender_by_year, on<span class="op">=</span><span class="st">'year'</span>, how<span class="op">=</span><span class="st">'left'</span>)</span>
-<span id="cb15-88"><a href="#cb15-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-89"><a href="#cb15-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill NaN values</span></span>
-<span id="cb15-90"><a href="#cb15-90" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['gender (if known)'] = aa_gender_by_year['gender (if known)'].fillna("no author recorded")</span></span>
-<span id="cb15-91"><a href="#cb15-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-92"><a href="#cb15-92" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['count'] = aa_gender_by_year['count'].fillna(0)</span></span>
-<span id="cb15-93"><a href="#cb15-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-94"><a href="#cb15-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-95"><a href="#cb15-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
-<span id="cb15-96"><a href="#cb15-96" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year[<span class="st">'year'</span>].sort_values().unique()</span>
-<span id="cb15-97"><a href="#cb15-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-98"><a href="#cb15-98" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span>
-<span id="cb15-99"><a href="#cb15-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-100"><a href="#cb15-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-101"><a href="#cb15-101" aria-hidden="true" tabindex="-1"></a><span class="fu"># Visualize with seaborn</span></span>
-<span id="cb15-102"><a href="#cb15-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb15-107"><a href="#cb15-107" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb15-108"><a href="#cb15-108" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
-<span id="cb15-109"><a href="#cb15-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-110"><a href="#cb15-110" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the line plot</span></span>
-<span id="cb15-111"><a href="#cb15-111" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.lineplot(data<span class="op">=</span>aa_gender_by_year, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
-<span id="cb15-112"><a href="#cb15-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-113"><a href="#cb15-113" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks to every 5 years</span></span>
-<span id="cb15-114"><a href="#cb15-114" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(mdates.YearLocator(<span class="dv">5</span>))</span>
-<span id="cb15-115"><a href="#cb15-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-116"><a href="#cb15-116" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the x-axis labels to show the year only</span></span>
-<span id="cb15-117"><a href="#cb15-117" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))</span></span>
-<span id="cb15-118"><a href="#cb15-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-119"><a href="#cb15-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-120"><a href="#cb15-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-121"><a href="#cb15-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-124"><a href="#cb15-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb15-125"><a href="#cb15-125" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MultipleLocator</span>
-<span id="cb15-126"><a href="#cb15-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-127"><a href="#cb15-127" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">13.7</span>, <span class="fl">8.27</span>))</span>
-<span id="cb15-128"><a href="#cb15-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-129"><a href="#cb15-129" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
-<span id="cb15-130"><a href="#cb15-130" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>aa_gender_by_year, </span>
-<span id="cb15-131"><a href="#cb15-131" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out just the year</span></span>
-<span id="cb15-132"><a href="#cb15-132" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>aa_gender_by_year[<span class="st">"year"</span>].dt.year, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
-<span id="cb15-133"><a href="#cb15-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-134"><a href="#cb15-134" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks every 1 year</span></span>
-<span id="cb15-135"><a href="#cb15-135" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(MultipleLocator(<span class="dv">1</span>))</span>
-<span id="cb15-136"><a href="#cb15-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-137"><a href="#cb15-137" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis labels to the desired format (only show every 5th year)</span></span>
-<span id="cb15-138"><a href="#cb15-138" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([date.year <span class="cf">for</span> date <span class="kw">in</span> pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)], rotation<span class="op">=</span><span class="dv">45</span>)</span>
-<span id="cb15-139"><a href="#cb15-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-140"><a href="#cb15-140" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
-<span id="cb15-141"><a href="#cb15-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-142"><a href="#cb15-142" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-143"><a href="#cb15-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-144"><a href="#cb15-144" aria-hidden="true" tabindex="-1"></a><span class="fu"># Make interactive visualizations with plotly</span></span>
-<span id="cb15-145"><a href="#cb15-145" aria-hidden="true" tabindex="-1"></a><span class="in">``` {python}</span></span>
-<span id="cb15-146"><a href="#cb15-146" aria-hidden="true" tabindex="-1"></a><span class="in">import plotly.express as px</span></span>
-<span id="cb15-147"><a href="#cb15-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-148"><a href="#cb15-148" aria-hidden="true" tabindex="-1"></a><span class="in"># Create the interactive line plot with Plotly</span></span>
-<span id="cb15-149"><a href="#cb15-149" aria-hidden="true" tabindex="-1"></a><span class="in">fig = px.line(aa_gender_by_year, </span></span>
-<span id="cb15-150"><a href="#cb15-150" aria-hidden="true" tabindex="-1"></a><span class="in">              x='year', </span></span>
-<span id="cb15-151"><a href="#cb15-151" aria-hidden="true" tabindex="-1"></a><span class="in">              y='count', </span></span>
-<span id="cb15-152"><a href="#cb15-152" aria-hidden="true" tabindex="-1"></a><span class="in">              color='gender (if known)',</span></span>
-<span id="cb15-153"><a href="#cb15-153" aria-hidden="true" tabindex="-1"></a><span class="in">              title='Author Gender by Year')</span></span>
-<span id="cb15-154"><a href="#cb15-154" aria-hidden="true" tabindex="-1"></a><span class="in">fig.show()</span></span>
-<span id="cb15-155"><a href="#cb15-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb15-156"><a href="#cb15-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-157"><a href="#cb15-157" aria-hidden="true" tabindex="-1"></a><span class="in">``` {python}</span></span>
-<span id="cb15-158"><a href="#cb15-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-159"><a href="#cb15-159" aria-hidden="true" tabindex="-1"></a><span class="in">fig = px.bar(aa_gender_by_year, </span></span>
-<span id="cb15-160"><a href="#cb15-160" aria-hidden="true" tabindex="-1"></a><span class="in">             x='year', </span></span>
-<span id="cb15-161"><a href="#cb15-161" aria-hidden="true" tabindex="-1"></a><span class="in">             y='count', </span></span>
-<span id="cb15-162"><a href="#cb15-162" aria-hidden="true" tabindex="-1"></a><span class="in">             color='gender (if known)',</span></span>
-<span id="cb15-163"><a href="#cb15-163" aria-hidden="true" tabindex="-1"></a><span class="in">             title='Gender Count by Year')</span></span>
-<span id="cb15-164"><a href="#cb15-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-165"><a href="#cb15-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-166"><a href="#cb15-166" aria-hidden="true" tabindex="-1"></a><span class="in">fig.show()</span></span>
-<span id="cb15-167"><a href="#cb15-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="sourceCode" id="cb16" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Visualize Author Gender By Year (Solution)"</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-26"</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution, exercise]</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">   html: default</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co">   ipynb: default</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="fu">#  Import pandas</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># Read in CSV</span></span>
+<span id="cb16-31"><a href="#cb16-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-32"><a href="#cb16-32" aria-hidden="true" tabindex="-1"></a>aa_df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv"</span>)</span>
+<span id="cb16-33"><a href="#cb16-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-34"><a href="#cb16-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-35"><a href="#cb16-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># View first 5 rows</span></span>
+<span id="cb16-36"><a href="#cb16-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-39"><a href="#cb16-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-40"><a href="#cb16-40" aria-hidden="true" tabindex="-1"></a>aa_df.head()</span>
+<span id="cb16-41"><a href="#cb16-41" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'gender (if known)'</span>].value_counts()</span>
+<span id="cb16-42"><a href="#cb16-42" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-43"><a href="#cb16-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-44"><a href="#cb16-44" aria-hidden="true" tabindex="-1"></a><span class="fu"># Convert year to datetime value</span></span>
+<span id="cb16-45"><a href="#cb16-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-48"><a href="#cb16-48" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-49"><a href="#cb16-49" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>] <span class="op">=</span> pd.to_datetime(aa_df[<span class="st">'year'</span>], <span class="bu">format</span> <span class="op">=</span> <span class="st">"%Y"</span>)</span>
+<span id="cb16-50"><a href="#cb16-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-51"><a href="#cb16-51" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_df.set_index('year').reindex(pd.date_range('1900-01-01', '1930-12-31', freq='Y'))</span></span>
+<span id="cb16-52"><a href="#cb16-52" aria-hidden="true" tabindex="-1"></a>      </span>
+<span id="cb16-53"><a href="#cb16-53" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
+<span id="cb16-54"><a href="#cb16-54" aria-hidden="true" tabindex="-1"></a>aa_df[<span class="st">'year'</span>].sort_values().unique()</span>
+<span id="cb16-55"><a href="#cb16-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-56"><a href="#cb16-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-57"><a href="#cb16-57" aria-hidden="true" tabindex="-1"></a><span class="fu"># Group by year, count instances of author by gender</span></span>
+<span id="cb16-58"><a href="#cb16-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-61"><a href="#cb16-61" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-62"><a href="#cb16-62" aria-hidden="true" tabindex="-1"></a>aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts()</span>
+<span id="cb16-63"><a href="#cb16-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-64"><a href="#cb16-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-65"><a href="#cb16-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># Make this grouping into a dataframe</span></span>
+<span id="cb16-66"><a href="#cb16-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-69"><a href="#cb16-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-70"><a href="#cb16-70" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="op">=</span> aa_df.groupby(<span class="st">'year'</span>)[<span class="st">'gender (if known)'</span>].value_counts().reset_index()</span>
+<span id="cb16-71"><a href="#cb16-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-72"><a href="#cb16-72" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'] = aa_gender_by_year['year'].astype(int)</span></span>
+<span id="cb16-73"><a href="#cb16-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-74"><a href="#cb16-74" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span>
+<span id="cb16-75"><a href="#cb16-75" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-76"><a href="#cb16-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-77"><a href="#cb16-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-80"><a href="#cb16-80" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-81"><a href="#cb16-81" aria-hidden="true" tabindex="-1"></a><span class="co"># If there were missing years, this is how you might handle it</span></span>
+<span id="cb16-82"><a href="#cb16-82" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe with a complete range of years from 1900 to 1930</span></span>
+<span id="cb16-83"><a href="#cb16-83" aria-hidden="true" tabindex="-1"></a><span class="co"># years = pd.DataFrame({'year': pd.date_range(start='1900', end='1930', freq='YS')})</span></span>
+<span id="cb16-84"><a href="#cb16-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-85"><a href="#cb16-85" aria-hidden="true" tabindex="-1"></a><span class="co"># Merge with existing dataframe</span></span>
+<span id="cb16-86"><a href="#cb16-86" aria-hidden="true" tabindex="-1"></a><span class="co"># aa_gender_by_year = pd.merge(years, aa_gender_by_year, on='year', how='left')</span></span>
+<span id="cb16-87"><a href="#cb16-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-88"><a href="#cb16-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill NaN values</span></span>
+<span id="cb16-89"><a href="#cb16-89" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['gender (if known)'] = aa_gender_by_year['gender (if known)'].fillna("no author recorded")</span></span>
+<span id="cb16-90"><a href="#cb16-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-91"><a href="#cb16-91" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['count'] = aa_gender_by_year['count'].fillna(0)</span></span>
+<span id="cb16-92"><a href="#cb16-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-93"><a href="#cb16-93" aria-hidden="true" tabindex="-1"></a><span class="co"># Sort years and return unique years to check for missing data</span></span>
+<span id="cb16-94"><a href="#cb16-94" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year['year'].sort_values().unique()</span></span>
+<span id="cb16-95"><a href="#cb16-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-96"><a href="#cb16-96" aria-hidden="true" tabindex="-1"></a><span class="co">#aa_gender_by_year</span></span>
+<span id="cb16-97"><a href="#cb16-97" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-98"><a href="#cb16-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-99"><a href="#cb16-99" aria-hidden="true" tabindex="-1"></a><span class="fu"># Visualize with seaborn</span></span>
+<span id="cb16-100"><a href="#cb16-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-103"><a href="#cb16-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-104"><a href="#cb16-104" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb16-105"><a href="#cb16-105" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb16-106"><a href="#cb16-106" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span>
+<span id="cb16-107"><a href="#cb16-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-108"><a href="#cb16-108" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the line plot</span></span>
+<span id="cb16-109"><a href="#cb16-109" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.lineplot(data<span class="op">=</span>aa_gender_by_year, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
+<span id="cb16-110"><a href="#cb16-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-111"><a href="#cb16-111" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks to every 5 years</span></span>
+<span id="cb16-112"><a href="#cb16-112" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(mdates.YearLocator(<span class="dv">5</span>))</span>
+<span id="cb16-113"><a href="#cb16-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-114"><a href="#cb16-114" aria-hidden="true" tabindex="-1"></a><span class="co"># Format the x-axis labels to show the year only</span></span>
+<span id="cb16-115"><a href="#cb16-115" aria-hidden="true" tabindex="-1"></a><span class="co">#ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y'))</span></span>
+<span id="cb16-116"><a href="#cb16-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-117"><a href="#cb16-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-118"><a href="#cb16-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-119"><a href="#cb16-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-122"><a href="#cb16-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb16-123"><a href="#cb16-123" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib.ticker <span class="im">import</span> MultipleLocator</span>
+<span id="cb16-124"><a href="#cb16-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-125"><a href="#cb16-125" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="fl">13.7</span>, <span class="fl">8.27</span>))</span>
+<span id="cb16-126"><a href="#cb16-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-127"><a href="#cb16-127" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the bar plot</span></span>
+<span id="cb16-128"><a href="#cb16-128" aria-hidden="true" tabindex="-1"></a>ax <span class="op">=</span> sns.barplot(data<span class="op">=</span>aa_gender_by_year, </span>
+<span id="cb16-129"><a href="#cb16-129" aria-hidden="true" tabindex="-1"></a><span class="co"># pull out just the year</span></span>
+<span id="cb16-130"><a href="#cb16-130" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>aa_gender_by_year[<span class="st">"year"</span>].dt.year, y<span class="op">=</span><span class="st">"count"</span>, hue<span class="op">=</span><span class="st">"gender (if known)"</span>)</span>
+<span id="cb16-131"><a href="#cb16-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-132"><a href="#cb16-132" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis major ticks every 1 year</span></span>
+<span id="cb16-133"><a href="#cb16-133" aria-hidden="true" tabindex="-1"></a>ax.xaxis.set_major_locator(MultipleLocator(<span class="dv">1</span>))</span>
+<span id="cb16-134"><a href="#cb16-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-135"><a href="#cb16-135" aria-hidden="true" tabindex="-1"></a><span class="co"># Set x-axis labels to the desired format (only show every 5th year)</span></span>
+<span id="cb16-136"><a href="#cb16-136" aria-hidden="true" tabindex="-1"></a>ax.set_xticklabels([date.year <span class="cf">for</span> date <span class="kw">in</span> pd.date_range(start<span class="op">=</span><span class="st">'1900'</span>, end<span class="op">=</span><span class="st">'1930'</span>, freq<span class="op">=</span><span class="st">'YS'</span>)], rotation<span class="op">=</span><span class="dv">45</span>)</span>
+<span id="cb16-137"><a href="#cb16-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-138"><a href="#cb16-138" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb16-139"><a href="#cb16-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-140"><a href="#cb16-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-141"><a href="#cb16-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-142"><a href="#cb16-142" aria-hidden="true" tabindex="-1"></a><span class="fu"># Make interactive visualizations with plotly</span></span>
+<span id="cb16-143"><a href="#cb16-143" aria-hidden="true" tabindex="-1"></a><span class="in">``` {python}</span></span>
+<span id="cb16-144"><a href="#cb16-144" aria-hidden="true" tabindex="-1"></a><span class="in">import plotly.express as px</span></span>
+<span id="cb16-145"><a href="#cb16-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-146"><a href="#cb16-146" aria-hidden="true" tabindex="-1"></a><span class="in"># Create the interactive line plot with Plotly</span></span>
+<span id="cb16-147"><a href="#cb16-147" aria-hidden="true" tabindex="-1"></a><span class="in">fig = px.line(aa_gender_by_year, </span></span>
+<span id="cb16-148"><a href="#cb16-148" aria-hidden="true" tabindex="-1"></a><span class="in">              x='year', </span></span>
+<span id="cb16-149"><a href="#cb16-149" aria-hidden="true" tabindex="-1"></a><span class="in">              y='count', </span></span>
+<span id="cb16-150"><a href="#cb16-150" aria-hidden="true" tabindex="-1"></a><span class="in">              color='gender (if known)',</span></span>
+<span id="cb16-151"><a href="#cb16-151" aria-hidden="true" tabindex="-1"></a><span class="in">              title='Author Gender by Year')</span></span>
+<span id="cb16-152"><a href="#cb16-152" aria-hidden="true" tabindex="-1"></a><span class="in">fig.show()</span></span>
+<span id="cb16-153"><a href="#cb16-153" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb16-154"><a href="#cb16-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-155"><a href="#cb16-155" aria-hidden="true" tabindex="-1"></a><span class="in">``` {python}</span></span>
+<span id="cb16-156"><a href="#cb16-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-157"><a href="#cb16-157" aria-hidden="true" tabindex="-1"></a><span class="in">fig = px.bar(aa_gender_by_year, </span></span>
+<span id="cb16-158"><a href="#cb16-158" aria-hidden="true" tabindex="-1"></a><span class="in">             x='year', </span></span>
+<span id="cb16-159"><a href="#cb16-159" aria-hidden="true" tabindex="-1"></a><span class="in">             y='count', </span></span>
+<span id="cb16-160"><a href="#cb16-160" aria-hidden="true" tabindex="-1"></a><span class="in">             color='gender (if known)',</span></span>
+<span id="cb16-161"><a href="#cb16-161" aria-hidden="true" tabindex="-1"></a><span class="in">             title='Author Gender by Year')</span></span>
+<span id="cb16-162"><a href="#cb16-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-163"><a href="#cb16-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-164"><a href="#cb16-164" aria-hidden="true" tabindex="-1"></a><span class="in">fig.show()</span></span>
+<span id="cb16-165"><a href="#cb16-165" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -14,7 +14,7 @@ execute:
 
 # Load the data
 
-```python
+```{python}
 import pandas as pd
 
 np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv")
@@ -26,7 +26,7 @@ What is the average number of visits for *each state*?
 
 Save as `avg_state_visits` and then view the resulting dataframe.
 
-```python
+```{python}
 avg_state_visits = np_data.groupby('State')['RecreationVisits'].mean().reset_index()
 avg_state_visits
 ```
@@ -39,7 +39,7 @@ What is the average number of visits for *each National Park*?
 
 Save as `avg_park_visits` and then view the resulting dataframe.
 
-```python
+```{python}
 avg_park_visits = np_data.groupby('ParkName')['RecreationVisits'].mean().reset_index()
 avg_park_visits
 ```
@@ -52,7 +52,7 @@ How many National Parks are there in *each state*?
 
 Save your answer as `distinct_parks`.
 
-```python
+```{python}
 distinct_parks = np_data.groupby('State')['ParkName'].nunique().reset_index(name='NumParks')
 distinct_parks
 ```

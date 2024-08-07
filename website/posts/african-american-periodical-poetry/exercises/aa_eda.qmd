@@ -1,7 +1,7 @@
 ---
 title: "Visualize Author Gender By Year (Solution)"
 date: "2024-02-26"
-categories: [seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution]
+categories: [seaborn, plotly, interactive, line-plot, bar-plot, groupby, python, solution, exercise]
 toc: true
 format: 
    html: default
@@ -25,13 +25,14 @@ import pandas as pd
 
 # Read in CSV
 ```{python}
-aa_df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928.-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.-Revised-Version-July-2024.csv",  quotechar='"', escapechar='\\')
+aa_df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv")
 ```
 
 # View first 5 rows
 
 ```{python}
 aa_df.head()
+aa_df['gender (if known)'].value_counts()
 ```
 
 # Convert year to datetime value
@@ -44,8 +45,6 @@ aa_df['year'] = pd.to_datetime(aa_df['year'], format = "%Y")
 # Sort years and return unique years to check for missing data
 aa_df['year'].sort_values().unique()
 ```
-
-It looks like we have some missing year values... we may need to add them back in shortly.
 
 # Group by year, count instances of author by gender
 
@@ -63,25 +62,24 @@ aa_gender_by_year = aa_df.groupby('year')['gender (if known)'].value_counts().re
 aa_gender_by_year
 ```
 
-# Add missing years
 
 ```{python}
+# If there were missing years, this is how you might handle it
 # Create a dataframe with a complete range of years from 1900 to 1930
-years = pd.DataFrame({'year': pd.date_range(start='1900', end='1930', freq='YS')})
+# years = pd.DataFrame({'year': pd.date_range(start='1900', end='1930', freq='YS')})
 
 # Merge with existing dataframe
-aa_gender_by_year = pd.merge(years, aa_gender_by_year, on='year', how='left')
+# aa_gender_by_year = pd.merge(years, aa_gender_by_year, on='year', how='left')
 
 # Fill NaN values
 #aa_gender_by_year['gender (if known)'] = aa_gender_by_year['gender (if known)'].fillna("no author recorded")
 
 #aa_gender_by_year['count'] = aa_gender_by_year['count'].fillna(0)
 
-
 # Sort years and return unique years to check for missing data
-aa_gender_by_year['year'].sort_values().unique()
+#aa_gender_by_year['year'].sort_values().unique()
 
-aa_gender_by_year
+#aa_gender_by_year
 ```
 
 # Visualize with seaborn
@@ -143,7 +141,7 @@ fig = px.bar(aa_gender_by_year,
              x='year', 
              y='count', 
              color='gender (if known)',
-             title='Gender Count by Year')
+             title='Author Gender by Year')
 
 
 fig.show()

@@ -2,9 +2,13 @@
 title: "Introduction to DPLYR with National Park Visitation Data (Exercise)"
 date: "2024-02-26"
 categories: [dplyr, exercise, solution]
-
+format: 
+  html: 
+    code-links:
+      - text: R Script
+        href: Intro-to-DPLYR-NP.R
+        icon: file-code
 #image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
-format: html
 code-overflow: wrap
 code-fold: show
 editor: visual
