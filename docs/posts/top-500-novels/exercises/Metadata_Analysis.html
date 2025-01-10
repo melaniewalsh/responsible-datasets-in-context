@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.47">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,10 +70,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-2f79c325c46da68324b376be8c1b7527.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <link rel="stylesheet" href="../../../styles.css">
 <meta name="twitter:title" content="Top 500 Novels Metadata Analysis – Responsible Datasets in Context">
-<meta name="twitter:image" content="images/responsible-logo.png">
+<meta name="twitter:image" content="Metadata_Analysis_files/figure-html/cell-5-output-1.png">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
@@ -351,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="by-aashna-sheth" class="level3">
 <h3 class="anchored" data-anchor-id="by-aashna-sheth">By Aashna Sheth</h3>
 <p>Let’s start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.</p>
-<div id="e0d13dd6" class="cell" data-execution_count="1">
+<div id="fe256138" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -362,7 +362,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
 <p>Now, we can answer various questions using this structure, which we’ve named <code>df</code>.</p>
 <p>For example, let’s look at counts related to author gender and name.</p>
-<div id="d25b2d62" class="cell" data-execution_count="2">
+<div id="3602e1a2" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -377,7 +377,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 <p>We see that about 70% of authors on the list are male and 30% are female.</p>
 <p>Some authors appear multiple times on the list. Let’s see which authors are most represented in the list.</p>
-<div id="603a60f3" class="cell" data-execution_count="3">
+<div id="0e5d6611" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -398,7 +398,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.</p>
-<div id="9a11340d" class="cell" data-execution_count="4">
+<div id="63683079" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -417,7 +417,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can see that most books on the list were published between 1950 and 2000. Let’s take a look at information about the oldest and newest books on the list.</p>
-<div id="99afff43" class="cell" data-execution_count="5">
+<div id="ab22a018" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
@@ -583,7 +583,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s take a look at where the authors are from!</p>
-<div id="712f7034" class="cell" data-execution_count="6">
+<div id="baed2d91" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts().head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -601,7 +601,7 @@ Name: count, dtype: int64</code></pre>
 <hr>
 <p>Finally, let’s unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="8ecebfe5" class="cell" data-execution_count="7">
+<div id="dc0bfa3c" class="cell" data-execution_count="7">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -642,7 +642,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the GoodReads rankings and the top 500 rankings aren’t very aligned! What factors affect popularity on GoodReads compared to OCLC?</p>
-<div id="fadd7c5c" class="cell" data-execution_count="8">
+<div id="d47b05b9" class="cell" data-execution_count="8">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1172,7 +1172,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Let’s see which novels had the most movement up or down!</p>
-<div id="f2cd2ddc" class="cell" data-execution_count="9">
+<div id="60899e68" class="cell" data-execution_count="9">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>])</span>
@@ -1192,7 +1192,7 @@ Little House In the Big Woods     Laura Ingalls Wilder             1           2
                    Worst Case          James Patterson             5           443                  438</code></pre>
 </div>
 </div>
-<div id="0546c2dd" class="cell" data-execution_count="10">
+<div id="5f4b7a01" class="cell" data-execution_count="10">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
@@ -1214,7 +1214,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </div>
 <p>Above we see that Steinbeck’s “The Winter of Our Discontent”, stayed at the same ranking of 397. Pride and Prejudice remained quite high as well.</p>
 <p>20k Leagues under the sea dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! Harry Potter and The Sea of Monsters rose up the most.</p>
-<div id="2b546bcc" class="cell" data-execution_count="11">
+<div id="3dcb5445" class="cell" data-execution_count="11">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1225,7 +1225,7 @@ Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384      
 </div>
 <hr>
 <p>Let’s take a look at some of these metrics for rankings based on number of editions and total holdings.</p>
-<div id="b2574787" class="cell" data-execution_count="12">
+<div id="90270b9d" class="cell" data-execution_count="12">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1271,7 +1271,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
 </div>
 </div>
 </div>
-<div id="ed059fbc" class="cell" data-execution_count="13">
+<div id="a3772cb7" class="cell" data-execution_count="13">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_editions_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1774,7 +1774,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
  ▲ +127 Deception Point</code></pre>
 </div>
 </div>
-<div id="9e3e6a7f" class="cell" data-execution_count="14">
+<div id="536840cb" class="cell" data-execution_count="14">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"points_moved"</span>] <span class="op">&lt;=</span> <span class="dv">500</span>]</span>
@@ -1809,7 +1809,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
 7                  5.0  </code></pre>
 </div>
 </div>
-<div id="dc5a9410" class="cell" data-execution_count="15">
+<div id="2e82b0ac" class="cell" data-execution_count="15">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
@@ -1821,7 +1821,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
 </div>
 </div>
 <hr>
-<div id="7252b189" class="cell" data-execution_count="16">
+<div id="33d993cc" class="cell" data-execution_count="16">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_holdings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2324,7 +2324,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
  ▲ +26 Deception Point</code></pre>
 </div>
 </div>
-<div id="1e7df66c" class="cell" data-execution_count="17">
+<div id="5f6f7534" class="cell" data-execution_count="17">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"oclc_holdings_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2358,7 +2358,7 @@ PearsonRResult(statistic=0.6985608812420623, pvalue=1.1165447422670404e-73)</cod
 6                  5.0  </code></pre>
 </div>
 </div>
-<div id="98ae49c2" class="cell" data-execution_count="18">
+<div id="eb2b9d1d" class="cell" data-execution_count="18">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
@@ -2546,8 +2546,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -2709,7 +2707,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

@@ -136,8 +136,6 @@ By focusing on books that librarians have chosen to continue to make available t
 
 The columns in our expanded version of the Library Top 500 Novels dataset include information in the following categories:
 
-The columns in our expanded version of the Library Top 500 Novels dataset include information in the following categories:
-
 ### Basic info on novels:
 
 - **TOP_500_RANK:** Numeric rank of text in OCLC’s original Top 500 List.
@@ -277,7 +275,7 @@ Looking at the AUTHOR_GENDER column, we can count the number of authors identifi
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("../../../datasets/top-500-novels/full-text/final_merged_dataset.tsv", sep='\t', header=0, low_memory=False)
+df = pd.read_csv("../../../datasets/top-500-novels/final_merged_dataset_no_full_text.tsv", sep='\t', header=0, low_memory=False)
 
 df["author_gender"].value_counts(dropna=False)
 
@@ -413,7 +411,9 @@ You can find more metadata analysis in [Activities](?tab=discussion-%26-activiti
 
 ## **FULL TEXT DATA**
 
-In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this [Colab notebook](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing), but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.  
+In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this [Colab notebook](https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing), but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways. 
+
+You can find the full-text data here: https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv
 
 ## **Conclusion**
 
