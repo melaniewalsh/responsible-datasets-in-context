@@ -1,0 +1,78 @@
+# This is the file that controls the GitHub Action that automatically renders and publishes our website 
+# whenever changes our made to the "main" branch of the GitHub repository
+
+# Documentation for Quarto GitHub actions is here: https://quarto.org/docs/publishing/github-pages.html#github-action
+# Also here: https://github.com/quarto-dev/quarto-actions
+
+# It is triggered when changes are made to the "main" branch
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    # These are the steps that are taken when changes are made
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # https://github.com/quarto-dev/quarto-actions/tree/main/setup
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      # This installs a fresh version of Python
+      - name: Install Python and Dependencies
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+          working-directory: website
+      - run: pip install jupyter
+      - run: pip install -r requirements.txt
+
+      # This installs a fresh version of R
+      # https://github.com/r-lib/actions/tree/v2/setup-r
+      - name: Install R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.3.2'
+          
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/work/_temp/Library
+          key: ${{ runner.os }}-R-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-R-
+
+      # This installs all needed R packages (dependencies) for the website
+      # This is created with renv
+      # You can read more here: https://rstudio.github.io/renv/articles/renv.html
+      # You can basically take a snapshot of your current environment, and it puts it in renv/ and renv.lock
+      # - name: Install R Dependencies
+      #   uses: r-lib/actions/setup-renv@v2
+      #   with:
+      #     cache-version: 1
+      #     # Because of the way we've reorganized files, I'm specifying that renv/ lives in the website/ directory (as opposed to the current working directory or root)
+      #     working-directory: website
+
+      # Render and publish the website
+      # If file paths are wrong, that will break the whole site, so really try to read through the errors
+      # 
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          # Because of the way we've reorganized files, I'm specifying that the site lives in the website/ directory (as opposed to the current working directory or root)
+          path: website
+          # Pushes to gh-pages, which controls the website
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      

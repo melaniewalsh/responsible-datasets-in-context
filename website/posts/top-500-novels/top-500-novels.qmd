@@ -105,6 +105,91 @@ viewof dataSummaryView
 :::
 
 
+```{ojs}
+//|echo: false
+import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"
+```
+
+
+```{ojs}
+//|echo: false
+//|output: false
+raw_data = fetchData("https://raw.githubusercontent.com/Post45-Data-Collective/data/refs/heads/main/hathitrust_fiction/hathitrust_post45fiction_metadata.csv")
+```
+
+
+```{ojs}
+//|echo: false
+//|output: false
+
+// Example usage
+generateTabulatorTableFromCSV(
+  "#table-container4",
+
+  "https://raw.githubusercontent.com/Post45-Data-Collective/data/refs/heads/main/hathitrust_fiction/hathitrust_post45fiction_metadata.csv",
+  {
+    displayedColumns: ["shorttitle","inferreddate",  "author","recordid", "hathi_rights",  "genres", "id", "docid", "juvenileprob", "nonficprob", "author_authorized_heading", "author_lccn", "author_viaf", "author_wikidata_qid"],
+
+//     columnPopups: [
+//   "Shortened title of the work",  // shorttitle
+//   "Inferred date of the work",    // inferreddate
+//   "Author of the work",           // author
+//   "Unique record ID",             // recordid
+//   "Rights code from HathiTrust",  // hathi_rights
+//   "Genres associated with the work",  // genres
+//   "Unique identifier for the title in the titles dataset (may contain duplicates for reprinted works)", // id
+//   "Unique volume ID from HathiTrust", // docid (htid)
+//   "Probability that the work is for a juvenile audience", // juvenileprob
+//   "Probability that the work is nonfiction", // nonficprob
+//   "Author’s authorized Name Authority Cooperative (NACO) heading", // author_authorized_heading
+//   "Author’s LCCN from id.loc.gov", // author_lccn
+//   "Author’s viaf.org cluster number", // author_viaf
+//   "Author’s Wikidata Q number"      // author_wikidata_qid
+// ],
+    // columnWidths: { "gender": "50px", "role": "75px", "mfa_degree": "100px", "prize_name": "100px" },
+    // currencyColumns: ["prize_amount"],
+    // categoryColumns: ["hathi_rights",  "genres","geographics"],
+    // sortColumns: ["prize_year"],
+    // sortOrders: ["desc"]
+  }
+);
+```
+
+Download Full Data (including hidden columns)
+<div id='button-container2'>
+  <button id="download-raw"><i class="fas fa-download"></i></i> Download Full Data</button>
+  <button id="copy-url"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
+
+Download Table Data (including filtered options)
+
+<div id='button-container'>
+  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
+  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
+  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+</div>
+
+<div id="progress-container" style="width: 100%; display: block;">
+  <progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
+  <div id="progress-text" style="text-align: center; margin-top: 5px;"></div>
+</div>
+
+
+<div id="table-container4" style="height: 500px">
+</div>
+
+
+
+::: {.callout-tip icon=false}
+## Creative Commons License
+<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+
+:::
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+
+
 ----- 
 
 This dataset is based on a list of the [Top 500   Novels](https://www.oclc.org/en/worldcat/library100/top500.html) compiled by OCLC from information in their online database [WorldCat](https://search.worldcat.org/), the largest database of library records. The first section of the list was published online with great fanfare as the [Library 100](https://www.oclc.org/en/worldcat/library100.html) in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.” 
