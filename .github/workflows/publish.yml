@@ -26,15 +26,26 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
+      # # This installs a fresh version of Python
+      # - name: Install Python and Dependencies
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: '3.10'
+      #     cache: 'pip'
+      #     working-directory: website
+      # - run: pip install jupyter
+      # - run: pip install -r requirements.txt
       # This installs a fresh version of Python
       - name: Install Python and Dependencies
         uses: actions/setup-python@v5
         with:
           python-version: '3.10'
           cache: 'pip'
-          working-directory: website
-      - run: pip install jupyter
-      - run: pip install -r requirements.txt
+      - name: Install Python Dependencies
+        run: |
+          pip install jupyter
+          pip install -r requirements.txt
+        working-directory: website
 
       # This installs a fresh version of R
       # https://github.com/r-lib/actions/tree/v2/setup-r
