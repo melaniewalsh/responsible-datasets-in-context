@@ -16,7 +16,7 @@ execute:
   eval: true
 ---
 
-# METADATA ANALYSIS
+# Metadata Analysis
 
 ### By Aashna Sheth
 
@@ -26,7 +26,7 @@ Let's start by reading our data into a pandas dataframe. A pandas dataframe is a
 import matplotlib.pyplot as plt
 import pandas as pd
 
-df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/top-500-novels/library_top_500.csv", sep=',', header=0, low_memory=False)
+df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv", sep=',', header=0, low_memory=False)
 ```
 
 Now, we can answer various questions using this structure, which we've named `df`.

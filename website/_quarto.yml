@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: ../docs
+  # output-dir: ../docs
 
 render:
   - team:
@@ -11,6 +11,7 @@ website:
   twitter-card: true
   bread-crumbs: false
   title: "Responsible Datasets in Context"
+  site-url: https://www.responsible-datasets-in-context.com
   favicon: images/responsible-logo-white.png
   google-analytics:  G-MZHBEJTWJ4
   comments: 
