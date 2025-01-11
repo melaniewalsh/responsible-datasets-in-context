@@ -54,7 +54,6 @@ jupyterlab_widgets==3.0.13
 kiwisolver==1.4.7
 MarkupSafe==3.0.2
 matplotlib==3.9.4
-math
 matplotlib-inline==0.1.7
 mistune==3.1.0
 nbclient==0.10.2
