@@ -3,7 +3,7 @@
     "listing": "/index.html",
     "items": [
       "/posts/np-data/index.html",
-      "/posts/top-500-novels/top-500-novels.html",
+      "/posts/top-500-novels/top-500-novels.pdf",
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/gender-violence/index.html",
       "/posts/early-african-american-film/index.html"
@@ -52,11 +52,17 @@
     "listing": "/datasets.html",
     "items": [
       "/posts/np-data/index.html",
-      "/posts/top-500-novels/top-500-novels.html",
+      "/posts/top-500-novels/top-500-novels.pdf",
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/gender-violence/index.html",
       "/posts/early-african-american-film/index.html",
       "/posts/dolma/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/top-500-novels/top-500-novels.pdf",
+    "items": [
+      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
     ]
   }
 ]

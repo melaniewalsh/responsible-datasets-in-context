@@ -2,8 +2,8 @@
 title: "Top 500 \"Greatest\" Novels (1021-2015)"
 author: Anna Preus and Aashna Sheth
 format: 
-  html:
-    css: ../../styles.css
+  # html:
+    # css: ../../styles.css
     # include-in-header:
     #   - text: 
   #ipynb: default
@@ -53,7 +53,7 @@ If you use our materials in your class or another setting, we would love to [hea
 
 -------
 <!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
-
+<!-- 
 ```{ojs}
 //|echo: false
 import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, viewof dataUrl, viewof tableOptions, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
@@ -97,12 +97,14 @@ tabulator.min.css`
 
 viewof selectedColumns
 viewof dataSummaryView
-```
+``` 
+-->
 
+<!-- 
 ::: {.callout-tip icon=false}
 ## Creative Commons License
 <p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
-:::
+::: -->
 
 
 ```{ojs}
@@ -114,7 +116,7 @@ import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSe
 ```{ojs}
 //|echo: false
 //|output: false
-raw_data = fetchData("https://raw.githubusercontent.com/Post45-Data-Collective/data/refs/heads/main/hathitrust_fiction/hathitrust_post45fiction_metadata.csv")
+raw_data = fetchData("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv")
 ```
 
 
@@ -126,9 +128,37 @@ raw_data = fetchData("https://raw.githubusercontent.com/Post45-Data-Collective/d
 generateTabulatorTableFromCSV(
   "#table-container4",
 
-  "https://raw.githubusercontent.com/Post45-Data-Collective/data/refs/heads/main/hathitrust_fiction/hathitrust_post45fiction_metadata.csv",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv",
   {
-    displayedColumns: ["shorttitle","inferreddate",  "author","recordid", "hathi_rights",  "genres", "id", "docid", "juvenileprob", "nonficprob", "author_authorized_heading", "author_lccn", "author_viaf", "author_wikidata_qid"],
+    // displayedColumns: ["top_500_rank",
+    // "title",
+    // "author",
+    // "pub_year",
+    // "orig_lang",
+    // "genre",
+    // "author_birth",
+    // "author_death",
+    // "author_gender",
+    // "author_primary_lang",
+    // "author_nationality",
+    // "author_field_of_activity",
+    // "author_occupation",
+    // "oclc_holdings",
+    // "oclc_eholdings",
+    // "oclc_total_editions",
+    // "oclc_holdings_rank",
+    // "oclc_editions_rank",
+    // "gr_avg_rating",
+    // "gr_num_ratings",
+    // "gr_num_reviews",
+    // "gr_avg_rating_rank",
+    // "gr_num_ratings_rank",
+    // "oclc_owi",
+    // "author_viaf",
+    // "gr_url",
+    // "wiki_url",
+    // "pg_eng_url",
+    // "pg_orig_url"],
 
 //     columnPopups: [
 //   "Shortened title of the work",  // shorttitle
@@ -151,9 +181,21 @@ generateTabulatorTableFromCSV(
     // categoryColumns: ["hathi_rights",  "genres","geographics"],
     // sortColumns: ["prize_year"],
     // sortOrders: ["desc"]
+    numericColumns: ["gr_num_ratings", "gr_num_reviews"]
   }
 );
 ```
+
+
+
+<div id="progress-container" style="width: 100%; display: block;">
+  <progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
+  <div id="progress-text" style="text-align: center; margin-top: 5px;"></div>
+</div>
+
+
+<div id="table-container4" style="height: 500px">
+</div>
 
 Download Full Data (including hidden columns)
 <div id='button-container2'>
@@ -166,16 +208,7 @@ Download Table Data (including filtered options)
 <div id='button-container'>
   <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
   <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
-  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
-</div>
-
-<div id="progress-container" style="width: 100%; display: block;">
-  <progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
-  <div id="progress-text" style="text-align: center; margin-top: 5px;"></div>
-</div>
-
-
-<div id="table-container4" style="height: 500px">
+  <!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
 </div>
 
 
