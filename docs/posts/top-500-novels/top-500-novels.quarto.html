@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.47">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Anna Preus and Aashna Sheth">
+<meta name="dcterms.date" content="2024-07-01">
+
+<title>Top 500 “Greatest” Novels (1021-2015) – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../site_libs/quarto-listing/list.min.js"></script>
+<script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-exercise-posts .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-exercise-posts'] = new List('listing-exercise-posts', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+  
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Top 500 “Greatest” Novels (1021-2015)</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">libraries</div>
+                <div class="quarto-category">literature</div>
+                <div class="quarto-category">readers</div>
+                <div class="quarto-category">gender</div>
+                <div class="quarto-category">metadata</div>
+                <div class="quarto-category">full-text</div>
+                <div class="quarto-category">public domain</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Anna Preus and Aashna Sheth </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">July 1, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="top-500-novels.quarto.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Discussion &amp; Activities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Exercises</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>This dataset contains information on the top 500 novels most widely held in libraries, according to <a href="https://www.oclc.org/en/about.html?cmpid=md_ab">OCLC</a>, a library organization with over 16,000 member libraries in over 100 countries. The dataset includes information on authors’ biographies, library holdings, and online engagement for each novel, as well as the full text for all works that are not currently under copyright (190 novels).</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Brief Survey
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you use our materials in your class or another setting, we would love to <a href="https://forms.gle/yJpQscUH9k9Rn4Qy9">hear about it</a>!</p>
+</div>
+</div>
+<hr>
+<!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb1-0"><a href="#cb1-0" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> viewof copyUrlButton<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataUrl<span class="op">,</span> viewof tableOptions<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> table<span class="op">,</span> tableStyles} <span class="im">from</span> <span class="st">"ac5fc74c20ef36a6"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb2-0"><a href="#cb2-0" aria-hidden="true" tabindex="-1"></a><span class="co">// viewof dataSet</span></span>
+<span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">//viewof dataUrl</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">//|error: false</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">//|warning: false</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>tableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="5" data-source-offset="-69"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>viewof tableOptions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="6" data-source-offset="-89"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 5;"><span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>viewof copyUrlButton</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-3-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell hidden" data-error="false" data-warning="false">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="4" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 3;"><span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-4-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="5" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display hidden">
+<div>
+<div id="ojs-cell-4-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<p><br></p>
+<div class="cell" data-error="false" data-warning="false">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="4" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 3;"><span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>viewof selectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="5" data-source-offset="-24"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>viewof dataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-5-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Creative Commons License
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p xmlns:cc="http://creativecommons.org/ns#">
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a>
+</p>
+</div>
+</div>
+<hr>
+<p>This dataset is based on a list of the <a href="https://www.oclc.org/en/worldcat/library100/top500.html">Top 500 Novels</a> compiled by OCLC from information in their online database <a href="https://search.worldcat.org/">WorldCat</a>, the largest database of library records. The first section of the list was published online with great fanfare as the <a href="https://www.oclc.org/en/worldcat/library100.html">Library 100</a> in 2019, accompanied by the claim that for novels, “literary greatness can be measured by how many libraries have a copy on their shelves.”</p>
+<p>We wondered about the implications of this claim and about what it means to base ideas of “literary greatness” on the number of libraries that hold a particular work. How do historical biases in systems of literary production and preservation figure into these kinds of claims? Which libraries’ records are included in the data? And how do we even define what counts as a novel?</p>
+<p>To contextualize the initial list and dig into its claims about literary greatness, we collected information on each novel from a number of other databases, including <a href="https://www.wikipedia.org/">Wikipedia</a>, <a href="https://www.goodreads.com/">Goodreads</a>, <a href="https://www.gutenberg.org/">Project Gutenberg</a>, the <a href="https://viaf.org/">Virtual International Authority File (VIAF)</a>, and <a href="https://www.oclc.org/go/en/classify-discontinuation.html">Classify</a> (a now-shuttered OCLC tool), which we have compiled here.</p>
+<p>The dataset was created by Anna Preus and Aashna Sheth, who are also the authors of this data essay.</p>
+</section>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history"><strong>HISTORY</strong></h2>
+<p>To start, what is a novel? “Novel” is an umbrella term for works of longform fiction in a range of genres: romance, sci-fi, historical fiction, horror, detective fiction, westerns, etc. The word “novel” was first used in English to describe a “long fictional prose narrative” in the 1600s (OED), and the form increased in popularity across the 18th and 19th centuries. Interestingly, OCLC’s list of top 500 novels extends much further back than this. The oldest work on the list is <em>The Tale of Genji</em>, a classic work of Japanese literature written over 1,000 years ago. On the other end of the timeline, the list includes many contemporary best-sellers, including all the titles in the <em>Harry Potter</em>, <em>Twilight</em>, and <em>Hunger Games</em> series.</p>
+<p>This long time span is one of the things that makes OCLC’s data, and the list specifically, so interesting. A key issue in literary studies is which works from the past we continue to read in the present, and which works from the present we’ll continue to read in the future. The vast majority of novels fall out of circulation shortly after they’re published, quickly becoming part of what Margaret Cohen has called “the great unread” <span class="citation" data-cites="cohen_sentimental_2018">(<a href="#ref-cohen_sentimental_2018" role="doc-biblioref">Cohen 2018, 61</a>)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> The Top 500 list, though, represents historical works that have achieved exceptional levels of attention and have entered what is often referred to as the literary “canon.” Ankhi Mukherjee defines the canon as “a set of texts whose value and readability have borne the test of time,” noting that this “involves not merely a work’s admission into an elite club, but its induction into ongoing critical dialogue and contestations of literary value” (<span class="citation" data-cites="mukherjee_canonicity_2017">Mukherjee (<a href="#ref-mukherjee_canonicity_2017" role="doc-biblioref">2017</a>)</span>). Canonical works continue to be read, taught, and discussed, and in popular terminology they’re often considered “classics.” These are works you might read in a high school or college English class: F. Scott Fitzgerald’s <em>The Great Gatsby</em>, for example, or Jane Austen’s <em>Pride and Prejudice</em>.</p>
+<p>One of the things that defines a classic is the fact that it stays in print for a long period of time. When a book is published, it is issued in an edition with a specific number of physical copies. If the book is profitable, it may be re-issued in different editions over many years and edited repeatedly by different scholars across time. If it becomes canonical, it is likely to be issued in dozens or hundreds of editions even long after the author’s death, leading to more physical copies of the book in circulation. Importantly, though, there is not just one canon or one stable set of classics. Canons are constructed and reinforced by people; they are socially and historically defined and are bound up in power relationships and in histories of exclusion and erasure. This is what makes OCLC’s task of defining the top 500 greatest novels of all time so potentially problematic: their data reflects a history of canonization that has influenced library collections, and which has long been biased toward English-language texts, White male authors, and works produced in Europe and North America.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>The newer works included on the list are books that have achieved immense popularity and widespread sales in recent years. These works, which were published during the period that Dan Sinykin has termed the “Conglomerate Era,” are usually issued by publishers that operate as part of large, multinational corporations, and which have the resources to print and distribute millions of books around the world <span class="citation" data-cites="sinykin_big_2023">(<a href="#ref-sinykin_big_2023" role="doc-biblioref">Sinykin 2023</a>)</span>. Many of these novels have also been adapted into major films or TV series.</p>
+<p>By focusing on books that librarians have chosen to continue to make available to readers, OCLC was able to create a list of widely read novels that includes both classic texts and more recent, popular works by living authors. The list, though, also reflects various forms of bias rooted in literary history, in library collections, and in the data itself. We wondered, whose conception of “literary greatness” is being represented? How does OCLC’s data compare to other potential indicators of popularity or canonicity? And, for that matter, how was the list actually constructed?</p>
+</section>
+<section id="where-did-the-data-come-from-who-collected-it" class="level2">
+<h2 class="anchored" data-anchor-id="where-did-the-data-come-from-who-collected-it"><strong>WHERE DID THE DATA COME FROM? WHO COLLECTED IT?</strong></h2>
+<section id="the-top-500-list" class="level3">
+<h3 class="anchored" data-anchor-id="the-top-500-list"><strong>The Top 500 list</strong></h3>
+<p>The initial list of Top 500 novels was collected by a team at OCLC, the non-profit organization that manages WorldCat. It was compiled based on analysis of data in WorldCat, which consists of catalog records created and entered by librarians at OCLC member libraries.</p>
+</section>
+<section id="our-curated-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="our-curated-dataset"><strong>Our curated dataset</strong></h3>
+<p>Building on this list, we compiled data from a number of other databases, including Project Gutenberg, VIAF, Wikipedia, and Goodreads–a process that is described in greater detail below.</p>
+</section>
+</section>
+<section id="why-was-the-data-collected-how-is-the-data-used" class="level2">
+<h2 class="anchored" data-anchor-id="why-was-the-data-collected-how-is-the-data-used"><strong>WHY WAS THE DATA COLLECTED? HOW IS THE DATA USED?</strong></h2>
+<section id="the-top-500-list-1" class="level3">
+<h3 class="anchored" data-anchor-id="the-top-500-list-1"><strong>The Top 500 list</strong>:</h3>
+<p>OCLC’s goal in producing the Top 500 list seems to be to share information about an important set of texts based on the unprecedented amount of information in their database, as well as to encourage library patronage and reading. The website for the list includes a “<a href="https://www.oclc.org/en/worldcat/library100/promote.html">Librarians Kit</a>” with a variety of publicity materials–from printable bookmarks to Instagram tiles–that can help bring attention to books in the Top 500 list within libraries’ collections.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/top_500_kit.png" title="image_tooltip" class="img-fluid figure-img"></p>
+<figcaption>Screenshot of promotional materials for “The Library Top 100”</figcaption>
+</figure>
+</div>
+</section>
+<section id="our-curated-dataset-1" class="level3">
+<h3 class="anchored" data-anchor-id="our-curated-dataset-1"><strong>Our curated dataset</strong>:</h3>
+<p>Our goal as researchers was to collect data from additional sources in order to understand how the list was constructed and to contextualize and question its claims about literary greatness.</p>
+</section>
+</section>
+<section id="how-was-the-data-collected" class="level2">
+<h2 class="anchored" data-anchor-id="how-was-the-data-collected"><strong>HOW WAS THE DATA COLLECTED?</strong></h2>
+<section id="the-top-500-list-2" class="level3">
+<h3 class="anchored" data-anchor-id="the-top-500-list-2"><strong>The top 500 list</strong>:</h3>
+<p>The Top 500 list represents a massive data extraction and analysis effort on the part of OCLC. While they do not provide detailed information on how the list was compiled, they do offer a brief explanation of the process that went into creating the list on their <a href="https://www.oclc.org/en/worldcat/library100/faq.html">FAQ page</a> (written in the context of the top 100, but also applies to the top 500):</p>
+<blockquote class="blockquote">
+<p>Materials in libraries are described and tracked in WorldCat in two ways. Any specific work of literature, music, art, history, etc., has an associated <strong>catalog record</strong>. This describes the item in a general sense. Every copy of the same book, for example, shares the same record. WorldCat also tracks library <strong>holdings</strong>, which indicate that a specific library has (or holds) at least one copy of that item.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>The Library 100 is based on the total number of holdings for a specific novel across all libraries that have registered that information in WorldCat. When a library tells OCLC, “We have a copy of that book available,” that counts as a holding, and in the case of The Library 100, counts as +1 toward its ranking on the list.</p>
+</blockquote>
+<p>This process initially sounds straightforward: to create the Top 500 list, the OCLC team presumably searched the title of a work, counted the number of libraries that held each title, and published the first 500. But when we dug into the database, we found it was actually much more complicated than that. The list is influenced by a range of factors, including which libraries’ collections are represented, what kinds of books are considered, and how holdings are totalled across different editions and translations of individual titles.</p>
+<section id="which-libraries-are-represented" class="level4">
+<h4 class="anchored" data-anchor-id="which-libraries-are-represented">Which libraries are represented?</h4>
+<p>According to OCLC, “WorldCat holdings information represents the collective inventory of OCLC member libraries” <span class="citation" data-cites="noauthor_worldcat_2021">(<a href="#ref-noauthor_worldcat_2021" role="doc-biblioref"><span>“<span>WorldCat</span> <span>Holdings</span>”</span> 2021</a>)</span>. But who are these member libraries? And where are they? OCLC publishes some summary data about WorldCat, revealing, for example, that it currently holds over 548 million bibliographic records representing over 3.3 billion library holdings in 490 languages. But while OCLC stresses its position as “The worldwide catalog of library resources” and emphasizes the membership of libraries in over one hundred countries, it doesn’t provide much specific information on where these libraries are located or what kinds of institutions they are <span class="citation" data-cites="noauthor_worldcat_2021">(<a href="#ref-noauthor_worldcat_2021" role="doc-biblioref"><span>“<span>WorldCat</span> <span>Holdings</span>”</span> 2021</a>)</span>.</p>
+<p>In order to get a general sense of the geographic distribution of OCLC member libraries, we dug into the organization’s <a href="https://www.oclc.org/en/contacts/libraries.html">directory</a> and conducted filtered searches for libraries in each country. We found that over 70% of OCLC’s members are in the U.S., followed by 7% in Germany, 4% in Australia, 2.6% in Canada, and 1.5% in the U.K. Clearly, OCLC is most well represented in the U.S., where it is based, and the fact that three of the other top four countries in terms of membership have English as a national language helps to explain why English-language materials are disproportionately represented in the catalog and in the Top 500 List.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oclc_libraries_by_country.png" title="image_tooltip" class="img-fluid figure-img"></p>
+<figcaption>Number of libraries in OCLC’s member database by country</figcaption>
+</figure>
+</div>
+<p>We used a similar approach to look at what kinds of institutions are represented in WorldCat, this time filtering by “Library Type.” We found that most OCLC members are school libraries (29%), public libraries (29%), or academic libraries (25%) and that membership is fairly evenly distributed across these categories. The prominence of school libraries and academic libraries raises the issue of which patrons have access to these libraries–and thus whose conception of popularity is being represented in the holdings data. It also points to the influence of educators on this picture of the Top 500 novels.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/oclc_libraries_by_institution_type.png" title="image_tooltip" class="img-fluid figure-img"></p>
+<figcaption>Number of libraries in OCLC’s member database by institution type</figcaption>
+</figure>
+</div>
+</section>
+<section id="which-books-are-represented" class="level4">
+<h4 class="anchored" data-anchor-id="which-books-are-represented">Which books are represented?</h4>
+<p>Since the list focuses specifically on <em>novels</em> in these libraries’ collections, it is also narrowed by genre. OCLC discusses its process for identifying novels on its FAQ page, noting that they began with “everything in WorldCat that counts broadly as ‘fiction’” and then winnowed the list down through the removal of known categories like “children’s books, poetry, drama, folklore, comics,” and “short stories.” The final list was later “reviewed by an editorial team.”</p>
+<p>Importantly, the Top 500 List is also based only on holdings of physical books, and it “does not include e-books, audiobooks, children’s adaptations, film adaptations, etc.” This exclusive focus on print books puts emphasis on the choices of librarians, since libraries have limited shelf space and periodically have to cull their print collections. As OCLC puts it, “libraries offer access to trendy and popular books. But, they don’t keep them on the shelf if they’re not repeatedly requested by their communities over the years.” By contrast, they suggest that ebooks are often incorporated via “automatic links to free collections on the web,” which do not “represent a specific decision to add a particular novel to a library’s collection” <span class="citation" data-cites="noauthor_library_2023">(<a href="#ref-noauthor_library_2023" role="doc-biblioref"><span>“The <span>Library</span> 100: <span>Frequently</span> <span>Asked</span> <span>Questions</span>”</span> 2023</a>)</span>. While this may be the case, given the popularity of eBooks <span class="citation" data-cites="zhang_ebooks_2013">(<a href="#ref-zhang_ebooks_2013" role="doc-biblioref">Zhang and Kudva 2013</a>)</span>, a focus on print must have influenced the overall makeup of the list, and, again, whose idea of popularity or “greatness” it represents.</p>
+</section>
+<section id="how-are-editions-and-translations-counted" class="level4">
+<h4 class="anchored" data-anchor-id="how-are-editions-and-translations-counted">How are editions and translations counted?</h4>
+<p>One further complication is that in WorldCat, records are stored by edition, meaning that each edition of a particular novel has its own catalog record. An individual title may have been released in hundreds or thousands of editions since its initial publication. Miguel de Cervantes’s <em>Don Quixote</em>, for example, has over 9,000 editions listed in WorldCat.</p>
+<p>This means that when developing the list, the OCLC team actually had to find all the editions of a specific title and sum the number of libraries that hold that edition across all editions. <strong>Thus the top 500 list is not only a representation of how many libraries carry the work, but a representation of how many times a book has been re-edited and re-issued; the more editions a book has, the more records are created and the more copies of a book a library may hold.</strong> Often, there are duplicate records for individual editions, which may affect the overall count of copies tallied by OCLC. And when a work is translated into different languages, all the editions of all the translations are also recorded in WorldCat, which also figures into the count of total holdings for each novel.</p>
+<p>The combined influence of these different factors can be seen in the representation of works in languages other than English, which make up around 14% of the list. The non-English-language texts that are at the top of the list–<em>Don Quixote</em>, <em>Crime and Punishment</em>, <em>Madame Bovary</em>, <em>The Three Musketeers</em>, and <em>War and Peace</em>–have all been widely translated into English, a trend that continues as you go down the list.</p>
+</section>
+</section>
+<section id="our-curated-dataset-2" class="level3">
+<h3 class="anchored" data-anchor-id="our-curated-dataset-2"><strong>Our curated dataset</strong>:</h3>
+<p>We chose to contextualize the Library Top 500 List by compiling additional information on each novel from a range of other sources. We focused on gathering three main categories of information: information that could help us understand what types of works–and whose works–were included on the list, data that could potentially provide alternate measures of popularity or canonicity, and the full text of each novel that was in the public domain. We collected information from the following sources:</p>
+<p><strong>WorldCat</strong>: we used the now-shuttered OCLC tool Classify to gather data from WorldCat based on an OWI (OCLC Work ID) for each of the 500 novels on the list.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> We recorded total physical and eholdings for this work. The Top 500 list only considers physical holdings. The number of holdings in our curated dataset is not perfectly descending as the top 500 rank decreases, as one would expect. This is likely due to complications with the OWI number and with the inclusion of translations; the top 500 list uses multiple OWIs to calculate total holdings, while we only use one. Which OWIs the top 500 curators use for each work is unclear.</p>
+<p><strong>VIAF</strong>: The Virtual International Authority File is an OCLC-run database that contains structured records–called “name authority files”–for individual authors and creators. We used VIAF to gather information on authors whose novels were included on the list, including their birth and death dates, nationalities, genders, and occupations.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/viaf_example.png" title="image_tooltip" class="img-fluid figure-img"></p>
+<figcaption>Example of Toni Morrison’s authority record in VIAF</figcaption>
+</figure>
+</div>
+<p><strong>Wikipedia</strong>: We used Wikipedia, the popular, free, volunteer-authored encyclopedia, to identify the year of first publication for each novel on the list.</p>
+<p><strong>Goodreads</strong>: Goodreads, which is owned by Amazon, is the largest social networking site related to books, with over 150 million members. It allows users to rate, review, and discuss a huge range of texts. We drew on data from Goodreads as a potential alternate indicator of texts’ popularity, collecting total number of reviews, total number of ratings, and average overall rating for each novel on the list.</p>
+<p><strong>Project Gutenberg</strong>: We used Project Gutenberg to access the full-text of all novels on the list that are currently in the public domain, or in other words, out of copyright. We chose Project Gutenberg because their eBooks are edited by volunteers, whereas many larger content repositories, like Internet Archive and HathiTrust, only make available machine-generated transcriptions of historical texts, which tend to be less accurate.</p>
+<p>Our work creating this dataset not only builds on the work of the OCLC team who compiled the Top 500 list, but on the labor of the thousands of librarians who created records held in WorldCat and VIAF, of the volunteers who transcribed texts for Project Gutenberg and wrote articles for Wikipedia, and of the social media users who reviewed and rated books on Goodreads.</p>
+</section>
+</section>
+<section id="examining-bias" class="level2">
+<h2 class="anchored" data-anchor-id="examining-bias"><strong>EXAMINING BIAS</strong></h2>
+<section id="the-top-500-list-3" class="level3">
+<h3 class="anchored" data-anchor-id="the-top-500-list-3"><strong>The top 500 list</strong>:</h3>
+<p>The OCLC’s definition of “literary greatness” is biased based on the libraries that OCLC represents, the list’s exclusive focus on physical books, and its emphasis on raw number of holdings, which is influenced by number of editions. OCLC acknowledges potential biases in their claims, noting that “The [top 500] list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.”</p>
+<p>A key reason we decided to collect additional data related to the list was to explore what kinds of works, and especially whose works, it represents. Drawing on author data gathered from VIAF, we can calculate some overall descriptive statistics for the list.</p>
+<p>Looking at the AUTHOR_GENDER column, we can count the number of authors identified as male and the number identified as female (VIAF only includes options for binary genders, which is discussed further below), and we can see that over 70% of the novels were written by men.</p>
+<div id="b952c244" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"final_merged_dataset.tsv"</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, header<span class="op">=</span><span class="dv">0</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can use a similar approach to look at the nationalities of authors whose works are represented on the list. Focusing on the AUTHOR_NATIONALITY column, we can count how many times each country code appears, and see that over 80% of the novels were written by authors from the U.S. or the U.K.</p>
+<div id="07d27199" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/library_top_500_by_nationality_of_author.jpg" title="image_tooltip" class="img-fluid figure-img"></p>
+<figcaption>Choropleth map representing the number of works by authors of particular nationalities represented on the Top 500 List</figcaption>
+</figure>
+</div>
+<p>To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.</p>
+<div id="adab66c3" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2060</span>, <span class="dv">50</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> df[<span class="st">'pub_year'</span>].plot.hist(bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">'w'</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)<span class="op">;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(bins)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>We can also get a sense of the immense influence of individual authors who appear on the list numerous times. The most represented authors are John Grisham (19 novels) and Charles Dickens (15 novels).</p>
+<div id="2a679d80" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Drawing on slightly more complex techniques, we can see that there is a strong positive correlation (p=1.1165e-73, r=0.6985) between the current ranking of the Top 500 List and a ranking based on the total number of editions for each novel. This suggests that the more editions a novel has, the more likely it is to be higher on the list, which is relevant because European and American editing practices have long favored authors occupying dominant social positions. Historically, works by White authors and male authors are more likely to have been re-edited and re-issued and to be considered literary classics (Gates; Mandell).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div id="e33f43ef" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspired by: https://www.sfu.ca/~mjbrydon/tutorials/BAinPy/08_correlation.html</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna()]</span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_editions_rank'</span>], dropped_df[<span class="st">'top_500_rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Similarly, we confirm that there is a very strong positive correlation (p=5.6541e-96, r=0.7642) between number of editions and number of holdings of a novel; the more editions a book has, the more total holdings are reported in OCLC.</p>
+<div id="d28c8f8a" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna() <span class="op">&amp;</span> df.oclc_holdings_rank.notna()]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_holdings_rank'</span>], dropped_df[<span class="st">'oclc_editions_rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="our-curated-dataset-3" class="level3">
+<h3 class="anchored" data-anchor-id="our-curated-dataset-3"><strong>Our curated dataset</strong>:</h3>
+<p>Although the additional data we curated helps to contextualize the Top 500 List and to reveal some of its biases, the data we added also contains its own biases. For starters, as researchers, we both primarily work in English, and we are pursuing this project at a University in the U.S. These contexts have informed our areas of inquiry and the sources we’ve chosen to use. We primarily drew on widely used online databases created in English-language contexts (VIAF, Project Gutenberg, etc.). Further, we have limited our data collection to OCLC’s list of the Top 500 novels and did not attempt to expand to other rankings of literary greatness or to additional novels.</p>
+<p>The sources we have used, of course, have biases of their own. VIAF relies on a standardized vocabulary, which can be helpful for data analysis and organization, but erases important nuances. For example, VIAF categorizes gender with the binary labels of “male” and “female,” with the only other option being “unknown.” This, of course, reinforces binary understandings of gender and obscures the existence of non-binary people (<span class="citation" data-cites="drabinski_queering_2013">Drabinski (<a href="#ref-drabinski_queering_2013" role="doc-biblioref">2013</a>)</span>). Labels used in fields like “AUTHOR_NATIONALITY,” “FIELD_OF_ACTIVITY,” and “OCCUPATION” also do not paint a complete picture. The entries in the latter two columns are based on Library of Congress data and may not be equally rich for all authors. And nationality labels from VIAF can obfuscate racial, political, ethnic, and tribal affiliations, and flatten the complexity of individual authors’ experiences.<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> For example, the nationality for Sherman Alexie, author of <em>The Absolutely True Diary of a Part-time Indian</em>, is listed as “U.S.A.”, but his identity as a member of the Spokane Tribe of Indians is not referenced. In another example, the first nationality listed for Khaled Hosseini, author of <em>The Kite Runner</em>, is “U.S.A.” followed by “Afghanistan.” This is not inaccurate but it is oversimplified, since Hosseini was born in Kabul, lived in Iran, France, and Afghanistan throughout his childhood, and then moved to California after his family sought political asylum in the U.S.</p>
+<p>We urge researchers using this dataset to consider its biases when drawing conclusions, and to seek other sources to expand it, question it, and/or to fill in information that may be missing or lacking.</p>
+<p>You can find more metadata analysis in this <a href="https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing">colab notebook</a>.</p>
+</section>
+</section>
+<section id="popularity-vs-canonicity" class="level2">
+<h2 class="anchored" data-anchor-id="popularity-vs-canonicity"><strong>POPULARITY VS CANONICITY</strong></h2>
+<p>Because we were interested in whose opinions are represented on the list, we wanted to bring in an alternate measure of popularity, and we decided to use information from Goodreads. Goodreads was appealing because of its prominence online (over 130 million users), which we hoped might help us consider the opinions of a somewhat different set of readers than those theoretically represented through the physical holdings of libraries. Melanie Walsh and Maria Antoniak, for example, have drawn on Goodreads reviews to analyze how social media users define the “Classics.” Drawing on this work, we compare the ranking of novels on OCLC’s original list of Top 500 novels to the rankings of those same novels based on Goodreads ratings and number of reviews. Through this comparison we aim to consider how social media users engage with “classic” and “popular” novels and to interrogate the relationship between canonicity and popularity, using information from different data sources.</p>
+<p>To unpack the differences between the Goodreads data and the Top 500 rankings, we first need to think about how we want to compare the two lists. Given that we have recorded Goodread rankings by average star rating and total number of ratings, which metric would be better to use? Would we want to create another metric?</p>
+<p>For our purposes, we decided to use total number of ratings instead of average rating, since it seemed most closely related to how OCLC measures popularity–by number of holdings, not how much patrons say they enjoy reading the books.</p>
+<div id="238d7a34" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(df[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[col_name])</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"gr_num_ratings_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Above you can see that the Goodreads rankings and the top 500 rankings aren’t very aligned! What factors might affect popularity on Goodreads compared to OCLC?</p>
+<div id="eb27c150" class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_rankings(d, col_name):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    rank_B <span class="op">=</span> d[col_name]</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>    rank_A <span class="op">=</span> d[<span class="st">"top_500_rank"</span>]</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> d[<span class="st">"title"</span>]</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    points_moved <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (math.isnan(rank_B)):</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>      points_moved <span class="op">=</span> <span class="dv">501</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>      d[<span class="st">"html_output"</span>] <span class="op">=</span> <span class="ss">f'&lt;span style="color:black !important"&gt; ● </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">&lt;/span&gt;'</span></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> rank_B <span class="op">&gt;</span> <span class="bu">int</span>(rank_A):</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_B <span class="op">-</span> rank_A</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>          d[<span class="st">"html_output"</span>] <span class="op">=</span> <span class="ss">f'&lt;span style="color:red !important"&gt; ▼ -</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">&lt;/span&gt;'</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> rank_B <span class="op">&lt;</span> rank_A:</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_A <span class="op">-</span> rank_B</span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>          d[<span class="st">"html_output"</span>] <span class="op">=</span> <span class="ss">f'&lt;span style="color:green !important"&gt; ▲ +</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">&lt;/span&gt;'</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>          d[<span class="st">"html_output"</span>] <span class="op">=</span> <span class="ss">f'&lt;span style="color:black !important"&gt; ● </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">&lt;/span&gt;'</span></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    d[<span class="st">"points_moved"</span>] <span class="op">=</span> <span class="bu">int</span>(points_moved)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"gr_num_ratings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>html_output <span class="op">=</span> <span class="st">"&lt;br&gt;"</span>.join(df[<span class="st">"html_output"</span>].tolist())</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>HTML(html_output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>You can find more metadata analysis <a href="HOLD_FOR_LINK_TO_ACTIVITIES_SECTION">here</a>.</p>
+</section>
+<section id="full-text-data" class="level2">
+<h2 class="anchored" data-anchor-id="full-text-data"><strong>FULL TEXT DATA</strong></h2>
+<p>In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis in this <a href="https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing">Colab notebook</a>, but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.</p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion"><strong>Conclusion</strong></h2>
+<p>The Top 500 List is presented in a straightforward manner. It is just a list of 500 novels that are widely held in library collections along with their authors. But when you start to dig into the data underlying the list, it gets much, much more complicated.</p>
+<p>The list draws on hundreds of millions of library records representing billions of library holdings. This is such a vast amount of information that it may appear to provide opportunities to draw comprehensive conclusions. However, the data overwhelmingly represents the holdings of libraries in the U.S.A., the majority of which are also connected to some sort of educational institution. Though it claims to represent great novels from around the world, the list primarily includes English-language novels and novels popular in English translation.</p>
+<p>The list also represents the disproportionate influence of academics and publishers, who chose to re-edit and re-issue certain texts and not others. The correlation we found between number of editions and number of holdings is likely to make intuitive sense to library users–especially users of academic libraries, which tend to hold many editions of classic texts, and which often continue to purchase these texts as they are re-edited and re-issued. Histories of canonization in the U.S. and Europe have long been biased toward works by White, male, middle and upper class authors–a fact which clearly influenced the composition of the list.</p>
+<p>In pointing out these biases we do not intend to criticize OCLC for producing the list, which provides a useful snapshot of some of the most widely held works in their database and represents a tremendous data curation and analysis effort. We do, however, want to question the notion that “literary greatness” can be measured by the number of physical copies of a book held on library shelves. It is important to dig into data that is used to make universal claims, especially when it evidences such strong biases toward a single linguistic tradition, toward particular geographic regions, and toward individual authors. John Grisham’s work appears nineteen times on this list, Charles Dickens’s work appears fifteen times, and John Steinbeck and C.S. Lewis’s work each appears eight times. What does it mean to posit that these four men wrote ten percent of the greatest novels across all languages and cultures across all time?</p>
+<p>While each of these works deserves individual attention, looking at literary data in aggregate can help to reveal some of these biases and trends across a larger number of texts, and across library collections. We hope this dataset provides fruitful opportunities for exploration, and we have included a few more suggestions for analysis here [LINK_TO_ACTIVITIES_TAB].</p>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-cohen_sentimental_2018" class="csl-entry" role="listitem">
+Cohen, Margaret. 2018. <em>The <span>Sentimental</span> <span>Education</span> of the <span>Novel</span></em>. Princeton: Princeton University Press. <a href="https://muse-jhu-edu.offcampus.lib.washington.edu/pub/267/monograph/book/61065">https://muse-jhu-edu.offcampus.lib.washington.edu/pub/267/monograph/book/61065</a>.
+</div>
+<div id="ref-drabinski_queering_2013" class="csl-entry" role="listitem">
+Drabinski, Emily. 2013. <span>“Queering the <span>Catalog</span>: <span>Queer</span> <span>Theory</span> and the <span>Politics</span> of <span>Correction</span>.”</span> <em>The Library Quarterly: Information, Community, Policy</em> 83 (2): 94–111. <a href="https://doi.org/10.1086/669547">https://doi.org/10.1086/669547</a>.
+</div>
+<div id="ref-mandell_gendering_2015" class="csl-entry" role="listitem">
+Mandell, Laura C. 2015. <span>“Gendering <span>Digital</span> <span>Literary</span> <span>History</span>.”</span> In <em>A <span>New</span> <span>Companion</span> to <span>Digital</span> <span>Humanities</span></em>, 511–23. John Wiley &amp; Sons, Ltd. <a href="https://doi.org/10.1002/9781118680605.ch35">https://doi.org/10.1002/9781118680605.ch35</a>.
+</div>
+<div id="ref-mukherjee_canonicity_2017" class="csl-entry" role="listitem">
+Mukherjee, Ankhi. 2017. <span>“Canonicity.”</span> <em>Oxford Bibliographies on Literary and Critical Theory</em>. <a href="https://www.oxfordbibliographies.com/view/document/obo-9780190221911/obo-9780190221911-0054.xml">https://www.oxfordbibliographies.com/view/document/obo-9780190221911/obo-9780190221911-0054.xml</a>.
+</div>
+<div id="ref-sarker_whiteness_2023" class="csl-entry" role="listitem">
+Sarker, Sonita. 2023. <span>“The <span>Whiteness</span> <span>Problem</span>.”</span> <em>Modernism/Modernity Print Plus</em>, June. <a href="https://modernismmodernity.org/forums/whiteness-problem">https://modernismmodernity.org/forums/whiteness-problem</a>.
+</div>
+<div id="ref-sinykin_big_2023" class="csl-entry" role="listitem">
+Sinykin, Dan. 2023. <em>Big <span>Fiction</span>: <span>How</span> <span>Conglomeration</span> <span>Changed</span> the <span>Publishing</span> <span>Industry</span> and <span>American</span> <span>Literature</span></em>. Columbia University Press.
+</div>
+<div id="ref-noauthor_library_2023" class="csl-entry" role="listitem">
+<span>“The <span>Library</span> 100: <span>Frequently</span> <span>Asked</span> <span>Questions</span>.”</span> 2023. <em>OCLC</em>. <a href="https://www.oclc.org/en/worldcat/library100/faq.html">https://www.oclc.org/en/worldcat/library100/faq.html</a>.
+</div>
+<div id="ref-noauthor_worldcat_2021" class="csl-entry" role="listitem">
+<span>“<span>WorldCat</span> <span>Holdings</span>.”</span> 2021. <em>OCLC Support</em>. <a href="https://help.oclc.org/Librarian_Toolbox/WorldCat_Holdings">https://help.oclc.org/Librarian_Toolbox/WorldCat_Holdings</a>.
+</div>
+<div id="ref-zhang_ebooks_2013" class="csl-entry" role="listitem">
+Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Readers</span>’ Choices and Preferences Across Contexts.”</span> <em>Proceedings of the American Society for Information Science and Technology</em> 50 (1): 1–4. <a href="https://doi.org/10.1002/meet.14505001106">https://doi.org/10.1002/meet.14505001106</a>.
+</div>
+</div>
+<div id="custom-footnotes">
+
+</div>
+</section>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<!-- Importing from https://observablehq.com/d/d5aded95854ada9d (forked, collaborative notebook) -->
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb17" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb17-0"><a href="#cb17-0" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof alldataSummaryView<span class="op">,</span> viewof allcopyUrlButton<span class="op">,</span> viewof allselectedColumns<span class="op">,</span> viewof alldataUrl<span class="op">,</span> viewof alltableOptions<span class="op">,</span> viewof alldataSet<span class="op">,</span> alltableContainer<span class="op">,</span> alltable} <span class="im">from</span> <span class="st">"d5aded95854ada9d"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb18" data-startfrom="0" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line -1;"><span id="cb18-0"><a href="#cb18-0" aria-hidden="true" tabindex="-1"></a><span class="co">// viewof dataSet</span></span>
+<span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">//viewof dataUrl</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">//|error: false</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">//|warning: false</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-7" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb19" data-startfrom="5" data-source-offset="-69"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>viewof alltableOptions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb20" data-startfrom="6" data-source-offset="-92"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 5;"><span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>viewof allcopyUrlButton</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-8-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell hidden" data-error="false" data-warning="false">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb21" data-startfrom="3" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 2;"><span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>alltable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display hidden">
+<div id="ojs-cell-9" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div class="cell" data-error="false" data-warning="false">
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb22" data-startfrom="4" data-source-offset="-1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 3;"><span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="code-fold hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="5" data-source-offset="-27"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 4;"><span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-10-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Activity 1</h2>
+<p>The Top 500 List represents a history of literary reception that favors works by White, European and American men who wrote in English or were widely translated into English. We share the code we used to analyze these forms of bias in our Metadata Analysis colab notebook. What other forms of bias would you want to consider in relation to this dataset? What categories of information (or columns) can we look at within the dataset to help us understand different forms of bias represented in the Top 500 List? What kinds of information are missing from the dataset?</p>
+<p>Try adapting the code in this <a href="https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing">Metadata Analysis notebook</a> to consider other forms of bias in the Top 500 List.</p>
+</section>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Activity 2</h2>
+<p>In our data essay, we compared two different ways of ranking the Top 500 List: first by OCLC’s original order (based on number of library holdings for particular titles), and second by number of ratings on the social media site Goodreads. Which works rose or fell the most according to Goodreads rankings? Do you notice any commonalities among the books that rose or fell the most? The dataset also includes multiple other options for ranking the list. How do these other rankings compare to OCLC’s ranking of the titles?</p>
+<p>Try adapting the code in the “Rank Analysis” section of the <a href="https://colab.research.google.com/drive/1fxEae0BmUmipDQC2qvqGvG11fIAITZ_K?usp=sharing">Metadata Analysis notebook</a> to compare OCLC’s initial ranking of the list to another ranking metric (for example, OCLC_EDITIONS_RANK or GR_AVG_RATING_RANK).</p>
+</section>
+<section id="activity-3" class="level2">
+<h2 class="anchored" data-anchor-id="activity-3">Activity 3</h2>
+<p>In addition to the dataset of metadata, we have also created a dataset that includes the full text of all the novels that are not currently under copyright (190 texts). With this dataset, it’s possible to connect full-text and metadata analysis. In our <a href="https://colab.research.google.com/drive/14dg05yBklQq0BeXjd-vElgO7AfCBwUzP?usp=sharing">Full Text Analysis notebook</a>, we’ve included suggestions for analyzing texts according to type-token ratio, a basic measure of lexical complexity that compares the ratio of unique words to total words in a text. What other quantitative measures could you apply to the full-text of these novels? How can we connect these measures to our metadata analysis? For example, what is the average length of novels on the list written by authors labeled as male, vs.&nbsp;those labeled as female?</p>
+</section>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div id="listing-exercise-posts" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
+</div>
+<table class="quarto-listing-table table">
+<thead>
+<tr>
+<th>
+Date
+</th>
+<th>
+Title
+</th>
+<th>
+Categories
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-categories="dplyr,exercise" data-listing-date-sort="1708923600000" data-listing-file-modified-sort="1712773114322" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Introduction to DPLYR with Top 500 Novels" data-listing-filename-sort="Intro-to-DPLYR-NP.qmd">
+<td>
+<span class="listing-date">Feb 26, 2024</span>
+</td>
+<td>
+<a href="../../posts/top-500-novels/exercises/Intro-to-DPLYR-NP.html" class="title listing-title">Introduction to DPLYR with Top 500 Novels</a>
+</td>
+<td>
+<span class="listing-categories">dplyr, exercise</span>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 
+</body> -->
+
+
+
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Franco Moretti also uses this term, borrowing it from Cohen. We follow Cohen’s use of the term.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>We capitalize “White” following Sonita Sarker, who writes, “The capital letter ‘W’ indicates that White is a collective identity. The term has mostly indicated individuals, in the use of the lower case ‘w,’ signifying at once the unique humanity of (white) personhood and absolving them of collective responsibility in White supremacy” <span class="citation" data-cites="sarker_whiteness_2023">(<a href="#ref-sarker_whiteness_2023" role="doc-biblioref">Sarker 2023</a>)</span><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>For more on how editions of works are clustered in WorldCat see “Clustering WorldCat Discovery.”<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Laura Mandell argues that “women writers are being recovered and forgotten in cycles, both in print and potentially in digital media,” pointing out that historically “works by men have been published and republished” while “women writers only appear in the materiality of the single print run” (<span class="citation" data-cites="mandell_gendering_2015">Mandell (<a href="#ref-mandell_gendering_2015" role="doc-biblioref">2015</a>)</span>). In his work on “What Makes a ‘Classic’ African American Text,” Henry Louis Gates Jr.&nbsp;discusses the historical exclusion of Black authors from the Penguin Classics series, as well as his work editing a new series of African American Classics for the imprint. He notes that “texts by people of color, and texts by women” are “still struggling, despite enormous gains over the last twenty years, to gain a solid foothold in anthologies and syllabi.” These kinds of biases in turn affect which works appear on library shelves.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Safiya Umoja Noble argues that “information organization is a matter of sociopolitical and historical processes that serve particular interests,” tying library cataloging and classification systems to “the development of racial classification” in the 19th century (136-137). And Roopika Risam also highlights the role of public-sector knowledge institutions in perpetuating these structural biases, emphasizing “the failure to take into account the complicity of universities, libraries, and the cultural heritage sector in devaluing black and indigenous lives and perpetuating the legacies of colonialism in the cultural and digital cultural records alike” (14).<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7dmlld29mIGRhdGFTdW1tYXJ5Vmlldywgdmlld29mIGNvcHlVcmxCdXR0b24sIHZpZXdvZiBzZWxlY3RlZENvbHVtbnMsIHZpZXdvZiBkYXRhVXJsLCB2aWV3b2YgdGFibGVPcHRpb25zLCB2aWV3b2YgZGF0YVNldCwgdGFibGVDb250YWluZXIsIHRhYmxlLCB0YWJsZVN0eWxlc30gZnJvbSBcImFjNWZjNzRjMjBlZjM2YTZcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbnRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTMiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIHRhYmxlT3B0aW9uc1xudmlld29mIGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtNCIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6InRhYmxlXG5odG1sYDxsaW5rIGhyZWY9J2h0dHBzOi8vdW5wa2cuY29tL3RhYnVsYXRvci10YWJsZXNANS4zLjEvZGlzdC9jc3MvdGFidWxhdG9yLm1pbi5jc3MnIHJlbD0nc3R5bGVzaGVldCcgLz5cbnRhYnVsYXRvci5taW4uY3NzYFxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC01IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2Ygc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgZGF0YVN1bW1hcnlWaWV3XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTYiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJpbXBvcnQge3ZpZXdvZiBhbGxkYXRhU3VtbWFyeVZpZXcsIHZpZXdvZiBhbGxjb3B5VXJsQnV0dG9uLCB2aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zLCB2aWV3b2YgYWxsZGF0YVVybCwgdmlld29mIGFsbHRhYmxlT3B0aW9ucywgdmlld29mIGFsbGRhdGFTZXQsIGFsbHRhYmxlQ29udGFpbmVyLCBhbGx0YWJsZX0gZnJvbSBcImQ1YWRlZDk1ODU0YWRhOWRcIlxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC03IiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiLy8gdmlld29mIGRhdGFTZXRcbi8vdmlld29mIGRhdGFVcmxcbi8vfGVycm9yOiBmYWxzZVxuLy98d2FybmluZzogZmFsc2VcbmFsbHRhYmxlQ29udGFpbmVyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTgiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiIvLyB2aWV3b2YgZGF0YVNldFxuLy90YWJsZUNvbnRhaW5lclxuLy98ZXJyb3I6IGZhbHNlXG4vL3x3YXJuaW5nOiBmYWxzZVxudmlld29mIGFsbHRhYmxlT3B0aW9uc1xudmlld29mIGFsbGNvcHlVcmxCdXR0b25cbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtOSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImFsbHRhYmxlXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTEwIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXG52aWV3b2YgYWxsc2VsZWN0ZWRDb2x1bW5zXG52aWV3b2YgYWxsZGF0YVN1bW1hcnlWaWV3XG4ifV19
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/top-500-novels";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
