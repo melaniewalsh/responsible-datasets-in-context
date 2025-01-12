@@ -25,6 +25,8 @@ jobs:
       # https://github.com/quarto-dev/quarto-actions/tree/main/setup
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
 
       # # This installs a fresh version of Python
       # - name: Install Python and Dependencies
