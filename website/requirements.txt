@@ -110,3 +110,5 @@ webencodings==0.5.1
 websocket-client==1.8.0
 widgetsnbextension==4.0.13
 zipp==3.21.0
+seaborn
+scipy
