@@ -9,6 +9,15 @@
     "posts/np-data/index.qmd": [
       "exercises-r",
       "exercises-python"
+    ],
+    "team.qmd": [
+      "B3049D40"
+    ],
+    "index.qmd": [
+      "posts"
+    ],
+    "datasets.qmd": [
+      "posts"
     ]
   }
 }
