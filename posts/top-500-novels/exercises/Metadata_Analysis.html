@@ -1,0 +1,3183 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Top 500 Novels Metadata Analysis – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-f2f0135596d2785bc77b0c2a85e642a3.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+  
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Top 500 Novels Metadata Analysis – Responsible Datasets in Context">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/posts/top-500-novels/exercises/Metadata_Analysis_files/figure-html/cell-5-output-1.png">
+<meta name="twitter:image-height" content="864">
+<meta name="twitter:image-width" content="1186">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Top 500 Novels Metadata Analysis</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">exercise</div>
+                <div class="quarto-category">solution</div>
+                <div class="quarto-category">python</div>
+                <div class="quarto-category">rankings</div>
+                <div class="quarto-category">correlations</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Metadata_Analysis.ipynb" download="Metadata_Analysis.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="metadata-analysis" class="level1">
+<h1>Metadata Analysis</h1>
+<section id="by-aashna-sheth" class="level3">
+<h3 class="anchored" data-anchor-id="by-aashna-sheth">By Aashna Sheth</h3>
+<p>Let’s start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.</p>
+<div id="336cef86" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv"</span>, sep<span class="op">=</span><span class="st">','</span>, header<span class="op">=</span><span class="dv">0</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Now, we can answer various questions using this structure, which we’ve named <code>df</code>.</p>
+<p>For example, let’s look at counts related to author gender and name.</p>
+<div id="995efe46" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>author_gender
+male      355
+female    145
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>We see that about 70% of authors on the list are male and 30% are female.</p>
+<p>Some authors appear multiple times on the list. Let’s see which authors are most represented in the list.</p>
+<div id="4ca895fb" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>author
+John Grisham            19
+Charles Dickens         15
+John Steinbeck           8
+C.S. Lewis               8
+Stephen King             7
+Nicholas Sparks          7
+Laura Ingalls Wilder     7
+J.K. Rowling             7
+Ernest Hemingway         5
+James Patterson          5
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.</p>
+<div id="e2cb92a1" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2060</span>, <span class="dv">50</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> df[<span class="st">'pub_year'</span>].plot.hist(bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">'w'</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)<span class="op">;</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(bins)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Metadata_Analysis_files/figure-html/cell-5-output-1.png" width="593" height="432" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>We can see that most books on the list were published between 1950 and 2000. Let’s take a look at information about the oldest and newest books on the list.</p>
+<div id="4347fde1" class="cell" data-execution_count="5">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oldest Book(s):"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>display(df[df[<span class="st">"pub_year"</span>]<span class="op">==</span>df[<span class="st">"pub_year"</span>].<span class="bu">min</span>()])</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Newest Book(s):"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>display(df[df[<span class="st">"pub_year"</span>]<span class="op">==</span>df[<span class="st">"pub_year"</span>].<span class="bu">max</span>()])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Oldest Book(s):</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">top_500_rank</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">pub_year</th>
+<th data-quarto-table-cell-role="th">orig_lang</th>
+<th data-quarto-table-cell-role="th">genre</th>
+<th data-quarto-table-cell-role="th">author_birth</th>
+<th data-quarto-table-cell-role="th">author_death</th>
+<th data-quarto-table-cell-role="th">author_gender</th>
+<th data-quarto-table-cell-role="th">author_primary_lang</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">gr_num_ratings</th>
+<th data-quarto-table-cell-role="th">gr_num_reviews</th>
+<th data-quarto-table-cell-role="th">gr_avg_rating_rank</th>
+<th data-quarto-table-cell-role="th">gr_num_ratings_rank</th>
+<th data-quarto-table-cell-role="th">oclc_owi</th>
+<th data-quarto-table-cell-role="th">author_viaf</th>
+<th data-quarto-table-cell-role="th">gr_url</th>
+<th data-quarto-table-cell-role="th">wiki_url</th>
+<th data-quarto-table-cell-role="th">pg_eng_url</th>
+<th data-quarto-table-cell-role="th">pg_orig_url</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">137</td>
+<td>138</td>
+<td>The Tale of Genji</td>
+<td>Murasaki Shikibu</td>
+<td>1021</td>
+<td>Japanese</td>
+<td>na</td>
+<td>978?</td>
+<td>1016?</td>
+<td>female</td>
+<td>jpn</td>
+<td>...</td>
+<td>13,275</td>
+<td>1,385</td>
+<td>430</td>
+<td>477</td>
+<td>4.739790e+09</td>
+<td>95154208.0</td>
+<td>https://www.goodreads.com/book/show/7042.The_T...</td>
+<td>https://en.wikipedia.org/wiki/The_Tale_of_Genji</td>
+<td>https://www.gutenberg.org/cache/epub/66057/pg6...</td>
+<td>unavailable</td>
+</tr>
+</tbody>
+</table>
+
+<p>1 rows × 29 columns</p>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Newest Book(s):</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">top_500_rank</th>
+<th data-quarto-table-cell-role="th">title</th>
+<th data-quarto-table-cell-role="th">author</th>
+<th data-quarto-table-cell-role="th">pub_year</th>
+<th data-quarto-table-cell-role="th">orig_lang</th>
+<th data-quarto-table-cell-role="th">genre</th>
+<th data-quarto-table-cell-role="th">author_birth</th>
+<th data-quarto-table-cell-role="th">author_death</th>
+<th data-quarto-table-cell-role="th">author_gender</th>
+<th data-quarto-table-cell-role="th">author_primary_lang</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">gr_num_ratings</th>
+<th data-quarto-table-cell-role="th">gr_num_reviews</th>
+<th data-quarto-table-cell-role="th">gr_avg_rating_rank</th>
+<th data-quarto-table-cell-role="th">gr_num_ratings_rank</th>
+<th data-quarto-table-cell-role="th">oclc_owi</th>
+<th data-quarto-table-cell-role="th">author_viaf</th>
+<th data-quarto-table-cell-role="th">gr_url</th>
+<th data-quarto-table-cell-role="th">wiki_url</th>
+<th data-quarto-table-cell-role="th">pg_eng_url</th>
+<th data-quarto-table-cell-role="th">pg_orig_url</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td data-quarto-table-cell-role="th">401</td>
+<td>402</td>
+<td>The Girl on the Train</td>
+<td>Paula Hawkins</td>
+<td>2015</td>
+<td>English</td>
+<td>na</td>
+<td>1972</td>
+<td>ALIVE</td>
+<td>female</td>
+<td>eng</td>
+<td>...</td>
+<td>2,924,281</td>
+<td>126,289</td>
+<td>275</td>
+<td>26</td>
+<td>1.893823e+09</td>
+<td>14277202.0</td>
+<td>https://www.goodreads.com/book/show/22557272-t...</td>
+<td>https://en.wikipedia.org/wiki/The_Girl_on_the_...</td>
+<td>NA_not-pub-domain</td>
+<td>NaN</td>
+</tr>
+<tr class="even">
+<td data-quarto-table-cell-role="th">480</td>
+<td>481</td>
+<td>Go Set a Watchman</td>
+<td>Harper Lee</td>
+<td>2015</td>
+<td>English</td>
+<td>na</td>
+<td>1926</td>
+<td>2016</td>
+<td>female</td>
+<td>eng</td>
+<td>...</td>
+<td>272,837</td>
+<td>32,622</td>
+<td>498</td>
+<td>209</td>
+<td>2.283979e+09</td>
+<td>12431460.0</td>
+<td>NaN</td>
+<td>https://en.wikipedia.org/wiki/Go_Set_a_Watchman</td>
+<td>NA_not-pub-domain</td>
+<td>NaN</td>
+</tr>
+</tbody>
+</table>
+
+<p>2 rows × 29 columns</p>
+</div>
+</div>
+</div>
+<p>Let’s take a look at where the authors are from!</p>
+<div id="d949dcd4" class="cell" data-execution_count="6">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts().head(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>author_nationality
+US    257
+GB    149
+FR     27
+RU     10
+DE     10
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<hr>
+<p>Finally, let’s unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?</p>
+<p>For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.</p>
+<div id="b9910dc7" class="cell" data-execution_count="7">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(df[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[col_name])</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"gr_num_ratings_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                title                  author  top_500_rank  \
+0                         Don Quixote     Miguel de Cervantes             1   
+1    Alice's Adventures in Wonderland           Lewis Carroll             2   
+2  The Adventures of Huckleberry Finn              Mark Twain             3   
+3        The Adventures of Tom Sawyer              Mark Twain             4   
+4                     Treasure Island  Robert Louis Stevenson             5   
+
+   gr_num_ratings_rank  
+0                  211  
+1                  133  
+2                   68  
+3                   88  
+4                  145  
+                                     title               author  top_500_rank  \
+44   Harry Potter and the Sorcerer's Stone         J.K. Rowling            45   
+172                       The Hunger Games      Suzanne Collins           173   
+131                               Twilight      Stephenie Meyer           132   
+28                   To Kill a Mockingbird           Harper Lee            29   
+33                        The Great Gatsby  F. Scott Fitzgerald            34   
+
+     gr_num_ratings_rank  
+44                     1  
+172                    2  
+131                    3  
+28                     4  
+33                     5  </code></pre>
+</div>
+</div>
+<p>Above you can see that the GoodReads rankings and the top 500 rankings aren’t very aligned! What factors affect popularity on GoodReads compared to OCLC?</p>
+<div id="fab71e0d" class="cell" data-execution_count="8">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_rankings(d, col_name):</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>    rank_B <span class="op">=</span> d[col_name]</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>    rank_A <span class="op">=</span> d[<span class="st">"top_500_rank"</span>]</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> d[<span class="st">"title"</span>]</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    points_moved <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (math.isnan(rank_B)):</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>      points_moved <span class="op">=</span> <span class="dv">501</span></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> rank_B <span class="op">&gt;</span> <span class="bu">int</span>(rank_A):</span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_B <span class="op">-</span> rank_A</span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[31m ▼ -</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> rank_B <span class="op">&lt;</span> rank_A:</span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_A <span class="op">-</span> rank_B</span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[32m ▲ +</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb14-18"><a href="#cb14-18" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[30m ● </span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb14-19"><a href="#cb14-19" aria-hidden="true" tabindex="-1"></a>    d[<span class="st">"points_moved"</span>] <span class="op">=</span> <span class="bu">int</span>(points_moved)</span>
+<span id="cb14-20"><a href="#cb14-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d</span>
+<span id="cb14-21"><a href="#cb14-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-22"><a href="#cb14-22" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"gr_num_ratings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> ▼ -210 Don Quixote
+ ▼ -131 Alice's Adventures in Wonderland
+ ▼ -65 The Adventures of Huckleberry Finn
+ ▼ -84 The Adventures of Tom Sawyer
+ ▼ -140 Treasure Island
+ ▼ -2 Pride and Prejudice
+ ▼ -39 Wuthering Heights
+ ▼ -32 Jane Eyre
+ ▼ -125 Moby Dick
+ ▼ -85 The Scarlet Letter
+ ▼ -197 Gulliver's Travels
+ ▼ -266 The Pilgrim's Progress
+ ▼ -85 A Christmas Carol
+ ▼ -214 David Copperfield
+ ▼ -71 A Tale of Two Cities
+ ▼ -22 Little Women
+ ▼ -86 Great Expectations
+ ▲ +8 The Hobbit, or, There and Back Again
+ ▼ -35 Frankenstein, or, the Modern Prometheus
+ ▼ -149 Oliver Twist
+ ▼ -209 Uncle Tom's Cabin
+ ▼ -72 Crime and Punishment
+ ▼ -159 Madame Bovary: Patterns of Provincial life
+ ▼ -69 The Return of the King
+ ▼ -42 Dracula
+ ▼ -160 The Three Musketeers
+ ▼ -16 Brave New World
+ ▼ -155 War and Peace
+ ▲ +25 To Kill a Mockingbird
+ ▼ -122 The Wizard of Oz
+ ▼ -73 Les Misérables
+ ▼ -43 The Secret Garden
+ ▲ +21 Animal Farm
+ ▲ +29 The Great Gatsby
+ ▼ -4 The Little Prince
+ ▼ -124 The Call of the Wild
+ ▼ -444 20,000 Leagues Under the Sea
+ ▼ -59 Anna Karenina
+ ▼ -193 The Wind in the Willows
+ ▼ -17 The Picture of Dorian Gray
+ ▼ -50 The Grapes of Wrath
+ ▼ -32 Sense and Sensibility
+ ▼ -279 The Last of the Mohicans
+ ▼ -159 Tess of the d'Urbervilles
+ ▲ +44 Harry Potter and the Sorcerer's Stone
+ ▼ -193 Heidi
+ ▼ -242 Ulysses
+ ▼ -192 The Complete Sherlock Holmes
+ ▼ -41 The Count of Monte Cristo
+ ▼ -27 The Old Man and the Sea
+ ▲ +22 The Lion, the Witch, and the Wardrobe
+ ▼ -184 The Hunchback of Notre Dame
+ ▼ -293 Pinocchio
+ ▼ -28 One Hundred Years of Solitude
+ ▼ -274 Ivanhoe
+ ▼ -259 The Red Badge of Courage
+ ▼ -24 Anne of Green Gables
+ ▼ -146 Black Beauty
+ ▼ -120 Peter Pan
+ ▼ -127 A Farewell to Arms
+ ▼ -349 The House of the Seven Gables
+ ▲ +35 Lord of the Flies
+ ▼ -233 The Prince and the Pauper
+ ▼ -209 A Portrait of the Artist as a Young Man
+ ▼ -367 Lord Jim
+ ▲ +55 Harry Potter and the Chamber of Secrets
+ ▼ -287 The Red &amp; the Black
+ ▼ -11 The Stranger
+ ▼ -116 The Trial
+ ▼ -224 Lady Chatterley's Lover
+ ▼ -298 Kidnapped: The Adventures of David Balfour
+ ▲ +56 The Catcher in the Rye
+ ▲ +38 Fahrenheit 451
+ ▼ -164 A Journey to the Center of the Earth
+ ▼ -213 Vanity Fair
+ ▼ -75 All Quiet on the Western Front
+ ▲ +6 Gone with the Wind
+ ▼ -201 My Ántonia
+ ▲ +47 Of Mice and Men
+ ▼ -405 The Vicar of Wakefield
+ ▼ -235 A Connecticut Yankee in King Arthur's Court
+ ▼ -164 White Fang
+ ▼ -255 Fathers and Sons
+ ▼ -242 Doctor Zhivago
+ ▼ -324 The Decameron
+ ▲ +79 Nineteen Eighty-Four
+ ▼ -187 The Jungle
+ ▲ +51 The Da Vinci Code
+ ▼ -26 Persuasion
+ ▼ -88 Mansfield Park
+ ▼ -114 Candide
+ ▼ -107 For Whom the Bell Tolls
+ ▼ -178 Far from the Madding Crowd
+ ▲ +66 The Fellowship of the Ring
+ ▼ -319 The Return of the Native
+ ▼ -294 Sons and Lovers
+ ▲ +52 Charlotte's Web
+ ▼ -214 The Swiss Family Robinson
+ ▼ -210 Bleak House
+ ▼ -278 Père Goriot
+ ▼ -252 Utopia
+ ▼ -327 The History of Tom Jones, a Foundling
+ ▲ +94 Harry Potter and the Prisoner of Azkaban
+ ▼ -314 Kim
+ ▼ -150 The Sound and the Fury
+ ▲ +92 Harry Potter and the Goblet of Fire
+ ▼ -278 The Mill on the Floss
+ ▲ +36 A Wrinkle in Time
+ ▼ -72 The Hound of the Baskervilles
+ ▲ +27 The Two Towers
+ ▼ -78 The War of the Worlds
+ ▼ -152 Middlemarch
+ ▼ -146 The Age of Innocence
+ ▼ -6 The Color Purple
+ ▼ -50 Northanger Abbey
+ ▼ -24 East of Eden
+ ▼ -45 On the Road
+ ▲ +19 Catch-22
+ ▼ -105 Around the World in Eighty Days
+ ▼ -244 Hard Times
+ ▼ -37 Beloved
+ ▼ -71 Mrs. Dalloway
+ ▼ -131 To the Lighthouse
+ ▼ -14 The Magician's Nephew
+ ▲ +108 Harry Potter and the Order of the Phoenix
+ ▼ -29 The Sun Also Rises
+ ▼ -96 The Good Earth
+ ▼ -212 Silas Marner
+ ▼ -15 Love in the Time of Cholera
+ ▲ +5 Rebecca
+ ▼ -230 Jude the Obscure
+ ▲ +129 Twilight
+ ▼ -215 A Passage to India
+ ▼ -84 The Plague
+ ▼ -266 Nicholas Nickleby
+ ▼ -93 The Pearl
+ ▼ -155 Ethan Frome
+ ▼ -339 The Tale of Genji
+ ▲ +105 The Giver
+ ▲ +116 The Alchemist
+ ▼ -146 The Strange Case of Dr. Jekyll and Mr. Hyde
+ ▼ -52 Robinson Crusoe
+ ▼ -138 Tender is the Night
+ ▼ -112 The Idiot
+ ▼ -22 Hatchet
+ ▲ +124 The Kite Runner
+ ▲ +36 One Flew Over the Cuckoo's Nest
+ ▼ -199 The Portrait of a Lady
+ ▲ +84 The Outsiders
+ ▼ -272 Ben-Hur
+ ▼ -222 The Mayor of Casterbridge
+ ▼ -204 Cry, The Beloved Country
+ ▼ -53 The Last Battle
+ ▼ -308 Captains Courageous
+ ▼ -219 The Castle
+ ▲ +76 The Metamorphosis
+ ▼ -237 The Magic Mountain (Der Zauberberg)
+ ▲ +10 James and the Giant Peach
+ ▼ -18 The Horse and His Boy
+ ▲ +140 Angels &amp; Demons
+ ▲ +12 The Voyage of the Dawn Treader
+ ▲ +77 The Bell Jar
+ ▼ -268 Women in Love
+ ▼ -279 The Yearling
+ ▼ -223 O Pioneers!
+ ▲ +125 The Handmaid's Tale
+ ▼ -165 The Moonstone
+ ▼ -292 The Old Curiosity Shop
+ ▼ -229 Little Dorrit
+ ▲ +14 Prince Caspian: The Return to Narnia
+ ▼ -237 Sister Carrie
+ ▼ -26 The Silver Chair
+ ▲ +171 The Hunger Games
+ ▼ -183 This Side of Paradise
+ ▼ -282 Eugénie Grandet
+ ▼ -206 Of Human Bondage
+ ▼ -320 Dream of the Red Chamber
+ ▲ +127 Life of Pi
+ ▲ +166 Harry Potter and the Deathly Hallows
+ ▼ -68 Invisible Man
+ ▼ -70 Steppenwolf
+ ▼ -104 The Sorrows of Young Werther
+ ▲ +46 Bridge to Terabithia
+ ▼ -60 The Invisible Man
+ ▲ +112 Holes
+ ▲ +81 Siddhartha
+ ▲ +37 A Tree Grows in Brooklyn
+ ▼ -94 Through the Looking-Glass, and What Alice Found There
+ ▲ +66 In Cold Blood
+ ▼ -25 The House of the Spirits
+ ▼ -259 Adam Bede
+ ▼ -280 The Betrothed
+ ▲ +162 The Book Thief
+ ▲ +14 Their Eyes Were Watching God
+ ▼ -106 One Day in the Life of Ivan Denisovich
+ ▼ -239 The Sea Wolf
+ ▲ +182 Catching Fire
+ ▼ -97 Roll of Thunder, Hear My Cry
+ ▼ -220 Death Comes for the Archbishop
+ ▼ -123 The House of Mirth
+ ▼ -174 Light in August
+ ▼ -237 The Pickwick Papers
+ ▼ -292 Remembrance of Things Past
+ ▼ -295 Barchester Towers and the Warden
+ ▼ -219 The Bridge of San Luis Rey
+ ▲ +176 The Help
+ ▲ +80 Murder on the Orient Express
+ ▲ +172 The Lovely Bones
+ ▼ -171 The Appeal
+ ▼ -261 Dombey And Son
+ ▲ +149 Slaughterhouse-Five
+ ▼ -209 An American Tragedy
+ ▼ -9 The Bluest Eye
+ ▲ +1 Little House In the Big Woods
+ ▼ -22 Pippi Longstocking
+ ▼ -201 Germinal
+ ▼ -89 The Heart Is a Lonely Hunter
+ ▼ -52 The Woman In White
+ ▼ -183 Absalom, Absalom!
+ ▼ -111 A Painted House
+ ▲ +200 The Girl With the Dragon Tattoo
+ ▼ -31 A Room With a View
+ ▲ +76 Watership Down
+ ▲ +182 Memoirs of a Geisha
+ ▼ -215 Our Mutual Friend
+ ▼ -229 Babbitt
+ ▼ -159 The Red Pony
+ ▼ -143 All the King's Men
+ ▲ +59 Things Fall Apart
+ ▼ -240 Lorna Doone
+ ▼ -164 Johnny Tremain
+ ▼ -10 Anne of Avonlea
+ ▲ +26 Tuck Everlasting
+ ▲ +88 The BFG
+ ▼ -45 Cannery Row
+ ▲ +117 The Joy Luck Club
+ ▲ +37 The Silmarillion
+ ▼ -30 Roots
+ ▲ +38 Little House on the Prairie
+ ▼ -80 Native Son
+ ▼ -52 Stuart Little
+ ▼ -181 Cross Fire
+ ▼ -169 The Power and the Glory
+ ▲ +130 A Clockwork Orange
+ ▲ +19 The Phantom of the Opera
+ ▲ +27 The Martian Chronicles
+ ▲ +155 The Road
+ ▼ -239 The Way of All Flesh
+ ▼ -251 Diary of a Wimpy Kid: The Long Haul
+ ▼ -108 Villette
+ ▲ +191 The Curious Incident of the Dog In the Night-Time
+ ▼ -135 The Mysterious Island
+ ▼ -50 Song of Solomon
+ ▼ -198 Nana
+ ▼ -160 Quo Vadis
+ ▼ -192 Main Street
+ ▲ +170 Matilda
+ ▲ +162 Lolita
+ ▲ +196 Paper Towns
+ ▼ -176 Sounder
+ ▲ +34 Are You There God? It's Me, Margaret
+ ▲ +212 The Notebook
+ ▲ +29 From the Mixed-Up Files of Mrs. Basil E. Frankweiler
+ ▲ +96 Atlas Shrugged
+ ▲ +81 The Fountainhead
+ ▲ +134 Number the Stars
+ ▲ +141 The Firm
+ ▼ -108 Swann's Way
+ ▲ +208 Ender's Game
+ ▲ +98 The Name of the Rose
+ ▲ +169 A Time to Kill
+ ▲ +220 Water for Elephants
+ ▲ +131 The Time Machine
+ ▲ +226 Eragon
+ ▲ +231 The Hitchhiker's Guide to the Galaxy
+ ▼ -161 Buddenbrooks
+ ▲ +221 A Thousand Splendid Suns
+ ▲ +6 The Witch of Blackbird Pond
+ ▲ +215 And Then There Were None
+ ▲ +49 A Separate Peace
+ ▲ +232 Breaking Dawn
+ ▲ +20 As I Lay Dying
+ ▲ +194 The Girl Who Played With Fire
+ ▲ +121 Where the Red Fern Grows
+ ▼ -131 Le Morte D'Arthur
+ ▲ +267 Mockingjay
+ ▲ +181 The Pillars of the Earth
+ ▼ -202 Persian Letters
+ ▲ +136 The Client
+ ▼ -34 Sula
+ ▲ +15 Tales of a Fourth Grade Nothing
+ ▼ -78 The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire
+ ▼ -91 Tortilla Flat
+ ▼ -179 Look Homeward, Angel
+ ▼ -185 The Mystery of Edwin Drood
+ ▼ -6 Brideshead Revisited
+ ▲ +138 The Pelican Brief
+ ▲ +157 Atonement
+ ▼ -157 Washington Square
+ ▲ +129 Like Water for Chocolate
+ ▲ +246 The Golden Compass
+ ▲ +236 The Secret Life of Bees
+ ▲ +297 The Fault In Our Stars
+ ▼ -164 Nostromo
+ ▼ -173 Finnegans Wake
+ ▼ -22 The Brethren
+ ▲ +189 Coraline
+ ▲ +165 Heart of Darkness
+ ▼ -8 On the Banks of Plum Creek
+ ▼ -115 Rebecca of Sunnybrook Farm
+ ▼ -168 The Ambassadors
+ ▼ -146 The Secret Agent
+ ▲ +66 The House on Mango Street
+ ▼ -51 Go Tell It on the Mountain
+ ▲ +18 The Testament
+ ▲ +102 The Clan of the Cave Bear
+ ▼ -87 Cranford
+ ▲ +98 Because of Winn-Dixie
+ ▼ -33 My Side of the Mountain
+ ▲ +125 The Runaway Jury
+ ▼ -23 The Mouse and the Motorcycle
+ ▲ +193 The Lost Symbol
+ ▼ -141 The Forsyte Saga
+ ▲ +301 Gone Girl
+ ▲ +300 The Lightning Thief
+ ▼ -170 The Last Days of Pompeii
+ ▲ +92 The Reader
+ ▼ -63 Caddie Woodlawn
+ ▲ +88 The Tale of Despereaux
+ ▲ +220 The Girl Who Kicked the Hornet's Nest
+ ▼ -76 Dear Mr. Henshaw
+ ▼ -10 The Killer Angels
+ ▲ +88 Chronicle of a Death Foretold
+ ▲ +222 The Five People You Meet In Heaven
+ ▲ +160 The Master and Margarita
+ ▼ -90 Winesburg, Ohio
+ ▼ -107 P Is for Peril
+ ▲ +268 My Sister's Keeper
+ ▼ -143 Barnaby Rudge
+ ▲ +4 Howards End
+ ▲ +14 The Broker
+ ▲ +8 The Camel Club
+ ▼ -120 The Rainbow
+ ▼ -23 The Man In the Iron Mask
+ ▲ +62 Mary Poppins
+ ▲ +210 Artemis Fowl
+ ▲ +216 Dear John
+ ▲ +123 Cold Mountain
+ ▲ +228 Flowers for Algernon
+ ▼ -31 The Dark Is Rising
+ ▼ -102 Resurrection
+ ▲ +22 Fearless Fourteen
+ ▼ -139 A Sentimental Journey Through France and Italy
+ ▲ +11 The King of Torts
+ ▲ +216 The Graveyard Book
+ ▼ -16 The Quiet American
+ ▲ +82 The Chamber
+ ▲ +74 The English Patient
+ ▲ +110 Snow Falling on Cedars
+ ▲ +21 The Long Winter
+ ▲ +20 Sarah, Plain and Tall
+ ▼ -44 Cross Country
+ ▲ +56 The Spy Who Came In from the Cold
+ ▲ +331 A Game of Thrones
+ ▲ +189 The Thorn Birds
+ ▲ +45 Old Yeller
+ ▲ +7 Ramona Quimby, Age 8
+ ▼ -15 Death In Venice
+ ▲ +19 By the Shores of Silver Lake
+ ▲ +235 Inferno
+ ▲ +104 Schindler's List
+ ▲ +151 Jonathan Livingston Seagull
+ ▲ +266 The Stand
+ ▲ +55 The Last Juror
+ ▲ +30 Shiloh
+ ▲ +267 Girl With a Pearl Earring
+ ▲ +167 The Murder of Roger Ackroyd
+ ▲ +300 It
+ ▲ +136 The Rainmaker
+ ▲ +272 The Poisonwood Bible
+ ▲ +68 The Indian in the Cupboard
+ ▲ +71 The Maltese Falcon
+ ▼ -84 The Warden
+ ▲ +35 The Summons
+ ▼ -26 Encyclopedia Brown: Boy Detective
+ ▲ +339 The Time Traveler's Wife
+ ▼ -5 The Incredible Journey
+ ▲ +103 Daughter of Fortune
+ ▼ -38 Shirley
+ ▲ +85 Bud, Not Buddy
+ ▲ +12 The Horse Whisperer
+ ▲ +93 The Street Lawyer
+ ▲ +95 Nausea
+ ▼ -36 To Have and Have Not
+ ▲ +70 The Bridges of Madison County
+ ▲ +136 Anne of the Island
+ ● 0 The Winter of Our Discontent
+ ▲ +339 The Shining
+ ▲ +99 The Tenant of Wildfell Hall
+ ▼ -3 First Family
+ ▲ +111 The Partner
+ ▲ +376 The Girl on the Train
+ ▼ -62 The Black Arrow: A Tale of the Two Roses
+ ▼ -90 The Rise of Silas Lapham
+ ▲ +153 The Choice
+ ▼ -82 The Virginian: A Horseman of the Plains
+ ▲ +307 A Walk to Remember
+ ▲ +350 The Maze Runner
+ ▲ +176 The Westing Game
+ ▲ +11 Misty of Chincoteague
+ ▲ +142 Diary of a Wimpy Kid: The Last Straw
+ ▲ +19 King Solomon's Mines
+ ▼ -56 The Princess of Cleves
+ ▼ -14 Jacob Have I Loved
+ ▲ +158 Mrs. Frisby and the Rats of NIMH
+ ▲ +300 Misery
+ ▲ +167 The Cider House Rules
+ ▼ -28 King of the Wind
+ ▲ +109 The Once and Future King
+ ▲ +254 The Witches
+ ▲ +264 The Subtle Knife
+ ▲ +118 When You Reach Me
+ ▲ +310 Carrie
+ ▼ -30 The Moon and Sixpence
+ ▼ -51 The Higher Power of Lucky
+ ▼ -65 Looking Backward, 2000-1887
+ ▼ -39 The Wings of the Dove
+ ▼ -55 The Summer of the Swans
+ ▲ +40 Dangerous Liaisons
+ ▲ +346 Jurassic Park
+ ▲ +219 The Absolutely True Diary of a Part-time Indian
+ ▲ +19 The Grey King
+ ▲ +13 The Leopard
+ ▲ +75 The Mammoth Hunters
+ ▲ +84 The Trumpet of the Swan
+ ▲ +263 The Lucky One
+ ▲ +82 These Happy Golden Years
+ ▼ -51 Arrowsmith
+ ▲ +62 Julie of the Wolves
+ ▲ +286 The Screwtape Letters
+ ▲ +127 The Fall
+ ▲ +226 The No. 1 Ladies' Detective Agency
+ ▲ +5 Worst Case
+ ▼ -15 Lost Horizon
+ ▲ +317 The Gunslinger
+ ▼ -38 The Slave Dancer
+ ▲ +429 Harry Potter and the Half-Blood Prince
+ ▲ +287 Inkheart
+ ▲ +16 Ramona and her Father
+ ▲ +159 Inkspell
+ ▲ +85 Ramona the Pest
+ ▲ +189 Walk Two Moons
+ ▲ +384 Miss Peregrine's Home for Peculiar Children
+ ▲ +54 The Chocolate War
+ ▲ +120 Sophie's Choice
+ ▲ +403 Looking for Alaska
+ ▲ +240 Breakfast at Tiffany's
+ ▲ +62 The Razor's Edge
+ ▲ +201 Dreamcatcher
+ ▲ +127 Orlando
+ ▲ +270 The Things they Carried
+ ▲ +125 Little Town on the Prairie
+ ▲ +202 Nights in Rodanthe
+ ▲ +290 The Amber Spyglass
+ ▲ +157 The Miraculous Journey of Edward Tulane
+ ▲ +103 Flatland
+ ▲ +350 Diary of a Wimpy Kid
+ ▲ +338 The Memory Keeper's Daughter
+ ▲ +203 The Wedding
+ ▲ +278 Fried Green Tomatoes at the Whistle-Stop Cafe
+ ▲ +103 The Cricket in Times Square
+ ▲ +270 The Phantom Tollbooth
+ ▼ -13 Rob Roy
+ ▲ +209 The Death of Ivan Ilych
+ ▲ +34 Alex Cross's Trial
+ ▼ -22 Kenilworth
+ ▲ +16 The Life and Opinions of Tristram Shandy
+ ▲ +282 The Remains of the Day
+ ▼ -14 M.C. Higgins, The Great
+ ▲ +5 Call It Courage
+ ▲ +272 Go Set a Watchman
+ ▲ +77 Bleachers
+ ▲ +9 Elijah of Buxton
+ ▲ +37 Swimsuit
+ ▲ +321 Cat's Cradle
+ ▲ +35 The Caine Mutiny
+ ▲ +45 The Heart of the Matter
+ ▲ +170 Harriet, the Spy
+ ▲ +55 Darkness at Noon
+ ▲ +302 A Prayer for Owen Meany
+ ▲ +294 The God of Small Things
+ ▲ +130 The Associate
+ ▲ +369 The Shack
+ ▲ +45 The Naked and the Dead
+ ▲ +419 The Sea of Monsters
+ ▲ +306 Stranger in a Strange Land
+ ▲ +220 Vision in White
+ ▲ +53 The Whipping Boy
+ ▲ +398 Room
+ ▲ +378 Deception Point</code></pre>
+</div>
+</div>
+<p>Let’s see which novels had the most movement up or down!</p>
+<div id="d430d750" class="cell" data-execution_count="9">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>])</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"points_moved"</span>, <span class="st">"top_500_rank"</span>, <span class="st">"gr_num_ratings_rank"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                        title                   author  points_moved  top_500_rank  gr_num_ratings_rank
+ The Winter of Our Discontent           John Steinbeck             0           397                  397
+Little House In the Big Woods     Laura Ingalls Wilder             1           214                  213
+          Pride and Prejudice              Jane Austen             2             6                    8
+                 First Family           David Baldacci             3           400                  403
+            The Little Prince Antoine de Saint-Exupéry             4            35                   39
+                  Howards End             E.M. Forster             4           340                  336
+              Call It Courage         Armstrong Sperry             5           480                  475
+       The Incredible Journey          Sheila Burnford             5           387                  392
+                      Rebecca        Daphne Du Maurier             5           130                  125
+                   Worst Case          James Patterson             5           443                  438</code></pre>
+</div>
+</div>
+<div id="01b2b0c4" class="cell" data-execution_count="10">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"points_moved"</span>, <span class="st">"top_500_rank"</span>, <span class="st">"gr_num_ratings_rank"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                      title           author  points_moved  top_500_rank  gr_num_ratings_rank
+               20,000 Leagues Under the Sea      Jules Verne           444            37                  481
+     Harry Potter and the Half-Blood Prince     J.K. Rowling           429           447                   18
+                        The Sea of Monsters     Rick Riordan           419           495                   76
+                     The Vicar of Wakefield Oliver Goldsmith           405            80                  485
+                         Looking for Alaska       John Green           403           456                   53
+                                       Room    Emma Donoghue           398           499                  101
+Miss Peregrine's Home for Peculiar Children     Ransom Riggs           384           453                   69
+                            Deception Point        Dan Brown           378           500                  122
+                      The Girl on the Train    Paula Hawkins           376           402                   26
+                                  The Shack William P. Young           369           493                  124</code></pre>
+</div>
+</div>
+<p>Above we see that Steinbeck’s “The Winter of Our Discontent”, stayed at the same ranking of 397. Pride and Prejudice remained quite high as well.</p>
+<p>20k Leagues under the sea dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! Harry Potter and The Sea of Monsters rose up the most.</p>
+<div id="1e779f2f" class="cell" data-execution_count="11">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="11">
+<pre><code>np.float64(137.016)</code></pre>
+</div>
+</div>
+<hr>
+<p>Let’s take a look at some of these metrics for rankings based on number of editions and total holdings.</p>
+<div id="6afdb52e" class="cell" data-execution_count="12">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspired by: https://www.sfu.ca/~mjbrydon/tutorials/BAinPy/08_correlation.html</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"gr_num_ratings_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(df[<span class="st">'gr_num_ratings_rank'</span>], df[<span class="st">'top_500_rank'</span>]))</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna() <span class="op">&amp;</span> df.oclc_holdings_rank.notna()]</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_holdings_rank'</span>], dropped_df[<span class="st">'oclc_editions_rank'</span>]))</span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna()]</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_editions_rank'</span>], dropped_df[<span class="st">'top_500_rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>PearsonRResult(statistic=np.float64(0.3089825159300637), pvalue=np.float64(1.601761116200545e-12))
+PearsonRResult(statistic=np.float64(0.7642639335763275), pvalue=np.float64(5.6541076909547544e-96))
+PearsonRResult(statistic=np.float64(0.6985608812420623), pvalue=np.float64(1.1165447422670264e-73))</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Metadata_Analysis_files/figure-html/cell-13-output-2.png" width="470" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Metadata_Analysis_files/figure-html/cell-13-output-3.png" width="470" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="Metadata_Analysis_files/figure-html/cell-13-output-4.png" width="470" height="470" class="figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="cf800f78" class="cell" data-execution_count="13">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_editions_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> ● 0 Don Quixote
+ ▼ -31 Alice's Adventures in Wonderland
+ ▼ -3 The Adventures of Huckleberry Finn
+ ▼ -3 The Adventures of Tom Sawyer
+ ▲ +3 Treasure Island
+ ▲ +3 Pride and Prejudice
+ ▼ -4 Wuthering Heights
+ ▲ +3 Jane Eyre
+ ▼ -10 Moby Dick
+ ▼ -17 The Scarlet Letter
+ ▼ -24 Gulliver's Travels
+ ▼ -9 The Pilgrim's Progress
+ ▲ +5 A Christmas Carol
+ ▼ -2 David Copperfield
+ ▼ -2 A Tale of Two Cities
+ ▼ -9 Little Women
+ ▼ -1 Great Expectations
+ ▼ -178 The Hobbit, or, There and Back Again
+ ▼ -12 Frankenstein, or, the Modern Prometheus
+ ▲ +11 Oliver Twist
+ ▲ +1 Uncle Tom's Cabin
+ ▼ -135 Crime and Punishment
+ ▼ -95 Madame Bovary: Patterns of Provincial life
+ ▼ -390 The Return of the King
+ ▼ -13 Dracula
+ ▲ +16 The Three Musketeers
+ ▼ -74 Brave New World
+ ▼ -186 War and Peace
+ ▼ -110 To Kill a Mockingbird
+ ▼ -101 The Wizard of Oz
+ ▲ +7 Les Misérables
+ ▼ -36 The Secret Garden
+ ▼ -7 Animal Farm
+ ▼ -12 The Great Gatsby
+ ▲ +13 The Little Prince
+ ▼ -13 The Call of the Wild
+ ▲ +8 20,000 Leagues Under the Sea
+ ▲ +10 Anna Karenina
+ ▼ -27 The Wind in the Willows
+ ▲ +8 The Picture of Dorian Gray
+ ▼ -50 The Grapes of Wrath
+ ▼ -14 Sense and Sensibility
+ ▼ -2 The Last of the Mohicans
+ ▼ -9 Tess of the d'Urbervilles
+ ▼ -109 Harry Potter and the Sorcerer's Stone
+ ▲ +5 Heidi
+ ▼ -10 Ulysses
+ ▼ -332 The Complete Sherlock Holmes
+ ▲ +5 The Count of Monte Cristo
+ ▲ +3 The Old Man and the Sea
+ ▼ -124 The Lion, the Witch, and the Wardrobe
+ ▲ +26 The Hunchback of Notre Dame
+ ▼ -227 Pinocchio
+ ▼ -295 One Hundred Years of Solitude
+ ▲ +43 Ivanhoe
+ ▼ -81 The Red Badge of Courage
+ ▼ -39 Anne of Green Gables
+ ▼ -28 Black Beauty
+ ▼ -132 Peter Pan
+ ▼ -43 A Farewell to Arms
+ ▼ -46 The House of the Seven Gables
+ ▼ -57 Lord of the Flies
+ ▼ -11 The Prince and the Pauper
+ ▼ -26 A Portrait of the Artist as a Young Man
+ ● 0 Lord Jim
+ ▼ -106 Harry Potter and the Chamber of Secrets
+ ▲ +7 The Stranger
+ ▲ +33 The Trial
+ ▼ -43 Lady Chatterley's Lover
+ ▼ -423 Kidnapped: The Adventures of David Balfour
+ ▼ -76 The Catcher in the Rye
+ ▼ -63 Fahrenheit 451
+ ▲ +20 A Journey to the Center of the Earth
+ ▲ +16 Vanity Fair
+ ▲ +5 All Quiet on the Western Front
+ ▼ -87 Gone with the Wind
+ ▼ -103 My Ántonia
+ ▼ -13 Of Mice and Men
+ ▲ +66 The Vicar of Wakefield
+ ▲ +6 A Connecticut Yankee in King Arthur's Court
+ ▲ +32 White Fang
+ ▼ -43 Fathers and Sons
+ ▼ -220 Doctor Zhivago
+ ▲ +62 The Decameron
+ ▼ -42 Nineteen Eighty-Four
+ ▼ -79 The Jungle
+ ▼ -111 The Da Vinci Code
+ ▲ +85 Persuasion
+ ▲ +27 Mansfield Park
+ ▲ +43 Candide
+ ▼ -16 For Whom the Bell Tolls
+ ▼ -12 Far from the Madding Crowd
+ ▼ -195 The Fellowship of the Ring
+ ▼ -32 The Return of the Native
+ ▼ -18 Sons and Lovers
+ ▼ -141 Charlotte's Web
+ ▲ +9 The Swiss Family Robinson
+ ▲ +27 Bleak House
+ ▲ +58 Père Goriot
+ ▲ +32 Utopia
+ ▲ +35 The History of Tom Jones, a Foundling
+ ▼ -76 Harry Potter and the Prisoner of Azkaban
+ ▲ +22 Kim
+ ▼ -79 The Sound and the Fury
+ ▼ -102 Harry Potter and the Goblet of Fire
+ ▲ +34 The Mill on the Floss
+ ▼ -161 A Wrinkle in Time
+ ▲ +49 The Hound of the Baskervilles
+ ▼ -228 The Two Towers
+ ▲ +9 The War of the Worlds
+ ▲ +15 Middlemarch
+ ▼ -38 The Age of Innocence
+ ▼ -122 The Color Purple
+ ▲ +21 Northanger Abbey
+ ▼ -90 East of Eden
+ ▼ -77 On the Road
+ ▼ -65 Catch-22
+ ▲ +89 Around the World in Eighty Days
+ ▲ +43 Hard Times
+ ▼ -105 Beloved
+ ● 0 Mrs. Dalloway
+ ▼ -6 To the Lighthouse
+ ▼ -110 The Magician's Nephew
+ ▼ -94 Harry Potter and the Order of the Phoenix
+ ▲ +22 The Sun Also Rises
+ ▼ -80 The Good Earth
+ ▲ +70 Silas Marner
+ ▼ -81 Love in the Time of Cholera
+ ▼ -8 Rebecca
+ ▼ -12 Jude the Obscure
+ ▼ -131 Twilight
+ ▼ -25 A Passage to India
+ ▲ +49 The Plague
+ ▼ -36 Nicholas Nickleby
+ ▲ +43 The Pearl
+ ▼ -41 Ethan Frome
+ ▲ +28 The Tale of Genji
+ ▼ -142 The Giver
+ ▼ -15 The Alchemist
+ ▲ +60 The Strange Case of Dr. Jekyll and Mr. Hyde
+ ▲ +33 Robinson Crusoe
+ ▼ -34 Tender is the Night
+ ▲ +23 The Idiot
+ ▼ -201 Hatchet
+ ▼ -111 The Kite Runner
+ ▼ -77 One Flew Over the Cuckoo's Nest
+ ▲ +15 The Portrait of a Lady
+ ▼ -91 The Outsiders
+ ▲ +80 Ben-Hur
+ ▲ +9 The Mayor of Casterbridge
+ ▼ -57 Cry, The Beloved Country
+ ▼ -160 The Last Battle
+ ▲ +9 Captains Courageous
+ ▲ +75 The Castle
+ ▲ +119 The Metamorphosis
+ ▲ +93 The Magic Mountain (Der Zauberberg)
+ ▼ -115 James and the Giant Peach
+ ▼ -105 The Horse and His Boy
+ ▼ -111 The Voyage of the Dawn Treader
+ ▼ -60 The Bell Jar
+ ▼ -4 Women in Love
+ ▼ -103 The Yearling
+ ▼ -79 O Pioneers!
+ ▼ -50 The Handmaid's Tale
+ ▲ +51 The Moonstone
+ ▲ +69 The Old Curiosity Shop
+ ▲ +71 Little Dorrit
+ ▼ -197 Prince Caspian: The Return to Narnia
+ ▼ -3 Sister Carrie
+ ▼ -75 The Silver Chair
+ ▼ -220 The Hunger Games
+ ▼ -41 This Side of Paradise
+ ▲ +132 Eugénie Grandet
+ ▼ -13 Of Human Bondage
+ ▲ +60 Dream of the Red Chamber
+ ▼ -53 Life of Pi
+ ▼ -98 Harry Potter and the Deathly Hallows
+ ▼ -79 Invisible Man
+ ▲ +97 Steppenwolf
+ ▲ +167 The Sorrows of Young Werther
+ ▼ -139 Bridge to Terabithia
+ ▲ +73 The Invisible Man
+ ▼ -138 Holes
+ ▲ +110 Siddhartha
+ ▼ -97 A Tree Grows in Brooklyn
+ ▲ +154 Through the Looking-Glass, and What Alice Found There
+ ▼ -111 In Cold Blood
+ ▼ -2 The House of the Spirits
+ ▲ +85 Adam Bede
+ ▲ +153 The Betrothed
+ ▼ -94 The Book Thief
+ ▼ -114 Their Eyes Were Watching God
+ ▼ -130 One Day in the Life of Ivan Denisovich
+ ▲ +145 The Sea Wolf
+ ▼ -197 Catching Fire
+ ▼ -179 Roll of Thunder, Hear My Cry
+ ▼ -67 Death Comes for the Archbishop
+ ▼ -2 The House of Mirth
+ ▼ -47 Light in August
+ ▲ +70 The Pickwick Papers
+ ▲ +59 Remembrance of Things Past
+ ▼ -291 Barchester Towers and the Warden
+ ▲ +8 The Bridge of San Luis Rey
+ ▼ -108 The Help
+ ▲ +42 Murder on the Orient Express
+ ▼ -135 The Lovely Bones
+ ▼ -176 The Appeal
+ ▲ +115 Dombey And Son
+ ▼ -173 Slaughterhouse-Five
+ ▲ +9 An American Tragedy
+ ▼ -57 The Bluest Eye
+ ▼ -101 Little House In the Big Woods
+ ▲ +29 Pippi Longstocking
+ ▲ +133 Germinal
+ ▼ -12 The Heart Is a Lonely Hunter
+ ▲ +77 The Woman In White
+ ▼ -67 Absalom, Absalom!
+ ▼ -144 A Painted House
+ ▼ -53 The Girl With the Dragon Tattoo
+ ▲ +40 A Room With a View
+ ▼ -73 Watership Down
+ ▼ -29 Memoirs of a Geisha
+ ▲ +101 Our Mutual Friend
+ ▲ +56 Babbitt
+ ▲ +77 The Red Pony
+ ▼ -43 All the King's Men
+ ▼ -1 Things Fall Apart
+ ▲ +110 Lorna Doone
+ ▼ -121 Johnny Tremain
+ ▲ +12 Anne of Avonlea
+ ▼ -138 Tuck Everlasting
+ ▼ -120 The BFG
+ ▼ -20 Cannery Row
+ ▼ -97 The Joy Luck Club
+ ▲ +39 The Silmarillion
+ ▼ -127 Roots
+ ▼ -77 Little House on the Prairie
+ ▼ -42 Native Son
+ ▼ -103 Stuart Little
+ ▼ -242 Cross Fire
+ ▲ +87 The Power and the Glory
+ ▲ +39 A Clockwork Orange
+ ▲ +76 The Phantom of the Opera
+ ▲ +11 The Martian Chronicles
+ ▼ -104 The Road
+ ▲ +75 The Way of All Flesh
+ ▼ -176 Diary of a Wimpy Kid: The Long Haul
+ ▲ +110 Villette
+ ▼ -37 The Curious Incident of the Dog In the Night-Time
+ ▲ +197 The Mysterious Island
+ ▼ -50 Song of Solomon
+ ▲ +175 Nana
+ ▲ +203 Quo Vadis
+ ▲ +33 Main Street
+ ▲ +53 Matilda
+ ▼ -215 Lolita
+ ▼ -133 Paper Towns
+ ▼ -193 Sounder
+ ▼ -130 Are You There God? It's Me, Margaret
+ ▼ -37 The Notebook
+ ▼ -127 From the Mixed-Up Files of Mrs. Basil E. Frankweiler
+ ▼ -93 Atlas Shrugged
+ ▼ -53 The Fountainhead
+ ▼ -110 Number the Stars
+ ▼ -1 The Firm
+ ▲ +92 Swann's Way
+ ▼ -92 Ender's Game
+ ▲ +102 The Name of the Rose
+ ▼ -58 A Time to Kill
+ ▼ -102 Water for Elephants
+ ▲ +161 The Time Machine
+ ▼ -130 Eragon
+ ▼ -30 The Hitchhiker's Guide to the Galaxy
+ ▲ +115 Buddenbrooks
+ ▼ -29 A Thousand Splendid Suns
+ ▼ -125 The Witch of Blackbird Pond
+ ▼ -38 And Then There Were None
+ ▼ -89 A Separate Peace
+ ▼ -98 Breaking Dawn
+ ▲ +40 As I Lay Dying
+ ▼ -52 The Girl Who Played With Fire
+ ▼ -178 Where the Red Fern Grows
+ ▲ +57 Le Morte D'Arthur
+ ▼ -112 Mockingjay
+ ▲ +37 The Pillars of the Earth
+ ▲ +154 Persian Letters
+ ▼ -22 The Client
+ ▼ -4 Sula
+ ▼ -136 Tales of a Fourth Grade Nothing
+ ▲ +13 The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire
+ ▲ +37 Tortilla Flat
+ ▲ +2 Look Homeward, Angel
+ ▲ +180 The Mystery of Edwin Drood
+ ▼ -5 Brideshead Revisited
+ ▼ -1 The Pelican Brief
+ ▼ -21 Atonement
+ ▲ +119 Washington Square
+ ▼ -191 Like Water for Chocolate
+ ▼ -171 The Golden Compass
+ ▼ -106 The Secret Life of Bees
+ ▼ -28 The Fault In Our Stars
+ ▲ +145 Nostromo
+ ▲ +78 Finnegans Wake
+ ▲ +4 The Brethren
+ ▲ +12 Coraline
+ ▲ +208 Heart of Darkness
+ ▼ -104 On the Banks of Plum Creek
+ ▼ -32 Rebecca of Sunnybrook Farm
+ ▲ +111 The Ambassadors
+ ▲ +177 The Secret Agent
+ ▼ -94 The House on Mango Street
+ ▲ +38 Go Tell It on the Mountain
+ ▲ +25 The Testament
+ ▼ -80 The Clan of the Cave Bear
+ ▲ +187 Cranford
+ ▼ -100 Because of Winn-Dixie
+ ▼ -127 My Side of the Mountain
+ ▼ -48 The Runaway Jury
+ ▼ -121 The Mouse and the Motorcycle
+ ▼ -31 The Lost Symbol
+ ▲ +128 The Forsyte Saga
+ ▼ -39 Gone Girl
+ ▼ -33 The Lightning Thief
+ ▲ +201 The Last Days of Pompeii
+ ▲ +44 The Reader
+ ▼ -78 Caddie Woodlawn
+ ▼ -120 The Tale of Despereaux
+ ▼ -10 The Girl Who Kicked the Hornet's Nest
+ ▼ -109 Dear Mr. Henshaw
+ ▼ -90 The Killer Angels
+ ▲ +140 Chronicle of a Death Foretold
+ ▼ -86 The Five People You Meet In Heaven
+ ▲ +186 The Master and Margarita
+ ▲ +93 Winesburg, Ohio
+ ▼ -138 P Is for Peril
+ ▼ -57 My Sister's Keeper
+ ▲ +261 Barnaby Rudge
+ ▲ +150 Howards End
+ ▲ +4 The Broker
+ ▼ -77 The Camel Club
+ ▲ +131 The Rainbow
+ ▲ +92 The Man In the Iron Mask
+ ▲ +15 Mary Poppins
+ ▲ +20 Artemis Fowl
+ ▼ -50 Dear John
+ ▼ -12 Cold Mountain
+ ▼ -62 Flowers for Algernon
+ ▼ -32 The Dark Is Rising
+ ▲ +204 Resurrection
+ ▼ -134 Fearless Fourteen
+ ▲ +266 A Sentimental Journey Through France and Italy
+ ▲ +15 The King of Torts
+ ▼ -103 The Graveyard Book
+ ▲ +145 The Quiet American
+ ▲ +47 The Chamber
+ ▲ +97 The English Patient
+ ▼ -22 Snow Falling on Cedars
+ ▼ -73 The Long Winter
+ ▼ -84 Sarah, Plain and Tall
+ ▼ -119 Cross Country
+ ▲ +124 The Spy Who Came In from the Cold
+ ▲ +28 A Game of Thrones
+ ▲ +132 The Thorn Birds
+ ▼ -66 Old Yeller
+ ▼ -80 Ramona Quimby, Age 8
+ ▲ +206 Death In Venice
+ ▼ -54 By the Shores of Silver Lake
+ ▲ +73 Inferno
+ ▲ +86 Schindler's List
+ ▼ -28 Jonathan Livingston Seagull
+ ▼ -14 The Stand
+ ▼ -47 The Last Juror
+ ▼ -96 Shiloh
+ ▲ +52 Girl With a Pearl Earring
+ ▲ +152 The Murder of Roger Ackroyd
+ ▲ +87 It
+ ▲ +67 The Rainmaker
+ ▼ -48 The Poisonwood Bible
+ ▼ -28 The Indian in the Cupboard
+ ▲ +136 The Maltese Falcon
+ ▲ +196 The Warden
+ ▲ +39 The Summons
+ ▼ -85 Encyclopedia Brown: Boy Detective
+ ▲ +31 The Time Traveler's Wife
+ ▲ +78 The Incredible Journey
+ ▲ +68 Daughter of Fortune
+ ▲ +243 Shirley
+ ▼ -89 Bud, Not Buddy
+ ▲ +25 The Horse Whisperer
+ ▲ +85 The Street Lawyer
+ ▲ +230 Nausea
+ ▲ +153 To Have and Have Not
+ ▼ -7 The Bridges of Madison County
+ ▲ +151 Anne of the Island
+ ▲ +14 The Winter of Our Discontent
+ ▲ +161 The Shining
+ ▲ +214 The Tenant of Wildfell Hall
+ ▼ -85 First Family
+ ▲ +69 The Partner
+ ▲ +68 The Girl on the Train
+ ▲ +251 The Black Arrow: A Tale of the Two Roses
+ ▼ -24 The Choice
+ ▲ +113 The Virginian: A Horseman of the Plains
+ ▼ -52 A Walk to Remember
+ ▼ -35 The Maze Runner
+ ▼ -56 The Westing Game
+ ▼ -6 Misty of Chincoteague
+ ▼ -41 Diary of a Wimpy Kid: The Last Straw
+ ▲ +211 King Solomon's Mines
+ ▼ -54 Jacob Have I Loved
+ ▼ -24 Mrs. Frisby and the Rats of NIMH
+ ▲ +156 Misery
+ ▲ +42 The Cider House Rules
+ ▼ -13 King of the Wind
+ ▲ +63 The Once and Future King
+ ▲ +92 The Witches
+ ▲ +51 The Subtle Knife
+ ▼ -61 When You Reach Me
+ ▲ +161 Carrie
+ ▲ +236 The Moon and Sixpence
+ ▼ -67 The Higher Power of Lucky
+ ▲ +213 Looking Backward, 2000-1887
+ ▲ +178 The Wings of the Dove
+ ▼ -50 The Summer of the Swans
+ ▲ +151 Dangerous Liaisons
+ ▲ +83 Jurassic Park
+ ▼ -17 The Absolutely True Diary of a Part-time Indian
+ ▼ -35 The Grey King
+ ▲ +280 The Leopard
+ ▲ +35 The Mammoth Hunters
+ ▼ -26 The Trumpet of the Swan
+ ▲ +19 The Lucky One
+ ▲ +3 These Happy Golden Years
+ ▲ +180 Arrowsmith
+ ▼ -18 Julie of the Wolves
+ ▲ +16 The Screwtape Letters
+ ▲ +379 The Fall
+ ▲ +12 The No. 1 Ladies' Detective Agency
+ ▼ -44 Worst Case
+ ▲ +169 Lost Horizon
+ ▲ +59 The Gunslinger
+ ▼ -18 The Slave Dancer
+ ▼ -42 Harry Potter and the Half-Blood Prince
+ ▲ +76 Inkheart
+ ▼ -17 Ramona and her Father
+ ▼ -6 Inkspell
+ ▼ -4 Ramona the Pest
+ ▲ +14 Walk Two Moons
+ ▼ -35 Miss Peregrine's Home for Peculiar Children
+ ▲ +42 The Chocolate War
+ ▲ +114 Sophie's Choice
+ ▲ +97 Looking for Alaska
+ ▲ +236 Breakfast at Tiffany's
+ ▲ +193 The Razor's Edge
+ ▲ +9 Dreamcatcher
+ ▲ +300 Orlando
+ ▲ +20 The Things they Carried
+ ▲ +25 Little Town on the Prairie
+ ▲ +19 Nights in Rodanthe
+ ▲ +102 The Amber Spyglass
+ ▼ -12 The Miraculous Journey of Edward Tulane
+ ▲ +234 Flatland
+ ▼ -2 Diary of a Wimpy Kid
+ ▲ +14 The Memory Keeper's Daughter
+ ▲ +18 The Wedding
+ ▲ +55 Fried Green Tomatoes at the Whistle-Stop Cafe
+ ▲ +61 The Cricket in Times Square
+ ▲ +84 The Phantom Tollbooth
+ ▲ +350 Rob Roy
+ ▲ +257 The Death of Ivan Ilych
+ ▼ -15 Alex Cross's Trial
+ ▲ +463 Kenilworth
+ ▲ +389 The Life and Opinions of Tristram Shandy
+ ▼ -1 M.C. Higgins, The Great
+ ▲ +17 Call It Courage
+ ▲ +21 Go Set a Watchman
+ ▲ +81 Bleachers
+ ▼ -10 Elijah of Buxton
+ ▲ +2 Swimsuit
+ ▲ +164 Cat's Cradle
+ ▲ +159 The Caine Mutiny
+ ▲ +236 The Heart of the Matter
+ ▲ +52 Harriet, the Spy
+ ▲ +271 Darkness at Noon
+ ▲ +112 A Prayer for Owen Meany
+ ▲ +143 The God of Small Things
+ ▲ +87 The Associate
+ ▲ +67 The Shack
+ ▲ +240 The Naked and the Dead
+ ▲ +60 The Sea of Monsters
+ ▲ +146 Stranger in a Strange Land
+ ▲ +23 Vision in White
+ ▲ +22 The Whipping Boy
+ ▲ +110 Room
+ ▲ +127 Deception Point</code></pre>
+</div>
+</div>
+<div id="6fee15ff" class="cell" data-execution_count="14">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"points_moved"</span>] <span class="op">&lt;=</span> <span class="dv">500</span>]</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"oclc_editions_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                title                  author  top_500_rank  \
+0                         Don Quixote     Miguel de Cervantes             1   
+1    Alice's Adventures in Wonderland           Lewis Carroll             2   
+2  The Adventures of Huckleberry Finn              Mark Twain             3   
+3        The Adventures of Tom Sawyer              Mark Twain             4   
+4                     Treasure Island  Robert Louis Stevenson             5   
+
+   oclc_editions_rank  
+0                 1.0  
+1                33.0  
+2                 6.0  
+3                 7.0  
+4                 2.0  
+                  title                  author  top_500_rank  \
+0           Don Quixote     Miguel de Cervantes             1   
+4       Treasure Island  Robert Louis Stevenson             5   
+5   Pride and Prejudice             Jane Austen             6   
+88           Persuasion             Jane Austen            89   
+7             Jane Eyre        Charlotte Brontë             8   
+
+    oclc_editions_rank  
+0                  1.0  
+4                  2.0  
+5                  3.0  
+88                 4.0  
+7                  5.0  </code></pre>
+</div>
+</div>
+<div id="482c43ca" class="cell" data-execution_count="15">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> df.head(<span class="dv">10</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>smaller_df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>np.float64(7.7)</code></pre>
+</div>
+</div>
+<hr>
+<div id="b4e7cb9f" class="cell" data-execution_count="16">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_holdings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> ▼ -8 Don Quixote
+ ▼ -16 Alice's Adventures in Wonderland
+ ▼ -3 The Adventures of Huckleberry Finn
+ ▼ -3 The Adventures of Tom Sawyer
+ ▲ +4 Treasure Island
+ ▲ +4 Pride and Prejudice
+ ▲ +2 Wuthering Heights
+ ▲ +4 Jane Eyre
+ ▲ +1 Moby Dick
+ ▼ -4 The Scarlet Letter
+ ▼ -14 Gulliver's Travels
+ ▼ -16 The Pilgrim's Progress
+ ▼ -3 A Christmas Carol
+ ▲ +3 David Copperfield
+ ▲ +3 A Tale of Two Cities
+ ▲ +6 Little Women
+ ▲ +4 Great Expectations
+ ▼ -17 The Hobbit, or, There and Back Again
+ ▲ +4 Frankenstein, or, the Modern Prometheus
+ ▲ +3 Oliver Twist
+ ● 0 Uncle Tom's Cabin
+ ▼ -43 Crime and Punishment
+ ▼ -16 Madame Bovary: Patterns of Provincial life
+ ▼ -438 The Return of the King
+ ▼ -2 Dracula
+ ▲ +6 The Three Musketeers
+ ▼ -58 Brave New World
+ ▼ -116 War and Peace
+ ▲ +3 To Kill a Mockingbird
+ ▼ -160 The Wizard of Oz
+ ▲ +9 Les Misérables
+ ▼ -27 The Secret Garden
+ ▲ +4 Animal Farm
+ ▲ +11 The Great Gatsby
+ ▼ -32 The Little Prince
+ ▼ -8 The Call of the Wild
+ ▲ +1 20,000 Leagues Under the Sea
+ ▲ +14 Anna Karenina
+ ▼ -14 The Wind in the Willows
+ ▼ -2 The Picture of Dorian Gray
+ ▲ +9 The Grapes of Wrath
+ ▼ -5 Sense and Sensibility
+ ▼ -44 The Last of the Mohicans
+ ▲ +6 Tess of the d'Urbervilles
+ ▲ +15 Harry Potter and the Sorcerer's Stone
+ ▼ -17 Heidi
+ ▼ -2 Ulysses
+ ▼ -424 The Complete Sherlock Holmes
+ ▼ -7 The Count of Monte Cristo
+ ▼ -2 The Old Man and the Sea
+ ● 0 The Lion, the Witch, and the Wardrobe
+ ▲ +21 The Hunchback of Notre Dame
+ ▼ -416 Pinocchio
+ ▼ -147 One Hundred Years of Solitude
+ ▲ +15 Ivanhoe
+ ▼ -30 The Red Badge of Courage
+ ▲ +7 Anne of Green Gables
+ ▼ -44 Black Beauty
+ ▼ -97 Peter Pan
+ ▲ +6 A Farewell to Arms
+ ▼ -27 The House of the Seven Gables
+ ▲ +4 Lord of the Flies
+ ▼ -11 The Prince and the Pauper
+ ▼ -7 A Portrait of the Artist as a Young Man
+ ▼ -12 Lord Jim
+ ▲ +23 Harry Potter and the Chamber of Secrets
+ ▲ +8 The Stranger
+ ● 0 The Trial
+ ▼ -34 Lady Chatterley's Lover
+ ▼ -423 Kidnapped: The Adventures of David Balfour
+ ▼ -9 The Catcher in the Rye
+ ▼ -10 Fahrenheit 451
+ ▼ -24 A Journey to the Center of the Earth
+ ▼ -4 Vanity Fair
+ ▲ +10 All Quiet on the Western Front
+ ▼ -24 Gone with the Wind
+ ▼ -2 My Ántonia
+ ▲ +46 Of Mice and Men
+ ▲ +12 The Vicar of Wakefield
+ ▲ +6 A Connecticut Yankee in King Arthur's Court
+ ▲ +37 White Fang
+ ▼ -29 Fathers and Sons
+ ▼ -181 Doctor Zhivago
+ ▲ +13 The Decameron
+ ▲ +24 Nineteen Eighty-Four
+ ▼ -16 The Jungle
+ ▼ -12 The Da Vinci Code
+ ▲ +86 Persuasion
+ ▲ +8 Mansfield Park
+ ▲ +43 Candide
+ ▲ +3 For Whom the Bell Tolls
+ ▼ -13 Far from the Madding Crowd
+ ▼ -77 The Fellowship of the Ring
+ ▼ -2 The Return of the Native
+ ▼ -9 Sons and Lovers
+ ▲ +2 Charlotte's Web
+ ▼ -15 The Swiss Family Robinson
+ ▲ +5 Bleak House
+ ▲ +10 Père Goriot
+ ▲ +8 Utopia
+ ▲ +24 The History of Tom Jones, a Foundling
+ ▲ +46 Harry Potter and the Prisoner of Azkaban
+ ▼ -4 Kim
+ ▼ -103 The Sound and the Fury
+ ▲ +33 Harry Potter and the Goblet of Fire
+ ● 0 The Mill on the Floss
+ ▲ +44 A Wrinkle in Time
+ ▼ -6 The Hound of the Baskervilles
+ ▼ -115 The Two Towers
+ ▼ -11 The War of the Worlds
+ ▲ +3 Middlemarch
+ ▼ -6 The Age of Innocence
+ ● 0 The Color Purple
+ ▼ -13 Northanger Abbey
+ ▼ -29 East of Eden
+ ▼ -59 On the Road
+ ▼ -3 Catch-22
+ ▲ +82 Around the World in Eighty Days
+ ▼ -3 Hard Times
+ ▲ +10 Beloved
+ ▲ +6 Mrs. Dalloway
+ ▼ -3 To the Lighthouse
+ ▼ -6 The Magician's Nephew
+ ▲ +29 Harry Potter and the Order of the Phoenix
+ ▲ +71 The Sun Also Rises
+ ▼ -4 The Good Earth
+ ▲ +52 Silas Marner
+ ▲ +4 Love in the Time of Cholera
+ ▼ -7 Rebecca
+ ▼ -3 Jude the Obscure
+ ▼ -62 Twilight
+ ● 0 A Passage to India
+ ▲ +17 The Plague
+ ▼ -342 Nicholas Nickleby
+ ▲ +102 The Pearl
+ ▼ -6 Ethan Frome
+ ▲ +11 The Tale of Genji
+ ▲ +21 The Giver
+ ▼ -2 The Alchemist
+ ▼ -61 The Strange Case of Dr. Jekyll and Mr. Hyde
+ ▼ -39 Robinson Crusoe
+ ▼ -6 Tender is the Night
+ ▼ -45 The Idiot
+ ▲ +4 Hatchet
+ ▼ -16 The Kite Runner
+ ▲ +11 One Flew Over the Cuckoo's Nest
+ ▲ +38 The Portrait of a Lady
+ ▲ +14 The Outsiders
+ ▼ -8 Ben-Hur
+ ▼ -53 The Mayor of Casterbridge
+ ● 0 Cry, The Beloved Country
+ ▼ -24 The Last Battle
+ ▼ -25 Captains Courageous
+ ▲ +7 The Castle
+ ▲ +86 The Metamorphosis
+ ▲ +37 The Magic Mountain (Der Zauberberg)
+ ▲ +12 James and the Giant Peach
+ ▼ -1 The Horse and His Boy
+ ▲ +4 The Voyage of the Dawn Treader
+ ▲ +15 The Bell Jar
+ ▼ -5 Women in Love
+ ▲ +3 The Yearling
+ ▲ +11 O Pioneers!
+ ▲ +74 The Handmaid's Tale
+ ▲ +3 The Moonstone
+ ▲ +13 The Old Curiosity Shop
+ ▼ -6 Little Dorrit
+ ▼ -36 Prince Caspian: The Return to Narnia
+ ▲ +8 Sister Carrie
+ ▲ +7 The Silver Chair
+ ▲ +7 The Hunger Games
+ ▲ +1 This Side of Paradise
+ ▲ +84 Eugénie Grandet
+ ▼ -2 Of Human Bondage
+ ▼ -274 Dream of the Red Chamber
+ ▼ -6 Life of Pi
+ ▲ +47 Harry Potter and the Deathly Hallows
+ ▲ +29 Invisible Man
+ ▲ +9 Steppenwolf
+ ▲ +98 The Sorrows of Young Werther
+ ▲ +33 Bridge to Terabithia
+ ▲ +46 The Invisible Man
+ ▲ +32 Holes
+ ▲ +57 Siddhartha
+ ▼ -10 A Tree Grows in Brooklyn
+ ▲ +169 Through the Looking-Glass, and What Alice Found There
+ ▼ -4 In Cold Blood
+ ▲ +7 The House of the Spirits
+ ▲ +9 Adam Bede
+ ▼ -37 The Betrothed
+ ▼ -7 The Book Thief
+ ▲ +35 Their Eyes Were Watching God
+ ▼ -18 One Day in the Life of Ivan Denisovich
+ ▲ +150 The Sea Wolf
+ ▲ +30 Catching Fire
+ ▲ +6 Roll of Thunder, Hear My Cry
+ ▲ +8 Death Comes for the Archbishop
+ ▲ +12 The House of Mirth
+ ▲ +16 Light in August
+ ▼ -268 The Pickwick Papers
+ ▲ +23 Remembrance of Things Past
+ ▼ -291 Barchester Towers and the Warden
+ ▼ -4 The Bridge of San Luis Rey
+ ▼ -5 The Help
+ ▲ +12 Murder on the Orient Express
+ ▼ -46 The Lovely Bones
+ ▼ -181 The Appeal
+ ▲ +14 Dombey And Son
+ ▼ -253 Slaughterhouse-Five
+ ▲ +7 An American Tragedy
+ ▲ +43 The Bluest Eye
+ ▲ +16 Little House In the Big Woods
+ ▼ -1 Pippi Longstocking
+ ▲ +13 Germinal
+ ▼ -1 The Heart Is a Lonely Hunter
+ ▼ -10 The Woman In White
+ ▼ -227 Absalom, Absalom!
+ ▼ -114 A Painted House
+ ● 0 The Girl With the Dragon Tattoo
+ ▼ -42 A Room With a View
+ ▲ +9 Watership Down
+ ▼ -22 Memoirs of a Geisha
+ ▲ +10 Our Mutual Friend
+ ▲ +3 Babbitt
+ ▲ +87 The Red Pony
+ ▲ +59 All the King's Men
+ ▲ +19 Things Fall Apart
+ ▼ -3 Lorna Doone
+ ▲ +7 Johnny Tremain
+ ▲ +1 Anne of Avonlea
+ ▲ +11 Tuck Everlasting
+ ▼ -9 The BFG
+ ▼ -14 Cannery Row
+ ▼ -17 The Joy Luck Club
+ ▲ +25 The Silmarillion
+ ▼ -10 Roots
+ ▲ +40 Little House on the Prairie
+ ▲ +21 Native Son
+ ▲ +15 Stuart Little
+ ▼ -246 Cross Fire
+ ▲ +8 The Power and the Glory
+ ▲ +6 A Clockwork Orange
+ ▲ +6 The Phantom of the Opera
+ ▼ -15 The Martian Chronicles
+ ▲ +11 The Road
+ ▲ +11 The Way of All Flesh
+ ▼ -219 Diary of a Wimpy Kid: The Long Haul
+ ▲ +23 Villette
+ ▼ -23 The Curious Incident of the Dog In the Night-Time
+ ▲ +153 The Mysterious Island
+ ▲ +21 Song of Solomon
+ ▲ +10 Nana
+ ▼ -48 Quo Vadis
+ ● 0 Main Street
+ ▲ +83 Matilda
+ ▼ -225 Lolita
+ ▼ -68 Paper Towns
+ ▲ +8 Sounder
+ ▲ +1 Are You There God? It's Me, Margaret
+ ▲ +5 The Notebook
+ ▲ +21 From the Mixed-Up Files of Mrs. Basil E. Frankweiler
+ ▲ +17 Atlas Shrugged
+ ▲ +14 The Fountainhead
+ ▲ +36 Number the Stars
+ ▼ -75 The Firm
+ ▲ +2 Swann's Way
+ ▲ +28 Ender's Game
+ ▲ +36 The Name of the Rose
+ ▼ -40 A Time to Kill
+ ▼ -10 Water for Elephants
+ ▲ +134 The Time Machine
+ ▼ -134 Eragon
+ ▼ -62 The Hitchhiker's Guide to the Galaxy
+ ▼ -180 Buddenbrooks
+ ▲ +9 A Thousand Splendid Suns
+ ▲ +6 The Witch of Blackbird Pond
+ ▼ -84 And Then There Were None
+ ▲ +11 A Separate Peace
+ ▼ -11 Breaking Dawn
+ ▲ +75 As I Lay Dying
+ ▼ -2 The Girl Who Played With Fire
+ ▼ -5 Where the Red Fern Grows
+ ▼ -36 Le Morte D'Arthur
+ ▲ +46 Mockingjay
+ ▲ +8 The Pillars of the Earth
+ ▼ -25 Persian Letters
+ ▼ -46 The Client
+ ▲ +27 Sula
+ ▲ +14 Tales of a Fourth Grade Nothing
+ ▼ -97 The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire
+ ▲ +43 Tortilla Flat
+ ▲ +19 Look Homeward, Angel
+ ▼ -17 The Mystery of Edwin Drood
+ ▼ -135 Brideshead Revisited
+ ▼ -79 The Pelican Brief
+ ▲ +3 Atonement
+ ▲ +18 Washington Square
+ ▼ -184 Like Water for Chocolate
+ ▼ -55 The Golden Compass
+ ▲ +15 The Secret Life of Bees
+ ▲ +41 The Fault In Our Stars
+ ▲ +31 Nostromo
+ ▲ +35 Finnegans Wake
+ ▲ +6 The Brethren
+ ▲ +40 Coraline
+ ▲ +88 Heart of Darkness
+ ▲ +18 On the Banks of Plum Creek
+ ▼ -35 Rebecca of Sunnybrook Farm
+ ▲ +25 The Ambassadors
+ ▲ +19 The Secret Agent
+ ▼ -101 The House on Mango Street
+ ▲ +43 Go Tell It on the Mountain
+ ▼ -4 The Testament
+ ▼ -52 The Clan of the Cave Bear
+ ▲ +34 Cranford
+ ▲ +73 Because of Winn-Dixie
+ ▲ +18 My Side of the Mountain
+ ▼ -89 The Runaway Jury
+ ▼ -4 The Mouse and the Motorcycle
+ ▲ +23 The Lost Symbol
+ ▲ +26 The Forsyte Saga
+ ▲ +17 Gone Girl
+ ▲ +70 The Lightning Thief
+ ▼ -58 The Last Days of Pompeii
+ ▲ +19 The Reader
+ ▲ +23 Caddie Woodlawn
+ ▲ +41 The Tale of Despereaux
+ ▼ -20 The Girl Who Kicked the Hornet's Nest
+ ▲ +15 Dear Mr. Henshaw
+ ▲ +17 The Killer Angels
+ ▲ +35 Chronicle of a Death Foretold
+ ▲ +24 The Five People You Meet In Heaven
+ ▲ +29 The Master and Margarita
+ ▼ -107 Winesburg, Ohio
+ ▼ -136 P Is for Peril
+ ▲ +6 My Sister's Keeper
+ ▲ +215 Barnaby Rudge
+ ▲ +82 Howards End
+ ▲ +32 The Broker
+ ▼ -133 The Camel Club
+ ▲ +19 The Rainbow
+ ▼ -48 The Man In the Iron Mask
+ ▼ -120 Mary Poppins
+ ▲ +62 Artemis Fowl
+ ▲ +8 Dear John
+ ▲ +8 Cold Mountain
+ ▲ +1 Flowers for Algernon
+ ▼ -1 The Dark Is Rising
+ ▼ -116 Resurrection
+ ▼ -128 Fearless Fourteen
+ ▲ +167 A Sentimental Journey Through France and Italy
+ ▲ +24 The King of Torts
+ ▲ +96 The Graveyard Book
+ ▲ +28 The Quiet American
+ ▼ -5 The Chamber
+ ▼ -1 The English Patient
+ ▼ -65 Snow Falling on Cedars
+ ▲ +42 The Long Winter
+ ▲ +85 Sarah, Plain and Tall
+ ▼ -120 Cross Country
+ ▼ -15 The Spy Who Came In from the Cold
+ ▼ -32 A Game of Thrones
+ ▼ -7 The Thorn Birds
+ ▲ +52 Old Yeller
+ ▲ +63 Ramona Quimby, Age 8
+ ▼ -110 Death In Venice
+ ▲ +52 By the Shores of Silver Lake
+ ▲ +23 Inferno
+ ▲ +75 Schindler's List
+ ▼ -107 Jonathan Livingston Seagull
+ ▼ -118 The Stand
+ ▼ -44 The Last Juror
+ ▲ +55 Shiloh
+ ▲ +7 Girl With a Pearl Earring
+ ▲ +11 The Murder of Roger Ackroyd
+ ▲ +84 It
+ ▲ +43 The Rainmaker
+ ▲ +47 The Poisonwood Bible
+ ▲ +16 The Indian in the Cupboard
+ ▼ -62 The Maltese Falcon
+ ▲ +45 The Warden
+ ▲ +31 The Summons
+ ▼ -107 Encyclopedia Brown: Boy Detective
+ ▼ -9 The Time Traveler's Wife
+ ▲ +27 The Incredible Journey
+ ▲ +33 Daughter of Fortune
+ ▲ +63 Shirley
+ ▲ +7 Bud, Not Buddy
+ ▼ -72 The Horse Whisperer
+ ▲ +22 The Street Lawyer
+ ▲ +70 Nausea
+ ▼ -5 To Have and Have Not
+ ▼ -64 The Bridges of Madison County
+ ▲ +17 Anne of the Island
+ ▲ +53 The Winter of Our Discontent
+ ▲ +69 The Shining
+ ▼ -3 The Tenant of Wildfell Hall
+ ▼ -90 First Family
+ ▼ -19 The Partner
+ ▲ +124 The Girl on the Train
+ ▲ +28 The Black Arrow: A Tale of the Two Roses
+ ▲ +8 The Choice
+ ▲ +15 The Virginian: A Horseman of the Plains
+ ▼ -46 A Walk to Remember
+ ▲ +67 The Maze Runner
+ ▲ +66 The Westing Game
+ ▲ +23 Misty of Chincoteague
+ ▲ +121 Diary of a Wimpy Kid: The Last Straw
+ ▼ -30 King Solomon's Mines
+ ▲ +11 Jacob Have I Loved
+ ▲ +84 Mrs. Frisby and the Rats of NIMH
+ ▲ +31 Misery
+ ▼ -24 The Cider House Rules
+ ▲ +41 King of the Wind
+ ▲ +31 The Once and Future King
+ ▲ +56 The Witches
+ ▲ +48 The Subtle Knife
+ ▲ +73 When You Reach Me
+ ▲ +19 Carrie
+ ▲ +13 The Moon and Sixpence
+ ▲ +51 The Higher Power of Lucky
+ ▲ +68 Looking Backward, 2000-1887
+ ▲ +125 The Wings of the Dove
+ ▼ -24 The Summer of the Swans
+ ▼ -64 Dangerous Liaisons
+ ▲ +14 Jurassic Park
+ ▲ +85 The Absolutely True Diary of a Part-time Indian
+ ▼ -1 The Grey King
+ ▲ +62 The Leopard
+ ▼ -14 The Mammoth Hunters
+ ▲ +49 The Trumpet of the Swan
+ ▲ +38 The Lucky One
+ ▲ +56 These Happy Golden Years
+ ▲ +56 Arrowsmith
+ ▲ +59 Julie of the Wolves
+ ▲ +23 The Screwtape Letters
+ ▲ +380 The Fall
+ ▲ +7 The No. 1 Ladies' Detective Agency
+ ▼ -43 Worst Case
+ ▲ +21 Lost Horizon
+ ▲ +17 The Gunslinger
+ ▲ +14 The Slave Dancer
+ ▲ +34 Harry Potter and the Half-Blood Prince
+ ▲ +21 Inkheart
+ ▲ +56 Ramona and her Father
+ ▲ +45 Inkspell
+ ▲ +50 Ramona the Pest
+ ▲ +85 Walk Two Moons
+ ▼ -28 Miss Peregrine's Home for Peculiar Children
+ ▲ +28 The Chocolate War
+ ▲ +18 Sophie's Choice
+ ▲ +95 Looking for Alaska
+ ▲ +38 Breakfast at Tiffany's
+ ▲ +18 The Razor's Edge
+ ▼ -17 Dreamcatcher
+ ▲ +180 Orlando
+ ▲ +104 The Things they Carried
+ ▲ +110 Little Town on the Prairie
+ ▲ +3 Nights in Rodanthe
+ ▲ +70 The Amber Spyglass
+ ▲ +111 The Miraculous Journey of Edward Tulane
+ ▲ +36 Flatland
+ ▲ +250 Diary of a Wimpy Kid
+ ▼ -3 The Memory Keeper's Daughter
+ ▲ +35 The Wedding
+ ▲ +31 Fried Green Tomatoes at the Whistle-Stop Cafe
+ ▲ +17 The Cricket in Times Square
+ ▲ +62 The Phantom Tollbooth
+ ▲ +73 Rob Roy
+ ▲ +8 The Death of Ivan Ilych
+ ▼ -14 Alex Cross's Trial
+ ▲ +435 Kenilworth
+ ▲ +290 The Life and Opinions of Tristram Shandy
+ ▲ +30 M.C. Higgins, The Great
+ ▲ +51 Call It Courage
+ ▲ +159 Go Set a Watchman
+ ▲ +25 Bleachers
+ ▲ +77 Elijah of Buxton
+ ▼ -1 Swimsuit
+ ▲ +63 Cat's Cradle
+ ▲ +50 The Caine Mutiny
+ ▲ +26 The Heart of the Matter
+ ▲ +63 Harriet, the Spy
+ ▲ +51 Darkness at Noon
+ ▲ +78 A Prayer for Owen Meany
+ ▲ +36 The God of Small Things
+ ▲ +47 The Associate
+ ▲ +78 The Shack
+ ▲ +44 The Naked and the Dead
+ ▲ +88 The Sea of Monsters
+ ▲ +75 Stranger in a Strange Land
+ ▲ +10 Vision in White
+ ▲ +51 The Whipping Boy
+ ▲ +41 Room
+ ▲ +26 Deception Point</code></pre>
+</div>
+</div>
+<div id="3bd020c9" class="cell" data-execution_count="17">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"oclc_holdings_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>                                title                  author  top_500_rank  \
+0                         Don Quixote     Miguel de Cervantes             1   
+1    Alice's Adventures in Wonderland           Lewis Carroll             2   
+2  The Adventures of Huckleberry Finn              Mark Twain             3   
+3        The Adventures of Tom Sawyer              Mark Twain             4   
+4                     Treasure Island  Robert Louis Stevenson             5   
+
+   oclc_holdings_rank  
+0                 9.0  
+1                18.0  
+2                 6.0  
+3                 7.0  
+4                 1.0  
+                  title                  author  top_500_rank  \
+4       Treasure Island  Robert Louis Stevenson             5   
+5   Pride and Prejudice             Jane Austen             6   
+88           Persuasion             Jane Austen            89   
+7             Jane Eyre        Charlotte Brontë             8   
+6     Wuthering Heights            Emily Brontë             7   
+
+    oclc_holdings_rank  
+4                  1.0  
+5                  2.0  
+88                 3.0  
+7                  4.0  
+6                  5.0  </code></pre>
+</div>
+</div>
+<div id="aabdf2f6" class="cell" data-execution_count="18">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> df.head(<span class="dv">10</span>)</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>smaller_df[<span class="st">'points_moved'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="18">
+<pre><code>np.float64(4.9)</code></pre>
+</div>
+</div>
+<p>Comparing the average points of movement between the top 500 and 3 other ranking lists, we can see that the novels moved the least when compared to the number of holdings ranking (45 pts). Novels were 2x more likely to move positions when compared to the number of editions ranking (82 pts) and 3x more likely to move when compared to GoodReads rankings (137 pts).</p>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Top 500 Novels Metadata Analysis"</span></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [exercise, solution, python, rankings, correlations]</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="co">#image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"</span></span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="co">  ipynb: default</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb36-16"><a href="#cb36-16" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb36-17"><a href="#cb36-17" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># Metadata Analysis</span></span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### By Aashna Sheth</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a>Let's start by reading our data into a pandas dataframe. A pandas dataframe is a structure used to hold file data. This structure has efficient methods used for manipulating and visualizing data.</span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv"</span>, sep<span class="op">=</span><span class="st">','</span>, header<span class="op">=</span><span class="dv">0</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a>Now, we can answer various questions using this structure, which we've named <span class="in">`df`</span>.</span>
+<span id="cb36-35"><a href="#cb36-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-36"><a href="#cb36-36" aria-hidden="true" tabindex="-1"></a>For example, let's look at counts related to author gender and name.</span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 209}</span></span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a>We see that about 70% of authors on the list are male and 30% are female.</span>
+<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-47"><a href="#cb36-47" aria-hidden="true" tabindex="-1"></a>Some authors appear multiple times on the list. Let's see which authors are most represented in the list.</span>
+<span id="cb36-48"><a href="#cb36-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-52"><a href="#cb36-52" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 429}</span></span>
+<span id="cb36-53"><a href="#cb36-53" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span>
+<span id="cb36-54"><a href="#cb36-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-55"><a href="#cb36-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-56"><a href="#cb36-56" aria-hidden="true" tabindex="-1"></a>Next, we can delve into some visualization work to understand where authors are from and what timeframe of publication is most represented in the top 500 list.</span>
+<span id="cb36-57"><a href="#cb36-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-60"><a href="#cb36-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-61"><a href="#cb36-61" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 451}</span></span>
+<span id="cb36-62"><a href="#cb36-62" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb36-63"><a href="#cb36-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-64"><a href="#cb36-64" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2060</span>, <span class="dv">50</span>)</span>
+<span id="cb36-65"><a href="#cb36-65" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> df[<span class="st">'pub_year'</span>].plot.hist(bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">'w'</span>)</span>
+<span id="cb36-66"><a href="#cb36-66" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)<span class="op">;</span></span>
+<span id="cb36-67"><a href="#cb36-67" aria-hidden="true" tabindex="-1"></a>plt.xticks(bins)<span class="op">;</span></span>
+<span id="cb36-68"><a href="#cb36-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-69"><a href="#cb36-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-70"><a href="#cb36-70" aria-hidden="true" tabindex="-1"></a>We can see that most books on the list were published between 1950 and 2000. Let's take a look at information about the oldest and newest books on the list.</span>
+<span id="cb36-71"><a href="#cb36-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-74"><a href="#cb36-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-75"><a href="#cb36-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 375}</span></span>
+<span id="cb36-76"><a href="#cb36-76" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span>
+<span id="cb36-77"><a href="#cb36-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-78"><a href="#cb36-78" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Oldest Book(s):"</span>)</span>
+<span id="cb36-79"><a href="#cb36-79" aria-hidden="true" tabindex="-1"></a>display(df[df[<span class="st">"pub_year"</span>]<span class="op">==</span>df[<span class="st">"pub_year"</span>].<span class="bu">min</span>()])</span>
+<span id="cb36-80"><a href="#cb36-80" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Newest Book(s):"</span>)</span>
+<span id="cb36-81"><a href="#cb36-81" aria-hidden="true" tabindex="-1"></a>display(df[df[<span class="st">"pub_year"</span>]<span class="op">==</span>df[<span class="st">"pub_year"</span>].<span class="bu">max</span>()])</span>
+<span id="cb36-82"><a href="#cb36-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-83"><a href="#cb36-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-84"><a href="#cb36-84" aria-hidden="true" tabindex="-1"></a>Let's take a look at where the authors are from!</span>
+<span id="cb36-85"><a href="#cb36-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-86"><a href="#cb36-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-89"><a href="#cb36-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-90"><a href="#cb36-90" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 272}</span></span>
+<span id="cb36-91"><a href="#cb36-91" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts().head(<span class="dv">5</span>)</span>
+<span id="cb36-92"><a href="#cb36-92" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-93"><a href="#cb36-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-94"><a href="#cb36-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-95"><a href="#cb36-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-96"><a href="#cb36-96" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb36-97"><a href="#cb36-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-98"><a href="#cb36-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-99"><a href="#cb36-99" aria-hidden="true" tabindex="-1"></a>Finally, let's unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?</span>
+<span id="cb36-100"><a href="#cb36-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-101"><a href="#cb36-101" aria-hidden="true" tabindex="-1"></a>For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.</span>
+<span id="cb36-102"><a href="#cb36-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-105"><a href="#cb36-105" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-106"><a href="#cb36-106" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-107"><a href="#cb36-107" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
+<span id="cb36-108"><a href="#cb36-108" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(df[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb36-109"><a href="#cb36-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-110"><a href="#cb36-110" aria-hidden="true" tabindex="-1"></a>  <span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[col_name])</span>
+<span id="cb36-111"><a href="#cb36-111" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
+<span id="cb36-112"><a href="#cb36-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-113"><a href="#cb36-113" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"gr_num_ratings_rank"</span>)</span>
+<span id="cb36-114"><a href="#cb36-114" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-115"><a href="#cb36-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-116"><a href="#cb36-116" aria-hidden="true" tabindex="-1"></a>Above you can see that the GoodReads rankings and the top 500 rankings aren't very aligned!</span>
+<span id="cb36-117"><a href="#cb36-117" aria-hidden="true" tabindex="-1"></a>What factors affect popularity on GoodReads compared to OCLC?</span>
+<span id="cb36-118"><a href="#cb36-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-121"><a href="#cb36-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-122"><a href="#cb36-122" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-123"><a href="#cb36-123" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb36-124"><a href="#cb36-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-125"><a href="#cb36-125" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_rankings(d, col_name):</span>
+<span id="cb36-126"><a href="#cb36-126" aria-hidden="true" tabindex="-1"></a>    rank_B <span class="op">=</span> d[col_name]</span>
+<span id="cb36-127"><a href="#cb36-127" aria-hidden="true" tabindex="-1"></a>    rank_A <span class="op">=</span> d[<span class="st">"top_500_rank"</span>]</span>
+<span id="cb36-128"><a href="#cb36-128" aria-hidden="true" tabindex="-1"></a>    title <span class="op">=</span> d[<span class="st">"title"</span>]</span>
+<span id="cb36-129"><a href="#cb36-129" aria-hidden="true" tabindex="-1"></a>    points_moved <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-130"><a href="#cb36-130" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (math.isnan(rank_B)):</span>
+<span id="cb36-131"><a href="#cb36-131" aria-hidden="true" tabindex="-1"></a>      points_moved <span class="op">=</span> <span class="dv">501</span></span>
+<span id="cb36-132"><a href="#cb36-132" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb36-133"><a href="#cb36-133" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> rank_B <span class="op">&gt;</span> <span class="bu">int</span>(rank_A):</span>
+<span id="cb36-134"><a href="#cb36-134" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_B <span class="op">-</span> rank_A</span>
+<span id="cb36-135"><a href="#cb36-135" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[31m ▼ -</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-136"><a href="#cb36-136" aria-hidden="true" tabindex="-1"></a>      <span class="cf">elif</span> rank_B <span class="op">&lt;</span> rank_A:</span>
+<span id="cb36-137"><a href="#cb36-137" aria-hidden="true" tabindex="-1"></a>          points_moved <span class="op">=</span> rank_A <span class="op">-</span> rank_B</span>
+<span id="cb36-138"><a href="#cb36-138" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[32m ▲ +</span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-139"><a href="#cb36-139" aria-hidden="true" tabindex="-1"></a>      <span class="cf">else</span>:</span>
+<span id="cb36-140"><a href="#cb36-140" aria-hidden="true" tabindex="-1"></a>          <span class="bu">print</span>(<span class="ss">f"</span><span class="ch">\u001b</span><span class="ss">[30m ● </span><span class="sc">{</span><span class="bu">int</span>(points_moved)<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span>title<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-141"><a href="#cb36-141" aria-hidden="true" tabindex="-1"></a>    d[<span class="st">"points_moved"</span>] <span class="op">=</span> <span class="bu">int</span>(points_moved)</span>
+<span id="cb36-142"><a href="#cb36-142" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d</span>
+<span id="cb36-143"><a href="#cb36-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-144"><a href="#cb36-144" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"gr_num_ratings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-145"><a href="#cb36-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-146"><a href="#cb36-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-147"><a href="#cb36-147" aria-hidden="true" tabindex="-1"></a>Let's see which novels had the most movement up or down!</span>
+<span id="cb36-148"><a href="#cb36-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-151"><a href="#cb36-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-152"><a href="#cb36-152" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-153"><a href="#cb36-153" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>])</span>
+<span id="cb36-154"><a href="#cb36-154" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"points_moved"</span>, <span class="st">"top_500_rank"</span>, <span class="st">"gr_num_ratings_rank"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb36-155"><a href="#cb36-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-156"><a href="#cb36-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-159"><a href="#cb36-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-160"><a href="#cb36-160" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-161"><a href="#cb36-161" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[<span class="st">'points_moved'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb36-162"><a href="#cb36-162" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"points_moved"</span>, <span class="st">"top_500_rank"</span>, <span class="st">"gr_num_ratings_rank"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb36-163"><a href="#cb36-163" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-164"><a href="#cb36-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-165"><a href="#cb36-165" aria-hidden="true" tabindex="-1"></a>Above we see that Steinbeck's "The Winter of Our Discontent", stayed at the same ranking of 397. Pride and Prejudice remained quite high as well.</span>
+<span id="cb36-166"><a href="#cb36-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-167"><a href="#cb36-167" aria-hidden="true" tabindex="-1"></a>20k Leagues under the sea dropped the most, from rank 37 in the top 500 list, to rank 481 in the goodreads list! Harry Potter and The Sea of Monsters rose up the most.</span>
+<span id="cb36-168"><a href="#cb36-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-171"><a href="#cb36-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-172"><a href="#cb36-172" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-173"><a href="#cb36-173" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb36-174"><a href="#cb36-174" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-175"><a href="#cb36-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-176"><a href="#cb36-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-177"><a href="#cb36-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-178"><a href="#cb36-178" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb36-179"><a href="#cb36-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-180"><a href="#cb36-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-181"><a href="#cb36-181" aria-hidden="true" tabindex="-1"></a>Let's take a look at some of these metrics for rankings based on number of editions and total holdings.</span>
+<span id="cb36-182"><a href="#cb36-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-185"><a href="#cb36-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-186"><a href="#cb36-186" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/', height: 1000}</span></span>
+<span id="cb36-187"><a href="#cb36-187" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb36-188"><a href="#cb36-188" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb36-189"><a href="#cb36-189" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
+<span id="cb36-190"><a href="#cb36-190" aria-hidden="true" tabindex="-1"></a><span class="co"># inspired by: https://www.sfu.ca/~mjbrydon/tutorials/BAinPy/08_correlation.html</span></span>
+<span id="cb36-191"><a href="#cb36-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-192"><a href="#cb36-192" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"gr_num_ratings_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb36-193"><a href="#cb36-193" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(df[<span class="st">'gr_num_ratings_rank'</span>], df[<span class="st">'top_500_rank'</span>]))</span>
+<span id="cb36-194"><a href="#cb36-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-195"><a href="#cb36-195" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb36-196"><a href="#cb36-196" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna() <span class="op">&amp;</span> df.oclc_holdings_rank.notna()]</span>
+<span id="cb36-197"><a href="#cb36-197" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_holdings_rank'</span>], dropped_df[<span class="st">'oclc_editions_rank'</span>]))</span>
+<span id="cb36-198"><a href="#cb36-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-199"><a href="#cb36-199" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
+<span id="cb36-200"><a href="#cb36-200" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna()]</span>
+<span id="cb36-201"><a href="#cb36-201" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_editions_rank'</span>], dropped_df[<span class="st">'top_500_rank'</span>]))</span>
+<span id="cb36-202"><a href="#cb36-202" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-203"><a href="#cb36-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-206"><a href="#cb36-206" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-207"><a href="#cb36-207" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-208"><a href="#cb36-208" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_editions_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-209"><a href="#cb36-209" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-210"><a href="#cb36-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-213"><a href="#cb36-213" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-214"><a href="#cb36-214" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-215"><a href="#cb36-215" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df[df[<span class="st">"points_moved"</span>] <span class="op">&lt;=</span> <span class="dv">500</span>]</span>
+<span id="cb36-216"><a href="#cb36-216" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"oclc_editions_rank"</span>)</span>
+<span id="cb36-217"><a href="#cb36-217" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-218"><a href="#cb36-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-221"><a href="#cb36-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-222"><a href="#cb36-222" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-223"><a href="#cb36-223" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb36-224"><a href="#cb36-224" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> df.head(<span class="dv">10</span>)</span>
+<span id="cb36-225"><a href="#cb36-225" aria-hidden="true" tabindex="-1"></a>smaller_df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb36-226"><a href="#cb36-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-227"><a href="#cb36-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-228"><a href="#cb36-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-229"><a href="#cb36-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-230"><a href="#cb36-230" aria-hidden="true" tabindex="-1"></a>---</span>
+<span id="cb36-231"><a href="#cb36-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-232"><a href="#cb36-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-235"><a href="#cb36-235" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-236"><a href="#cb36-236" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-237"><a href="#cb36-237" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"oclc_holdings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-238"><a href="#cb36-238" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-239"><a href="#cb36-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-242"><a href="#cb36-242" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-243"><a href="#cb36-243" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-244"><a href="#cb36-244" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"oclc_holdings_rank"</span>)</span>
+<span id="cb36-245"><a href="#cb36-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-246"><a href="#cb36-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-249"><a href="#cb36-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-250"><a href="#cb36-250" aria-hidden="true" tabindex="-1"></a><span class="co">#| colab: {base_uri: 'https://localhost:8080/'}</span></span>
+<span id="cb36-251"><a href="#cb36-251" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb36-252"><a href="#cb36-252" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> df.head(<span class="dv">10</span>)</span>
+<span id="cb36-253"><a href="#cb36-253" aria-hidden="true" tabindex="-1"></a>smaller_df[<span class="st">'points_moved'</span>].mean()</span>
+<span id="cb36-254"><a href="#cb36-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-255"><a href="#cb36-255" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-256"><a href="#cb36-256" aria-hidden="true" tabindex="-1"></a>Comparing the average points of movement between the top 500 and 3 other ranking lists, we can see that the novels moved the least when compared to the number of holdings ranking (45 pts). Novels were 2x more likely to move positions when compared to the number of editions ranking (82 pts) and 3x more likely to move when compared to GoodReads rankings (137 pts).</span>
+<span id="cb36-257"><a href="#cb36-257" aria-hidden="true" tabindex="-1"></a></span>
+</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
