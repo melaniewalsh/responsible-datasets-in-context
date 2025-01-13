@@ -337,7 +337,7 @@ Like Voyageurs NP in Minnesota, Everglades NP modifies their raw visit data in m
 
 What's more, the devices that the NPS uses to count visits---such as pneumatic tube counters or induction loop counters (magnetized coils of wire that are installed under a road, and that "trip" when a vehicle passes over them)---sometimes *break*.
 
-![An example of an induction loop, installed beneath a road (making it harder to detect when it breaks!).](https://upload.wikimedia.org/wikipedia/commons/8/8c/Inductance_detectors.jpg){#fig-induction width="300"}
+![An example of an induction loop, installed beneath a road (making it harder to detect when it breaks!).](images/Inductance_detectors.jpg){#fig-induction width="300"}
 
 For example, [according to the NPS data logs](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA), the induction loop counter at one of the main entrances at Crater Lake National Park in Oregon broke in 2012 and wasn't repaired for at least a year:
 
