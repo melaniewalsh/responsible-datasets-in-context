@@ -123,7 +123,7 @@ A national park is an area of land that a country's government deems important e
 
 In the United States, the very first National Park---Yellowstone National Park, in Wyoming---was signed into law in 1872 by President Ulysses S. Grant. 
 
-![Old Faithful, the most famous geyser of the whopping ~500 geysers at Yellowstone National Park. Photo credit: [NPS/Neal Herbert](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm).](https://www.nps.gov/yell/planyourvisit/images/ndh-yell-9306.jpg){#fig-yellowstone}
+![Lone Star Geyser, one of the whopping ~500 geysers at Yellowstone National Park. Photo credit: [NPS/Neal Herbert](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm).](https://www.nps.gov/yell/planyourvisit/images/ndh-yell-9306.jpg){#fig-yellowstone}
 
 Over the next several decades, a handful of other parks---such as Sequoia (1890), Yosemite (1890), Mount Rainier (1899), and Crater Lake (1902)---joined the system, too. 
 
@@ -144,7 +144,7 @@ So when and why did visit counting start at the U.S. National Parks? Well, accor
 
 But in 1965, the NPS started getting serious about counting visits. That year, the U.S. Congress passed [The Land and Water Conservation Fund Act of 1965](https://www.everycrsreport.com/reports/RL33531.html). This act created a new source of government money specifically dedicated to protecting natural resources and expanding outdoor recreation infrastructure. Because the act stipulated that the amount of money allocated to each area should be ["proportional to visitor use,"](https://www.nps.gov/subjects/socialscience/statistics-history.htm) the NPS buckled down on counting visitor use. They ["developed and institutionalized a formal system for collecting, compiling and reporting visitor use data."](https://www.nps.gov/subjects/socialscience/statistics-history.htm) 
 
-In 1979, the NPS comprehensively changed their counting procedure, and [all parks began tracking vistor use by month]((https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)) (as opposed to year) across 11 different statistics. This is why the datasets featured here begin in 1979.[^1] **Note: We aggregated monthly counts into yearly counts for the dataset featured in this essay. A dataset with visit counts by month is available in ["Explore the Data."](?tab=explore-the-data)**
+In 1979, the NPS comprehensively changed their counting procedure, and [all parks began tracking visitor use by month]((https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)) (as opposed to year) across 11 different statistics. This is why the datasets featured here begin in 1979.[^1] **Note: We aggregated monthly counts into yearly counts for the dataset featured in this essay. A dataset with visit counts by month is available in ["Explore the Data."](?tab=explore-the-data)**
 
 [^1]: The NPS also offers [annual visitation information between 1904-1979](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Historic%20Annual%20Recreation%20Visits%20(1904%20-%201979)), but it is a separate, less consistent dataset.
 

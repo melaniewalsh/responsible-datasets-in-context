@@ -84,7 +84,7 @@ df["author_nationality"].value_counts().head(5)
 ---
 
 
-Finally, let's unpack the differences between the GoodReads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?
+Finally, let's unpack the differences between the Goodreads ratings and the top 500 ratings. First, we should think about how we want to compare the two lists. Given that we have listed rankings by average rating and number of ratings, which metric would be better to use? Would we want to create another metric?
 
 For our purposes, we decided to use number of ratings, instead of average rating, as OCLC measures popularity by number of holdings, not how much patrons say they enjoy reading the books.
 
@@ -99,8 +99,8 @@ def top_5_comparison(col_name):
 top_5_comparison("gr_num_ratings_rank")
 ```
 
-Above you can see that the GoodReads rankings and the top 500 rankings aren't very aligned!
-What factors affect popularity on GoodReads compared to OCLC?
+Above you can see that the Goodreads rankings and the top 500 rankings aren't very aligned!
+What factors affect popularity on Goodreads compared to OCLC?
 
 ```{python}
 #| colab: {base_uri: 'https://localhost:8080/'}
@@ -217,6 +217,6 @@ smaller_df = df.head(10)
 smaller_df['points_moved'].mean()
 ```
 
-Comparing the average points of movement between the top 500 and 3 other ranking lists, we can see that the novels moved the least when compared to the number of holdings ranking (45 pts). Novels were 2x more likely to move positions when compared to the number of editions ranking (82 pts) and 3x more likely to move when compared to GoodReads rankings (137 pts).
+Comparing the average points of movement between the top 500 and 3 other ranking lists, we can see that the novels moved the least when compared to the number of holdings ranking (45 pts). Novels were 2x more likely to move positions when compared to the number of editions ranking (82 pts) and 3x more likely to move when compared to Goodreads rankings (137 pts).
 
 
