@@ -68,12 +68,12 @@ jobs:
       # This is created with renv
       # You can read more here: https://rstudio.github.io/renv/articles/renv.html
       # You can basically take a snapshot of your current environment, and it puts it in renv/ and renv.lock
-      # - name: Install R Dependencies
-      #   uses: r-lib/actions/setup-renv@v2
-      #   with:
-      #     cache-version: 1
-      #     # Because of the way we've reorganized files, I'm specifying that renv/ lives in the website/ directory (as opposed to the current working directory or root)
-      #     working-directory: website
+      - name: Install R Dependencies
+        uses: r-lib/actions/setup-renv@v2
+        with:
+          cache-version: 1
+          # Because of the way we've reorganized files, I'm specifying that renv/ lives in the website/ directory (as opposed to the current working directory or root)
+          working-directory: website
 
       # Render and publish the website
       # If file paths are wrong, that will break the whole site, so really try to read through the errors
