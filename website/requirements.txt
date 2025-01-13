@@ -112,3 +112,4 @@ widgetsnbextension==4.0.13
 zipp==3.21.0
 seaborn
 scipy
+plotly
