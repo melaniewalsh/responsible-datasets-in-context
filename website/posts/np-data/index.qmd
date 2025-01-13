@@ -299,7 +299,7 @@ How are the procedures for three different parks similar or different? For more,
 :::
 
 
-![An example of a pneumatic tube traffic counter, installed above the road.](https://upload.wikimedia.org/wikipedia/commons/d/d3/Metrocount_vehicle_classifier_system_on_B3033_-_geograph.org.uk_-_1033728.jpg?20110223182337){#fig-pneumatic-tube width="300"}
+![An example of a pneumatic tube traffic counter, installed above the road.](https://upload.wikimedia.org/wikipedia/commons/d/d3/Metrocount_vehicle_classifier_system_on_B3033_-_geograph.org.uk_-_1033728.jpg){#fig-pneumatic-tube width="300"}
 
 
 To count visits, most parks use a combination of automatic traffic counters and manual counting--—that is, staff members who use their eyeballs to literally count the number of people arriving by foot, bike, bus, cross-country skis, snowmobile, boat, canoe, etc. 
