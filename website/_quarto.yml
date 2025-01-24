@@ -2,13 +2,15 @@ project:
   type: website
   # output-dir: ../docs
 
+resources:
+  - CNAME
 render:
   - team:
       output-dir: ../docs/team
 
 execute:
   freeze: auto
-  
+
 website:
   image: images/responsible-logo.png
   twitter-card: true
