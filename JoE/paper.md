@@ -33,9 +33,11 @@ Data cannot be analyzed responsibly without deep knowledge of its social and his
 
 But despite its significance, social and historical knowledge and methodologies are one of the most neglected areas in undergraduate computing education. In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work and a bad habit that can become a dangerous habit as the stakes get higher. 
 
+The motivation for our data essays is also in spired by "Datasheets for Datasets" `[@Gebru:2021]`  which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process. 
+
 # Our Data Essays
 
-The general structure of our data essays are inspired by Heather Krause’s concept of a data biography and the content builds on "Datasheets for Datasets" `[@Gebru:2021]`  which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process. 
+The general structure of our data essays are inspired by Heather Krause’s concept of a data biography. 
 
 A data essay will and should differ depending on the data it describes, but most of our data essays try to address the following questions:
 
