@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -94,10 +94,10 @@ div.csl-indent {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-3ac9fa974af0dcf292c0e3eb90765ee4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-9869f689324faabfa002c3563f01e434.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -914,7 +914,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 <p>The OCLC’s definition of “literary greatness” is biased based on the libraries that OCLC represents, the list’s exclusive focus on physical books, and its emphasis on raw number of holdings, which is influenced by number of editions. OCLC acknowledges potential biases in their claims, noting that “The [top 500] list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.”</p>
 <p>A key reason we decided to collect additional data related to the list was to explore what kinds of works, and especially whose works, it represents. Drawing on author data gathered from VIAF, we can calculate some overall descriptive statistics for the list.</p>
 <p>Looking at the AUTHOR_GENDER column, we can count the number of authors identified as male and the number identified as female (VIAF only includes options for binary genders, which is discussed further below), and we can see that over 70% of the novels were written by men.</p>
-<div id="0ec694d2" class="cell" data-execution_count="1">
+<div id="00ea7d46" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -932,7 +932,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can use a similar approach to look at the nationalities of authors whose works are represented on the list. Focusing on the AUTHOR_NATIONALITY column, we can count how many times each country code appears, and see that over 80% of the novels were written by authors from the U.S. or the U.K.</p>
-<div id="60a4bc8e" class="cell" data-execution_count="2">
+<div id="7aa8728d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -972,7 +972,7 @@ Name: count, dtype: int64</code></pre>
 </figure>
 </div>
 <p>To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.</p>
-<div id="00c3c17e" class="cell" data-execution_count="3">
+<div id="3305d548" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -991,7 +991,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also get a sense of the immense influence of individual authors who appear on the list numerous times. The most represented authors are John Grisham (19 novels) and Charles Dickens (15 novels).</p>
-<div id="15f783e3" class="cell" data-execution_count="4">
+<div id="3d9dcb6f" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1012,7 +1012,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Drawing on slightly more complex techniques, we can see that there is a strong positive correlation (p=1.1165e-73, r=0.6985) between the current ranking of the Top 500 List and a ranking based on the total number of editions for each novel. This suggests that the more editions a novel has, the more likely it is to be higher on the list, which is relevant because European and American editing practices have long favored authors occupying dominant social positions. Historically, works by White authors and male authors are more likely to have been re-edited and re-issued and to be considered literary classics (Gates; Mandell).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="f3d39945" class="cell" data-execution_count="5">
+<div id="57f08d6e" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1036,7 +1036,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Similarly, we confirm that there is a very strong positive correlation (p=5.6541e-96, r=0.7642) between number of editions and number of holdings of a novel; the more editions a book has, the more total holdings are reported in OCLC.</p>
-<div id="98446d13" class="cell" data-execution_count="6">
+<div id="a566a8f3" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
@@ -1068,7 +1068,7 @@ Name: count, dtype: int64</code></pre>
 <p>Because we were interested in whose opinions are represented on the list, we wanted to bring in an alternate measure of popularity, and we decided to use information from Goodreads. Goodreads was appealing because of its prominence online (over 130 million users), which we hoped might help us consider the opinions of a somewhat different set of readers than those theoretically represented through the physical holdings of libraries. Melanie Walsh and Maria Antoniak, for example, have drawn on Goodreads reviews to analyze how social media users define the “Classics.” Drawing on this work, we compare the ranking of novels on OCLC’s original list of Top 500 novels to the rankings of those same novels based on Goodreads ratings and number of reviews. Through this comparison we aim to consider how social media users engage with “classic” and “popular” novels and to interrogate the relationship between canonicity and popularity, using information from different data sources.</p>
 <p>To unpack the differences between the Goodreads data and the Top 500 rankings, we first need to think about how we want to compare the two lists. Given that we have recorded Goodread rankings by average star rating and total number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use total number of ratings instead of average rating, since it seemed most closely related to how OCLC measures popularity–by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="0b153db8" class="cell" data-execution_count="7">
+<div id="d51b2774" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -1109,7 +1109,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the Goodreads rankings and the top 500 rankings aren’t very aligned! What factors might affect popularity on Goodreads compared to OCLC?</p>
-<div id="1dbd94cf" class="cell" data-execution_count="8">
+<div id="7e418762" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1162,7 +1162,7 @@ Metadata Activities
 <h2 class="anchored" data-anchor-id="full-text-data"><strong>FULL TEXT DATA</strong></h2>
 <p>In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis here, but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.</p>
 <p>You can find the full-text data here: <a href="https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv">https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv</a></p>
-<div id="2758035a" class="cell" data-execution_count="9">
+<div id="d683c0cb" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1175,7 +1175,7 @@ Metadata Activities
 <p>Let’s start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.</p>
 <p>The type-token ratio is a simple expression that calculates <code># of unique words / total words in a selection</code>. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.</p>
 <p>It’s helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we’re converting all the information in the column “text” into a list.</p>
-<div id="e7475948" class="cell" data-execution_count="10">
+<div id="55815c19" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
@@ -1214,41 +1214,41 @@ Metadata Activities
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>genre
-scifi         0.458056
-history       0.458000
-political     0.457917
-war           0.452100
-fantasy       0.449745
-action        0.446750
-thrillers     0.446189
-bildung       0.446140
-na            0.443442
-autobio       0.442333
-allegories    0.437850
-romance       0.430709
-mystery       0.428486
-horror        0.380100
+political     0.460217
+scifi         0.459811
+war           0.459300
+history       0.455263
+fantasy       0.453440
+bildung       0.448593
+thrillers     0.446922
+na            0.442765
+autobio       0.442600
+action        0.441500
+romance       0.431436
+allegories    0.430250
+mystery       0.421114
+horror        0.370200
 Name: ttr, dtype: float64</code></pre>
 </div>
 </div>
-<div id="513c7bbb" class="cell" data-execution_count="11">
+<div id="69d88c55" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> cleaned.sort_values(by<span class="op">=</span>[<span class="st">'ttr'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"ttr"</span>, <span class="st">"genre"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                  title                      author    ttr   genre
-                         Dombey And Son             Charles Dickens 0.5249      na
-                  The Cider House Rules                 John Irving 0.5094 bildung
-                          Mrs. Dalloway              Virginia Woolf 0.5047      na
-                       King of the Wind            Marguerite Henry 0.5045 history
-The Virginian: A Horseman of the Plains                 Owen Wister 0.4994      na
-                        Sophie's Choice              William Styron 0.4985 bildung
-                     A Walk to Remember             Nicholas Sparks 0.4971 romance
-               The Once and Future King                 T. H. White 0.4970 fantasy
-               Dream of the Red Chamber                  Cao Xueqin 0.4967      na
-                            Vanity Fair William Makepeace Thackeray 0.4965      na</code></pre>
+<pre><code>                                         title                      author    ttr     genre
+                              King of the Wind            Marguerite Henry 0.5132   history
+                                 Mrs. Dalloway              Virginia Woolf 0.5024        na
+                             The King of Torts                John Grisham 0.5004 thrillers
+                                   Vanity Fair William Makepeace Thackeray 0.4951        na
+                                Dombey And Son             Charles Dickens 0.4929        na
+A Sentimental Journey Through France and Italy             Laurence Sterne 0.4920        na
+                      The Once and Future King                 T. H. White 0.4918   fantasy
+                         The Cider House Rules                 John Irving 0.4910   bildung
+                                 Women in Love               D.H. Lawrence 0.4905        na
+                               Sophie's Choice              William Styron 0.4900   bildung</code></pre>
 </div>
 </div>
 <p>As we’ve seen in this quick example, some authors or genres seem to use a wider variety of words. However, this is just a first step in exploring text analysis with ttr. We’ve made some simplifications, like assuming our 1000-word sample perfectly represents a whole novel, and we haven’t delved into advanced techniques for parsing and cleaning text.</p>
@@ -1424,7 +1424,7 @@ Categories
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1738108971922" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
+<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1741126017670" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
 <td>
 <span class="listing-date">&nbsp;</span>
 </td>
