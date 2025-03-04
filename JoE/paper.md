@@ -5,15 +5,29 @@ tags:
   - Datasheets
 authors:
   - name: Melanie Walsh
-    affiliation: "1, 2" # (Multiple affiliations must be quoted)
-  - name: Author Without ORCID
+    affiliation: 1 # (Multiple affiliations must be quoted)
+  - name: Anna Preuss
     affiliation: 2
-affiliations:
- - name: Lyman Spitzer, Jr. Fellow, Princeton University
+  - name: Sylvia Fernandez
+    affiliation: 3
+  - name: Miriam Posner
+    affiliation: 4
+  - name: Amardeep Singh
+    affiliation: 5 
+  - name: Neel Gupta
+    affiliation:1
+  affiliations:
+ - name: Information School, University of Washington
    index: 1
- - name: University of Washington
+ - name: Department of English, University of Washington
    index: 2
-date: 20 February 2025
+ - name: Modern Languages and Literatures, The University of Texas at San Antonio
+   index: 3
+ - name: Department of Information Studies, University of California, Los Angeles
+   index: 4
+ - name: Department of English, Lehigh University
+   index: 5
+date: 4 March 2025
 bibliography: paper.bib
 
 ---
@@ -33,11 +47,12 @@ Data cannot be analyzed responsibly without deep knowledge of its social and his
 
 But despite its significance, social and historical knowledge and methodologies are one of the most neglected areas in undergraduate computing education. In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work and a bad habit that can become a dangerous habit as the stakes get higher. 
 
-The motivation for our data essays is also in spired by "Datasheets for Datasets" `[@Gebru:2021]`  which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process. 
+The motivation for our data essays is also inspired by "Datasheets for Datasets" `[@Gebru:2021]` which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process. 
+
 
 # Our Data Essays
 
-The general structure of our data essays are inspired by Heather Krause’s concept of a data biography. 
+The general structure of our data essays are inspired by Heather Krause’s concept of a ["data biography"](https://gijn.org/stories/data-biographies-getting-to-know-your-data/). 
 
 A data essay will and should differ depending on the data it describes, but most of our data essays try to address the following questions:
 
@@ -73,6 +88,7 @@ Similarly, the editors of sites like the [Colored Conventions Project](https://c
 
 # Future Contributions
 
- // NEED TO DO
+ If you would like to get in touch with the editorial team or propose a submission, refer to this ["link"](https://www.responsible-datasets-in-context.com/get-in-touch.html) for up to date instructions. 
 
 # References
+
