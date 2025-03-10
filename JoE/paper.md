@@ -38,7 +38,9 @@ Our project, [“Responsible Datasets in Context: Collaboratively Designing for 
 
 Beyond our specific educational goals, we also hope these datasets, essays, and accompanying materials will be useful and informative for the broader public. Our target audience is high school, undergraduate, or early graduate students in both the humanities and the social sciences.
 
-Our current set of datasets include["US National Park Visit Data (1979-2023)"](https://www.responsible-datasets-in-context.com/posts/np-data/), ["Top 500 'Greatest' Novels (1021-2015)"](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), ["African American Periodical Poetry (1900-1928)"](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html), and ["Gender Violence at the Border (1993-1998)"](https://www.responsible-datasets-in-context.com/posts/gender-violence/).
+Our current set of datasets include["US National Park Visit Data (1979-2023)"](https://www.responsible-datasets-in-context.com/posts/np-data/), ["Top 500 'Greatest' Novels (1021-2015)"](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), ["African American Periodical Poetry (1900-1928)"](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html), and ["Gender Violence at the Border (1993-1998)"](https://www.responsible-datasets-in-context.com/posts/gender-violence/). 
+
+Our general website can be found at [https://www.responsible-datasets-in-context.com/](https://www.responsible-datasets-in-context.com/) and materials are licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/). 
 
 
 # Statement of Need
@@ -47,7 +49,7 @@ Data cannot be analyzed responsibly without deep knowledge of its social and his
 
 But despite its significance, social and historical knowledge and methodologies are one of the most neglected areas in undergraduate computing education. In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work and a bad habit that can become a dangerous habit as the stakes get higher. 
 
-The motivation for our data essays is also inspired by "Datasheets for Datasets" `[@Gebru:2021]` which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process. 
+The motivation for our data essays is also inspired by "Datasheets for Datasets" `[@Gebru:2021]` which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process.
 
 
 # Our Data Essays
@@ -65,6 +67,18 @@ What’s in the data?
 What “counts” as a data point?
 What data is missing?
 How is uncertainty handled?
+
+
+# Instructional Design
+
+Alongside our data essays, each data resource is complimented with two pedagogical tools:
+- Exercises
+- Discussion and Activities
+
+Our Exercises section consists of coding tutorials and challenges specific to each dataset. Accompanying exercises are across both Python and R, and are designed around specific libraries and techniques in both languages. Exercises come with accompanying code and detailed instructions to help students work through data manipulation, visualization, and metric extraction. This approach to learning code for data science is grounded in contextual data and situates the code content around naturally emerging questions from the dataset and the data essays.
+
+The Discussion and Activites section focues more on interpretation, implications, and usability of the data rather than specific coding techniques. Although Activities often leverage skills or code from the exercise implicitly, the questions and content are more broad and wide-ranging. As a result, although we provide specific solutions for Exercises, we do not for the Discussion and Activities section. The Discussion and Activities section teaches a humanistic approach to the data by posing either suites of questions around a theme, or open ended questions that can support multiple different lines of inquiry.
+
 
 
 # Our Data Principles
@@ -88,7 +102,7 @@ Similarly, the editors of sites like the [Colored Conventions Project](https://c
 
 # Future Contributions
 
- If you would like to get in touch with the editorial team or propose a submission, refer to this ["link"](https://www.responsible-datasets-in-context.com/get-in-touch.html) for up to date instructions. 
+ If you would like to get in touch with the editorial team or propose a submission, refer to this ["link"](https://www.responsible-datasets-in-context.com/get-in-touch.html) for up to date instructions.
 
 # References
 
