@@ -40,6 +40,7 @@ editor: visual
 df-print: kable
 R.options:
   warn: false
+  knitr.graphics.auto_pdf: true
 code-tools: true
 bibliography: ../../references/references.bib
 ---
