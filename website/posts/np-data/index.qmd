@@ -1,5 +1,5 @@
 ---
-title: "U.S. National Park Visit Data (1979-2023)"
+title: "U.S. National Park Visit Data (1979-2024)"
 author: Melanie Walsh and Os Keyes
 format: 
   html:
@@ -32,7 +32,7 @@ listing:
     sort-ui: false
     filter-ui: true
 date: "2024-06"
-categories: [nature, environment, government, uncertainty, missing-data]
+categories: [nature, environment, government, advocacy, uncertainty, missing-data]
 image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Logo_of_the_United_States_National_Park_Service.svg/1200px-Logo_of_the_United_States_National_Park_Service.svg.png"
 format-links: [ipynb, pdf, docx]
 code-fold: true
@@ -44,29 +44,48 @@ code-tools: true
 bibliography: ../../references/references.bib
 ---
 
-::: {.panel-tabset .nav-pills}
-
+:::::::::::::::::::: {.panel-tabset .nav-pills}
 # Data Essay {#data-essay .tab-pane}
 
 ## Introduction
 
-This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to 2023. The NPS also collects visitation and use data about other park units, such as [national battlefields, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). However, information about other park units is not included in this particular dataset.
+This dataset contains the number of visits, per year, to each of the current [63 National Parks](https://en.wikipedia.org/wiki/List_of_national_parks_of_the_United_States#National_parks) administered by the United States National Park Service (NPS), from 1979 to 2024. The NPS also collects visitation and use data about other park units, such as [national battlefields, national rivers, and national monuments]((https://www.nps.gov/aboutus/national-park-system.htm)). You can explore and download this expanded data in the "Explore the Data" tab.
 
-::: {.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Brief Survey
+
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
-<br>
-<!-- Importing from https://observablehq.com/d//ac13d95a907715bf (forked, collaborative) -->
+```{ojs}
+//|echo: false
+import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles, viewof all_park_chart} from "ac13d95a907715bf"
+```
 
-::: {.content-hidden when-format="pdf"}
+## When NPS Visit Data Became Political
+
+![Credit: [SFGATE](https://www.sfgate.com/national-parks/article/national-park-protests-yosemite-webcams-20196304.php). Yosemite’s High Sierra webcam at 12:25 p.m., March 1, 2025. Screenshot via National Park Service.](https://s.hdnux.com/photos/01/47/41/44/27138314/3/ratio16x9_960.webp){#fig-protest}
+
+The context and significance of the National Park visit data shifted radically in early 2025. In March, the National Park Service was told to [keep quiet](https://www.nytimes.com/2025/03/06/climate/national-parks-record-visitors-trump.html) about the previous year's visit data, according to an [internal memo](https://drive.proton.me/urls/R5GHVKN21R#gasgVJ72Xh5G) shared by [Resistance Rangers](https://www.resistancerangers.org/). There would be no public communications rollout about visit numbers, as there had been in the past. This is especially surprising because 2024 was a record year. With more than 331 total million visits, more people had visited NPS sites than ever. Why would the NPS be told to keep quiet about their most popular year ever?
+
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles} from "ac13d95a907715bf"
+viewof all_park_chart
 ```
 
+Perhaps because President Donald Trump and his administration are actively trying to gut the NPS. In February 2025, Trump [fired \~1,000 NPS employees](https://apnews.com/article/trump-national-park-firings-doge-grand-teton-baedee0a748a6374eafb6f95aac5dadc) (and has since [hired back only a few of them despite two court orders](https://www.sfgate.com/national-parks/article/trump-still-dismantling-national-park-workforce-20230343.php)) and also moved to close visitor centers and other facilities. When asked why the NPS would choose not to share their 2024 visit numbers, former National Park Service Director Jonathan Jarvis told [SFGATE](https://www.sfgate.com/national-parks/article/national-park-record-visitor-numbers-downplayed-20206558.php):
+
+> The suppression of this data would not be coming from anyone in the NPS, which proudly displays the numbers every year (just look back at the last 20 years!). This decision would be forced on NPS by the DOI politicals or DOGE, worried about the high visitation numbers, the economic value, and the bad press coming from firing so many NPS employees.
+
+In addition to mass firings and closures, the Trump administration also pressured NPS to remove references to transgender people across its web pages and sites, even at the memorial for the Stonewall Riots where transgender people played integral roles. 
+
+In this essay, we emphasize that data is always approximate and imperfect, that it is shaped, inevitably, by human beings and their choices. In light of the Trump administration's attempted dismantling of the National Parks, it is worth underscoring that this NPS visit data is incredibly powerful, political, valuable, and carefully documented. This data proves how many people love the National Parks. And it proves that data can help us advocate for the institutions and communities that we care about most.
+
+## Dataset
+<br>
+
+::: {.content-hidden when-format="pdf"}
 ```{ojs}
 //|echo: false
 viewof selectedPark
@@ -94,7 +113,6 @@ tabulator.min.css`
 :::
 
 ::: {.callout-note icon="false" collapse="true"}
-
 ## View Summary of Columns
 
 ```{ojs}
@@ -103,50 +121,53 @@ viewof selectedColumns
 viewof dataSummaryView
 
 ```
-
 :::
 
-::: {.callout-tip icon=false}
+::: {.callout-tip icon="false"}
 ## Creative Commons License
-<p xmlns:cc="http://creativecommons.org/ns#" >This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""></a></p>
+
+<p xmlns:cc="http://creativecommons.org/ns#">
+
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
 :::
 
-The National Park datasets included here are drawn from data published by the U.S. NPS, and most (but not all) of the contextual information is drawn from material published by the NPS. 
+The National Park datasets included here are drawn from data published by the U.S. NPS, and most (but not all) of the contextual information is drawn from material published by the NPS.
 
-We decided to publish this version of the data, along with our own synthesized documentation and narrative, because the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find and to use, and the documentation is distributed across many different web pages, PDFs, and other documents. (The NPS has created an interactive [Microsoft Power BI dashboard](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm) to help users explore the data more easily.) 
+We decided to publish this version of the data, along with our own synthesized documentation and narrative, because the original data is made available in an [NPS data portal](https://irma.nps.gov/Stats/) that is relatively hard to find and to use, and the documentation is distributed across many different web pages, PDFs, and other documents. (The NPS has created an interactive [Microsoft Power BI dashboard](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm) to help users explore the data more easily.)
 
 The datasets were curated and published by Melanie Walsh, and the data essay was written by Melanie Walsh and Os Keyes.
 
 ## History
 
-A national park is an area of land that a country's government deems important enough to officially protect, preserve, and make available to the public. There are thousands of national parks around the world (some of which are featured in the Netflix documentary, ["Our Great National Parks,"](https://www.netflix.com/title/81086133) narrated by former President Barack Obama). 
+A national park is an area of land that a country's government deems important enough to officially protect, preserve, and make available to the public. There are thousands of national parks around the world (some of which are featured in the Netflix documentary, ["Our Great National Parks,"](https://www.netflix.com/title/81086133) narrated by former President Barack Obama).
 
-In the United States, the very first National Park---Yellowstone National Park, in Wyoming---was signed into law in 1872 by President Ulysses S. Grant. 
+In the United States, the very first National Park---Yellowstone National Park, in Wyoming---was signed into law in 1872 by President Ulysses S. Grant.
 
-![Lone Star Geyser, one of the whopping ~500 geysers at Yellowstone National Park. Photo credit: [NPS/Neal Herbert](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm).](https://www.nps.gov/yell/planyourvisit/images/ndh-yell-9306.jpg){#fig-yellowstone}
+![Lone Star Geyser, one of the whopping \~500 geysers at Yellowstone National Park. Photo credit: [NPS/Neal Herbert](https://www.nps.gov/yell/planyourvisit/exploreoldfaithful.htm).](https://www.nps.gov/yell/planyourvisit/images/ndh-yell-9306.jpg){#fig-yellowstone}
 
-Over the next several decades, a handful of other parks---such as Sequoia (1890), Yosemite (1890), Mount Rainier (1899), and Crater Lake (1902)---joined the system, too. 
+Over the next several decades, a handful of other parks---such as Sequoia (1890), Yosemite (1890), Mount Rainier (1899), and Crater Lake (1902)---joined the system, too.
 
 ::: {.callout-tip collapse="true"}
 # What is the most recent National Park?
-The most recently added National Park is [New River Gorge National Park](https://www.nps.gov/neri/index.htm) in West Virginia. It was designated in 2020. 
+
+The most recently added National Park is [New River Gorge National Park](https://www.nps.gov/neri/index.htm) in West Virginia. It was designated in 2020.
 :::
 
 ![Mount Rainier, also known by the Indigenous name Tahoma, is an active volcano and 14,411 feet tall. Mount Rainier National Park, which is 60 miles south-east of Seattle, Washington, was founded in 1899. Photo credit: [NPS (public domain)](https://www.nps.gov/media/photo/gallery-item.htm?pg=5003191&id=ca60fce5-155d-4519-3e7c-1200750746f6&gid=CA4C9908-155D-4519-3E19303DAEADE22C).](https://www.nps.gov/npgallery/GetAsset/ca60fce5-155d-4519-3e7c-1200750746f6/proxy/hires?){#fig-rainier}
 
-While the National Parks were originally created to protect precious, beautiful lands and to make them accessible to everyday people---a noble goal---it is important to remember that many of these lands were taken, sometimes forcibly, from Native American people who already owned, lived, and worked on them [@spence_dispossessing_2000; @beauchamp_beyond_2020]. Today, there are still calls for the NPS to [return the lands of the National Parks to Indigenous people.](https://www.theatlantic.com/magazine/archive/2021/05/return-the-national-parks-to-the-tribes/618395/) 
+While the National Parks were originally created to protect precious, beautiful lands and to make them accessible to everyday people---a noble goal---it is important to remember that many of these lands were taken, sometimes forcibly, from Native American people who already owned, lived, and worked on them [@spence_dispossessing_2000; @beauchamp_beyond_2020]. Today, there are still calls for the NPS to [return the lands of the National Parks to Indigenous people.](https://www.theatlantic.com/magazine/archive/2021/05/return-the-national-parks-to-the-tribes/618395/)
 
 In a similar vein, scholars have shown that early environmental conservation movements---movements that helped to spur the development of the National Parks---were troublingly intertwined with racism and eugenics movements [@beauchamp_beyond_2020]. These prejudiced origins, combined with continuing forms of environmental racism (e.g., many parks are located far from cities, with limited public transporation options and limited community outreach), have contributed to the marginalization of people of color and other minorities in the parks. Research has shown that white people visit the parks more than other racial groups [@weber_why_2013; @alba_covid-19s_2022; @floyd_coming_2002]. So while the National Parks are technically open to everyone, they are not equally accessible to everyone in the same way. And these exclusions shape the parks' visitation data even before it's counted.
 
-So when and why did visit counting start at the U.S. National Parks? Well, according to the NPS, the counting of park visits started [as early as 1904](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm) (more than 10 years before the National Park Service itself was officially created). But at this time, and for the next 50 years or so, their data collection methods were mostly [informal, inconsistent, and low-tech](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm). 
+So when and why did visit counting start at the U.S. National Parks? Well, according to the NPS, the counting of park visits started [as early as 1904](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm) (more than 10 years before the National Park Service itself was officially created). But at this time, and for the next 50 years or so, their data collection methods were mostly [informal, inconsistent, and low-tech](https://www.nps.gov/subjects/socialscience/visitor-use-statistics.htm).
 
 <!-- Yet over the next century, the NPS worked hard to make their methods more reliable, consistent, and technologically advanced. -->
 
-But in 1965, the NPS started getting serious about counting visits. That year, the U.S. Congress passed [The Land and Water Conservation Fund Act of 1965](https://www.everycrsreport.com/reports/RL33531.html). This act created a new source of government money specifically dedicated to protecting natural resources and expanding outdoor recreation infrastructure. Because the act stipulated that the amount of money allocated to each area should be ["proportional to visitor use,"](https://www.nps.gov/subjects/socialscience/statistics-history.htm) the NPS buckled down on counting visitor use. They ["developed and institutionalized a formal system for collecting, compiling and reporting visitor use data."](https://www.nps.gov/subjects/socialscience/statistics-history.htm) 
+But in 1965, the NPS started getting serious about counting visits. That year, the U.S. Congress passed [The Land and Water Conservation Fund Act of 1965](https://www.everycrsreport.com/reports/RL33531.html). This act created a new source of government money specifically dedicated to protecting natural resources and expanding outdoor recreation infrastructure. Because the act stipulated that the amount of money allocated to each area should be ["proportional to visitor use,"](https://www.nps.gov/subjects/socialscience/statistics-history.htm) the NPS buckled down on counting visitor use. They ["developed and institutionalized a formal system for collecting, compiling and reporting visitor use data."](https://www.nps.gov/subjects/socialscience/statistics-history.htm)
 
 In 1979, the NPS comprehensively changed their counting procedure, and [all parks began tracking visitor use by month]((https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)) (as opposed to year) across 11 different statistics. This is why the datasets featured here begin in 1979.[^1] **Note: We aggregated monthly counts into yearly counts for the dataset featured in this essay. A dataset with visit counts by month is available in ["Explore the Data."](?tab=explore-the-data)**
-
-[^1]: The NPS also offers [annual visitation information between 1904-1979](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Historic%20Annual%20Recreation%20Visits%20(1904%20-%201979)), but it is a separate, less consistent dataset.
 
 ```{r}
 
@@ -162,7 +183,7 @@ library(ggthemes)
 library("scales")
 
 # Load National Park Visitation data
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", stringsAsFactors = FALSE)
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv", stringsAsFactors = FALSE)
 
 # Specify the colorblind palette
 cb_palette <- colorblind_pal()(8)
@@ -182,9 +203,9 @@ ggplot(data = yellowstone_data) +
 
 ```
 
-While today's National Park data collection system is more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations (as the NPS [openly acknowledges](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm)). This data does *not* represent the *exact* number of people who visited the parks in the last 50 years---hardly! Think about how difficult it would be to count every single one of the millions of people who walked, hiked, backpacked, drove, shuttled, canoed, biked, or skied into each of the 63 different parks since 1979. These parks are located in dozens of different geographic areas, including mountains, volcanoes, deserts, canyons, wetlands, forests, and islands; the parks have experienced countless different weather conditions during this time, including blizzards, hurricanes, wildfires, avalanches, and extreme heat; and the parks have also been allocated varying amounts of money and staff members to do the counting. Given all this variability, it is simply not possible to count every single visit to every single National Park ever. 
+While today's National Park data collection system is more formal and sophisticated than the one that the NPS used in 1904, there are still many inconsistencies, flaws, and limitations, as the NPS [openly acknowledges](https://www.nps.gov/subjects/socialscience/visitor-use-statistics-dashboard.htm) and carefully documents . This data does *not* represent the *exact* number of people who visited the parks in the last 50 years. Think about how difficult it would be to count every single one of the millions of people who walked, hiked, backpacked, drove, shuttled, canoed, biked, or skied into each of the 63 different parks since 1979. These parks are located in dozens of different geographic areas, including mountains, volcanoes, deserts, canyons, wetlands, forests, and islands; the parks have experienced countless different weather conditions during this time, including blizzards, hurricanes, wildfires, avalanches, and extreme heat; and the parks have also been allocated varying amounts of money and staff members to do the counting. Given all this variability, it is simply not possible to count every single visit to every single National Park ever.
 
-We believe the National Park visit data is useful to study and consider precisely for this reason: because it helps demonstrate that **data never reflects reality precisely**. It also demonstrates that collecting and analyzing data, even when it is flawed and approximate, is sometimes worthwhile---but only if you fully understand the data's flaws, limitations, and history, and only if you incorporate these considerations into all subsequent analyses, interpretations, and takeaways.
+We believe the National Park visit data is useful to study and consider precisely for this reason: because it helps demonstrate that **data never reflects reality precisely**. But it also demonstrates that collecting and analyzing data, even when it is flawed and approximate, can be worthwhile and even powerful---but only if you fully understand the data's flaws, limitations, and history, and only if you incorporate these considerations into all subsequent analyses, interpretations, and takeaways.
 
 ## Where did the data come from? Who collected it? {#where-did-the-data-come-from-who-collected-it}
 
@@ -192,43 +213,40 @@ The National Park data on this website was originally organized and published by
 
 According [to the NPS](https://www.nps.gov/subjects/socialscience/statistics-history.htm), the Visitor Use Statistics program aims to:
 
-> - Provide a statistically valid, reliable, and uniform method of collecting and reporting visitor use data for each independent unit administered by the NPS
-> - Support regular collection, and timely publication, analysis and interpretation of these data
-> - Enact quality control checks, verify measurements, and ensure consistency and comparability of data among areas of the NPS
+> -   Provide a statistically valid, reliable, and uniform method of collecting and reporting visitor use data for each independent unit administered by the NPS
+> -   Support regular collection, and timely publication, analysis and interpretation of these data
+> -   Enact quality control checks, verify measurements, and ensure consistency and comparability of data among areas of the NPS
 
-We accessed the original data through the NPS's [Visitor Use Statistics data portal](https://irma.nps.gov/Stats/), which publishes visit use data in alignment with the program's stated goals. Through this portal, anyone can generate reports and download data for [different visit use categories](https://irma.nps.gov/Stats/Reports/National) and time periods---at both national and individual park levels. 
+We accessed the original data through the NPS's [Visitor Use Statistics data portal](https://irma.nps.gov/Stats/), which publishes visit use data in alignment with the program's stated goals. Through this portal, anyone can generate reports and download data for [different visit use categories](https://irma.nps.gov/Stats/Reports/National) and time periods---at both national and individual park levels.
 
 To download the data included here, we first selected ["National Reports"](https://irma.nps.gov/Stats/Reports/National) in the data portal, and we then selected the ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)) report type. Here are the selections we made:
 
-- For "Park Types," we selected only "National Parks."
-- For "Years," we selected all possible years (1979-2023).
-- For "Regions," we selected all possible regions. 
-- For "Field Type," we selected only "Recreation Visits" (excluding the other 10 possible statistics: "NonRecreation Visits," "Recreation Hours," "NonRecreation Hours," "Concessioner Lodging," "Concessioner Camping," "Tent Campers," "RV Campers," "Backcountry Campers," "NonRecreation Overnight Stays," and "Miscellaneous Overnight Stays").
-- For "Additional Fields," we selected "State" and "Region."
-- We also selected the option of viewing the report as an annual summary of visit counts (as opposed to monthly visit counts). 
+-   For "Park Types," we selected only "National Parks."
+-   For "Years," we selected all possible years (1979-2023).
+-   For "Regions," we selected all possible regions.
+-   For "Field Type," we selected only "Recreation Visits" (excluding the other 10 possible statistics: "NonRecreation Visits," "Recreation Hours," "NonRecreation Hours," "Concessioner Lodging," "Concessioner Camping," "Tent Campers," "RV Campers," "Backcountry Campers," "NonRecreation Overnight Stays," and "Miscellaneous Overnight Stays").
+-   For "Additional Fields," we selected "State" and "Region."
+-   We also selected the option of viewing the report as an annual summary of visit counts (as opposed to monthly visit counts).
 
+![Selections for National Park visit data generated with ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)).](images/query-builder-csv-screenshot.png){#fig-query-builder fig-alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics" width="90%"}
 
-![Selections for National Park visit data generated with ["Query Builder for Public Use Statistics (1979 - Last Calendar Year)"](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Public%20Use%20Statistics%20(1979%20-%20Last%20Calendar%20Year)).](images/query-builder-csv-screenshot.png){#fig-query-builder fig-alt="Selections for National Park visit data generated with Query Builder for Public Use Statistics" width=90%}
+If you choose to download this report as a CSV file, it will unfortunately not look exactly like the report pictured in @fig-query-builder; instead, the CSV will include all visit and use types, and it will include visit and use information by month rather than by year. When I (Melanie Walsh) have compiled this data to share with my students in the past, I have sometimes downloaded the CSV file, removed the columns that I'm not interested in, and aggregated the data by year programatically. In other cases, I have simply copied and pasted the annual summary report into a CSV file.
 
-If you choose to download this report as a CSV file, it will unfortunately not look exactly like the report pictured in @fig-query-builder; instead, the CSV will include all visit and use types, and it will include visit and use information by month rather than by year. When I (Melanie Walsh) have compiled this data to share with my students in the past, I have sometimes downloaded the CSV file, removed the columns that I'm not interested in, and aggregated the data by year programatically. In other cases, I have simply copied and pasted the annual summary report into a CSV file. 
-
-In either case, it is usually necessary to explicitly transform the format of the "RecreationVisits" column into a number and to remove the commas that separate the numbers by thousands (a transformation that you can do with spreadsheet applications like Excel or Google Sheets, or with a programming language like Python or R).
-Finally, we published the data to this project's GitHub repository for easier storage and access.
-
+In either case, it is usually necessary to explicitly transform the format of the "RecreationVisits" column into a number and to remove the commas that separate the numbers by thousands (a transformation that you can do with spreadsheet applications like Excel or Google Sheets, or with a programming language like Python or R). Finally, we published the data to this project's GitHub repository for easier storage and access.
 
 ## Why was the data collected? How is the data used?
 
 The NPS collects visit data partly because the government requires it, as we've already discussed. But the NPS also uses the visit data for other internal purposes---to help determine which parks might need more staff members and programming, which hiking trails might need more maintenance, which natural areas might need more protection, or which visitor centers might need more bathrooms.
 
-The visit data also helps the communities and businesses surrounding the parks understand how they can best provide and share resources, like emergency vehicles, sanitation, and water. For example, if there's been a large influx of hikers to Mount Rainier National Park in recent years, that would be an important thing for the surrounding community to know. Because those hikers would probably need more ambulance trips and rescue helicopters (unfortunately but inevitably), and the surrounding towns wouldn't want visitors to the National Park booking up all the available emergency vehicles in town. 
+The visit data also helps the communities and businesses surrounding the parks understand how they can best provide and share resources, like emergency vehicles, sanitation, and water. For example, if there's been a large influx of hikers to Mount Rainier National Park in recent years, that would be an important thing for the surrounding community to know. Because those hikers would probably need more ambulance trips and rescue helicopters (unfortunately but inevitably), and the surrounding towns wouldn't want visitors to the National Park booking up all the available emergency vehicles in town.
 
-![2021 report on NPS economic impact. Graphic credit: [NPS](https://www.nps.gov/orgs/1207/vse2020.htm).](https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg){#fig-economic-benefit fig-alt="2021 report on NPS economic impact. Graphic credit: [NPS](https://www.nps.gov/orgs/1207/vse2020.htm)" fig-align="center" width=90%}
+![2021 report on NPS economic impact. Graphic credit: [NPS](https://www.nps.gov/orgs/1207/vse2020.htm).](https://www.nps.gov/orgs/1207/images/ECONOMIC-2020.jpg){#fig-economic-benefit fig-alt="2021 report on NPS economic impact. Graphic credit: [NPS](https://www.nps.gov/orgs/1207/vse2020.htm)" fig-align="center" width="90%"}
 
-The visitation data also helps the NPS estimate the beneficial impact---economic and otherwise---that the parks have on nearby communities and the nation at large (@fig-economic-benefit). For example, in 2021, an [NPS report](https://www.nps.gov/grca/learn/news/visitor-use-spending-to-grand-canyon-2021.htm) showed that "4.5 million visitors to Grand Canyon National Park...spent an estimated $710 million in gateway regions near the park," which "supported 9,390 jobs in the local area." These estimations are important because they help the parks advocate for more funding, support, and attention.
+The visitation data also helps the NPS estimate the beneficial impact---economic and otherwise---that the parks have on nearby communities and the nation at large (@fig-economic-benefit). For example, in 2021, an [NPS report](https://www.nps.gov/grca/learn/news/visitor-use-spending-to-grand-canyon-2021.htm) showed that "4.5 million visitors to Grand Canyon National Park...spent an estimated \$710 million in gateway regions near the park," which "supported 9,390 jobs in the local area." These estimations are important because they help the parks advocate for more funding, support, and attention.
 
-The data is also frequently reported on by journalists, who use it to highlight the most popular parks and noteworthy visitation records, and to point their readers to parks where they might be able to find some peace and quiet (see articles in [Thrillist](https://www.thrillist.com/news/nation/most-visited-national-parks-ranked-nps), [Smithsonian](https://www.smithsonianmag.com/smart-news/most-and-least-popular-national-parks-2023-180983850/), and [CNN](https://www.cnn.com/travel/article/most-visited-us-national-park-sites-2022/index.html)). 
+The data is also frequently reported on by journalists, who use it to highlight the most popular parks and noteworthy visitation records, and to point their readers to parks where they might be able to find some peace and quiet (see articles in [Thrillist](https://www.thrillist.com/news/nation/most-visited-national-parks-ranked-nps), [Smithsonian](https://www.smithsonianmag.com/smart-news/most-and-least-popular-national-parks-2023-180983850/), and [CNN](https://www.cnn.com/travel/article/most-visited-us-national-park-sites-2022/index.html)).
 
-::: {.callout-tip}
+::: callout-tip
 ## Discussion Question 1
 
 How else might the National Park visit data be used? How might it be used by artists, historians, literary scholars, sociologists, or librarians?
@@ -250,17 +268,17 @@ To get started, let's load the dataset and examine a random sample of rows.
 library(dplyr, warn = FALSE)
 
 # Load National Park Visitation data
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2023.csv", stringsAsFactors = FALSE)
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv", stringsAsFactors = FALSE)
 
 ## Look at the structure of the dataset, randomly sample 10 rows
 np_data %>% slice_sample(n = 10)
 ```
 
-Here we see five columns -- "ParkName", "Region", "State", "Year", and "RecreationVisits." The first four are pretty self-explanatory, but why is the fifth labelled "RecreationVisits" rather than "Visits" or "Visitors"? 
+Here we see five columns -- "ParkName", "Region", "State", "Year", and "RecreationVisits." The first four are pretty self-explanatory, but why is the fifth labelled "RecreationVisits" rather than "Visits" or "Visitors"?
 
 It turns out that the NPS counts visits, not visitors (which would be more difficult to track), and they distinguish between different *kinds* of visits to their parks. First, there are *reportable* and *non-reportable* visits. When NPS employees or their families go to the parks, these visits are *non-reportable*. But pretty much everything else is *reportable*. Within *reportable* visits, there are two more types of visits: *recreation* and *non-recreation* visits. Recreation visits are when people are visiting the parks for fun, vacation, exercise, school trips, etc., and non-recreation visits are when people are visiting the parks for other reasons. For example, some people need to travel *through* the parks, either because a highway runs through the park, or because they live on "inholdings" (private property that is surrounded by a National Park on all sides). Other people need to visit the parks because they have business to conduct.
 
-Here's a [full list of the "reportable non-recreation" visits](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm), according to the NPS: 
+Here's a [full list of the "reportable non-recreation" visits](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm), according to the NPS:
 
 > -   Persons going to and from inholdings across significant parts of park land;
 > -   Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;
@@ -272,47 +290,43 @@ Here's a [full list of the "reportable non-recreation" visits](https://www.nps.g
 
 Carefully reviewing this list reveals that the term "recreation visit" excludes a significant number of visits and individuals. It also raises important questions about how the NPS distinguishes between different types of visits, which we will explore further below.
 
-::: {.callout-tip}
+::: callout-tip
 ## Discussion Question 2
 
-What are the potential consequences of considering these visits to be *non-recreation* vs. *recreation* visits? 
+What are the potential consequences of considering these visits to be *non-recreation* vs. *recreation* visits?
 
 For more, see [Discussion Q 2](?tab=discussion-%26-activities#discussion-2).
 :::
 
 ![Badlands National Park sign, gesturing to the South Unit's co-management between the Oglala Sioux Tribe and the NPS. Photo credit: [NPS](https://www.nps.gov/common/uploads/structured_data/62A55536-BD00-F301-462744BEDD8BA664.jpg?width=800&height=800&mode=crop&quality=90).](https://www.nps.gov/common/uploads/structured_data/62A55536-BD00-F301-462744BEDD8BA664.jpg?width=800&height=800&mode=crop&quality=90){#fig-badlands fig-align="center" width="80%"}
 
-The list also prompts us to consider those whose presence in the parks doesn't fit neatly into the "visit" category at all. For instance, a portion of Badlands National Park in South Dakota overlaps with the Pine Ridge Indian Reservation, which is ["owned by the Oglala Sioux Tribe and managed by the National Park Service under an agreement with the Tribe."](https://www.nps.gov/articles/000/stronghold-district.htm) According to the NPS, when traveling through this area, visitors might encounter "signs of religious worship" from Tribal members, such as "prayer sticks" or pieces of "brightly colored fabric tied to a shrub," and they are advised to "respect [the Tribal members'] beliefs and practices and leave these objects." These symbols woven into the landscape underscore that members of the Oglala Sioux Tribe are not visitors to the Badlands but stewards and residents with deep ancestral connections. It reveals that the National Park data's focus on "visits"—--whether reportable or non-reportable, recreational or non-recreational—--fails to account for those who are not visitors, those who own and live on the land, and those whose ancestors lived on the land before the NPS even existed. 
+The list also prompts us to consider those whose presence in the parks doesn't fit neatly into the "visit" category at all. For instance, a portion of Badlands National Park in South Dakota overlaps with the Pine Ridge Indian Reservation, which is ["owned by the Oglala Sioux Tribe and managed by the National Park Service under an agreement with the Tribe."](https://www.nps.gov/articles/000/stronghold-district.htm) According to the NPS, when traveling through this area, visitors might encounter "signs of religious worship" from Tribal members, such as "prayer sticks" or pieces of "brightly colored fabric tied to a shrub," and they are advised to "respect \[the Tribal members'\] beliefs and practices and leave these objects." These symbols woven into the landscape underscore that members of the Oglala Sioux Tribe are not visitors to the Badlands but stewards and residents with deep ancestral connections. It reveals that the National Park data's focus on "visits"—--whether reportable or non-reportable, recreational or non-recreational—--fails to account for those who are not visitors, those who own and live on the land, and those whose ancestors lived on the land before the NPS even existed.
 
 ## How was the data collected?
 
 At this point, we know *what* counts as visit, but *how* does the NPS actually count these visits and collect data? And how do they differentiate between the different types of visits? Take a moment and see if you come up with a few guesses.
 
-It turns out that each park counts visits differently. At many parks, *each entrance* at each park even counts visits differently. 
+It turns out that each park counts visits differently. At many parks, *each entrance* at each park even counts visits differently.
 
 If you go to the ["Park Reports"](https://irma.nps.gov/Stats/Reports/Park) tab in the NPS Data Portal, you can look up an individual park and download a PDF file called "Visitor Use Counting Procedures," which details exactly what procedures they use to count visits at this park. Most of the parks have several PDFs because their counting procedures have changed many times over the years!
 
-::: {.callout-tip}
+::: callout-tip
 ## Activity 2
 
 How are the procedures for three different parks similar or different? For more, see [Activity 2](?tab=discussion-%26-activities#activity-2).
 :::
 
-
 ![An example of a pneumatic tube traffic counter, installed above the road.](images/pneumatic-tube.jpg){#fig-pneumatic-tube width="300"}
 
-
-To count visits, most parks use a combination of automatic traffic counters and manual counting--—that is, staff members who use their eyeballs to literally count the number of people arriving by foot, bike, bus, cross-country skis, snowmobile, boat, canoe, etc. 
+To count visits, most parks use a combination of automatic traffic counters and manual counting--—that is, staff members who use their eyeballs to literally count the number of people arriving by foot, bike, bus, cross-country skis, snowmobile, boat, canoe, etc.
 
 Whether automatic or manual, these counts are usually modified with specially designed mathematical formulas, which are supposed to produce the most accurate estimate for recreation visits at any given location. Staff members add, subtract, multiply, and divide the counts based on a variety of factors, such as the season or the entrance (e.g. assuming that more people would likely be arriving in a car in the summer months at the most popular gate than in the winter months at the least popular gate).
 
 ![Table 1 from "VOYAGEURS NATIONAL PARK PUBLIC USE REPORTING AND COUNTING INSTRUCTIONS." Find the document here: https://irma.nps.gov/Stats/Reports/Park.](images/Voyageurs-table1.png)
-  
 
-For instance, in the summer months (May through November) at Voyageurs National Park in northern Minnesota---a park dominated by lakes and waterways---they [estimate visits](https://irma.nps.gov/Stats/Reports/Park) by taking the number of visits to visitor centers, and then adding the estimated number of fishermen, houseboaters, and backcountry overnight stays. To take just one of these categories as an example, they estimate the number of fishermen by "taking the sum of the visitor center counts and applying the regression equation in Table 1," which is displayed above. In August, that number would be `(-1.06) * VISITOR CENTER COUNTS  +  37,021`. However, if the month is November, and if the visitor count exceeds 17,00, "then fishermen are estimated at 0."  These detailed instructions point to the countless decisions and methodological choices that underlie the National Park visit data. These manipulations are arguably necessary to achieve "statistically valid, reliable, and uniform" collection methods and data, as is the program's goal, but they also reveal the ever persistent gap between recorded data and reality. 
+For instance, in the summer months (May through November) at Voyageurs National Park in northern Minnesota---a park dominated by lakes and waterways---they [estimate visits](https://irma.nps.gov/Stats/Reports/Park) by taking the number of visits to visitor centers, and then adding the estimated number of fishermen, houseboaters, and backcountry overnight stays. To take just one of these categories as an example, they estimate the number of fishermen by "taking the sum of the visitor center counts and applying the regression equation in Table 1," which is displayed above. In August, that number would be `(-1.06) * VISITOR CENTER COUNTS  +  37,021`. However, if the month is November, and if the visitor count exceeds 17,00, "then fishermen are estimated at 0." These detailed instructions point to the countless decisions and methodological choices that underlie the National Park visit data. These manipulations are arguably necessary to achieve "statistically valid, reliable, and uniform" collection methods and data, as is the program's goal, but they also reveal the ever persistent gap between recorded data and reality.
 
-
-``` {r}
+```{r}
 
 # Filter down to Voyageurs National Park
 voyageurs_data <- np_data %>% filter(ParkName == "Voyageurs NP")
@@ -326,14 +340,13 @@ ggplot(data = voyageurs_data) +
 
 ```
 
-
 Consider, next, Everglades National Park in Florida. At the Shark Valley Entrance, there is a pneumatic tube traffic counter (@fig-pneumatic-tube) that counts the number of cars that pass over it. The Everglades NP staff members then apply different mathematical operations to this number in order to arrive at what they think is the most accurate estimate of recreation visits:
 
 {{< pdf other_docs/Everglades_Visitor-Use-Counting-Procedures_2023.pdf width=100% height=500 >}}
 
-> The traffic count is divided by 2 to account for entry and exit.  The adjusted traffic count is reduced by the number of buses, the number of bicycles counted when the entrance station is open, 127 bicycles per month to account for after-hours use, and by 200 non-recreation vehicles per month October through May and 100 non-recreation vehicles per month June through September. The traffic count is further reduced by 350 non-reportable (NPS) vehicles per month. The reduced count is multiplied by 2.17 persons per vehicle. 
+> The traffic count is divided by 2 to account for entry and exit. The adjusted traffic count is reduced by the number of buses, the number of bicycles counted when the entrance station is open, 127 bicycles per month to account for after-hours use, and by 200 non-recreation vehicles per month October through May and 100 non-recreation vehicles per month June through September. The traffic count is further reduced by 350 non-reportable (NPS) vehicles per month. The reduced count is multiplied by 2.17 persons per vehicle.
 
-Like Voyageurs NP in Minnesota, Everglades NP modifies their raw visit data in many ways. Once again, these modifications are arguably necessary, but they are nevertheless extensive and almost certainly subject to debate. 
+Like Voyageurs NP in Minnesota, Everglades NP modifies their raw visit data in many ways. Once again, these modifications are arguably necessary, but they are nevertheless extensive and almost certainly subject to debate.
 
 What's more, the devices that the NPS uses to count visits---such as pneumatic tube counters or induction loop counters (magnetized coils of wire that are installed under a road, and that "trip" when a vehicle passes over them)---sometimes *break*.
 
@@ -341,23 +354,23 @@ What's more, the devices that the NPS uses to count visits---such as pneumatic t
 
 For example, [according to the NPS data logs](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CRLA), the induction loop counter at one of the main entrances at Crater Lake National Park in Oregon broke in 2012 and wasn't repaired for at least a year:
 
-> 2/1/2012 | The Traffic Counter at Annie Springs Entrance Station was not functioning properly and therefore we have a count of zero.
+> 2/1/2012 \| The Traffic Counter at Annie Springs Entrance Station was not functioning properly and therefore we have a count of zero.
 
-> 3/1/2012 | Broken counter at Annie Springs Entrance, unable to record numbers.
+> 3/1/2012 \| Broken counter at Annie Springs Entrance, unable to record numbers.
 
-> 4/1/2012 | Traffic counter was broken for the beginning of the month and may have low numbers.
+> 4/1/2012 \| Traffic counter was broken for the beginning of the month and may have low numbers.
 
-> 10/1/2012 | Counts estimated by Butch
+> 10/1/2012 \| Counts estimated by Butch
 
-> 11/1/2012 | TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE
+> 11/1/2012 \| TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE
 
-> 12/1/2012 | TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE
+> 12/1/2012 \| TRAFFIC COUNT AT ANNIE SPRINGS ENTRANCE NOT AVAILIBLE
 
-> 1/1/2013 | Traffic count at Annie Springs estimated.
+> 1/1/2013 \| Traffic count at Annie Springs estimated.
 
-> 2/1/2013 | Traffic count at Annie Springs estimated.
+> 2/1/2013 \| Traffic count at Annie Springs estimated.
 
-In some months, the broken counter meant that the number of recorded visits at this entrace was recorded as zero. In other months, park staff---including someone named Butch---decided to estimate the counts.
+In some months, the broken counter meant that the number of recorded visits at this entrance was recorded as zero. In other months, park staff---including someone named Butch---decided to estimate the counts.
 
 You can see a similar, but more severe, example of a broken counter at Carlsbad Caverns National Park in California, where it appears that visits have had a recent decline since 2019:
 
@@ -389,17 +402,17 @@ ggplot(data = carlsbad_data) +
 
 This decline may be due, in part, to the COVID-19 pandemic. But the NPS logs also show that the main induction loop counter at Carlsbad Caverns [broke in 2019 and has remained broken for multiple years](https://irma.nps.gov/Stats/SSRSReports/Park%20Specific%20Reports/Monthly%20Visitation%20Comments%20By%20Park?Park=CAVE):
 
-> 9/1/2019 | Traffic counter apparently has been broken since July. Traffic counts are estimated.  
+> 9/1/2019 \| Traffic counter apparently has been broken since July. Traffic counts are estimated.
 
-> 4/1/2020 | Main road traffic counter is broken, I have estimated the count.  
+> 4/1/2020 \| Main road traffic counter is broken, I have estimated the count.
 
-> 12/1/2020 | Corona virus closure that began in November ended on December 4th. Main road traffic counter remains broken.Possible problem with Loop Road counter.
+> 12/1/2020 \| Corona virus closure that began in November ended on December 4th. Main road traffic counter remains broken.Possible problem with Loop Road counter.
 
-> 4/1/2022 Main road traffic counter remains broken. Rattlesnake Springs traffic counter seems to be off, I will henceforth provide estimates.  
+> 4/1/2022 Main road traffic counter remains broken. Rattlesnake Springs traffic counter seems to be off, I will henceforth provide estimates.
 
-> 9/1/2023 | Loop Road and backcountry closed due to flood damage. Slaughter Canyon Cave remains closed Traffic counter on main road remains broken.  
+> 9/1/2023 \| Loop Road and backcountry closed due to flood damage. Slaughter Canyon Cave remains closed Traffic counter on main road remains broken.
 
-::: {.callout-tip}
+::: callout-tip
 ## Activity 1
 
 Now that we've talked about how data is collected (and the fragility of some of those methods), it's a good time to think about how even the same method, deployed at different places, might be differently unreliable. For more, see [Activity 1](?tab=discussion-%26-activities#activity-1-1).
@@ -409,7 +422,7 @@ Now that we've talked about how data is collected (and the fragility of some of 
 
 We already know that there is a lot missing from the National Park visit data. There are people who never make it the parks---and thus never make it into the dataset---because of environmental racism and a history of discrimination and colonialism that is intertwined with the parks. There are people who don't fit neatly into the category of a visit, such as those who live inside the parks. There are also people who are missed by the parks' various counting procedures and manipulations.
 
-What else might be missing or uncertain? It turns out that the data itself can point us to some answers.  An important step in Exploratory Data Analysis (EDA) is to analyze key summary statistics for your data, such as maximum, minimum, or average values. This step can reveal important patterns, problems, or inconsistencies in the data, and point to parts of a dataset's backstory that need to be researched and understood further. Exploring summary statistics for the National Park data--- specifically, minimum values---reveals a few curious outliers that point us to key areas of uncertainty.
+What else might be missing or uncertain? It turns out that the data itself can point us to some answers. An important step in Exploratory Data Analysis (EDA) is to analyze key summary statistics for your data, such as maximum, minimum, or average values. This step can reveal important patterns, problems, or inconsistencies in the data, and point to parts of a dataset's backstory that need to be researched and understood further. Exploring summary statistics for the National Park data--- specifically, minimum values---reveals a few curious outliers that point us to key areas of uncertainty.
 
 If you filter the National Park visit data for the parks with the lest (or minimum) number of visits since 1979, you will notice that there are some parks that had *zero* visits in a given year.
 
@@ -425,7 +438,7 @@ num_rows <- nrow(least_visited)
 least_visited  %>% slice_sample(n = min(10, num_rows))
 ```
 
-You might guess that there are no visits in these years because these parks are all located in remote places, like rural Alaska or American Samoa. 
+You might guess that there are no visits in these years because these parks are all located in remote places, like rural Alaska or American Samoa.
 
 If we look at the visitation trends for Kobuk Valley National Park in Alaska, for example, we can see that a couple of years with zero visits isn't a huge aberration from the trend:
 
@@ -448,19 +461,19 @@ If we look at the [visitation reports for Kobuk Valley in 2014](https://irma.nps
 
 In 2015, John Quinley, the Alaska regional spokesperson for the NPS, spoke with [the Anchorage Daily News about this issue](https://www.adn.com/outdoors/article/alaskas-little-visited-parks/2015/02/18/), and he admitted that "it might have been better if park statisticians had put something other than a zero in the visitor box for 2014 — say maybe a question mark."
 
-::: {.callout-tip}
+::: callout-tip
 ## Activity 3
 
 Can you find evidence of people visiting Kobuk Valley National Park in 2014 and 2015? For more, see [Activity 3](?tab=discussion-%26-activities#activity-3).
 :::
 
-::: {.callout-tip}
+::: callout-tip
 ## Discussion Question 3
 
 Why would you or wouldn't you want to record a question mark in this dataset? For more, see [Discussion Q 3](?tab=discussion-%26-activities#discussion-3).
 :::
 
-The decision not to record visits in certain years seems reasonable on its face, but we've also seen a *lot* of parks in more highly-frequented areas that, when faced with a similar situation, chose to provide an estimate for a certain year based on average counts from previous years, rather than simply declare that nobody visited. 
+The decision not to record visits in certain years seems reasonable on its face, but we've also seen a *lot* of parks in more highly-frequented areas that, when faced with a similar situation, chose to provide an estimate for a certain year based on average counts from previous years, rather than simply declare that nobody visited.
 
 When parks get more visits, they usually get more money, resources, and staff. Once outfitted with more funding, resources, and staff, they can usually attract and support even more visitors. By contrast, a dip in visitation data can potentially lead to a cycle of stagnation or decline. The choice to record zeros for Kobuk Valley NP in 2014 and 2015 was likely made out of a sense of scientific responsibility and integrity. It's unclear how, if at all, this choice impacted the park. But this example highlights how data collection decisions can have real-world impacts, and how the people making these choices are often aware of these impacts and must weigh trade-offs---not only from a scientific or statistical perspective, but also from a social, economic, political, and even personal perspective.
 
@@ -473,7 +486,6 @@ The NPS's visitation data is a valuable resource that gives us a glimpse into th
 ::: {#refs}
 :::
 
-
 ::: {#custom-footnotes}
 :::
 
@@ -482,8 +494,6 @@ The NPS's visitation data is a valuable resource that gives us a glimpse into th
 ## Explore the Data
 
 ::: {.content-hidden when-format="pdf"}
-
-
 ```{ojs}
 //|echo: false
 import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
@@ -522,7 +532,7 @@ viewof alldataSummaryView
 
 ## Programming Exercises
 
-The National Park visitation data by year and month is well-suited for teaching introductory data analysis, manipulation, and visualization methods. 
+The National Park visitation data by year and month is well-suited for teaching introductory data analysis, manipulation, and visualization methods.
 
 Based on our experience, the data is particularly useful for teaching filter and groupby functions, where students can, for example, filter by individual parks, states, or regions, or groupby and calculate summary statistics for different parks, states, regions, or years.
 
@@ -530,20 +540,22 @@ The data is also useful for teaching basic and advanced visualization methods, l
 
 When working on visualization methods, we often ask students to share plots in a communal class forum, such as a shared Google Doc or Discord/Slack. This approach can be effective for building community; showcasing different ways of representing similar data; and enabling instructors to identify common strengths or problems.
 
-::: {.panel-tabset .nav-pills}
+::::: {.panel-tabset .nav-pills}
 # R
 
 ::: {#exercise-posts-r}
 :::
 
 # Python
+
 ::: {#exercise-posts-python}
 :::
-:::
+:::::
 
 # Discussion & Activities {#discussion-and-activities}
 
-## Activity 1 
+## Activity 1
+
 ### Devices Will Break
 
 It is inevitable that the devices that the National Park Service uses to count visits to the parks — like induction loop counters installed on the road — will break. But they will also get *fixed* at different rates, in different locations, as we could see in the case of Crater Lake National Park (where a counter was fixed quickly) and Carlsbad Caverns National Park (where a broken counter from 2019 still has not been fixed).
@@ -560,7 +572,8 @@ With this in mind, look at the locations of the following parks. Suppose that ea
 | Yosemite NP        |                |        |
 | Mammoth Cave NP    |                |        |
 
-## Activity 2 
+## Activity 2
+
 ### Counting Procedures
 
 The National Park Service sometimes fills in missing data with hard numbers or approximates data by applying special mathematical formulas. This is necessary work, but it is also under-explained work.
@@ -569,7 +582,8 @@ To see this in action, go to [the NPS page that documents park reports](https://
 
 How are the procedures for these three parks similar or different? What kind of effect do you think this has on the resulting data? What do you think is the best way of documenting this information and communicating it to users of the data?
 
-## Activity 3 
+## Activity 3
+
 ### Missing Evidence
 
 In 2014 and 2015, Kobuk Valley National Park reported that there were zero visitors to the park.
@@ -578,15 +592,17 @@ Use publicly available internet data---[Flickr photos](https://www.flickr.com/),
 
 Based on your findings, how do you think, differently, if at all, about Kobuk Valley's decision to record zero visits and about alternative methods for counting visits?
 
-## Discussion Question 1 
+## Discussion Question 1
+
 ### Alternative Uses of the Data
 
 We discussed some of the ways the National Park visit data is used. How else might the data be used? How might it be used by artists, historians, literary scholars, sociologists, or librarians?
 
 ## Discussion Question 2
+
 ### "Non-Recreation" Visits
 
-Read through the [full list of the "reportable non-recreation" visits](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm), according to the NPS: 
+Read through the [full list of the "reportable non-recreation" visits](https://www.nps.gov/subjects/socialscience/nps-visitor-use-statistics-definitions.htm), according to the NPS:
 
 > -   Persons going to and from inholdings across significant parts of park land;
 > -   Commuter and other traffic using NPS-administered roads or waterways through a park for their convenience;
@@ -596,9 +612,10 @@ Read through the [full list of the "reportable non-recreation" visits](https://w
 > -   Citizens using NPS buildings for civic or local government business, or attending public hearings;
 > -   Outside research activities (visits and overnights) if independent of NPS legislated interests (e.g. meteorological research).
 
-What are the potential consequences of considering these visits to be *non-recreation* vs. *recreation* visits? 
+What are the potential consequences of considering these visits to be *non-recreation* vs. *recreation* visits?
 
 ## Discussion Question 3
+
 ### Recording Uncertainty
 
 In 2014 and 2015, Kobuk Valley National Park recorded zero visits, even though they decided not to count visits at all. John Quinley, the Alaska regional spokesperson for the NPS, spoke with [the Anchorage Daily News about this issue](https://www.adn.com/outdoors/article/alaskas-little-visited-parks/2015/02/18/), and he admitted that "it might have been better if park statisticians had put something other than a zero in the visitor box for 2014 — say maybe a question mark."
@@ -606,6 +623,6 @@ In 2014 and 2015, Kobuk Valley National Park recorded zero visits, even though t
 Why would you or wouldn't you want to record a question mark in this dataset? How would this impact a qualitative vs quantitative analysis of the data?
 
 What else could you use to record uncertainty? What would be the potential consequences of that choice?
-:::
+::::::::::::::::::::
 
-
+[^1]: The NPS also offers [annual visitation information between 1904-1979](https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Historic%20Annual%20Recreation%20Visits%20(1904%20-%201979)), but it is a separate, less consistent dataset.
