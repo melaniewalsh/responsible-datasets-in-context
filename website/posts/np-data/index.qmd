@@ -6,7 +6,7 @@ format:
     css: ../../styles.css
     # page-layout: full
   # ipynb: default
-  pdf: default
+  #pdf: default
   #docx: default
   #r: default
 listing:
