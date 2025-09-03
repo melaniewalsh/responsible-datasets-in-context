@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.42">
+<meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -23,8 +23,9 @@ ul.task-list li input[type="checkbox"] {
   vertical-align: middle;
 }
 /* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -35,7 +36,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -89,15 +90,16 @@ div.csl-indent {
 <link href="../../images/responsible-logo-white.png" rel="icon" type="image/png">
 <script src="../../site_libs/quarto-listing/list.min.js"></script>
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9869f689324faabfa002c3563f01e434.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-c9701912356f6454d35f11906a8f3dcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -336,7 +338,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -470,12 +472,6 @@ Brief Survey
 <!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
 <!-- 
 
-
-
-
-
-
-
 :::::{.cell}
 
 ```{.js .cell-code .hidden code-fold="undefined" startFrom="58" source-offset="0"}
@@ -488,6 +484,7 @@ import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, vi
 :::
 ::::
 :::::
+
 
 :::::{.cell}
 
@@ -505,6 +502,7 @@ tableContainer
 :::
 ::::
 :::::
+
 
 ::::::{.cell}
 
@@ -534,6 +532,7 @@ viewof copyUrlButton
 ::::
 :::::
 ::::::
+
 
 ::::::{.cell .hidden error=false warning=false}
 
@@ -565,19 +564,7 @@ tabulator.min.css`
 :::::
 ::::::
 
-
-
-
-
-
-
 <br>
-
-
-
-
-
-
 
 
 ::::::{.cell error=false warning=false}
@@ -608,12 +595,6 @@ viewof dataSummaryView
 ::::
 :::::
 ::::::
-
-
-
-
-
-
 -->
 <!-- 
 ::: {.callout-tip icon=false}
@@ -914,7 +895,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 <p>The OCLC’s definition of “literary greatness” is biased based on the libraries that OCLC represents, the list’s exclusive focus on physical books, and its emphasis on raw number of holdings, which is influenced by number of editions. OCLC acknowledges potential biases in their claims, noting that “The [top 500] list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.”</p>
 <p>A key reason we decided to collect additional data related to the list was to explore what kinds of works, and especially whose works, it represents. Drawing on author data gathered from VIAF, we can calculate some overall descriptive statistics for the list.</p>
 <p>Looking at the AUTHOR_GENDER column, we can count the number of authors identified as male and the number identified as female (VIAF only includes options for binary genders, which is discussed further below), and we can see that over 70% of the novels were written by men.</p>
-<div id="913a8865" class="cell" data-execution_count="1">
+<div id="f0c34829" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
@@ -932,7 +913,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can use a similar approach to look at the nationalities of authors whose works are represented on the list. Focusing on the AUTHOR_NATIONALITY column, we can count how many times each country code appears, and see that over 80% of the novels were written by authors from the U.S. or the U.K.</p>
-<div id="1807e96b" class="cell" data-execution_count="2">
+<div id="e01511b0" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -972,7 +953,7 @@ Name: count, dtype: int64</code></pre>
 </figure>
 </div>
 <p>To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.</p>
-<div id="4d0cb4ae" class="cell" data-execution_count="3">
+<div id="179e922c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -991,7 +972,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also get a sense of the immense influence of individual authors who appear on the list numerous times. The most represented authors are John Grisham (19 novels) and Charles Dickens (15 novels).</p>
-<div id="fe8e6371" class="cell" data-execution_count="4">
+<div id="716df1aa" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1012,7 +993,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Drawing on slightly more complex techniques, we can see that there is a strong positive correlation (p=1.1165e-73, r=0.6985) between the current ranking of the Top 500 List and a ranking based on the total number of editions for each novel. This suggests that the more editions a novel has, the more likely it is to be higher on the list, which is relevant because European and American editing practices have long favored authors occupying dominant social positions. Historically, works by White authors and male authors are more likely to have been re-edited and re-issued and to be considered literary classics (Gates; Mandell).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="6b6bde32" class="cell" data-execution_count="5">
+<div id="2ed9f0b3" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1036,7 +1017,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Similarly, we confirm that there is a very strong positive correlation (p=5.6541e-96, r=0.7642) between number of editions and number of holdings of a novel; the more editions a book has, the more total holdings are reported in OCLC.</p>
-<div id="973e1a73" class="cell" data-execution_count="6">
+<div id="64029170" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
@@ -1068,7 +1049,7 @@ Name: count, dtype: int64</code></pre>
 <p>Because we were interested in whose opinions are represented on the list, we wanted to bring in an alternate measure of popularity, and we decided to use information from Goodreads. Goodreads was appealing because of its prominence online (over 130 million users), which we hoped might help us consider the opinions of a somewhat different set of readers than those theoretically represented through the physical holdings of libraries. Melanie Walsh and Maria Antoniak, for example, have drawn on Goodreads reviews to analyze how social media users define the “Classics.” Drawing on this work, we compare the ranking of novels on OCLC’s original list of Top 500 novels to the rankings of those same novels based on Goodreads ratings and number of reviews. Through this comparison we aim to consider how social media users engage with “classic” and “popular” novels and to interrogate the relationship between canonicity and popularity, using information from different data sources.</p>
 <p>To unpack the differences between the Goodreads data and the Top 500 rankings, we first need to think about how we want to compare the two lists. Given that we have recorded Goodread rankings by average star rating and total number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use total number of ratings instead of average rating, since it seemed most closely related to how OCLC measures popularity–by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="e3c08f6d" class="cell" data-execution_count="7">
+<div id="8d98a27b" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
@@ -1109,7 +1090,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the Goodreads rankings and the top 500 rankings aren’t very aligned! What factors might affect popularity on Goodreads compared to OCLC?</p>
-<div id="288eef38" class="cell" data-execution_count="8">
+<div id="5f33d054" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -1162,7 +1143,7 @@ Metadata Activities
 <h2 class="anchored" data-anchor-id="full-text-data"><strong>FULL TEXT DATA</strong></h2>
 <p>In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis here, but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.</p>
 <p>You can find the full-text data here: <a href="https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv">https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv</a></p>
-<div id="7be2e6b6" class="cell" data-execution_count="9">
+<div id="53a3c0f2" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -1175,7 +1156,7 @@ Metadata Activities
 <p>Let’s start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.</p>
 <p>The type-token ratio is a simple expression that calculates <code># of unique words / total words in a selection</code>. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.</p>
 <p>It’s helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we’re converting all the information in the column “text” into a list.</p>
-<div id="dbb08ed7" class="cell" data-execution_count="10">
+<div id="ff545cbd" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
@@ -1214,41 +1195,41 @@ Metadata Activities
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>genre
-political     0.460550
-scifi         0.456544
-history       0.455225
-fantasy       0.453395
-war           0.451650
-bildung       0.449167
-action        0.445350
-thrillers     0.443556
-na            0.443539
-autobio       0.439600
-romance       0.432436
-allegories    0.429250
-mystery       0.422400
-horror        0.377800
+history       0.459119
+war           0.458950
+political     0.457383
+scifi         0.454122
+autobio       0.451333
+fantasy       0.450680
+bildung       0.446680
+thrillers     0.446633
+na            0.444032
+action        0.436750
+allegories    0.432000
+romance       0.431109
+mystery       0.427014
+horror        0.363200
 Name: ttr, dtype: float64</code></pre>
 </div>
 </div>
-<div id="0962fd41" class="cell" data-execution_count="11">
+<div id="0bcb3236" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> cleaned.sort_values(by<span class="op">=</span>[<span class="st">'ttr'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"ttr"</span>, <span class="st">"genre"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                  title                      author    ttr   genre
-                         Dombey And Son             Charles Dickens 0.5257      na
-                            Vanity Fair William Makepeace Thackeray 0.5075      na
-                          Mrs. Dalloway              Virginia Woolf 0.5033      na
-               The Once and Future King                 T. H. White 0.4996 fantasy
- Harry Potter and the Half-Blood Prince                J.K. Rowling 0.4977 fantasy
-                          Women in Love               D.H. Lawrence 0.4957      na
-                       King of the Wind            Marguerite Henry 0.4954 history
-                         The Two Towers              J.R.R. Tolkien 0.4951 fantasy
-The Virginian: A Horseman of the Plains                 Owen Wister 0.4914      na
-                  The Cider House Rules                 John Irving 0.4911 bildung</code></pre>
+<pre><code>                   title                      author    ttr     genre
+        King of the Wind            Marguerite Henry 0.5195   history
+           Mrs. Dalloway              Virginia Woolf 0.5049        na
+             Vanity Fair William Makepeace Thackeray 0.5004        na
+          Dombey And Son             Charles Dickens 0.4987        na
+   The Cider House Rules                 John Irving 0.4964   bildung
+        The Lovely Bones                Alice Sebold 0.4951        na
+The Once and Future King                 T. H. White 0.4944   fantasy
+       The King of Torts                John Grisham 0.4932 thrillers
+Dream of the Red Chamber                  Cao Xueqin 0.4922        na
+      A Walk to Remember             Nicholas Sparks 0.4907   romance</code></pre>
 </div>
 </div>
 <p>As we’ve seen in this quick example, some authors or genres seem to use a wider variety of words. However, this is just a first step in exploring text analysis with ttr. We’ve made some simplifications, like assuming our 1000-word sample perfectly represents a whole novel, and we haven’t delved into advanced techniques for parsing and cleaning text.</p>
@@ -1412,19 +1393,24 @@ Download Full Data (including hidden columns)
 <table class="quarto-listing-table table">
 <thead>
 <tr>
+
 <th>
 Date
 </th>
+
 <th>
 Title
 </th>
+
 <th>
 Categories
 </th>
+
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1742616244912" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
+
+<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1756925736605" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
 <td>
 <span class="listing-date">&nbsp;</span>
 </td>
@@ -1434,12 +1420,12 @@ Categories
 <td>
 <span class="listing-categories">exercise, solution, python, rankings, correlations</span>
 </td>
+
 </tr>
+
 </tbody>
 </table>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
@@ -1567,287 +1553,293 @@ window._ojs.selfContained = false;
 window._ojs.runtime.interpretFromScriptTags();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-  const viewSource = window.document.getElementById('quarto-view-source') ||
-                     window.document.getElementById('quarto-code-tools-source');
-  if (viewSource) {
-    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
-    viewSource.addEventListener("click", function(e) {
-      if (sourceUrl) {
-        // rstudio viewer pane
-        if (/\bcapabilities=\b/.test(window.location)) {
-          window.open(sourceUrl);
-        } else {
-          window.location.href = sourceUrl;
-        }
-      } else {
-        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
-        modal.show();
-      }
-      return false;
-    });
-  }
-  function toggleCodeHandler(show) {
-    return function(e) {
-      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
-      for (let i=0; i<detailsSrc.length; i++) {
-        const details = detailsSrc[i].parentElement;
-        if (show) {
-          details.open = true;
-        } else {
-          details.removeAttribute("open");
-        }
-      }
-      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
-      const fromCls = show ? "hidden" : "unhidden";
-      const toCls = show ? "unhidden" : "hidden";
-      for (let i=0; i<cellCodeDivs.length; i++) {
-        const codeDiv = cellCodeDivs[i];
-        if (codeDiv.classList.contains(fromCls)) {
-          codeDiv.classList.remove(fromCls);
-          codeDiv.classList.add(toCls);
-        } 
-      }
-      return false;
-    }
-  }
-  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
-  if (hideAllCode) {
-    hideAllCode.addEventListener("click", toggleCodeHandler(false));
-  }
-  const showAllCode = window.document.getElementById("quarto-show-all-code");
-  if (showAllCode) {
-    showAllCode.addEventListener("click", toggleCodeHandler(true));
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
         }
-        return container.innerHTML
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1855,185 +1847,161 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Top 500 \"Greatest\" Novels (1021-2015)"</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Anna Preus and Aashna Sheth</span></span>
@@ -2146,8 +2114,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-120"><a href="#cb25-120" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Importing from https://observablehq.com/d/8bb63a6cde9addff --&gt;</span></span>
 <span id="cb25-121"><a href="#cb25-121" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-124"><a href="#cb25-124" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb25-125"><a href="#cb25-125" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a><span class="in">import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"</span></span>
+<span id="cb25-125"><a href="#cb25-125" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb25-126"><a href="#cb25-126" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span>
 <span id="cb25-127"><a href="#cb25-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-128"><a href="#cb25-128" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-129"><a href="#cb25-129" aria-hidden="true" tabindex="-1"></a></span>
@@ -2155,113 +2123,113 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-131"><a href="#cb25-131" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-132"><a href="#cb25-132" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-135"><a href="#cb25-135" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb25-136"><a href="#cb25-136" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb25-137"><a href="#cb25-137" aria-hidden="true" tabindex="-1"></a><span class="in">//|output: false</span></span>
-<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a><span class="in">raw_data = fetchData("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv")</span></span>
+<span id="cb25-136"><a href="#cb25-136" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb25-137"><a href="#cb25-137" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
+<span id="cb25-138"><a href="#cb25-138" aria-hidden="true" tabindex="-1"></a>raw_data <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span>
 <span id="cb25-139"><a href="#cb25-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-140"><a href="#cb25-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-141"><a href="#cb25-141" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-144"><a href="#cb25-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb25-145"><a href="#cb25-145" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb25-146"><a href="#cb25-146" aria-hidden="true" tabindex="-1"></a><span class="in">//|output: false</span></span>
+<span id="cb25-145"><a href="#cb25-145" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb25-146"><a href="#cb25-146" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
 <span id="cb25-147"><a href="#cb25-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-148"><a href="#cb25-148" aria-hidden="true" tabindex="-1"></a><span class="in">// Example usage</span></span>
-<span id="cb25-149"><a href="#cb25-149" aria-hidden="true" tabindex="-1"></a><span class="in">generateTabulatorTableFromCSV(</span></span>
-<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a><span class="in">  "#table-container4",</span></span>
+<span id="cb25-148"><a href="#cb25-148" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
+<span id="cb25-149"><a href="#cb25-149" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb25-150"><a href="#cb25-150" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
 <span id="cb25-151"><a href="#cb25-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a><span class="in">  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv",</span></span>
-<span id="cb25-153"><a href="#cb25-153" aria-hidden="true" tabindex="-1"></a><span class="in">  {</span></span>
-<span id="cb25-154"><a href="#cb25-154" aria-hidden="true" tabindex="-1"></a><span class="in">    // displayedColumns: ["top_500_rank",</span></span>
-<span id="cb25-155"><a href="#cb25-155" aria-hidden="true" tabindex="-1"></a><span class="in">    // "title",</span></span>
-<span id="cb25-156"><a href="#cb25-156" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author",</span></span>
-<span id="cb25-157"><a href="#cb25-157" aria-hidden="true" tabindex="-1"></a><span class="in">    // "pub_year",</span></span>
-<span id="cb25-158"><a href="#cb25-158" aria-hidden="true" tabindex="-1"></a><span class="in">    // "orig_lang",</span></span>
-<span id="cb25-159"><a href="#cb25-159" aria-hidden="true" tabindex="-1"></a><span class="in">    // "genre",</span></span>
-<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_birth",</span></span>
-<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_death",</span></span>
-<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_gender",</span></span>
-<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_primary_lang",</span></span>
-<span id="cb25-164"><a href="#cb25-164" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_nationality",</span></span>
-<span id="cb25-165"><a href="#cb25-165" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_field_of_activity",</span></span>
-<span id="cb25-166"><a href="#cb25-166" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_occupation",</span></span>
-<span id="cb25-167"><a href="#cb25-167" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_holdings",</span></span>
-<span id="cb25-168"><a href="#cb25-168" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_eholdings",</span></span>
-<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_total_editions",</span></span>
-<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_holdings_rank",</span></span>
-<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_editions_rank",</span></span>
-<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_avg_rating",</span></span>
-<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_num_ratings",</span></span>
-<span id="cb25-174"><a href="#cb25-174" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_num_reviews",</span></span>
-<span id="cb25-175"><a href="#cb25-175" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_avg_rating_rank",</span></span>
-<span id="cb25-176"><a href="#cb25-176" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_num_ratings_rank",</span></span>
-<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a><span class="in">    // "oclc_owi",</span></span>
-<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a><span class="in">    // "author_viaf",</span></span>
-<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a><span class="in">    // "gr_url",</span></span>
-<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a><span class="in">    // "wiki_url",</span></span>
-<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a><span class="in">    // "pg_eng_url",</span></span>
-<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a><span class="in">    // "pg_orig_url"],</span></span>
+<span id="cb25-152"><a href="#cb25-152" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv"</span><span class="op">,</span></span>
+<span id="cb25-153"><a href="#cb25-153" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb25-154"><a href="#cb25-154" aria-hidden="true" tabindex="-1"></a>    <span class="co">// displayedColumns: ["top_500_rank",</span></span>
+<span id="cb25-155"><a href="#cb25-155" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "title",</span></span>
+<span id="cb25-156"><a href="#cb25-156" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author",</span></span>
+<span id="cb25-157"><a href="#cb25-157" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "pub_year",</span></span>
+<span id="cb25-158"><a href="#cb25-158" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "orig_lang",</span></span>
+<span id="cb25-159"><a href="#cb25-159" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "genre",</span></span>
+<span id="cb25-160"><a href="#cb25-160" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_birth",</span></span>
+<span id="cb25-161"><a href="#cb25-161" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_death",</span></span>
+<span id="cb25-162"><a href="#cb25-162" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_gender",</span></span>
+<span id="cb25-163"><a href="#cb25-163" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_primary_lang",</span></span>
+<span id="cb25-164"><a href="#cb25-164" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_nationality",</span></span>
+<span id="cb25-165"><a href="#cb25-165" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_field_of_activity",</span></span>
+<span id="cb25-166"><a href="#cb25-166" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_occupation",</span></span>
+<span id="cb25-167"><a href="#cb25-167" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_holdings",</span></span>
+<span id="cb25-168"><a href="#cb25-168" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_eholdings",</span></span>
+<span id="cb25-169"><a href="#cb25-169" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_total_editions",</span></span>
+<span id="cb25-170"><a href="#cb25-170" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_holdings_rank",</span></span>
+<span id="cb25-171"><a href="#cb25-171" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_editions_rank",</span></span>
+<span id="cb25-172"><a href="#cb25-172" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_avg_rating",</span></span>
+<span id="cb25-173"><a href="#cb25-173" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_num_ratings",</span></span>
+<span id="cb25-174"><a href="#cb25-174" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_num_reviews",</span></span>
+<span id="cb25-175"><a href="#cb25-175" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_avg_rating_rank",</span></span>
+<span id="cb25-176"><a href="#cb25-176" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_num_ratings_rank",</span></span>
+<span id="cb25-177"><a href="#cb25-177" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "oclc_owi",</span></span>
+<span id="cb25-178"><a href="#cb25-178" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "author_viaf",</span></span>
+<span id="cb25-179"><a href="#cb25-179" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "gr_url",</span></span>
+<span id="cb25-180"><a href="#cb25-180" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "wiki_url",</span></span>
+<span id="cb25-181"><a href="#cb25-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "pg_eng_url",</span></span>
+<span id="cb25-182"><a href="#cb25-182" aria-hidden="true" tabindex="-1"></a>    <span class="co">// "pg_orig_url"],</span></span>
 <span id="cb25-183"><a href="#cb25-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a><span class="in">//     columnPopups: [</span></span>
-<span id="cb25-185"><a href="#cb25-185" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Shortened title of the work",  // shorttitle</span></span>
-<span id="cb25-186"><a href="#cb25-186" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Inferred date of the work",    // inferreddate</span></span>
-<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Author of the work",           // author</span></span>
-<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Unique record ID",             // recordid</span></span>
-<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Rights code from HathiTrust",  // hathi_rights</span></span>
-<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Genres associated with the work",  // genres</span></span>
-<span id="cb25-191"><a href="#cb25-191" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Unique identifier for the title in the titles dataset (may contain duplicates for reprinted works)", // id</span></span>
-<span id="cb25-192"><a href="#cb25-192" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Unique volume ID from HathiTrust", // docid (htid)</span></span>
-<span id="cb25-193"><a href="#cb25-193" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Probability that the work is for a juvenile audience", // juvenileprob</span></span>
-<span id="cb25-194"><a href="#cb25-194" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Probability that the work is nonfiction", // nonficprob</span></span>
-<span id="cb25-195"><a href="#cb25-195" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Author’s authorized Name Authority Cooperative (NACO) heading", // author_authorized_heading</span></span>
-<span id="cb25-196"><a href="#cb25-196" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Author’s LCCN from id.loc.gov", // author_lccn</span></span>
-<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Author’s viaf.org cluster number", // author_viaf</span></span>
-<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a><span class="in">//   "Author’s Wikidata Q number"      // author_wikidata_qid</span></span>
-<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a><span class="in">// ],</span></span>
-<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a><span class="in">    // columnWidths: { "gender": "50px", "role": "75px", "mfa_degree": "100px", "prize_name": "100px" },</span></span>
-<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a><span class="in">    // currencyColumns: ["prize_amount"],</span></span>
-<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a><span class="in">    // categoryColumns: ["hathi_rights",  "genres","geographics"],</span></span>
-<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a><span class="in">    // sortColumns: ["prize_year"],</span></span>
-<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a><span class="in">    // sortOrders: ["desc"]</span></span>
-<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a><span class="in">    numericColumns: ["gr_num_ratings", "gr_num_reviews"]</span></span>
-<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a><span class="in">);</span></span>
+<span id="cb25-184"><a href="#cb25-184" aria-hidden="true" tabindex="-1"></a><span class="co">//     columnPopups: [</span></span>
+<span id="cb25-185"><a href="#cb25-185" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Shortened title of the work",  // shorttitle</span></span>
+<span id="cb25-186"><a href="#cb25-186" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Inferred date of the work",    // inferreddate</span></span>
+<span id="cb25-187"><a href="#cb25-187" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Author of the work",           // author</span></span>
+<span id="cb25-188"><a href="#cb25-188" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Unique record ID",             // recordid</span></span>
+<span id="cb25-189"><a href="#cb25-189" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Rights code from HathiTrust",  // hathi_rights</span></span>
+<span id="cb25-190"><a href="#cb25-190" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Genres associated with the work",  // genres</span></span>
+<span id="cb25-191"><a href="#cb25-191" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Unique identifier for the title in the titles dataset (may contain duplicates for reprinted works)", // id</span></span>
+<span id="cb25-192"><a href="#cb25-192" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Unique volume ID from HathiTrust", // docid (htid)</span></span>
+<span id="cb25-193"><a href="#cb25-193" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Probability that the work is for a juvenile audience", // juvenileprob</span></span>
+<span id="cb25-194"><a href="#cb25-194" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Probability that the work is nonfiction", // nonficprob</span></span>
+<span id="cb25-195"><a href="#cb25-195" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Author’s authorized Name Authority Cooperative (NACO) heading", // author_authorized_heading</span></span>
+<span id="cb25-196"><a href="#cb25-196" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Author’s LCCN from id.loc.gov", // author_lccn</span></span>
+<span id="cb25-197"><a href="#cb25-197" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Author’s viaf.org cluster number", // author_viaf</span></span>
+<span id="cb25-198"><a href="#cb25-198" aria-hidden="true" tabindex="-1"></a><span class="co">//   "Author’s Wikidata Q number"      // author_wikidata_qid</span></span>
+<span id="cb25-199"><a href="#cb25-199" aria-hidden="true" tabindex="-1"></a><span class="co">// ],</span></span>
+<span id="cb25-200"><a href="#cb25-200" aria-hidden="true" tabindex="-1"></a>    <span class="co">// columnWidths: { "gender": "50px", "role": "75px", "mfa_degree": "100px", "prize_name": "100px" },</span></span>
+<span id="cb25-201"><a href="#cb25-201" aria-hidden="true" tabindex="-1"></a>    <span class="co">// currencyColumns: ["prize_amount"],</span></span>
+<span id="cb25-202"><a href="#cb25-202" aria-hidden="true" tabindex="-1"></a>    <span class="co">// categoryColumns: ["hathi_rights",  "genres","geographics"],</span></span>
+<span id="cb25-203"><a href="#cb25-203" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sortColumns: ["prize_year"],</span></span>
+<span id="cb25-204"><a href="#cb25-204" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sortOrders: ["desc"]</span></span>
+<span id="cb25-205"><a href="#cb25-205" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"gr_num_ratings"</span><span class="op">,</span> <span class="st">"gr_num_reviews"</span>]</span>
+<span id="cb25-206"><a href="#cb25-206" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb25-207"><a href="#cb25-207" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
 <span id="cb25-208"><a href="#cb25-208" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-209"><a href="#cb25-209" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-210"><a href="#cb25-210" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-211"><a href="#cb25-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a>&lt;div id="progress-container" style="width: 100%; display: block;"&gt;</span>
-<span id="cb25-213"><a href="#cb25-213" aria-hidden="true" tabindex="-1"></a>  &lt;progress id="progress-bar" style="width: 100%;" max="100" value="0"&gt;&lt;/progress&gt;</span>
-<span id="cb25-214"><a href="#cb25-214" aria-hidden="true" tabindex="-1"></a>  &lt;div id="progress-text" style="text-align: center; margin-top: 5px;"&gt;&lt;/div&gt;</span>
-<span id="cb25-215"><a href="#cb25-215" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-212"><a href="#cb25-212" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-container"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%; display: block;"</span><span class="dt">&gt;</span></span>
+<span id="cb25-213"><a href="#cb25-213" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">progress</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-bar"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%;"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"0"</span><span class="dt">&gt;&lt;/</span><span class="kw">progress</span><span class="dt">&gt;</span></span>
+<span id="cb25-214"><a href="#cb25-214" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-text"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center; margin-top: 5px;"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb25-215"><a href="#cb25-215" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-216"><a href="#cb25-216" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-217"><a href="#cb25-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-218"><a href="#cb25-218" aria-hidden="true" tabindex="-1"></a>&lt;div id="table-container4" style="height: 500px"&gt;</span>
-<span id="cb25-219"><a href="#cb25-219" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-218"><a href="#cb25-218" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-container4"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height: 500px"</span><span class="dt">&gt;</span></span>
+<span id="cb25-219"><a href="#cb25-219" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-220"><a href="#cb25-220" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-221"><a href="#cb25-221" aria-hidden="true" tabindex="-1"></a>Download Full Data (including hidden columns)</span>
-<span id="cb25-222"><a href="#cb25-222" aria-hidden="true" tabindex="-1"></a>&lt;div id='button-container2'&gt;</span>
-<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-raw"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Full Data&lt;/button&gt;</span>
-<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a>  &lt;button id="copy-url"&gt;&lt;i class="fas fa-copy"&gt;&lt;/i&gt; Copy Full Data URL&lt;/button&gt;</span>
-<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-222"><a href="#cb25-222" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container2'</span><span class="dt">&gt;</span></span>
+<span id="cb25-223"><a href="#cb25-223" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-224"><a href="#cb25-224" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-225"><a href="#cb25-225" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-226"><a href="#cb25-226" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-227"><a href="#cb25-227" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
 <span id="cb25-228"><a href="#cb25-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a>&lt;div id='button-container'&gt;</span>
-<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-csv"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download CSV&lt;/button&gt;</span>
-<span id="cb25-231"><a href="#cb25-231" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-json"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download JSON&lt;/button&gt;</span>
+<span id="cb25-229"><a href="#cb25-229" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container'</span><span class="dt">&gt;</span></span>
+<span id="cb25-230"><a href="#cb25-230" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-231"><a href="#cb25-231" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
 <span id="cb25-232"><a href="#cb25-232" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- &lt;button id="download-xlsx"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Excel&lt;/button&gt; --&gt;</span></span>
-<span id="cb25-233"><a href="#cb25-233" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-233"><a href="#cb25-233" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-234"><a href="#cb25-234" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-235"><a href="#cb25-235" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-236"><a href="#cb25-236" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-237"><a href="#cb25-237" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon=false}</span>
 <span id="cb25-238"><a href="#cb25-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## Creative Commons License</span></span>
-<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a>&lt;p xmlns:cc="http://creativecommons.org/ns#" &gt;This work is licensed under &lt;a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;"&gt;CC BY 4.0&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""&gt;&lt;img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""&gt;&lt;/a&gt;&lt;/p&gt;</span>
+<span id="cb25-239"><a href="#cb25-239" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="ot"> </span><span class="dt">&gt;</span>This work is licensed under <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="dt">&gt;</span>CC BY 4.0<span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">""</span><span class="dt">&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb25-240"><a href="#cb25-240" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-241"><a href="#cb25-241" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb25-242"><a href="#cb25-242" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-243"><a href="#cb25-243" aria-hidden="true" tabindex="-1"></a>&lt;link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet"&gt;</span>
-<span id="cb25-244"><a href="#cb25-244" aria-hidden="true" tabindex="-1"></a>&lt;script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"&gt;&lt;/script&gt;</span>
+<span id="cb25-243"><a href="#cb25-243" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
+<span id="cb25-244"><a href="#cb25-244" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
 <span id="cb25-245"><a href="#cb25-245" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-246"><a href="#cb25-246" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-247"><a href="#cb25-247" aria-hidden="true" tabindex="-1"></a>----- </span>
@@ -2656,79 +2624,79 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb25-658"><a href="#cb25-658" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Importing from https://observablehq.com/d/8bb63a6cde9addff --&gt;</span></span>
 <span id="cb25-659"><a href="#cb25-659" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-662"><a href="#cb25-662" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb25-663"><a href="#cb25-663" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb25-664"><a href="#cb25-664" aria-hidden="true" tabindex="-1"></a><span class="in">//|output: false</span></span>
-<span id="cb25-665"><a href="#cb25-665" aria-hidden="true" tabindex="-1"></a><span class="in">raw_data2 = fetchData("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv")</span></span>
+<span id="cb25-663"><a href="#cb25-663" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb25-664"><a href="#cb25-664" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
+<span id="cb25-665"><a href="#cb25-665" aria-hidden="true" tabindex="-1"></a>raw_data2 <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span>
 <span id="cb25-666"><a href="#cb25-666" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-667"><a href="#cb25-667" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-670"><a href="#cb25-670" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb25-671"><a href="#cb25-671" aria-hidden="true" tabindex="-1"></a><span class="in">//|echo: false</span></span>
-<span id="cb25-672"><a href="#cb25-672" aria-hidden="true" tabindex="-1"></a><span class="in">//|output: false</span></span>
+<span id="cb25-671"><a href="#cb25-671" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb25-672"><a href="#cb25-672" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
 <span id="cb25-673"><a href="#cb25-673" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-674"><a href="#cb25-674" aria-hidden="true" tabindex="-1"></a><span class="in">// Example usage</span></span>
-<span id="cb25-675"><a href="#cb25-675" aria-hidden="true" tabindex="-1"></a><span class="in">generateTabulatorTableFromCSV(</span></span>
-<span id="cb25-676"><a href="#cb25-676" aria-hidden="true" tabindex="-1"></a><span class="in">  "#table-container2",</span></span>
+<span id="cb25-674"><a href="#cb25-674" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
+<span id="cb25-675"><a href="#cb25-675" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb25-676"><a href="#cb25-676" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container2"</span><span class="op">,</span></span>
 <span id="cb25-677"><a href="#cb25-677" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-678"><a href="#cb25-678" aria-hidden="true" tabindex="-1"></a><span class="in">  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv",</span></span>
-<span id="cb25-679"><a href="#cb25-679" aria-hidden="true" tabindex="-1"></a><span class="in">  {</span></span>
-<span id="cb25-680"><a href="#cb25-680" aria-hidden="true" tabindex="-1"></a><span class="in">    displayedColumns: [</span></span>
-<span id="cb25-681"><a href="#cb25-681" aria-hidden="true" tabindex="-1"></a><span class="in">      "top_500_rank",</span></span>
-<span id="cb25-682"><a href="#cb25-682" aria-hidden="true" tabindex="-1"></a><span class="in">      "title",</span></span>
-<span id="cb25-683"><a href="#cb25-683" aria-hidden="true" tabindex="-1"></a><span class="in">      "author",</span></span>
-<span id="cb25-684"><a href="#cb25-684" aria-hidden="true" tabindex="-1"></a><span class="in">      "pub_year",</span></span>
-<span id="cb25-685"><a href="#cb25-685" aria-hidden="true" tabindex="-1"></a><span class="in">      "orig_lang",</span></span>
-<span id="cb25-686"><a href="#cb25-686" aria-hidden="true" tabindex="-1"></a><span class="in">      "genre",</span></span>
-<span id="cb25-687"><a href="#cb25-687" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_birth",</span></span>
-<span id="cb25-688"><a href="#cb25-688" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_death",</span></span>
-<span id="cb25-689"><a href="#cb25-689" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_gender",</span></span>
-<span id="cb25-690"><a href="#cb25-690" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_primary_lang",</span></span>
-<span id="cb25-691"><a href="#cb25-691" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_nationality",</span></span>
-<span id="cb25-692"><a href="#cb25-692" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_field_of_activity",</span></span>
-<span id="cb25-693"><a href="#cb25-693" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_occupation",</span></span>
-<span id="cb25-694"><a href="#cb25-694" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_holdings",</span></span>
-<span id="cb25-695"><a href="#cb25-695" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_eholdings",</span></span>
-<span id="cb25-696"><a href="#cb25-696" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_total_editions",</span></span>
-<span id="cb25-697"><a href="#cb25-697" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_holdings_rank",</span></span>
-<span id="cb25-698"><a href="#cb25-698" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_editions_rank",</span></span>
-<span id="cb25-699"><a href="#cb25-699" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_avg_rating",</span></span>
-<span id="cb25-700"><a href="#cb25-700" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_num_ratings",</span></span>
-<span id="cb25-701"><a href="#cb25-701" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_num_reviews",</span></span>
-<span id="cb25-702"><a href="#cb25-702" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_avg_rating_rank",</span></span>
-<span id="cb25-703"><a href="#cb25-703" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_num_ratings_rank",</span></span>
-<span id="cb25-704"><a href="#cb25-704" aria-hidden="true" tabindex="-1"></a><span class="in">      "oclc_owi",</span></span>
-<span id="cb25-705"><a href="#cb25-705" aria-hidden="true" tabindex="-1"></a><span class="in">      "author_viaf",</span></span>
-<span id="cb25-706"><a href="#cb25-706" aria-hidden="true" tabindex="-1"></a><span class="in">      "gr_url",</span></span>
-<span id="cb25-707"><a href="#cb25-707" aria-hidden="true" tabindex="-1"></a><span class="in">      "wiki_url",</span></span>
-<span id="cb25-708"><a href="#cb25-708" aria-hidden="true" tabindex="-1"></a><span class="in">      "pg_eng_url",</span></span>
-<span id="cb25-709"><a href="#cb25-709" aria-hidden="true" tabindex="-1"></a><span class="in">      "pg_orig_url"</span></span>
-<span id="cb25-710"><a href="#cb25-710" aria-hidden="true" tabindex="-1"></a><span class="in">    ],</span></span>
-<span id="cb25-711"><a href="#cb25-711" aria-hidden="true" tabindex="-1"></a><span class="in">    numericColumns: ["gr_num_ratings", "gr_num_reviews"]</span></span>
-<span id="cb25-712"><a href="#cb25-712" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb25-713"><a href="#cb25-713" aria-hidden="true" tabindex="-1"></a><span class="in">);</span></span>
+<span id="cb25-678"><a href="#cb25-678" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.csv"</span><span class="op">,</span></span>
+<span id="cb25-679"><a href="#cb25-679" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb25-680"><a href="#cb25-680" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
+<span id="cb25-681"><a href="#cb25-681" aria-hidden="true" tabindex="-1"></a>      <span class="st">"top_500_rank"</span><span class="op">,</span></span>
+<span id="cb25-682"><a href="#cb25-682" aria-hidden="true" tabindex="-1"></a>      <span class="st">"title"</span><span class="op">,</span></span>
+<span id="cb25-683"><a href="#cb25-683" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author"</span><span class="op">,</span></span>
+<span id="cb25-684"><a href="#cb25-684" aria-hidden="true" tabindex="-1"></a>      <span class="st">"pub_year"</span><span class="op">,</span></span>
+<span id="cb25-685"><a href="#cb25-685" aria-hidden="true" tabindex="-1"></a>      <span class="st">"orig_lang"</span><span class="op">,</span></span>
+<span id="cb25-686"><a href="#cb25-686" aria-hidden="true" tabindex="-1"></a>      <span class="st">"genre"</span><span class="op">,</span></span>
+<span id="cb25-687"><a href="#cb25-687" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_birth"</span><span class="op">,</span></span>
+<span id="cb25-688"><a href="#cb25-688" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_death"</span><span class="op">,</span></span>
+<span id="cb25-689"><a href="#cb25-689" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_gender"</span><span class="op">,</span></span>
+<span id="cb25-690"><a href="#cb25-690" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_primary_lang"</span><span class="op">,</span></span>
+<span id="cb25-691"><a href="#cb25-691" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_nationality"</span><span class="op">,</span></span>
+<span id="cb25-692"><a href="#cb25-692" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_field_of_activity"</span><span class="op">,</span></span>
+<span id="cb25-693"><a href="#cb25-693" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_occupation"</span><span class="op">,</span></span>
+<span id="cb25-694"><a href="#cb25-694" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_holdings"</span><span class="op">,</span></span>
+<span id="cb25-695"><a href="#cb25-695" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_eholdings"</span><span class="op">,</span></span>
+<span id="cb25-696"><a href="#cb25-696" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_total_editions"</span><span class="op">,</span></span>
+<span id="cb25-697"><a href="#cb25-697" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_holdings_rank"</span><span class="op">,</span></span>
+<span id="cb25-698"><a href="#cb25-698" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_editions_rank"</span><span class="op">,</span></span>
+<span id="cb25-699"><a href="#cb25-699" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_avg_rating"</span><span class="op">,</span></span>
+<span id="cb25-700"><a href="#cb25-700" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_num_ratings"</span><span class="op">,</span></span>
+<span id="cb25-701"><a href="#cb25-701" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_num_reviews"</span><span class="op">,</span></span>
+<span id="cb25-702"><a href="#cb25-702" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_avg_rating_rank"</span><span class="op">,</span></span>
+<span id="cb25-703"><a href="#cb25-703" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_num_ratings_rank"</span><span class="op">,</span></span>
+<span id="cb25-704"><a href="#cb25-704" aria-hidden="true" tabindex="-1"></a>      <span class="st">"oclc_owi"</span><span class="op">,</span></span>
+<span id="cb25-705"><a href="#cb25-705" aria-hidden="true" tabindex="-1"></a>      <span class="st">"author_viaf"</span><span class="op">,</span></span>
+<span id="cb25-706"><a href="#cb25-706" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gr_url"</span><span class="op">,</span></span>
+<span id="cb25-707"><a href="#cb25-707" aria-hidden="true" tabindex="-1"></a>      <span class="st">"wiki_url"</span><span class="op">,</span></span>
+<span id="cb25-708"><a href="#cb25-708" aria-hidden="true" tabindex="-1"></a>      <span class="st">"pg_eng_url"</span><span class="op">,</span></span>
+<span id="cb25-709"><a href="#cb25-709" aria-hidden="true" tabindex="-1"></a>      <span class="st">"pg_orig_url"</span></span>
+<span id="cb25-710"><a href="#cb25-710" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb25-711"><a href="#cb25-711" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"gr_num_ratings"</span><span class="op">,</span> <span class="st">"gr_num_reviews"</span>]</span>
+<span id="cb25-712"><a href="#cb25-712" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb25-713"><a href="#cb25-713" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
 <span id="cb25-714"><a href="#cb25-714" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb25-715"><a href="#cb25-715" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-716"><a href="#cb25-716" aria-hidden="true" tabindex="-1"></a>&lt;div id="progress-container" style="width: 100%; display: block;"&gt;</span>
-<span id="cb25-717"><a href="#cb25-717" aria-hidden="true" tabindex="-1"></a>  &lt;progress id="progress-bar" style="width: 100%;" max="100" value="0"&gt;&lt;/progress&gt;</span>
-<span id="cb25-718"><a href="#cb25-718" aria-hidden="true" tabindex="-1"></a>  &lt;div id="progress-text" style="text-align: center; margin-top: 5px;"&gt;&lt;/div&gt;</span>
-<span id="cb25-719"><a href="#cb25-719" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-716"><a href="#cb25-716" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-container"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%; display: block;"</span><span class="dt">&gt;</span></span>
+<span id="cb25-717"><a href="#cb25-717" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">progress</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-bar"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%;"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"0"</span><span class="dt">&gt;&lt;/</span><span class="kw">progress</span><span class="dt">&gt;</span></span>
+<span id="cb25-718"><a href="#cb25-718" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-text"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center; margin-top: 5px;"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb25-719"><a href="#cb25-719" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-720"><a href="#cb25-720" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-721"><a href="#cb25-721" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-722"><a href="#cb25-722" aria-hidden="true" tabindex="-1"></a>&lt;div id="table-container2" style="height: 500px"&gt;</span>
-<span id="cb25-723"><a href="#cb25-723" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-722"><a href="#cb25-722" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-container2"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height: 500px"</span><span class="dt">&gt;</span></span>
+<span id="cb25-723"><a href="#cb25-723" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-724"><a href="#cb25-724" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-725"><a href="#cb25-725" aria-hidden="true" tabindex="-1"></a>Download Full Data (including hidden columns)</span>
-<span id="cb25-726"><a href="#cb25-726" aria-hidden="true" tabindex="-1"></a>&lt;div id='button-container2'&gt;</span>
-<span id="cb25-727"><a href="#cb25-727" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-raw"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Full Data&lt;/button&gt;</span>
-<span id="cb25-728"><a href="#cb25-728" aria-hidden="true" tabindex="-1"></a>  &lt;button id="copy-url"&gt;&lt;i class="fas fa-copy"&gt;&lt;/i&gt; Copy Full Data URL&lt;/button&gt;</span>
-<span id="cb25-729"><a href="#cb25-729" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-726"><a href="#cb25-726" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container2'</span><span class="dt">&gt;</span></span>
+<span id="cb25-727"><a href="#cb25-727" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-728"><a href="#cb25-728" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-729"><a href="#cb25-729" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-730"><a href="#cb25-730" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-731"><a href="#cb25-731" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
 <span id="cb25-732"><a href="#cb25-732" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-733"><a href="#cb25-733" aria-hidden="true" tabindex="-1"></a>&lt;div id='button-container'&gt;</span>
-<span id="cb25-734"><a href="#cb25-734" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-csv"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download CSV&lt;/button&gt;</span>
-<span id="cb25-735"><a href="#cb25-735" aria-hidden="true" tabindex="-1"></a>  &lt;button id="download-json"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download JSON&lt;/button&gt;</span>
+<span id="cb25-733"><a href="#cb25-733" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container'</span><span class="dt">&gt;</span></span>
+<span id="cb25-734"><a href="#cb25-734" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb25-735"><a href="#cb25-735" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
 <span id="cb25-736"><a href="#cb25-736" aria-hidden="true" tabindex="-1"></a>  <span class="co">&lt;!-- &lt;button id="download-xlsx"&gt;&lt;i class="fas fa-download"&gt;&lt;/i&gt;&lt;/i&gt; Download Excel&lt;/button&gt; --&gt;</span></span>
-<span id="cb25-737"><a href="#cb25-737" aria-hidden="true" tabindex="-1"></a>&lt;/div&gt;</span>
+<span id="cb25-737"><a href="#cb25-737" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb25-738"><a href="#cb25-738" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-739"><a href="#cb25-739" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-740"><a href="#cb25-740" aria-hidden="true" tabindex="-1"></a></span>
