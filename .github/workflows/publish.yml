@@ -28,16 +28,12 @@ jobs:
         with:
           tinytex: true
 
-      - name: Install system dependencies (for R packages)
+      - name: Install common system deps
         run: |
           sudo apt-get update
           sudo apt-get install -y \
-            libcurl4-openssl-dev \
-            libssl-dev \
-            libxml2-dev \
-            libgit2-dev \
-            pkg-config \
-            build-essential
+            libpng-dev zlib1g-dev pkg-config build-essential \
+            libcurl4-openssl-dev libssl-dev libxml2-dev libgit2-dev
 
       # # This installs a fresh version of Python
       # - name: Install Python and Dependencies
