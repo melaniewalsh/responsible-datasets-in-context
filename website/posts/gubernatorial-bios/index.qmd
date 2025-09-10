@@ -53,7 +53,7 @@ listing:
 bibliography: ../../references/references.bib
 ---
 
-:::::::::::: {.panel-tabset .nav-pills}
+::::::::::::::::::: {.panel-tabset .nav-pills}
 # Data Essay {#data-essay .tab-pane}
 
 ## Introduction
@@ -74,8 +74,6 @@ If you use our materials in your class or another setting, we would love to [hea
 // https://observablehq.com/d/8bb63a6cde9addff
 import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"
 ```
-
-
 
 ```{ojs}
 //|echo: false
@@ -189,35 +187,39 @@ generateTabulatorTableFromCSV(
 
 ```
 
-<div id="table-container4" style="height: 500px">
-</div>
+::: {#table-container4 style="height: 500px"}
+:::
 
 Download Full Data
-<div id='button-container'>
-  <button id="download-raw1"><i class="fas fa-download"></i></i> Download Full Data</button>
-  <button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button>
-</div>
+
+::: {#button-container}
+<button id="download-raw1"><i class="fas fa-download"></i></i> Download Full Data</button> <button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+:::
 
 Download Table Data (including filtered options)
 
-<div id='button-container1'>
-  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
-  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
-  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
-</div>
+::: {#button-container1}
+<button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button> <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+:::
 
-<div id="progress-container" style="width: 100%; display: block;">
-  <progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
-  <div id="progress-text" style="text-align: center; margin-top: 5px;"></div>
-</div>
+:::: {#progress-container style="width: 100%; display: block;"}
+<progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
 
+::: {#progress-text style="text-align: center; margin-top: 5px;"}
+:::
+::::
 
 <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
 <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
 
 <!-- Excel script -->
-<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
 
 ::: {.callout-tip icon="false"}
 ## Creative Commons License
@@ -346,8 +348,6 @@ ggplot() +
 
 ```
 
-
-
 ## Where Did The Data Come From? Who Collected It?
 
 The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King's College, Longon) as part of a larger research team at Yale University. Our sponsors included the [Yale University of Department of Political Science](https://politicalscience.yale.edu/), [Center for the Study of American Politics (CSAP)](https://csap.yale.edu/) and the [Yale Jackson School of Global Affairs](https://jackson.yale.edu/%7D).
@@ -416,7 +416,7 @@ To build a new individual-level data set, we web-scrape all former United States
 
 We also scrape terms from the top of their page. For example, consider the background of Arnold Schwarzenegger. This allows us to ascertain his political party, his terms in office, birthdate (and therefore age when entering office), his university, and that his birthplace is outside the US.
 
-![](images/arnold.png)
+![Arnold Schwarzenegger's NGA page](images/arnold.png)
 
 We use basic text extraction techniques to identify certain key biographical attributes. With Arnold Schwarnegger, we extract his birth country from his text bio.
 
@@ -427,6 +427,7 @@ Schwarzenegger became the 38th Governor of California pursuant to a recall elect
 In total, the full sample is of 2,486 individuals from 55 states and territories, including governors from Puerto Rico (1949-present), American Samoa, Guam, the Northern Mariana Islands, and the US Virgin Islands. The latter territories do not have full federal representation or rights.
 
 The following table shows a sample portion of the data frame:
+
 ```{r}
 #| warning: false
 
@@ -434,20 +435,19 @@ head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school
 
 ```
 
-
 ## Uncertainty in the Data
 
 The **lawyer** indicator indicator is likely among the more error-prone variables in the dataset. It is constructed first by considering whether the governor listed his/her law school in the \`\`school" listing, as was occasionally done. Then, it uses regular expression matching to identify whether a governor's biography contains terms such as **lawyer**, **law degree**, **studied law**, **legal practice**, or **school of law**. This approach may miss individuals who practiced law but whose biographies do not contain these specific phrases, particularly in earlier periods.
 
 Another interesting inconsistency in the data is the **birth_date** column. For example, let's take a look at [Gov. Sam Houston Jones](https://www.nga.org/governor/sam-houston-jones/) of Louisiana.
 
-![](images/jones.png)
+![Sam Houston Jones' NGA page where his birth year is after his term start](images/jones.png)
 
-Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveller, isn't passing a basic sanity scheck. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.
+Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveler, isn't passing a basic sanity check. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.
 
 We extract the **school** column based on a similar method, of identifying the **school** tag on the NGA site. However, some governors like [Kenneth Hood Mackay](https://www.nga.org/governor/kenneth-hood-mackay/) attended college but don't have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn't have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.
 
-![](images/mackay.png)
+![Kenneth Hood Mackay's NGA page where he has no school listed in the table.](images/mackay.png)
 
 The **birth_date** and **school** columns are instructive examples of how even reliable websites backed with institutional authority can make mistakes with data entry. Those data entry mistakes can propagate into resources like this, whose quality is only ever as good as the underlying source.
 
@@ -457,7 +457,7 @@ Here, we show some descriptive statistics. We plot the underlying yearly data, a
 
 Due to these data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.
 
-![](images/ross.png)
+![Nellie Taylor Ross was the first female US governor.](images/ross.png)
 
 ```{r}
 
@@ -763,7 +763,7 @@ The gubernatorial biography dataset gives us perspective on the range of backgro
 
 ## Explore the Data
 
-::: {.content-hidden when-format="pdf"}
+::::::: {.content-hidden when-format="pdf"}
 ```{ojs}
 //|echo: false
 //|output: false
@@ -878,32 +878,34 @@ generateTabulatorTableFromCSV(
 
 ```
 
-<div id="table-container1" style="height: 500px">
-</div>
+::: {#table-container1 style="height: 500px"}
+:::
 
 Download Full Data
-<div id='button-container'>
-  <button id="download-raw2"><i class="fas fa-download"></i></i> Download Full Data</button>
-  <button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+
+<div>
+
+<button id="download-raw2"><i class="fas fa-download"></i></i> Download Full Data</button> <button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+
 </div>
 
 Download Table Data (including filtered options)
 
-<div id='button-container2'>
-  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
-  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
-  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
-</div>
-
-
-
+::: {#button-container2}
+<button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button> <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+:::
 
 <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
 <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
 
 <!-- Excel script -->
-<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
 
 ::: {.callout-tip icon="false"}
 ## Creative Commons License
@@ -914,8 +916,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 
 </p>
 :::
-
-:::
+:::::::
 
 # Exercises {#exercises}
 
@@ -929,4 +930,4 @@ The Historical Gubernatorial Dataset is useful as a dataset for presenting inter
 ::: {#exercise-posts-python}
 :::
 ::::
-::::::::::::
+:::::::::::::::::::
