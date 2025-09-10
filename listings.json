@@ -49,6 +49,13 @@
     ]
   },
   {
+    "listing": "/posts/gubernatorial-bios/index.html",
+    "items": [
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html",
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html"
+    ]
+  },
+  {
     "listing": "/datasets.html",
     "items": [
       "/posts/np-data/index.html",
