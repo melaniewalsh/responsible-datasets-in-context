@@ -445,11 +445,11 @@ Another interesting inconsistency in the data is the **birth_date** column. For 
 
 Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveller, isn't passing a basic sanity scheck. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.
 
-We extract the **school** column based on a similar method, of identifying the **school** tag on the NGA site. However, sopme governors like [Kenneth Hood Mackay](https://www.nga.org/governor/kenneth-hood-mackay/) attended college but don't have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn't have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.
+We extract the **school** column based on a similar method, of identifying the **school** tag on the NGA site. However, some governors like [Kenneth Hood Mackay](https://www.nga.org/governor/kenneth-hood-mackay/) attended college but don't have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn't have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.
 
 ![](images/mackay.png)
 
-The **birth_date** and **school** columns are instructive examples of how even reliable websites backed with institutional authority can make mistakes with data entry. Those data entry mistakes can propagate into resources like this, whose quality only ever as good as the underlying source.
+The **birth_date** and **school** columns are instructive examples of how even reliable websites backed with institutional authority can make mistakes with data entry. Those data entry mistakes can propagate into resources like this, whose quality is only ever as good as the underlying source.
 
 ## Data Visualization
 
