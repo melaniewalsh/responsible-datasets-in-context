@@ -12,7 +12,7 @@
 
 # Load the necessary package for visualization
 
-library(sf)
+# library(sf)
 # library(tidyverse)
 # library(xtable)
 library(ggwordcloud)
