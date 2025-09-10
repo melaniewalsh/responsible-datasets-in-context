@@ -13,11 +13,17 @@
 # Load the necessary package for visualization
 
 library(sf)
-library(tidyverse)
-library(xtable)
+# library(tidyverse)
+# library(xtable)
 library(ggwordcloud)
 library(dplyr)
 library(ggplot2)
+
+
+library(tidyr)
+library(stringr)
+library(forcats)
+
 
 
 ## COLLEGE

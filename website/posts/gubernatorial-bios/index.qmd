@@ -273,10 +273,14 @@ The data reveal notable shifts in the backgrounds of U.S. governors over the pas
 
 # install.packages("rmarkdown")
 
-
-library(tidyverse)
+# too big
+# library(tidyverse)
 library(dplyr)
+library(tidyr)
+library(stringr)
+library(forcats)
 library(ggplot2)
+library(purrr)
 
 # Load National Park Visitation data
 gov_dataset <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv", stringsAsFactors = FALSE)
