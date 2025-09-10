@@ -1,5 +1,5 @@
 ---
-title: "Pandas Groupby with National Park Visitation Data (Exercise)"
+title: "Pandas Value Counts with Gubernatorial Data (Exercise)"
 date: "2024-08-01"
 categories: [pandas, exercise]
 format: 
