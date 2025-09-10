@@ -479,110 +479,110 @@ Brief Survey
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="82" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 81;"><span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
-<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
-<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
-<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
-<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span><span class="op">,</span></span>
-<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
-<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Core identity &amp; office</span></span>
-<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
-<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>      <span class="st">"governor"</span><span class="op">,</span></span>
-<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
-<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a>      <span class="st">"first_year"</span><span class="op">,</span></span>
-<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="st">"years_in_office"</span><span class="op">,</span></span>
-<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Background &amp; education</span></span>
-<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
-<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
-<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
-<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
-<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
-<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Birth &amp; demographics</span></span>
-<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
-<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_date"</span><span class="op">,</span></span>
-<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>      <span class="st">"age_at_start"</span><span class="op">,</span></span>
-<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
-<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
-<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span><span class="op">,</span></span>
-<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born_details"</span><span class="op">,</span></span>
-<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Long description</span></span>
-<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [</span>
-<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="st">"U.S. state or territory governed."</span><span class="op">,</span></span>
-<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Governor’s name."</span><span class="op">,</span></span>
-<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Political party affiliation."</span><span class="op">,</span></span>
-<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a>      <span class="st">"First year they served as governor."</span><span class="op">,</span></span>
-<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spans/terms served (as listed in the bio)."</span><span class="op">,</span></span>
-<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Primary college or university listed (if any)."</span><span class="op">,</span></span>
-<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend college? (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend an Ivy League school? (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Is/was the governor a lawyer? (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor serve in the military? (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth state or territory."</span><span class="op">,</span></span>
-<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth date (YYYY-MM-DD where available)."</span><span class="op">,</span></span>
-<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Age at the start of first term."</span><span class="op">,</span></span>
-<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Gender as recorded in the dataset."</span><span class="op">,</span></span>
-<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born in the state/territory they govern (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born outside the U.S. (1/0)."</span><span class="op">,</span></span>
-<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Details about international birthplace if applicable."</span><span class="op">,</span></span>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="80" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 79;"><span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
+<span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
+<span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span><span class="op">,</span></span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
+<span id="cb2-87"><a href="#cb2-87" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Core identity &amp; office</span></span>
+<span id="cb2-88"><a href="#cb2-88" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
+<span id="cb2-89"><a href="#cb2-89" aria-hidden="true" tabindex="-1"></a>      <span class="st">"governor"</span><span class="op">,</span></span>
+<span id="cb2-90"><a href="#cb2-90" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
+<span id="cb2-91"><a href="#cb2-91" aria-hidden="true" tabindex="-1"></a>      <span class="st">"first_year"</span><span class="op">,</span></span>
+<span id="cb2-92"><a href="#cb2-92" aria-hidden="true" tabindex="-1"></a>      <span class="st">"years_in_office"</span><span class="op">,</span></span>
+<span id="cb2-93"><a href="#cb2-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-94"><a href="#cb2-94" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Background &amp; education</span></span>
+<span id="cb2-95"><a href="#cb2-95" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
+<span id="cb2-96"><a href="#cb2-96" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
+<span id="cb2-97"><a href="#cb2-97" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
+<span id="cb2-98"><a href="#cb2-98" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
+<span id="cb2-99"><a href="#cb2-99" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
+<span id="cb2-100"><a href="#cb2-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-101"><a href="#cb2-101" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Birth &amp; demographics</span></span>
+<span id="cb2-102"><a href="#cb2-102" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
+<span id="cb2-103"><a href="#cb2-103" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_date"</span><span class="op">,</span></span>
+<span id="cb2-104"><a href="#cb2-104" aria-hidden="true" tabindex="-1"></a>      <span class="st">"age_at_start"</span><span class="op">,</span></span>
+<span id="cb2-105"><a href="#cb2-105" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
+<span id="cb2-106"><a href="#cb2-106" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
+<span id="cb2-107"><a href="#cb2-107" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span><span class="op">,</span></span>
+<span id="cb2-108"><a href="#cb2-108" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born_details"</span><span class="op">,</span></span>
+<span id="cb2-109"><a href="#cb2-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-110"><a href="#cb2-110" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Long description</span></span>
+<span id="cb2-111"><a href="#cb2-111" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-112"><a href="#cb2-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-113"><a href="#cb2-113" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [</span>
+<span id="cb2-114"><a href="#cb2-114" aria-hidden="true" tabindex="-1"></a>      <span class="st">"U.S. state or territory governed."</span><span class="op">,</span></span>
+<span id="cb2-115"><a href="#cb2-115" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Governor’s name."</span><span class="op">,</span></span>
+<span id="cb2-116"><a href="#cb2-116" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Political party affiliation."</span><span class="op">,</span></span>
+<span id="cb2-117"><a href="#cb2-117" aria-hidden="true" tabindex="-1"></a>      <span class="st">"First year they served as governor."</span><span class="op">,</span></span>
+<span id="cb2-118"><a href="#cb2-118" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spans/terms served (as listed in the bio)."</span><span class="op">,</span></span>
+<span id="cb2-119"><a href="#cb2-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-120"><a href="#cb2-120" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Primary college or university listed (if any)."</span><span class="op">,</span></span>
+<span id="cb2-121"><a href="#cb2-121" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend college? (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-122"><a href="#cb2-122" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend an Ivy League school? (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-123"><a href="#cb2-123" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Is/was the governor a lawyer? (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-124"><a href="#cb2-124" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor serve in the military? (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-125"><a href="#cb2-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-126"><a href="#cb2-126" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth state or territory."</span><span class="op">,</span></span>
+<span id="cb2-127"><a href="#cb2-127" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth date (YYYY-MM-DD where available)."</span><span class="op">,</span></span>
+<span id="cb2-128"><a href="#cb2-128" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Age at the start of first term."</span><span class="op">,</span></span>
+<span id="cb2-129"><a href="#cb2-129" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Gender as recorded in the dataset."</span><span class="op">,</span></span>
+<span id="cb2-130"><a href="#cb2-130" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born in the state/territory they govern (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-131"><a href="#cb2-131" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born outside the U.S. (1/0)."</span><span class="op">,</span></span>
+<span id="cb2-132"><a href="#cb2-132" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Details about international birthplace if applicable."</span><span class="op">,</span></span>
+<span id="cb2-133"><a href="#cb2-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-134"><a href="#cb2-134" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
 <span id="cb2-135"><a href="#cb2-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>    <span class="co">// columnWidths: {</span></span>
-<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   governor: "220px",</span></span>
-<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   party: "140px",</span></span>
-<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   years_in_office: "220px",</span></span>
-<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   school: "220px",</span></span>
-<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   bio_text: "40%"</span></span>
-<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="co">// },</span></span>
-<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Treat these as numeric so you get proper sort/filter ranges</span></span>
-<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"first_year"</span><span class="op">,</span> <span class="st">"age_at_start"</span>]<span class="op">,</span></span>
-<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Good facets for filtering</span></span>
-<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [</span>
-<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
-<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
-<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
-<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
-<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
-<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>      <span class="co">// binary flags as categories for easy faceting</span></span>
-<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
-<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
-<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
-<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
-<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
-<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span></span>
-<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Default sort: by state, then governor</span></span>
-<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"state_territory"</span><span class="op">,</span> <span class="st">"governor"</span>]<span class="op">,</span></span>
-<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span><span class="op">,</span> <span class="st">"asc"</span>]<span class="op">,</span></span>
-<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Buttons (kept the same IDs you used)</span></span>
-<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    <span class="dt">buttonContainerId</span><span class="op">:</span> <span class="st">"#button-container1"</span><span class="op">,</span></span>
-<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rawButtonId</span><span class="op">:</span> <span class="st">"#download-raw1"</span><span class="op">,</span></span>
-<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>    <span class="dt">urlCopyButtonId</span><span class="op">:</span> <span class="st">"#copy-url1"</span><span class="op">,</span></span>
-<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Optional: if your helper supports label maps for 1/0 columns, this is handy.</span></span>
-<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>    <span class="co">// booleanLabelColumns: {</span></span>
-<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   college_attendance: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   ivy_attendance: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   lawyer: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   military_service: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   born_in_state_territory: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
-<span id="cb2-184"><a href="#cb2-184" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-185"><a href="#cb2-185" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-136"><a href="#cb2-136" aria-hidden="true" tabindex="-1"></a>    <span class="co">// columnWidths: {</span></span>
+<span id="cb2-137"><a href="#cb2-137" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   governor: "220px",</span></span>
+<span id="cb2-138"><a href="#cb2-138" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   party: "140px",</span></span>
+<span id="cb2-139"><a href="#cb2-139" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   years_in_office: "220px",</span></span>
+<span id="cb2-140"><a href="#cb2-140" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   school: "220px",</span></span>
+<span id="cb2-141"><a href="#cb2-141" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   bio_text: "40%"</span></span>
+<span id="cb2-142"><a href="#cb2-142" aria-hidden="true" tabindex="-1"></a>    <span class="co">// },</span></span>
+<span id="cb2-143"><a href="#cb2-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-144"><a href="#cb2-144" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Treat these as numeric so you get proper sort/filter ranges</span></span>
+<span id="cb2-145"><a href="#cb2-145" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"first_year"</span><span class="op">,</span> <span class="st">"age_at_start"</span>]<span class="op">,</span></span>
+<span id="cb2-146"><a href="#cb2-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-147"><a href="#cb2-147" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Good facets for filtering</span></span>
+<span id="cb2-148"><a href="#cb2-148" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [</span>
+<span id="cb2-149"><a href="#cb2-149" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
+<span id="cb2-150"><a href="#cb2-150" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
+<span id="cb2-151"><a href="#cb2-151" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
+<span id="cb2-152"><a href="#cb2-152" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
+<span id="cb2-153"><a href="#cb2-153" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
+<span id="cb2-154"><a href="#cb2-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-155"><a href="#cb2-155" aria-hidden="true" tabindex="-1"></a>      <span class="co">// binary flags as categories for easy faceting</span></span>
+<span id="cb2-156"><a href="#cb2-156" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
+<span id="cb2-157"><a href="#cb2-157" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
+<span id="cb2-158"><a href="#cb2-158" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
+<span id="cb2-159"><a href="#cb2-159" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
+<span id="cb2-160"><a href="#cb2-160" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
+<span id="cb2-161"><a href="#cb2-161" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span></span>
+<span id="cb2-162"><a href="#cb2-162" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-163"><a href="#cb2-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-164"><a href="#cb2-164" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Default sort: by state, then governor</span></span>
+<span id="cb2-165"><a href="#cb2-165" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"state_territory"</span><span class="op">,</span> <span class="st">"governor"</span>]<span class="op">,</span></span>
+<span id="cb2-166"><a href="#cb2-166" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span><span class="op">,</span> <span class="st">"asc"</span>]<span class="op">,</span></span>
+<span id="cb2-167"><a href="#cb2-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-168"><a href="#cb2-168" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Buttons (kept the same IDs you used)</span></span>
+<span id="cb2-169"><a href="#cb2-169" aria-hidden="true" tabindex="-1"></a>    <span class="dt">buttonContainerId</span><span class="op">:</span> <span class="st">"#button-container1"</span><span class="op">,</span></span>
+<span id="cb2-170"><a href="#cb2-170" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rawButtonId</span><span class="op">:</span> <span class="st">"#download-raw1"</span><span class="op">,</span></span>
+<span id="cb2-171"><a href="#cb2-171" aria-hidden="true" tabindex="-1"></a>    <span class="dt">urlCopyButtonId</span><span class="op">:</span> <span class="st">"#copy-url1"</span><span class="op">,</span></span>
+<span id="cb2-172"><a href="#cb2-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-173"><a href="#cb2-173" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Optional: if your helper supports label maps for 1/0 columns, this is handy.</span></span>
+<span id="cb2-174"><a href="#cb2-174" aria-hidden="true" tabindex="-1"></a>    <span class="co">// booleanLabelColumns: {</span></span>
+<span id="cb2-175"><a href="#cb2-175" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   college_attendance: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb2-176"><a href="#cb2-176" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   ivy_attendance: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb2-177"><a href="#cb2-177" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   lawyer: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb2-178"><a href="#cb2-178" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   military_service: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb2-179"><a href="#cb2-179" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   born_in_state_territory: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
+<span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
+<span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-2" data-nodetype="expression">
@@ -593,21 +593,28 @@ Brief Survey
 <div id="table-container4" style="height: 500px">
 
 </div>
-Download Full Data
+<p>Download Full Data</p>
 <div id="button-container">
-<p><button id="download-raw1"><i class="fas fa-download"></i> Download Full Data</button> <button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button></p>
+<button id="download-raw1">
+<i class="fas fa-download"></i> Download Full Data
+</button>
+<p><button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button></p>
 </div>
 <p>Download Table Data (including filtered options)</p>
 <div id="button-container1">
-<p><button id="download-csv"><i class="fas fa-download"></i> Download CSV</button> <button id="download-json"><i class="fas fa-download"></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button></p>
+<button id="download-csv">
+<i class="fas fa-download"></i> Download CSV
+</button>
+<p><button id="download-json"><i class="fas fa-download"></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button></p>
 </div>
 <div id="progress-container" style="width: 100%; display: block;">
-<progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
+<progress id="progress-bar" style="width: 100%;" max="100" value="0">
+</progress>
 <div id="progress-text" style="text-align: center; margin-top: 5px;">
 
 </div>
 </div>
-<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<p><link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet"></p>
 <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
 <!-- Excel script -->
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
@@ -811,7 +818,12 @@ Creative Commons License
 <h2 class="anchored" data-anchor-id="how-was-the-data-collected">How Was The Data Collected?</h2>
 <p>To build a new individual-level data set, we web-scrape all former United States governors from the NGA. The function reads in a web-page for a given state and returns the basic information that NGA has for that state, e.g., <a href="https://www.nga.org/former-governors/california/">California</a>. The function then searches into each governor’s subpage. Here, the NGA has a biographical background paragraph on each governor, e.g., <a href="https://www.nga.org/governor/arnold-schwarzenegger/">Arnold Schwarnegger</a>. We repeat for the current set of governors, found <a href="https://www.nga.org/governors/">here</a>.</p>
 <p>We also scrape terms from the top of their page. For example, consider the background of Arnold Schwarzenegger. This allows us to ascertain his political party, his terms in office, birthdate (and therefore age when entering office), his university, and that his birthplace is outside the US.</p>
-<p><img src="images/arnold.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/arnold.png" class="img-fluid figure-img"></p>
+<figcaption>Arnold Schwarzenegger’s NGA page</figcaption>
+</figure>
+</div>
 <p>We use basic text extraction techniques to identify certain key biographical attributes. With Arnold Schwarnegger, we extract his birth country from his text bio.</p>
 <p>“Arnold Schwarzenegger came to the governorship of California following a distinguished career in body building, business, and entertainment. Schwarzenegger was born in <strong>Austria</strong> and at 20 became the youngest person to win the Mr.&nbsp;Universe title. He won an unprecedented 12 more world bodybuilding titles. Schwarzenegger earned a college degree from the University of Wisconsin and became a U.S. citizen in 1983. Former President George H.W. Bush appointed him Chair of the President’s Council on Physical Fitness and Sports in 1990. He also served as Chair of the California Governor’s Council on Physical Fitness and Sports under California Governor Pete Wilson. He married Maria Shriver in 1986 and has remained closely involved in Special Olympics, an organization founded by her late mother, Eunice Kennedy Shriver.</p>
 <p>Schwarzenegger became the 38th Governor of California pursuant to a recall election to replace Governor Gray Davis. Schwarzenegger’s accomplishments as governor include a bipartisan agreement to reduce California’s greenhouse gas emissions by signing landmark legislation in 2006, increasing the minimum wage while lowering the state’s unemployment rate, and overhauling the workers’ compensation system—cutting costs by more than 35 percent. Schwarzenegger made major investments in improving California’s aging infrastructure through his Strategic Growth Plan, helping to reduce congestion and clean the air.”</p>
@@ -902,17 +914,32 @@ Creative Commons License
 <h2 class="anchored" data-anchor-id="uncertainty-in-the-data">Uncertainty in the Data</h2>
 <p>The <strong>lawyer</strong> indicator indicator is likely among the more error-prone variables in the dataset. It is constructed first by considering whether the governor listed his/her law school in the ``school” listing, as was occasionally done. Then, it uses regular expression matching to identify whether a governor’s biography contains terms such as <strong>lawyer</strong>, <strong>law degree</strong>, <strong>studied law</strong>, <strong>legal practice</strong>, or <strong>school of law</strong>. This approach may miss individuals who practiced law but whose biographies do not contain these specific phrases, particularly in earlier periods.</p>
 <p>Another interesting inconsistency in the data is the <strong>birth_date</strong> column. For example, let’s take a look at <a href="https://www.nga.org/governor/sam-houston-jones/">Gov.&nbsp;Sam Houston Jones</a> of Louisiana.</p>
-<p><img src="images/jones.png" class="img-fluid"></p>
-<p>Despite having his term start in 1940, the NGA site has Jones’ birth date in 1987, which unless Jones was a time traveller, isn’t passing a basic sanity scheck. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was <strong>after</strong> their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/jones.png" class="img-fluid figure-img"></p>
+<figcaption>Sam Houston Jones’ NGA page where his birth year is after his term start</figcaption>
+</figure>
+</div>
+<p>Despite having his term start in 1940, the NGA site has Jones’ birth date in 1987, which unless Jones was a time traveler, isn’t passing a basic sanity check. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was <strong>after</strong> their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.</p>
 <p>We extract the <strong>school</strong> column based on a similar method, of identifying the <strong>school</strong> tag on the NGA site. However, some governors like <a href="https://www.nga.org/governor/kenneth-hood-mackay/">Kenneth Hood Mackay</a> attended college but don’t have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn’t have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.</p>
-<p><img src="images/mackay.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mackay.png" class="img-fluid figure-img"></p>
+<figcaption>Kenneth Hood Mackay’s NGA page where he has no school listed in the table.</figcaption>
+</figure>
+</div>
 <p>The <strong>birth_date</strong> and <strong>school</strong> columns are instructive examples of how even reliable websites backed with institutional authority can make mistakes with data entry. Those data entry mistakes can propagate into resources like this, whose quality is only ever as good as the underlying source.</p>
 </section>
 <section id="data-visualization" class="level2">
 <h2 class="anchored" data-anchor-id="data-visualization">Data Visualization</h2>
 <p>Here, we show some descriptive statistics. We plot the underlying yearly data, along with binned averages from each 25-year period, plotted in purple.</p>
 <p>Due to these data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.</p>
-<p><img src="images/ross.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/ross.png" class="img-fluid figure-img"></p>
+<figcaption>Nellie Taylor Ross was the first female US governor.</figcaption>
+</figure>
+</div>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
@@ -1383,15 +1410,21 @@ Fresh, Adriane. 2024. <span>“Elite Persistence in the Era of England’s Expan
 <div id="table-container1" style="height: 500px">
 
 </div>
-Download Full Data
-<div id="button-container">
-<p><button id="download-raw2"><i class="fas fa-download"></i> Download Full Data</button> <button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button></p>
+<p>Download Full Data</p>
+<div>
+<button id="download-raw2">
+<i class="fas fa-download"></i> Download Full Data
+</button>
+<p><button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button></p>
 </div>
 <p>Download Table Data (including filtered options)</p>
 <div id="button-container2">
-<p><button id="download-csv"><i class="fas fa-download"></i> Download CSV</button> <button id="download-json"><i class="fas fa-download"></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button></p>
+<button id="download-csv">
+<i class="fas fa-download"></i> Download CSV
+</button>
+<p><button id="download-json"><i class="fas fa-download"></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button></p>
 </div>
-<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<p><link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet"></p>
 <script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
 <!-- Excel script -->
 <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
@@ -1447,7 +1480,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757540069436" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Exercise)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Exercise.qmd">
+<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757540463067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Exercise)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Exercise.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1460,7 +1493,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757540069436" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Solution)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Solutions.qmd">
+<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757540463067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Solution)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Solutions.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -2093,7 +2126,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> ../../references/references.bib</span></span>
 <span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>:::::::::::: {.panel-tabset .nav-pills}</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::: {.panel-tabset .nav-pills}</span>
 <span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data Essay {#data-essay .tab-pane}</span></span>
 <span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="fu">## Introduction</span></span>
@@ -2115,278 +2148,278 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span>
 <span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
-<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span><span class="op">,</span></span>
-<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>  {</span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Core identity &amp; office</span></span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
-<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>      <span class="st">"governor"</span><span class="op">,</span></span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a>      <span class="st">"first_year"</span><span class="op">,</span></span>
-<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>      <span class="st">"years_in_office"</span><span class="op">,</span></span>
-<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Background &amp; education</span></span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Birth &amp; demographics</span></span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_date"</span><span class="op">,</span></span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>      <span class="st">"age_at_start"</span><span class="op">,</span></span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span><span class="op">,</span></span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born_details"</span><span class="op">,</span></span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Long description</span></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [</span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>      <span class="st">"U.S. state or territory governed."</span><span class="op">,</span></span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Governor’s name."</span><span class="op">,</span></span>
-<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Political party affiliation."</span><span class="op">,</span></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>      <span class="st">"First year they served as governor."</span><span class="op">,</span></span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spans/terms served (as listed in the bio)."</span><span class="op">,</span></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Primary college or university listed (if any)."</span><span class="op">,</span></span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend college? (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend an Ivy League school? (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Is/was the governor a lawyer? (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor serve in the military? (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth state or territory."</span><span class="op">,</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth date (YYYY-MM-DD where available)."</span><span class="op">,</span></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Age at the start of first term."</span><span class="op">,</span></span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Gender as recorded in the dataset."</span><span class="op">,</span></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born in the state/territory they govern (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born outside the U.S. (1/0)."</span><span class="op">,</span></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Details about international birthplace if applicable."</span><span class="op">,</span></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
+<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span><span class="op">,</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Core identity &amp; office</span></span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a>      <span class="st">"governor"</span><span class="op">,</span></span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
+<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>      <span class="st">"first_year"</span><span class="op">,</span></span>
+<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a>      <span class="st">"years_in_office"</span><span class="op">,</span></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Background &amp; education</span></span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
+<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
+<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Birth &amp; demographics</span></span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_date"</span><span class="op">,</span></span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>      <span class="st">"age_at_start"</span><span class="op">,</span></span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span><span class="op">,</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born_details"</span><span class="op">,</span></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>      <span class="co">// Long description</span></span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [</span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>      <span class="st">"U.S. state or territory governed."</span><span class="op">,</span></span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Governor’s name."</span><span class="op">,</span></span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Political party affiliation."</span><span class="op">,</span></span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>      <span class="st">"First year they served as governor."</span><span class="op">,</span></span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Spans/terms served (as listed in the bio)."</span><span class="op">,</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Primary college or university listed (if any)."</span><span class="op">,</span></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend college? (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor attend an Ivy League school? (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Is/was the governor a lawyer? (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Did the governor serve in the military? (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth state or territory."</span><span class="op">,</span></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Birth date (YYYY-MM-DD where available)."</span><span class="op">,</span></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Age at the start of first term."</span><span class="op">,</span></span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Gender as recorded in the dataset."</span><span class="op">,</span></span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born in the state/territory they govern (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Whether born outside the U.S. (1/0)."</span><span class="op">,</span></span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Details about international birthplace if applicable."</span><span class="op">,</span></span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
 <span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>    <span class="co">// columnWidths: {</span></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   governor: "220px",</span></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   party: "140px",</span></span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   years_in_office: "220px",</span></span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   school: "220px",</span></span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   bio_text: "40%"</span></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>    <span class="co">// },</span></span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Treat these as numeric so you get proper sort/filter ranges</span></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"first_year"</span><span class="op">,</span> <span class="st">"age_at_start"</span>]<span class="op">,</span></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Good facets for filtering</span></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [</span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a>      <span class="co">// binary flags as categories for easy faceting</span></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Default sort: by state, then governor</span></span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"state_territory"</span><span class="op">,</span> <span class="st">"governor"</span>]<span class="op">,</span></span>
-<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span><span class="op">,</span> <span class="st">"asc"</span>]<span class="op">,</span></span>
-<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Buttons (kept the same IDs you used)</span></span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a>    <span class="dt">buttonContainerId</span><span class="op">:</span> <span class="st">"#button-container1"</span><span class="op">,</span></span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rawButtonId</span><span class="op">:</span> <span class="st">"#download-raw1"</span><span class="op">,</span></span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>    <span class="dt">urlCopyButtonId</span><span class="op">:</span> <span class="st">"#copy-url1"</span><span class="op">,</span></span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Optional: if your helper supports label maps for 1/0 columns, this is handy.</span></span>
-<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a>    <span class="co">// booleanLabelColumns: {</span></span>
-<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   college_attendance: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   ivy_attendance: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   lawyer: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   military_service: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   born_in_state_territory: { "1": "Yes", "0": "No" },</span></span>
-<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
-<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
-<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
-<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>    <span class="co">// columnWidths: {</span></span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   governor: "220px",</span></span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   party: "140px",</span></span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   years_in_office: "220px",</span></span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   school: "220px",</span></span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   bio_text: "40%"</span></span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a>    <span class="co">// },</span></span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Treat these as numeric so you get proper sort/filter ranges</span></span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"first_year"</span><span class="op">,</span> <span class="st">"age_at_start"</span>]<span class="op">,</span></span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Good facets for filtering</span></span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [</span>
+<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a>      <span class="st">"state_territory"</span><span class="op">,</span></span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a>      <span class="st">"party"</span><span class="op">,</span></span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>      <span class="st">"school"</span><span class="op">,</span></span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a>      <span class="st">"birth_state_territory"</span><span class="op">,</span></span>
+<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a>      <span class="st">"gender"</span><span class="op">,</span></span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>      <span class="co">// binary flags as categories for easy faceting</span></span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a>      <span class="st">"college_attendance"</span><span class="op">,</span></span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ivy_attendance"</span><span class="op">,</span></span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a>      <span class="st">"lawyer"</span><span class="op">,</span></span>
+<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a>      <span class="st">"military_service"</span><span class="op">,</span></span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a>      <span class="st">"born_in_state_territory"</span><span class="op">,</span></span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a>      <span class="st">"intl_born"</span></span>
+<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Default sort: by state, then governor</span></span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"state_territory"</span><span class="op">,</span> <span class="st">"governor"</span>]<span class="op">,</span></span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span><span class="op">,</span> <span class="st">"asc"</span>]<span class="op">,</span></span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Buttons (kept the same IDs you used)</span></span>
+<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a>    <span class="dt">buttonContainerId</span><span class="op">:</span> <span class="st">"#button-container1"</span><span class="op">,</span></span>
+<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>    <span class="dt">rawButtonId</span><span class="op">:</span> <span class="st">"#download-raw1"</span><span class="op">,</span></span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a>    <span class="dt">urlCopyButtonId</span><span class="op">:</span> <span class="st">"#copy-url1"</span><span class="op">,</span></span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>    <span class="co">// Optional: if your helper supports label maps for 1/0 columns, this is handy.</span></span>
+<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a>    <span class="co">// booleanLabelColumns: {</span></span>
+<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   college_attendance: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   ivy_attendance: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   lawyer: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   military_service: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   born_in_state_territory: { "1": "Yes", "0": "No" },</span></span>
+<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
+<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
+<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-container4"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height: 500px"</span><span class="dt">&gt;</span></span>
-<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a>::: {#table-container4 style="height: 500px"}</span>
+<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a>Download Full Data</span>
 <span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a>Download Full Data</span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container'</span><span class="dt">&gt;</span></span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw1"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url1"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a>::: {#button-container}</span>
+<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw1"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url1"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
 <span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container1'</span><span class="dt">&gt;</span></span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-xlsx"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Excel<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-container"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%; display: block;"</span><span class="dt">&gt;</span></span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">progress</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-bar"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%;"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"0"</span><span class="dt">&gt;&lt;/</span><span class="kw">progress</span><span class="dt">&gt;</span></span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-text"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"text-align: center; margin-top: 5px;"</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a>::: {#button-container1}</span>
+<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-xlsx"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Excel<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a>:::: {#progress-container style="width: 100%; display: block;"}</span>
+<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">progress</span><span class="ot"> id</span><span class="op">=</span><span class="st">"progress-bar"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"width: 100%;"</span><span class="ot"> max</span><span class="op">=</span><span class="st">"100"</span><span class="ot"> value</span><span class="op">=</span><span class="st">"0"</span><span class="dt">&gt;&lt;/</span><span class="kw">progress</span><span class="dt">&gt;</span></span>
+<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a>::: {#progress-text style="text-align: center; margin-top: 5px;"}</span>
+<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
 <span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Excel script --&gt;</span></span>
-<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"text/javascript"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
-<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## Creative Commons License</span></span>
-<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="dt">&gt;</span></span>
+<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
+<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a><span class="fu">## Creative Commons License</span></span>
 <span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a>This work is licensed under <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="dt">&gt;</span>CC BY 4.0<span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="dt">&gt;</span></span>
 <span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's in the data?</span></span>
+<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>This work is licensed under <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="dt">&gt;</span>CC BY 4.0<span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a>Alongside the names and states of each governor, the dataset includes information on gender, educational background, as well as other characteristics. The dataset is based on the publicly-available biographies of governors from the <span class="co">[</span><span class="ot">National Governors Association</span><span class="co">](https://www.nga.org/)</span> (NGA). We capture the following variables from the website:</span>
+<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a><span class="fu">## What's in the data?</span></span>
 <span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>state_territory: U.S. state or territory where the governor served.</span>
+<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a>Alongside the names and states of each governor, the dataset includes information on gender, educational background, as well as other characteristics. The dataset is based on the publicly-available biographies of governors from the <span class="co">[</span><span class="ot">National Governors Association</span><span class="co">](https://www.nga.org/)</span> (NGA). We capture the following variables from the website:</span>
 <span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>governor: Full name of the governor, as listed on the website.</span>
+<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>state_territory: U.S. state or territory where the governor served.</span>
 <span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>party: Political party affiliation under which the governor served.</span>
+<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>governor: Full name of the governor, as listed on the website.</span>
 <span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>years_in_office: Concatenated string denoting term(s) in office (e.g., "1985–1991; 1995–1999"). Parsed from web biographies. - school: Educational institution(s) attended by the governor as listed on the official profile. If multiple schools are listed, usually separated by semicolons (e.g., "Brigham Young University; Harvard University"). If NA, either no school is listed or the governor did not attend college.</span>
+<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>party: Political party affiliation under which the governor served.</span>
 <span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>birth_state_territory: Parsed location (state) of birth based on text extraction.</span>
+<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>years_in_office: Concatenated string denoting term(s) in office (e.g., "1985–1991; 1995–1999"). Parsed from web biographies. - school: Educational institution(s) attended by the governor as listed on the official profile. If multiple schools are listed, usually separated by semicolons (e.g., "Brigham Young University; Harvard University"). If NA, either no school is listed or the governor did not attend college.</span>
 <span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>spouse: Name of spouse, if available. If NA, the governor is either not married or spousal information is unknown.</span>
+<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>birth_state_territory: Parsed location (state) of birth based on text extraction.</span>
 <span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>birth_date: Date of birth, as listed on website.</span>
+<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>spouse: Name of spouse, if available. If NA, the governor is either not married or spousal information is unknown.</span>
 <span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>bio_text: Raw string of the biographical background of the governor. In 14 cases (less than 1 percent of cases), this biographical text is missing.</span>
+<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>birth_date: Date of birth, as listed on website.</span>
 <span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a>Using the above information extracted from the NGA, we construct the following columns:</span>
+<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>bio_text: Raw string of the biographical background of the governor. In 14 cases (less than 1 percent of cases), this biographical text is missing.</span>
 <span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>college attendance: Equals 1 if the governor attended any college or university; 0 otherwise.</span>
-<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ivy attendance: Equals 1 if the governor attended an Ivy League institution; 0 otherwise. (Note that this technically applies for EITHER graduate or undergraduate).</span>
-<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>lawyer: Equals 1 if the biography indicates legal education or professional law practice; 0 otherwise.</span>
-<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>military_service: Equals 1 if the biography mentions military service (e.g., Army, Navy, National Guard, etc.); 0 otherwise.</span>
-<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>age_at_start: Age of the governor at the beginning of their first term, calculated from the reported date of birth and the start date of their first gubernatorial term.</span>
-<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>gender: Predicted gender label male or female based on first name and time period using the <span class="co">[</span><span class="ot">gender R package</span><span class="co">](https://cran.r-project.org/web/packages/gender/index.html)</span>. In 9 cases, this algorithm failed to predict a gender, most frequently in cases of Indigenous or Latino governors: Togiola T. A. Tulafono (American Samoa), Benígno Fitial (Northern Mariana Islands), etc. In these cases, we manually extract the gender of the governor based on pronouns in their biography.</span>
-<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>born_in_state_territory: 1 if the governor was born in the same U.S. state/territory they governed; 0 if born elsewhere (including outside the U.S.).</span>
-<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>intl_born: Equals 1 if the governor was born outside of the United States (as defined by the contemporary definition of the 50 states and territories); 0 otherwise. To signify internationally-born, if birth_state was labeled as "Other", we recognize these governors as international.</span>
-<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>intl_born_details: To get more information on governors born outside the US, we search the bio text of governors with birth_state equivalent to <span class="sc">\`\`</span>Other." We extract their likely birthplace as a string.</span>
-<span id="cb13-267"><a href="#cb13-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a>The data reveal notable shifts in the backgrounds of U.S. governors over the past 250 years. In the late 18th century, governors were disproportionately elite, with slightly under half having attended college. For reference, by 1870 only <span class="co">[</span><span class="ot">one percent of the US population attended college</span><span class="co">](https://www.gilderlehrman.org/history-resources/teacher-resources/statistics-education-america-1860-1950)</span>, so 50 percent is exceptionally high almost a century earlier. During the Progressive Era in the early 20th century, reformers emphasized education and professionalization in public life (including in city and local government and the federal government). This is reflected in a sharp increase in college attendance among governors between 1875-1900 and 1900-1925. Note: All line plots in this essay use grey dots to represent yearly average and purple dots to represent 25 year binned averages.</span>
+<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a>Using the above information extracted from the NGA, we construct the following columns:</span>
+<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>college attendance: Equals 1 if the governor attended any college or university; 0 otherwise.</span>
+<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>ivy attendance: Equals 1 if the governor attended an Ivy League institution; 0 otherwise. (Note that this technically applies for EITHER graduate or undergraduate).</span>
+<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>lawyer: Equals 1 if the biography indicates legal education or professional law practice; 0 otherwise.</span>
+<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>military_service: Equals 1 if the biography mentions military service (e.g., Army, Navy, National Guard, etc.); 0 otherwise.</span>
+<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>age_at_start: Age of the governor at the beginning of their first term, calculated from the reported date of birth and the start date of their first gubernatorial term.</span>
+<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>gender: Predicted gender label male or female based on first name and time period using the <span class="co">[</span><span class="ot">gender R package</span><span class="co">](https://cran.r-project.org/web/packages/gender/index.html)</span>. In 9 cases, this algorithm failed to predict a gender, most frequently in cases of Indigenous or Latino governors: Togiola T. A. Tulafono (American Samoa), Benígno Fitial (Northern Mariana Islands), etc. In these cases, we manually extract the gender of the governor based on pronouns in their biography.</span>
+<span id="cb13-266"><a href="#cb13-266" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>born_in_state_territory: 1 if the governor was born in the same U.S. state/territory they governed; 0 if born elsewhere (including outside the U.S.).</span>
+<span id="cb13-267"><a href="#cb13-267" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>intl_born: Equals 1 if the governor was born outside of the United States (as defined by the contemporary definition of the 50 states and territories); 0 otherwise. To signify internationally-born, if birth_state was labeled as "Other", we recognize these governors as international.</span>
+<span id="cb13-268"><a href="#cb13-268" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>intl_born_details: To get more information on governors born outside the US, we search the bio text of governors with birth_state equivalent to <span class="sc">\`\`</span>Other." We extract their likely birthplace as a string.</span>
 <span id="cb13-269"><a href="#cb13-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-272"><a href="#cb13-272" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-273"><a href="#cb13-273" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-275"><a href="#cb13-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<span id="cb13-270"><a href="#cb13-270" aria-hidden="true" tabindex="-1"></a>The data reveal notable shifts in the backgrounds of U.S. governors over the past 250 years. In the late 18th century, governors were disproportionately elite, with slightly under half having attended college. For reference, by 1870 only <span class="co">[</span><span class="ot">one percent of the US population attended college</span><span class="co">](https://www.gilderlehrman.org/history-resources/teacher-resources/statistics-education-america-1860-1950)</span>, so 50 percent is exceptionally high almost a century earlier. During the Progressive Era in the early 20th century, reformers emphasized education and professionalization in public life (including in city and local government and the federal government). This is reflected in a sharp increase in college attendance among governors between 1875-1900 and 1900-1925. Note: All line plots in this essay use grey dots to represent yearly average and purple dots to represent 25 year binned averages.</span>
+<span id="cb13-271"><a href="#cb13-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-274"><a href="#cb13-274" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-275"><a href="#cb13-275" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-276"><a href="#cb13-276" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-277"><a href="#cb13-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rmarkdown")</span></span>
+<span id="cb13-278"><a href="#cb13-278" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
 <span id="cb13-279"><a href="#cb13-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a><span class="co"># too big</span></span>
-<span id="cb13-281"><a href="#cb13-281" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tidyverse)</span></span>
-<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb13-283"><a href="#cb13-283" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb13-284"><a href="#cb13-284" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
-<span id="cb13-285"><a href="#cb13-285" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
-<span id="cb13-286"><a href="#cb13-286" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb13-287"><a href="#cb13-287" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
-<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
-<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a>gov_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a><span class="do">## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations</span></span>
-<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a>gov_long <span class="ot">&lt;-</span> gov_dataset <span class="sc">%&gt;%</span></span>
-<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Split multiple ranges into separate rows</span></span>
-<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate_rows</span>(years_in_office, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">s(?=</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">s-</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d{4}|</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">s-)"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract start and end years</span></span>
-<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
-<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a>        <span class="at">start =</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(years_in_office, <span class="st">"^</span><span class="sc">\\</span><span class="st">d{4}"</span>)),</span>
-<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a>        <span class="at">end   =</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(years_in_office, <span class="st">"</span><span class="sc">\\</span><span class="st">d{4}$"</span>))</span>
-<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
-<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Expand each range into all years served</span></span>
-<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start, end))) <span class="sc">%&gt;%</span></span>
-<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1775</span>, year <span class="sc">&lt;=</span> <span class="dv">2025</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-307"><a href="#cb13-307" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>()</span>
-<span id="cb13-308"><a href="#cb13-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-309"><a href="#cb13-309" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average college attendance rate by elected governors for each year</span></span>
-<span id="cb13-310"><a href="#cb13-310" aria-hidden="true" tabindex="-1"></a>yearly_college <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
-<span id="cb13-311"><a href="#cb13-311" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb13-313"><a href="#cb13-313" aria-hidden="true" tabindex="-1"></a>        <span class="at">total =</span> <span class="fu">n</span>(),</span>
-<span id="cb13-314"><a href="#cb13-314" aria-hidden="true" tabindex="-1"></a>        <span class="at">college =</span> <span class="fu">sum</span>(college_attendance <span class="sc">==</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-315"><a href="#cb13-315" aria-hidden="true" tabindex="-1"></a>        <span class="at">pct_college =</span> <span class="dv">100</span> <span class="sc">*</span> college <span class="sc">/</span> total,</span>
-<span id="cb13-316"><a href="#cb13-316" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb13-317"><a href="#cb13-317" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-318"><a href="#cb13-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-319"><a href="#cb13-319" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Bin years into 25-year chunks</span></span>
-<span id="cb13-320"><a href="#cb13-320" aria-hidden="true" tabindex="-1"></a>binned_college <span class="ot">&lt;-</span> yearly_college <span class="sc">%&gt;%</span></span>
-<span id="cb13-321"><a href="#cb13-321" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">cut</span>(year, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">right =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb13-322"><a href="#cb13-322" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span></span>
-<span id="cb13-323"><a href="#cb13-323" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
-<span id="cb13-324"><a href="#cb13-324" aria-hidden="true" tabindex="-1"></a>        <span class="at">first_year =</span> <span class="fu">min</span>(year), <span class="co"># midpoint anchor</span></span>
-<span id="cb13-325"><a href="#cb13-325" aria-hidden="true" tabindex="-1"></a>        <span class="at">pct_college =</span> <span class="fu">mean</span>(pct_college, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb13-326"><a href="#cb13-326" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
-<span id="cb13-327"><a href="#cb13-327" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb13-328"><a href="#cb13-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-329"><a href="#cb13-329" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Plot</span></span>
-<span id="cb13-330"><a href="#cb13-330" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
-<span id="cb13-331"><a href="#cb13-331" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(</span>
-<span id="cb13-332"><a href="#cb13-332" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> yearly_college,</span>
-<span id="cb13-333"><a href="#cb13-333" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> pct_college),</span>
-<span id="cb13-334"><a href="#cb13-334" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"gray50"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span></span>
-<span id="cb13-335"><a href="#cb13-335" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb13-336"><a href="#cb13-336" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(</span>
-<span id="cb13-337"><a href="#cb13-337" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> binned_college,</span>
-<span id="cb13-338"><a href="#cb13-338" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> first_year <span class="sc">+</span> <span class="fl">12.5</span>, <span class="at">y =</span> pct_college), <span class="co"># put point in middle of 25-year bin</span></span>
-<span id="cb13-339"><a href="#cb13-339" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"#6A0DAD"</span>, <span class="at">size =</span> <span class="dv">2</span></span>
-<span id="cb13-340"><a href="#cb13-340" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb13-341"><a href="#cb13-341" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(</span>
-<span id="cb13-342"><a href="#cb13-342" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> binned_college,</span>
-<span id="cb13-343"><a href="#cb13-343" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> first_year <span class="sc">+</span> <span class="fl">12.5</span>, <span class="at">y =</span> pct_college),</span>
-<span id="cb13-344"><a href="#cb13-344" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"#6A0DAD"</span></span>
-<span id="cb13-345"><a href="#cb13-345" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb13-346"><a href="#cb13-346" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb13-347"><a href="#cb13-347" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
-<span id="cb13-348"><a href="#cb13-348" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more college educated?"</span>) <span class="sc">+</span></span>
-<span id="cb13-349"><a href="#cb13-349" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent College"</span>) <span class="sc">+</span></span>
-<span id="cb13-350"><a href="#cb13-350" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb13-351"><a href="#cb13-351" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="co"># Add x-axis ticks every 25 years</span></span>
-<span id="cb13-352"><a href="#cb13-352" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-353"><a href="#cb13-353" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-280"><a href="#cb13-280" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rmarkdown")</span></span>
+<span id="cb13-281"><a href="#cb13-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-282"><a href="#cb13-282" aria-hidden="true" tabindex="-1"></a><span class="co"># too big</span></span>
+<span id="cb13-283"><a href="#cb13-283" aria-hidden="true" tabindex="-1"></a><span class="co"># library(tidyverse)</span></span>
+<span id="cb13-284"><a href="#cb13-284" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb13-285"><a href="#cb13-285" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb13-286"><a href="#cb13-286" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr)</span>
+<span id="cb13-287"><a href="#cb13-287" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(forcats)</span>
+<span id="cb13-288"><a href="#cb13-288" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb13-289"><a href="#cb13-289" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(purrr)</span>
+<span id="cb13-290"><a href="#cb13-290" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-291"><a href="#cb13-291" aria-hidden="true" tabindex="-1"></a><span class="co"># Load National Park Visitation data</span></span>
+<span id="cb13-292"><a href="#cb13-292" aria-hidden="true" tabindex="-1"></a>gov_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb13-293"><a href="#cb13-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-294"><a href="#cb13-294" aria-hidden="true" tabindex="-1"></a><span class="do">## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations</span></span>
+<span id="cb13-295"><a href="#cb13-295" aria-hidden="true" tabindex="-1"></a>gov_long <span class="ot">&lt;-</span> gov_dataset <span class="sc">%&gt;%</span></span>
+<span id="cb13-296"><a href="#cb13-296" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Split multiple ranges into separate rows</span></span>
+<span id="cb13-297"><a href="#cb13-297" aria-hidden="true" tabindex="-1"></a>    <span class="fu">separate_rows</span>(years_in_office, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\\</span><span class="st">s(?=</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">s-</span><span class="sc">\\</span><span class="st">s</span><span class="sc">\\</span><span class="st">d{4}|</span><span class="sc">\\</span><span class="st">d{4}</span><span class="sc">\\</span><span class="st">s-)"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-298"><a href="#cb13-298" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Extract start and end years</span></span>
+<span id="cb13-299"><a href="#cb13-299" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(</span>
+<span id="cb13-300"><a href="#cb13-300" aria-hidden="true" tabindex="-1"></a>        <span class="at">start =</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(years_in_office, <span class="st">"^</span><span class="sc">\\</span><span class="st">d{4}"</span>)),</span>
+<span id="cb13-301"><a href="#cb13-301" aria-hidden="true" tabindex="-1"></a>        <span class="at">end   =</span> <span class="fu">as.numeric</span>(<span class="fu">str_extract</span>(years_in_office, <span class="st">"</span><span class="sc">\\</span><span class="st">d{4}$"</span>))</span>
+<span id="cb13-302"><a href="#cb13-302" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-303"><a href="#cb13-303" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Expand each range into all years served</span></span>
+<span id="cb13-304"><a href="#cb13-304" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rowwise</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-305"><a href="#cb13-305" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">list</span>(<span class="fu">seq</span>(start, end))) <span class="sc">%&gt;%</span></span>
+<span id="cb13-306"><a href="#cb13-306" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unnest</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb13-307"><a href="#cb13-307" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb13-308"><a href="#cb13-308" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(year <span class="sc">&gt;=</span> <span class="dv">1775</span>, year <span class="sc">&lt;=</span> <span class="dv">2025</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-309"><a href="#cb13-309" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>()</span>
+<span id="cb13-310"><a href="#cb13-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-311"><a href="#cb13-311" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average college attendance rate by elected governors for each year</span></span>
+<span id="cb13-312"><a href="#cb13-312" aria-hidden="true" tabindex="-1"></a>yearly_college <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
+<span id="cb13-313"><a href="#cb13-313" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb13-314"><a href="#cb13-314" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb13-315"><a href="#cb13-315" aria-hidden="true" tabindex="-1"></a>        <span class="at">total =</span> <span class="fu">n</span>(),</span>
+<span id="cb13-316"><a href="#cb13-316" aria-hidden="true" tabindex="-1"></a>        <span class="at">college =</span> <span class="fu">sum</span>(college_attendance <span class="sc">==</span> <span class="dv">1</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-317"><a href="#cb13-317" aria-hidden="true" tabindex="-1"></a>        <span class="at">pct_college =</span> <span class="dv">100</span> <span class="sc">*</span> college <span class="sc">/</span> total,</span>
+<span id="cb13-318"><a href="#cb13-318" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb13-319"><a href="#cb13-319" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-320"><a href="#cb13-320" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-321"><a href="#cb13-321" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Bin years into 25-year chunks</span></span>
+<span id="cb13-322"><a href="#cb13-322" aria-hidden="true" tabindex="-1"></a>binned_college <span class="ot">&lt;-</span> yearly_college <span class="sc">%&gt;%</span></span>
+<span id="cb13-323"><a href="#cb13-323" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">bin =</span> <span class="fu">cut</span>(year, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>), <span class="at">include.lowest =</span> <span class="cn">TRUE</span>, <span class="at">right =</span> <span class="cn">FALSE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb13-324"><a href="#cb13-324" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(bin) <span class="sc">%&gt;%</span></span>
+<span id="cb13-325"><a href="#cb13-325" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb13-326"><a href="#cb13-326" aria-hidden="true" tabindex="-1"></a>        <span class="at">first_year =</span> <span class="fu">min</span>(year), <span class="co"># midpoint anchor</span></span>
+<span id="cb13-327"><a href="#cb13-327" aria-hidden="true" tabindex="-1"></a>        <span class="at">pct_college =</span> <span class="fu">mean</span>(pct_college, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-328"><a href="#cb13-328" aria-hidden="true" tabindex="-1"></a>        <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb13-329"><a href="#cb13-329" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb13-330"><a href="#cb13-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-331"><a href="#cb13-331" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Plot</span></span>
+<span id="cb13-332"><a href="#cb13-332" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb13-333"><a href="#cb13-333" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(</span>
+<span id="cb13-334"><a href="#cb13-334" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> yearly_college,</span>
+<span id="cb13-335"><a href="#cb13-335" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> pct_college),</span>
+<span id="cb13-336"><a href="#cb13-336" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"gray50"</span>, <span class="at">alpha =</span> <span class="fl">0.4</span></span>
+<span id="cb13-337"><a href="#cb13-337" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb13-338"><a href="#cb13-338" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_point</span>(</span>
+<span id="cb13-339"><a href="#cb13-339" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> binned_college,</span>
+<span id="cb13-340"><a href="#cb13-340" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> first_year <span class="sc">+</span> <span class="fl">12.5</span>, <span class="at">y =</span> pct_college), <span class="co"># put point in middle of 25-year bin</span></span>
+<span id="cb13-341"><a href="#cb13-341" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"#6A0DAD"</span>, <span class="at">size =</span> <span class="dv">2</span></span>
+<span id="cb13-342"><a href="#cb13-342" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb13-343"><a href="#cb13-343" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(</span>
+<span id="cb13-344"><a href="#cb13-344" aria-hidden="true" tabindex="-1"></a>        <span class="at">data =</span> binned_college,</span>
+<span id="cb13-345"><a href="#cb13-345" aria-hidden="true" tabindex="-1"></a>        <span class="fu">aes</span>(<span class="at">x =</span> first_year <span class="sc">+</span> <span class="fl">12.5</span>, <span class="at">y =</span> pct_college),</span>
+<span id="cb13-346"><a href="#cb13-346" aria-hidden="true" tabindex="-1"></a>        <span class="at">color =</span> <span class="st">"#6A0DAD"</span></span>
+<span id="cb13-347"><a href="#cb13-347" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
+<span id="cb13-348"><a href="#cb13-348" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb13-349"><a href="#cb13-349" aria-hidden="true" tabindex="-1"></a>    <span class="fu">xlab</span>(<span class="st">""</span>) <span class="sc">+</span></span>
+<span id="cb13-350"><a href="#cb13-350" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more college educated?"</span>) <span class="sc">+</span></span>
+<span id="cb13-351"><a href="#cb13-351" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent College"</span>) <span class="sc">+</span></span>
+<span id="cb13-352"><a href="#cb13-352" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
+<span id="cb13-353"><a href="#cb13-353" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="co"># Add x-axis ticks every 25 years</span></span>
 <span id="cb13-354"><a href="#cb13-354" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-355"><a href="#cb13-355" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-355"><a href="#cb13-355" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-356"><a href="#cb13-356" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-357"><a href="#cb13-357" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where Did The Data Come From? Who Collected It?</span></span>
 <span id="cb13-358"><a href="#cb13-358" aria-hidden="true" tabindex="-1"></a></span>
@@ -2453,7 +2486,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-421"><a href="#cb13-421" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-422"><a href="#cb13-422" aria-hidden="true" tabindex="-1"></a>We also scrape terms from the top of their page. For example, consider the background of Arnold Schwarzenegger. This allows us to ascertain his political party, his terms in office, birthdate (and therefore age when entering office), his university, and that his birthplace is outside the US.</span>
 <span id="cb13-423"><a href="#cb13-423" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/arnold.png)</span></span>
+<span id="cb13-424"><a href="#cb13-424" aria-hidden="true" tabindex="-1"></a><span class="al">![Arnold Schwarzenegger's NGA page](images/arnold.png)</span></span>
 <span id="cb13-425"><a href="#cb13-425" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-426"><a href="#cb13-426" aria-hidden="true" tabindex="-1"></a>We use basic text extraction techniques to identify certain key biographical attributes. With Arnold Schwarnegger, we extract his birth country from his text bio.</span>
 <span id="cb13-427"><a href="#cb13-427" aria-hidden="true" tabindex="-1"></a></span>
@@ -2464,13 +2497,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-432"><a href="#cb13-432" aria-hidden="true" tabindex="-1"></a>In total, the full sample is of 2,486 individuals from 55 states and territories, including governors from Puerto Rico (1949-present), American Samoa, Guam, the Northern Mariana Islands, and the US Virgin Islands. The latter territories do not have full federal representation or rights.</span>
 <span id="cb13-433"><a href="#cb13-433" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-434"><a href="#cb13-434" aria-hidden="true" tabindex="-1"></a>The following table shows a sample portion of the data frame:</span>
-<span id="cb13-437"><a href="#cb13-437" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gov_dataset[<span class="fu">c</span>(<span class="st">"state_territory"</span>, <span class="st">"governor"</span>, <span class="st">"party"</span>, <span class="st">"first_year"</span>, <span class="st">"school"</span>, <span class="st">"birth_state_territory"</span>)])</span>
-<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-435"><a href="#cb13-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-438"><a href="#cb13-438" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-439"><a href="#cb13-439" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb13-440"><a href="#cb13-440" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-441"><a href="#cb13-441" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gov_dataset[<span class="fu">c</span>(<span class="st">"state_territory"</span>, <span class="st">"governor"</span>, <span class="st">"party"</span>, <span class="st">"first_year"</span>, <span class="st">"school"</span>, <span class="st">"birth_state_territory"</span>)])</span>
+<span id="cb13-442"><a href="#cb13-442" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-443"><a href="#cb13-443" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-444"><a href="#cb13-444" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-445"><a href="#cb13-445" aria-hidden="true" tabindex="-1"></a><span class="fu">## Uncertainty in the Data</span></span>
 <span id="cb13-446"><a href="#cb13-446" aria-hidden="true" tabindex="-1"></a></span>
@@ -2478,13 +2511,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-448"><a href="#cb13-448" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-449"><a href="#cb13-449" aria-hidden="true" tabindex="-1"></a>Another interesting inconsistency in the data is the **birth_date** column. For example, let's take a look at <span class="co">[</span><span class="ot">Gov. Sam Houston Jones</span><span class="co">](https://www.nga.org/governor/sam-houston-jones/)</span> of Louisiana.</span>
 <span id="cb13-450"><a href="#cb13-450" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/jones.png)</span></span>
+<span id="cb13-451"><a href="#cb13-451" aria-hidden="true" tabindex="-1"></a><span class="al">![Sam Houston Jones' NGA page where his birth year is after his term start](images/jones.png)</span></span>
 <span id="cb13-452"><a href="#cb13-452" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a>Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveller, isn't passing a basic sanity scheck. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.</span>
+<span id="cb13-453"><a href="#cb13-453" aria-hidden="true" tabindex="-1"></a>Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveler, isn't passing a basic sanity check. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.</span>
 <span id="cb13-454"><a href="#cb13-454" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-455"><a href="#cb13-455" aria-hidden="true" tabindex="-1"></a>We extract the **school** column based on a similar method, of identifying the **school** tag on the NGA site. However, some governors like <span class="co">[</span><span class="ot">Kenneth Hood Mackay</span><span class="co">](https://www.nga.org/governor/kenneth-hood-mackay/)</span> attended college but don't have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn't have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.</span>
 <span id="cb13-456"><a href="#cb13-456" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/mackay.png)</span></span>
+<span id="cb13-457"><a href="#cb13-457" aria-hidden="true" tabindex="-1"></a><span class="al">![Kenneth Hood Mackay's NGA page where he has no school listed in the table.](images/mackay.png)</span></span>
 <span id="cb13-458"><a href="#cb13-458" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-459"><a href="#cb13-459" aria-hidden="true" tabindex="-1"></a>The **birth_date** and **school** columns are instructive examples of how even reliable websites backed with institutional authority can make mistakes with data entry. Those data entry mistakes can propagate into resources like this, whose quality is only ever as good as the underlying source.</span>
 <span id="cb13-460"><a href="#cb13-460" aria-hidden="true" tabindex="-1"></a></span>
@@ -2494,7 +2527,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-464"><a href="#cb13-464" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-465"><a href="#cb13-465" aria-hidden="true" tabindex="-1"></a>Due to these data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.</span>
 <span id="cb13-466"><a href="#cb13-466" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a><span class="al">![](images/ross.png)</span></span>
+<span id="cb13-467"><a href="#cb13-467" aria-hidden="true" tabindex="-1"></a><span class="al">![Nellie Taylor Ross was the first female US governor.](images/ross.png)</span></span>
 <span id="cb13-468"><a href="#cb13-468" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-471"><a href="#cb13-471" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
 <span id="cb13-472"><a href="#cb13-472" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average % female governors every year</span></span>
@@ -2790,7 +2823,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-772"><a href="#cb13-772" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-773"><a href="#cb13-773" aria-hidden="true" tabindex="-1"></a><span class="fu">## Explore the Data</span></span>
 <span id="cb13-774"><a href="#cb13-774" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-775"><a href="#cb13-775" aria-hidden="true" tabindex="-1"></a>::: {.content-hidden when-format="pdf"}</span>
+<span id="cb13-775"><a href="#cb13-775" aria-hidden="true" tabindex="-1"></a>::::::: {.content-hidden when-format="pdf"}</span>
 <span id="cb13-778"><a href="#cb13-778" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
 <span id="cb13-779"><a href="#cb13-779" aria-hidden="true" tabindex="-1"></a><span class="co">//|echo: false</span></span>
 <span id="cb13-780"><a href="#cb13-780" aria-hidden="true" tabindex="-1"></a><span class="co">//|output: false</span></span>
@@ -2905,58 +2938,59 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-889"><a href="#cb13-889" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-890"><a href="#cb13-890" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-891"><a href="#cb13-891" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-892"><a href="#cb13-892" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"table-container1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height: 500px"</span><span class="dt">&gt;</span></span>
-<span id="cb13-893"><a href="#cb13-893" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-892"><a href="#cb13-892" aria-hidden="true" tabindex="-1"></a>::: {#table-container1 style="height: 500px"}</span>
+<span id="cb13-893"><a href="#cb13-893" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-894"><a href="#cb13-894" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-895"><a href="#cb13-895" aria-hidden="true" tabindex="-1"></a>Download Full Data</span>
-<span id="cb13-896"><a href="#cb13-896" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container'</span><span class="dt">&gt;</span></span>
-<span id="cb13-897"><a href="#cb13-897" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw2"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-898"><a href="#cb13-898" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url2"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-899"><a href="#cb13-899" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-896"><a href="#cb13-896" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-897"><a href="#cb13-897" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-898"><a href="#cb13-898" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-899"><a href="#cb13-899" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-raw2"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Full Data<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"copy-url2"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-copy"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Copy Full Data URL<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
 <span id="cb13-900"><a href="#cb13-900" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-901"><a href="#cb13-901" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
+<span id="cb13-901"><a href="#cb13-901" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb13-902"><a href="#cb13-902" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-903"><a href="#cb13-903" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">'button-container2'</span><span class="dt">&gt;</span></span>
-<span id="cb13-904"><a href="#cb13-904" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-905"><a href="#cb13-905" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-906"><a href="#cb13-906" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-xlsx"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Excel<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
-<span id="cb13-907"><a href="#cb13-907" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-903"><a href="#cb13-903" aria-hidden="true" tabindex="-1"></a>Download Table Data (including filtered options)</span>
+<span id="cb13-904"><a href="#cb13-904" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-905"><a href="#cb13-905" aria-hidden="true" tabindex="-1"></a>::: {#button-container2}</span>
+<span id="cb13-906"><a href="#cb13-906" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-csv"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download CSV<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-json"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download JSON<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span> <span class="dt">&lt;</span><span class="kw">button</span><span class="ot"> id</span><span class="op">=</span><span class="st">"download-xlsx"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fas fa-download"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> Download Excel<span class="dt">&lt;/</span><span class="kw">button</span><span class="dt">&gt;</span></span>
+<span id="cb13-907"><a href="#cb13-907" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-908"><a href="#cb13-908" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-909"><a href="#cb13-909" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-909"><a href="#cb13-909" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
 <span id="cb13-910"><a href="#cb13-910" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-911"><a href="#cb13-911" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-912"><a href="#cb13-912" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
-<span id="cb13-913"><a href="#cb13-913" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb13-911"><a href="#cb13-911" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb13-912"><a href="#cb13-912" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb13-913"><a href="#cb13-913" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-914"><a href="#cb13-914" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-915"><a href="#cb13-915" aria-hidden="true" tabindex="-1"></a><span class="co">&lt;!-- Excel script --&gt;</span></span>
-<span id="cb13-916"><a href="#cb13-916" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> type=</span><span class="st">"text/javascript"</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
-<span id="cb13-917"><a href="#cb13-917" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-918"><a href="#cb13-918" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-919"><a href="#cb13-919" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
-<span id="cb13-920"><a href="#cb13-920" aria-hidden="true" tabindex="-1"></a><span class="fu">## Creative Commons License</span></span>
-<span id="cb13-921"><a href="#cb13-921" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-922"><a href="#cb13-922" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="dt">&gt;</span></span>
+<span id="cb13-916"><a href="#cb13-916" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-917"><a href="#cb13-917" aria-hidden="true" tabindex="-1"></a><span class="in">```{=html}</span></span>
+<span id="cb13-918"><a href="#cb13-918" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"&gt;&lt;/script&gt;</span></span>
+<span id="cb13-919"><a href="#cb13-919" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-920"><a href="#cb13-920" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-921"><a href="#cb13-921" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip icon="false"}</span>
+<span id="cb13-922"><a href="#cb13-922" aria-hidden="true" tabindex="-1"></a><span class="fu">## Creative Commons License</span></span>
 <span id="cb13-923"><a href="#cb13-923" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-924"><a href="#cb13-924" aria-hidden="true" tabindex="-1"></a>This work is licensed under <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="dt">&gt;</span>CC BY 4.0<span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb13-924"><a href="#cb13-924" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> xmlns:cc</span><span class="op">=</span><span class="st">"http://creativecommons.org/ns#"</span><span class="dt">&gt;</span></span>
 <span id="cb13-925"><a href="#cb13-925" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-926"><a href="#cb13-926" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb13-927"><a href="#cb13-927" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb13-928"><a href="#cb13-928" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-926"><a href="#cb13-926" aria-hidden="true" tabindex="-1"></a>This work is licensed under <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"license noopener noreferrer"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"display:inline-block;"</span><span class="dt">&gt;</span>CC BY 4.0<span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"</span><span class="ot"> style</span><span class="op">=</span><span class="st">"height:22px!important;margin-left:3px;vertical-align:text-bottom;"</span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb13-927"><a href="#cb13-927" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-928"><a href="#cb13-928" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
 <span id="cb13-929"><a href="#cb13-929" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb13-930"><a href="#cb13-930" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-931"><a href="#cb13-931" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises {#exercises}</span></span>
-<span id="cb13-932"><a href="#cb13-932" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-933"><a href="#cb13-933" aria-hidden="true" tabindex="-1"></a><span class="fu">## Programming Exercises</span></span>
-<span id="cb13-934"><a href="#cb13-934" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-935"><a href="#cb13-935" aria-hidden="true" tabindex="-1"></a>The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own.</span>
-<span id="cb13-936"><a href="#cb13-936" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-937"><a href="#cb13-937" aria-hidden="true" tabindex="-1"></a>:::: {.panel-tabset .nav-pills}</span>
-<span id="cb13-938"><a href="#cb13-938" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
-<span id="cb13-939"><a href="#cb13-939" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-940"><a href="#cb13-940" aria-hidden="true" tabindex="-1"></a>::: {#exercise-posts-python}</span>
-<span id="cb13-941"><a href="#cb13-941" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb13-942"><a href="#cb13-942" aria-hidden="true" tabindex="-1"></a>::::</span>
-<span id="cb13-943"><a href="#cb13-943" aria-hidden="true" tabindex="-1"></a>::::::::::::</span>
+<span id="cb13-930"><a href="#cb13-930" aria-hidden="true" tabindex="-1"></a>:::::::</span>
+<span id="cb13-931"><a href="#cb13-931" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-932"><a href="#cb13-932" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercises {#exercises}</span></span>
+<span id="cb13-933"><a href="#cb13-933" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-934"><a href="#cb13-934" aria-hidden="true" tabindex="-1"></a><span class="fu">## Programming Exercises</span></span>
+<span id="cb13-935"><a href="#cb13-935" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-936"><a href="#cb13-936" aria-hidden="true" tabindex="-1"></a>The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own.</span>
+<span id="cb13-937"><a href="#cb13-937" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-938"><a href="#cb13-938" aria-hidden="true" tabindex="-1"></a>:::: {.panel-tabset .nav-pills}</span>
+<span id="cb13-939"><a href="#cb13-939" aria-hidden="true" tabindex="-1"></a><span class="fu"># Python</span></span>
+<span id="cb13-940"><a href="#cb13-940" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-941"><a href="#cb13-941" aria-hidden="true" tabindex="-1"></a>::: {#exercise-posts-python}</span>
+<span id="cb13-942"><a href="#cb13-942" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb13-943"><a href="#cb13-943" aria-hidden="true" tabindex="-1"></a>::::</span>
+<span id="cb13-944"><a href="#cb13-944" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::</span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
