@@ -18,6 +18,10 @@
     ],
     "datasets.qmd": [
       "posts"
+    ],
+    "posts/gubernatorial-bios/index.qmd": [
+      "exercises-r",
+      "exercises-python"
     ]
   }
 }

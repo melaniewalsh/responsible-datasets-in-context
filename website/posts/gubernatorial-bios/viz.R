@@ -1,19 +1,18 @@
-
-install.packages(c(
-  "stargazer",
-  "sf",
-  "tidyverse",
-  "xtable",
-  "ggwordcloud",
-  "binscatter"
-))
-
+# install.packages(c(
+#   "stargazer",
+#   "sf",
+#   "tidyverse",
+#   "xtable",
+#   "ggwordcloud",
+#   "binscatter"
+# ))
 
 
 
-#Load the necessary package for visualization
 
-library(sf) 
+# Load the necessary package for visualization
+
+library(sf)
 library(tidyverse)
 library(xtable)
 library(ggwordcloud)
@@ -21,7 +20,7 @@ library(dplyr)
 library(ggplot2)
 
 
-##COLLEGE
+## COLLEGE
 
 
 
@@ -74,7 +73,7 @@ binned_college <- yearly_college %>%
   mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
   group_by(bin) %>%
   summarise(
-    first_year = min(year),                  # midpoint anchor
+    first_year = min(year), # midpoint anchor
     pct_college = mean(pct_college, na.rm = TRUE),
     .groups = "drop"
   )
@@ -88,7 +87,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_college,
-    aes(x = first_year + 12.5, y = pct_college),  # put point in middle of 25-year bin
+    aes(x = first_year + 12.5, y = pct_college), # put point in middle of 25-year bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -101,7 +100,7 @@ ggplot() +
   ggtitle("Have elected governors become more college educated?") +
   ylab("Percent College") +
   theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))   # Add x-axis ticks every 25 years
+  scale_x_continuous(breaks = seq(1775, 2025, by = 25)) # Add x-axis ticks every 25 years
 
 
 
@@ -136,7 +135,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_military,
-    aes(x = first_year + 12.5, y = pct_military),  # center in bin
+    aes(x = first_year + 12.5, y = pct_military), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -185,7 +184,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_female,
-    aes(x = first_year + 12.5, y = pct_female),  # center in bin
+    aes(x = first_year + 12.5, y = pct_female), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -233,7 +232,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_ivy,
-    aes(x = first_year + 12.5, y = pct_ivy),  # center in bin
+    aes(x = first_year + 12.5, y = pct_ivy), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -278,7 +277,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_lawyer,
-    aes(x = first_year + 12.5, y = pct_lawyer),  # center in bin
+    aes(x = first_year + 12.5, y = pct_lawyer), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -299,14 +298,16 @@ ggplot() +
 
 party_counts <- gov_dataset %>%
   transmute(party = coalesce(party, "")) %>%
-  mutate(party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
-         party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
-         party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
-         party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
-         party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
-         party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
-         party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
-         party = str_replace_all(party, "\\s+", " ")) %>%
+  mutate(
+    party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
+    party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
+    party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
+    party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
+    party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
+    party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
+    party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
+    party = str_replace_all(party, "\\s+", " ")
+  ) %>%
   separate_rows(party, sep = "\\s*(;|,|/|\\band\\b|&|;)\\s*") %>%
   mutate(party = str_squish(party)) %>%
   filter(party != "") %>%
@@ -314,23 +315,25 @@ party_counts <- gov_dataset %>%
 
 party_counts_final <- party_counts %>%
   slice_max(n, n = 10) %>%
-  mutate(party = fct_reorder(party, n)) 
+  mutate(party = fct_reorder(party, n))
 ggplot(party_counts_final, aes(x = n, y = party)) +
   geom_col(fill = "#6A0DAD") +
   theme_bw() +
-  theme(plot.title = element_text(size = 8))  +
-  labs(title = "Most common party affiliations among U.S. governors",
-       x = "Count", y = NULL) +
+  theme(plot.title = element_text(size = 8)) +
+  labs(
+    title = "Most common party affiliations among U.S. governors",
+    x = "Count", y = NULL
+  ) +
   theme_minimal(base_size = 12)
 
 ## Word Cloud
-intl_born <- gov_dataset %>% 
+intl_born <- gov_dataset %>%
   filter(!is.na(intl_born_details))
 
 
 # your manually cleaned vector of international places
 intl_places <- c(
-  "Japan", # military base 
+  "Japan", # military base
   "Lochmaben, Dumfriesshire, Scotland",
   "Austria",
   "County Roscommon, Ireland",
@@ -416,7 +419,7 @@ intl_places
 ggplot(intl_places, aes(label = intl_places, size = Freq)) +
   geom_text_wordcloud_area() +
   scale_size_area(max_size = 20) +
-  ggtitle("Locations of Birth for US Governors Born Outside the States")+ 
+  ggtitle("Locations of Birth for US Governors Born Outside the States") +
   theme_void() +
   theme(
     panel.background = element_rect(fill = "white", colour = NA),
@@ -489,7 +492,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_born_in_state,
-    aes(x = first_year + 12.5, y = pct_in_state),  # center in bin
+    aes(x = first_year + 12.5, y = pct_in_state), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -504,7 +507,7 @@ ggplot() +
   theme(plot.title = element_text(size = 8)) +
   scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
-##Age
+## Age
 
 yearly_age <- gov_long %>%
   group_by(year) %>%
@@ -532,7 +535,7 @@ ggplot() +
   ) +
   geom_point(
     data = binned_age,
-    aes(x = first_year + 12.5, y = avg_age),  # center in bin
+    aes(x = first_year + 12.5, y = avg_age), # center in bin
     color = "#6A0DAD", size = 2
   ) +
   geom_line(
@@ -546,4 +549,3 @@ ggplot() +
   ylab("Average Age") +
   theme(plot.title = element_text(size = 8)) +
   scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-

@@ -196,11 +196,11 @@ options(scipen = 999)
 yellowstone_data <- np_data %>% filter(ParkName == "Yellowstone NP")
 
 # Visualise it
-ggplot(data = yellowstone_data) + 
-  geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[1]) + 
-  labs(title = "Yellowstone National Park Visits (1979 - Present)") +
-  # abbreviate numbers by millions and thousands
-  scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
+ggplot(data = yellowstone_data) +
+    geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[1]) +
+    labs(title = "Yellowstone National Park Visits (1979 - Present)") +
+    # abbreviate numbers by millions and thousands
+    scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
 
 ```
 
@@ -333,11 +333,11 @@ For instance, in the summer months (May through November) at Voyageurs National 
 voyageurs_data <- np_data %>% filter(ParkName == "Voyageurs NP")
 
 # Visualizee it
-ggplot(data = voyageurs_data) + 
-  geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[8]) + 
-  labs(title = "Voyageurs National Park Visits (1979 - Present)") +
-  # abbreviate numbers by millions and thousands
-  scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
+ggplot(data = voyageurs_data) +
+    geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[8]) +
+    labs(title = "Voyageurs National Park Visits (1979 - Present)") +
+    # abbreviate numbers by millions and thousands
+    scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
 
 ```
 
@@ -393,11 +393,11 @@ options(scipen = 999)
 carlsbad_data <- np_data %>% filter(ParkName == "Carlsbad Caverns NP")
 
 # Visualise it
-ggplot(data = carlsbad_data) + 
-  geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[2]) + 
-  labs(title = "Carlsbad Caverns National Park Visits (1979 - Present)") +
-  # abbreviate numbers by millions and thousands
-  scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
+ggplot(data = carlsbad_data) +
+    geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[2]) +
+    labs(title = "Carlsbad Caverns National Park Visits (1979 - Present)") +
+    # abbreviate numbers by millions and thousands
+    scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
 
 ```
 
@@ -436,7 +436,7 @@ least_visited <- np_data %>% filter(RecreationVisits == min(RecreationVisits))
 num_rows <- nrow(least_visited)
 
 # Show some of them
-least_visited  %>% slice_sample(n = min(10, num_rows))
+least_visited %>% slice_sample(n = min(10, num_rows))
 ```
 
 You might guess that there are no visits in these years because these parks are all located in remote places, like rural Alaska or American Samoa.
@@ -449,11 +449,11 @@ If we look at the visitation trends for Kobuk Valley National Park in Alaska, fo
 kobuk_data <- np_data %>% filter(ParkName == "Kobuk Valley NP")
 
 # Visualise it
-ggplot(data = kobuk_data) + 
-  geom_line(aes(x = Year, y = RecreationVisits ), color = cb_palette[6]) +
-  labs(title = "Kobuk Valley National Park Visits (1979 - Present)") +
-  # abbreviate numbers by millions and thousands
-  scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
+ggplot(data = kobuk_data) +
+    geom_line(aes(x = Year, y = RecreationVisits), color = cb_palette[6]) +
+    labs(title = "Kobuk Valley National Park Visits (1979 - Present)") +
+    # abbreviate numbers by millions and thousands
+    scale_y_continuous(labels = label_number(scale_cut = cut_short_scale()))
 ```
 
 But after a little digging, we found out that in 2014 and 2015, Kobuk Valley National Park actually didn't count visitors at all.

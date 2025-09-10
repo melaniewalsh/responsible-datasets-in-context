@@ -1,7 +1,9 @@
 {
   "bioconductor.version": null,
   "external.libraries": [],
-  "ignored.packages": [],
+  "ignored.packages": [
+    "textshaping"
+  ],
   "package.dependency.fields": [
     "Imports",
     "Depends",

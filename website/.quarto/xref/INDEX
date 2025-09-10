@@ -245,5 +245,15 @@
   },
   "posts/np-data/exercises-r/NP-Data-Groupby-Solutions.qmd": {
     "NP-Data-Groupby-Solutions.html": "9b1666af"
+  },
+  "posts/gubernatorial-bios/index.qmd": {
+    "index.html": "a16c7374"
+  },
+  "posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.qmd": {
+    "Gubernatorial-Data-Value-Counts-Exercise.html": "3297b2cc"
+  },
+  "posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.qmd": {
+    "Gubernatorial-Data-Value-Counts-Solutions.html": "f7293701",
+    "Gubernatorial-Data-Value-Counts-Solutions.ipynb": "4b61b6e0"
   }
 }

@@ -91,7 +91,7 @@ website:
 format:
   html:
     theme:
-        light: [lux, theme.scss]
+        light: [lux]
     css: styles.css
     code-copy: true
     code-overflow: wrap

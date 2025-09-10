@@ -52,5 +52,12 @@
     "items": [
       "/posts/top-500-novels/exercises/Metadata_Analysis.html"
     ]
+  },
+  {
+    "listing": "/posts/gubernatorial-bios/index.html",
+    "items": [
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html",
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html"
+    ]
   }
 ]

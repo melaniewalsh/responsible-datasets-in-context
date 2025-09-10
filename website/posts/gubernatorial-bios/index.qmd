@@ -1,26 +1,44 @@
 ---
 title: "A Historical Dataset on Governors of the United States and Its Territories"
 author: Sydney White, Kenneth Scheve, Theo Serlin, and Neel Gupta
-format: 
+date: "2025-09"
+categories: [government, biographies, history, politics, governors, draft]
+image: "https://upload.wikimedia.org/wikipedia/commons/a/af/National_Governors_Association_logo.svg"
+format-links: [ipynb, pdf, docx]
+
+# toc: true
+# toc-depth: 3
+# toc-title: "On this page"
+# toc-location: left
+
+format:
   html:
     css: ../../styles.css
-    # page-layout: full
-  # ipynb: default
-  #pdf: default
-  #docx: default
-  #r: default
+    
+df-print: kable
+code-fold: true
+code-tools: true
+editor: visual
+
+
+R.options:
+  warn: false
+  knitr.graphics.auto_pdf: true
+
+# (rest of your listing blocks unchanged)
 listing:
-  - id: exercise-posts-r
-    contents: exercises-r
-    exclude:
-      categories: "dataset, draft"
-    sort: "date desc"
-    type: table
-    fields: [date, title, categories]
-    categories: false
-    sort-ui: false
-    filter-ui: true
-    image-height: 200px
+# add back if there are R exercises
+  # - id: exercise-posts-r
+  #   contents: exercises-r
+  #   exclude:
+  #     categories: "dataset, draft"
+  #   sort: "date desc"
+  #   type: table
+  #   fields: [date, title, categories]
+  #   categories: false
+  #   sort-ui: false
+  #   filter-ui: true
+  #   image-height: 200px
   - id: exercise-posts-python
     contents: exercises-python
     exclude:
@@ -31,17 +49,7 @@ listing:
     categories: false
     sort-ui: false
     filter-ui: true
-date: "2025-09"
-categories: [government, biographies, history, politics, governors, draft]
-image: "https://upload.wikimedia.org/wikipedia/commons/a/af/National_Governors_Association_logo.svg"
-format-links: [ipynb, pdf, docx]
-code-fold: true
-editor: visual
-df-print: kable
-R.options:
-  warn: false
-  knitr.graphics.auto_pdf: true
-code-tools: true
+  
 bibliography: ../../references/references.bib
 ---
 
@@ -58,10 +66,170 @@ This dataset contains information on the biographical backgrounds of United Stat
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
+## Dataset
+
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles, viewof all_park_chart} from "ac13d95a907715bf"
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"
 ```
+
+
+
+```{ojs}
+//|echo: false
+//|output: false
+
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+generateTabulatorTableFromCSV(
+  "#table-container4",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  {
+    displayedColumns: [
+      // Core identity & office
+      "state_territory",
+      "governor",
+      "party",
+      "first_year",
+      "years_in_office",
+
+      // Background & education
+      "school",
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+
+      // Birth & demographics
+      "birth_state_territory",
+      "birth_date",
+      "age_at_start",
+      "gender",
+      "born_in_state_territory",
+      "intl_born",
+      "intl_born_details",
+
+      // Long description
+      "bio_text"
+    ],
+
+    columnPopups: [
+      "U.S. state or territory governed.",
+      "Governor’s name.",
+      "Political party affiliation.",
+      "First year they served as governor.",
+      "Spans/terms served (as listed in the bio).",
+
+      "Primary college or university listed (if any).",
+      "Did the governor attend college? (1/0).",
+      "Did the governor attend an Ivy League school? (1/0).",
+      "Is/was the governor a lawyer? (1/0).",
+      "Did the governor serve in the military? (1/0).",
+
+      "Birth state or territory.",
+      "Birth date (YYYY-MM-DD where available).",
+      "Age at the start of first term.",
+      "Gender as recorded in the dataset.",
+      "Whether born in the state/territory they govern (1/0).",
+      "Whether born outside the U.S. (1/0).",
+      "Details about international birthplace if applicable.",
+
+      "Short biography text."
+    ],
+
+    // columnWidths: {
+    //   governor: "220px",
+    //   party: "140px",
+    //   years_in_office: "220px",
+    //   school: "220px",
+    //   bio_text: "40%"
+    // },
+
+    // Treat these as numeric so you get proper sort/filter ranges
+    numericColumns: ["first_year", "age_at_start"],
+
+    // Good facets for filtering
+    categoryColumns: [
+      "state_territory",
+      "party",
+      "school",
+      "birth_state_territory",
+      "gender",
+
+      // binary flags as categories for easy faceting
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+      "born_in_state_territory",
+      "intl_born"
+    ],
+
+    // Default sort: by state, then governor
+    sortColumns: ["state_territory", "governor"],
+    sortOrders: ["asc", "asc"],
+
+    // Buttons (kept the same IDs you used)
+    buttonContainerId: "#button-container1",
+    rawButtonId: "#download-raw1",
+    urlCopyButtonId: "#copy-url1",
+
+    // Optional: if your helper supports label maps for 1/0 columns, this is handy.
+    // booleanLabelColumns: {
+    //   college_attendance: { "1": "Yes", "0": "No" },
+    //   ivy_attendance: { "1": "Yes", "0": "No" },
+    //   lawyer: { "1": "Yes", "0": "No" },
+    //   military_service: { "1": "Yes", "0": "No" },
+    //   born_in_state_territory: { "1": "Yes", "0": "No" },
+    //   intl_born: { "1": "Yes", "0": "No" }
+    // }
+  }
+);
+
+
+```
+
+<div id="table-container4" style="height: 500px">
+</div>
+
+Download Full Data
+<div id='button-container'>
+  <button id="download-raw1"><i class="fas fa-download"></i></i> Download Full Data</button>
+  <button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
+
+Download Table Data (including filtered options)
+
+<div id='button-container1'>
+  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
+  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
+  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+</div>
+
+<div id="progress-container" style="width: 100%; display: block;">
+  <progress id="progress-bar" style="width: 100%;" max="100" value="0"></progress>
+  <div id="progress-text" style="text-align: center; margin-top: 5px;"></div>
+</div>
+
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+
+<!-- Excel script -->
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+
+
+::: {.callout-tip icon="false"}
+## Creative Commons License
+
+<p xmlns:cc="http://creativecommons.org/ns#">
+
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+:::
 
 ## What's in the data?
 
@@ -95,11 +263,15 @@ Using the above information extracted from the NGA, we construct the following c
 -   intl_born: Equals 1 if the governor was born outside of the United States (as defined by the contemporary definition of the 50 states and territories); 0 otherwise. To signify internationally-born, if birth_state was labeled as "Other", we recognize these governors as international.
 -   intl_born_details: To get more information on governors born outside the US, we search the bio text of governors with birth_state equivalent to \`\`Other." We extract their likely birthplace as a string.
 
-The data reveal notable shifts in the backgrounds of U.S. governors over the past 250 years. In the late 18th century, governors were disproportionately elite, with slightly under half having attended college. For reference, by 1870 only [one percent of the US population attended college](https://www.gilderlehrman.org/history-resources/teacher-resources/statistics-education-america-1860-1950), so 50 percent is exceptionally high almost a century earlier. During the Progressive Era in the early 20th century, reformers emphasized education and professionalization in public life (including in city and local government and the federal government). This is reflected in a sharp increase in college attendance among governors between 1875-1900 and 1900-1925. Note: All line plots in this essay use grey dots to represnet yearly average and purple dots to represent 25 year binned averages. 
+The data reveal notable shifts in the backgrounds of U.S. governors over the past 250 years. In the late 18th century, governors were disproportionately elite, with slightly under half having attended college. For reference, by 1870 only [one percent of the US population attended college](https://www.gilderlehrman.org/history-resources/teacher-resources/statistics-education-america-1860-1950), so 50 percent is exceptionally high almost a century earlier. During the Progressive Era in the early 20th century, reformers emphasized education and professionalization in public life (including in city and local government and the federal government). This is reflected in a sharp increase in college attendance among governors between 1875-1900 and 1900-1925. Note: All line plots in this essay use grey dots to represnet yearly average and purple dots to represent 25 year binned averages.
 
 ```{r}
+#| warning: false
+
 
 # Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
+
+# install.packages("rmarkdown")
 
 
 library(tidyverse)
@@ -111,131 +283,76 @@ gov_dataset <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsi
 
 ## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations
 gov_long <- gov_dataset %>%
-  # Split multiple ranges into separate rows
-  separate_rows(years_in_office, sep = "\\s(?=\\d{4}\\s-\\s\\d{4}|\\d{4}\\s-)") %>%
-  # Extract start and end years
-  mutate(
-    start = as.numeric(str_extract(years_in_office, "^\\d{4}")),
-    end   = as.numeric(str_extract(years_in_office, "\\d{4}$"))
-  ) %>%
-  # Expand each range into all years served
-  rowwise() %>%
-  mutate(year = list(seq(start, end))) %>%
-  unnest(year) %>%
-  ungroup() %>%
-  filter(year >= 1775, year <= 2025) %>%
-  distinct()
+    # Split multiple ranges into separate rows
+    separate_rows(years_in_office, sep = "\\s(?=\\d{4}\\s-\\s\\d{4}|\\d{4}\\s-)") %>%
+    # Extract start and end years
+    mutate(
+        start = as.numeric(str_extract(years_in_office, "^\\d{4}")),
+        end   = as.numeric(str_extract(years_in_office, "\\d{4}$"))
+    ) %>%
+    # Expand each range into all years served
+    rowwise() %>%
+    mutate(year = list(seq(start, end))) %>%
+    unnest(year) %>%
+    ungroup() %>%
+    filter(year >= 1775, year <= 2025) %>%
+    distinct()
 
 ## Let's get average college attendance rate by elected governors for each year
 yearly_college <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    college = sum(college_attendance == 1, na.rm = TRUE),
-    pct_college = 100 * college / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        college = sum(college_attendance == 1, na.rm = TRUE),
+        pct_college = 100 * college / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_college <- yearly_college %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),                  # midpoint anchor
-    pct_college = mean(pct_college, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year), # midpoint anchor
+        pct_college = mean(pct_college, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_college,
-    aes(x = year, y = pct_college),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_college,
-    aes(x = first_year + 12.5, y = pct_college),  # put point in middle of 25-year bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_college,
-    aes(x = first_year + 12.5, y = pct_college),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Have elected governors become more college educated?") +
-  ylab("Percent College") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))   # Add x-axis ticks every 25 years
+    geom_point(
+        data = yearly_college,
+        aes(x = year, y = pct_college),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_college,
+        aes(x = first_year + 12.5, y = pct_college), # put point in middle of 25-year bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_college,
+        aes(x = first_year + 12.5, y = pct_college),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more college educated?") +
+    ylab("Percent College") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) # Add x-axis ticks every 25 years
 
 ```
 
-```{ojs}
-//|echo: false
-viewof all_park_chart
-```
 
-## Dataset
-
-<br>
-
-::: {.content-hidden when-format="pdf"}
-```{ojs}
-//|echo: false
-viewof selectedPark
-viewof park_chart
-```
-
-```{ojs}
-//|echo: false
-viewof datasetHeader
-tableContainer
-```
-
-```{ojs}
-//|echo: false
-viewof twobuttons
-```
-
-```{ojs}
-//|echo: false
-//|output: false
-table
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
-```
-:::
-
-::: {.callout-note icon="false" collapse="true"}
-## View Summary of Columns
-
-```{ojs}
-//|echo: false
-viewof selectedColumns
-viewof dataSummaryView
-
-```
-:::
-
-::: {.callout-tip icon="false"}
-## Creative Commons License
-
-<p xmlns:cc="http://creativecommons.org/ns#">
-
-This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
-
-</p>
-:::
 
 ## Where Did The Data Come From? Who Collected It?
 
-The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King's College, Longon) as part of a larger research team at Yale University. Our sponsors included the [Yale University of Department of Political Science](https://politicalscience.yale.edu/), [Center for the Study of American Politics (CSAP)](https://csap.yale.edu/) and the [Yale Jackson School of Global Affairs](https://jackson.yale.edu/}).
+The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King's College, Longon) as part of a larger research team at Yale University. Our sponsors included the [Yale University of Department of Political Science](https://politicalscience.yale.edu/), [Center for the Study of American Politics (CSAP)](https://csap.yale.edu/) and the [Yale Jackson School of Global Affairs](https://jackson.yale.edu/%7D).
 
 ## Why Was The Data Collected? How Is The Data Used?
 
-The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. [@dal2009political] examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., \[@Fresh_2024\] constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.
+The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. [@dal2009political] examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., [@Fresh_2024] constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.
 
 Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century [@berman2019governors], to managing managing public health and disaster responses (see literature [@baccini2021explaining]related to COVID-19), to shaping national outcomes through gerrymandering as recently as [August 2025](https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819). Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.
 
@@ -247,47 +364,47 @@ For example, the next figure shows the share of governors with military service.
 
 ## Let's get average military rate by elected governors for each year
 yearly_military <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    military = sum(military_service == 1, na.rm = TRUE),
-    pct_military = 100 * military / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        military = sum(military_service == 1, na.rm = TRUE),
+        pct_military = 100 * military / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_military <- yearly_military %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    pct_military = mean(pct_military, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_military = mean(pct_military, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_military,
-    aes(x = year, y = pct_military),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_military,
-    aes(x = first_year + 12.5, y = pct_military),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_military,
-    aes(x = first_year + 12.5, y = pct_military),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Have elected governors served in the military more or less?") +
-  ylab("Percent Military Service") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_military,
+        aes(x = year, y = pct_military),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_military,
+        aes(x = first_year + 12.5, y = pct_military), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_military,
+        aes(x = first_year + 12.5, y = pct_military),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors served in the military more or less?") +
+    ylab("Percent Military Service") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
 ```
 
@@ -308,17 +425,13 @@ Schwarzenegger became the 38th Governor of California pursuant to a recall elect
 In total, the full sample is of 2,486 individuals from 55 states and territories, including governors from Puerto Rico (1949-present), American Samoa, Guam, the Northern Mariana Islands, and the US Virgin Islands. The latter territories do not have full federal representation or rights.
 
 The following table shows a sample portion of the data frame:
+```{r}
+#| warning: false
 
-| state_territory | governor | party | college | ivy_attendance | lawyer | gender | years_in_office | birth_state_territory | born_in_state_territory |
-|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
-| Alabama | Kay Ivey | Republican | 1 | 0 | 0 | male | 2025 | Alabama | 1 |
-| Alaska | Mike Dunleavy | Republican | 1 | 0 | 0 | male | 2025 | Pennsylvania | 0 |
-| American Samoa | Pula’ali’i Nikolao Pula | Republican | 1 | 0 | 0 | male | 2025 | American Samoa | 1 |
-| Arizona | Katie Hobbs | Democratic | 1 | 0 | 0 | female | 2025 | Arizona | 1 |
-| Arkansas | Sarah Huckabee Sanders | Republican | 1 | 0 | 0 | female | 2025 | Arkansas | 1 |
-| California | Gavin Newsom | Democratic | 1 | 0 | 0 | male | 2025 | California | 1 |
+head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school", "birth_state_territory")])
 
-: Example of Dataset Structure.
+```
+
 
 ## Uncertainty in the Data
 
@@ -350,47 +463,47 @@ Due to these data, we can now visualize the rise in female governors in the last
 
 ## Let's get average % female governors every year
 yearly_female <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    female = sum(gender == "female", na.rm = TRUE),
-    pct_female = 100 * female / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        female = sum(gender == "female", na.rm = TRUE),
+        pct_female = 100 * female / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_female <- yearly_female %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    pct_female = mean(pct_female, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_female = mean(pct_female, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_female,
-    aes(x = year, y = pct_female),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_female,
-    aes(x = first_year + 12.5, y = pct_female),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_female,
-    aes(x = first_year + 12.5, y = pct_female),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Have elected governors become more gender diverse?") +
-  ylab("Percent Female Governors") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_female,
+        aes(x = year, y = pct_female),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_female,
+        aes(x = first_year + 12.5, y = pct_female), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_female,
+        aes(x = first_year + 12.5, y = pct_female),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more gender diverse?") +
+    ylab("Percent Female Governors") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
 ```
 
@@ -399,49 +512,49 @@ The percentage of Ivy League-educated governors has slightly decreased over time
 ```{r}
 
 
-##Let's look at Ivy League rate
+## Let's look at Ivy League rate
 yearly_ivy <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    ivy = sum(ivy_attendance == 1, na.rm = TRUE),
-    pct_ivy = 100 * ivy / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        ivy = sum(ivy_attendance == 1, na.rm = TRUE),
+        pct_ivy = 100 * ivy / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_ivy <- yearly_ivy %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    pct_ivy = mean(pct_ivy, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_ivy = mean(pct_ivy, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_ivy,
-    aes(x = year, y = pct_ivy),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_ivy,
-    aes(x = first_year + 12.5, y = pct_ivy),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_ivy,
-    aes(x = first_year + 12.5, y = pct_ivy),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Have elected governors become more Ivy-educated?") +
-  ylab("Percent with Ivy Attendance") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_ivy,
+        aes(x = year, y = pct_ivy),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_ivy,
+        aes(x = first_year + 12.5, y = pct_ivy), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_ivy,
+        aes(x = first_year + 12.5, y = pct_ivy),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more Ivy-educated?") +
+    ylab("Percent with Ivy Attendance") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
 ```
 
@@ -450,49 +563,49 @@ Have gubernatorial offices become more professionalized over the course of Ameri
 ```{r}
 
 
-##Let's look at rate of governors with law degrees
+## Let's look at rate of governors with law degrees
 yearly_lawyer <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    lawyer = sum(lawyer == 1, na.rm = TRUE),
-    pct_lawyer = 100 * lawyer / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        lawyer = sum(lawyer == 1, na.rm = TRUE),
+        pct_lawyer = 100 * lawyer / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_lawyer <- yearly_lawyer %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    pct_lawyer = mean(pct_lawyer, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_lawyer = mean(pct_lawyer, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_lawyer,
-    aes(x = year, y = pct_lawyer),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_lawyer,
-    aes(x = first_year + 12.5, y = pct_lawyer),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_lawyer,
-    aes(x = first_year + 12.5, y = pct_lawyer),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Have elected governors become more likely to be lawyers?") +
-  ylab("Percent Lawyers") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_lawyer,
+        aes(x = year, y = pct_lawyer),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_lawyer,
+        aes(x = first_year + 12.5, y = pct_lawyer), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_lawyer,
+        aes(x = first_year + 12.5, y = pct_lawyer),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more likely to be lawyers?") +
+    ylab("Percent Lawyers") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
 ```
 
@@ -500,33 +613,37 @@ Which parties have produced the largest number of distinct governors? We count e
 
 ```{r}
 gov_dataset_deduplicated <- gov_dataset %>%
-  distinct(governor, .keep_all = TRUE)
+    distinct(governor, .keep_all = TRUE)
 
 party_counts <- gov_dataset_deduplicated %>%
-  transmute(party = coalesce(party, "")) %>%
-  mutate(party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
-         party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
-         party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
-         party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
-         party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
-         party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
-         party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
-         party = str_replace_all(party, "\\s+", " ")) %>%
-  separate_rows(party, sep = "\\s*(;|,|/|\\band\\b|&|;)\\s*") %>%
-  mutate(party = str_squish(party)) %>%
-  filter(party != "") %>%
-  count(party, sort = TRUE)
+    transmute(party = coalesce(party, "")) %>%
+    mutate(
+        party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
+        party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
+        party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
+        party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
+        party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
+        party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
+        party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
+        party = str_replace_all(party, "\\s+", " ")
+    ) %>%
+    separate_rows(party, sep = "\\s*(;|,|/|\\band\\b|&|;)\\s*") %>%
+    mutate(party = str_squish(party)) %>%
+    filter(party != "") %>%
+    count(party, sort = TRUE)
 
 party_counts_final <- party_counts %>%
-  slice_max(n, n = 10) %>%
-  mutate(party = fct_reorder(party, n)) 
+    slice_max(n, n = 10) %>%
+    mutate(party = fct_reorder(party, n))
 ggplot(party_counts_final, aes(x = n, y = party)) +
-  geom_col(fill = "#6A0DAD") +
-  theme_bw() +
-  theme(plot.title = element_text(size = 8))  +
-  labs(title = "Most common party affiliations among U.S. governors",
-       x = "Count", y = NULL) +
-  theme_minimal(base_size = 12)
+    geom_col(fill = "#6A0DAD") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 8)) +
+    labs(
+        title = "Most common party affiliations among U.S. governors",
+        x = "Count", y = NULL
+    ) +
+    theme_minimal(base_size = 12)
 ```
 
 We also want to know if governors were born in the same state that they eventually governed. We plot the share of governors who were born in their state. Surprisingly, this proportion has actually increased over time.
@@ -534,49 +651,49 @@ We also want to know if governors were born in the same state that they eventual
 ```{r}
 
 
-##Let's look at rate of governors with law degrees
+## Let's look at rate of governors with law degrees
 yearly_born_in_state <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    total = n(),
-    in_state = sum(born_in_state_territory == 1, na.rm = TRUE),
-    pct_in_state = 100 * in_state / total,
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        in_state = sum(born_in_state_territory == 1, na.rm = TRUE),
+        pct_in_state = 100 * in_state / total,
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks
 binned_born_in_state <- yearly_born_in_state %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    pct_in_state = mean(pct_in_state, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_in_state = mean(pct_in_state, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_born_in_state,
-    aes(x = year, y = pct_in_state),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_born_in_state,
-    aes(x = first_year + 12.5, y = pct_in_state),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_born_in_state,
-    aes(x = first_year + 12.5, y = pct_in_state),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Percent of Governors Born in the State/Territory They Governed") +
-  ylab("Percent Born In-State") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_born_in_state,
+        aes(x = year, y = pct_in_state),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_born_in_state,
+        aes(x = first_year + 12.5, y = pct_in_state), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_born_in_state,
+        aes(x = first_year + 12.5, y = pct_in_state),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Percent of Governors Born in the State/Territory They Governed") +
+    ylab("Percent Born In-State") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 
 ```
 
@@ -587,45 +704,45 @@ Governors, like many politicians, have been getting older over time. In the past
 ```{r}
 
 yearly_age <- gov_long %>%
-  group_by(year) %>%
-  summarise(
-    avg_age = mean(age_at_start, na.rm = TRUE),
-    .groups = "drop"
-  )
+    group_by(year) %>%
+    summarise(
+        avg_age = mean(age_at_start, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 2. Bin years into 25-year chunks and compute mean within each bin
 binned_age <- yearly_age %>%
-  mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-  group_by(bin) %>%
-  summarise(
-    first_year = min(year),
-    avg_age = mean(avg_age, na.rm = TRUE),
-    .groups = "drop"
-  )
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        avg_age = mean(avg_age, na.rm = TRUE),
+        .groups = "drop"
+    )
 
 # 3. Plot
 ggplot() +
-  geom_point(
-    data = yearly_age,
-    aes(x = year, y = avg_age),
-    color = "gray50", alpha = 0.4
-  ) +
-  geom_point(
-    data = binned_age,
-    aes(x = first_year + 12.5, y = avg_age),  # center in bin
-    color = "#6A0DAD", size = 2
-  ) +
-  geom_line(
-    data = binned_age,
-    aes(x = first_year + 12.5, y = avg_age),
-    color = "#6A0DAD"
-  ) +
-  theme_bw() +
-  xlab("") +
-  ggtitle("Average Age of Governors at Start of Office") +
-  ylab("Average Age") +
-  theme(plot.title = element_text(size = 8)) +
-  scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    geom_point(
+        data = yearly_age,
+        aes(x = year, y = avg_age),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_age,
+        aes(x = first_year + 12.5, y = avg_age), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_age,
+        aes(x = first_year + 12.5, y = avg_age),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Average Age of Governors at Start of Office") +
+    ylab("Average Age") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
 ```
 
 ## Conclusion
@@ -647,36 +764,155 @@ The gubernatorial biography dataset gives us perspective on the range of backgro
 ::: {.content-hidden when-format="pdf"}
 ```{ojs}
 //|echo: false
-import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
-```
-
-```{ojs}
-//|echo: false
-viewof alldataSet
-```
-
-```{ojs}
-//|echo: false
-alltableContainer
-```
-
-```{ojs}
-//|echo: false
-viewof alltwobuttons
-```
-
-```{ojs}
-//|echo: false
 //|output: false
-alltable
+
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+generateTabulatorTableFromCSV(
+  "#table-container1",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  {
+    displayedColumns: [
+      // Core identity & office
+      "state_territory",
+      "governor",
+      "party",
+      "first_year",
+      "years_in_office",
+
+      // Background & education
+      "school",
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+
+      // Birth & demographics
+      "birth_state_territory",
+      "birth_date",
+      "age_at_start",
+      "gender",
+      "born_in_state_territory",
+      "intl_born",
+      "intl_born_details",
+
+      // Long description
+      "bio_text"
+    ],
+
+    columnPopups: [
+      "U.S. state or territory governed.",
+      "Governor’s name.",
+      "Political party affiliation.",
+      "First year they served as governor.",
+      "Spans/terms served (as listed in the bio).",
+
+      "Primary college or university listed (if any).",
+      "Did the governor attend college? (1/0).",
+      "Did the governor attend an Ivy League school? (1/0).",
+      "Is/was the governor a lawyer? (1/0).",
+      "Did the governor serve in the military? (1/0).",
+
+      "Birth state or territory.",
+      "Birth date (YYYY-MM-DD where available).",
+      "Age at the start of first term.",
+      "Gender as recorded in the dataset.",
+      "Whether born in the state/territory they govern (1/0).",
+      "Whether born outside the U.S. (1/0).",
+      "Details about international birthplace if applicable.",
+
+      "Short biography text."
+    ],
+
+    // columnWidths: {
+    //   governor: "220px",
+    //   party: "140px",
+    //   years_in_office: "220px",
+    //   school: "220px",
+    //   bio_text: "40%"
+    // },
+
+    // Treat these as numeric so you get proper sort/filter ranges
+    numericColumns: ["first_year", "age_at_start"],
+
+    // Good facets for filtering
+    categoryColumns: [
+      "state_territory",
+      "party",
+      "school",
+      "birth_state_territory",
+      "gender",
+
+      // binary flags as categories for easy faceting
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+      "born_in_state_territory",
+      "intl_born"
+    ],
+
+    // Default sort: by state, then governor
+    sortColumns: ["state_territory", "governor"],
+    sortOrders: ["asc", "asc"],
+
+    // Buttons (kept the same IDs you used)
+    buttonContainerId: "#button-container2",
+    rawButtonId: "#download-raw2",
+    urlCopyButtonId: "#copy-url2",
+
+    // Optional: if your helper supports label maps for 1/0 columns, this is handy.
+    // booleanLabelColumns: {
+    //   college_attendance: { "1": "Yes", "0": "No" },
+    //   ivy_attendance: { "1": "Yes", "0": "No" },
+    //   lawyer: { "1": "Yes", "0": "No" },
+    //   military_service: { "1": "Yes", "0": "No" },
+    //   born_in_state_territory: { "1": "Yes", "0": "No" },
+    //   intl_born: { "1": "Yes", "0": "No" }
+    // }
+  }
+);
+
+
 ```
 
-```{ojs}
-//|echo: false
-viewof allselectedColumns
-viewof alldataSummaryView
+<div id="table-container1" style="height: 500px">
+</div>
 
-```
+Download Full Data
+<div id='button-container'>
+  <button id="download-raw2"><i class="fas fa-download"></i></i> Download Full Data</button>
+  <button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
+
+Download Table Data (including filtered options)
+
+<div id='button-container2'>
+  <button id="download-csv"><i class="fas fa-download"></i></i> Download CSV</button>
+  <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button>
+  <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+</div>
+
+
+
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+
+<!-- Excel script -->
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+
+
+::: {.callout-tip icon="false"}
+## Creative Commons License
+
+<p xmlns:cc="http://creativecommons.org/ns#">
+
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+:::
+
 :::
 
 # Exercises {#exercises}
