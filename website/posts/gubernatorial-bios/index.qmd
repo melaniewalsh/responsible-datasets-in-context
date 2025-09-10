@@ -112,7 +112,6 @@ generateTabulatorTableFromCSV(
       "intl_born_details",
 
       // Long description
-      "bio_text"
     ],
 
     columnPopups: [
@@ -136,7 +135,6 @@ generateTabulatorTableFromCSV(
       "Whether born outside the U.S. (1/0).",
       "Details about international birthplace if applicable.",
 
-      "Short biography text."
     ],
 
     // columnWidths: {
