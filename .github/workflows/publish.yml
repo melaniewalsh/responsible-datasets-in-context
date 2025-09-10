@@ -1,4 +1,4 @@
-# This is the file that controls the GitHub Action that automatically renders and publishes our website 
+# This is the file that controls the GitHub Action that automatically renders and publishes our website
 # whenever changes our made to the "main" branch of the GitHub repository
 
 # Documentation for Quarto GitHub actions is here: https://quarto.org/docs/publishing/github-pages.html#github-action
@@ -28,6 +28,9 @@ jobs:
         with:
           tinytex: true
 
+      - name: Install curl (if needed)
+        run: sudo apt-get update && sudo apt-get install -y curl
+
       # # This installs a fresh version of Python
       # - name: Install Python and Dependencies
       #   uses: actions/setup-python@v5
@@ -41,8 +44,8 @@ jobs:
       - name: Install Python and Dependencies
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'
-          cache: 'pip'
+          python-version: "3.10"
+          cache: "pip"
       - name: Install Python Dependencies
         run: |
           pip install jupyter
@@ -54,8 +57,8 @@ jobs:
       - name: Install R
         uses: r-lib/actions/setup-r@v2
         with:
-          r-version: '4.3.2'
-          
+          r-version: "4.3.2"
+
       - name: Cache R packages
         uses: actions/cache@v4
         with:
@@ -77,7 +80,7 @@ jobs:
 
       # Render and publish the website
       # If file paths are wrong, that will break the whole site, so really try to read through the errors
-      # 
+      #
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
@@ -87,5 +90,3 @@ jobs:
           target: gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      
