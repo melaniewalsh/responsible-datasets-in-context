@@ -1,0 +1,56 @@
+---
+title: "Pandas Groupby with National Park Visitation Data (Exercise)"
+date: "2024-08-01"
+categories: [pandas, exercise]
+format: 
+  html: default
+  ipynb: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+execute:
+  eval: true
+---
+
+# Load the data
+
+``` python
+import pandas as pd
+df = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv")
+```
+
+# Exercise 1
+
+What are the top 5 birth states for governors?
+
+Save as `top_birth_states` and then view the resulting dataframe.
+
+``` python
+Your code here
+```
+
+Discuss/consider: What states are the most common birth spots for governors? Are there similar traits between the top states?
+
+# Exercise 2
+
+Let's now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let's look at the distribution across the entire dataframe
+
+First, let's cut the age_at_start variable into bins, so people between ages 20 and 30 get mapped to 20, 30 and 40 to 30 etc. Let's call this new column `age_bucket`. We will use the Pandas function [pd.cut](https://pandas.pydata.org/docs/reference/api/pandas.cut.html%7D).
+
+Now let's display the `value_counts` of the `age_bucket` column and let's sort by the age.
+
+``` python
+Your code here
+```
+
+Discuss/consider: Which age range has the most governors?
+
+# Exercise 3:
+
+Let's look at the outlier governors who started office at or below the age of 30. Let's filter the dataset down to this set by filtering on the `age_at_start` column, call it `young_governors` and display it.
+
+``` python
+Your code here
+```
+
+Discuss/consider: Who are the youngest governors in American History? What era are they from? Take a look at some of their Wikipedia pages and NGA biographies online.

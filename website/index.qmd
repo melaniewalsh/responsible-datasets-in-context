@@ -9,7 +9,7 @@ listing:
   id: datasets
   contents: posts
   exclude:
-    categories: ["exercise", "solution", "included-content", "discussion", "activities", "audit"]
+    categories: ["exercise", "solution", "included-content", "discussion", "activities", "audit", "draft"]
     title: "National Park Visitation Data"
   sort: "date asc"
   type: default
