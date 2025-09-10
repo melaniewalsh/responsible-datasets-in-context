@@ -699,7 +699,7 @@ ggplot() +
 
 ```
 
-Although the vast majority of governors are born in the US (and even within their own state), there have been over 75 governors who were born outside the United States and its territories. The following wordcloud shows these locations, as scraped from the biographical texts. Note Austria for Arnold Schwarzenegger.
+Alt
 
 Governors, like many politicians, have been getting older over time. In the past 25 years, the average age at entry has been about 55. This pattern likely reflects not only changes in the typical political career but also broader increases in life expectancy.
 
