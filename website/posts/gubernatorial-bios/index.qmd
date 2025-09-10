@@ -237,7 +237,7 @@ Alongside the names and states of each governor, the dataset includes informatio
 
 -   state_territory: U.S. state or territory where the governor served.
 
--   governor: Full name of the governor, as listed on the website.
+-   governor: Full name of the governor, as listed on the website. The listed name is not always the legal name of the person, e.g John Ellis Bush Jr is listed as Jeb Bush.
 
 -   party: Political party affiliation under which the governor served.
 
