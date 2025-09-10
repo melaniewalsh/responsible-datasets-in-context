@@ -102,7 +102,7 @@ The data reveal notable shifts in the backgrounds of U.S. governors over the pas
 # Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
 
 
-# library(tidyverse)
+library(tidyverse)
 library(dplyr)
 library(ggplot2)
 
