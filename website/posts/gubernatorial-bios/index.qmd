@@ -78,7 +78,7 @@ bibliography: ../../references/references.bib
 > ```{ojs}
 > //|echo: false
 > //|output: false
->
+> >
 > // Using the Post45 Data Viewer
 > // https://observablehq.com/d/8bb63a6cde9addff
 > generateTabulatorTableFromCSV(
@@ -92,14 +92,14 @@ bibliography: ../../references/references.bib
 >       "party",
 >       "first_year",
 >       "years_in_office",
->
+> >
 >       // Background & education
 >       "school",
 >       "college_attendance",
 >       "ivy_attendance",
 >       "lawyer",
 >       "military_service",
->
+> >
 >       // Birth & demographics
 >       "birth_state_territory",
 >       "birth_date",
@@ -108,23 +108,23 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born",
 >       "intl_born_details",
->
+> >
 >       // Long description
 >     ],
->
+> >
 >     columnPopups: [
 >       "U.S. state or territory governed.",
 >       "Governor’s name.",
 >       "Political party affiliation.",
 >       "First year they served as governor.",
 >       "Spans/terms served (as listed in the bio).",
->
+> >
 >       "Primary college or university listed (if any).",
 >       "Did the governor attend college? (1/0).",
 >       "Did the governor attend an Ivy League school? (1/0).",
 >       "Is/was the governor a lawyer? (1/0).",
 >       "Did the governor serve in the military? (1/0).",
->
+> >
 >       "Birth state or territory.",
 >       "Birth date (YYYY-MM-DD where available).",
 >       "Age at the start of first term.",
@@ -132,9 +132,9 @@ bibliography: ../../references/references.bib
 >       "Whether born in the state/territory they govern (1/0).",
 >       "Whether born outside the U.S. (1/0).",
 >       "Details about international birthplace if applicable.",
->
+> >
 >     ],
->
+> >
 >     // columnWidths: {
 >     //   governor: "220px",
 >     //   party: "140px",
@@ -142,10 +142,10 @@ bibliography: ../../references/references.bib
 >     //   school: "220px",
 >     //   bio_text: "40%"
 >     // },
->
+> >
 >     // Treat these as numeric so you get proper sort/filter ranges
 >     numericColumns: ["first_year", "age_at_start"],
->
+> >
 >     // Good facets for filtering
 >     categoryColumns: [
 >       "state_territory",
@@ -153,7 +153,7 @@ bibliography: ../../references/references.bib
 >       "school",
 >       "birth_state_territory",
 >       "gender",
->
+> >
 >       // binary flags as categories for easy faceting
 >       "college_attendance",
 >       "ivy_attendance",
@@ -162,16 +162,16 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born"
 >     ],
->
+> >
 >     // Default sort: by state, then governor
 >     sortColumns: ["state_territory", "governor"],
 >     sortOrders: ["asc", "asc"],
->
+> >
 >     // Buttons (kept the same IDs you used)
 >     buttonContainerId: "#button-container1",
 >     rawButtonId: "#download-raw1",
 >     urlCopyButtonId: "#copy-url1",
->
+> >
 >     // Optional: if your helper supports label maps for 1/0 columns, this is handy.
 >     // booleanLabelColumns: {
 >     //   college_attendance: { "1": "Yes", "0": "No" },
@@ -183,8 +183,8 @@ bibliography: ../../references/references.bib
 >     // }
 >   }
 > );
->
->
+> >
+> >
 > ```
 >
 > ::: {#table-container4 style="height: 500px"}
@@ -199,7 +199,11 @@ bibliography: ../../references/references.bib
 >
 > </button>
 >
-> <button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+> <button id="copy-url1">
+>
+> <i class="fas fa-copy"></i> Copy Full Data URL
+>
+> </button>
 > :::
 >
 > Download Table Data (including filtered options)
@@ -211,7 +215,13 @@ bibliography: ../../references/references.bib
 >
 > </button>
 >
-> <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+> <button id="download-json">
+>
+> <i class="fas fa-download"></i></i> Download JSON
+>
+> </button>
+>
+> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
 > :::
 >
 > :::: {#progress-container style="width: 100%; display: block;"}
@@ -281,12 +291,12 @@ bibliography: ../../references/references.bib
 >
 > ```{r}
 > #| warning: false
->
->
+> >
+> >
 > # Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
->
+> >
 > # install.packages("rmarkdown")
->
+> >
 > # too big
 > # library(tidyverse)
 > library(dplyr)
@@ -295,10 +305,10 @@ bibliography: ../../references/references.bib
 > library(forcats)
 > library(ggplot2)
 > library(purrr)
->
+> >
 > # Load National Park Visitation data
 > gov_dataset <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv", stringsAsFactors = FALSE)
->
+> >
 > ## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations
 > gov_long <- gov_dataset %>%
 >     # Split multiple ranges into separate rows
@@ -315,7 +325,7 @@ bibliography: ../../references/references.bib
 >     ungroup() %>%
 >     filter(year >= 1775, year <= 2025) %>%
 >     distinct()
->
+> >
 > ## Let's get average college attendance rate by elected governors for each year
 > yearly_college <- gov_long %>%
 >     group_by(year) %>%
@@ -325,7 +335,7 @@ bibliography: ../../references/references.bib
 >         pct_college = 100 * college / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_college <- yearly_college %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -335,7 +345,7 @@ bibliography: ../../references/references.bib
 >         pct_college = mean(pct_college, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -359,7 +369,7 @@ bibliography: ../../references/references.bib
 >     ylab("Percent College") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25)) # Add x-axis ticks every 25 years
->
+> >
 > ```
 >
 > ## Where Did The Data Come From? Who Collected It?
@@ -370,14 +380,14 @@ bibliography: ../../references/references.bib
 >
 > The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. [@dal2009political] examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., [@Fresh_2024] constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.
 >
-> Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century [@berman2019governors], to managing managing public health and disaster responses (see literature [@baccini2021explaining] related to COVID-19), to shaping national outcomes through gerrymandering as recently as [August 2025](https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819). Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.
+> Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century [@berman2019governors], to managing managing public health and disaster responses (see literature [@baccini2021explaining] related to COVID-19), to shaping national outcomes through gerrymandering as recently as [August 2025](https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819). Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. [@sobel1978biographical] is an exception and a major work on gubernatorial biographies but has not been extended to our knowledge or arranged in a clean dataified form. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.
 >
 > For example, the next figure shows the share of governors with military service. As expected, service rates were higher during major conflicts such as the Civil War, World Wars I and II, Korea, and Vietnam. In contrast, service during the Iraq and Afghanistan wars appears comparable to peacetime levels.
 >
 > ```{r}
->
->
->
+> >
+> >
+> >
 > ## Let's get average military rate by elected governors for each year
 > yearly_military <- gov_long %>%
 >     group_by(year) %>%
@@ -387,7 +397,7 @@ bibliography: ../../references/references.bib
 >         pct_military = 100 * military / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_military <- yearly_military %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -397,7 +407,7 @@ bibliography: ../../references/references.bib
 >         pct_military = mean(pct_military, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -421,7 +431,7 @@ bibliography: ../../references/references.bib
 >     ylab("Percent Military Service") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25))
->
+> >
 > ```
 >
 > ## How Was The Data Collected?
@@ -432,15 +442,15 @@ bibliography: ../../references/references.bib
 >
 > ![Arnold Schwarzenegger's NGA page](images/arnold.png)
 >
-> ![Nellie Taylor Ross was the first female US governor.](images/ross.png)
->
 > We use basic text extraction techniques to identify certain key biographical attributes. With Arnold Schwarnegger, we extract his birth country from his text bio.
->
-> ![Nellie Taylor Ross was the first female US governor.](images/ross.png)
+
+::: {style="font-size: 75%;"}
 >
 > "Arnold Schwarzenegger came to the governorship of California following a distinguished career in body building, business, and entertainment. Schwarzenegger was born in **Austria** and at 20 became the youngest person to win the Mr. Universe title. He won an unprecedented 12 more world bodybuilding titles. Schwarzenegger earned a college degree from the University of Wisconsin and became a U.S. citizen in 1983. Former President George H.W. Bush appointed him Chair of the President’s Council on Physical Fitness and Sports in 1990. He also served as Chair of the California Governor’s Council on Physical Fitness and Sports under California Governor Pete Wilson. He married Maria Shriver in 1986 and has remained closely involved in Special Olympics, an organization founded by her late mother, Eunice Kennedy Shriver.
 >
 > Schwarzenegger became the 38th Governor of California pursuant to a recall election to replace Governor Gray Davis. Schwarzenegger’s accomplishments as governor include a bipartisan agreement to reduce California’s greenhouse gas emissions by signing landmark legislation in 2006, increasing the minimum wage while lowering the state’s unemployment rate, and overhauling the workers’ compensation system—cutting costs by more than 35 percent. Schwarzenegger made major investments in improving California’s aging infrastructure through his Strategic Growth Plan, helping to reduce congestion and clean the air."
+
+:::
 >
 > In total, the full sample is of 2,486 individuals from 55 states and territories, including governors from Puerto Rico (1949-present), American Samoa, Guam, the Northern Mariana Islands, and the US Virgin Islands. The latter territories do not have full federal representation or rights.
 >
@@ -448,9 +458,9 @@ bibliography: ../../references/references.bib
 >
 > ```{r}
 > #| warning: false
->
+> >
 > head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school", "birth_state_territory")])
->
+> >
 > ```
 >
 > ## Uncertainty in the Data
@@ -478,9 +488,9 @@ bibliography: ../../references/references.bib
 > ![Nellie Taylor Ross was the first female US governor.](images/ross.png)
 >
 > ```{r}
->
->
->
+> >
+> >
+> >
 > ## Let's get average % female governors every year
 > yearly_female <- gov_long %>%
 >     group_by(year) %>%
@@ -490,7 +500,7 @@ bibliography: ../../references/references.bib
 >         pct_female = 100 * female / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_female <- yearly_female %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -500,7 +510,7 @@ bibliography: ../../references/references.bib
 >         pct_female = mean(pct_female, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -524,14 +534,14 @@ bibliography: ../../references/references.bib
 >     ylab("Percent Female Governors") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25))
->
+> >
 > ```
 >
 > The percentage of Ivy League-educated governors has slightly decreased over time, with approximately 25 percent of governors in each period being educated at an Ivy League institution. In previous work on political backgrounds, such as [@dal2009political] an Ivy League education is commonly used as a marker of elite status. This definition omits other highly selective institutions—such as Stanford, the University of Chicago, or Georgetown—which also serve as pipelines to elite political careers.
 >
 > ```{r}
->
->
+> >
+> >
 > ## Let's look at Ivy League rate
 > yearly_ivy <- gov_long %>%
 >     group_by(year) %>%
@@ -541,7 +551,7 @@ bibliography: ../../references/references.bib
 >         pct_ivy = 100 * ivy / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_ivy <- yearly_ivy %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -551,7 +561,7 @@ bibliography: ../../references/references.bib
 >         pct_ivy = mean(pct_ivy, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -575,14 +585,14 @@ bibliography: ../../references/references.bib
 >     ylab("Percent with Ivy Attendance") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25))
->
+> >
 > ```
 >
 > Have gubernatorial offices become more professionalized over the course of American history? We track the share of governors with law degrees as a simple proxy for how "professionalized” the office is. Law has long been a standard path into politics--lawyers gain legal expertise and entry into elite social networks. The share rises through the mid-19th century and then plateaus. Since roughly 2000, it declines modestly, consistent with more governors coming from business and other non-law fields.
 >
 > ```{r}
->
->
+> >
+> >
 > ## Let's look at rate of governors with law degrees
 > yearly_lawyer <- gov_long %>%
 >     group_by(year) %>%
@@ -592,7 +602,7 @@ bibliography: ../../references/references.bib
 >         pct_lawyer = 100 * lawyer / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_lawyer <- yearly_lawyer %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -602,7 +612,7 @@ bibliography: ../../references/references.bib
 >         pct_lawyer = mean(pct_lawyer, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -626,7 +636,7 @@ bibliography: ../../references/references.bib
 >     ylab("Percent Lawyers") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25))
->
+> >
 > ```
 >
 > Which parties have produced the largest number of distinct governors? We count each person once (regardless of how many terms served), tallying their listed party affiliation. On this measure, Democrats make up the largest share, followed by Republicans, with historical parties (Whig, Democratic-Republican, Federalist, etc.) comprising smaller slices.
@@ -634,7 +644,7 @@ bibliography: ../../references/references.bib
 > ```{r}
 > gov_dataset_deduplicated <- gov_dataset %>%
 >     distinct(governor, .keep_all = TRUE)
->
+> >
 > party_counts <- gov_dataset_deduplicated %>%
 >     transmute(party = coalesce(party, "")) %>%
 >     mutate(
@@ -651,7 +661,7 @@ bibliography: ../../references/references.bib
 >     mutate(party = str_squish(party)) %>%
 >     filter(party != "") %>%
 >     count(party, sort = TRUE)
->
+> >
 > party_counts_final <- party_counts %>%
 >     slice_max(n, n = 10) %>%
 >     mutate(party = fct_reorder(party, n))
@@ -669,8 +679,8 @@ bibliography: ../../references/references.bib
 > We also want to know if governors were born in the same state that they eventually governed. We plot the share of governors who were born in their state. Surprisingly, this proportion has actually increased over time.
 >
 > ```{r}
->
->
+> >
+> >
 > ## Let's look at rate of governors with law degrees
 > yearly_born_in_state <- gov_long %>%
 >     group_by(year) %>%
@@ -680,7 +690,7 @@ bibliography: ../../references/references.bib
 >         pct_in_state = 100 * in_state / total,
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks
 > binned_born_in_state <- yearly_born_in_state %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -690,7 +700,7 @@ bibliography: ../../references/references.bib
 >         pct_in_state = mean(pct_in_state, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -714,20 +724,20 @@ bibliography: ../../references/references.bib
 >     ylab("Percent Born In-State") +
 >     theme(plot.title = element_text(size = 8)) +
 >     scale_x_continuous(breaks = seq(1775, 2025, by = 25))
->
+> >
 > ```
 >
 > Governors, like many politicians, have been getting older over time. In the past 25 years, the average age at entry has been about 55. This pattern likely reflects not only changes in the typical political career but also broader increases in life expectancy.
 >
 > ```{r}
->
+> >
 > yearly_age <- gov_long %>%
 >     group_by(year) %>%
 >     summarise(
 >         avg_age = mean(age_at_start, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 2. Bin years into 25-year chunks and compute mean within each bin
 > binned_age <- yearly_age %>%
 >     mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
@@ -737,7 +747,7 @@ bibliography: ../../references/references.bib
 >         avg_age = mean(avg_age, na.rm = TRUE),
 >         .groups = "drop"
 >     )
->
+> >
 > # 3. Plot
 > ggplot() +
 >     geom_point(
@@ -783,7 +793,7 @@ bibliography: ../../references/references.bib
 > ```{ojs}
 > //|echo: false
 > //|output: false
->
+> >
 > // Using the Post45 Data Viewer
 > // https://observablehq.com/d/8bb63a6cde9addff
 > generateTabulatorTableFromCSV(
@@ -797,14 +807,14 @@ bibliography: ../../references/references.bib
 >       "party",
 >       "first_year",
 >       "years_in_office",
->
+> >
 >       // Background & education
 >       "school",
 >       "college_attendance",
 >       "ivy_attendance",
 >       "lawyer",
 >       "military_service",
->
+> >
 >       // Birth & demographics
 >       "birth_state_territory",
 >       "birth_date",
@@ -813,24 +823,24 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born",
 >       "intl_born_details",
->
+> >
 >       // Long description
 >       "bio_text"
 >     ],
->
+> >
 >     columnPopups: [
 >       "U.S. state or territory governed.",
 >       "Governor’s name.",
 >       "Political party affiliation.",
 >       "First year they served as governor.",
 >       "Spans/terms served (as listed in the bio).",
->
+> >
 >       "Primary college or university listed (if any).",
 >       "Did the governor attend college? (1/0).",
 >       "Did the governor attend an Ivy League school? (1/0).",
 >       "Is/was the governor a lawyer? (1/0).",
 >       "Did the governor serve in the military? (1/0).",
->
+> >
 >       "Birth state or territory.",
 >       "Birth date (YYYY-MM-DD where available).",
 >       "Age at the start of first term.",
@@ -838,10 +848,10 @@ bibliography: ../../references/references.bib
 >       "Whether born in the state/territory they govern (1/0).",
 >       "Whether born outside the U.S. (1/0).",
 >       "Details about international birthplace if applicable.",
->
+> >
 >       "Short biography text."
 >     ],
->
+> >
 >     // columnWidths: {
 >     //   governor: "220px",
 >     //   party: "140px",
@@ -849,10 +859,10 @@ bibliography: ../../references/references.bib
 >     //   school: "220px",
 >     //   bio_text: "40%"
 >     // },
->
+> >
 >     // Treat these as numeric so you get proper sort/filter ranges
 >     numericColumns: ["first_year", "age_at_start"],
->
+> >
 >     // Good facets for filtering
 >     categoryColumns: [
 >       "state_territory",
@@ -860,7 +870,7 @@ bibliography: ../../references/references.bib
 >       "school",
 >       "birth_state_territory",
 >       "gender",
->
+> >
 >       // binary flags as categories for easy faceting
 >       "college_attendance",
 >       "ivy_attendance",
@@ -869,16 +879,16 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born"
 >     ],
->
+> >
 >     // Default sort: by state, then governor
 >     sortColumns: ["state_territory", "governor"],
 >     sortOrders: ["asc", "asc"],
->
+> >
 >     // Buttons (kept the same IDs you used)
 >     buttonContainerId: "#button-container2",
 >     rawButtonId: "#download-raw2",
 >     urlCopyButtonId: "#copy-url2",
->
+> >
 >     // Optional: if your helper supports label maps for 1/0 columns, this is handy.
 >     // booleanLabelColumns: {
 >     //   college_attendance: { "1": "Yes", "0": "No" },
@@ -890,8 +900,8 @@ bibliography: ../../references/references.bib
 >     // }
 >   }
 > );
->
->
+> >
+> >
 > ```
 >
 > ::: {#table-container1 style="height: 500px"}
@@ -907,7 +917,11 @@ bibliography: ../../references/references.bib
 >
 > </button>
 >
-> <button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+> <button id="copy-url2">
+>
+> <i class="fas fa-copy"></i> Copy Full Data URL
+>
+> </button>
 >
 > </div>
 >
@@ -920,7 +934,13 @@ bibliography: ../../references/references.bib
 >
 > </button>
 >
-> <button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
+> <button id="download-json">
+>
+> <i class="fas fa-download"></i></i> Download JSON
+>
+> </button>
+>
+> <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button>
 > :::
 >
 > <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
