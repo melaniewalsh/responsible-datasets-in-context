@@ -78,7 +78,7 @@ bibliography: ../../references/references.bib
 > ```{ojs}
 > //|echo: false
 > //|output: false
-> >
+> 
 > // Using the Post45 Data Viewer
 > // https://observablehq.com/d/8bb63a6cde9addff
 > generateTabulatorTableFromCSV(
@@ -92,14 +92,14 @@ bibliography: ../../references/references.bib
 >       "party",
 >       "first_year",
 >       "years_in_office",
-> >
+> 
 >       // Background & education
 >       "school",
 >       "college_attendance",
 >       "ivy_attendance",
 >       "lawyer",
 >       "military_service",
-> >
+> 
 >       // Birth & demographics
 >       "birth_state_territory",
 >       "birth_date",
@@ -108,23 +108,23 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born",
 >       "intl_born_details",
-> >
+> 
 >       // Long description
 >     ],
-> >
+> 
 >     columnPopups: [
 >       "U.S. state or territory governed.",
 >       "Governor’s name.",
 >       "Political party affiliation.",
 >       "First year they served as governor.",
 >       "Spans/terms served (as listed in the bio).",
-> >
+> 
 >       "Primary college or university listed (if any).",
 >       "Did the governor attend college? (1/0).",
 >       "Did the governor attend an Ivy League school? (1/0).",
 >       "Is/was the governor a lawyer? (1/0).",
 >       "Did the governor serve in the military? (1/0).",
-> >
+> 
 >       "Birth state or territory.",
 >       "Birth date (YYYY-MM-DD where available).",
 >       "Age at the start of first term.",
@@ -132,9 +132,9 @@ bibliography: ../../references/references.bib
 >       "Whether born in the state/territory they govern (1/0).",
 >       "Whether born outside the U.S. (1/0).",
 >       "Details about international birthplace if applicable.",
-> >
+> 
 >     ],
-> >
+> 
 >     // columnWidths: {
 >     //   governor: "220px",
 >     //   party: "140px",
@@ -142,10 +142,10 @@ bibliography: ../../references/references.bib
 >     //   school: "220px",
 >     //   bio_text: "40%"
 >     // },
-> >
+> 
 >     // Treat these as numeric so you get proper sort/filter ranges
 >     numericColumns: ["first_year", "age_at_start"],
-> >
+> 
 >     // Good facets for filtering
 >     categoryColumns: [
 >       "state_territory",
@@ -153,7 +153,7 @@ bibliography: ../../references/references.bib
 >       "school",
 >       "birth_state_territory",
 >       "gender",
-> >
+> 
 >       // binary flags as categories for easy faceting
 >       "college_attendance",
 >       "ivy_attendance",
@@ -162,16 +162,16 @@ bibliography: ../../references/references.bib
 >       "born_in_state_territory",
 >       "intl_born"
 >     ],
-> >
+> 
 >     // Default sort: by state, then governor
 >     sortColumns: ["state_territory", "governor"],
 >     sortOrders: ["asc", "asc"],
-> >
+> 
 >     // Buttons (kept the same IDs you used)
 >     buttonContainerId: "#button-container1",
 >     rawButtonId: "#download-raw1",
 >     urlCopyButtonId: "#copy-url1",
-> >
+> 
 >     // Optional: if your helper supports label maps for 1/0 columns, this is handy.
 >     // booleanLabelColumns: {
 >     //   college_attendance: { "1": "Yes", "0": "No" },
@@ -183,8 +183,8 @@ bibliography: ../../references/references.bib
 >     // }
 >   }
 > );
-> >
-> >
+> 
+> 
 > ```
 >
 > ::: {#table-container4 style="height: 500px"}
