@@ -716,7 +716,6 @@ ggplot() +
 
 ```
 
-Alt
 
 Governors, like many politicians, have been getting older over time. In the past 25 years, the average age at entry has been about 55. This pattern likely reflects not only changes in the typical political career but also broader increases in life expectancy.
 
