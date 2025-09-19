@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -92,14 +92,15 @@ div.csl-indent {
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c9701912356f6454d35f11906a8f3dcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1602ec9a4e311f6661c0dfb3b0fabef4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -339,7 +340,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -369,7 +370,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
@@ -469,7 +471,7 @@ window.Quarto = {
 
 
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Exercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Discussion &amp; Activities</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Exercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Discussion &amp; Activities</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <section id="introduction" class="level2">
@@ -481,7 +483,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Brief Survey
+<span class="screen-reader-only">Tip</span>Brief Survey
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -491,7 +493,7 @@ Brief Survey
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="62" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataUrl<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> table<span class="op">,</span> viewof twobuttons<span class="op">,</span> viewof selectedPark<span class="op">,</span> viewof park_chart<span class="op">,</span> viewof datasetHeader<span class="op">,</span> tableStyles<span class="op">,</span> viewof all_park_chart} <span class="im">from</span> <span class="st">"ac13d95a907715bf"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="62" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 61;"><span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataUrl<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> table<span class="op">,</span> viewof twobuttons<span class="op">,</span> viewof selectedPark<span class="op">,</span> viewof park_chart<span class="op">,</span> viewof datasetHeader<span class="op">,</span> tableStyles<span class="op">,</span> viewof all_park_chart} <span class="im">from</span> <span class="st">"ac13d95a907715bf"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
@@ -516,7 +518,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="74" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>viewof all_park_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="74" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 73;"><span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a>viewof all_park_chart</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-2" data-nodetype="expression">
@@ -537,7 +539,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="92" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 91;"><span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>viewof selectedPark</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="92" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 91;"><span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>viewof selectedPark</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -548,7 +550,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="93" data-source-offset="-20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 92;"><span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>viewof park_chart</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="93" data-source-offset="-20"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 92;"><span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>viewof park_chart</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -561,7 +563,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb5" data-startfrom="98" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>viewof datasetHeader</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="98" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a>viewof datasetHeader</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -572,7 +574,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb6" data-startfrom="99" data-source-offset="-21"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>tableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb6" data-startfrom="99" data-source-offset="-21"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 98;"><span id="cb6-99"><a href="#cb6-99" aria-hidden="true" tabindex="-1"></a>tableContainer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -585,7 +587,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb7" data-startfrom="103" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>viewof twobuttons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb7" data-startfrom="103" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 102;"><span id="cb7-103"><a href="#cb7-103" aria-hidden="true" tabindex="-1"></a>viewof twobuttons</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-5" data-nodetype="expression">
@@ -596,7 +598,7 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb8" data-startfrom="110" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 109;"><span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>table</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb8" data-startfrom="110" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 109;"><span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>table</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div>
@@ -607,8 +609,8 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb9" data-startfrom="111" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 110;"><span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
-<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb9" data-startfrom="111" data-source-offset="-6"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 110;"><span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a><span class="fu">html</span><span class="vs">`&lt;link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' /&gt;</span></span>
+<span id="cb9-112"><a href="#cb9-112" aria-hidden="true" tabindex="-1"></a><span class="vs">tabulator.min.css`</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div>
@@ -619,12 +621,12 @@ Figure&nbsp;1: Credit: <a href="https://www.sfgate.com/national-parks/article/na
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-View Summary of Columns
+<span class="screen-reader-only">Note</span>View Summary of Columns
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -633,7 +635,7 @@ View Summary of Columns
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb10" data-startfrom="121" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 120;"><span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>viewof selectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb10" data-startfrom="121" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 120;"><span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a>viewof selectedColumns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -644,7 +646,7 @@ View Summary of Columns
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb11" data-startfrom="122" data-source-offset="-23"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 121;"><span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a>viewof dataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb11" data-startfrom="122" data-source-offset="-23"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 121;"><span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a>viewof dataSummaryView</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -663,7 +665,7 @@ View Summary of Columns
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Creative Commons License
+<span class="screen-reader-only">Tip</span>Creative Commons License
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -692,12 +694,12 @@ Figure&nbsp;2: Lone Star Geyser, one of the whopping ~500 geysers at Yellowstone
 </div>
 <p>Over the next several decades, a handful of other parks—such as Sequoia (1890), Yosemite (1890), Mount Rainier (1899), and Crater Lake (1902)—joined the system, too.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-What is the most recent National Park?
+<span class="screen-reader-only">Tip</span>What is the most recent National Park?
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -726,7 +728,7 @@ Figure&nbsp;3: Mount Rainier, also known by the Indigenous name Tahoma, is an ac
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dplyr package for data manipulation</span></span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the ggplot2 package for data visualization</span></span>
@@ -754,7 +756,7 @@ Figure&nbsp;3: Mount Rainier, also known by the Indigenous name Tahoma, is an ac
 <span id="cb12-26"><a href="#cb12-26" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">1</span>]) <span class="sc">+</span></span>
 <span id="cb12-27"><a href="#cb12-27" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Yellowstone National Park Visits (1979 - Present)"</span>) <span class="sc">+</span></span>
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># abbreviate numbers by millions and thousands</span></span>
-<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-29"><a href="#cb12-29" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -823,7 +825,7 @@ Figure&nbsp;5: 2021 report on NPS economic impact. Graphic credit: <a href="http
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Discussion Question 1
+<span class="screen-reader-only">Tip</span>Discussion Question 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -839,7 +841,7 @@ Discussion Question 1
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the dplyr package</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr, <span class="at">warn =</span> <span class="cn">FALSE</span>)</span>
@@ -848,7 +850,7 @@ Discussion Question 1
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>np_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv"</span>, <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Look at the structure of the dataset, randomly sample 10 rows</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>np_data <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>np_data <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: 'xfun::attr()' is deprecated.
@@ -858,13 +860,6 @@ See help("Deprecated")</code></pre>
 <div class="cell-output-display">
 <div class="kable-table">
 <table class="caption-top table table-sm table-striped small">
-<colgroup>
-<col style="width: 41%">
-<col style="width: 19%">
-<col style="width: 8%">
-<col style="width: 6%">
-<col style="width: 23%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">ParkName</th>
@@ -876,74 +871,74 @@ See help("Deprecated")</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Dry Tortugas NP</td>
-<td style="text-align: left;">Southeast</td>
-<td style="text-align: left;">FL</td>
-<td style="text-align: right;">1981</td>
-<td style="text-align: right;">10150</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Wrangell-St.&nbsp;Elias NP &amp; PRES</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2013</td>
-<td style="text-align: right;">69984</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Kobuk Valley NP</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2003</td>
-<td style="text-align: right;">4006</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Mammoth Cave NP</td>
-<td style="text-align: left;">Southeast</td>
-<td style="text-align: left;">KY</td>
-<td style="text-align: right;">2013</td>
-<td style="text-align: right;">494541</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Grand Canyon NP</td>
+<td style="text-align: left;">Canyonlands NP</td>
 <td style="text-align: left;">Intermountain</td>
-<td style="text-align: left;">AZ</td>
-<td style="text-align: right;">2000</td>
-<td style="text-align: right;">4460228</td>
+<td style="text-align: left;">UT</td>
+<td style="text-align: right;">1981</td>
+<td style="text-align: right;">89915</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Cuyahoga Valley NP</td>
+<td style="text-align: left;">Olympic NP</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">WA</td>
+<td style="text-align: right;">2012</td>
+<td style="text-align: right;">2824908</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Canyonlands NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">UT</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">436241</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Great Basin NP</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">NV</td>
+<td style="text-align: right;">1979</td>
+<td style="text-align: right;">29947</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Indiana Dunes NP</td>
 <td style="text-align: left;">Midwest</td>
-<td style="text-align: left;">OH</td>
-<td style="text-align: right;">1998</td>
-<td style="text-align: right;">3467107</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Lake Clark NP &amp; PRES</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2001</td>
-<td style="text-align: right;">4397</td>
+<td style="text-align: left;">IN</td>
+<td style="text-align: right;">1979</td>
+<td style="text-align: right;">1606166</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Gates of the Arctic NP &amp; PRES</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">2005</td>
-<td style="text-align: right;">9459</td>
+<td style="text-align: left;">Big Bend NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">TX</td>
+<td style="text-align: right;">1994</td>
+<td style="text-align: right;">330417</td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Mesa Verde NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">CO</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: right;">505194</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pinnacles NP</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">CA</td>
+<td style="text-align: right;">2009</td>
+<td style="text-align: right;">171112</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Zion NP</td>
+<td style="text-align: left;">Intermountain</td>
+<td style="text-align: left;">UT</td>
+<td style="text-align: right;">1985</td>
+<td style="text-align: right;">1503272</td>
+</tr>
+<tr class="even">
 <td style="text-align: left;">Voyageurs NP</td>
 <td style="text-align: left;">Midwest</td>
 <td style="text-align: left;">MN</td>
-<td style="text-align: right;">1998</td>
-<td style="text-align: right;">231958</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kobuk Valley NP</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">1992</td>
-<td style="text-align: right;">2829</td>
+<td style="text-align: right;">2008</td>
+<td style="text-align: right;">221585</td>
 </tr>
 </tbody>
 </table>
@@ -971,7 +966,7 @@ See help("Deprecated")</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Discussion Question 2
+<span class="screen-reader-only">Tip</span>Discussion Question 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1002,7 +997,7 @@ Figure&nbsp;6: Badlands National Park sign, gesturing to the South Unit’s co-m
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Activity 2
+<span class="screen-reader-only">Tip</span>Activity 2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1031,7 +1026,7 @@ Figure&nbsp;7: An example of a pneumatic tube traffic counter, installed above t
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Voyageurs National Park</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Voyageurs National Park</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>voyageurs_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Voyageurs NP"</span>)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizee it</span></span>
@@ -1039,7 +1034,7 @@ Figure&nbsp;7: An example of a pneumatic tube traffic counter, installed above t
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">8</span>]) <span class="sc">+</span></span>
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Voyageurs National Park Visits (1979 - Present)"</span>) <span class="sc">+</span></span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># abbreviate numbers by millions and thousands</span></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1096,7 +1091,7 @@ Figure&nbsp;8: An example of an induction loop, installed beneath a road (making
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the "ggplot2" package (which we'll be using a lot more)</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Let's also load "ggthemes", which let's us use colorblind-compatible palettes. When we've only got one line, this will just be black.</span></span>
@@ -1116,7 +1111,7 @@ Figure&nbsp;8: An example of an induction loop, installed beneath a road (making
 <span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">2</span>]) <span class="sc">+</span></span>
 <span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Carlsbad Caverns National Park Visits (1979 - Present)"</span>) <span class="sc">+</span></span>
 <span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a>    <span class="co"># abbreviate numbers by millions and thousands</span></span>
-<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1148,7 +1143,7 @@ Figure&nbsp;8: An example of an induction loop, installed beneath a road (making
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Activity 1
+<span class="screen-reader-only">Tip</span>Activity 1
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1164,14 +1159,14 @@ Activity 1
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for minimum RecVisits</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter for minimum RecVisits</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>least_visited <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(RecreationVisits <span class="sc">==</span> <span class="fu">min</span>(RecreationVisits))</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of rows for least visited</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>num_rows <span class="ot">&lt;-</span> <span class="fu">nrow</span>(least_visited)</span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Show some of them</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>least_visited <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fu">min</span>(<span class="dv">10</span>, num_rows))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>least_visited <span class="sc">%&gt;%</span> <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="fu">min</span>(<span class="dv">10</span>, num_rows))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
 <pre><code>Warning: 'xfun::attr()' is deprecated.
@@ -1199,31 +1194,31 @@ See help("Deprecated")</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">National Park of American Samoa</td>
-<td style="text-align: left;">Pacific West</td>
-<td style="text-align: left;">AS</td>
-<td style="text-align: right;">2003</td>
+<td style="text-align: left;">Kobuk Valley NP</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">AK</td>
+<td style="text-align: right;">2014</td>
 <td style="text-align: right;">0</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Katmai NP &amp; PRES</td>
-<td style="text-align: left;">Alaska</td>
-<td style="text-align: left;">AK</td>
-<td style="text-align: right;">1995</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Kobuk Valley NP</td>
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: left;">AK</td>
 <td style="text-align: right;">2015</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Kobuk Valley NP</td>
+<tr class="odd">
+<td style="text-align: left;">Katmai NP &amp; PRES</td>
 <td style="text-align: left;">Alaska</td>
 <td style="text-align: left;">AK</td>
-<td style="text-align: right;">2014</td>
+<td style="text-align: right;">1995</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">National Park of American Samoa</td>
+<td style="text-align: left;">Pacific West</td>
+<td style="text-align: left;">AS</td>
+<td style="text-align: right;">2003</td>
 <td style="text-align: right;">0</td>
 </tr>
 </tbody>
@@ -1236,7 +1231,7 @@ See help("Deprecated")</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Filter down to Mount Rainier National Park</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>kobuk_data <span class="ot">&lt;-</span> np_data <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ParkName <span class="sc">==</span> <span class="st">"Kobuk Valley NP"</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualise it</span></span>
@@ -1244,7 +1239,7 @@ See help("Deprecated")</code></pre>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">x =</span> Year, <span class="at">y =</span> RecreationVisits), <span class="at">color =</span> cb_palette[<span class="dv">6</span>]) <span class="sc">+</span></span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Kobuk Valley National Park Visits (1979 - Present)"</span>) <span class="sc">+</span></span>
 <span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>    <span class="co"># abbreviate numbers by millions and thousands</span></span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale_cut =</span> <span class="fu">cut_short_scale</span>()))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1263,7 +1258,7 @@ See help("Deprecated")</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Activity 3
+<span class="screen-reader-only">Tip</span>Activity 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1276,7 +1271,7 @@ Activity 3
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Discussion Question 3
+<span class="screen-reader-only">Tip</span>Discussion Question 3
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1320,7 +1315,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb20" data-startfrom="499" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 498;"><span id="cb20-499"><a href="#cb20-499" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof alldataSummaryView<span class="op">,</span> viewof allselectedColumns<span class="op">,</span> viewof alldataSet<span class="op">,</span> alltableContainer<span class="op">,</span> alltable<span class="op">,</span> viewof alltwobuttons<span class="op">,</span> alltableStyles} <span class="im">from</span> <span class="st">"878f51be5dd541f5"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb20" data-startfrom="499" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 498;"><span id="cb20-499"><a href="#cb20-499" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof alldataSummaryView<span class="op">,</span> viewof allselectedColumns<span class="op">,</span> viewof alldataSet<span class="op">,</span> alltableContainer<span class="op">,</span> alltable<span class="op">,</span> viewof alltwobuttons<span class="op">,</span> alltableStyles} <span class="im">from</span> <span class="st">"878f51be5dd541f5"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-8" data-nodetype="declaration">
@@ -1331,7 +1326,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb21" data-startfrom="504" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 503;"><span id="cb21-504"><a href="#cb21-504" aria-hidden="true" tabindex="-1"></a>viewof alldataSet</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb21" data-startfrom="504" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 503;"><span id="cb21-504"><a href="#cb21-504" aria-hidden="true" tabindex="-1"></a>viewof alldataSet</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-9" data-nodetype="expression">
@@ -1342,7 +1337,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb22" data-startfrom="509" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 508;"><span id="cb22-509"><a href="#cb22-509" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb22" data-startfrom="509" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 508;"><span id="cb22-509"><a href="#cb22-509" aria-hidden="true" tabindex="-1"></a>alltableContainer</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-10" data-nodetype="expression">
@@ -1353,7 +1348,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="514" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 513;"><span id="cb23-514"><a href="#cb23-514" aria-hidden="true" tabindex="-1"></a>viewof alltwobuttons</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb23" data-startfrom="514" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 513;"><span id="cb23-514"><a href="#cb23-514" aria-hidden="true" tabindex="-1"></a>viewof alltwobuttons</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-11" data-nodetype="expression">
@@ -1364,7 +1359,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb24" data-startfrom="520" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 519;"><span id="cb24-520"><a href="#cb24-520" aria-hidden="true" tabindex="-1"></a>alltable</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb24" data-startfrom="520" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 519;"><span id="cb24-520"><a href="#cb24-520" aria-hidden="true" tabindex="-1"></a>alltable</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-12" data-nodetype="expression">
@@ -1375,7 +1370,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb25" data-startfrom="526" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 525;"><span id="cb25-526"><a href="#cb25-526" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb25" data-startfrom="526" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 525;"><span id="cb25-526"><a href="#cb25-526" aria-hidden="true" tabindex="-1"></a>viewof allselectedColumns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1386,7 +1381,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 </div>
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb26" data-startfrom="527" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 526;"><span id="cb26-527"><a href="#cb26-527" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb26" data-startfrom="527" data-source-offset="-26"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 526;"><span id="cb26-527"><a href="#cb26-527" aria-hidden="true" tabindex="-1"></a>viewof alldataSummaryView</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -1406,7 +1401,7 @@ Weber, Joe, and Selima Sultana. 2013. <span>“Why <span>Do</span> <span>So</spa
 <p>The data is also useful for teaching basic and advanced visualization methods, like creating line plots over time or customizing plot aesthetics (e.g., abbreviating millions and thousands, altering axis ranges).</p>
 <p>When working on visualization methods, we often ask students to share plots in a communal class forum, such as a shared Google Doc or Discord/Slack. This approach can be effective for building community; showcasing different ways of representing similar data; and enabling instructors to identify common strengths or problems.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">R</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Python</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="listing-exercise-posts-r" class="quarto-listing quarto-listing-container-table">
@@ -1436,7 +1431,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="127" data-listing-title-sort="DPLYR Groupby with National Park Visitation Data (Exercise)" data-listing-filename-sort="NP-Data-Groupby.qmd">
+<tr data-index="0" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="127" data-listing-title-sort="DPLYR Groupby with National Park Visitation Data (Exercise)" data-listing-filename-sort="NP-Data-Groupby.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1449,7 +1444,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="262" data-listing-title-sort="DPLYR Groupby with National Park Visitation Data (Solution)" data-listing-filename-sort="NP-Data-Groupby-Solutions.qmd">
+<tr data-index="1" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832151" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="262" data-listing-title-sort="DPLYR Groupby with National Park Visitation Data (Solution)" data-listing-filename-sort="NP-Data-Groupby-Solutions.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1462,7 +1457,7 @@ Categories
 
 </tr>
 
-<tr data-index="2" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1757616283865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="Introduction to DPLYR with National Park Visitation Data (Solution)" data-listing-filename-sort="Intro-to-DPLYR-NP-Solutions.qmd">
+<tr data-index="2" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1758301832150" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="197" data-listing-title-sort="Introduction to DPLYR with National Park Visitation Data (Solution)" data-listing-filename-sort="Intro-to-DPLYR-NP-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 26, 2024</span>
 </td>
@@ -1475,7 +1470,7 @@ Categories
 
 </tr>
 
-<tr data-index="3" data-categories="Z2dwbG90JTJDYWR2YW5jZWQlMkNzb2x1dGlvbg==" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1757616283864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="375" data-listing-title-sort="ggplot Customization with National Park Visitation Data (Solution)" data-listing-filename-sort="Ggplot-Customization-NP-Solutions.qmd">
+<tr data-index="3" data-categories="Z2dwbG90JTJDYWR2YW5jZWQlMkNzb2x1dGlvbg==" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1758301832149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="375" data-listing-title-sort="ggplot Customization with National Park Visitation Data (Solution)" data-listing-filename-sort="Ggplot-Customization-NP-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 26, 2024</span>
 </td>
@@ -1488,7 +1483,7 @@ Categories
 
 </tr>
 
-<tr data-index="4" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1757616283865" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Introduction to DPLYR with National Park Visitation Data (Exercise)" data-listing-filename-sort="Intro-to-DPLYR-NP.qmd">
+<tr data-index="4" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1708905600000" data-listing-file-modified-sort="1758301832150" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="173" data-listing-title-sort="Introduction to DPLYR with National Park Visitation Data (Exercise)" data-listing-filename-sort="Intro-to-DPLYR-NP.qmd">
 <td>
 <span class="listing-date">Feb 26, 2024</span>
 </td>
@@ -1534,7 +1529,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Pandas Groupby with National Park Visitation Data (Exercise)" data-listing-filename-sort="NP-Data-Groupby-Pandas.qmd">
+<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Pandas Groupby with National Park Visitation Data (Exercise)" data-listing-filename-sort="NP-Data-Groupby-Pandas.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1547,7 +1542,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283864" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Pandas Groupby with National Park Visitation Data (Solution)" data-listing-filename-sort="NP-Data-Groupby-Pandas-Solutions.qmd">
+<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832149" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="115" data-listing-title-sort="Pandas Groupby with National Park Visitation Data (Solution)" data-listing-filename-sort="NP-Data-Groupby-Pandas-Solutions.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1832,13 +1827,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2231,7 +2227,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb27" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "U.S. National Park Visit Data (1979-2024)"</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Melanie Walsh and Os Keyes</span></span>
 <span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
@@ -2854,7 +2850,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb27-659"><a href="#cb27-659" aria-hidden="true" tabindex="-1"></a>::::::::::::::::::::</span>
 <span id="cb27-660"><a href="#cb27-660" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-661"><a href="#cb27-661" aria-hidden="true" tabindex="-1"></a><span class="ot">[^1]: </span>The NPS also offers <span class="co">[</span><span class="ot">annual visitation information between 1904-1979</span><span class="co">]</span>(https://irma.nps.gov/Stats/SSRSReports/National%20Reports/Query%20Builder%20for%20Historic%20Annual%20Recreation%20Visits%20(1904%20-%201979)), but it is a separate, less consistent dataset.</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

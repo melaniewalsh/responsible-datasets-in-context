@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -80,7 +80,7 @@ div.csl-indent {
 }</style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -92,14 +92,15 @@ div.csl-indent {
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c9701912356f6454d35f11906a8f3dcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1602ec9a4e311f6661c0dfb3b0fabef4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -296,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -314,7 +315,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -346,7 +347,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
@@ -449,7 +451,7 @@ window.Quarto = {
 
 
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Discussion &amp; Activities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Exercises</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Discussion &amp; Activities</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Exercises</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <section id="introduction" class="level2">
@@ -461,7 +463,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Brief Survey
+<span class="screen-reader-only">Tip</span>Brief Survey
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -471,12 +473,12 @@ Brief Survey
 <hr>
 <!-- Importing from https://observablehq.com/d/ac5fc74c20ef36a6 (forked, collaborative notebook) -->
 <!-- 
-```sxvua
+```raqsw
 //|echo: false
 import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, viewof dataUrl, viewof tableOptions, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
 ```
 
-```sxvua
+```raqsw
 //|echo: false
 // viewof dataSet
 //viewof dataUrl
@@ -485,7 +487,7 @@ import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, vi
 tableContainer
 ```
 
-```sxvua
+```raqsw
 //|echo: false
 // viewof dataSet
 //tableContainer
@@ -495,7 +497,7 @@ viewof tableOptions
 viewof copyUrlButton
 ```
 
-```sxvua
+```raqsw
 //|echo: false
 //|output: false
 //|error: false
@@ -507,7 +509,7 @@ tabulator.min.css`
 
 <br>
 
-```sxvua
+```raqsw
 //|echo: false
 //|error: false
 //|warning: false
@@ -525,7 +527,7 @@ viewof dataSummaryView
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="61" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 60;"><span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="61" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 60;"><span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
@@ -536,7 +538,7 @@ viewof dataSummaryView
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="67" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>raw_data <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="67" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 66;"><span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a>raw_data <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-2" data-nodetype="declaration">
@@ -547,7 +549,7 @@ viewof dataSummaryView
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="76" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 75;"><span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="76" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 75;"><span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
 <span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
 <span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
 <span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
@@ -606,7 +608,7 @@ viewof dataSummaryView
 <span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>    <span class="co">// sortOrders: ["desc"]</span></span>
 <span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"gr_num_ratings"</span><span class="op">,</span> <span class="st">"gr_num_reviews"</span>]</span>
 <span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-3" data-nodetype="expression">
@@ -649,7 +651,7 @@ viewof dataSummaryView
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Creative Commons License
+<span class="screen-reader-only">Tip</span>Creative Commons License
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -827,15 +829,15 @@ Creative Commons License
 <p>The OCLC’s definition of “literary greatness” is biased based on the libraries that OCLC represents, the list’s exclusive focus on physical books, and its emphasis on raw number of holdings, which is influenced by number of editions. OCLC acknowledges potential biases in their claims, noting that “The [top 500] list emphasizes many books that we tend to think of as ‘classics,’ because those are the novels most often translated, retold in different editions, taught and widely distributed in library collections. Because of this, the list tends to reflect more dominant cultural views.”</p>
 <p>A key reason we decided to collect additional data related to the list was to explore what kinds of works, and especially whose works, it represents. Drawing on author data gathered from VIAF, we can calculate some overall descriptive statistics for the list.</p>
 <p>Looking at the AUTHOR_GENDER column, we can count the number of authors identified as male and the number identified as female (VIAF only includes options for binary genders, which is discussed further below), and we can see that over 70% of the novels were written by men.</p>
-<div id="744edf50" class="cell" data-execution_count="1">
+<div id="5040da15" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">"../../../datasets/top-500-novels/final_merged_dataset_no_full_text.tsv"</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>, header<span class="op">=</span><span class="dv">0</span>, low_memory<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_gender"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <pre><code>author_gender
@@ -845,10 +847,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can use a similar approach to look at the nationalities of authors whose works are represented on the list. Focusing on the AUTHOR_NATIONALITY column, we can count how many times each country code appears, and see that over 80% of the novels were written by authors from the U.S. or the U.K.</p>
-<div id="90e19e9d" class="cell" data-execution_count="2">
+<div id="b0365f78" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author_nationality"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>author_nationality
@@ -885,15 +887,15 @@ Name: count, dtype: int64</code></pre>
 </figure>
 </div>
 <p>To find out what time period is most frequently represented on the list, we can look at the PUB_YEAR column and see that almost 50% of novels were first published between 1950 and 2000.</p>
-<div id="6aec8f5e" class="cell" data-execution_count="3">
+<div id="ba6438a9" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>bins <span class="op">=</span> np.arange(<span class="dv">1000</span>, <span class="dv">2060</span>, <span class="dv">50</span>)</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>bars <span class="op">=</span> df[<span class="st">'pub_year'</span>].plot.hist(bins<span class="op">=</span>bins, edgecolor<span class="op">=</span><span class="st">'w'</span>)</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="st">'vertical'</span>)<span class="op">;</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(bins)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>plt.xticks(bins)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -904,10 +906,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>We can also get a sense of the immense influence of individual authors who appear on the list numerous times. The most represented authors are John Grisham (19 novels) and Charles Dickens (15 novels).</p>
-<div id="97e017fd" class="cell" data-execution_count="4">
+<div id="00a080ba" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">"author"</span>].value_counts(dropna<span class="op">=</span><span class="va">False</span>).head(<span class="dv">10</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>author
@@ -925,17 +927,17 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Drawing on slightly more complex techniques, we can see that there is a strong positive correlation (p=1.1165e-73, r=0.6985) between the current ranking of the Top 500 List and a ranking based on the total number of editions for each novel. This suggests that the more editions a novel has, the more likely it is to be higher on the list, which is relevant because European and American editing practices have long favored authors occupying dominant social positions. Historically, works by White authors and male authors are more likely to have been re-edited and re-issued and to be considered literary classics (Gates; Mandell).<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="00ffd72d" class="cell" data-execution_count="5">
+<div id="8b1634ce" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> stats</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># inspired by: https://www.sfu.ca/~mjbrydon/tutorials/BAinPy/08_correlation.html</span></span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, y<span class="op">=</span><span class="st">"top_500_rank"</span>, data<span class="op">=</span>df)</span>
 <span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna()]</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_editions_rank'</span>], dropped_df[<span class="st">'top_500_rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_editions_rank'</span>], dropped_df[<span class="st">'top_500_rank'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>PearsonRResult(statistic=np.float64(0.6985608812420623), pvalue=np.float64(1.1165447422670264e-73))</code></pre>
@@ -949,12 +951,12 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Similarly, we confirm that there is a very strong positive correlation (p=5.6541e-96, r=0.7642) between number of editions and number of holdings of a novel; the more editions a book has, the more total holdings are reported in OCLC.</p>
-<div id="7fa641ff" class="cell" data-execution_count="6">
+<div id="bd8fe2e8" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>sns.lmplot(x<span class="op">=</span><span class="st">"oclc_holdings_rank"</span>, y<span class="op">=</span><span class="st">"oclc_editions_rank"</span>, data<span class="op">=</span>df)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>dropped_df <span class="op">=</span> df[df.oclc_editions_rank.notna() <span class="op">&amp;</span> df.oclc_holdings_rank.notna()]</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_holdings_rank'</span>], dropped_df[<span class="st">'oclc_editions_rank'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(stats.pearsonr(dropped_df[<span class="st">'oclc_holdings_rank'</span>], dropped_df[<span class="st">'oclc_editions_rank'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>PearsonRResult(statistic=np.float64(0.7642639335763275), pvalue=np.float64(5.6541076909547544e-96))</code></pre>
@@ -981,16 +983,16 @@ Name: count, dtype: int64</code></pre>
 <p>Because we were interested in whose opinions are represented on the list, we wanted to bring in an alternate measure of popularity, and we decided to use information from Goodreads. Goodreads was appealing because of its prominence online (over 130 million users), which we hoped might help us consider the opinions of a somewhat different set of readers than those theoretically represented through the physical holdings of libraries. Melanie Walsh and Maria Antoniak, for example, have drawn on Goodreads reviews to analyze how social media users define the “Classics.” Drawing on this work, we compare the ranking of novels on OCLC’s original list of Top 500 novels to the rankings of those same novels based on Goodreads ratings and number of reviews. Through this comparison we aim to consider how social media users engage with “classic” and “popular” novels and to interrogate the relationship between canonicity and popularity, using information from different data sources.</p>
 <p>To unpack the differences between the Goodreads data and the Top 500 rankings, we first need to think about how we want to compare the two lists. Given that we have recorded Goodread rankings by average star rating and total number of ratings, which metric would be better to use? Would we want to create another metric?</p>
 <p>For our purposes, we decided to use total number of ratings instead of average rating, since it seemed most closely related to how OCLC measures popularity–by number of holdings, not how much patrons say they enjoy reading the books.</p>
-<div id="ee86bba4" class="cell" data-execution_count="7">
+<div id="0df55afe" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> top_5_comparison(col_name):</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(df[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">sorted</span> <span class="op">=</span> df.sort_values(by<span class="op">=</span>[col_name])</span>
 <span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"top_500_rank"</span>, col_name]].head(<span class="dv">5</span>))</span>
 <span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"gr_num_ratings_rank"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>top_5_comparison(<span class="st">"gr_num_ratings_rank"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                title                  author  top_500_rank  \
@@ -1022,10 +1024,10 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 <p>Above you can see that the Goodreads rankings and the top 500 rankings aren’t very aligned! What factors might affect popularity on Goodreads compared to OCLC?</p>
-<div id="36f11567" class="cell" data-execution_count="8">
+<div id="21a79eea" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_rankings(d, col_name):</span>
@@ -1051,7 +1053,7 @@ Name: count, dtype: int64</code></pre>
 <span id="cb17-24"><a href="#cb17-24" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.<span class="bu">apply</span>(<span class="kw">lambda</span> d: print_rankings(d, <span class="st">"gr_num_ratings_rank"</span>), axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb17-25"><a href="#cb17-25" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-26"><a href="#cb17-26" aria-hidden="true" tabindex="-1"></a>html_output <span class="op">=</span> <span class="st">"&lt;br&gt;"</span>.join(df[<span class="st">"html_output"</span>].tolist())</span>
-<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>HTML(html_output)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-27"><a href="#cb17-27" aria-hidden="true" tabindex="-1"></a>HTML(html_output)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <span style="color:red !important"> ▼ -210 Don Quixote</span><br><span style="color:red !important"> ▼ -131 Alice's Adventures in Wonderland</span><br><span style="color:red !important"> ▼ -65 The Adventures of Huckleberry Finn</span><br><span style="color:red !important"> ▼ -84 The Adventures of Tom Sawyer</span><br><span style="color:red !important"> ▼ -140 Treasure Island</span><br><span style="color:red !important"> ▼ -2 Pride and Prejudice</span><br><span style="color:red !important"> ▼ -39 Wuthering Heights</span><br><span style="color:red !important"> ▼ -32 Jane Eyre</span><br><span style="color:red !important"> ▼ -125 Moby Dick</span><br><span style="color:red !important"> ▼ -85 The Scarlet Letter</span><br><span style="color:red !important"> ▼ -197 Gulliver's Travels</span><br><span style="color:red !important"> ▼ -266 The Pilgrim's Progress</span><br><span style="color:red !important"> ▼ -85 A Christmas Carol</span><br><span style="color:red !important"> ▼ -214 David Copperfield</span><br><span style="color:red !important"> ▼ -71 A Tale of Two Cities</span><br><span style="color:red !important"> ▼ -22 Little Women</span><br><span style="color:red !important"> ▼ -86 Great Expectations</span><br><span style="color:green !important"> ▲ +8 The Hobbit, or, There and Back Again</span><br><span style="color:red !important"> ▼ -35 Frankenstein, or, the Modern Prometheus</span><br><span style="color:red !important"> ▼ -149 Oliver Twist</span><br><span style="color:red !important"> ▼ -209 Uncle Tom's Cabin</span><br><span style="color:red !important"> ▼ -72 Crime and Punishment</span><br><span style="color:red !important"> ▼ -159 Madame Bovary: Patterns of Provincial life</span><br><span style="color:red !important"> ▼ -69 The Return of the King</span><br><span style="color:red !important"> ▼ -42 Dracula</span><br><span style="color:red !important"> ▼ -160 The Three Musketeers</span><br><span style="color:red !important"> ▼ -16 Brave New World</span><br><span style="color:red !important"> ▼ -155 War and Peace</span><br><span style="color:green !important"> ▲ +25 To Kill a Mockingbird</span><br><span style="color:red !important"> ▼ -122 The Wizard of Oz</span><br><span style="color:red !important"> ▼ -73 Les Misérables</span><br><span style="color:red !important"> ▼ -43 The Secret Garden</span><br><span style="color:green !important"> ▲ +21 Animal Farm</span><br><span style="color:green !important"> ▲ +29 The Great Gatsby</span><br><span style="color:red !important"> ▼ -4 The Little Prince</span><br><span style="color:red !important"> ▼ -124 The Call of the Wild</span><br><span style="color:red !important"> ▼ -444 20,000 Leagues Under the Sea</span><br><span style="color:red !important"> ▼ -59 Anna Karenina</span><br><span style="color:red !important"> ▼ -193 The Wind in the Willows</span><br><span style="color:red !important"> ▼ -17 The Picture of Dorian Gray</span><br><span style="color:red !important"> ▼ -50 The Grapes of Wrath</span><br><span style="color:red !important"> ▼ -32 Sense and Sensibility</span><br><span style="color:red !important"> ▼ -279 The Last of the Mohicans</span><br><span style="color:red !important"> ▼ -159 Tess of the d'Urbervilles</span><br><span style="color:green !important"> ▲ +44 Harry Potter and the Sorcerer's Stone</span><br><span style="color:red !important"> ▼ -193 Heidi</span><br><span style="color:red !important"> ▼ -242 Ulysses</span><br><span style="color:red !important"> ▼ -192 The Complete Sherlock Holmes</span><br><span style="color:red !important"> ▼ -41 The Count of Monte Cristo</span><br><span style="color:red !important"> ▼ -27 The Old Man and the Sea</span><br><span style="color:green !important"> ▲ +22 The Lion, the Witch, and the Wardrobe</span><br><span style="color:red !important"> ▼ -184 The Hunchback of Notre Dame</span><br><span style="color:red !important"> ▼ -293 Pinocchio</span><br><span style="color:red !important"> ▼ -28 One Hundred Years of Solitude</span><br><span style="color:red !important"> ▼ -274 Ivanhoe</span><br><span style="color:red !important"> ▼ -259 The Red Badge of Courage</span><br><span style="color:red !important"> ▼ -24 Anne of Green Gables</span><br><span style="color:red !important"> ▼ -146 Black Beauty</span><br><span style="color:red !important"> ▼ -120 Peter Pan</span><br><span style="color:red !important"> ▼ -127 A Farewell to Arms</span><br><span style="color:red !important"> ▼ -349 The House of the Seven Gables</span><br><span style="color:green !important"> ▲ +35 Lord of the Flies</span><br><span style="color:red !important"> ▼ -233 The Prince and the Pauper</span><br><span style="color:red !important"> ▼ -209 A Portrait of the Artist as a Young Man</span><br><span style="color:red !important"> ▼ -367 Lord Jim</span><br><span style="color:green !important"> ▲ +55 Harry Potter and the Chamber of Secrets</span><br><span style="color:red !important"> ▼ -287 The Red &amp; the Black</span><br><span style="color:red !important"> ▼ -11 The Stranger</span><br><span style="color:red !important"> ▼ -116 The Trial</span><br><span style="color:red !important"> ▼ -224 Lady Chatterley's Lover</span><br><span style="color:red !important"> ▼ -298 Kidnapped: The Adventures of David Balfour</span><br><span style="color:green !important"> ▲ +56 The Catcher in the Rye</span><br><span style="color:green !important"> ▲ +38 Fahrenheit 451</span><br><span style="color:red !important"> ▼ -164 A Journey to the Center of the Earth</span><br><span style="color:red !important"> ▼ -213 Vanity Fair</span><br><span style="color:red !important"> ▼ -75 All Quiet on the Western Front</span><br><span style="color:green !important"> ▲ +6 Gone with the Wind</span><br><span style="color:red !important"> ▼ -201 My Ántonia</span><br><span style="color:green !important"> ▲ +47 Of Mice and Men</span><br><span style="color:red !important"> ▼ -405 The Vicar of Wakefield</span><br><span style="color:red !important"> ▼ -235 A Connecticut Yankee in King Arthur's Court</span><br><span style="color:red !important"> ▼ -164 White Fang</span><br><span style="color:red !important"> ▼ -255 Fathers and Sons</span><br><span style="color:red !important"> ▼ -242 Doctor Zhivago</span><br><span style="color:red !important"> ▼ -324 The Decameron</span><br><span style="color:green !important"> ▲ +79 Nineteen Eighty-Four</span><br><span style="color:red !important"> ▼ -187 The Jungle</span><br><span style="color:green !important"> ▲ +51 The Da Vinci Code</span><br><span style="color:red !important"> ▼ -26 Persuasion</span><br><span style="color:red !important"> ▼ -88 Mansfield Park</span><br><span style="color:red !important"> ▼ -114 Candide</span><br><span style="color:red !important"> ▼ -107 For Whom the Bell Tolls</span><br><span style="color:red !important"> ▼ -178 Far from the Madding Crowd</span><br><span style="color:green !important"> ▲ +66 The Fellowship of the Ring</span><br><span style="color:red !important"> ▼ -319 The Return of the Native</span><br><span style="color:red !important"> ▼ -294 Sons and Lovers</span><br><span style="color:green !important"> ▲ +52 Charlotte's Web</span><br><span style="color:red !important"> ▼ -214 The Swiss Family Robinson</span><br><span style="color:red !important"> ▼ -210 Bleak House</span><br><span style="color:red !important"> ▼ -278 Père Goriot</span><br><span style="color:red !important"> ▼ -252 Utopia</span><br><span style="color:red !important"> ▼ -327 The History of Tom Jones, a Foundling</span><br><span style="color:green !important"> ▲ +94 Harry Potter and the Prisoner of Azkaban</span><br><span style="color:red !important"> ▼ -314 Kim</span><br><span style="color:red !important"> ▼ -150 The Sound and the Fury</span><br><span style="color:green !important"> ▲ +92 Harry Potter and the Goblet of Fire</span><br><span style="color:red !important"> ▼ -278 The Mill on the Floss</span><br><span style="color:green !important"> ▲ +36 A Wrinkle in Time</span><br><span style="color:red !important"> ▼ -72 The Hound of the Baskervilles</span><br><span style="color:green !important"> ▲ +27 The Two Towers</span><br><span style="color:red !important"> ▼ -78 The War of the Worlds</span><br><span style="color:red !important"> ▼ -152 Middlemarch</span><br><span style="color:red !important"> ▼ -146 The Age of Innocence</span><br><span style="color:red !important"> ▼ -6 The Color Purple</span><br><span style="color:red !important"> ▼ -50 Northanger Abbey</span><br><span style="color:red !important"> ▼ -24 East of Eden</span><br><span style="color:red !important"> ▼ -45 On the Road</span><br><span style="color:green !important"> ▲ +19 Catch-22</span><br><span style="color:red !important"> ▼ -105 Around the World in Eighty Days</span><br><span style="color:red !important"> ▼ -244 Hard Times</span><br><span style="color:red !important"> ▼ -37 Beloved</span><br><span style="color:red !important"> ▼ -71 Mrs. Dalloway</span><br><span style="color:red !important"> ▼ -131 To the Lighthouse</span><br><span style="color:red !important"> ▼ -14 The Magician's Nephew</span><br><span style="color:green !important"> ▲ +108 Harry Potter and the Order of the Phoenix</span><br><span style="color:red !important"> ▼ -29 The Sun Also Rises</span><br><span style="color:red !important"> ▼ -96 The Good Earth</span><br><span style="color:red !important"> ▼ -212 Silas Marner</span><br><span style="color:red !important"> ▼ -15 Love in the Time of Cholera</span><br><span style="color:green !important"> ▲ +5 Rebecca</span><br><span style="color:red !important"> ▼ -230 Jude the Obscure</span><br><span style="color:green !important"> ▲ +129 Twilight</span><br><span style="color:red !important"> ▼ -215 A Passage to India</span><br><span style="color:red !important"> ▼ -84 The Plague</span><br><span style="color:red !important"> ▼ -266 Nicholas Nickleby</span><br><span style="color:red !important"> ▼ -93 The Pearl</span><br><span style="color:red !important"> ▼ -155 Ethan Frome</span><br><span style="color:red !important"> ▼ -339 The Tale of Genji</span><br><span style="color:green !important"> ▲ +105 The Giver</span><br><span style="color:green !important"> ▲ +116 The Alchemist</span><br><span style="color:red !important"> ▼ -146 The Strange Case of Dr. Jekyll and Mr. Hyde</span><br><span style="color:red !important"> ▼ -52 Robinson Crusoe</span><br><span style="color:red !important"> ▼ -138 Tender is the Night</span><br><span style="color:red !important"> ▼ -112 The Idiot</span><br><span style="color:red !important"> ▼ -22 Hatchet</span><br><span style="color:green !important"> ▲ +124 The Kite Runner</span><br><span style="color:green !important"> ▲ +36 One Flew Over the Cuckoo's Nest</span><br><span style="color:red !important"> ▼ -199 The Portrait of a Lady</span><br><span style="color:green !important"> ▲ +84 The Outsiders</span><br><span style="color:red !important"> ▼ -272 Ben-Hur</span><br><span style="color:red !important"> ▼ -222 The Mayor of Casterbridge</span><br><span style="color:red !important"> ▼ -204 Cry, The Beloved Country</span><br><span style="color:red !important"> ▼ -53 The Last Battle</span><br><span style="color:red !important"> ▼ -308 Captains Courageous</span><br><span style="color:red !important"> ▼ -219 The Castle</span><br><span style="color:green !important"> ▲ +76 The Metamorphosis</span><br><span style="color:red !important"> ▼ -237 The Magic Mountain (Der Zauberberg)</span><br><span style="color:green !important"> ▲ +10 James and the Giant Peach</span><br><span style="color:red !important"> ▼ -18 The Horse and His Boy</span><br><span style="color:green !important"> ▲ +140 Angels &amp; Demons</span><br><span style="color:green !important"> ▲ +12 The Voyage of the Dawn Treader</span><br><span style="color:green !important"> ▲ +77 The Bell Jar</span><br><span style="color:red !important"> ▼ -268 Women in Love</span><br><span style="color:red !important"> ▼ -279 The Yearling</span><br><span style="color:red !important"> ▼ -223 O Pioneers!</span><br><span style="color:green !important"> ▲ +125 The Handmaid's Tale</span><br><span style="color:red !important"> ▼ -165 The Moonstone</span><br><span style="color:red !important"> ▼ -292 The Old Curiosity Shop</span><br><span style="color:red !important"> ▼ -229 Little Dorrit</span><br><span style="color:green !important"> ▲ +14 Prince Caspian: The Return to Narnia</span><br><span style="color:red !important"> ▼ -237 Sister Carrie</span><br><span style="color:red !important"> ▼ -26 The Silver Chair</span><br><span style="color:green !important"> ▲ +171 The Hunger Games</span><br><span style="color:red !important"> ▼ -183 This Side of Paradise</span><br><span style="color:red !important"> ▼ -282 Eugénie Grandet</span><br><span style="color:red !important"> ▼ -206 Of Human Bondage</span><br><span style="color:red !important"> ▼ -320 Dream of the Red Chamber</span><br><span style="color:green !important"> ▲ +127 Life of Pi</span><br><span style="color:green !important"> ▲ +166 Harry Potter and the Deathly Hallows</span><br><span style="color:red !important"> ▼ -68 Invisible Man</span><br><span style="color:red !important"> ▼ -70 Steppenwolf</span><br><span style="color:red !important"> ▼ -104 The Sorrows of Young Werther</span><br><span style="color:green !important"> ▲ +46 Bridge to Terabithia</span><br><span style="color:red !important"> ▼ -60 The Invisible Man</span><br><span style="color:green !important"> ▲ +112 Holes</span><br><span style="color:green !important"> ▲ +81 Siddhartha</span><br><span style="color:green !important"> ▲ +37 A Tree Grows in Brooklyn</span><br><span style="color:red !important"> ▼ -94 Through the Looking-Glass, and What Alice Found There</span><br><span style="color:green !important"> ▲ +66 In Cold Blood</span><br><span style="color:red !important"> ▼ -25 The House of the Spirits</span><br><span style="color:red !important"> ▼ -259 Adam Bede</span><br><span style="color:red !important"> ▼ -280 The Betrothed</span><br><span style="color:green !important"> ▲ +162 The Book Thief</span><br><span style="color:green !important"> ▲ +14 Their Eyes Were Watching God</span><br><span style="color:red !important"> ▼ -106 One Day in the Life of Ivan Denisovich</span><br><span style="color:red !important"> ▼ -239 The Sea Wolf</span><br><span style="color:green !important"> ▲ +182 Catching Fire</span><br><span style="color:red !important"> ▼ -97 Roll of Thunder, Hear My Cry</span><br><span style="color:red !important"> ▼ -220 Death Comes for the Archbishop</span><br><span style="color:red !important"> ▼ -123 The House of Mirth</span><br><span style="color:red !important"> ▼ -174 Light in August</span><br><span style="color:red !important"> ▼ -237 The Pickwick Papers</span><br><span style="color:red !important"> ▼ -292 Remembrance of Things Past</span><br><span style="color:red !important"> ▼ -295 Barchester Towers and the Warden</span><br><span style="color:red !important"> ▼ -219 The Bridge of San Luis Rey</span><br><span style="color:green !important"> ▲ +176 The Help</span><br><span style="color:green !important"> ▲ +80 Murder on the Orient Express</span><br><span style="color:green !important"> ▲ +172 The Lovely Bones</span><br><span style="color:red !important"> ▼ -171 The Appeal</span><br><span style="color:red !important"> ▼ -261 Dombey And Son</span><br><span style="color:green !important"> ▲ +149 Slaughterhouse-Five</span><br><span style="color:red !important"> ▼ -209 An American Tragedy</span><br><span style="color:red !important"> ▼ -9 The Bluest Eye</span><br><span style="color:green !important"> ▲ +1 Little House In the Big Woods</span><br><span style="color:red !important"> ▼ -22 Pippi Longstocking</span><br><span style="color:red !important"> ▼ -201 Germinal</span><br><span style="color:red !important"> ▼ -89 The Heart Is a Lonely Hunter</span><br><span style="color:red !important"> ▼ -52 The Woman In White</span><br><span style="color:red !important"> ▼ -183 Absalom, Absalom!</span><br><span style="color:red !important"> ▼ -111 A Painted House</span><br><span style="color:green !important"> ▲ +200 The Girl With the Dragon Tattoo</span><br><span style="color:red !important"> ▼ -31 A Room With a View</span><br><span style="color:green !important"> ▲ +76 Watership Down</span><br><span style="color:green !important"> ▲ +182 Memoirs of a Geisha</span><br><span style="color:red !important"> ▼ -215 Our Mutual Friend</span><br><span style="color:red !important"> ▼ -229 Babbitt</span><br><span style="color:red !important"> ▼ -159 The Red Pony</span><br><span style="color:red !important"> ▼ -143 All the King's Men</span><br><span style="color:green !important"> ▲ +59 Things Fall Apart</span><br><span style="color:red !important"> ▼ -240 Lorna Doone</span><br><span style="color:red !important"> ▼ -164 Johnny Tremain</span><br><span style="color:red !important"> ▼ -10 Anne of Avonlea</span><br><span style="color:green !important"> ▲ +26 Tuck Everlasting</span><br><span style="color:green !important"> ▲ +88 The BFG</span><br><span style="color:red !important"> ▼ -45 Cannery Row</span><br><span style="color:green !important"> ▲ +117 The Joy Luck Club</span><br><span style="color:green !important"> ▲ +37 The Silmarillion</span><br><span style="color:red !important"> ▼ -30 Roots</span><br><span style="color:green !important"> ▲ +38 Little House on the Prairie</span><br><span style="color:red !important"> ▼ -80 Native Son</span><br><span style="color:red !important"> ▼ -52 Stuart Little</span><br><span style="color:red !important"> ▼ -181 Cross Fire</span><br><span style="color:red !important"> ▼ -169 The Power and the Glory</span><br><span style="color:green !important"> ▲ +130 A Clockwork Orange</span><br><span style="color:green !important"> ▲ +19 The Phantom of the Opera</span><br><span style="color:green !important"> ▲ +27 The Martian Chronicles</span><br><span style="color:green !important"> ▲ +155 The Road</span><br><span style="color:red !important"> ▼ -239 The Way of All Flesh</span><br><span style="color:red !important"> ▼ -251 Diary of a Wimpy Kid: The Long Haul</span><br><span style="color:red !important"> ▼ -108 Villette</span><br><span style="color:green !important"> ▲ +191 The Curious Incident of the Dog In the Night-Time</span><br><span style="color:red !important"> ▼ -135 The Mysterious Island</span><br><span style="color:red !important"> ▼ -50 Song of Solomon</span><br><span style="color:red !important"> ▼ -198 Nana</span><br><span style="color:red !important"> ▼ -160 Quo Vadis</span><br><span style="color:red !important"> ▼ -192 Main Street</span><br><span style="color:green !important"> ▲ +170 Matilda</span><br><span style="color:green !important"> ▲ +162 Lolita</span><br><span style="color:green !important"> ▲ +196 Paper Towns</span><br><span style="color:red !important"> ▼ -176 Sounder</span><br><span style="color:green !important"> ▲ +34 Are You There God? It's Me, Margaret</span><br><span style="color:green !important"> ▲ +212 The Notebook</span><br><span style="color:green !important"> ▲ +29 From the Mixed-Up Files of Mrs. Basil E. Frankweiler</span><br><span style="color:green !important"> ▲ +96 Atlas Shrugged</span><br><span style="color:green !important"> ▲ +81 The Fountainhead</span><br><span style="color:green !important"> ▲ +134 Number the Stars</span><br><span style="color:green !important"> ▲ +141 The Firm</span><br><span style="color:red !important"> ▼ -108 Swann's Way</span><br><span style="color:green !important"> ▲ +208 Ender's Game</span><br><span style="color:green !important"> ▲ +98 The Name of the Rose</span><br><span style="color:green !important"> ▲ +169 A Time to Kill</span><br><span style="color:green !important"> ▲ +220 Water for Elephants</span><br><span style="color:green !important"> ▲ +131 The Time Machine</span><br><span style="color:green !important"> ▲ +226 Eragon</span><br><span style="color:green !important"> ▲ +231 The Hitchhiker's Guide to the Galaxy</span><br><span style="color:red !important"> ▼ -161 Buddenbrooks</span><br><span style="color:green !important"> ▲ +221 A Thousand Splendid Suns</span><br><span style="color:green !important"> ▲ +6 The Witch of Blackbird Pond</span><br><span style="color:green !important"> ▲ +215 And Then There Were None</span><br><span style="color:green !important"> ▲ +49 A Separate Peace</span><br><span style="color:green !important"> ▲ +232 Breaking Dawn</span><br><span style="color:green !important"> ▲ +20 As I Lay Dying</span><br><span style="color:green !important"> ▲ +194 The Girl Who Played With Fire</span><br><span style="color:green !important"> ▲ +121 Where the Red Fern Grows</span><br><span style="color:red !important"> ▼ -131 Le Morte D'Arthur</span><br><span style="color:green !important"> ▲ +267 Mockingjay</span><br><span style="color:green !important"> ▲ +181 The Pillars of the Earth</span><br><span style="color:red !important"> ▼ -202 Persian Letters</span><br><span style="color:green !important"> ▲ +136 The Client</span><br><span style="color:red !important"> ▼ -34 Sula</span><br><span style="color:green !important"> ▲ +15 Tales of a Fourth Grade Nothing</span><br><span style="color:red !important"> ▼ -78 The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire</span><br><span style="color:red !important"> ▼ -91 Tortilla Flat</span><br><span style="color:red !important"> ▼ -179 Look Homeward, Angel</span><br><span style="color:red !important"> ▼ -185 The Mystery of Edwin Drood</span><br><span style="color:red !important"> ▼ -6 Brideshead Revisited</span><br><span style="color:green !important"> ▲ +138 The Pelican Brief</span><br><span style="color:green !important"> ▲ +157 Atonement</span><br><span style="color:red !important"> ▼ -157 Washington Square</span><br><span style="color:green !important"> ▲ +129 Like Water for Chocolate</span><br><span style="color:green !important"> ▲ +246 The Golden Compass</span><br><span style="color:green !important"> ▲ +236 The Secret Life of Bees</span><br><span style="color:green !important"> ▲ +297 The Fault In Our Stars</span><br><span style="color:red !important"> ▼ -164 Nostromo</span><br><span style="color:red !important"> ▼ -173 Finnegans Wake</span><br><span style="color:red !important"> ▼ -22 The Brethren</span><br><span style="color:green !important"> ▲ +189 Coraline</span><br><span style="color:green !important"> ▲ +165 Heart of Darkness</span><br><span style="color:red !important"> ▼ -8 On the Banks of Plum Creek</span><br><span style="color:red !important"> ▼ -115 Rebecca of Sunnybrook Farm</span><br><span style="color:red !important"> ▼ -168 The Ambassadors</span><br><span style="color:red !important"> ▼ -146 The Secret Agent</span><br><span style="color:green !important"> ▲ +66 The House on Mango Street</span><br><span style="color:red !important"> ▼ -51 Go Tell It on the Mountain</span><br><span style="color:green !important"> ▲ +18 The Testament</span><br><span style="color:green !important"> ▲ +102 The Clan of the Cave Bear</span><br><span style="color:red !important"> ▼ -87 Cranford</span><br><span style="color:green !important"> ▲ +98 Because of Winn-Dixie</span><br><span style="color:red !important"> ▼ -33 My Side of the Mountain</span><br><span style="color:green !important"> ▲ +125 The Runaway Jury</span><br><span style="color:red !important"> ▼ -23 The Mouse and the Motorcycle</span><br><span style="color:green !important"> ▲ +193 The Lost Symbol</span><br><span style="color:red !important"> ▼ -141 The Forsyte Saga</span><br><span style="color:green !important"> ▲ +301 Gone Girl</span><br><span style="color:green !important"> ▲ +300 The Lightning Thief</span><br><span style="color:red !important"> ▼ -170 The Last Days of Pompeii</span><br><span style="color:green !important"> ▲ +92 The Reader</span><br><span style="color:red !important"> ▼ -63 Caddie Woodlawn</span><br><span style="color:green !important"> ▲ +88 The Tale of Despereaux</span><br><span style="color:green !important"> ▲ +220 The Girl Who Kicked the Hornet's Nest</span><br><span style="color:red !important"> ▼ -76 Dear Mr. Henshaw</span><br><span style="color:red !important"> ▼ -10 The Killer Angels</span><br><span style="color:green !important"> ▲ +88 Chronicle of a Death Foretold</span><br><span style="color:green !important"> ▲ +222 The Five People You Meet In Heaven</span><br><span style="color:green !important"> ▲ +160 The Master and Margarita</span><br><span style="color:red !important"> ▼ -90 Winesburg, Ohio</span><br><span style="color:red !important"> ▼ -107 P Is for Peril</span><br><span style="color:green !important"> ▲ +268 My Sister's Keeper</span><br><span style="color:red !important"> ▼ -143 Barnaby Rudge</span><br><span style="color:green !important"> ▲ +4 Howards End</span><br><span style="color:green !important"> ▲ +14 The Broker</span><br><span style="color:green !important"> ▲ +8 The Camel Club</span><br><span style="color:red !important"> ▼ -120 The Rainbow</span><br><span style="color:red !important"> ▼ -23 The Man In the Iron Mask</span><br><span style="color:green !important"> ▲ +62 Mary Poppins</span><br><span style="color:green !important"> ▲ +210 Artemis Fowl</span><br><span style="color:green !important"> ▲ +216 Dear John</span><br><span style="color:green !important"> ▲ +123 Cold Mountain</span><br><span style="color:green !important"> ▲ +228 Flowers for Algernon</span><br><span style="color:red !important"> ▼ -31 The Dark Is Rising</span><br><span style="color:red !important"> ▼ -102 Resurrection</span><br><span style="color:green !important"> ▲ +22 Fearless Fourteen</span><br><span style="color:red !important"> ▼ -139 A Sentimental Journey Through France and Italy</span><br><span style="color:green !important"> ▲ +11 The King of Torts</span><br><span style="color:green !important"> ▲ +216 The Graveyard Book</span><br><span style="color:red !important"> ▼ -16 The Quiet American</span><br><span style="color:green !important"> ▲ +82 The Chamber</span><br><span style="color:green !important"> ▲ +74 The English Patient</span><br><span style="color:green !important"> ▲ +110 Snow Falling on Cedars</span><br><span style="color:green !important"> ▲ +21 The Long Winter</span><br><span style="color:green !important"> ▲ +20 Sarah, Plain and Tall</span><br><span style="color:red !important"> ▼ -44 Cross Country</span><br><span style="color:green !important"> ▲ +56 The Spy Who Came In from the Cold</span><br><span style="color:green !important"> ▲ +331 A Game of Thrones</span><br><span style="color:green !important"> ▲ +189 The Thorn Birds</span><br><span style="color:green !important"> ▲ +45 Old Yeller</span><br><span style="color:green !important"> ▲ +7 Ramona Quimby, Age 8</span><br><span style="color:red !important"> ▼ -15 Death In Venice</span><br><span style="color:green !important"> ▲ +19 By the Shores of Silver Lake</span><br><span style="color:green !important"> ▲ +235 Inferno</span><br><span style="color:green !important"> ▲ +104 Schindler's List</span><br><span style="color:green !important"> ▲ +151 Jonathan Livingston Seagull</span><br><span style="color:green !important"> ▲ +266 The Stand</span><br><span style="color:green !important"> ▲ +55 The Last Juror</span><br><span style="color:green !important"> ▲ +30 Shiloh</span><br><span style="color:green !important"> ▲ +267 Girl With a Pearl Earring</span><br><span style="color:green !important"> ▲ +167 The Murder of Roger Ackroyd</span><br><span style="color:green !important"> ▲ +300 It</span><br><span style="color:green !important"> ▲ +136 The Rainmaker</span><br><span style="color:green !important"> ▲ +272 The Poisonwood Bible</span><br><span style="color:green !important"> ▲ +68 The Indian in the Cupboard</span><br><span style="color:green !important"> ▲ +71 The Maltese Falcon</span><br><span style="color:red !important"> ▼ -84 The Warden</span><br><span style="color:green !important"> ▲ +35 The Summons</span><br><span style="color:red !important"> ▼ -26 Encyclopedia Brown: Boy Detective</span><br><span style="color:green !important"> ▲ +339 The Time Traveler's Wife</span><br><span style="color:red !important"> ▼ -5 The Incredible Journey</span><br><span style="color:green !important"> ▲ +103 Daughter of Fortune</span><br><span style="color:red !important"> ▼ -38 Shirley</span><br><span style="color:green !important"> ▲ +85 Bud, Not Buddy</span><br><span style="color:green !important"> ▲ +12 The Horse Whisperer</span><br><span style="color:green !important"> ▲ +93 The Street Lawyer</span><br><span style="color:green !important"> ▲ +95 Nausea</span><br><span style="color:red !important"> ▼ -36 To Have and Have Not</span><br><span style="color:green !important"> ▲ +70 The Bridges of Madison County</span><br><span style="color:green !important"> ▲ +136 Anne of the Island</span><br><span style="color:black !important"> ● The Winter of Our Discontent</span><br><span style="color:green !important"> ▲ +339 The Shining</span><br><span style="color:green !important"> ▲ +99 The Tenant of Wildfell Hall</span><br><span style="color:red !important"> ▼ -3 First Family</span><br><span style="color:green !important"> ▲ +111 The Partner</span><br><span style="color:green !important"> ▲ +376 The Girl on the Train</span><br><span style="color:red !important"> ▼ -62 The Black Arrow: A Tale of the Two Roses</span><br><span style="color:red !important"> ▼ -90 The Rise of Silas Lapham</span><br><span style="color:green !important"> ▲ +153 The Choice</span><br><span style="color:red !important"> ▼ -82 The Virginian: A Horseman of the Plains</span><br><span style="color:green !important"> ▲ +307 A Walk to Remember</span><br><span style="color:green !important"> ▲ +350 The Maze Runner</span><br><span style="color:green !important"> ▲ +176 The Westing Game</span><br><span style="color:green !important"> ▲ +11 Misty of Chincoteague</span><br><span style="color:green !important"> ▲ +142 Diary of a Wimpy Kid: The Last Straw</span><br><span style="color:green !important"> ▲ +19 King Solomon's Mines</span><br><span style="color:red !important"> ▼ -56 The Princess of Cleves</span><br><span style="color:red !important"> ▼ -14 Jacob Have I Loved</span><br><span style="color:green !important"> ▲ +158 Mrs. Frisby and the Rats of NIMH</span><br><span style="color:green !important"> ▲ +300 Misery</span><br><span style="color:green !important"> ▲ +167 The Cider House Rules</span><br><span style="color:red !important"> ▼ -28 King of the Wind</span><br><span style="color:green !important"> ▲ +109 The Once and Future King</span><br><span style="color:green !important"> ▲ +254 The Witches</span><br><span style="color:green !important"> ▲ +264 The Subtle Knife</span><br><span style="color:green !important"> ▲ +118 When You Reach Me</span><br><span style="color:green !important"> ▲ +310 Carrie</span><br><span style="color:red !important"> ▼ -30 The Moon and Sixpence</span><br><span style="color:red !important"> ▼ -51 The Higher Power of Lucky</span><br><span style="color:red !important"> ▼ -65 Looking Backward, 2000-1887</span><br><span style="color:red !important"> ▼ -39 The Wings of the Dove</span><br><span style="color:red !important"> ▼ -55 The Summer of the Swans</span><br><span style="color:green !important"> ▲ +40 Dangerous Liaisons</span><br><span style="color:green !important"> ▲ +346 Jurassic Park</span><br><span style="color:green !important"> ▲ +219 The Absolutely True Diary of a Part-time Indian</span><br><span style="color:green !important"> ▲ +19 The Grey King</span><br><span style="color:green !important"> ▲ +13 The Leopard</span><br><span style="color:green !important"> ▲ +75 The Mammoth Hunters</span><br><span style="color:green !important"> ▲ +84 The Trumpet of the Swan</span><br><span style="color:green !important"> ▲ +263 The Lucky One</span><br><span style="color:green !important"> ▲ +82 These Happy Golden Years</span><br><span style="color:red !important"> ▼ -51 Arrowsmith</span><br><span style="color:green !important"> ▲ +62 Julie of the Wolves</span><br><span style="color:green !important"> ▲ +286 The Screwtape Letters</span><br><span style="color:green !important"> ▲ +127 The Fall</span><br><span style="color:green !important"> ▲ +226 The No. 1 Ladies' Detective Agency</span><br><span style="color:green !important"> ▲ +5 Worst Case</span><br><span style="color:red !important"> ▼ -15 Lost Horizon</span><br><span style="color:green !important"> ▲ +317 The Gunslinger</span><br><span style="color:red !important"> ▼ -38 The Slave Dancer</span><br><span style="color:green !important"> ▲ +429 Harry Potter and the Half-Blood Prince</span><br><span style="color:green !important"> ▲ +287 Inkheart</span><br><span style="color:green !important"> ▲ +16 Ramona and her Father</span><br><span style="color:green !important"> ▲ +159 Inkspell</span><br><span style="color:green !important"> ▲ +85 Ramona the Pest</span><br><span style="color:green !important"> ▲ +189 Walk Two Moons</span><br><span style="color:green !important"> ▲ +384 Miss Peregrine's Home for Peculiar Children</span><br><span style="color:green !important"> ▲ +54 The Chocolate War</span><br><span style="color:green !important"> ▲ +120 Sophie's Choice</span><br><span style="color:green !important"> ▲ +403 Looking for Alaska</span><br><span style="color:green !important"> ▲ +240 Breakfast at Tiffany's</span><br><span style="color:green !important"> ▲ +62 The Razor's Edge</span><br><span style="color:green !important"> ▲ +201 Dreamcatcher</span><br><span style="color:green !important"> ▲ +127 Orlando</span><br><span style="color:green !important"> ▲ +270 The Things they Carried</span><br><span style="color:green !important"> ▲ +125 Little Town on the Prairie</span><br><span style="color:green !important"> ▲ +202 Nights in Rodanthe</span><br><span style="color:green !important"> ▲ +290 The Amber Spyglass</span><br><span style="color:green !important"> ▲ +157 The Miraculous Journey of Edward Tulane</span><br><span style="color:green !important"> ▲ +103 Flatland</span><br><span style="color:green !important"> ▲ +350 Diary of a Wimpy Kid</span><br><span style="color:green !important"> ▲ +338 The Memory Keeper's Daughter</span><br><span style="color:green !important"> ▲ +203 The Wedding</span><br><span style="color:green !important"> ▲ +278 Fried Green Tomatoes at the Whistle-Stop Cafe</span><br><span style="color:green !important"> ▲ +103 The Cricket in Times Square</span><br><span style="color:green !important"> ▲ +270 The Phantom Tollbooth</span><br><span style="color:red !important"> ▼ -13 Rob Roy</span><br><span style="color:green !important"> ▲ +209 The Death of Ivan Ilych</span><br><span style="color:green !important"> ▲ +34 Alex Cross's Trial</span><br><span style="color:red !important"> ▼ -22 Kenilworth</span><br><span style="color:green !important"> ▲ +16 The Life and Opinions of Tristram Shandy</span><br><span style="color:green !important"> ▲ +282 The Remains of the Day</span><br><span style="color:red !important"> ▼ -14 M.C. Higgins, The Great</span><br><span style="color:green !important"> ▲ +5 Call It Courage</span><br><span style="color:green !important"> ▲ +272 Go Set a Watchman</span><br><span style="color:green !important"> ▲ +77 Bleachers</span><br><span style="color:green !important"> ▲ +9 Elijah of Buxton</span><br><span style="color:green !important"> ▲ +37 Swimsuit</span><br><span style="color:green !important"> ▲ +321 Cat's Cradle</span><br><span style="color:green !important"> ▲ +35 The Caine Mutiny</span><br><span style="color:green !important"> ▲ +45 The Heart of the Matter</span><br><span style="color:green !important"> ▲ +170 Harriet, the Spy</span><br><span style="color:green !important"> ▲ +55 Darkness at Noon</span><br><span style="color:green !important"> ▲ +302 A Prayer for Owen Meany</span><br><span style="color:green !important"> ▲ +294 The God of Small Things</span><br><span style="color:green !important"> ▲ +130 The Associate</span><br><span style="color:green !important"> ▲ +369 The Shack</span><br><span style="color:green !important"> ▲ +45 The Naked and the Dead</span><br><span style="color:green !important"> ▲ +419 The Sea of Monsters</span><br><span style="color:green !important"> ▲ +306 Stranger in a Strange Land</span><br><span style="color:green !important"> ▲ +220 Vision in White</span><br><span style="color:green !important"> ▲ +53 The Whipping Boy</span><br><span style="color:green !important"> ▲ +398 Room</span><br><span style="color:green !important"> ▲ +378 Deception Point</span>
@@ -1063,7 +1065,7 @@ Name: count, dtype: int64</code></pre>
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Metadata Activities
+<span class="screen-reader-only">Tip</span>Metadata Activities
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1075,23 +1077,23 @@ Metadata Activities
 <h2 class="anchored" data-anchor-id="full-text-data"><strong>FULL TEXT DATA</strong></h2>
 <p>In addition to the contextual information we gathered, we also collected the full text of all novels on the list that were out of copyright and available on Project Gutenberg. We have provided some ideas for analysis here, but we hope this full-text data will also offer opportunities for users to explore these novels on their own and to combine full-text and metadata analysis in new ways.</p>
 <p>You can find the full-text data here: <a href="https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv" class="uri">https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/final_merged_dataset.tsv</a></p>
-<div id="47b5e8cc" class="cell" data-execution_count="9">
+<div id="fe90b0af" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> requests</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
 <span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> bs4 <span class="im">import</span> BeautifulSoup</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <p>Let’s start by analyzing the type-token ratio of our texts by genre. The type-token ratio will tell us which genres contain the most unique words.</p>
 <p>The type-token ratio is a simple expression that calculates <code># of unique words / total words in a selection</code>. As you may be able to surmise, sometimes this ratio is naturally higher for shorter books. To avoid this bias, we randomly select a contiguous 1000 word sample from each book and average the scores across genres.</p>
 <p>It’s helpful to be able to store all of our data in a dataframe, but sometimes we want to work with just one column of the data and converting it into a different datatype can be helpful. Here we’re converting all the information in the column “text” into a list.</p>
-<div id="adfdee0f" class="cell" data-execution_count="10">
+<div id="f61beb3f" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> string</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_ttr(text):</span>
 <span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (pd.isnull(text)):</span>
@@ -1123,45 +1125,45 @@ Metadata Activities
 <span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>cleaned <span class="op">=</span> df[df[<span class="st">"ttr"</span>] <span class="op">&lt;=</span> <span class="dv">1</span>] <span class="co"># drop all rows where ttr is not applicable</span></span>
 <span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>grouped <span class="op">=</span> cleaned.groupby(<span class="st">'genre'</span>)</span>
 <span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>avg_ttr <span class="op">=</span> grouped[<span class="st">"ttr"</span>].mean().sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_ttr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(avg_ttr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>genre
-scifi         0.457378
-history       0.455700
-political     0.454850
-fantasy       0.452980
-war           0.451050
-bildung       0.446100
-na            0.444162
-thrillers     0.443956
-autobio       0.442867
-action        0.438050
-allegories    0.431450
-romance       0.430345
-mystery       0.428214
-horror        0.380600
+scifi         0.460878
+political     0.460550
+history       0.453131
+fantasy       0.452715
+war           0.451200
+thrillers     0.446233
+bildung       0.444840
+na            0.443105
+autobio       0.441067
+action        0.436300
+romance       0.435955
+allegories    0.433700
+mystery       0.424786
+horror        0.366000
 Name: ttr, dtype: float64</code></pre>
 </div>
 </div>
-<div id="1eaa1f36" class="cell" data-execution_count="11">
+<div id="2bbf7c31" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> cleaned.sort_values(by<span class="op">=</span>[<span class="st">'ttr'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"ttr"</span>, <span class="st">"genre"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span> <span class="op">=</span> cleaned.sort_values(by<span class="op">=</span>[<span class="st">'ttr'</span>], ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">sorted</span>[[<span class="st">"title"</span>, <span class="st">"author"</span>, <span class="st">"ttr"</span>, <span class="st">"genre"</span>]].head(<span class="dv">10</span>).to_string(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>                                         title                      author    ttr     genre
-                                Dombey And Son             Charles Dickens 0.5104        na
-                              King of the Wind            Marguerite Henry 0.5080   history
-A Sentimental Journey Through France and Italy             Laurence Sterne 0.5021        na
-                                 Mrs. Dalloway              Virginia Woolf 0.4998        na
-                               Sophie's Choice              William Styron 0.4996   bildung
-                         The Cider House Rules                 John Irving 0.4990   bildung
-                      The Once and Future King                 T. H. White 0.4964   fantasy
-                                   Vanity Fair William Makepeace Thackeray 0.4937        na
-                                 Women in Love               D.H. Lawrence 0.4921        na
-                             The King of Torts                John Grisham 0.4915 thrillers</code></pre>
+<pre><code>                title                      author    ttr     genre
+        Mrs. Dalloway              Virginia Woolf 0.5217        na
+        Women in Love               D.H. Lawrence 0.5028        na
+          Vanity Fair William Makepeace Thackeray 0.5012        na
+The Cider House Rules                 John Irving 0.5003   bildung
+       Dombey And Son             Charles Dickens 0.4984        na
+     The Lovely Bones                Alice Sebold 0.4978        na
+    The King of Torts                John Grisham 0.4964 thrillers
+   A Walk to Remember             Nicholas Sparks 0.4958   romance
+     King of the Wind            Marguerite Henry 0.4951   history
+      Call It Courage            Armstrong Sperry 0.4945   history</code></pre>
 </div>
 </div>
 <p>As we’ve seen in this quick example, some authors or genres seem to use a wider variety of words. However, this is just a first step in exploring text analysis with ttr. We’ve made some simplifications, like assuming our 1000-word sample perfectly represents a whole novel, and we haven’t delved into advanced techniques for parsing and cleaning text.</p>
@@ -1216,7 +1218,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb23" data-startfrom="86" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 85;"><span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a>raw_data2 <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb23" data-startfrom="86" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 85;"><span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a>raw_data2 <span class="op">=</span> <span class="fu">fetchData</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/top-500-novels/top-500-novels-metadata_2025-01-11.tsv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-4" data-nodetype="declaration">
@@ -1227,7 +1229,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb24" data-startfrom="98" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb24-98"><a href="#cb24-98" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb24" data-startfrom="98" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 97;"><span id="cb24-98"><a href="#cb24-98" aria-hidden="true" tabindex="-1"></a><span class="co">// Example usage</span></span>
 <span id="cb24-99"><a href="#cb24-99" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
 <span id="cb24-100"><a href="#cb24-100" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container2"</span><span class="op">,</span></span>
 <span id="cb24-101"><a href="#cb24-101" aria-hidden="true" tabindex="-1"></a></span>
@@ -1266,7 +1268,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 <span id="cb24-134"><a href="#cb24-134" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
 <span id="cb24-135"><a href="#cb24-135" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"gr_num_ratings"</span><span class="op">,</span> <span class="st">"gr_num_reviews"</span>]</span>
 <span id="cb24-136"><a href="#cb24-136" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb24-137"><a href="#cb24-137" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb24-137"><a href="#cb24-137" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-5" data-nodetype="expression">
@@ -1324,7 +1326,7 @@ Zhang, Yin, and Sonali Kudva. 2013. <span>“Ebooks Vs. Print Books: <span>Reade
 </div>
 <div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">R</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Python</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">R</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="listing-exercise-posts" class="quarto-listing quarto-listing-container-table">
@@ -1354,7 +1356,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1757616283899" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
+<tr data-index="0" data-categories="ZXhlcmNpc2UlMkNzb2x1dGlvbiUyQ3B5dGhvbiUyQ3JhbmtpbmdzJTJDY29ycmVsYXRpb25z" data-listing-file-modified-sort="1758301832185" data-listing-reading-time-sort="4" data-listing-word-count-sort="726" data-listing-title-sort="Top 500 Novels Metadata Analysis" data-listing-filename-sort="Metadata_Analysis.qmd">
 <td>
 <span class="listing-date">&nbsp;</span>
 </td>
@@ -1547,13 +1549,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1946,7 +1949,7 @@ window._ojs.runtime.interpretFromScriptTags();
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Top 500 \"Greatest\" Novels (1021-2015)"</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Anna Preus and Aashna Sheth</span></span>
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
@@ -2708,7 +2711,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb25-802"><a href="#cb25-802" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;!-- </span></span>
 <span id="cb25-803"><a href="#cb25-803" aria-hidden="true" tabindex="-1"></a><span class="in">&lt;/body&gt; --&gt;</span></span>
 <span id="cb25-804"><a href="#cb25-804" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

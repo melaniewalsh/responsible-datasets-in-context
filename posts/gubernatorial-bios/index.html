@@ -2,11 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Sydney White, Kenneth Scheve, Theo Serlin, and Neel Gupta">
+<meta name="author" content="Sydney White, Theo Serlin, Neel Gupta, and Kenneth Scheve">
 <meta name="dcterms.date" content="2025-09-01">
 
 <title>A Historical Dataset on Governors of the United States and Its Territories – Responsible Datasets in Context</title>
@@ -92,14 +92,15 @@ div.csl-indent {
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-c9701912356f6454d35f11906a8f3dcc.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-1602ec9a4e311f6661c0dfb3b0fabef4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -311,7 +312,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -341,7 +342,8 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
     </a>
     <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
@@ -414,7 +416,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Sydney White, Kenneth Scheve, Theo Serlin, and Neel Gupta </p>
+               <p>Sydney White, Theo Serlin, Neel Gupta, and Kenneth Scheve </p>
             </div>
     </div>
       
@@ -441,7 +443,7 @@ window.Quarto = {
 
 
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Exercises</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Data Essay</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Explore the Data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Exercises</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <section id="introduction" class="level2">
@@ -453,7 +455,7 @@ window.Quarto = {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Brief Survey
+<span class="screen-reader-only">Tip</span>Brief Survey
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -466,9 +468,9 @@ Brief Survey
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="72" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 71;"><span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="72" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 71;"><span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
 <span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {viewof dataSummaryView<span class="op">,</span> Tabulator<span class="op">,</span> viewof selectedColumns<span class="op">,</span> viewof dataSet<span class="op">,</span> tableContainer<span class="op">,</span> fetchData<span class="op">,</span> generateTabulatorTableFromCSV<span class="op">,</span> progress<span class="op">,</span> progressbar} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-1" data-nodetype="declaration">
@@ -479,7 +481,7 @@ Brief Survey
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="80" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 79;"><span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="80" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 79;"><span id="cb2-80"><a href="#cb2-80" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
 <span id="cb2-81"><a href="#cb2-81" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
 <span id="cb2-82"><a href="#cb2-82" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
 <span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container4"</span><span class="op">,</span></span>
@@ -582,7 +584,7 @@ Brief Survey
 <span id="cb2-180"><a href="#cb2-180" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
 <span id="cb2-181"><a href="#cb2-181" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
 <span id="cb2-182"><a href="#cb2-182" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-183"><a href="#cb2-183" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-2" data-nodetype="expression">
@@ -629,7 +631,7 @@ Brief Survey
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Creative Commons License
+<span class="screen-reader-only">Tip</span>Creative Commons License
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -668,7 +670,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("rmarkdown")</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -743,7 +745,7 @@ Creative Commons License
 <span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more college educated?"</span>) <span class="sc">+</span></span>
 <span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent College"</span>) <span class="sc">+</span></span>
 <span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="co"># Add x-axis ticks every 25 years</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>)) <span class="co"># Add x-axis ticks every 25 years</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -756,17 +758,17 @@ Creative Commons License
 </section>
 <section id="where-did-the-data-come-from-who-collected-it" class="level2">
 <h2 class="anchored" data-anchor-id="where-did-the-data-come-from-who-collected-it">Where Did The Data Come From? Who Collected It?</h2>
-<p>The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King’s College, Longon) as part of a larger research team at Yale University. Our sponsors included the <a href="https://politicalscience.yale.edu/">Yale University of Department of Political Science</a>, <a href="https://csap.yale.edu/">Center for the Study of American Politics (CSAP)</a> and the <a href="https://jackson.yale.edu/%7D">Yale Jackson School of Global Affairs</a>.</p>
+<p>The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King’s College, Longon) as part of a larger research team at Yale University. Our sponsors included the <a href="https://politicalscience.yale.edu/">Yale University Department of Political Science</a>, <a href="https://csap.yale.edu/">Center for the Study of American Politics (CSAP)</a> and the <a href="https://jackson.yale.edu/%7D">Yale Jackson School of Global Affairs</a>.</p>
 </section>
 <section id="why-was-the-data-collected-how-is-the-data-used" class="level2">
 <h2 class="anchored" data-anchor-id="why-was-the-data-collected-how-is-the-data-used">Why Was The Data Collected? How Is The Data Used?</h2>
-<p>The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. <span class="citation" data-cites="dal2009political">(<a href="#ref-dal2009political" role="doc-biblioref">Dal Bó, Dal Bó, and Snyder 2009</a>)</span> examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., <span class="citation" data-cites="Fresh_2024">(<a href="#ref-Fresh_2024" role="doc-biblioref">Fresh 2024</a>)</span> constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.</p>
-<p>Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century <span class="citation" data-cites="berman2019governors">(<a href="#ref-berman2019governors" role="doc-biblioref">Berman 2019</a>)</span>, to managing managing public health and disaster responses (see literature <span class="citation" data-cites="baccini2021explaining">(<a href="#ref-baccini2021explaining" role="doc-biblioref">Baccini and Brodeur 2021</a>)</span> related to COVID-19), to shaping national outcomes through gerrymandering as recently as <a href="https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819">August 2025</a>. Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. <span class="citation" data-cites="sobel1978biographical">(<a href="#ref-sobel1978biographical" role="doc-biblioref">Sobel and Raimo 1978</a>)</span> is an exception and a major work on gubernatorial biographies but has not been extended to our knowledge or arranged into tabular form. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.</p>
+<p>The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. <span class="citation" data-cites="dal2009political">Dal Bó, Dal Bó, and Snyder (<a href="#ref-dal2009political" role="doc-biblioref">2009</a>)</span> examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., <span class="citation" data-cites="Fresh_2024">Fresh (<a href="#ref-Fresh_2024" role="doc-biblioref">2024</a>)</span> constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.</p>
+<p>Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century <span class="citation" data-cites="berman2019governors">(<a href="#ref-berman2019governors" role="doc-biblioref">Berman 2019</a>)</span>, to managing managing public health and disaster responses (see literature <span class="citation" data-cites="baccini2021explaining">(<a href="#ref-baccini2021explaining" role="doc-biblioref">Baccini and Brodeur 2021</a>)</span> related to COVID-19), to shaping national outcomes through gerrymandering as recently as <a href="https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819">August 2025</a>. Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. <span class="citation" data-cites="sobel1978biographical">Sobel and Raimo (<a href="#ref-sobel1978biographical" role="doc-biblioref">1978</a>)</span> is an exception and a major work on gubernatorial biographies but has not been extended to our knowledge or arranged into tabular form. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.</p>
 <p>For example, the next figure shows the share of governors with military service. As expected, service rates were higher during major conflicts such as the Civil War, World Wars I and II, Korea, and Vietnam. In contrast, service during the Iraq and Afghanistan wars appears comparable to peacetime levels.</p>
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average military rate by elected governors for each year</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average military rate by elected governors for each year</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>yearly_military <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
@@ -808,7 +810,7 @@ Creative Commons License
 <span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors served in the military more or less?"</span>) <span class="sc">+</span></span>
 <span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent Military Service"</span>) <span class="sc">+</span></span>
 <span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -839,7 +841,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gov_dataset[<span class="fu">c</span>(<span class="st">"state_territory"</span>, <span class="st">"governor"</span>, <span class="st">"party"</span>, <span class="st">"first_year"</span>, <span class="st">"school"</span>, <span class="st">"birth_state_territory"</span>)])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gov_dataset[<span class="fu">c</span>(<span class="st">"state_territory"</span>, <span class="st">"governor"</span>, <span class="st">"party"</span>, <span class="st">"first_year"</span>, <span class="st">"school"</span>, <span class="st">"birth_state_territory"</span>)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div class="kable-table">
@@ -950,7 +952,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average % female governors every year</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's get average % female governors every year</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>yearly_female <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
@@ -992,7 +994,7 @@ Creative Commons License
 <span id="cb6-40"><a href="#cb6-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more gender diverse?"</span>) <span class="sc">+</span></span>
 <span id="cb6-41"><a href="#cb6-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent Female Governors"</span>) <span class="sc">+</span></span>
 <span id="cb6-42"><a href="#cb6-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-43"><a href="#cb6-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1006,7 +1008,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at Ivy League rate</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at Ivy League rate</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>yearly_ivy <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
@@ -1048,7 +1050,7 @@ Creative Commons License
 <span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more Ivy-educated?"</span>) <span class="sc">+</span></span>
 <span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent with Ivy Attendance"</span>) <span class="sc">+</span></span>
 <span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1062,7 +1064,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at rate of governors with law degrees</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at rate of governors with law degrees</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>yearly_lawyer <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
@@ -1104,7 +1106,7 @@ Creative Commons License
 <span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Have elected governors become more likely to be lawyers?"</span>) <span class="sc">+</span></span>
 <span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent Lawyers"</span>) <span class="sc">+</span></span>
 <span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1118,7 +1120,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gov_dataset_deduplicated <span class="ot">&lt;-</span> gov_dataset <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>gov_dataset_deduplicated <span class="ot">&lt;-</span> gov_dataset <span class="sc">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">distinct</span>(governor, <span class="at">.keep_all =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>party_counts <span class="ot">&lt;-</span> gov_dataset_deduplicated <span class="sc">%&gt;%</span></span>
@@ -1149,7 +1151,7 @@ Creative Commons License
 <span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">title =</span> <span class="st">"Most common party affiliations among U.S. governors"</span>,</span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>        <span class="at">x =</span> <span class="st">"Count"</span>, <span class="at">y =</span> <span class="cn">NULL</span></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">+</span></span>
-<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>(<span class="at">base_size =</span> <span class="dv">12</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1163,7 +1165,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at rate of governors with law degrees</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Let's look at rate of governors with law degrees</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>yearly_born_in_state <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
@@ -1205,7 +1207,7 @@ Creative Commons License
 <span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Percent of Governors Born in the State/Territory They Governed"</span>) <span class="sc">+</span></span>
 <span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Percent Born In-State"</span>) <span class="sc">+</span></span>
 <span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1219,7 +1221,7 @@ Creative Commons License
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>yearly_age <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>yearly_age <span class="ot">&lt;-</span> gov_long <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">avg_age =</span> <span class="fu">mean</span>(age_at_start, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
@@ -1258,7 +1260,7 @@ Creative Commons License
 <span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ggtitle</span>(<span class="st">"Average Age of Governors at Start of Office"</span>) <span class="sc">+</span></span>
 <span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ylab</span>(<span class="st">"Average Age"</span>) <span class="sc">+</span></span>
 <span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">8</span>)) <span class="sc">+</span></span>
-<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1775</span>, <span class="dv">2025</span>, <span class="at">by =</span> <span class="dv">25</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1303,7 +1305,7 @@ Sobel, Robert, and John Raimo. 1978. <em>Biographical Directory of the Governors
 <div class="cell hidden">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb12" data-startfrom="785" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 784;"><span id="cb12-785"><a href="#cb12-785" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb12" data-startfrom="785" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 784;"><span id="cb12-785"><a href="#cb12-785" aria-hidden="true" tabindex="-1"></a><span class="co">// Using the Post45 Data Viewer</span></span>
 <span id="cb12-786"><a href="#cb12-786" aria-hidden="true" tabindex="-1"></a><span class="co">// https://observablehq.com/d/8bb63a6cde9addff</span></span>
 <span id="cb12-787"><a href="#cb12-787" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
 <span id="cb12-788"><a href="#cb12-788" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container1"</span><span class="op">,</span></span>
@@ -1408,7 +1410,7 @@ Sobel, Robert, and John Raimo. 1978. <em>Biographical Directory of the Governors
 <span id="cb12-887"><a href="#cb12-887" aria-hidden="true" tabindex="-1"></a>    <span class="co">//   intl_born: { "1": "Yes", "0": "No" }</span></span>
 <span id="cb12-888"><a href="#cb12-888" aria-hidden="true" tabindex="-1"></a>    <span class="co">// }</span></span>
 <span id="cb12-889"><a href="#cb12-889" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb12-890"><a href="#cb12-890" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-890"><a href="#cb12-890" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display hidden">
 <div id="ojs-cell-3" data-nodetype="expression">
@@ -1448,7 +1450,7 @@ Sobel, Robert, and John Raimo. 1978. <em>Biographical Directory of the Governors
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Creative Commons License
+<span class="screen-reader-only">Tip</span>Creative Commons License
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1464,7 +1466,7 @@ Creative Commons License
 <h2 class="anchored" data-anchor-id="programming-exercises">Programming Exercises</h2>
 <p>The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Python</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Python</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div id="listing-exercise-posts-python" class="quarto-listing quarto-listing-container-table">
@@ -1494,7 +1496,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Exercise)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Exercise.qmd">
+<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832121" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="208" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Exercise)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Exercise.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1507,7 +1509,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1757616283837" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Solution)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Solutions.qmd">
+<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1722470400000" data-listing-file-modified-sort="1758301832121" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="220" data-listing-title-sort="Pandas Value Counts with Gubernatorial Data (Solution)" data-listing-filename-sort="Gubernatorial-Data-Value-Counts-Solutions.qmd">
 <td>
 <span class="listing-date">Aug 1, 2024</span>
 </td>
@@ -1686,13 +1688,14 @@ window._ojs.runtime.interpretFromScriptTags();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2085,9 +2088,9 @@ window._ojs.runtime.interpretFromScriptTags();
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "A Historical Dataset on Governors of the United States and Its Territories"</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Sydney White, Kenneth Scheve, Theo Serlin, and Neel Gupta</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Sydney White, Theo Serlin, Neel Gupta, and Kenneth Scheve</span></span>
 <span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2025-09"</span></span>
 <span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [government, biographies, history, politics, governors, draft]</span></span>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> "https://upload.wikimedia.org/wikipedia/commons/a/af/National_Governors_Association_logo.svg"</span></span>
@@ -2451,13 +2454,13 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-370"><a href="#cb13-370" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-371"><a href="#cb13-371" aria-hidden="true" tabindex="-1"></a><span class="fu">## Where Did The Data Come From? Who Collected It?</span></span>
 <span id="cb13-372"><a href="#cb13-372" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-373"><a href="#cb13-373" aria-hidden="true" tabindex="-1"></a>The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King's College, Longon) as part of a larger research team at Yale University. Our sponsors included the <span class="co">[</span><span class="ot">Yale University of Department of Political Science</span><span class="co">](https://politicalscience.yale.edu/)</span>, <span class="co">[</span><span class="ot">Center for the Study of American Politics (CSAP)</span><span class="co">](https://csap.yale.edu/)</span> and the <span class="co">[</span><span class="ot">Yale Jackson School of Global Affairs</span><span class="co">](https://jackson.yale.edu/%7D)</span>.</span>
+<span id="cb13-373"><a href="#cb13-373" aria-hidden="true" tabindex="-1"></a>The data set came from the National Governors Association and was collected by the principal investigator Kenneth Scheve (University of Notre Dame), Sydney White (Columbia University) and Theo Serlin (King's College, Longon) as part of a larger research team at Yale University. Our sponsors included the <span class="co">[</span><span class="ot">Yale University Department of Political Science</span><span class="co">](https://politicalscience.yale.edu/)</span>, <span class="co">[</span><span class="ot">Center for the Study of American Politics (CSAP)</span><span class="co">](https://csap.yale.edu/)</span> and the <span class="co">[</span><span class="ot">Yale Jackson School of Global Affairs</span><span class="co">](https://jackson.yale.edu/%7D)</span>.</span>
 <span id="cb13-374"><a href="#cb13-374" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-375"><a href="#cb13-375" aria-hidden="true" tabindex="-1"></a><span class="fu">## Why Was The Data Collected? How Is The Data Used?</span></span>
 <span id="cb13-376"><a href="#cb13-376" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-377"><a href="#cb13-377" aria-hidden="true" tabindex="-1"></a>The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. <span class="co">[</span><span class="ot">@dal2009political</span><span class="co">]</span> examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., <span class="co">[</span><span class="ot">@Fresh_2024</span><span class="co">]</span> constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.</span>
+<span id="cb13-377"><a href="#cb13-377" aria-hidden="true" tabindex="-1"></a>The data were collected to systematically document the biographical backgrounds of U.S. governors over time. This project builds on a growing literature in political science that treats the personal characteristics of politicians— such as elite education, professional background, or family ties to politics—as potentially consequential for how they govern. @dal2009political examine political dynasties in the U.S. Congress, using biographical records to identify kinship ties and measure their persistence. In the U.K., @Fresh_2024 constructs a new dataset on Members of Parliament and applies natural language processing to biographical texts to code members’ business backgrounds, distinguishing established economic elites from emerging commercial elites in early modern Britain.</span>
 <span id="cb13-378"><a href="#cb13-378" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-379"><a href="#cb13-379" aria-hidden="true" tabindex="-1"></a>Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century <span class="co">[</span><span class="ot">@berman2019governors</span><span class="co">]</span>, to managing managing public health and disaster responses (see literature <span class="co">[</span><span class="ot">@baccini2021explaining</span><span class="co">]</span> related to COVID-19), to shaping national outcomes through gerrymandering as recently as <span class="co">[</span><span class="ot">August 2025</span><span class="co">](https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819)</span>. Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. <span class="co">[</span><span class="ot">@sobel1978biographical</span><span class="co">]</span> is an exception and a major work on gubernatorial biographies but has not been extended to our knowledge or arranged into tabular form. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.</span>
+<span id="cb13-379"><a href="#cb13-379" aria-hidden="true" tabindex="-1"></a>Compared to US Congress and the UK Parliament, U.S. governors remain relatively under-studied. Yet governors have long played pivotal roles in American politics, from championing progressive reforms in the early 20th century <span class="co">[</span><span class="ot">@berman2019governors</span><span class="co">]</span>, to managing managing public health and disaster responses (see literature <span class="co">[</span><span class="ot">@baccini2021explaining</span><span class="co">]</span> related to COVID-19), to shaping national outcomes through gerrymandering as recently as <span class="co">[</span><span class="ot">August 2025</span><span class="co">](https://apnews.com/article/us-election-2026-texas-redistricting-136cfeddc717f9fc69337bd3d39b1819)</span>. Existing research on gubernatorial behavior, particularly during the pandemic, tends to focus narrowly on party affiliation and lacks both biographical depth and historical perspective. @sobel1978biographical is an exception and a major work on gubernatorial biographies but has not been extended to our knowledge or arranged into tabular form. This dataset helps fill that gap by systematically documenting governors’ backgrounds. This will enable new analyses of who governs the states, how elite their backgrounds are, and how such backgrounds have evolved over time.</span>
 <span id="cb13-380"><a href="#cb13-380" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-381"><a href="#cb13-381" aria-hidden="true" tabindex="-1"></a>For example, the next figure shows the share of governors with military service. As expected, service rates were higher during major conflicts such as the Civil War, World Wars I and II, Korea, and Vietnam. In contrast, service during the Iraq and Afghanistan wars appears comparable to peacetime levels.</span>
 <span id="cb13-382"><a href="#cb13-382" aria-hidden="true" tabindex="-1"></a></span>
@@ -3033,7 +3036,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb13-970"><a href="#cb13-970" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-971"><a href="#cb13-971" aria-hidden="true" tabindex="-1"></a>::::</span>
 <span id="cb13-972"><a href="#cb13-972" aria-hidden="true" tabindex="-1"></a>:::::::::::::::::::</span>
-</code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
