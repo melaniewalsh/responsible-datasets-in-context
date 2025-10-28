@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-1602ec9a4e311f6661c0dfb3b0fabef4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-16adcba7e9b7c9f370a68c8a1be5df3a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="559c9710" class="cell" data-execution_count="1">
+<div id="5103dc37" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -371,7 +371,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What is the average number of visits for <em>each state</em>?</p>
 <p>Save as <code>avg_state_visits</code> and then view the resulting dataframe.</p>
-<div id="ec4b390f" class="cell" data-execution_count="2">
+<div id="6226621a" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_state_visits <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -552,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 2</h1>
 <p>What is the average number of visits for <em>each National Park</em>?</p>
 <p>Save as <code>avg_park_visits</code> and then view the resulting dataframe.</p>
-<div id="63546d07" class="cell" data-execution_count="3">
+<div id="3a493563" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_park_visits <span class="op">=</span> np_data.groupby(<span class="st">'ParkName'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -639,7 +639,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 3:</h1>
 <p>How many National Parks are there in <em>each state</em>?</p>
 <p>Save your answer as <code>distinct_parks</code>.</p>
-<div id="a0e036e0" class="cell" data-execution_count="4">
+<div id="e1129a93" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>distinct_parks <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'ParkName'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'NumParks'</span>)</span>

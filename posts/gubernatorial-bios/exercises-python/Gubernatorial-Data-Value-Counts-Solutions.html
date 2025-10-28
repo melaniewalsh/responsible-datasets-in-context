@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-1602ec9a4e311f6661c0dfb3b0fabef4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-16adcba7e9b7c9f370a68c8a1be5df3a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="e52e4efd" class="cell" data-execution_count="1">
+<div id="83a25654" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What are the top 5 birth states for governors?</p>
 <p>Save as <code>top_birth_states</code> and then view the resulting dataframe.</p>
-<div id="597ad8ab" class="cell" data-execution_count="2">
+<div id="20fdc26e" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="op">=</span> (</span>
@@ -397,7 +397,7 @@ Name: count, dtype: int64</code></pre>
 <p>Let’s now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let’s look at the distribution across the entire dataframe</p>
 <p>First, let’s cut the age_at_start variable into bins, so people between ages 20 and 30 get mapped to 20, 30 and 40 to 30 etc. Let’s call this new column <code>age_bucket</code>. We will use the Pandas function [pd.cut]{https://pandas.pydata.org/docs/reference/api/pandas.cut.html}.</p>
 <p>Now let’s display the <code>value_counts</code> of the <code>age_bucket</code> column and let’s sort by the age.</p>
-<div id="84536fea" class="cell" data-execution_count="3">
+<div id="c8042302" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age_bucket'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'age_at_start'</span>], bins<span class="op">=</span>[<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>])</span>
@@ -419,7 +419,7 @@ Name: count, dtype: int64</code></pre>
 <section id="exercise-3" class="level1">
 <h1>Exercise 3:</h1>
 <p>Let’s look at the outlier governors who started office at or below the age of 30. Let’s filter the dataset down to this set by filtering on the <code>age_at_start</code> column, call it <code>young_governors</code> and display it.</p>
-<div id="5dcc9d1a" class="cell" data-execution_count="4">
+<div id="e8c173bc" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>young_governors <span class="op">=</span> df[df[<span class="st">'age_at_start'</span>] <span class="op">&lt;=</span> <span class="dv">30</span>]</span>
@@ -443,7 +443,7 @@ Name: count, dtype: int64</code></pre>
 <th data-quarto-table-cell-role="th">birth_state_territory</th>
 <th data-quarto-table-cell-role="th">birth_date</th>
 <th data-quarto-table-cell-role="th">bio_text</th>
-<th data-quarto-table-cell-role="th">college_attendance</th>
+<th data-quarto-table-cell-role="th">...</th>
 <th data-quarto-table-cell-role="th">ivy_attendance</th>
 <th data-quarto-table-cell-role="th">lawyer</th>
 <th data-quarto-table-cell-role="th">military_service</th>
@@ -452,6 +452,7 @@ Name: count, dtype: int64</code></pre>
 <th data-quarto-table-cell-role="th">born_in_state_territory</th>
 <th data-quarto-table-cell-role="th">intl_born</th>
 <th data-quarto-table-cell-role="th">intl_born_details</th>
+<th data-quarto-table-cell-role="th">race/ethnicity</th>
 <th data-quarto-table-cell-role="th">age_bucket</th>
 </tr>
 </thead>
@@ -468,7 +469,7 @@ Name: count, dtype: int64</code></pre>
 <td>Virginia</td>
 <td>1749-01-01</td>
 <td>GEORGE WALTON, the youngest signer of the Decl...</td>
-<td>0</td>
+<td>...</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -477,6 +478,7 @@ Name: count, dtype: int64</code></pre>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="even">
@@ -491,7 +493,7 @@ Name: count, dtype: int64</code></pre>
 <td>Indiana</td>
 <td>1835-04-10</td>
 <td>SAMUEL JOHNSON CRAWFORD, the third governor of...</td>
-<td>1</td>
+<td>...</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -500,6 +502,7 @@ Name: count, dtype: int64</code></pre>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="odd">
@@ -514,7 +517,7 @@ Name: count, dtype: int64</code></pre>
 <td>Illinois</td>
 <td>1842-05-09</td>
 <td>HENRY C. WARMOTH was born in Mc Leansboro, Ill...</td>
-<td>0</td>
+<td>...</td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -523,6 +526,7 @@ Name: count, dtype: int64</code></pre>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="even">
@@ -537,7 +541,7 @@ Name: count, dtype: int64</code></pre>
 <td>Maryland</td>
 <td>1779-07-22</td>
 <td>EDWARD LLOYD was born in Talbot County, Maryla...</td>
-<td>0</td>
+<td>...</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -546,6 +550,7 @@ Name: count, dtype: int64</code></pre>
 <td>1</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="odd">
@@ -560,7 +565,7 @@ Name: count, dtype: int64</code></pre>
 <td>New Jersey</td>
 <td>1883-10-26</td>
 <td>Leon R. Taylor was born in Asbury Park, New Je...</td>
-<td>1</td>
+<td>...</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -569,6 +574,7 @@ Name: count, dtype: int64</code></pre>
 <td>1</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="even">
@@ -583,7 +589,7 @@ Name: count, dtype: int64</code></pre>
 <td>Rhode Island</td>
 <td>1830-09-12</td>
 <td>WILLIAM SPRAGUE was born in Cranston, Rhode Is...</td>
-<td>0</td>
+<td>...</td>
 <td>0</td>
 <td>0</td>
 <td>1</td>
@@ -592,6 +598,7 @@ Name: count, dtype: int64</code></pre>
 <td>1</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 <tr class="odd">
@@ -606,7 +613,7 @@ Name: count, dtype: int64</code></pre>
 <td>Pennsylvania</td>
 <td>1860-07-25</td>
 <td>AMOS WALKER BARBER was born in Doylestown, Pen...</td>
-<td>1</td>
+<td>...</td>
 <td>1</td>
 <td>0</td>
 <td>1</td>
@@ -615,11 +622,13 @@ Name: count, dtype: int64</code></pre>
 <td>0</td>
 <td>0</td>
 <td>NaN</td>
+<td>White</td>
 <td>(20, 30]</td>
 </tr>
 </tbody>
 </table>
 
+<p>7 rows × 21 columns</p>
 </div>
 </div>
 </div>
