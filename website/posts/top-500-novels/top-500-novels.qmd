@@ -212,7 +212,11 @@ Download Full Data (including hidden columns)
 
 </button>
 
-<button id="copy-url"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+<button id="copy-url">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
 :::
 
 Download Table Data (including filtered options)
@@ -224,7 +228,13 @@ Download Table Data (including filtered options)
 
 </button>
 
-<button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
+<button id="download-json">
+
+<i class="fas fa-download"></i></i> Download JSON
+
+</button>
+
+<!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
 :::
 
 ::: {.callout-tip icon="false"}
@@ -705,7 +715,11 @@ Download Full Data (including hidden columns)
 
 </button>
 
-<button id="copy-url"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+<button id="copy-url">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
 :::
 
 Download Table Data (including filtered options)
@@ -717,7 +731,13 @@ Download Table Data (including filtered options)
 
 </button>
 
-<button id="download-json"><i class="fas fa-download"></i></i> Download JSON</button> <!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
+<button id="download-json">
+
+<i class="fas fa-download"></i></i> Download JSON
+
+</button>
+
+<!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
 :::
 
 # Discussion & Activities {#discussion-and-activities}

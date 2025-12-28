@@ -1,0 +1,1019 @@
+---
+title: "Top 500 “Greatest” Novels (1021-2015) in Seattle Public Library Checkout Data"
+author: Neel Gupta
+date: "2025-12"
+categories: [libraries, literature, readers, circulation, metadata, draft]
+image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Seattle_Public_Library_logo.svg"
+format-links: [ipynb, pdf, docx]
+
+# toc: true
+# toc-depth: 3
+# toc-title: "On this page"
+# toc-location: left
+
+format:
+  html:
+    css: ../../styles.css
+    
+df-print: kable
+code-fold: true
+code-tools: true
+editor: visual
+
+
+R.options:
+  warn: false
+  knitr.graphics.auto_pdf: true
+
+# (rest of your listing blocks unchanged)
+listing:
+# add back if there are R exercises
+  # - id: exercise-posts-r
+  #   contents: exercises-r
+  #   exclude:
+  #     categories: "dataset, draft"
+  #   sort: "date desc"
+  #   type: table
+  #   fields: [date, title, categories]
+  #   categories: false
+  #   sort-ui: false
+  #   filter-ui: true
+  #   image-height: 200px
+  - id: exercise-posts-python
+    contents: exercises-python
+    exclude:
+      categories: "dataset, draft"
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    categories: false
+    sort-ui: false
+    filter-ui: true
+  
+bibliography: ../../references/references.bib
+---
+
+:::::::::::::::::::: {.panel-tabset .nav-pills}
+# Data Essay {#data-essay .tab-pane}
+
+## Introduction
+
+This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@baccini2021explainingGupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [mirrored version of the SPL Checkout Data](top 500 "Greatest" novels](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html) recording checkouts from 2005 up till Feb 2025. 
+
+::: {.callout-tip icon="false"}
+## Brief Survey
+
+If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
+:::
+
+## Dataset
+
+```{ojs}
+//|echo: false
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+generateTabulatorTableFromCSV(
+  "#table-container4",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  {
+    displayedColumns: [
+      // Core identity & office
+      "state_territory",
+      "governor",
+      "party",
+      "first_year",
+      "years_in_office",
+
+      // Background & education
+      "school",
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+
+      // Birth & demographics
+      "birth_state_territory",
+      "birth_date",
+      "age_at_start",
+      "gender",
+      "born_in_state_territory",
+      "intl_born",
+      "intl_born_details",
+
+      // Long description
+    ],
+
+    columnPopups: [
+      "U.S. state or territory governed.",
+      "Governor’s name.",
+      "Political party affiliation.",
+      "First year they served as governor.",
+      "Spans/terms served (as listed in the bio).",
+
+      "Primary college or university listed (if any).",
+      "Did the governor attend college? (1/0).",
+      "Did the governor attend an Ivy League school? (1/0).",
+      "Is/was the governor a lawyer? (1/0).",
+      "Did the governor serve in the military? (1/0).",
+
+      "Birth state or territory.",
+      "Birth date (YYYY-MM-DD where available).",
+      "Age at the start of first term.",
+      "Gender as recorded in the dataset.",
+      "Whether born in the state/territory they govern (1/0).",
+      "Whether born outside the U.S. (1/0).",
+      "Details about international birthplace if applicable.",
+
+    ],
+
+    // columnWidths: {
+    //   governor: "220px",
+    //   party: "140px",
+    //   years_in_office: "220px",
+    //   school: "220px",
+    //   bio_text: "40%"
+    // },
+
+    // Treat these as numeric so you get proper sort/filter ranges
+    numericColumns: ["first_year", "age_at_start"],
+
+    // Good facets for filtering
+    categoryColumns: [
+      "state_territory",
+      "party",
+      "school",
+      "birth_state_territory",
+      "gender",
+
+      // binary flags as categories for easy faceting
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+      "born_in_state_territory",
+      "intl_born"
+    ],
+
+    // Default sort: by state, then governor
+    sortColumns: ["state_territory", "governor"],
+    sortOrders: ["asc", "asc"],
+
+    // Buttons (kept the same IDs you used)
+    buttonContainerId: "#button-container1",
+    rawButtonId: "#download-raw1",
+    urlCopyButtonId: "#copy-url1",
+
+    // Optional: if your helper supports label maps for 1/0 columns, this is handy.
+    // booleanLabelColumns: {
+    //   college_attendance: { "1": "Yes", "0": "No" },
+    //   ivy_attendance: { "1": "Yes", "0": "No" },
+    //   lawyer: { "1": "Yes", "0": "No" },
+    //   military_service: { "1": "Yes", "0": "No" },
+    //   born_in_state_territory: { "1": "Yes", "0": "No" },
+    //   intl_born: { "1": "Yes", "0": "No" }
+    // }
+  }
+);
+
+
+```
+
+::: {#table-container4 style="height: 500px"}
+:::
+
+Download Full Data
+
+::: {#button-container}
+<button id="download-raw1">
+
+<i class="fas fa-download"></i></i> Download Full Data
+
+</button>
+
+<button id="copy-url1">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
+:::
+
+Download Table Data (including filtered options)
+
+::: {#button-container1}
+<button id="download-csv">
+
+<i class="fas fa-download"></i></i> Download CSV
+
+</button>
+
+<button id="download-json">
+
+<i class="fas fa-download"></i></i> Download JSON
+
+</button>
+
+<button id="download-xlsx">
+
+<i class="fas fa-download"></i></i> Download Excel
+
+</button>
+:::
+
+:::: {#progress-container style="width: 100%; display: block;"}
+<progress id="progress-bar" style="width: 100%;" max="100" value="0">
+
+</progress>
+
+::: {#progress-text style="text-align: center; margin-top: 5px;"}
+:::
+::::
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
+
+<!-- Excel script -->
+
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
+
+::: {.callout-tip icon="false"}
+## Creative Commons License
+
+<p xmlns:cc="http://creativecommons.org/ns#">
+
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+:::
+
+## What's in the data?
+
+The dataset contains extensive metadata information on the top 500 novels list, borrowed from our previous [RDIC post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html). 
+
+
+### Basic info on novels:
+
+-   **TOP_500_RANK:** Numeric rank of text in OCLC’s original Top 500 List.
+-   **TOP_500_Title:** Title of text, as recorded in OCLC’s original Top 500 List.
+-   **AUTHOR:** Author of text, as recorded in OCLC’s original Top 500 List.
+-   **PUB_YEAR:** Year of first publication of text, according to Wikipedia.
+-   **ORIG_LANG:** Original language of text, according to Wikipedia.
+-   **GENRE:** Genre of text, as recorded in OCLC’s original Top 500 List (filtered by the ‘Choose Genre’ dropdown).
+
+### Author demographic info:
+
+-   **AUTHOR_BIRTH:** Author year of birth, according to VIAF.
+-   **AUTHOR_DEATH:** Author year of death, according to VIAF.
+-   **AUTHOR_GENDER:** Author gender, according to VIAF. Note: VIAF only includes binary gender categories, with an alternate option of “Unknown.” Although we want to resist binary categorizations of gender, we have used VIAF because it provides the most comprehensive and accurate information we could find for authors on this list, and because it can be difficult if historical authors held non-binary identities. If we find evidence that any of the authors on the list identified or identify as non-binary, we will change the gender categories to reflect their identifications.
+-   **AUTHOR_PRIMARY_LANG:** Author’s primary language of publication, according to VIAF.
+-   **AUTHOR_NATIONALITY:** Author’s nationality according to VIAF. VIAF includes multiple national associations for many authors, but we have only collected information on the first country associated with each author. Importantly, this does not include information on tribal citizenship or on changes in nationality across an author’s lifetime.
+-   **AUTHOR_FIELD_OF_ACTIVITY:** Author’s primary fields of activity, according to VIAF. VIAF includes data from multiple global partner institutions, but we only collect VIAF data associated with the Library of Congress (LOC).
+-   **AUTHOR_OCCUPATION:** Author’s primary occupations, according to VIAF. VIAF includes data from multiple global partner institutions, but we only collect VIAF data associated with the Library of Congress (LOC).
+
+### Library holdings info:
+
+-   **OCLC_HOLDINGS:** Total physical library holdings listed in WorldCat for an individual work (OWI), according to Classify.
+-   **OCLC_EHOLDINGS:** Total digital library holdings listed in WorldCat for an individual work (OWI), according to OCLC.
+-   **OCLC_TOTAL_EDITIONS:** Total editions of an individual work–physical and digital–listed in WorldCat according to OCLC.
+-   **OCLC_HOLDINGS_RANK:** Numeric rank of text based on total holdings recorded in WorldCat.
+-   **OCLC_EDITIONS_RANK:** Numeric rank of text based on total number of editions recorded in WorldCat.
+
+### Online popularity info:
+
+-   **GR_AVG_RATING:** Average star rating for a text on Goodreads.
+-   **GR_NUM_RATINGS:** Total number of ratings for a text on Goodreads.
+-   **GR_NUM_REVIEWS:** Total number of reviews for a text on Goodreads.
+-   **GR_AVG_RATING_RANK:** Numeric rank of text based on average Goodreads rating.
+-   **GR_NUM_RATINGS_RANK:** Numeric rank of text based on overall number of ratings on Goodreads.
+
+### Unique Identifiers and URLS:
+
+-   **OCLC_OWI:** Work ID on OCLC. A work ID represents a cluster based on “author and title information from bibliographic and authority records.” A title can be represented by multiple clusters, and therefore multiple OWIs. More information about OCLC work clustering can be found here.
+-   **AUTHOR_VIAF:** Author VIAF ID.
+-   **GR_URL:** URL for text on Goodreads.
+-   **WIKI_URL:** URL for text on Wikipedia.
+-   **PG_ENG_URL:** URL for English-language text on Project Gutenberg.
+-   **PG_ORIG_URL:** URL for original-language text (where applicable) on Project Gutenberg.
+-   **FULL_TEXT:** Full text of the novel, if it is in the public domain.
+
+
+After merging with the Seattle Public Library Checkout Data, we also provide the following columns sourced from their dataset:
+
+- **UsageClass:** Denotes if the item is “physical” or “digital.” 
+- **CheckoutType:** Denotes the vendor tool used to check out the item. 
+- **MaterialType:** Describes the type of item checked out (examples: book, song, movie, music, magazine). 
+- **CheckoutYear:** The 4-digit year of checkout for this record. 
+- **CheckoutMonth:** The month of checkout for this record. 
+- **Checkouts:** A count of the number of times the title was checked out within the “Checkout Month.” 
+- **ISBN:** A comma-separated list of ISBNs associated with the item record for the checkout. (Text)
+- **Title:** The full title and subtitle of an individual item. (Text)
+- **Creator:** The author or entity responsible for authoring the item according to the SPL. 
+- **Subjects:** The subject of the item as it appears in the catalog. 
+- **Publisher:** The publisher of the title. 
+- **PublicationYear:** The year from the catalog record in which the item was published, printed, or copyrighted. 
+
+Note that we provide two titles and two different author fields, one is sourced from the Top 500 Novels List, and the other from the SPL Checkout Data. Reconciling book data is problem, and different versions and editions of the same text can have slightly different title and author variants. 
+
+```{r}
+#| warning: false
+
+
+# Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
+
+# install.packages("rmarkdown")
+
+# too big
+# library(tidyverse)
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(forcats)
+library(ggplot2)
+library(purrr)
+
+# Load National Park Visitation data
+gov_dataset <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv", stringsAsFactors = FALSE)
+
+## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations
+gov_long <- gov_dataset %>%
+    # Split multiple ranges into separate rows
+    separate_rows(years_in_office, sep = "\\s(?=\\d{4}\\s-\\s\\d{4}|\\d{4}\\s-)") %>%
+    # Extract start and end years
+    mutate(
+        start = as.numeric(str_extract(years_in_office, "^\\d{4}")),
+        end   = as.numeric(str_extract(years_in_office, "\\d{4}$"))
+    ) %>%
+    # Expand each range into all years served
+    rowwise() %>%
+    mutate(year = list(seq(start, end))) %>%
+    unnest(year) %>%
+    ungroup() %>%
+    filter(year >= 1775, year <= 2025) %>%
+    distinct()
+
+## Let's get average college attendance rate by elected governors for each year
+yearly_college <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        college = sum(college_attendance == 1, na.rm = TRUE),
+        pct_college = 100 * college / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_college <- yearly_college %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year), # midpoint anchor
+        pct_college = mean(pct_college, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_college,
+        aes(x = year, y = pct_college),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_college,
+        aes(x = first_year + 12.5, y = pct_college), # put point in middle of 25-year bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_college,
+        aes(x = first_year + 12.5, y = pct_college),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more college educated?") +
+    ylab("Percent College") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) # Add x-axis ticks every 25 years
+
+```
+
+## Where Did The Data Come From? Who Collected It?
+
+For more details on the Top 500 novel list, refer to the initial [post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html). The SPL dataset was organized by David Christensen, Data Analysis Lead at the Seattle Public Library. The Data from 2005 to 2016 in this dataset is from the digital artwork, “Making Visible the Invisible,” by studios of George Legrady.
+
+## Why Was The Data Collected? How Is The Data Used?
+
+The data collected here is part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. Studying literary popularity is difficult; book sales data is proprietary and inaccessible to individuals outside of the publishing industry. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018, @sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones. 
+
+```{r}
+
+
+
+## Let's get average military rate by elected governors for each year
+yearly_military <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        military = sum(military_service == 1, na.rm = TRUE),
+        pct_military = 100 * military / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_military <- yearly_military %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_military = mean(pct_military, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_military,
+        aes(x = year, y = pct_military),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_military,
+        aes(x = first_year + 12.5, y = pct_military), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_military,
+        aes(x = first_year + 12.5, y = pct_military),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors served in the military more or less?") +
+    ylab("Percent Military Service") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+
+```
+
+## How Was The Data Collected?
+
+To reconcile the SPL Checkout Data with the top 500 novel data, we employ a multi-step algorithm to capture all the records in the library data that may match one of the novels in our source list. 
+
+We first, manipualte the title and author fields in the SPL data to normalize against common variants. For example, many titles have "(unabridged)" appended to them, and many authors have a last name, first name formatting (e.g Collins, Suzanne). Once we've simplified the SPL Checkout Data, to simplified versions of title and creator, we group by those fields to reduce our dataframe down to about 800,000 unique titles. 
+
+We then run a two-stage algorithm to pair novels from the Top 500 list to checkout records. We iterate through all 500 of our novels and compare first the last name of the author to the creator field in the SPL, checking if the creator field contains the last name of the author somewhere in its text. We then use the [Python RapidFuzz library](https://rapidfuzz.github.io/RapidFuzz/) to run a fuzzy matching of thte top 500 title against the title field in the SPL data. We use the [Partial Ratio](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html) algorithm which identifies the optimal alignment of the shorter string in the longer string. We use a threshold of 85. 
+
+For an example of how this algorithm is working, consider the novel Catching Fire by Suzanne Collins. A matching SPL record has the title as Catching Fire: (movie tie in edition), the Partial Ratio algorithm returns a perfect 100 match between this title and the true title, Catching Fire. Our algorithm is designed to have high recall, rather than precision. In other words, we would rather identify more matches that could be wrong, than miss matches that could be right. Our preference for recall over precision is because there are TONS of books in the dataset, once we have a list of matching records, we can manually look at matches to ensure accuracy. It is much more difficult to identify matches in the first place from over 800,000 unique titles! 
+
+Importantly, the recall of our algorithm will not be perfect, and we will miss some editions that should be clustered in. For example, alternate language editions that lack the English title will often fail the Fuzzy Match. For example, Stendhal's The Red and the Black in French is titled Le Rouge et le Noir, which will not pass our fuzzy matching threshold (luckily we're only missing 11 checkouts from the French edition).  
+
+Our algorithm returns matches for every single novel on our list! But because of our high recall approach, we need to filter out mistmatches. For example, Khaled Hosseini's A Thousands Splendid Suns got matched onto the record, And the Mountains Echoed by the Bestselling Author of the Kite Runner and a Thousand Splendid Suns. These types of cases require manual oversight to filter out. 
+
+Our approach has a couple of systematic failures besides weird edge cases. Book series where only the first entry is in the list (Artemis Fowl, Diary of a Wimpy Kid, The Maze Runner etc.) often return all the matching entries from the series, because each future title references the original title. These were excluded manually. 
+
+An interesting case we often see when matching library data to these popular novels is dealing with checked out titles that contain more than one text. Think the entire Lord of The Rings Trilogy in one large volume. We make the decision to map checkouts for the entire Lord of the Rings Trilogy to each of it's entries in the Top 500 List, meaning that one checkout is being counted three separate times in this new dataset. 
+
+
+
+```{r}
+#| warning: false
+
+head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school", "birth_state_territory")])
+
+```
+
+## Uncertainty in the Data
+
+We do not claim our matching to be perfect. Besides alternate language editions, it is likely that other strange variants have been missed by our method. Additionally, the SPL Checkout Data is not a perfect proxy for book popularity. Library checkout data is affected by regional dynamics, library programming, and the nature of the library system [@Gupta_Christensen_Walsh_2025, @Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. 
+
+Library checkouts have risen over time, partly due to increased participation in the library system and the rise of digital books. As a result, library checkout data does not represent a stable configuration of patrons engaging in consistent checkout behavior. Users should not treat the longitudinal checkout data as homogeneously representing the same relationship to readership across the time series. 
+
+
+## What can we do with the data?
+
+Thanks to the Top 500 Dataset Creators, we have tons of metadata variables we can play with to identify trends in our data. In our previous piece [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025], we present evidence that authorial death leads to a temporary boost in library checkouts for canonical authors. 
+
+We verify that relationship as follows.
+
+
+
+Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions. 
+
+
+[@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest. 
+
+
+Looking at correlations is a fun way to discover hidden relationships between seemingly different books. With only 500 novels, we can compare the timeseries of the books to each other, to see what novels are correlated. 
+
+
+![Nellie Taylor Ross was the first female US governor.](images/ross.png)
+
+```{r}
+
+
+
+## Let's get average % female governors every year
+yearly_female <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        female = sum(gender == "female", na.rm = TRUE),
+        pct_female = 100 * female / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_female <- yearly_female %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_female = mean(pct_female, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_female,
+        aes(x = year, y = pct_female),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_female,
+        aes(x = first_year + 12.5, y = pct_female), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_female,
+        aes(x = first_year + 12.5, y = pct_female),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more gender diverse?") +
+    ylab("Percent Female Governors") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+
+```
+
+The percentage of Ivy League-educated governors has slightly decreased over time, with approximately 25 percent of governors in each period being educated at an Ivy League institution. In previous work on political backgrounds, such as [@dal2009political] an Ivy League education is commonly used as a marker of elite status. This definition omits other highly selective institutions—such as Stanford, the University of Chicago, or Georgetown—which also serve as pipelines to elite political careers.
+
+```{r}
+
+
+## Let's look at Ivy League rate
+yearly_ivy <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        ivy = sum(ivy_attendance == 1, na.rm = TRUE),
+        pct_ivy = 100 * ivy / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_ivy <- yearly_ivy %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_ivy = mean(pct_ivy, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_ivy,
+        aes(x = year, y = pct_ivy),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_ivy,
+        aes(x = first_year + 12.5, y = pct_ivy), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_ivy,
+        aes(x = first_year + 12.5, y = pct_ivy),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more Ivy-educated?") +
+    ylab("Percent with Ivy Attendance") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+
+```
+
+Have gubernatorial offices become more professionalized over the course of American history? We track the share of governors with law degrees as a simple proxy for how "professionalized” the office is. Law has long been a standard path into politics--lawyers gain legal expertise and entry into elite social networks. The share rises through the mid-19th century and then plateaus. Since roughly 2000, it declines modestly, consistent with more governors coming from business and other non-law fields.
+
+```{r}
+
+
+## Let's look at rate of governors with law degrees
+yearly_lawyer <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        lawyer = sum(lawyer == 1, na.rm = TRUE),
+        pct_lawyer = 100 * lawyer / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_lawyer <- yearly_lawyer %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_lawyer = mean(pct_lawyer, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_lawyer,
+        aes(x = year, y = pct_lawyer),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_lawyer,
+        aes(x = first_year + 12.5, y = pct_lawyer), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_lawyer,
+        aes(x = first_year + 12.5, y = pct_lawyer),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Have elected governors become more likely to be lawyers?") +
+    ylab("Percent Lawyers") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+
+```
+
+Which parties have produced the largest number of distinct governors? We count each person once (regardless of how many terms served), tallying their listed party affiliation. On this measure, Democrats make up the largest share, followed by Republicans, with historical parties (Whig, Democratic-Republican, Federalist, etc.) comprising smaller slices.
+
+```{r}
+gov_dataset_deduplicated <- gov_dataset %>%
+    distinct(governor, .keep_all = TRUE)
+
+party_counts <- gov_dataset_deduplicated %>%
+    transmute(party = coalesce(party, "")) %>%
+    mutate(
+        party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
+        party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
+        party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
+        party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
+        party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
+        party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
+        party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
+        party = str_replace_all(party, "\\s+", " ")
+    ) %>%
+    separate_rows(party, sep = "\\s*(;|,|/|\\band\\b|&|;)\\s*") %>%
+    mutate(party = str_squish(party)) %>%
+    filter(party != "") %>%
+    count(party, sort = TRUE)
+
+party_counts_final <- party_counts %>%
+    slice_max(n, n = 10) %>%
+    mutate(party = fct_reorder(party, n))
+ggplot(party_counts_final, aes(x = n, y = party)) +
+    geom_col(fill = "#6A0DAD") +
+    theme_bw() +
+    theme(plot.title = element_text(size = 8)) +
+    labs(
+        title = "Most common party affiliations among U.S. governors",
+        x = "Count", y = NULL
+    ) +
+    theme_minimal(base_size = 12)
+```
+
+We also want to know if governors were born in the same state that they eventually governed. We plot the share of governors who were born in their state. Surprisingly, this proportion has actually increased over time.
+
+```{r}
+
+
+## Let's look at rate of governors with law degrees
+yearly_born_in_state <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        total = n(),
+        in_state = sum(born_in_state_territory == 1, na.rm = TRUE),
+        pct_in_state = 100 * in_state / total,
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks
+binned_born_in_state <- yearly_born_in_state %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        pct_in_state = mean(pct_in_state, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_born_in_state,
+        aes(x = year, y = pct_in_state),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_born_in_state,
+        aes(x = first_year + 12.5, y = pct_in_state), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_born_in_state,
+        aes(x = first_year + 12.5, y = pct_in_state),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Percent of Governors Born in the State/Territory They Governed") +
+    ylab("Percent Born In-State") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+
+```
+
+Governors, like many politicians, have been getting older over time. In the past 25 years, the average age at entry has been about 55. This pattern likely reflects not only changes in the typical political career but also broader increases in life expectancy.
+
+```{r}
+
+yearly_age <- gov_long %>%
+    group_by(year) %>%
+    summarise(
+        avg_age = mean(age_at_start, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 2. Bin years into 25-year chunks and compute mean within each bin
+binned_age <- yearly_age %>%
+    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
+    group_by(bin) %>%
+    summarise(
+        first_year = min(year),
+        avg_age = mean(avg_age, na.rm = TRUE),
+        .groups = "drop"
+    )
+
+# 3. Plot
+ggplot() +
+    geom_point(
+        data = yearly_age,
+        aes(x = year, y = avg_age),
+        color = "gray50", alpha = 0.4
+    ) +
+    geom_point(
+        data = binned_age,
+        aes(x = first_year + 12.5, y = avg_age), # center in bin
+        color = "#6A0DAD", size = 2
+    ) +
+    geom_line(
+        data = binned_age,
+        aes(x = first_year + 12.5, y = avg_age),
+        color = "#6A0DAD"
+    ) +
+    theme_bw() +
+    xlab("") +
+    ggtitle("Average Age of Governors at Start of Office") +
+    ylab("Average Age") +
+    theme(plot.title = element_text(size = 8)) +
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+```
+
+## Conclusion
+
+The gubernatorial biography dataset gives us perspective on the range of backgrounds for important politicians in American history. Generating features for tabular data out of web-scraped text is challenging and imperfect. But, efforts like this help us notice demographic trends among US governors, and we've pointed out a couple interesting results around gender, professionalization, and governor age. We think future work could refine our methods and extend them to other offices, to help complete a more full picture of the history of American government.
+
+## References
+
+::: {#refs}
+:::
+
+::: {#custom-footnotes}
+:::
+
+# Explore the Data {#tabset-1-2}
+
+## Explore the Data
+
+::::::: {.content-hidden when-format="pdf"}
+```{ojs}
+//|echo: false
+//|output: false
+
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+generateTabulatorTableFromCSV(
+  "#table-container1",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  {
+    displayedColumns: [
+      // Core identity & office
+      "state_territory",
+      "governor",
+      "party",
+      "first_year",
+      "years_in_office",
+
+      // Background & education
+      "school",
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+
+      // Birth & demographics
+      "birth_state_territory",
+      "birth_date",
+      "age_at_start",
+      "gender",
+      "born_in_state_territory",
+      "intl_born",
+      "intl_born_details",
+
+      // Long description
+      "bio_text"
+    ],
+
+    columnPopups: [
+      "U.S. state or territory governed.",
+      "Governor’s name.",
+      "Political party affiliation.",
+      "First year they served as governor.",
+      "Spans/terms served (as listed in the bio).",
+
+      "Primary college or university listed (if any).",
+      "Did the governor attend college? (1/0).",
+      "Did the governor attend an Ivy League school? (1/0).",
+      "Is/was the governor a lawyer? (1/0).",
+      "Did the governor serve in the military? (1/0).",
+
+      "Birth state or territory.",
+      "Birth date (YYYY-MM-DD where available).",
+      "Age at the start of first term.",
+      "Gender as recorded in the dataset.",
+      "Whether born in the state/territory they govern (1/0).",
+      "Whether born outside the U.S. (1/0).",
+      "Details about international birthplace if applicable.",
+
+      "Short biography text."
+    ],
+
+    // columnWidths: {
+    //   governor: "220px",
+    //   party: "140px",
+    //   years_in_office: "220px",
+    //   school: "220px",
+    //   bio_text: "40%"
+    // },
+
+    // Treat these as numeric so you get proper sort/filter ranges
+    numericColumns: ["first_year", "age_at_start"],
+
+    // Good facets for filtering
+    categoryColumns: [
+      "state_territory",
+      "party",
+      "school",
+      "birth_state_territory",
+      "gender",
+
+      // binary flags as categories for easy faceting
+      "college_attendance",
+      "ivy_attendance",
+      "lawyer",
+      "military_service",
+      "born_in_state_territory",
+      "intl_born"
+    ],
+
+    // Default sort: by state, then governor
+    sortColumns: ["state_territory", "governor"],
+    sortOrders: ["asc", "asc"],
+
+    // Buttons (kept the same IDs you used)
+    buttonContainerId: "#button-container2",
+    rawButtonId: "#download-raw2",
+    urlCopyButtonId: "#copy-url2",
+
+    // Optional: if your helper supports label maps for 1/0 columns, this is handy.
+    // booleanLabelColumns: {
+    //   college_attendance: { "1": "Yes", "0": "No" },
+    //   ivy_attendance: { "1": "Yes", "0": "No" },
+    //   lawyer: { "1": "Yes", "0": "No" },
+    //   military_service: { "1": "Yes", "0": "No" },
+    //   born_in_state_territory: { "1": "Yes", "0": "No" },
+    //   intl_born: { "1": "Yes", "0": "No" }
+    // }
+  }
+);
+
+
+```
+
+::: {#table-container1 style="height: 500px"}
+:::
+
+Download Full Data
+
+<div>
+
+<button id="download-raw2">
+
+<i class="fas fa-download"></i></i> Download Full Data
+
+</button>
+
+<button id="copy-url2">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
+
+</div>
+
+Download Table Data (including filtered options)
+
+::: {#button-container2}
+<button id="download-csv">
+
+<i class="fas fa-download"></i></i> Download CSV
+
+</button>
+
+<button id="download-json">
+
+<i class="fas fa-download"></i></i> Download JSON
+
+</button>
+
+<button id="download-xlsx">
+
+<i class="fas fa-download"></i></i> Download Excel
+
+</button>
+:::
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
+
+<!-- Excel script -->
+
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
+
+::: {.callout-tip icon="false"}
+## Creative Commons License
+
+<p xmlns:cc="http://creativecommons.org/ns#">
+
+This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY 4.0<img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"/></a>
+
+</p>
+:::
+:::::::
+
+# Exercises {#exercises}
+
+## Programming Exercises
+
+The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own.
+
+:::: {.panel-tabset .nav-pills}
+# Python
+
+::: {#exercise-posts-python}
+:::
+::::
+::::::::::::::::::::
