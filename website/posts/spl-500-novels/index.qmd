@@ -512,11 +512,44 @@ We verify that relationship as follows.
 
 Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions. 
 
+We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated. 
+##
 
-[@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest. 
+Sci-FI and Horror are the most internally correlated genres, while Political, Bildung, and Mystery are less internally correlated. 
 
 
-Looking at correlations is a fun way to discover hidden relationships between seemingly different books. With only 500 novels, we can compare the timeseries of the books to each other, to see what novels are correlated. 
+[@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. Books by the same author effect each other's success. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest. 
+
+We can test this by looking at the Pearson correlation coefficients between books by the same author. We grabbed the mean correlations between each author's books, and got a value of 0.42. In other words, on average, 42% of a book's variance in the checkout data can be explained by a different book by the same author. 
+
+It's hard to interpret that number without context. If we look at just the correlations on average between every book in the top 500 corpus, we only observe a coefficient of 0.16. So books by the same author are almost 3x more correlated than what we would expect on average.
+
+Let's look at a few specific examples. A lot of books by the same author belong to book series. For example, all of J.K. Rowling's Harry Potter books are in the top 500 corpus, so we can generate a correlation heatmap for her books.
+
+The heatmap is really striking, the middle four books of the series are highly correlated with each other, while the first book and the final two seem to have their own dynamics.  
+
+Let's look at some timeseries to figure out what's going on with the edge books! 
+
+First, the Prisoner of Azkaban vs. the Chamber of Secrets
+
+
+These have a correlation coefficient of 0.97 and that lines up with what we're seeing in the timeseries. 
+
+How about if we compare the Prisoner of Azkaban to the Sorceror's Stone?
+
+They actually track really well together for most of the timeframe, but we see a huge spike for the Sorceror's Stone in 2020, which is going to really confound the correlation coefficient. 
+
+How about the Deathly Hallows and the Half-Blood Prince. These have a more obvious explanation. Both these books actually are released in the SPL timeframe, and have large numbers of checkouts following their release at the start of their timeseries. This follows what we know about how books function commercially, where a large share of their sales is immediately around their release [@sorensen_bestseller_2007]. Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up! 
+
+The high correlation between the books in the series suggest that these books are likely complementary goods, the appeal for one of these books increases with the appeal for the other. Of course this makes sense, readers who finish The Prisoner of Azkaban are likely to move straight onto the Goblet of Fire in quick succession, and the value of any one of these books to a consumer is intrinsically tied to the value of the other books in the series, and the series as a whole. 
+
+The opposite of complementary good in economics is a substitutue good. Can we think of book, or groups of books as substitutes for each other? Are books within the same genre competing for the same readership? Or does the success of one book in the genre boost other books as well? 
+
+The answer as you might expect, is it depends. 
+
+Looking at correlations is a fun way to discover hidden relationships between seemingly different books. With only 500 novels, we can compare the timeseries of the books to each other, to see what novels are correlated. Besides the obvious pairs at the top of the list, we see some more interesting comparisons. The Giver and The Book Thief are highly correlated, and both seemed to have peaked in the late 2
+
+Besides the obvious 
 
 
 ![Nellie Taylor Ross was the first female US governor.](images/ross.png)
