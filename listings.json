@@ -1,15 +1,15 @@
 [
   {
-    "listing": "/posts/gubernatorial-bios/index.html",
+    "listing": "/posts/spl-500-novels/index.html",
     "items": [
-      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html",
-      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html"
+      "/posts/spl-500-novels/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html",
+      "/posts/spl-500-novels/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html"
     ]
   },
   {
-    "listing": "/posts/top-500-novels/top-500-novels.html",
+    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
     "items": [
-      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
+      "/posts/african-american-periodical-poetry/exercises/aa_eda.html"
     ]
   },
   {
@@ -23,9 +23,16 @@
     ]
   },
   {
-    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+    "listing": "/posts/top-500-novels/top-500-novels.html",
     "items": [
-      "/posts/african-american-periodical-poetry/exercises/aa_eda.html"
+      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
+    ]
+  },
+  {
+    "listing": "/posts/gubernatorial-bios/index.html",
+    "items": [
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html",
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html"
     ]
   },
   {

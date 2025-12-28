@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-08-01">
+
+<title>Pandas Value Counts with Gubernatorial Data (Solution) – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-16adcba7e9b7c9f370a68c8a1be5df3a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+  
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Pandas Value Counts with Gubernatorial Data (Solution) – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/posts/spl-500-novels/exercises-python/images/responsible-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Pandas Value Counts with Gubernatorial Data (Solution)</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">pandas</div>
+                <div class="quarto-category">exercise</div>
+                <div class="quarto-category">solution</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 1, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="Gubernatorial-Data-Value-Counts-Solutions.ipynb" download="Gubernatorial-Data-Value-Counts-Solutions.ipynb"><i class="bi bi-journal-code"></i>Jupyter</a></li></ul></div></div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="load-the-data" class="level1">
+<h1>Load the data</h1>
+<div id="a18dc078" class="cell" data-execution_count="1">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df  <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="exercise-1" class="level1">
+<h1>Exercise 1</h1>
+<p>What are the top 5 birth states for governors?</p>
+<p>Save as <code>top_birth_states</code> and then view the resulting dataframe.</p>
+<div id="fab30498" class="cell" data-execution_count="2">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="op">=</span> (</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    df[<span class="st">'birth_state_territory'</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    .value_counts()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    .head(<span class="dv">5</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>top_birth_states</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>birth_state_territory
+New York          162
+Virginia          147
+Pennsylvania      112
+Massachusetts     102
+South Carolina    101
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>Discuss/consider: What states are the most common birth spots for governors? Are there similar traits between the top states?</p>
+</section>
+<section id="exercise-2" class="level1">
+<h1>Exercise 2</h1>
+<p>Let’s now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let’s look at the distribution across the entire dataframe</p>
+<p>First, let’s cut the age_at_start variable into bins, so people between ages 20 and 30 get mapped to 20, 30 and 40 to 30 etc. Let’s call this new column <code>age_bucket</code>. We will use the Pandas function [pd.cut]{https://pandas.pydata.org/docs/reference/api/pandas.cut.html}.</p>
+<p>Now let’s display the <code>value_counts</code> of the <code>age_bucket</code> column and let’s sort by the age.</p>
+<div id="865943b4" class="cell" data-execution_count="3">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age_bucket'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'age_at_start'</span>], bins<span class="op">=</span>[<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>])</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age_bucket'</span>].value_counts().sort_index()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>age_bucket
+(20, 30]       7
+(30, 40]     374
+(40, 50]    1004
+(50, 60]     789
+(60, 70]     279
+(70, 80]      32
+Name: count, dtype: int64</code></pre>
+</div>
+</div>
+<p>Discuss/consider: Which age range has the most governors?</p>
+</section>
+<section id="exercise-3" class="level1">
+<h1>Exercise 3:</h1>
+<p>Let’s look at the outlier governors who started office at or below the age of 30. Let’s filter the dataset down to this set by filtering on the <code>age_at_start</code> column, call it <code>young_governors</code> and display it.</p>
+<div id="aa48eec3" class="cell" data-execution_count="4">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>young_governors <span class="op">=</span> df[df[<span class="st">'age_at_start'</span>] <span class="op">&lt;=</span> <span class="dv">30</span>]</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>young_governors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Unnamed: 0</th>
+<th data-quarto-table-cell-role="th">state_territory</th>
+<th data-quarto-table-cell-role="th">governor</th>
+<th data-quarto-table-cell-role="th">party</th>
+<th data-quarto-table-cell-role="th">first_year</th>
+<th data-quarto-table-cell-role="th">years_in_office</th>
+<th data-quarto-table-cell-role="th">school</th>
+<th data-quarto-table-cell-role="th">birth_state_territory</th>
+<th data-quarto-table-cell-role="th">birth_date</th>
+<th data-quarto-table-cell-role="th">bio_text</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">ivy_attendance</th>
+<th data-quarto-table-cell-role="th">lawyer</th>
+<th data-quarto-table-cell-role="th">military_service</th>
+<th data-quarto-table-cell-role="th">age_at_start</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">born_in_state_territory</th>
+<th data-quarto-table-cell-role="th">intl_born</th>
+<th data-quarto-table-cell-role="th">intl_born_details</th>
+<th data-quarto-table-cell-role="th">race/ethnicity</th>
+<th data-quarto-table-cell-role="th">age_bucket</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">522</th>
+<td>522</td>
+<td>Georgia</td>
+<td>George Walton</td>
+<td>Whig, Democratic-Republican</td>
+<td>1779</td>
+<td>1779 - 1780</td>
+<td>NaN</td>
+<td>Virginia</td>
+<td>1749-01-01</td>
+<td>GEORGE WALTON, the youngest signer of the Decl...</td>
+<td>...</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>male</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">740</th>
+<td>740</td>
+<td>Kansas</td>
+<td>Samuel Johnson Crawford</td>
+<td>Republican</td>
+<td>1865</td>
+<td>1865 - 1868</td>
+<td>Cincinnati College</td>
+<td>Indiana</td>
+<td>1835-04-10</td>
+<td>SAMUEL JOHNSON CRAWFORD, the third governor of...</td>
+<td>...</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>30</td>
+<td>male</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">833</th>
+<td>833</td>
+<td>Louisiana</td>
+<td>Henry Clay Warmoth</td>
+<td>Republican</td>
+<td>1868</td>
+<td>1868 - 1872</td>
+<td>NaN</td>
+<td>Illinois</td>
+<td>1842-05-09</td>
+<td>HENRY C. WARMOTH was born in Mc Leansboro, Ill...</td>
+<td>...</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>26</td>
+<td>male</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">976</th>
+<td>976</td>
+<td>Maryland</td>
+<td>Edward Lloyd</td>
+<td>Democratic-Republican</td>
+<td>1809</td>
+<td>1809 - 1811</td>
+<td>NaN</td>
+<td>Maryland</td>
+<td>1779-07-22</td>
+<td>EDWARD LLOYD was born in Talbot County, Maryla...</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>30</td>
+<td>male</td>
+<td>1</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">1453</th>
+<td>1453</td>
+<td>New Jersey</td>
+<td>Leon R. Taylor</td>
+<td>Democratic</td>
+<td>1913</td>
+<td>1913 - 1914</td>
+<td>Denison University</td>
+<td>New Jersey</td>
+<td>1883-10-26</td>
+<td>Leon R. Taylor was born in Asbury Park, New Je...</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>30</td>
+<td>male</td>
+<td>1</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1898</th>
+<td>1898</td>
+<td>Rhode Island</td>
+<td>William Sprague</td>
+<td>Republican</td>
+<td>1860</td>
+<td>1860 - 1863</td>
+<td>NaN</td>
+<td>Rhode Island</td>
+<td>1830-09-12</td>
+<td>WILLIAM SPRAGUE was born in Cranston, Rhode Is...</td>
+<td>...</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>30</td>
+<td>male</td>
+<td>1</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2439</th>
+<td>2439</td>
+<td>Wyoming</td>
+<td>Amos Walker Barber</td>
+<td>Republican</td>
+<td>1890</td>
+<td>1890 - 1893</td>
+<td>University of Pennsylvania</td>
+<td>Pennsylvania</td>
+<td>1860-07-25</td>
+<td>AMOS WALKER BARBER was born in Doylestown, Pen...</td>
+<td>...</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>30</td>
+<td>male</td>
+<td>0</td>
+<td>0</td>
+<td>NaN</td>
+<td>White</td>
+<td>(20, 30]</td>
+</tr>
+</tbody>
+</table>
+
+<p>7 rows × 21 columns</p>
+</div>
+</div>
+</div>
+<p>Discuss/consider: Who are the youngest governors in American History? What era are they from? Take a look at some of their Wikipedia pages and NGA biographies online.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
