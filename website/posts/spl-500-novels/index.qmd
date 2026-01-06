@@ -1,6 +1,6 @@
 ---
 title: "Top 500 “Greatest” Novels (1021-2015) in Seattle Public Library Checkout Data"
-author: Neel Gupta
+author: Neel Gupta, Melanie Walsh
 date: "2025-12"
 categories: [libraries, literature, readers, circulation, metadata, draft]
 image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Seattle_Public_Library_logo.svg"
@@ -58,7 +58,7 @@ bibliography: ../../references/references.bib
 
 ## Introduction
 
-This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@baccini2021explainingGupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [mirrored version of the SPL Checkout Data](top 500 "Greatest" novels](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html) recording checkouts from 2005 up till Feb 2025. 
+This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@baccini2021explainingGupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [a mirrored version of the SPL Checkout Data](https://zenodo.org/records/15792698) recording checkouts from 2005 up till Feb 2025. 
 
 ::: {.callout-tip icon="false"}
 ## Brief Survey
@@ -83,31 +83,22 @@ import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSe
 // https://observablehq.com/d/8bb63a6cde9addff
 generateTabulatorTableFromCSV(
   "#table-container4",
-  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  "https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv",
   {
     displayedColumns: [
-      // Core identity & office
-      "state_territory",
-      "governor",
-      "party",
-      "first_year",
-      "years_in_office",
+      // Top 500 info and checkouts
+      "top_500_title",
+      "author",
+      "checkoutyear",
+      "checkoutmonth",
+      "checkouts",
+      'top_500_rank'
+      'pub_year',
+      'genre'
 
-      // Background & education
-      "school",
-      "college_attendance",
-      "ivy_attendance",
-      "lawyer",
-      "military_service",
-
-      // Birth & demographics
-      "birth_state_territory",
-      "birth_date",
-      "age_at_start",
-      "gender",
-      "born_in_state_territory",
-      "intl_born",
-      "intl_born_details",
+      // Specific SPL Record
+      "title",
+      "creator",
 
       // Long description
     ],
@@ -144,23 +135,14 @@ generateTabulatorTableFromCSV(
     // },
 
     // Treat these as numeric so you get proper sort/filter ranges
-    numericColumns: ["first_year", "age_at_start"],
+    numericColumns: ["checkouts", "top_500_rank", 'pub_year'],
 
     // Good facets for filtering
     categoryColumns: [
-      "state_territory",
-      "party",
-      "school",
-      "birth_state_territory",
-      "gender",
+      "top_500_title",
+      "author",
+      'genre'
 
-      // binary flags as categories for easy faceting
-      "college_attendance",
-      "ivy_attendance",
-      "lawyer",
-      "military_service",
-      "born_in_state_territory",
-      "intl_born"
     ],
 
     // Default sort: by state, then governor
@@ -327,88 +309,7 @@ After merging with the Seattle Public Library Checkout Data, we also provide the
 
 Note that we provide two titles and two different author fields, one is sourced from the Top 500 Novels List, and the other from the SPL Checkout Data. Reconciling book data is problem, and different versions and editions of the same text can have slightly different title and author variants. 
 
-```{r}
-#| warning: false
 
-
-# Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
-
-# install.packages("rmarkdown")
-
-# too big
-# library(tidyverse)
-library(dplyr)
-library(tidyr)
-library(stringr)
-library(forcats)
-library(ggplot2)
-library(purrr)
-
-# Load National Park Visitation data
-gov_dataset <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv", stringsAsFactors = FALSE)
-
-## Create long form version of the data where each year has the set of governors who governed in that year. We will use this transformed data for a lot of our visualizations
-gov_long <- gov_dataset %>%
-    # Split multiple ranges into separate rows
-    separate_rows(years_in_office, sep = "\\s(?=\\d{4}\\s-\\s\\d{4}|\\d{4}\\s-)") %>%
-    # Extract start and end years
-    mutate(
-        start = as.numeric(str_extract(years_in_office, "^\\d{4}")),
-        end   = as.numeric(str_extract(years_in_office, "\\d{4}$"))
-    ) %>%
-    # Expand each range into all years served
-    rowwise() %>%
-    mutate(year = list(seq(start, end))) %>%
-    unnest(year) %>%
-    ungroup() %>%
-    filter(year >= 1775, year <= 2025) %>%
-    distinct()
-
-## Let's get average college attendance rate by elected governors for each year
-yearly_college <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        college = sum(college_attendance == 1, na.rm = TRUE),
-        pct_college = 100 * college / total,
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks
-binned_college <- yearly_college %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year), # midpoint anchor
-        pct_college = mean(pct_college, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_college,
-        aes(x = year, y = pct_college),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_college,
-        aes(x = first_year + 12.5, y = pct_college), # put point in middle of 25-year bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_college,
-        aes(x = first_year + 12.5, y = pct_college),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Have elected governors become more college educated?") +
-    ylab("Percent College") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) # Add x-axis ticks every 25 years
-
-```
 
 ## Where Did The Data Come From? Who Collected It?
 
@@ -417,56 +318,6 @@ For more details on the Top 500 novel list, refer to the initial [post](https://
 ## Why Was The Data Collected? How Is The Data Used?
 
 The data collected here is part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. Studying literary popularity is difficult; book sales data is proprietary and inaccessible to individuals outside of the publishing industry. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018, @sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones. 
-
-```{r}
-
-
-
-## Let's get average military rate by elected governors for each year
-yearly_military <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        military = sum(military_service == 1, na.rm = TRUE),
-        pct_military = 100 * military / total,
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks
-binned_military <- yearly_military %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        pct_military = mean(pct_military, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_military,
-        aes(x = year, y = pct_military),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_military,
-        aes(x = first_year + 12.5, y = pct_military), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_military,
-        aes(x = first_year + 12.5, y = pct_military),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Have elected governors served in the military more or less?") +
-    ylab("Percent Military Service") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-
-```
 
 ## How Was The Data Collected?
 
@@ -480,7 +331,7 @@ For an example of how this algorithm is working, consider the novel Catching Fir
 
 Importantly, the recall of our algorithm will not be perfect, and we will miss some editions that should be clustered in. For example, alternate language editions that lack the English title will often fail the Fuzzy Match. For example, Stendhal's The Red and the Black in French is titled Le Rouge et le Noir, which will not pass our fuzzy matching threshold (luckily we're only missing 11 checkouts from the French edition).  
 
-Our algorithm returns matches for every single novel on our list! But because of our high recall approach, we need to filter out mistmatches. For example, Khaled Hosseini's A Thousands Splendid Suns got matched onto the record, And the Mountains Echoed by the Bestselling Author of the Kite Runner and a Thousand Splendid Suns. These types of cases require manual oversight to filter out. 
+Our algorithm returns matches for every single novel on our list! But because of our high recall approach, we need to filter out mismatches. For example, Khaled Hosseini's A Thousands Splendid Suns got matched onto the record, And the Mountains Echoed by the Bestselling Author of the Kite Runner and a Thousand Splendid Suns. These types of cases require manual oversight to filter out. 
 
 Our approach has a couple of systematic failures besides weird edge cases. Book series where only the first entry is in the list (Artemis Fowl, Diary of a Wimpy Kid, The Maze Runner etc.) often return all the matching entries from the series, because each future title references the original title. These were excluded manually. 
 
@@ -488,12 +339,6 @@ An interesting case we often see when matching library data to these popular nov
 
 
 
-```{r}
-#| warning: false
-
-head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school", "birth_state_territory")])
-
-```
 
 ## Uncertainty in the Data
 
@@ -504,27 +349,268 @@ Library checkouts have risen over time, partly due to increased participation in
 
 ## What can we do with the data?
 
+### Authorial Death
+
 Thanks to the Top 500 Dataset Creators, we have tons of metadata variables we can play with to identify trends in our data. In our previous piece [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025], we present evidence that authorial death leads to a temporary boost in library checkouts for canonical authors. 
 
-We verify that relationship as follows.
+We verify that relationship by generating timeseries of authors who died in the time of our dataframe. 
+
+```{python}
+#| warning: false
 
 
+# Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
 
-Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions. 
+# install.packages("rmarkdown")
 
-We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated. 
-##
+# too big
+# library(tidyverse)
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.dates as mdates
+import pandas as pd
+import numpy as np
 
-Sci-FI and Horror are the most internally correlated genres, while Political, Bildung, and Mystery are less internally correlated. 
+
+# Load Top 500 SPL Data
+gov_dataset = pd.read.csv("https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv")
+
+dead_authors = (
+    top_500_df
+    .groupby(['author', 'checkoutyear', 'checkoutmonth'], as_index=False)
+    .agg({'checkouts': 'sum', 'author_death': 'first'})
+)
+
+dead_authors['author_death'] = pd.to_numeric(
+    dead_authors['author_death'], errors='coerce'
+)
+
+dead_authors = dead_authors[dead_authors['author_death'] > 2005]
+
+# author deaths are only by year in the dataframe, so we add specific month and days for our dead authors
+author_death_dates = {
+    "Aleksandr Isaevich Solzhenitsyn": date(2008, 8, 3),
+    "Betsy Cromer Byars": date(2020, 2, 26),
+    "Beverly Cleary": date(2021, 3, 25),
+    "Chinua Achebe": date(2013, 3, 21),
+    "Colleen McCullough": date(2015, 1, 29),
+    "Cormac McCarthy": date(2023, 6, 13),
+    "Daniel Keyes": date(2014, 6, 15),
+    "Donald J. Sobol": date(2012, 8, 11),
+    "E.L. Konigsburg": date(2013, 4, 19),
+    "Gabriel García Márquez": date(2014, 4, 17),
+    "Gary Paulsen": date(2021, 10, 13),
+    "Harper Lee": date(2016, 2, 19),
+    "Herman Wouk": date(2019, 5, 17),
+    "J.D. Salinger": date(2010, 1, 27),
+    "Jean Craighead George": date(2012, 5, 15),
+    "John Le Carré": date(2020, 12, 12),
+    "Kurt Vonnegut": date(2007, 4, 11),
+    "Michael Crichton": date(2008, 11, 4),
+    "Natalie Babbitt": date(2016, 10, 31),
+    "Nicholas Evans": date(2022, 8, 9),
+    "Norman Mailer": date(2007, 11, 10),
+    "Norton Juster": date(2021, 3, 8),
+    "Patricia MacLachlan": date(2022, 3, 31),
+    "Paula Fox": date(2017, 3, 1),
+    "Ray Bradbury": date(2012, 6, 5),
+    "Richard Adams": date(2016, 12, 24),
+    "Robert James Waller": date(2017, 3, 10),
+    "Sid Fleischman": date(2010, 3, 17),
+    "Sue Grafton": date(2017, 12, 28),
+    "Toni Morrison": date(2019, 8, 5),
+    "Umberto Eco": date(2016, 2, 19),
+    "William Styron": date(2006, 11, 1),
+}
+
+dead_authors['author_death_date'] = dead_authors['author'].map(author_death_dates)
+dead_authors['author_death_ts'] = pd.to_datetime(dead_authors['author_death_date'])
+sns.set(style="whitegrid")
+
+# Choose a fixed color palette for all plots
+palette = sns.color_palette("tab10", n_colors=10)  # 10 distinct colors, cycle if >10 authors
+
+# build checkout datetime
+dead_authors['date'] = pd.to_datetime(
+    dict(
+        year=dead_authors['checkoutyear'],
+        month=dead_authors['checkoutmonth'],
+        day=1
+    )
+)
+
+# ensure death timestamp exists and is datetime
+dead_authors['author_death_ts'] = pd.to_datetime(
+    dead_authors['author_death_date'], format="%Y", errors="coerce"
+)
+
+# Map each author to a fixed color
+author_list = sorted(dead_authors['author'].unique())
+author_color_map = {author: palette[i % len(palette)] for i, author in enumerate(author_list)}
+
+for author, df_a in dead_authors.groupby('author'):
+    death_date = df_a['author_death_ts'].iloc[0]
+
+    if pd.isna(death_date):
+        print(f"Skipping {author}: no valid death date")
+        continue
+
+    plt.figure(figsize=(12, 5))
+    
+    # Use standardized color for this author
+    color = author_color_map[author]
+    
+    # Smooth line without markers
+    plt.plot(df_a['date'], df_a['checkouts'], color=color, linestyle='-', linewidth=2, label='Checkouts')
+    
+    # Vertical line for death
+    plt.axvline(death_date, color='red', linestyle='--', linewidth=2, alpha=0.7, label='Death Year')
+    
+    # Annotate death year
+    plt.text(death_date, df_a['checkouts'].max()*0.95, f"Death ({death_date.year})",
+             rotation=90, color='red', va='top', ha='right', fontsize=10)
+    
+    # Formatting
+    plt.title(f"{author} — Monthly Checkouts", fontsize=14, fontweight='bold')
+    plt.xlabel("Year", fontsize=12)
+    plt.ylabel("Checkouts", fontsize=12)
+    plt.legend()
+    
+    # Better x-axis formatting
+    plt.gca().xaxis.set_major_locator(mdates.YearLocator(2))
+    plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
+    plt.xticks(rotation=45)
+    
+    plt.tight_layout()
+    plt.show()
+
+
+```
+
+
+Almost across the board, we notice that checkouts of an author lines up with their death. Exceptions tend to be authors who have incredibly low checkout density. 
+
+### Backlist Titles
+
 
 
 [@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. Books by the same author effect each other's success. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest. 
 
-We can test this by looking at the Pearson correlation coefficients between books by the same author. We grabbed the mean correlations between each author's books, and got a value of 0.42. In other words, on average, 42% of a book's variance in the checkout data can be explained by a different book by the same author. 
+We can test this by looking at the Pearson correlation coefficients between books by the same author. 
+
+
+
+
+We grabbed the mean correlations between each author's books, and got a value of 0.42. In other words, on average, 42% of a book's variance in the checkout data can be explained by a different book by the same author. 
+
+```{python}
+
+# grabbing the subset of the df with authors that show up multiple times
+top_500_novels = pd.read_csv("../../../datasets/top-500-novels/final_merged_dataset_no_full_text.tsv", sep='\t', header=0, low_memory=False)
+top_500_novels.groupby('author').count()
+author_counts = top_500_novels['author'].value_counts()
+multi_book_authors = author_counts[author_counts > 1].index.tolist()
+multi_book_authors
+multi_book_df = top_500_df[top_500_df['author'].isin(multi_book_authors)]
+
+# to do correlations, need to fill in missing values with 0s
+def fill_after_first_value(series):
+    filled = series.copy()
+    has_seen_value = False
+    for i in range(len(series)):
+        if not pd.isna(series.iloc[i]):
+            has_seen_value = True
+        elif has_seen_value:
+            filled.iloc[i] = 0
+    return filled
+
+author_pivot = multi_book_df.pivot_table(
+    index='year-month',
+    columns='top_500_title',
+    values='checkouts',
+    aggfunc='sum'
+).fillna(0)
+
+author_pivot = author_pivot.apply(fill_after_first_value)
+
+all_correlations = []
+
+
+
+for author, df_a in multi_book_df.groupby('author'):
+    titles = df_a['top_500_title'].unique()
+    if len(titles) < 2:
+        continue  # Need at least two books to compare
+
+    author_data = author_pivot[titles]
+
+    # Calculate correlation matrix
+    corr_matrix = author_data.corr()
+    all_correlations.append((author, corr_matrix))
+
+mean_correlations = {}
+for author, corr_matrix in all_correlations:
+    # Exclude diagonal by masking it
+    mask = np.triu(np.ones(corr_matrix.shape), k=1).astype(bool)
+    mean_corr = corr_matrix.where(mask).stack().mean()
+    mean_correlations[author] = mean_corr
+mean_correlations
+mean_of_means = np.mean(list(mean_correlations.values()))
+print(mean_of_means)
+
+
+```
 
 It's hard to interpret that number without context. If we look at just the correlations on average between every book in the top 500 corpus, we only observe a coefficient of 0.16. So books by the same author are almost 3x more correlated than what we would expect on average.
 
+```{python}
+wide_df = top_500_df.pivot_table(
+    values="checkouts",
+    index="year-month",
+    columns=["top_500_title"],
+    aggfunc="sum",  # Sum in case of duplicates
+    fill_value=np.nan,   # Fill missing values with 0
+)
+
+wide_df = wide_df.apply(fill_after_first_value)
+
+correlation_matrix = wide_df.corr()
+
+mask = np.triu(np.ones(correlation_matrix.shape), k=1).astype(bool)
+mean_correlation = correlation_matrix.where(mask).stack().mean()
+mean_correlation
+
+
+mean_correlation = correlation_matrix.where(mask).stack().mean()
+print(mean_correlation)
+```
+
 Let's look at a few specific examples. A lot of books by the same author belong to book series. For example, all of J.K. Rowling's Harry Potter books are in the top 500 corpus, so we can generate a correlation heatmap for her books.
+
+```{python}
+
+jk_corr = next((corr for author, corr in all_correlations if author == 'J.K. Rowling'), None)
+
+if jk_corr is not None:
+    # Focus on main Harry Potter series
+    hp_order = [
+        "Harry Potter and the Sorcerer's Stone",
+        "Harry Potter and the Chamber of Secrets",
+        "Harry Potter and the Prisoner of Azkaban",
+        "Harry Potter and the Goblet of Fire",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Half-Blood Prince",
+        "Harry Potter and the Deathly Hallows"
+    ]
+    jk_corr_hp = jk_corr.reindex(index=hp_order, columns=hp_order)
+
+    # Plot heatmap
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(jk_corr_hp, annot=True, fmt=".2f", cmap='coolwarm', cbar_kws={"shrink": 0.8})
+    plt.title("Correlation Matrix of J.K. Rowling's Harry Potter Books Checkouts")
+    plt.show()
+
+```
 
 The heatmap is really striking, the middle four books of the series are highly correlated with each other, while the first book and the final two seem to have their own dynamics.  
 
@@ -533,316 +619,126 @@ Let's look at some timeseries to figure out what's going on with the edge books!
 First, the Prisoner of Azkaban vs. the Chamber of Secrets
 
 
+```{python}
+
+wide_df[["Harry Potter and the Sorcerer's Stone", "Harry Potter and the Chamber of Secrets"]].plot()
+```
+
 These have a correlation coefficient of 0.97 and that lines up with what we're seeing in the timeseries. 
 
 How about if we compare the Prisoner of Azkaban to the Sorceror's Stone?
 
+```{python}
+
+wide_df[["Harry Potter and the Sorcerer's Stone", "Harry Potter and the Prisoner of Azkaban"]].plot()
+```
+
 They actually track really well together for most of the timeframe, but we see a huge spike for the Sorceror's Stone in 2020, which is going to really confound the correlation coefficient. 
 
-How about the Deathly Hallows and the Half-Blood Prince. These have a more obvious explanation. Both these books actually are released in the SPL timeframe, and have large numbers of checkouts following their release at the start of their timeseries. This follows what we know about how books function commercially, where a large share of their sales is immediately around their release [@sorensen_bestseller_2007]. Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up! 
+How about the Deathly Hallows and the Half-Blood Prince? 
+
+```{python}
+
+wide_df[["Harry Potter and the Deathly Hallows", "Harry Potter and the Half-Blood Prince"]].plot()
+```
+
+These have a more obvious explanation. Both these books actually are released in the SPL timeframe, and have large numbers of checkouts following their release at the start of their timeseries. This follows what we know about how books function commercially, where a large share of their sales is immediately around their release [@sorensen_bestseller_2007]. Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up! 
+
+```{python}
+multi_book_df_post_2009 = multi_book_df[multi_book_df['checkoutyear'] >= 2009]
+
+
+author_pivot_post_2009 = multi_book_df_post_2009.pivot_table(
+    index='year-month',
+    columns='top_500_title',
+    values='checkouts',
+    aggfunc='sum'
+).fillna(0)
+
+author_pivot_post_2009 = author_pivot_post_2009.apply(fill_after_first_value)
+
+
+
+all_correlations_post_2009 = []
+
+
+for author, df_a in multi_book_df_post_2009.groupby('author'):
+    titles = df_a['top_500_title'].unique()
+    if len(titles) < 2:
+        continue  # Need at least two books to compare
+
+    author_data = author_pivot_post_2009[titles]
+
+    # Calculate correlation matrix
+    corr_matrix = author_data.corr()
+    all_correlations_post_2009.append((author, corr_matrix))
+
+
+jk_corr_post_2009 = next((corr for author, corr in all_correlations_post_2009 if author == 'J.K. Rowling'), None)
+
+if jk_corr_post_2009 is not None:
+    # Focus on main Harry Potter series
+    hp_order = [
+        "Harry Potter and the Sorcerer's Stone",
+        "Harry Potter and the Chamber of Secrets",
+        "Harry Potter and the Prisoner of Azkaban",
+        "Harry Potter and the Goblet of Fire",
+        "Harry Potter and the Order of the Phoenix",
+        "Harry Potter and the Half-Blood Prince",
+        "Harry Potter and the Deathly Hallows"
+    ]
+    jk_corr_hp_post_2009 = jk_corr_post_2009.reindex(index=hp_order, columns=hp_order)
+
+    # Plot heatmap
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(jk_corr_hp_post_2009, annot=True, fmt=".2f", cmap='coolwarm', cbar_kws={"shrink": 0.8})
+    plt.title("Correlation Matrix of J.K. Rowling's Harry Potter Books Checkouts")
+    plt.show()
+
+```
 
 The high correlation between the books in the series suggest that these books are likely complementary goods, the appeal for one of these books increases with the appeal for the other. Of course this makes sense, readers who finish The Prisoner of Azkaban are likely to move straight onto the Goblet of Fire in quick succession, and the value of any one of these books to a consumer is intrinsically tied to the value of the other books in the series, and the series as a whole. 
 
-The opposite of complementary good in economics is a substitutue good. Can we think of book, or groups of books as substitutes for each other? Are books within the same genre competing for the same readership? Or does the success of one book in the genre boost other books as well? 
+### Genres
 
-The answer as you might expect, is it depends. 
+Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions. 
 
-Looking at correlations is a fun way to discover hidden relationships between seemingly different books. With only 500 novels, we can compare the timeseries of the books to each other, to see what novels are correlated. Besides the obvious pairs at the top of the list, we see some more interesting comparisons. The Giver and The Book Thief are highly correlated, and both seemed to have peaked in the late 2
+We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated. 
 
-Besides the obvious 
+```{python}
 
+genre_correlations = {}
+for genre, df_g in top_500_df.groupby('genre'):
+    if genre == 'na':
+        continue
 
-![Nellie Taylor Ross was the first female US governor.](images/ross.png)
+    genre_pivot = df_g.pivot_table(
+        index='year-month',
+        columns='top_500_title',
+        values='checkouts',
+        aggfunc='sum'
+    ).fillna(0)
 
-```{r}
+    genre_pivot = genre_pivot.apply(fill_after_first_value)
 
+    corr_matrix = genre_pivot.corr()
 
-
-## Let's get average % female governors every year
-yearly_female <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        female = sum(gender == "female", na.rm = TRUE),
-        pct_female = 100 * female / total,
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks
-binned_female <- yearly_female %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        pct_female = mean(pct_female, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_female,
-        aes(x = year, y = pct_female),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_female,
-        aes(x = first_year + 12.5, y = pct_female), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_female,
-        aes(x = first_year + 12.5, y = pct_female),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Have elected governors become more gender diverse?") +
-    ylab("Percent Female Governors") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    # Exclude diagonal by masking it
+    mask = np.triu(np.ones(corr_matrix.shape), k=1).astype(bool)
+    mean_corr = corr_matrix.where(mask).stack().mean()
+    genre_correlations[genre] = mean_corr
+print(genre_correlations)
 
 ```
 
-The percentage of Ivy League-educated governors has slightly decreased over time, with approximately 25 percent of governors in each period being educated at an Ivy League institution. In previous work on political backgrounds, such as [@dal2009political] an Ivy League education is commonly used as a marker of elite status. This definition omits other highly selective institutions—such as Stanford, the University of Chicago, or Georgetown—which also serve as pipelines to elite political careers.
-
-```{r}
 
 
-## Let's look at Ivy League rate
-yearly_ivy <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        ivy = sum(ivy_attendance == 1, na.rm = TRUE),
-        pct_ivy = 100 * ivy / total,
-        .groups = "drop"
-    )
+Sci-FI and Horror are the most internally correlated genres, while Political, Bildung, and Mystery are less internally correlated. 
 
-# 2. Bin years into 25-year chunks
-binned_ivy <- yearly_ivy %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        pct_ivy = mean(pct_ivy, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_ivy,
-        aes(x = year, y = pct_ivy),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_ivy,
-        aes(x = first_year + 12.5, y = pct_ivy), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_ivy,
-        aes(x = first_year + 12.5, y = pct_ivy),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Have elected governors become more Ivy-educated?") +
-    ylab("Percent with Ivy Attendance") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-
-```
-
-Have gubernatorial offices become more professionalized over the course of American history? We track the share of governors with law degrees as a simple proxy for how "professionalized” the office is. Law has long been a standard path into politics--lawyers gain legal expertise and entry into elite social networks. The share rises through the mid-19th century and then plateaus. Since roughly 2000, it declines modestly, consistent with more governors coming from business and other non-law fields.
-
-```{r}
-
-
-## Let's look at rate of governors with law degrees
-yearly_lawyer <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        lawyer = sum(lawyer == 1, na.rm = TRUE),
-        pct_lawyer = 100 * lawyer / total,
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks
-binned_lawyer <- yearly_lawyer %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        pct_lawyer = mean(pct_lawyer, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_lawyer,
-        aes(x = year, y = pct_lawyer),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_lawyer,
-        aes(x = first_year + 12.5, y = pct_lawyer), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_lawyer,
-        aes(x = first_year + 12.5, y = pct_lawyer),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Have elected governors become more likely to be lawyers?") +
-    ylab("Percent Lawyers") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-
-```
-
-Which parties have produced the largest number of distinct governors? We count each person once (regardless of how many terms served), tallying their listed party affiliation. On this measure, Democrats make up the largest share, followed by Republicans, with historical parties (Whig, Democratic-Republican, Federalist, etc.) comprising smaller slices.
-
-```{r}
-gov_dataset_deduplicated <- gov_dataset %>%
-    distinct(governor, .keep_all = TRUE)
-
-party_counts <- gov_dataset_deduplicated %>%
-    transmute(party = coalesce(party, "")) %>%
-    mutate(
-        party = str_replace_all(party, "\\bRepublician\\b", "Republican"),
-        party = str_replace_all(party, "\\bDemocrat\\b", "Democratic"),
-        party = str_replace_all(party, "\\bJacksonian Democrat\\b|\\bJackson Democrat\\b", "Democratic"),
-        party = str_replace_all(party, "\\bAnti-Jacksonian\\b", "National Republican"),
-        party = str_replace_all(party, "\\bJeffersonian(-| )?Republican\\b", "Democratic-Republican"),
-        party = str_replace_all(party, "\\bIndependent-?Republican\\b", "Republican"),
-        party = str_replace_all(party, "\\s*\\(.*?\\)", ""),
-        party = str_replace_all(party, "\\s+", " ")
-    ) %>%
-    separate_rows(party, sep = "\\s*(;|,|/|\\band\\b|&|;)\\s*") %>%
-    mutate(party = str_squish(party)) %>%
-    filter(party != "") %>%
-    count(party, sort = TRUE)
-
-party_counts_final <- party_counts %>%
-    slice_max(n, n = 10) %>%
-    mutate(party = fct_reorder(party, n))
-ggplot(party_counts_final, aes(x = n, y = party)) +
-    geom_col(fill = "#6A0DAD") +
-    theme_bw() +
-    theme(plot.title = element_text(size = 8)) +
-    labs(
-        title = "Most common party affiliations among U.S. governors",
-        x = "Count", y = NULL
-    ) +
-    theme_minimal(base_size = 12)
-```
-
-We also want to know if governors were born in the same state that they eventually governed. We plot the share of governors who were born in their state. Surprisingly, this proportion has actually increased over time.
-
-```{r}
-
-
-## Let's look at rate of governors with law degrees
-yearly_born_in_state <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        total = n(),
-        in_state = sum(born_in_state_territory == 1, na.rm = TRUE),
-        pct_in_state = 100 * in_state / total,
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks
-binned_born_in_state <- yearly_born_in_state %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        pct_in_state = mean(pct_in_state, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_born_in_state,
-        aes(x = year, y = pct_in_state),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_born_in_state,
-        aes(x = first_year + 12.5, y = pct_in_state), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_born_in_state,
-        aes(x = first_year + 12.5, y = pct_in_state),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Percent of Governors Born in the State/Territory They Governed") +
-    ylab("Percent Born In-State") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-
-```
-
-Governors, like many politicians, have been getting older over time. In the past 25 years, the average age at entry has been about 55. This pattern likely reflects not only changes in the typical political career but also broader increases in life expectancy.
-
-```{r}
-
-yearly_age <- gov_long %>%
-    group_by(year) %>%
-    summarise(
-        avg_age = mean(age_at_start, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 2. Bin years into 25-year chunks and compute mean within each bin
-binned_age <- yearly_age %>%
-    mutate(bin = cut(year, breaks = seq(1775, 2025, by = 25), include.lowest = TRUE, right = FALSE)) %>%
-    group_by(bin) %>%
-    summarise(
-        first_year = min(year),
-        avg_age = mean(avg_age, na.rm = TRUE),
-        .groups = "drop"
-    )
-
-# 3. Plot
-ggplot() +
-    geom_point(
-        data = yearly_age,
-        aes(x = year, y = avg_age),
-        color = "gray50", alpha = 0.4
-    ) +
-    geom_point(
-        data = binned_age,
-        aes(x = first_year + 12.5, y = avg_age), # center in bin
-        color = "#6A0DAD", size = 2
-    ) +
-    geom_line(
-        data = binned_age,
-        aes(x = first_year + 12.5, y = avg_age),
-        color = "#6A0DAD"
-    ) +
-    theme_bw() +
-    xlab("") +
-    ggtitle("Average Age of Governors at Start of Office") +
-    ylab("Average Age") +
-    theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
-```
 
 ## Conclusion
 
-The gubernatorial biography dataset gives us perspective on the range of backgrounds for important politicians in American history. Generating features for tabular data out of web-scraped text is challenging and imperfect. But, efforts like this help us notice demographic trends among US governors, and we've pointed out a couple interesting results around gender, professionalization, and governor age. We think future work could refine our methods and extend them to other offices, to help complete a more full picture of the history of American government.
+The Top 500 SPL Dataframe is an example of what we can do with complex reception data after using manual methods to extract a high fidelity subcorpus. The top 500 novels represents a particularly canonical and popular set of fiction, featuring both contemporary and historical authors, book series, and a diverse set of genres. 
 
 ## References
 
@@ -864,35 +760,25 @@ The gubernatorial biography dataset gives us perspective on the range of backgro
 // Using the Post45 Data Viewer
 // https://observablehq.com/d/8bb63a6cde9addff
 generateTabulatorTableFromCSV(
-  "#table-container1",
-  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  "#table-container4",
+  "https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv",
   {
     displayedColumns: [
-      // Core identity & office
-      "state_territory",
-      "governor",
-      "party",
-      "first_year",
-      "years_in_office",
+      // Top 500 info and checkouts
+      "top_500_title",
+      "author",
+      "checkoutyear",
+      "checkoutmonth",
+      "checkouts",
+      'top_500_rank'
+      'pub_year',
+      'genre'
 
-      // Background & education
-      "school",
-      "college_attendance",
-      "ivy_attendance",
-      "lawyer",
-      "military_service",
-
-      // Birth & demographics
-      "birth_state_territory",
-      "birth_date",
-      "age_at_start",
-      "gender",
-      "born_in_state_territory",
-      "intl_born",
-      "intl_born_details",
+      // Specific SPL Record
+      "title",
+      "creator",
 
       // Long description
-      "bio_text"
     ],
 
     columnPopups: [
@@ -916,7 +802,6 @@ generateTabulatorTableFromCSV(
       "Whether born outside the U.S. (1/0).",
       "Details about international birthplace if applicable.",
 
-      "Short biography text."
     ],
 
     // columnWidths: {
@@ -928,23 +813,14 @@ generateTabulatorTableFromCSV(
     // },
 
     // Treat these as numeric so you get proper sort/filter ranges
-    numericColumns: ["first_year", "age_at_start"],
+    numericColumns: ["checkouts", "top_500_rank", 'pub_year'],
 
     // Good facets for filtering
     categoryColumns: [
-      "state_territory",
-      "party",
-      "school",
-      "birth_state_territory",
-      "gender",
+      "top_500_title",
+      "author",
+      'genre'
 
-      // binary flags as categories for easy faceting
-      "college_attendance",
-      "ivy_attendance",
-      "lawyer",
-      "military_service",
-      "born_in_state_territory",
-      "intl_born"
     ],
 
     // Default sort: by state, then governor
@@ -952,9 +828,9 @@ generateTabulatorTableFromCSV(
     sortOrders: ["asc", "asc"],
 
     // Buttons (kept the same IDs you used)
-    buttonContainerId: "#button-container2",
-    rawButtonId: "#download-raw2",
-    urlCopyButtonId: "#copy-url2",
+    buttonContainerId: "#button-container1",
+    rawButtonId: "#download-raw1",
+    urlCopyButtonId: "#copy-url1",
 
     // Optional: if your helper supports label maps for 1/0 columns, this is handy.
     // booleanLabelColumns: {
@@ -967,6 +843,8 @@ generateTabulatorTableFromCSV(
     // }
   }
 );
+
+
 
 
 ```
