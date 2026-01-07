@@ -58,7 +58,7 @@ bibliography: ../../references/references.bib
 
 ## Introduction
 
-This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@baccini2021explainingGupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [a mirrored version of the SPL Checkout Data](https://zenodo.org/records/15792698) recording checkouts from 2005 up till Feb 2025. 
+This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@Gupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@Walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [a mirrored version of the SPL Checkout Data](https://zenodo.org/records/15792698) recording checkouts from 2005 up till Feb 2025. 
 
 ::: {.callout-tip icon="false"}
 ## Brief Survey
@@ -91,38 +91,30 @@ generateTabulatorTableFromCSV(
       "author",
       "checkoutyear",
       "checkoutmonth",
-      "checkouts",
-      'top_500_rank'
+      'top_500_rank',
       'pub_year',
-      'genre'
+      'genre',
 
       // Specific SPL Record
       "title",
       "creator",
+      "checkouts",
 
       // Long description
     ],
 
     columnPopups: [
-      "U.S. state or territory governed.",
-      "Governor’s name.",
-      "Political party affiliation.",
-      "First year they served as governor.",
-      "Spans/terms served (as listed in the bio).",
+      "Title of the matched Top 500 Novel",
+      "Corresponding Author from the Top 500 Dataset",
+      "Year of Checkout",
+      "Month of Checkout",
+      "Rank in the top 500 novel dataframe",
+      "Year of Publication",
+      "Assigned Genre label From the Top 500 dataset",
 
-      "Primary college or university listed (if any).",
-      "Did the governor attend college? (1/0).",
-      "Did the governor attend an Ivy League school? (1/0).",
-      "Is/was the governor a lawyer? (1/0).",
-      "Did the governor serve in the military? (1/0).",
-
-      "Birth state or territory.",
-      "Birth date (YYYY-MM-DD where available).",
-      "Age at the start of first term.",
-      "Gender as recorded in the dataset.",
-      "Whether born in the state/territory they govern (1/0).",
-      "Whether born outside the U.S. (1/0).",
-      "Details about international birthplace if applicable.",
+      "Title in the SPL data",
+      "Creator in the SPL data",
+      "# of Checkouts of the SPL entry in the given month and year",
 
     ],
 
@@ -307,7 +299,7 @@ After merging with the Seattle Public Library Checkout Data, we also provide the
 - **Publisher:** The publisher of the title. 
 - **PublicationYear:** The year from the catalog record in which the item was published, printed, or copyrighted. 
 
-Note that we provide two titles and two different author fields, one is sourced from the Top 500 Novels List, and the other from the SPL Checkout Data. Reconciling book data is problem, and different versions and editions of the same text can have slightly different title and author variants. 
+Note that we provide two titles and two different author fields, one is sourced from the Top 500 Novels List, and the other from the SPL Checkout Data. Reconciling book data is difficult, and different versions and editions of the same text can have slightly different title and author variants. 
 
 
 
@@ -317,7 +309,7 @@ For more details on the Top 500 novel list, refer to the initial [post](https://
 
 ## Why Was The Data Collected? How Is The Data Used?
 
-The data collected here is part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. Studying literary popularity is difficult; book sales data is proprietary and inaccessible to individuals outside of the publishing industry. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018, @sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones. 
+The data collected here is part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. Studying literary popularity is difficult; book sales data is proprietary and inaccessible to individuals outside of the publishing industry. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018] [@sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones. 
 
 ## How Was The Data Collected?
 
@@ -365,6 +357,7 @@ We verify that relationship by generating timeseries of authors who died in the 
 
 # too big
 # library(tidyverse)
+from datetime import date
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.dates as mdates
@@ -373,7 +366,7 @@ import numpy as np
 
 
 # Load Top 500 SPL Data
-gov_dataset = pd.read.csv("https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv")
+top_500_df = pd.read_csv("https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv")
 
 dead_authors = (
     top_500_df
@@ -727,7 +720,16 @@ for genre, df_g in top_500_df.groupby('genre'):
     mask = np.triu(np.ones(corr_matrix.shape), k=1).astype(bool)
     mean_corr = corr_matrix.where(mask).stack().mean()
     genre_correlations[genre] = mean_corr
-print(genre_correlations)
+
+# Create a nice-looking DataFrame table
+genre_corr_df = pd.DataFrame(
+    list(genre_correlations.items()), 
+    columns=['Genre', 'Mean Correlation']
+).sort_values('Mean Correlation', ascending=False).reset_index(drop=True)
+
+genre_corr_df['Mean Correlation'] = genre_corr_df['Mean Correlation'].round(3)
+
+print(genre_corr_df.to_string(index=False))
 
 ```
 
@@ -769,38 +771,30 @@ generateTabulatorTableFromCSV(
       "author",
       "checkoutyear",
       "checkoutmonth",
-      "checkouts",
-      'top_500_rank'
+      'top_500_rank',
       'pub_year',
-      'genre'
+      'genre',
 
       // Specific SPL Record
       "title",
       "creator",
+      "checkouts",
 
       // Long description
     ],
 
     columnPopups: [
-      "U.S. state or territory governed.",
-      "Governor’s name.",
-      "Political party affiliation.",
-      "First year they served as governor.",
-      "Spans/terms served (as listed in the bio).",
+      "Title of the matched Top 500 Novel",
+      "Corresponding Author from the Top 500 Dataset",
+      "Year of Checkout",
+      "Month of Checkout",
+      "Rank in the top 500 novel dataframe",
+      "Year of Publication",
+      "Assigned Genre label From the Top 500 dataset",
 
-      "Primary college or university listed (if any).",
-      "Did the governor attend college? (1/0).",
-      "Did the governor attend an Ivy League school? (1/0).",
-      "Is/was the governor a lawyer? (1/0).",
-      "Did the governor serve in the military? (1/0).",
-
-      "Birth state or territory.",
-      "Birth date (YYYY-MM-DD where available).",
-      "Age at the start of first term.",
-      "Gender as recorded in the dataset.",
-      "Whether born in the state/territory they govern (1/0).",
-      "Whether born outside the U.S. (1/0).",
-      "Details about international birthplace if applicable.",
+      "Title in the SPL data",
+      "Creator in the SPL data",
+      "# of Checkouts of the SPL entry in the given month and year",
 
     ],
 
@@ -843,8 +837,6 @@ generateTabulatorTableFromCSV(
     // }
   }
 );
-
-
 
 
 ```
