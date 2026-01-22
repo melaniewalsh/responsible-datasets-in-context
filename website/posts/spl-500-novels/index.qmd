@@ -1,6 +1,6 @@
 ---
 title: "Top 500 “Greatest” Novels (1021-2015) in Seattle Public Library Checkout Data"
-author: Neel Gupta, Melanie Walsh
+author: Neel Gupta
 date: "2025-12"
 categories: [libraries, literature, readers, circulation, metadata, draft]
 image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Seattle_Public_Library_logo.svg"
@@ -53,12 +53,12 @@ listing:
 bibliography: ../../references/references.bib
 ---
 
-:::::::::::::::::::: {.panel-tabset .nav-pills}
+::::::::::::::::::: {.panel-tabset .nav-pills}
 # Data Essay {#data-essay .tab-pane}
 
 ## Introduction
 
-This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@Gupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@Walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [a mirrored version of the SPL Checkout Data](https://zenodo.org/records/15792698) recording checkouts from 2005 up till Feb 2025. 
+This dataset contains library circulation information for books in the The Top 500 "Greatest" Novels list, the set of novels most widely held in libraries according to [OCLC](https://www.oclc.org/en/about.html?cmpid=md_ab). The [Seattle Public Library (SPL) Checkout Data](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) is one of the only publically available sources on circulation and popularity of literary texts [@Gupta_Christensen_Walsh_2025], due to the unavailability of proprietary book sales data [@Walsh2024]. The dataset presented here is a combination of both the [top 500 "Greatest" novels dataset published on this site](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), and [a mirrored version of the SPL Checkout Data](https://zenodo.org/records/15792698) recording checkouts from 2005 up till Feb 2025.
 
 ::: {.callout-tip icon="false"}
 ## Brief Survey
@@ -235,8 +235,26 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 
 ## What's in the data?
 
-The dataset contains extensive metadata information on the top 500 novels list, borrowed from our previous [RDIC post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html). 
 
+From the Seattle Public Library Checkout data, we inherit the following columns.
+
+
+-   **UsageClass:** Denotes if the item is “physical” or “digital.”
+-   **CheckoutType:** Denotes the vendor tool used to check out the item.
+-   **MaterialType:** Describes the type of item checked out (examples: book, song, movie, music, magazine).
+-   **CheckoutYear:** The 4-digit year of checkout for this record.
+-   **CheckoutMonth:** The month of checkout for this record.
+-   **Checkouts:** A count of the number of times the title was checked out within the “Checkout Month.”
+-   **ISBN:** A comma-separated list of ISBNs associated with the item record for the checkout. 
+-   **Title:** The full title and subtitle of an individual item. 
+-   **Creator:** The author or entity responsible for authoring the item according to the SPL.
+-   **Subjects:** The subject of the item as it appears in the catalog.
+-   **Publisher:** The publisher of the title.
+-   **PublicationYear:** The year from the catalog record in which the item was published, printed, or copyrighted.
+
+The dataset contains extensive metadata information on the top 500 novels list, borrowed from our previous [RDIC post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html).
+
+::: {.callout-note collapse="true" title="Click to view all metadata fields"}
 
 ### Basic info on novels:
 
@@ -283,69 +301,145 @@ The dataset contains extensive metadata information on the top 500 novels list, 
 -   **PG_ORIG_URL:** URL for original-language text (where applicable) on Project Gutenberg.
 -   **FULL_TEXT:** Full text of the novel, if it is in the public domain.
 
-
-After merging with the Seattle Public Library Checkout Data, we also provide the following columns sourced from their dataset:
-
-- **UsageClass:** Denotes if the item is “physical” or “digital.” 
-- **CheckoutType:** Denotes the vendor tool used to check out the item. 
-- **MaterialType:** Describes the type of item checked out (examples: book, song, movie, music, magazine). 
-- **CheckoutYear:** The 4-digit year of checkout for this record. 
-- **CheckoutMonth:** The month of checkout for this record. 
-- **Checkouts:** A count of the number of times the title was checked out within the “Checkout Month.” 
-- **ISBN:** A comma-separated list of ISBNs associated with the item record for the checkout. (Text)
-- **Title:** The full title and subtitle of an individual item. (Text)
-- **Creator:** The author or entity responsible for authoring the item according to the SPL. 
-- **Subjects:** The subject of the item as it appears in the catalog. 
-- **Publisher:** The publisher of the title. 
-- **PublicationYear:** The year from the catalog record in which the item was published, printed, or copyrighted. 
+:::
 
 Note that we provide two titles and two different author fields, one is sourced from the Top 500 Novels List, and the other from the SPL Checkout Data. Reconciling book data is difficult, and different versions and editions of the same text can have slightly different title and author variants. 
 
-
-
 ## Where Did The Data Come From? Who Collected It?
 
-For more details on the Top 500 novel list, refer to the initial [post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html). The SPL dataset was organized by David Christensen, Data Analysis Lead at the Seattle Public Library. The Data from 2005 to 2016 in this dataset is from the digital artwork, “Making Visible the Invisible,” by studios of George Legrady.
-
+For more details on the Top 500 novel list, refer to the initial [post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html) written by Anna Preus and Aashna Sheth which summarizes the library criterion and processes used to generate the source list of texts in the first place. The SPL dataset was organized by David Christensen, Data Analysis Lead at the Seattle Public Library. The data from 2005 to 2016 is originally from the digital artwork, “Making Visible the Invisible,” by studios of George Legrady. To my knowledge, the SPL is the only library to release checkout data by item with this level of temporal detail in the United States. Their published data is a result of the [Seattle Open Data Program](https://www.seattle.gov/tech/reports-and-data/open-data), which is an initiative designed to increase transparency into city operations for the public. 
 ## Why Was The Data Collected? How Is The Data Used?
 
-The data collected here is part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. Studying literary popularity is difficult; book sales data is proprietary and inaccessible to individuals outside of the publishing industry. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018] [@sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones. 
+While the SPL uses the data internally to help inform inventory, purchasing behavior, and specific programs, we as researchers are interested in using checkout data to study cultural trends at scale. Thus, the data collected here is a subset of the original SPL open checkout data, and part of an [ongoing project](https://melaniewalsh.github.io/whats-seattle-reading/) to reveal the dynamics of literary popularity through the SPL checkout data. While a powerful resource, the SPL checkout data, like all book data, struggles with persistent book identifiers. The same underlying work can often have different editions, author name variants, and metadata. It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpuses of interest [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. The Top 500 Novels Dataset is compelling because it presents a set of works that have persisted in popularity and relevance well past publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publishing [@cohen_sentimental_2018] [@sorensen_bestseller_2007]. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones.
 
 ## How Was The Data Collected?
 
-To reconcile the SPL Checkout Data with the top 500 novel data, we employ a multi-step algorithm to capture all the records in the library data that may match one of the novels in our source list. 
+The SPL internal approach to capturing the initial data includes an anonymization process that keeps data collection disconnected from identifiable patrons. The library counts each checkout but uses a de-identification approach at the point of data capture to keep the data anonymous ensuring that even internal researchers can't acess damaging personally identifiable information. 
 
-We first, manipualte the title and author fields in the SPL data to normalize against common variants. For example, many titles have "(unabridged)" appended to them, and many authors have a last name, first name formatting (e.g Collins, Suzanne). Once we've simplified the SPL Checkout Data, to simplified versions of title and creator, we group by those fields to reduce our dataframe down to about 800,000 unique titles. 
+On our side, the most challnging task is merging and reconciling the messy SPL Checkout Data with the curated top 500 novels list.
 
-We then run a two-stage algorithm to pair novels from the Top 500 list to checkout records. We iterate through all 500 of our novels and compare first the last name of the author to the creator field in the SPL, checking if the creator field contains the last name of the author somewhere in its text. We then use the [Python RapidFuzz library](https://rapidfuzz.github.io/RapidFuzz/) to run a fuzzy matching of thte top 500 title against the title field in the SPL data. We use the [Partial Ratio](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html) algorithm which identifies the optimal alignment of the shorter string in the longer string. We use a threshold of 85. 
+To reconcile the SPL Checkout Data with the top 500 novel data, we employ a multi-step algorithm to capture all the records in the library data that may match one of the novels in our source list.
 
-For an example of how this algorithm is working, consider the novel Catching Fire by Suzanne Collins. A matching SPL record has the title as Catching Fire: (movie tie in edition), the Partial Ratio algorithm returns a perfect 100 match between this title and the true title, Catching Fire. Our algorithm is designed to have high recall, rather than precision. In other words, we would rather identify more matches that could be wrong, than miss matches that could be right. Our preference for recall over precision is because there are TONS of books in the dataset, once we have a list of matching records, we can manually look at matches to ensure accuracy. It is much more difficult to identify matches in the first place from over 800,000 unique titles! 
+We first, manipulate the title and author fields in the SPL data to normalize against common variants. For example, many titles have "(unabridged)" appended to them, and many authors have a last name, first name formatting (e.g Collins, Suzanne). Once we've simplified the SPL Checkout Data, to simplified versions of title and creator, we group by those fields to reduce our dataframe down to about 800,000 unique titles.
 
-Importantly, the recall of our algorithm will not be perfect, and we will miss some editions that should be clustered in. For example, alternate language editions that lack the English title will often fail the Fuzzy Match. For example, Stendhal's The Red and the Black in French is titled Le Rouge et le Noir, which will not pass our fuzzy matching threshold (luckily we're only missing 11 checkouts from the French edition).  
+We then run a two-stage algorithm to pair novels from the Top 500 list to checkout records. We iterate through all 500 of our novels and compare first the last name of the author to the creator field in the SPL, checking if the creator field contains the last name of the author somewhere in its text. We then use the [Python RapidFuzz library](https://rapidfuzz.github.io/RapidFuzz/) to run a fuzzy matching of the top 500 title against the title field in the SPL data. We use the [Partial Ratio](https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html) algorithm which identifies the optimal alignment of the shorter string in the longer string. We use a threshold of 85.
 
-Our algorithm returns matches for every single novel on our list! But because of our high recall approach, we need to filter out mismatches. For example, Khaled Hosseini's A Thousands Splendid Suns got matched onto the record, And the Mountains Echoed by the Bestselling Author of the Kite Runner and a Thousand Splendid Suns. These types of cases require manual oversight to filter out. 
+For an example of how this algorithm is working, consider the novel *Catching Fire* by Suzanne Collins. A matching SPL record has the title as *Catching Fire: (movie tie in edition)*. The Partial Ratio algorithm returns a perfect 100 match between this title and the true title, *Catching Fire*. Our algorithm is designed to have high *recall*, rather than *precision*. In other words, we would rather identify more matches that could be wrong, than miss matches that could be right. Our preference for recall over precision is because there are TONS of books in the dataset, once we have a list of matching records, we can manually look at matches to ensure accuracy. It is much more difficult to identify matches in the first place from over 800,000 unique titles! 
 
-Our approach has a couple of systematic failures besides weird edge cases. Book series where only the first entry is in the list (Artemis Fowl, Diary of a Wimpy Kid, The Maze Runner etc.) often return all the matching entries from the series, because each future title references the original title. These were excluded manually. 
+Still, the recall of our algorithm will not be perfect, and we will miss some editions that should be clustered in. For example, alternate language editions that lack the English title will often fail the Fuzzy Match. For example, Stendhal's *The Red and the Black* in French is titled Le Rouge et le Noir, which will not pass our fuzzy matching threshold (luckily we're only missing 11 checkouts from the French edition).
 
-An interesting case we often see when matching library data to these popular novels is dealing with checked out titles that contain more than one text. Think the entire Lord of The Rings Trilogy in one large volume. We make the decision to map checkouts for the entire Lord of the Rings Trilogy to each of it's entries in the Top 500 List, meaning that one checkout is being counted three separate times in this new dataset. 
+Our algorithm returns matches for every single novel on our list! But because of our high recall approach, we need to filter out mismatches. For example, Khaled Hosseini's *A Thousands Splendid Suns* got matched onto the record, *And the Mountains Echoed by the Bestselling Author of the Kite Runner and a Thousand Splendid Suns*. These types of cases require manual oversight to filter out.
 
+Our approach has a couple of systematic failures besides weird edge cases. Book series where only the first entry is in the list (*Artemis Fowl*, *Diary of a Wimpy Kid*, *The Maze Runner* etc.) often return all the matching entries from the series, because each future title references the original title. These were excluded manually.
 
-
+An interesting case we often see when matching library data to these popular novels is dealing with checked out titles that contain more than one text. Think the entire *Lord of The Rings Trilogy* in one large volume. We make the decision to map checkouts for the entire *Lord of the Rings Trilogy* to each of it's entries in the Top 500 List, meaning that one checkout is being counted three separate times in this new dataset.
 
 ## Uncertainty in the Data
 
-We do not claim our matching to be perfect. Besides alternate language editions, it is likely that other strange variants have been missed by our method. Additionally, the SPL Checkout Data is not a perfect proxy for book popularity. Library checkout data is affected by regional dynamics, library programming, and the nature of the library system [@Gupta_Christensen_Walsh_2025, @Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. 
+We do not claim our matching to be perfect. Besides alternate language editions, it is likely that other strange variants have been missed by our method. Additionally, the SPL Checkout Data is not a perfect proxy for book popularity. Library checkout data is affected by regional dynamics, library programming, and the nature of the library system [@Gupta_Christensen_Walsh_2025, @Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025]. Perfect matching would require large-scale manual inspection, part of the reason why this type of book reconciliation work is difficult and labor intensive. 
 
-Library checkouts have risen over time, partly due to increased participation in the library system and the rise of digital books. As a result, library checkout data does not represent a stable configuration of patrons engaging in consistent checkout behavior. Users should not treat the longitudinal checkout data as homogeneously representing the same relationship to readership across the time series. 
+We also don't know specifically what a library checkout *means.* What do library checkouts even measure? Does a library checkout correspond with a discrete "read" if a book. Do library checkouts correlate with book purchasing behavior form the same region? Do checkouts from the Seattle system indicate national interest from library patrons or just regional interest? These are difficult questions to answer, and we talk more about how we can use library checkouts as proxies for constructs of interest in our source pice [@Gupta_Christensen_Walsh_2025]. 
 
+Library checkouts have risen over time, partly due to increased participation in the library system and the rise of digital books. As a result, library checkout data does not represent a stable configuration of patrons engaging in consistent checkout behavior. Users should not treat the longitudinal checkout data as homogeneously representing the same relationship to readership across the time series. In other words, be careful about making long-frame timeseries comparisons. Increases and decreases in number of checkouts often need to be contextualized against changing library policies, the proliferation of different licensing models and digital alternatives, and other confounding variables. 
 
 ## What can we do with the data?
 
+### Top 10 Authors' and Books in the Dataset
+
+The first question we may ask of the data is which of these widely held library book and authors actually get read. To that end, we'll present the top 10 authors below.
+
+```{python}
+#| warning: false
+
+
+# Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/
+
+# install.packages("rmarkdown")
+
+# too big
+# library(tidyverse)
+from datetime import date
+import matplotlib.pyplot as plt
+import seaborn as sns
+import matplotlib.dates as mdates
+import pandas as pd
+import numpy as np
+
+
+# Load Top 500 SPL Data
+top_500_df = pd.read_csv("https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv")
+
+top_authors = (
+    top_500_df
+    .groupby('author')['checkouts']
+    .sum()
+    .sort_values(ascending=False)
+    .head(10)
+    .reset_index()
+    .rename(columns={'author': 'Author', 'checkouts': 'Total Checkouts'})
+)
+
+top_authors['Rank'] = range(1, 11)
+top_authors = top_authors[['Rank', 'Author', 'Total Checkouts']]
+top_authors['Total Checkouts'] = top_authors['Total Checkouts'].apply(lambda x: f"{x:,}")
+
+top_authors.style.hide(axis='index').set_table_styles([
+    {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
+    {'selector': 'td', 'props': [('text-align', 'left')]}
+]).set_caption("Top 10 Authors by Total Checkouts")
+
+
+
+```
+
+Perhaps unsurprisingly, we see J.K. Rowling at the top of the list, in part because of the per-book popularity of the Harry Potter series, and in-part because of the raw number of Harry Potter books in our database. Let's also take a look at the top-10 books as well.
+
+```{python}
+top_books = (
+    top_500_df
+    .groupby('top_500_title')['checkouts']
+    .sum()
+    .sort_values(ascending=False)
+    .head(10)
+    .reset_index()
+    .rename(columns={'top_500_title': 'Title', 'checkouts': 'Total Checkouts'})
+)
+
+top_books['Rank'] = range(1, 11)
+top_books = top_books[['Rank', 'Title', 'Total Checkouts']]
+top_books['Total Checkouts'] = top_books['Total Checkouts'].apply(lambda x: f"{x:,}")
+
+top_books.style.hide(axis='index').set_table_styles([
+    {'selector': 'th', 'props': [('text-align', 'left'), ('font-weight', 'bold')]},
+    {'selector': 'td', 'props': [('text-align', 'left')]}
+]).set_caption("Top 10 Books by Total Checkouts")
+
+
+```
+
+Let's take a look at one of the major books in our dataset, Jane Austen's *Pride and Prejudice* \.
+
+```{python}
+pride_prejudice_checkouts = top_500_df[top_500_df['top_500_title'] == 'Pride and Prejudice']
+pride_prejudice_timeseries = (
+    pride_prejudice_checkouts
+    .groupby('year-month')['checkouts']
+    .sum()
+    .reset_index()
+)
+fig = px.line(pride_prejudice_timeseries, x='year-month', y='checkouts', title='Pride and Prejudice Checkouts Over Time', labels={'year-month': 'Year-Month', 'checkouts': 'Number of Checkouts'})
+fig.show()
+```
+
+
+Austen's novel really grows in the library system in the late 2010s and into the pandemic, with a majority of its reading happening in the last couple of years. Every one of these novels have their own circulation stories, and I encourage readers to explore specific books of interest and think about why their curves look the way that they do. 
+
+
 ### Authorial Death
 
-Thanks to the Top 500 Dataset Creators, we have tons of metadata variables we can play with to identify trends in our data. In our previous piece [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025], we present evidence that authorial death leads to a temporary boost in library checkouts for canonical authors. 
+Thanks to the Top 500 Dataset Creators, we have tons of metadata variables we can play with to identify trends in our data. In our previous piece [@Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025], we present evidence that authorial death leads to a temporary boost in library checkouts for canonical authors.
 
-We verify that relationship by generating timeseries of authors who died in the time of our dataframe. 
+We verify that relationship by generating timeseries of authors who died in the time of our dataframe.
 
 ```{python}
 #| warning: false
@@ -416,6 +510,8 @@ author_death_dates = {
     "William Styron": date(2006, 11, 1),
 }
 
+
+
 dead_authors['author_death_date'] = dead_authors['author'].map(author_death_dates)
 dead_authors['author_death_ts'] = pd.to_datetime(dead_authors['author_death_date'])
 sns.set(style="whitegrid")
@@ -432,6 +528,8 @@ dead_authors['date'] = pd.to_datetime(
     )
 )
 
+
+
 # ensure death timestamp exists and is datetime
 dead_authors['author_death_ts'] = pd.to_datetime(
     dead_authors['author_death_date'], format="%Y", errors="coerce"
@@ -440,6 +538,11 @@ dead_authors['author_death_ts'] = pd.to_datetime(
 # Map each author to a fixed color
 author_list = sorted(dead_authors['author'].unique())
 author_color_map = {author: palette[i % len(palette)] for i, author in enumerate(author_list)}
+
+
+#filter down to a subset of dead_authors
+
+dead_authors = dead_authors[dead_authors['author'].isin(['Beverly Cleary', "Chinua Achebe", "Cormac McCarthy", "John Le Carré", "Ray Bradbury", "Toni Morrison", "J.D. Salinger"])]
 
 for author, df_a in dead_authors.groupby('author'):
     death_date = df_a['author_death_ts'].iloc[0]
@@ -480,21 +583,15 @@ for author, df_a in dead_authors.groupby('author'):
 
 ```
 
-
-Almost across the board, we notice that checkouts of an author lines up with their death. Exceptions tend to be authors who have incredibly low checkout density. 
+We display seven prominent authors who died in the timeframe, and we encourage readers to explore the rest of the authorial deaths on their own.
 
 ### Backlist Titles
 
+[@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. Books by the same author affect each other's success. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest.
 
+We can test this by looking at the Pearson correlation coefficients between books by the same author.
 
-[@berglund_is_2021] presents evidence from Scandinavian fiction that an author's new releases boosts interest in their previous titles. Books by the same author effect each other's success. The top 500 list has 89 different authors that have multiple releases. One question we might ask is whether works by the same author tend to have similar dynamics of interest. 
-
-We can test this by looking at the Pearson correlation coefficients between books by the same author. 
-
-
-
-
-We grabbed the mean correlations between each author's books, and got a value of 0.42. In other words, on average, 42% of a book's variance in the checkout data can be explained by a different book by the same author. 
+We grabbed the mean correlations between each author's books, and got a value of 0.42. In other words, on average, 42% of a book's variance in the checkout data can be explained by a different book by the same author.
 
 ```{python}
 
@@ -578,7 +675,7 @@ mean_correlation = correlation_matrix.where(mask).stack().mean()
 print(mean_correlation)
 ```
 
-Let's look at a few specific examples. A lot of books by the same author belong to book series. For example, all of J.K. Rowling's Harry Potter books are in the top 500 corpus, so we can generate a correlation heatmap for her books.
+Let's look at a few specific examples. A lot of books by the same author belong to book series. For example, all of J.K. Rowling's *Harry Potter* books are in the top 500 corpus, so we can generate a correlation heatmap for her books.
 
 ```{python}
 
@@ -605,37 +702,36 @@ if jk_corr is not None:
 
 ```
 
-The heatmap is really striking, the middle four books of the series are highly correlated with each other, while the first book and the final two seem to have their own dynamics.  
+The heatmap is really striking, the middle four books of the series are highly correlated with each other, while the first book and the final two seem to have their own dynamics.
 
-Let's look at some timeseries to figure out what's going on with the edge books! 
+Let's look at some timeseries to figure out what's going on with the edge books!
 
-First, the Prisoner of Azkaban vs. the Chamber of Secrets
-
+First, *The Prisoner of Azkaban* vs. *The Chamber of Secrets*
 
 ```{python}
 
 wide_df[["Harry Potter and the Sorcerer's Stone", "Harry Potter and the Chamber of Secrets"]].plot()
 ```
 
-These have a correlation coefficient of 0.97 and that lines up with what we're seeing in the timeseries. 
+These have a correlation coefficient of 0.97 and that lines up with what we're seeing in the timeseries.
 
-How about if we compare the Prisoner of Azkaban to the Sorceror's Stone?
+How about if we compare *The Prisoner of Azkaban* to *The Sorceror's Stone*?
 
 ```{python}
 
 wide_df[["Harry Potter and the Sorcerer's Stone", "Harry Potter and the Prisoner of Azkaban"]].plot()
 ```
 
-They actually track really well together for most of the timeframe, but we see a huge spike for the Sorceror's Stone in 2020, which is going to really confound the correlation coefficient. 
+They actually track really well together for most of the timeframe, but we see a huge spike for *The Sorceror's Stone* in 2020, which is going to really confound the correlation coefficient.
 
-How about the Deathly Hallows and the Half-Blood Prince? 
+How about *The Deathly Hallows* and *The Half-Blood Prince*?
 
 ```{python}
 
 wide_df[["Harry Potter and the Deathly Hallows", "Harry Potter and the Half-Blood Prince"]].plot()
 ```
 
-These have a more obvious explanation. Both these books actually are released in the SPL timeframe, and have large numbers of checkouts following their release at the start of their timeseries. This follows what we know about how books function commercially, where a large share of their sales is immediately around their release [@sorensen_bestseller_2007]. Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up! 
+These have a more obvious explanation. Both these books actually are released in the SPL timeframe, and have large numbers of checkouts following their release at the start of their timeseries. This follows what we know about how books function commercially, where a large share of their sales come immediately around their release [@sorensen_bestseller_2007]. Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up!
 
 ```{python}
 multi_book_df_post_2009 = multi_book_df[multi_book_df['checkoutyear'] >= 2009]
@@ -690,13 +786,13 @@ if jk_corr_post_2009 is not None:
 
 ```
 
-The high correlation between the books in the series suggest that these books are likely complementary goods, the appeal for one of these books increases with the appeal for the other. Of course this makes sense, readers who finish The Prisoner of Azkaban are likely to move straight onto the Goblet of Fire in quick succession, and the value of any one of these books to a consumer is intrinsically tied to the value of the other books in the series, and the series as a whole. 
+The high correlation between the books in the series suggest that these books are likely complementary goods, the appeal for one of these books increases with the appeal for the other. Of course this makes sense, readers who finish *The Prisoner of Azkaban* are likely to move straight onto *The Goblet of Fire* in quick succession, and the value of any one of these books to a consumer is intrinsically tied to the value of the other books in the series, and the series as a whole.
 
 ### Genres
 
-Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions. 
+Another affordance of the Top 500 Dataset list is its genre table. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their receptions.
 
-We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated. 
+We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated.
 
 ```{python}
 
@@ -733,14 +829,11 @@ print(genre_corr_df.to_string(index=False))
 
 ```
 
-
-
-Sci-FI and Horror are the most internally correlated genres, while Political, Bildung, and Mystery are less internally correlated. 
-
+Sci-FI and Horror are the most internally correlated genres, while Political, Bildung, and Mystery are less internally correlated.
 
 ## Conclusion
 
-The Top 500 SPL Dataframe is an example of what we can do with complex reception data after using manual methods to extract a high fidelity subcorpus. The top 500 novels represents a particularly canonical and popular set of fiction, featuring both contemporary and historical authors, book series, and a diverse set of genres. 
+The Top 500 SPL Dataframe is an example of what we can do with complex reception data after using manual methods to extract a high fidelity subcorpus. The top 500 novels represents a particularly canonical and popular set of fiction, featuring both contemporary and historical authors, book series, and a diverse set of genres. Our work here suggests interesting dynamics to explore within book series, between and within different genres, and around prominent external events that may drive readership. 
 
 ## References
 
@@ -911,7 +1004,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 
 ## Programming Exercises
 
-The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own.
+<!-- The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own. -->
 
 :::: {.panel-tabset .nav-pills}
 # Python
@@ -919,4 +1012,4 @@ The Historical Gubernatorial Dataset is useful as a dataset for presenting inter
 ::: {#exercise-posts-python}
 :::
 ::::
-::::::::::::::::::::
+:::::::::::::::::::
