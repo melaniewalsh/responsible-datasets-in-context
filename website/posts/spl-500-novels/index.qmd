@@ -427,8 +427,22 @@ pride_prejudice_timeseries = (
     .sum()
     .reset_index()
 )
-fig = px.line(pride_prejudice_timeseries, x='year-month', y='checkouts', title='Pride and Prejudice Checkouts Over Time', labels={'year-month': 'Year-Month', 'checkouts': 'Number of Checkouts'})
-fig.show()
+
+# Convert year-month to datetime for better x-axis formatting
+pride_prejudice_timeseries['date'] = pd.to_datetime(pride_prejudice_timeseries['year-month'])
+
+plt.figure(figsize=(12, 5))
+plt.plot(pride_prejudice_timeseries['date'], pride_prejudice_timeseries['checkouts'], linewidth=2)
+plt.title('Pride and Prejudice Checkouts Over Time', fontsize=14, fontweight='bold')
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('Number of Checkouts', fontsize=12)
+
+# Format x-axis to show years only
+plt.gca().xaxis.set_major_locator(mdates.YearLocator(2))
+plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y'))
+plt.xticks(rotation=45)
+plt.tight_layout()
+plt.show()
 ```
 
 
