@@ -358,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="98d505ef" class="cell" data-execution_count="1">
+<div id="314b90e3" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -370,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What are the top 5 birth states for governors?</p>
 <p>Save as <code>top_birth_states</code> and then view the resulting dataframe.</p>
-<div id="d2856ad5" class="cell" data-execution_count="2">
+<div id="e6953142" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="op">=</span> (</span>
@@ -397,7 +397,7 @@ Name: count, dtype: int64</code></pre>
 <p>Let’s now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let’s look at the distribution across the entire dataframe</p>
 <p>First, let’s cut the age_at_start variable into bins, so people between ages 20 and 30 get mapped to 20, 30 and 40 to 30 etc. Let’s call this new column <code>age_bucket</code>. We will use the Pandas function [pd.cut]{https://pandas.pydata.org/docs/reference/api/pandas.cut.html}.</p>
 <p>Now let’s display the <code>value_counts</code> of the <code>age_bucket</code> column and let’s sort by the age.</p>
-<div id="967eeb4c" class="cell" data-execution_count="3">
+<div id="2bb2c3d9" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age_bucket'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'age_at_start'</span>], bins<span class="op">=</span>[<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>])</span>
@@ -419,7 +419,7 @@ Name: count, dtype: int64</code></pre>
 <section id="exercise-3" class="level1">
 <h1>Exercise 3:</h1>
 <p>Let’s look at the outlier governors who started office at or below the age of 30. Let’s filter the dataset down to this set by filtering on the <code>age_at_start</code> column, call it <code>young_governors</code> and display it.</p>
-<div id="237b0394" class="cell" data-execution_count="4">
+<div id="9ea9f2f1" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>young_governors <span class="op">=</span> df[df[<span class="st">'age_at_start'</span>] <span class="op">&lt;=</span> <span class="dv">30</span>]</span>
