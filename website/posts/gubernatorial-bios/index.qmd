@@ -153,6 +153,7 @@ generateTabulatorTableFromCSV(
       "school",
       "birth_state_territory",
       "gender",
+      "race/ethnicity",
 
       // binary flags as categories for easy faceting
       "college_attendance",
@@ -814,6 +815,7 @@ generateTabulatorTableFromCSV(
       "born_in_state_territory",
       "intl_born",
       "intl_born_details",
+      "race/ethnicity",
 
       // Long description
       "bio_text"
