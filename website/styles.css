@@ -11,7 +11,9 @@
     align-items: center;
     text-align: center; */
 }
-
+.references {
+  word-break: break-all;
+}
 #hero-banner .overlay {
     position: absolute;
     top: 0;
@@ -393,3 +395,9 @@ button#quarto-code-tools-menu i::before {
     padding-top: 8px;
     padding-left: 10px;
   } */
+
+/* Prevent Pandoc-inserted <p> tags from adding height inside buttons */
+button p {
+  margin: 0;
+  padding: 0;
+}

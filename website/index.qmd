@@ -11,12 +11,13 @@ listing:
   exclude:
     categories: ["exercise", "solution", "included-content", "discussion", "activities", "audit", "draft"]
     title: "National Park Visitation Data"
-  sort: "date asc"
+  sort: "date desc"
   type: default
   categories: unnumbered 
   sort-ui: false
   filter-ui: true
-  image-height: 200px
+  max-description-length: 500  
+  # image-height: 200px
 repo-actions: false
 description: | 
   Responsible Datasets in Context
