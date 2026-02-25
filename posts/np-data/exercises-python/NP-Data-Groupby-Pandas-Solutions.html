@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     return maxTabsetNumber;
   }
-  
+
 
   // Function to update TOC when tab changes
   function updateActiveTabTOC() {
@@ -356,14 +356,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<p>These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the <a href="../../../posts/np-data/index.html">data essay</a>.</p>
+<p><strong>Concepts covered:</strong></p>
+<ul>
+<li>Groupby with aggregation (mean, count)</li>
+<li>Counting distinct values within groups</li>
+<li>Descriptive statistics by category</li>
+</ul>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="9ee2db73" class="cell" data-execution_count="1">
+<div id="e5296999" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np_data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np_data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 </section>
@@ -371,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What is the average number of visits for <em>each state</em>?</p>
 <p>Save as <code>avg_state_visits</code> and then view the resulting dataframe.</p>
-<div id="30affbbf" class="cell" data-execution_count="2">
+<div id="83826af4" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_state_visits <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -393,152 +400,152 @@ document.addEventListener("DOMContentLoaded", function () {
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
 <td>AK</td>
-<td>1.377887e+05</td>
+<td>1.419814e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
 <td>AR</td>
-<td>1.336286e+06</td>
+<td>1.432561e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
 <td>AS</td>
-<td>1.627135e+04</td>
+<td>1.531890e+04</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
 <td>AZ</td>
-<td>1.840670e+06</td>
+<td>1.862048e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
 <td>CA</td>
-<td>9.730535e+05</td>
+<td>9.978256e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">5</th>
 <td>CO</td>
-<td>1.029783e+06</td>
+<td>1.061889e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">6</th>
 <td>FL</td>
-<td>4.722664e+05</td>
+<td>4.780917e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">7</th>
 <td>HI</td>
-<td>1.307400e+06</td>
+<td>1.295476e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">8</th>
 <td>IN</td>
-<td>1.776658e+06</td>
+<td>1.871786e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">9</th>
 <td>KY</td>
-<td>1.342024e+06</td>
+<td>1.281423e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">10</th>
 <td>ME</td>
-<td>2.909380e+06</td>
+<td>3.001627e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">11</th>
 <td>MI</td>
-<td>1.965193e+04</td>
+<td>2.031413e+04</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">12</th>
 <td>MN</td>
-<td>2.218540e+05</td>
+<td>2.217869e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">13</th>
 <td>MO</td>
-<td>2.465409e+06</td>
+<td>2.419499e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">14</th>
 <td>MT</td>
-<td>2.006450e+06</td>
+<td>2.095725e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">15</th>
 <td>ND</td>
-<td>5.174973e+05</td>
+<td>5.365100e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">16</th>
 <td>NM</td>
-<td>5.423827e+05</td>
+<td>5.442810e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">17</th>
 <td>NV</td>
-<td>8.123107e+04</td>
+<td>8.682670e+04</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">18</th>
 <td>OH</td>
-<td>2.153601e+06</td>
+<td>2.211138e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">19</th>
 <td>OR</td>
-<td>4.796753e+05</td>
+<td>4.866585e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">20</th>
 <td>SC</td>
-<td>8.927681e+04</td>
+<td>1.031458e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">21</th>
 <td>SD</td>
-<td>8.144197e+05</td>
+<td>8.171871e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">22</th>
 <td>TN</td>
-<td>9.506039e+06</td>
+<td>9.822658e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">23</th>
 <td>TX</td>
-<td>2.421379e+05</td>
+<td>2.545897e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">24</th>
 <td>UT</td>
-<td>1.090876e+06</td>
+<td>1.185455e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">25</th>
 <td>VA</td>
-<td>1.518425e+06</td>
+<td>1.524167e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">26</th>
 <td>VI</td>
-<td>5.735757e+05</td>
+<td>5.516879e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">27</th>
 <td>WA</td>
-<td>1.498398e+06</td>
+<td>1.502220e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">28</th>
 <td>WV</td>
-<td>9.854926e+05</td>
+<td>1.055089e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">29</th>
 <td>WY</td>
-<td>2.719573e+06</td>
+<td>2.821491e+06</td>
 </tr>
 </tbody>
 </table>
@@ -552,7 +559,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 2</h1>
 <p>What is the average number of visits for <em>each National Park</em>?</p>
 <p>Save as <code>avg_park_visits</code> and then view the resulting dataframe.</p>
-<div id="3a2660bb" class="cell" data-execution_count="3">
+<div id="89ea2e9c" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_park_visits <span class="op">=</span> np_data.groupby(<span class="st">'ParkName'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -574,27 +581,27 @@ document.addEventListener("DOMContentLoaded", function () {
 <tr class="odd">
 <th data-quarto-table-cell-role="th">0</th>
 <td>Acadia NP</td>
-<td>2.909380e+06</td>
+<td>3.001627e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
 <td>Arches NP</td>
-<td>8.315601e+05</td>
+<td>8.943829e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
 <td>Badlands NP</td>
-<td>1.016205e+06</td>
+<td>1.022876e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
 <td>Big Bend NP</td>
-<td>3.064676e+05</td>
+<td>3.269033e+05</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
 <td>Biscayne NP</td>
-<td>4.485172e+05</td>
+<td>4.636490e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">...</th>
@@ -604,27 +611,27 @@ document.addEventListener("DOMContentLoaded", function () {
 <tr class="odd">
 <th data-quarto-table-cell-role="th">58</th>
 <td>Wind Cave NP</td>
-<td>6.126346e+05</td>
+<td>6.114985e+05</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">59</th>
 <td>Wrangell-St. Elias NP &amp; PRES</td>
-<td>4.733967e+04</td>
+<td>4.934063e+04</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">60</th>
 <td>Yellowstone NP</td>
-<td>3.017686e+06</td>
+<td>3.133457e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">61</th>
 <td>Yosemite NP</td>
-<td>3.448971e+06</td>
+<td>3.474583e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">62</th>
 <td>Zion NP</td>
-<td>2.494319e+06</td>
+<td>2.697032e+06</td>
 </tr>
 </tbody>
 </table>
@@ -639,7 +646,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 3:</h1>
 <p>How many National Parks are there in <em>each state</em>?</p>
 <p>Save your answer as <code>distinct_parks</code>.</p>
-<div id="4dfb21be" class="cell" data-execution_count="4">
+<div id="f91fbc37" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>distinct_parks <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'ParkName'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'NumParks'</span>)</span>

@@ -1,40 +1,19 @@
 [
   {
-    "listing": "/posts/spl-500-novels/index.html",
-    "items": [
-      "/posts/spl-500-novels/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html",
-      "/posts/spl-500-novels/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html"
-    ]
-  },
-  {
-    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
-    "items": [
-      "/posts/african-american-periodical-poetry/exercises/aa_eda.html"
-    ]
-  },
-  {
-    "listing": "/posts/top-500-novels/top-500-novels.html",
-    "items": [
-      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
-    ]
-  },
-  {
-    "listing": "/posts/gubernatorial-bios/index.html",
-    "items": [
-      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html",
-      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html"
-    ]
-  },
-  {
     "listing": "/posts/np-data/index.html",
     "items": [
       "/posts/np-data/exercises-r/NP-Data-Groupby-Solutions.html",
       "/posts/np-data/exercises-r/NP-Data-Groupby.html",
+      "/posts/np-data/exercises-r/Ggplot-Customization-NP-Exercise.html",
       "/posts/np-data/exercises-r/Intro-to-DPLYR-NP-Solutions.html",
       "/posts/np-data/exercises-r/Intro-to-DPLYR-NP.html",
       "/posts/np-data/exercises-r/Ggplot-Customization-NP-Solutions.html",
       "/posts/np-data/exercises-python/NP-Data-Groupby-Pandas.html",
-      "/posts/np-data/exercises-python/NP-Data-Groupby-Pandas-Solutions.html"
+      "/posts/np-data/exercises-python/NP-Data-Groupby-Pandas-Solutions.html",
+      "/posts/np-data/exercises-python/Intro-to-Pandas-NP-Solutions.html",
+      "/posts/np-data/exercises-python/Matplotlib-Customization-NP-Exercise.html",
+      "/posts/np-data/exercises-python/Matplotlib-Customization-NP-Solutions.html",
+      "/posts/np-data/exercises-python/Intro-to-Pandas-NP-Exercise.html"
     ]
   },
   {
@@ -47,6 +26,41 @@
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
       "/posts/np-data/index.html",
       "/posts/early-african-american-film/index.html"
+    ]
+  },
+  {
+    "listing": "/posts/gubernatorial-bios/index.html",
+    "items": [
+      "/posts/gubernatorial-bios/exercises-r/Gubernatorial-Data-Value-Counts-Solutions.html",
+      "/posts/gubernatorial-bios/exercises-r/Gubernatorial-Data-Value-Counts-Exercise.html",
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Solutions.html",
+      "/posts/gubernatorial-bios/exercises-python/Gubernatorial-Data-Value-Counts-Exercise.html"
+    ]
+  },
+  {
+    "listing": "/posts/top-500-novels/top-500-novels.html",
+    "items": [
+      "/posts/top-500-novels/exercises/Metadata_Analysis.html"
+    ]
+  },
+  {
+    "listing": "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
+    "items": [
+      "/posts/african-american-periodical-poetry/exercises-python/aa_eda.html",
+      "/posts/african-american-periodical-poetry/exercises-r/aa_eda.html"
+    ]
+  },
+  {
+    "listing": "/posts/spl-500-novels/index.html",
+    "items": [
+      "/posts/spl-500-novels/exercises-r/Norton-Anthology-SPL-Checkouts-Solutions.html",
+      "/posts/spl-500-novels/exercises-r/SPL-Top-500-Data-Exploration-Solutions.html",
+      "/posts/spl-500-novels/exercises-r/SPL-Top-500-Data-Exploration-Exercise.html",
+      "/posts/spl-500-novels/exercises-r/Norton-Anthology-SPL-Checkouts-Exercise.html",
+      "/posts/spl-500-novels/exercises-python/Norton-Anthology-SPL-Checkouts-Solutions.html",
+      "/posts/spl-500-novels/exercises-python/SPL-Top-500-Data-Exploration-Solutions.html",
+      "/posts/spl-500-novels/exercises-python/SPL-Top-500-Data-Exploration-Exercise.html",
+      "/posts/spl-500-novels/exercises-python/Norton-Anthology-SPL-Checkouts-Exercise.html"
     ]
   },
   {
@@ -64,11 +78,12 @@
   {
     "listing": "/team.html",
     "items": [
+      "/team/melanie-walsh/index.html",
       "/team/sylvia-fernandez/index.html",
       "/team/miriam-posner/index.html",
       "/team/anna-preus/index.html",
       "/team/amardeep-singh/index.html",
-      "/team/melanie-walsh/index.html",
+      "/team/neel-gupta/index.html",
       "/team/juan-carlos-garcia/index.html",
       "/team/katherine-hennessey/index.html",
       "/team/paulina-hernandez-trejo/index.html",

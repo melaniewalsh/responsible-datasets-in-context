@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     return maxTabsetNumber;
   }
-  
+
 
   // Function to update TOC when tab changes
   function updateActiveTabTOC() {
@@ -352,11 +352,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+<p>These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the <a href="../../../posts/np-data/index.html">data essay</a>.</p>
+<p><strong>Concepts covered:</strong></p>
+<ul>
+<li>Groupby with aggregation (mean, count)</li>
+<li>Counting distinct values within groups</li>
+<li>Descriptive statistics by category</li>
+</ul>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np_data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>np_data <span class="op">=</span> pd.read_csv(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="exercise-1" class="level1">
 <h1>Exercise 1</h1>

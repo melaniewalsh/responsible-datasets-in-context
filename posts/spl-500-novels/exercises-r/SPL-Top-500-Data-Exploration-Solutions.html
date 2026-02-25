@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2026-02-25">
+
+<title>SPL Top 500 Data Exploration (Solution) – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="SPL Top 500 Data Exploration (Solution) – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/posts/spl-500-novels/exercises-r/SPL-Top-500-Data-Exploration-Solutions_files/figure-html/unnamed-chunk-4-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">SPL Top 500 Data Exploration (Solution)</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">dplyr</div>
+                <div class="quarto-category">exercise</div>
+                <div class="quarto-category">solution</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 25, 2026</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="solution" class="level1">
+<h1><span style="color:red;"> Solution </span></h1>
+<section id="spl-top-500-data-exploration" class="level2">
+<h2 class="anchored" data-anchor-id="spl-top-500-data-exploration">SPL Top 500 Data Exploration</h2>
+<p><span style="color:green;"> <a href="../../../posts/spl-500-novels/exercises-r/SPL-Top-500-Data-Exploration-Exercise.html">Exercise Without Solutions</a> </span></p>
+<p>These exercises explore checkout data from the Seattle Public Library for the Top 500 “Greatest” Novels — the novels most widely held in libraries according to OCLC. For more context about the dataset, see the <a href="../../../posts/spl-500-novels/index.html">data essay</a>.</p>
+<p><strong>Concepts covered:</strong></p>
+<ul>
+<li>Groupby and aggregation (sum of checkouts)</li>
+<li>Sorting and ranking (top N values)</li>
+<li>Time series line plots (monthly checkouts over time)</li>
+<li>String filtering (finding titles that contain a keyword)</li>
+<li>Pivot tables</li>
+<li>Correlation matrices and heatmaps — a correlation coefficient measures how closely two variables move together, ranging from -1 (perfect inverse relationship) to 1 (perfect positive relationship), with 0 meaning no relationship</li>
+</ul>
+</section>
+</section>
+<section id="load-the-data" class="level1">
+<h1>Load the data</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>spl_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv"</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(spl_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 6%">
+<col style="width: 18%">
+<col style="width: 2%">
+<col style="width: 2%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 4%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 7%">
+<col style="width: 8%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 8%">
+<col style="width: 4%">
+<col style="width: 3%">
+<col style="width: 3%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">X</th>
+<th style="text-align: left;">usageclass</th>
+<th style="text-align: left;">checkouttype</th>
+<th style="text-align: left;">materialtype</th>
+<th style="text-align: right;">checkoutyear</th>
+<th style="text-align: right;">checkoutmonth</th>
+<th style="text-align: right;">checkouts</th>
+<th style="text-align: left;">title</th>
+<th style="text-align: left;">subjects</th>
+<th style="text-align: left;">creator</th>
+<th style="text-align: left;">publisher</th>
+<th style="text-align: left;">publicationyear</th>
+<th style="text-align: left;">isbn</th>
+<th style="text-align: left;">year.month</th>
+<th style="text-align: left;">last_name</th>
+<th style="text-align: left;">first_name</th>
+<th style="text-align: right;">total_checkouts</th>
+<th style="text-align: right;">top_500_rank</th>
+<th style="text-align: left;">top_500_title</th>
+<th style="text-align: left;">author</th>
+<th style="text-align: right;">pub_year</th>
+<th style="text-align: left;">orig_lang</th>
+<th style="text-align: left;">genre</th>
+<th style="text-align: left;">author_birth</th>
+<th style="text-align: left;">author_death</th>
+<th style="text-align: left;">author_gender</th>
+<th style="text-align: left;">author_primary_lang</th>
+<th style="text-align: left;">author_nationality</th>
+<th style="text-align: left;">author_field_of_activity</th>
+<th style="text-align: left;">author_occupation</th>
+<th style="text-align: right;">oclc_holdings</th>
+<th style="text-align: right;">oclc_eholdings</th>
+<th style="text-align: right;">oclc_total_editions</th>
+<th style="text-align: right;">oclc_holdings_rank</th>
+<th style="text-align: right;">oclc_editions_rank</th>
+<th style="text-align: right;">gr_avg_rating</th>
+<th style="text-align: left;">gr_num_ratings</th>
+<th style="text-align: left;">gr_num_reviews</th>
+<th style="text-align: right;">gr_avg_rating_rank</th>
+<th style="text-align: right;">gr_num_ratings_rank</th>
+<th style="text-align: right;">oclc_owi</th>
+<th style="text-align: right;">author_viaf</th>
+<th style="text-align: left;">gr_url</th>
+<th style="text-align: left;">wiki_url</th>
+<th style="text-align: left;">pg_eng_url</th>
+<th style="text-align: left;">pg_orig_url</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Physical</td>
+<td style="text-align: left;">Horizon</td>
+<td style="text-align: left;">BOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">The merry adventures of Robin Hood / Howard Pyle ; illustrated by Scott McKowen.</td>
+<td style="text-align: left;">Robin Hood Legendary character Legends Juvenile literature, Folklore England Juvenile literature</td>
+<td style="text-align: left;">Pyle, Howard, 1853-1911</td>
+<td style="text-align: left;">Sterling Pub.,</td>
+<td style="text-align: left;">2004.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;">pyle</td>
+<td style="text-align: left;">howard</td>
+<td style="text-align: right;">1191</td>
+<td style="text-align: right;">292</td>
+<td style="text-align: left;">The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire</td>
+<td style="text-align: left;">Howard Pyle</td>
+<td style="text-align: right;">1883</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">1853</td>
+<td style="text-align: left;">1911</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: left;">eng</td>
+<td style="text-align: left;">US</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">illustrators,authors</td>
+<td style="text-align: right;">6636</td>
+<td style="text-align: right;">2829</td>
+<td style="text-align: right;">401</td>
+<td style="text-align: right;">389</td>
+<td style="text-align: right;">279</td>
+<td style="text-align: right;">4.07</td>
+<td style="text-align: left;">64,249</td>
+<td style="text-align: left;">1,428</td>
+<td style="text-align: right;">166</td>
+<td style="text-align: right;">370</td>
+<td style="text-align: right;">492274</td>
+<td style="text-align: right;">12428253</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/1277190.The_Merry_Adventures_of_Robin_Hood_of_Great_Renown_in_Nottinghamshire?ref=nav_sb_ss_1_69</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/The_Merry_Adventures_of_Robin_Hood</td>
+<td style="text-align: left;">https://www.gutenberg.org/cache/epub/10148/pg10148.txt</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Physical</td>
+<td style="text-align: left;">Horizon</td>
+<td style="text-align: left;">BOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">King of the Wind; illus. by Wesley Dennis.</td>
+<td style="text-align: left;">Horses Juvenile fiction, Horses Fiction</td>
+<td style="text-align: left;">Henry, Marguerite, 1902-1997</td>
+<td style="text-align: left;">Rand McNally</td>
+<td style="text-align: left;">[1948]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;">henry</td>
+<td style="text-align: left;">marguerite</td>
+<td style="text-align: right;">535</td>
+<td style="text-align: right;">418</td>
+<td style="text-align: left;">King of the Wind</td>
+<td style="text-align: left;">Marguerite Henry</td>
+<td style="text-align: right;">1948</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">history</td>
+<td style="text-align: left;">1902</td>
+<td style="text-align: left;">1997</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: left;">eng</td>
+<td style="text-align: left;">US</td>
+<td style="text-align: left;">childrens literature</td>
+<td style="text-align: left;">author</td>
+<td style="text-align: right;">6702</td>
+<td style="text-align: right;">154</td>
+<td style="text-align: right;">176</td>
+<td style="text-align: right;">377</td>
+<td style="text-align: right;">431</td>
+<td style="text-align: right;">4.21</td>
+<td style="text-align: left;">26,436</td>
+<td style="text-align: left;">920</td>
+<td style="text-align: right;">67</td>
+<td style="text-align: right;">446</td>
+<td style="text-align: right;">102572752</td>
+<td style="text-align: right;">91717300</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/423156.King_of_the_Wind?ref=nav_sb_ss_2_16</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/King_of_the_Wind</td>
+<td style="text-align: left;">NA_not-pub-domain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Physical</td>
+<td style="text-align: left;">Horizon</td>
+<td style="text-align: left;">BOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">A painted house / a novel by John Grisham.</td>
+<td style="text-align: left;">Boys Arkansas Fiction, Cotton growing Arkansas Fiction, Tenant farmers Arkansas Fiction, Mexican American migrant agricultural laborers Arkansas Fiction, Migrant agricultural laborers Ozark Mountains Fiction, Baseball stories, Childrens secrets Fiction, Mystery fiction, Bildungsromans</td>
+<td style="text-align: left;">Grisham, John</td>
+<td style="text-align: left;">Doubleday,</td>
+<td style="text-align: left;">c2001.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;">grisham</td>
+<td style="text-align: left;">john</td>
+<td style="text-align: right;">1619</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: left;">A Painted House</td>
+<td style="text-align: left;">John Grisham</td>
+<td style="text-align: right;">2001</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">1955</td>
+<td style="text-align: left;">ALIVE</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: left;">eng</td>
+<td style="text-align: left;">US</td>
+<td style="text-align: left;">motion pictures production and direction,motion picture authorship,law,fiction authorship,acting</td>
+<td style="text-align: left;">screenwriters,novelists,motion picture producers and directors,lawyers,authors,actors</td>
+<td style="text-align: right;">7091</td>
+<td style="text-align: right;">444</td>
+<td style="text-align: right;">251</td>
+<td style="text-align: right;">334</td>
+<td style="text-align: right;">364</td>
+<td style="text-align: right;">3.75</td>
+<td style="text-align: left;">93,602</td>
+<td style="text-align: left;">4,927</td>
+<td style="text-align: right;">423</td>
+<td style="text-align: right;">331</td>
+<td style="text-align: right;">689042</td>
+<td style="text-align: right;">7449742</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/5360.A_Painted_House?ref=nav_sb_ss_1_15</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/A_Painted_House</td>
+<td style="text-align: left;">NA_not-pub-domain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Physical</td>
+<td style="text-align: left;">Horizon</td>
+<td style="text-align: left;">BOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Don Quijote de la Mancha / Miguel de Cervantes ; con las ilustraciones de Gustavo Doré, grabadas por pisan.</td>
+<td style="text-align: left;">Cervantes Saavedra Miguel de 1547 1616 Don Quixote, Don Quixote Fictitious character Fiction, Spain Social life and customs 16th century Fiction, Historical fiction, Picaresque literature</td>
+<td style="text-align: left;">Cervantes Saavedra, Miguel de, 1547-1616</td>
+<td style="text-align: left;">Edimat Libros,</td>
+<td style="text-align: left;">c1998.</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">150</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Don Quixote</td>
+<td style="text-align: left;">Miguel de Cervantes</td>
+<td style="text-align: right;">1605</td>
+<td style="text-align: left;">Spanish</td>
+<td style="text-align: left;">action</td>
+<td style="text-align: left;">1547</td>
+<td style="text-align: left;">1616</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: left;">spa</td>
+<td style="text-align: left;">ES</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">soldiers,poets spanish,novelists spanish,dramatists spanish,authors spanish</td>
+<td style="text-align: right;">30840</td>
+<td style="text-align: right;">4992</td>
+<td style="text-align: right;">9017</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3.90</td>
+<td style="text-align: left;">269,435</td>
+<td style="text-align: left;">12,053</td>
+<td style="text-align: right;">318</td>
+<td style="text-align: right;">211</td>
+<td style="text-align: right;">1810748013</td>
+<td style="text-align: right;">17220427</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/3836.Don_Quixote?from_search=true&amp;from_srp=true&amp;qid=Npjwg6DCCM&amp;rank=1</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/Don_Quixote</td>
+<td style="text-align: left;">https://www.gutenberg.org/cache/epub/996/pg996.txt</td>
+<td style="text-align: left;">https://www.gutenberg.org/cache/epub/2000/pg2000.txt</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Physical</td>
+<td style="text-align: left;">Horizon</td>
+<td style="text-align: left;">BOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Sula.</td>
+<td style="text-align: left;">African Americans Juvenile fiction, Friendship Fiction</td>
+<td style="text-align: left;">Morrison, Toni</td>
+<td style="text-align: left;">Knopf; [distributed by Random House],</td>
+<td style="text-align: left;">1974 [c1973]</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;">morrison</td>
+<td style="text-align: left;">toni</td>
+<td style="text-align: right;">231</td>
+<td style="text-align: right;">290</td>
+<td style="text-align: left;">Sula</td>
+<td style="text-align: left;">Toni Morrison</td>
+<td style="text-align: right;">1973</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">na</td>
+<td style="text-align: left;">1931</td>
+<td style="text-align: left;">2019</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: left;">eng</td>
+<td style="text-align: left;">US</td>
+<td style="text-align: left;">united states race relations,racism,african americans,african american women,african american girls,literature</td>
+<td style="text-align: left;">english teachers,college teachers,novelists,authors,writers,university and college faculty members,literature teachers,english teachers of</td>
+<td style="text-align: right;">8221</td>
+<td style="text-align: right;">390</td>
+<td style="text-align: right;">367</td>
+<td style="text-align: right;">263</td>
+<td style="text-align: right;">294</td>
+<td style="text-align: right;">4.02</td>
+<td style="text-align: left;">97,287</td>
+<td style="text-align: left;">7,449</td>
+<td style="text-align: right;">207</td>
+<td style="text-align: right;">324</td>
+<td style="text-align: right;">181233</td>
+<td style="text-align: right;">109406177</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/11346.Sula?ref=nav_sb_ss_1_4</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/Sula_(novel)</td>
+<td style="text-align: left;">NA_not-pub-domain</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Digital</td>
+<td style="text-align: left;">OverDrive</td>
+<td style="text-align: left;">EBOOK</td>
+<td style="text-align: right;">2006</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">A Tale of Two Cities</td>
+<td style="text-align: left;">Classic Literature, Fiction, Historical Fiction</td>
+<td style="text-align: left;">Charles Dickens</td>
+<td style="text-align: left;">NuVision Publications</td>
+<td style="text-align: left;">2005</td>
+<td style="text-align: left;">NA</td>
+<td style="text-align: left;">2006-01-01</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">6223</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">A Tale of Two Cities</td>
+<td style="text-align: left;">Charles Dickens</td>
+<td style="text-align: right;">1859</td>
+<td style="text-align: left;">English</td>
+<td style="text-align: left;">history</td>
+<td style="text-align: left;">1812</td>
+<td style="text-align: left;">1870</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: left;">eng</td>
+<td style="text-align: left;">GB</td>
+<td style="text-align: left;">english literature</td>
+<td style="text-align: left;">authors english,writers,novelists</td>
+<td style="text-align: right;">28144</td>
+<td style="text-align: right;">10044</td>
+<td style="text-align: right;">3683</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">17</td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: left;">943,466</td>
+<td style="text-align: left;">23,243</td>
+<td style="text-align: right;">342</td>
+<td style="text-align: right;">86</td>
+<td style="text-align: right;">2487779497</td>
+<td style="text-align: right;">88666393</td>
+<td style="text-align: left;">https://www.goodreads.com/book/show/1953.A_Tale_of_Two_Cities?ref=nav_sb_ss_1_20</td>
+<td style="text-align: left;">https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities</td>
+<td style="text-align: left;">https://www.gutenberg.org/cache/epub/98/pg98.txt</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1" class="level1">
+<h1>Exercise 1</h1>
+<p>Find the top 10 authors and top 10 books by total checkouts in the SPL Top 500 dataset. Display them as tables.</p>
+<p>Save the results as <code>top_authors</code> and <code>top_books</code>.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_authors <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(author) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>top_authors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">author</th>
+<th style="text-align: right;">total_checkouts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">J.K. Rowling</td>
+<td style="text-align: right;">145161</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Suzanne Collins</td>
+<td style="text-align: right;">67500</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Jane Austen</td>
+<td style="text-align: right;">53731</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">J.R.R. Tolkien</td>
+<td style="text-align: right;">52374</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stieg Larsson</td>
+<td style="text-align: right;">45227</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stephen King</td>
+<td style="text-align: right;">39926</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Charles Dickens</td>
+<td style="text-align: right;">37749</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Stephenie Meyer</td>
+<td style="text-align: right;">37370</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gillian Flynn</td>
+<td style="text-align: right;">35366</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">John Grisham</td>
+<td style="text-align: right;">33372</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>top_books <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(top_500_title) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>top_books</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">top_500_title</th>
+<th style="text-align: right;">total_checkouts</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gone Girl</td>
+<td style="text-align: right;">35366</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Handmaid’s Tale</td>
+<td style="text-align: right;">33240</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Harry Potter and the Sorcerer’s Stone</td>
+<td style="text-align: right;">31386</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Book Thief</td>
+<td style="text-align: right;">30549</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Twilight</td>
+<td style="text-align: right;">29289</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">The Hunger Games</td>
+<td style="text-align: right;">27960</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">The Giver</td>
+<td style="text-align: right;">27906</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Pride and Prejudice</td>
+<td style="text-align: right;">27250</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">The Girl on the Train</td>
+<td style="text-align: right;">26610</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A Wrinkle in Time</td>
+<td style="text-align: right;">24762</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Discuss/consider: Which authors and books are most popular at the Seattle Public Library? Are there any surprises?</p>
+</section>
+<section id="exercise-2" class="level1">
+<h1>Exercise 2</h1>
+<p>Create a time series line plot of monthly checkouts for “Pride and Prejudice” over time.</p>
+<p>Filter the data for “Pride and Prejudice”, group by year and month, and plot the results.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pride_df <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(top_500_title <span class="sc">==</span> <span class="st">"Pride and Prejudice"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(checkoutyear, checkoutmonth) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">monthly_checkouts =</span> <span class="fu">sum</span>(checkouts), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste</span>(checkoutyear, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, checkoutmonth), <span class="st">"01"</span>, <span class="at">sep =</span> <span class="st">"-"</span>)))</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pride_df, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> monthly_checkouts)) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Monthly SPL Checkouts for Pride and Prejudice"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Checkouts"</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SPL-Top-500-Data-Exploration-Solutions_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Discuss/consider: What patterns do you notice in the checkout trends? Are there any seasonal patterns or notable changes over time?</p>
+</section>
+<section id="exercise-3" class="level1">
+<h1>Exercise 3</h1>
+<p>Calculate the correlation between the monthly checkout patterns of Harry Potter books and display the results as a heatmap.</p>
+<p>Filter for Harry Potter titles, pivot the data so each book is a column, compute the correlation matrix, and visualize it.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>hp_df <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Harry Potter"</span>, top_500_title, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(top_500_title, checkoutyear, checkoutmonth) <span class="sc">%&gt;%</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">paste</span>(checkoutyear, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, checkoutmonth), <span class="at">sep =</span> <span class="st">"-"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(top_500_title, date, total_checkouts) <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> top_500_title, <span class="at">values_from =</span> total_checkouts, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(hp_df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>date), <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>cor_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(cor_matrix))</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cor_long) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Book1"</span>, <span class="st">"Book2"</span>, <span class="st">"Correlation"</span>)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_long, <span class="fu">aes</span>(<span class="at">x =</span> Book1, <span class="at">y =</span> Book2, <span class="at">fill =</span> Correlation)) <span class="sc">+</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(Correlation, <span class="dv">2</span>)), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">midpoint =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Correlation Between Harry Potter Book Checkouts"</span>,</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="SPL-Top-500-Data-Exploration-Solutions_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Discuss/consider: Which Harry Potter books have the most correlated checkout patterns? What might explain these correlations?</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "SPL Top 500 Data Exploration (Solution)"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2026-02-25"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [dplyr, exercise, solution]</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># &lt;span style="color:red;"&gt; Solution &lt;/span&gt;</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## SPL Top 500 Data Exploration</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color:green;"</span><span class="dt">&gt;</span> <span class="co">[</span><span class="ot">Exercise Without Solutions</span><span class="co">](SPL-Top-500-Data-Exploration-Exercise.qmd)</span> <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>These exercises explore checkout data from the Seattle Public Library for the Top 500 "Greatest" Novels — the novels most widely held in libraries according to OCLC. For more context about the dataset, see the <span class="co">[</span><span class="ot">data essay</span><span class="co">](../index.qmd)</span>.</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>**Concepts covered:**</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Groupby and aggregation (sum of checkouts)</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sorting and ranking (top N values)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Time series line plots (monthly checkouts over time)</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>String filtering (finding titles that contain a keyword)</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pivot tables</span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Correlation matrices and heatmaps — a correlation coefficient measures how closely two variables move together, ranging from -1 (perfect inverse relationship) to 1 (perfect positive relationship), with 0 meaning no relationship</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu"># Load the data</span></span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a>spl_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv"</span>,</span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(spl_df)</span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1</span></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>Find the top 10 authors and top 10 books by total checkouts in the SPL Top 500 dataset. Display them as tables.</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>Save the results as <span class="in">`top_authors`</span> and <span class="in">`top_books`</span>.</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>top_authors <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(author) <span class="sc">%&gt;%</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>top_authors</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>top_books <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(top_500_title) <span class="sc">%&gt;%</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(total_checkouts)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>top_books</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>Discuss/consider: Which authors and books are most popular at the Seattle Public Library? Are there any surprises?</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2</span></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a>Create a time series line plot of monthly checkouts for "Pride and Prejudice" over time.</span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a>Filter the data for "Pride and Prejudice", group by year and month, and plot the results.</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>pride_df <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(top_500_title <span class="sc">==</span> <span class="st">"Pride and Prejudice"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(checkoutyear, checkoutmonth) <span class="sc">%&gt;%</span></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">monthly_checkouts =</span> <span class="fu">sum</span>(checkouts), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">as.Date</span>(<span class="fu">paste</span>(checkoutyear, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, checkoutmonth), <span class="st">"01"</span>, <span class="at">sep =</span> <span class="st">"-"</span>)))</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(pride_df, <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> monthly_checkouts)) <span class="sc">+</span></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"darkgreen"</span>) <span class="sc">+</span></span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Monthly SPL Checkouts for Pride and Prejudice"</span>,</span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Date"</span>, <span class="at">y =</span> <span class="st">"Checkouts"</span>) <span class="sc">+</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a>Discuss/consider: What patterns do you notice in the checkout trends? Are there any seasonal patterns or notable changes over time?</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3</span></span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-108"><a href="#cb9-108" aria-hidden="true" tabindex="-1"></a>Calculate the correlation between the monthly checkout patterns of Harry Potter books and display the results as a heatmap.</span>
+<span id="cb9-109"><a href="#cb9-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-110"><a href="#cb9-110" aria-hidden="true" tabindex="-1"></a>Filter for Harry Potter titles, pivot the data so each book is a column, compute the correlation matrix, and visualize it.</span>
+<span id="cb9-111"><a href="#cb9-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-114"><a href="#cb9-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-115"><a href="#cb9-115" aria-hidden="true" tabindex="-1"></a>hp_df <span class="ot">&lt;-</span> spl_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-116"><a href="#cb9-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">grepl</span>(<span class="st">"Harry Potter"</span>, top_500_title, <span class="at">ignore.case =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-117"><a href="#cb9-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(top_500_title, checkoutyear, checkoutmonth) <span class="sc">%&gt;%</span></span>
+<span id="cb9-118"><a href="#cb9-118" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">total_checkouts =</span> <span class="fu">sum</span>(checkouts), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb9-119"><a href="#cb9-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">date =</span> <span class="fu">paste</span>(checkoutyear, <span class="fu">sprintf</span>(<span class="st">"%02d"</span>, checkoutmonth), <span class="at">sep =</span> <span class="st">"-"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-120"><a href="#cb9-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(top_500_title, date, total_checkouts) <span class="sc">%&gt;%</span></span>
+<span id="cb9-121"><a href="#cb9-121" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from =</span> top_500_title, <span class="at">values_from =</span> total_checkouts, <span class="at">values_fill =</span> <span class="dv">0</span>)</span>
+<span id="cb9-122"><a href="#cb9-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-123"><a href="#cb9-123" aria-hidden="true" tabindex="-1"></a>cor_matrix <span class="ot">&lt;-</span> <span class="fu">cor</span>(hp_df <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>date), <span class="at">use =</span> <span class="st">"complete.obs"</span>)</span>
+<span id="cb9-124"><a href="#cb9-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-125"><a href="#cb9-125" aria-hidden="true" tabindex="-1"></a>cor_long <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">as.table</span>(cor_matrix))</span>
+<span id="cb9-126"><a href="#cb9-126" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(cor_long) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Book1"</span>, <span class="st">"Book2"</span>, <span class="st">"Correlation"</span>)</span>
+<span id="cb9-127"><a href="#cb9-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-128"><a href="#cb9-128" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(cor_long, <span class="fu">aes</span>(<span class="at">x =</span> Book1, <span class="at">y =</span> Book2, <span class="at">fill =</span> Correlation)) <span class="sc">+</span></span>
+<span id="cb9-129"><a href="#cb9-129" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>() <span class="sc">+</span></span>
+<span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">round</span>(Correlation, <span class="dv">2</span>)), <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_gradient2</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">mid =</span> <span class="st">"white"</span>, <span class="at">high =</span> <span class="st">"red"</span>, <span class="at">midpoint =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Correlation Between Harry Potter Book Checkouts"</span>,</span>
+<span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> <span class="st">""</span>)</span>
+<span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-137"><a href="#cb9-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-138"><a href="#cb9-138" aria-hidden="true" tabindex="-1"></a>Discuss/consider: Which Harry Potter books have the most correlated checkout patterns? What might explain these correlations?</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

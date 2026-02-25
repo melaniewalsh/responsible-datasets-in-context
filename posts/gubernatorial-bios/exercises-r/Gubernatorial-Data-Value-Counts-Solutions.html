@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-08-01">
+
+<title>DPLYR Value Counts with Gubernatorial Data (Solution) – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="DPLYR Value Counts with Gubernatorial Data (Solution) – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/posts/gubernatorial-bios/exercises-r/images/responsible-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">DPLYR Value Counts with Gubernatorial Data (Solution)</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">dplyr</div>
+                <div class="quarto-category">exercise</div>
+                <div class="quarto-category">solution</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 1, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="solution" class="level1">
+<h1><span style="color:red;"> Solution </span></h1>
+<section id="dplyr-value-counts-with-gubernatorial-data" class="level2">
+<h2 class="anchored" data-anchor-id="dplyr-value-counts-with-gubernatorial-data">DPLYR Value Counts with Gubernatorial Data</h2>
+<p><span style="color:green;"> <a href="../../../posts/gubernatorial-bios/exercises-r/Gubernatorial-Data-Value-Counts-Exercise.html">Exercise Without Solutions</a> </span></p>
+<p>These exercises use data about U.S. state governors. For more context about the dataset, see the <a href="../../../posts/gubernatorial-bios/index.html">data essay</a>.</p>
+<p><strong>Concepts covered:</strong></p>
+<ul>
+<li>Counting categorical values with <code>count()</code></li>
+<li>Sorting and ranking with <code>arrange()</code></li>
+<li>Binning continuous variables with <code>cut()</code></li>
+<li>Filtering for outliers with <code>filter()</code></li>
+</ul>
+</section>
+</section>
+<section id="load-the-data" class="level1">
+<h1>Load the data</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span>,</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 90%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">X</th>
+<th style="text-align: left;">state_territory</th>
+<th style="text-align: left;">governor</th>
+<th style="text-align: left;">party</th>
+<th style="text-align: right;">first_year</th>
+<th style="text-align: left;">years_in_office</th>
+<th style="text-align: left;">school</th>
+<th style="text-align: left;">birth_state_territory</th>
+<th style="text-align: left;">birth_date</th>
+<th style="text-align: left;">bio_text</th>
+<th style="text-align: right;">college_attendance</th>
+<th style="text-align: right;">ivy_attendance</th>
+<th style="text-align: right;">lawyer</th>
+<th style="text-align: right;">military_service</th>
+<th style="text-align: right;">age_at_start</th>
+<th style="text-align: left;">gender</th>
+<th style="text-align: right;">born_in_state_territory</th>
+<th style="text-align: right;">intl_born</th>
+<th style="text-align: left;">intl_born_details</th>
+<th style="text-align: left;">race.ethnicity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: left;">Alabama</td>
+<td style="text-align: left;">Kay Ivey</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">2017</td>
+<td style="text-align: left;">2017 - 2019 2019 - 2023 2023 - 2025</td>
+<td style="text-align: left;">University of Auburn</td>
+<td style="text-align: left;">Alabama</td>
+<td style="text-align: left;">1944-10-15</td>
+<td style="text-align: left;">Growing up in the small town of Camden in Wilcox County, Alabama, and working on her father’s farm, Kay Ivey was taught the value of hard work and living within one’s means. Her parents instilled the Alabama values of faith, family and community. After graduating from Auburn University in 1967, Kay worked as a high school teacher and a bank officer. She served as Reading Clerk of the Alabama House of Representatives under Speaker Joseph C. McCorquodale and was Assistant Director of the Alabama Development Office, where she worked to spur job creation and economic development across the state. In 2002, Kay became the first Republican elected State Treasurer since Reconstruction, and she was re-elected in 2006. As Treasurer, Kay was committed to making the office more open, transparent, and efficient. Kay was elected Lieutenant Governor in 2010, becoming the first Republican woman to hold the office in Alabama’s history. She again made history on November 4, 2014, by becoming the first Republican Lieutenant Governor re-elected to the office. Governor Ivey has been honored to receive numerous awards for her service to the state of Alabama, including the 2015 ALFA Service to Agriculture Award; Newsmax’s 50 Most Influential Female Republicans in the country; the American Institute of Aeronautics and Astronautics (AIAA) 2016 Public Service Award; and 2017 Citizen of the Year, by River Region Living Magazine. In September 2019, the Alabama-Florida Council of the Boy Scouts of America distinguished Governor Ivey as a Golden Eagle for her ‘scout like service’ and being a trailblazer for women. In 2021, Governor Ivey was awarded the prestigious Army Aviation Order of St.&nbsp;Michael Knight Award. The American Village also presented the governor their highest honor, the Cornerstone of Liberty Award. Most recently, Governor Ivey was presented the inaugural Cognia STEM Champion Award and the Alabama Automotive Manufacturers Association Hall of Fame Award. On April 10, 2017, Governor Ivey was sworn in as the 54th Governor of the state of Alabama in the Old Senate Chamber in the Alabama State Capitol by Acting Chief Justice Lyn Stuart. Following a successful nineteen months in office, the people of Alabama made history again in November 2018 by electing Governor Ivey to a full term. She is the first Lieutenant Governor of Alabama elected to a full term after taking over as governor due to a vacancy in the Governor’s Office. On January 14, 2019, Governor Ivey was officially sworn in for her full term by Associate Justice Will Sellers. Governor Ivey’s first term brought conservative leadership with effective results to make this generation more productive and the next generation more prosperous. Governor Ivey was reelected to a second full term November 2022 in a landslide voting outcome, and she was sworn in January 16, 2023. Noting education, economic development, roads and bridges, broadband expansion, public safety and government reform as the top priorities of her second administration, Governor Ivey vowed to keep Alabama working, ensuring the state’s best days are yet to come. She is a member of the First Baptist Church of Montgomery, the Montgomery Rotary Club and the Board of Directors of the Montgomery YMCA. Governor Ivey is also the first Girls State alumnus to be elected to an Alabama Constitutional Office.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">73</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Alaska</td>
+<td style="text-align: left;">Mike Dunleavy</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">2018</td>
+<td style="text-align: left;">2018 - 2022 2022 - 2025</td>
+<td style="text-align: left;">Misericordia University; University of Alaska Fairbanks</td>
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: left;">1961-05-05</td>
+<td style="text-align: left;">Governor Mike Dunleavy arrived in Alaska in 1983 as a young man looking for opportunity, and he found it. His first job was working in a logging camp in Southeast Alaska. Later on, Governor Dunleavy pursued his dream of becoming a teacher. He earned his teacher’s certificate, and then a Master of Education degree from the University of Alaska Fairbanks. He spent nearly two decades in northwest Arctic communities working as a teacher, principal, and superintendent. Governor Dunleavy and his family moved to Wasilla in 2004, where he owned an educational consulting firm and worked on several educational projects statewide. Dunleavy served on the Mat-Su Borough School Board, with two years as Board President, and then as a state senator for five years. Dunleavy was first elected Governor in 2018 and then again in 2022, making him the first Republican Governor in Alaska to win re-election since 1978. Three days before taking office in 2018, a massive 7.1 magnitude earthquake struck Southcentral Alaska, causing significant damage throughout the region. Eight months later, much of Alaska was on fire, with a total of 2.6 million acres burning that summer. Six months after that, on January 28, 2020, the first plane carrying 201 American evacuees from Wuhan China touched down at the Ted Stevens Airport in Anchorage. State of Alaska officials were given very little warning to prepare to conduct health screenings for a little-understood virus that had yet to be named. It was an eventful first year in office for Governor Dunleavy and it did not slow down. But through it all, he has kept the health of the economy and jobs at the forefront of his Administration’s policy setting initiatives and has been a true champion for the Alaskan business community. Governor Dunleavy’s wife Rose is from the Kobuk River Valley community of Noorvik. Together, they have three children – Maggie, Catherine, and Ceil – who were raised in both rural and urban Alaska. The Dunleavy’s enjoy spending time together as a family, often in Alaska’s great outdoors. Hunting, fishing, snowmachining, and camping are all favorite activities. Governor Dunleavy is focused on moving Alaska forward and believes that our greatest years are yet to come if we work together to maximize our potential.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">57</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: left;">Pula’ali’i Nikolao Pula</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">2025</td>
+<td style="text-align: left;">2025 - 2025</td>
+<td style="text-align: left;">Menlo College; Brigham Young University; George Mason University</td>
+<td style="text-align: left;">American Samoa</td>
+<td style="text-align: left;">1955-12-31</td>
+<td style="text-align: left;">Pula’ali’i Nikolao Iuli Tuiteleleapaga Pula is the youngest son of twelve children of Nikolao Iuli Tuiteleleapaga Pula, Sr.&nbsp;from the village of Leone &amp; Oloalilo Ta’afulisia Simanuali’i Afoa Lutu Molio’o from the villages of Utulei, Fagatogo, and Pago Pago. His father was one of the pioneers of the public school system in American Samoa. His mother was a strong woman of faith that valued honesty and hard work. He is married to his wife Lois Phillips-Pula, Ph.D., a retired professor from the Georgetown University School of Nursing. Pula’ali’i attended Catholic schools in his primary years, and later graduated from Marist Brothers High School, Atu’u, American Samoa as the valedictorian in 1974. He continued his undergraduate studies at Menlo College in Atheron, California, and later continued at Brigham Young University at Provo, Utah. Upon his junior year at BYU Provo, he received his calling in 1978 to serve a mission in Upolu, Savaii, and Tutuila. He would later return to his studies at the George Mason University in Fairfax, Virginia. Upon completion of his mission, Pula worked a short stint at the American Samoa Fono Legislature in the Reference Bureau. In 1981, he relocated to the mainland Washington D.C. and worked for Hawaii Senator Daniel K. Inouye as a special assistant for a year and half. He later worked as a legislative assistant to Congressman Fofo I.F. Sunia of American Samoa, and was the staff director of the Subcommittee on Public Building and Grounds of the House Committee on Public Works and Transportation. While on Capitol Hill for eleven years, he held different positions for both the House of Representatives, and the US Senate; he also worked for Senate Sergeant-at-Arms. In 1993, he later joined the Department of Interior (DOI) Office of Insular Affairs (OIA) as the Policy Desk Officer for the Commonwealth of the Northern Marianas Islands (CNMI), and later he became the Policy Division Director. At OIA from 1999 to 2002, he was immersed in a pivotal role and served as Acting Director of OIA. In August 2002, under the President Bush Administration and despite the expectation of many, Pula Nikolao was appointed as the Director of OIA. The position, normally a political appointee, was pronounced by deputy assistant secretary of Interior David B. Cohen, that because of Pula’s ability to navigate the role, a bipartisan approach was implemented. Cohen further stated about the selection, “Nik has a great amount of credibility with Republicans and Democrats alike, both on Capitol Hill, and in this administration.” Nik would be the first Pacific Islander of Samoan ancestry to be the DOI’s Director of Insular Affairs. During his tenure, he also served as the Acting Assistant Secretary of the Insular Affairs from January-September 2009, and January-February and July 2014. He would serve as the Director of DOI-OIA for the next twenty years from 2002 to 2022 when he retired as a Career (Senior Executive Service) Director of the Office of Insular Affairs of the Department of the Interior.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Asian American and Pacific Islander</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Arizona</td>
+<td style="text-align: left;">Katie Hobbs</td>
+<td style="text-align: left;">Democratic</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">2023 - 2025</td>
+<td style="text-align: left;">Northern Arizona University, Arizona State University</td>
+<td style="text-align: left;">Arizona</td>
+<td style="text-align: left;">1969-12-28</td>
+<td style="text-align: left;">Born and raised in Arizona, Governor Hobbs has spent her life exemplifying hard work and public service. After putting herself through college at both NAU and ASU, she began her career as a social worker working with homeless youth and later helped run one of the largest domestic violence shelters in the country. After seeing her fellow Arizonans continue to struggle with little action from the government, Governor Hobbs decided to take matters into her own hands and run for office. After being elected to the Arizona House in 2010, Governor Hobbs went on to serve in the Arizona State Legislature for four terms, including two as Senate Minority Leader. After working across the aisle to deliver for Arizonans, Governor Hobbs saw an opportunity to use her leadership skills to serve Arizonans across the state. In 2018, she was elected Secretary of State, where she successfully oversaw a contentious election cycle and forcefully defended the votes and voices of every single Arizonan. Seeing her home state at a critical turning point, Governor Hobbs made the decision to run for Governor, and in 2022 was elected the fifth woman, and also fifth Arizona native, to lead the state. With over a decade of public service, Governor Hobbs sees her role in government as a continuation of her social work. In her first term, she has already moved the needle forward on some of our state’s most critical issues, including housing, water security, and economic development. Governor Hobbs approaches every situation and every challenge with a desire to make people’s lives better and give every Arizonan an opportunity to thrive.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Arkansas</td>
+<td style="text-align: left;">Sarah Huckabee Sanders</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">2023</td>
+<td style="text-align: left;">2023 - 2025</td>
+<td style="text-align: left;">Ouachita Baptist University</td>
+<td style="text-align: left;">Arkansas</td>
+<td style="text-align: left;">1982-08-13</td>
+<td style="text-align: left;">Sarah Huckabee Sanders is the 47th Governor of Arkansas. Inaugurated on January 10, 2023, she is the first woman to serve as governor of the state and currently is the youngest governor in the country. Since taking office, Sarah has enacted transformational, conservative reforms. Those include Arkansas LEARNS, a sweeping overhaul of Arkansas’ education system, including higher teacher pay and universal school choice; public safety reforms to invest in prison space and get repeat offenders off the streets; tax cuts to give more taxpayer money back to Arkansans; the Natural State Initiative to grow Arkansas’ outdoor economy; and reforms to streamline state government. In just her first 100 days, Sarah delivered the Republican response to President Joe Biden’s State of the Union Address, offering a bold vision for a new generation of conservative leadership. Prior to her historic victory, Sarah served as White House Press Secretary for President Donald J. Trump from 2017 to 2019. A trusted confidant of the President, she advised him on everything from press and communications strategy to personnel and policy. Sarah was only the third woman – and the very first mom – to ever hold the job of White House Press Secretary. Sarah joined the Trump campaign as a senior advisor in February 2016 during the Republican primary and continued in that role through the President’s historic victory that November. She has previously worked in leadership roles for U.S. Senators, Governors, and presidential campaigns. In Arkansas, Sarah was a senior advisor to U.S. Senator Tom Cotton’s 2014 victorious campaign and was campaign manager for U.S. Senator John Boozman’s winning campaign in 2010. In 2007 and 2008, Sarah helped lead her father, former Arkansas Governor Mike Huckabee, to victory in the Iowa Caucuses and seven other states as his national political director. Sarah also served in the Department of Education during President George W. Bush’s administration. She has been recognized in Fortune and TIME Magazine “40 under 40.” Sarah is the author of the New York Times bestseller “Speaking for Myself,” a former Fox News Channel contributor, and served on the Fulbright board. Sarah grew up in Pine Bluff and Texarkana and is a proud graduate of Little Rock Central High and Ouachita Baptist University. She lives in Little Rock with her husband, Bryan, their children Scarlett, Huck, and George, and their golden retriever, Traveler.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">California</td>
+<td style="text-align: left;">Gavin Newsom</td>
+<td style="text-align: left;">Democratic</td>
+<td style="text-align: right;">2019</td>
+<td style="text-align: left;">2019 - 2023 2023 - 2025</td>
+<td style="text-align: left;">Santa Clara University</td>
+<td style="text-align: left;">California</td>
+<td style="text-align: left;">1967-10-10</td>
+<td style="text-align: left;">Gavin Newsom is the Governor of California, former Lieutenant Governor of California, and former Mayor of San Francisco. Newsom is widely recognized for his willingness to lead – repeatedly developing, advocating, and implementing innovative and groundbreaking solutions to some of our most challenging issues. On a wide range of topics including same-sex marriage, gun safety, marijuana, the death penalty, universal health care, access to preschool, technology, criminal justice reform, and the minimum wage, Newsom stuck his neck out and did the right thing, which often led to sweeping changes when his policies were ultimately accepted, embraced, and replicated across the state and nation. Newsom’s top priorities for his administration include: Governor Newsom is married to Jennifer Siebel Newsom. They have four children: Montana, Hunter, Brooklynn, and Dutch.</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">52</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1" class="level1">
+<h1>Exercise 1</h1>
+<p>What are the top 5 birth states for governors?</p>
+<p>Save as <code>top_birth_states</code> and then view the resulting dataframe.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(birth_state_territory) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>top_birth_states</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">birth_state_territory</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">New York</td>
+<td style="text-align: right;">162</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Virginia</td>
+<td style="text-align: right;">147</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: right;">112</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Massachusetts</td>
+<td style="text-align: right;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">South Carolina</td>
+<td style="text-align: right;">101</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Discuss/consider: What states are the most common birth spots for governors? Are there similar traits between the top states?</p>
+</section>
+<section id="exercise-2" class="level1">
+<h1>Exercise 2</h1>
+<p>Let’s now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let’s look at the distribution across the entire dataframe.</p>
+<p>First, let’s cut the <code>age_at_start</code> variable into bins, so people between ages 20 and 30 get mapped to the “(20,30]” bucket, 30 and 40 to “(30,40]”, etc. Let’s call this new column <code>age_bucket</code>. We will use the R function <code>cut()</code>.</p>
+<p>Now let’s display the counts of the <code>age_bucket</code> column and sort by the age bucket.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>age_bucket <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>age_at_start, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_bucket) <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(age_bucket)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">age_bucket</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(20,30]</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(30,40]</td>
+<td style="text-align: right;">374</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(40,50]</td>
+<td style="text-align: right;">1004</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(50,60]</td>
+<td style="text-align: right;">789</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">(60,70]</td>
+<td style="text-align: right;">279</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">(70,80]</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NA</td>
+<td style="text-align: right;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Discuss/consider: Which age range has the most governors?</p>
+</section>
+<section id="exercise-3" class="level1">
+<h1>Exercise 3:</h1>
+<p>Let’s look at the outlier governors who started office at or below the age of 30. Let’s filter the dataset down to this set by filtering on the <code>age_at_start</code> column, call it <code>young_governors</code> and display it.</p>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>young_governors <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_at_start <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>young_governors</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 88%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: right;">X</th>
+<th style="text-align: left;">state_territory</th>
+<th style="text-align: left;">governor</th>
+<th style="text-align: left;">party</th>
+<th style="text-align: right;">first_year</th>
+<th style="text-align: left;">years_in_office</th>
+<th style="text-align: left;">school</th>
+<th style="text-align: left;">birth_state_territory</th>
+<th style="text-align: left;">birth_date</th>
+<th style="text-align: left;">bio_text</th>
+<th style="text-align: right;">college_attendance</th>
+<th style="text-align: right;">ivy_attendance</th>
+<th style="text-align: right;">lawyer</th>
+<th style="text-align: right;">military_service</th>
+<th style="text-align: right;">age_at_start</th>
+<th style="text-align: left;">gender</th>
+<th style="text-align: right;">born_in_state_territory</th>
+<th style="text-align: right;">intl_born</th>
+<th style="text-align: left;">intl_born_details</th>
+<th style="text-align: left;">race.ethnicity</th>
+<th style="text-align: left;">age_bucket</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">522</td>
+<td style="text-align: left;">Georgia</td>
+<td style="text-align: left;">George Walton</td>
+<td style="text-align: left;">Whig, Democratic-Republican</td>
+<td style="text-align: right;">1779</td>
+<td style="text-align: left;">1779 - 1780</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Virginia</td>
+<td style="text-align: left;">1749-01-01</td>
+<td style="text-align: left;">GEORGE WALTON, the youngest signer of the Declaration of Independence, was born near Farmville, Virginia, in late 1749 or early 1750. His parents passed away when he was a young child, and an uncle reared him. He largely was self-educated and learned the trade of carpentry. In 1769 Walton moved to Savannah, Georgia, studied law, and was admitted to the bar in 1774. He entered politics in 1775, as secretary of the Georgia provincial congress. He served as president of the Council of Safety in 1776 and was a member of the Continental Congress in 1776, 1777, 1780, and 1781. Walton served during the Revolutionary War, as colonel of the 1st Regiment of the Georgia militia. He was seriously wounded in battle, became a prisoner of war in December 1778, and reclaimed his freedom through a prisoner exchange that occurred in October 1779. In November 1779, the state assembly appointed him Governor of Georgia. He served in this capacity for two months. He also served as chief justice of Georgia from 1783 to 1789, and was a delegate to the 1787 Philadelphia Constitutional Convention, which he did not attend. After the adoption of the Federal Constitution, Walton was elected by the state legislature, becoming the first governor of Georgia after its remission to statehood. He was sworn into office on January 7, 1789. During his tenure, a new state constitution was sanctioned, peace with the Creek Indians was created, and Augusta became the capitol. After leaving office on November 11, 1789, Walton served as judge of the Superior Court of the Eastern Judicial Circuit, a position he held for 15 years. He also was appointed to the U.S. Senate, serving from 1795 to 1796, and was a trustee of the University of Georgia and the Richmond Academy. Governor George Walton died on February 2, 1804 and was buried in Rosney Cemetery in Augusta. On July 4, 1848, he was reinterred at the Courthouse Grounds in Augusta beneath a monument erected to honor Georgia’s signers of the Declaration of Independence. Walton County in north Georgia was named in his honor in 1818. About North Georgia Cook, James F. Governors of Georgia, 1754-2004. 3d ed.&nbsp;Macon, Ga.: Mercer University Press, 2005. Colonial Hall The Georgia Historical Society Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 1, Westport, Conn.; Meckler Books, 1978. 4 vols.</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">740</td>
+<td style="text-align: left;">Kansas</td>
+<td style="text-align: left;">Samuel Johnson Crawford</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">1865</td>
+<td style="text-align: left;">1865 - 1868</td>
+<td style="text-align: left;">Cincinnati College</td>
+<td style="text-align: left;">Indiana</td>
+<td style="text-align: left;">1835-04-10</td>
+<td style="text-align: left;">SAMUEL JOHNSON CRAWFORD, the third governor of Kansas, was born near Bedford, Indiana on April 10, 1835. His early education was attained in the common schools of Bedford. In 1858, he graduated from Cincinnati College, earning a law degree. He moved to Garnett, Kansas and established a legal practice. Crawford entered politics in 1859, serving as a delegate to the first Republican Convention. He also was elected and served in the Kansas House of Representatives, a position he held from March 26, 1861 to May 10, 1861, when he resigned to organize a troop of soldiers for service in the Civil War. Crawford served as captain of the 2nd Kansas Volunteer Infantry; he fought in numerous battles, was appointed colonel of the 83rd U.S. Color Infantry, and attained the rank of brigadier general for his admirable service. Crawford won the 1864 Republican gubernatorial nomination, and was elected governor on November 8, 1864. He was reelected to a second term on September 5, 1866. During his tenure, thirty-six new counties were founded, forestation was endorsed, bonds were secured to fund railroads, a state survey was authorized, and financial support was sanctioned for the establishment of new state buildings. Also, the state’s population rose significantly, bloody Indian massacres against Kansas’s settlers were dealt with, and the endorsement of the Thirteenth and Fourteenth Amendments to the U.S. Constitution were recommended. On November 4, 1868, Crawford resigned from office, taking command of the 19th Kansas Volunteer Regiment, which had been organized to fight a campaign against the Indians. After his military service ended on March 2, 1869, Crawford returned to his law practice. He later served as president of the 1872 State Liberal Republican Convention, and was the Kansas state agent for fourteen years. Governor Samuel J. Crawford, who published “Kansas in the Sixties,” passed away on October 21, 1913, and was buried at the Topeka Cemetery, Topeka, Kansas. Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 2, Westport, Conn.; Meckler Books, 1978. 4 vols. Blue Skyways - Kansas State Library Blue Skyways - Kansas State Library Political Graveyard</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">833</td>
+<td style="text-align: left;">Louisiana</td>
+<td style="text-align: left;">Henry Clay Warmoth</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">1868</td>
+<td style="text-align: left;">1868 - 1872</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Illinois</td>
+<td style="text-align: left;">1842-05-09</td>
+<td style="text-align: left;">HENRY C. WARMOTH was born in Mc Leansboro, Illinois on May 9, 1842. His early education was attained in the public school system of his native state. He studied law, was admitted to the Missouri bar in 1861, and then established his legal career, serving as the district attorney of the Eighteenth Judicial District. During the Civil War, he served as lieutenant colonel of the 32nd Missouri Infantry, was wounded in the Battle of Vicksburg, and was dishonorably discharged for spreading exaggerations of Union defeats. After President Lincoln reinstated his military status, Warmoth was commissioned judge of the Department of the Gulf Provost Court in June 1864. He entered politics in 1865, winning election to Congress, but was denied a seat. After the 1868 Constitutional Convention revised the minimum age provision for state office holders, Warmoth, who was twenty-six at the time, was elected governor on April 17, 1868. After the state was readmitted to the Union, Warmoth was sworn into office on July 13, 1868. During his tenure, the state deficit rose to an all time high, taxes were increased, and disorder erupted over the black suffrage issue and over speculation in the state aided railroads. Legislation was sanctioned that permitted blacks in railroad coaches, as well as in schools and in restaurants. However, a more liberal bill was vetoed. Also, political turmoil developed when Warmoth aggressively endorsed the Democratic ticket in the 1872. Impeachment charges were brought against him during the 1872 election. However, after his term ended, all charges were expunged. Warmoth continued to stay active in public service. He served as a member of the Louisiana legislature from 1876 to 1877, was a member of the 1879 State Constitutional Convention, and served as the New Orleans Collector of Customs from 1890 to 1893. Governor Henry C. Warmoth died on September 30, 1931, and was buried at the Metairie Cemetery in New Orleans. Dawson III, Joseph G. The Louisiana Governors: From Iberville to Edwards. Baton Rouge: Lousiana State University Press, 1990. Encyclopedia Louisiana Hamilton County Biographies Louisiana Secretary of State: The Governors of Louisiana The Political Graveyard Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Westport, Conn.; Meckler Books, 1978. 4 vols.</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">976</td>
+<td style="text-align: left;">Maryland</td>
+<td style="text-align: left;">Edward Lloyd</td>
+<td style="text-align: left;">Democratic-Republican</td>
+<td style="text-align: right;">1809</td>
+<td style="text-align: left;">1809 - 1811</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Maryland</td>
+<td style="text-align: left;">1779-07-22</td>
+<td style="text-align: left;">EDWARD LLOYD was born in Talbot County, Maryland on July 22, 1779. His education was attained by private tutors and in private academies in his native state. Lloyd entered politics in 1800, serving as a member of the Maryland House of Delegates, a position he held five years. He also served as a member of the U.S. House of Representatives from 1806 to 1809. On June 5, 1809, the Maryland Legislature chose Lloyd to fill the unexpired term of Governor Robert Wright, who had resigned. Lloyd was elected to his own term in November 1809, and was reelected in 1810. During his tenure, the residency requirement for voting was reduced to one year, the property qualification for office holding was eliminated, and a resolution was authorized that approved President Thomas Jefferson’s embargo of British and French trade. After completing his term, Lloyd left office on November 16, 1811. He then was elected to the Maryland State Senate, where he served from 1811 to 1813, in 1814, and from 1826 to 1829. He also served as a member of the U.S. Senate from 1819 to 1826. Governor Edward Lloyd passed away on June 2, 1834, and was buried in the family cemetery at Wye House in Talbot County, Maryland. Eisenberg, Gerson G. Marylanders Who Served the Nation. Annapolis, MD: Maryland State Archives, 1992. Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 2, Westport, Conn.; Meckler Books, 1978. 4 vols. White, Frank F., Jr.&nbsp;The Governors of Maryland, 1777-1972. Annapolis, MD: Hall of Records Commission, 1970. Biographical Directory of the U.S. Congress Maryland State Archives</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1453</td>
+<td style="text-align: left;">New Jersey</td>
+<td style="text-align: left;">Leon R. Taylor</td>
+<td style="text-align: left;">Democratic</td>
+<td style="text-align: right;">1913</td>
+<td style="text-align: left;">1913 - 1914</td>
+<td style="text-align: left;">Denison University</td>
+<td style="text-align: left;">New Jersey</td>
+<td style="text-align: left;">1883-10-26</td>
+<td style="text-align: left;">Leon R. Taylor was born in Asbury Park, New Jersey on October 26, 1883. His education was attained at Denison University in Ohio. He went on to study law and then established his legal career in New Jersey. Taylor first entered politics as a member and speaker of the New Jersey House of Representatives, a position he held three terms. On October 28, 1913 Governor James F. Fielder resigned from office, and Taylor, who was speaker of the house at the time, assumed the duties of the governorship. He served in this capacity until January 20, 1914, when he then retired from political life. He continued to stay active in his legal career, as well as serving as captain in the Red Cross, a post he held from 1917 to 1919. Governor Leon R. Taylor passed away on April 1, 1924 in Denver, Colorado. Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 3, Westport, Conn.; Meckler Books, 1978. 4 vols. The Political Graveyard Notable Names Database</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1898</td>
+<td style="text-align: left;">Rhode Island</td>
+<td style="text-align: left;">William Sprague</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">1860</td>
+<td style="text-align: left;">1860 - 1863</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Rhode Island</td>
+<td style="text-align: left;">1830-09-12</td>
+<td style="text-align: left;">WILLIAM SPRAGUE was born in Cranston, Rhode Island. In 1856 he became administrator of the A. &amp; W. Sprague Manufacturing Company, which printed calico and manufactured cotton. He also engaged in the manufacture of iron and locomotives, made improvements in calico printing, perfected a mowing machine, and used the first rotary machine for making horseshoes. As governor, he was a strong supporter of the Union and organized and financed troops even before Abraham Lincoln requested them. He served in battle while governor as well, winning a commission as Brigadier-General for bravery during the first Battle of Bull Run. In August, 1862 he organized Rhode Island’s first black regiment. He began two terms in the U.S. Senate in 1863, and was a critic of the Republican Reconstruction Congress. During the Panic of 1873 his family fortune collapsed. He ran again for governor in 1883 on a reform ticket consisting of Democrats and Independents but was defeated by his Republican opponent. Sprague died in France and his remains were returned to Rhode Island for burial in Providence. Mohr, Ralph S. Governors for Three Hundred Years (1638-1954): Rhode Island and Providence Plantations.State of Rhode Island, Graves Registration Committee, August 1954. The National Cyclopaedia of American Biography, Vol. 9. New York: James T. White &amp; Company. Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 4. Westport, CT: Meckler Books, 1978. 4 vols. WorldStatesmen.org</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2439</td>
+<td style="text-align: left;">Wyoming</td>
+<td style="text-align: left;">Amos Walker Barber</td>
+<td style="text-align: left;">Republican</td>
+<td style="text-align: right;">1890</td>
+<td style="text-align: left;">1890 - 1893</td>
+<td style="text-align: left;">University of Pennsylvania</td>
+<td style="text-align: left;">Pennsylvania</td>
+<td style="text-align: left;">1860-07-25</td>
+<td style="text-align: left;">AMOS WALKER BARBER was born in Doylestown, Pennsylvania. After graduating from the University of Pennsylvania, he served as a physician at a number of hospitals before being placed in charge of the Military Hospital in Fort Fetterman, Wyoming while serving in the Army. He later took charge of the hospital of the Wyoming Stock Association, after which he began general practice in Cheyenne in 1889. He was elected Secretary of State in 1890 for a five-year term that was interrupted by his service as Acting Governor after the resignation of Francis Warren. During his gubernatorial administration, Barber called out the state troops both to quell the Pine Ridge Indian outbreak and to help settle the Rustler War between cattlemen and sheepmen. After completing his term of office as Secretary of State, he served as an assistant surgeon with the Army during the Spanish-American War, and later returned to his medical practice in Cheyenne. The National Cyclopaedia of American Biography, Vol. 11. New York: James T. White &amp; Company. Sobel, Robert, and John Raimo, eds.&nbsp;Biographical Directory of the Governors of the United States, 1789-1978, Vol. 4. Westport, CT: Meckler Books, 1978. 4 vols. Wyoming State Archives</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">30</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">White</td>
+<td style="text-align: left;">(20,30]</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>Discuss/consider: Who are the youngest governors in American History? What era are they from? Take a look at some of their Wikipedia pages and NGA biographies online.</p>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "DPLYR Value Counts with Gubernatorial Data (Solution)"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-08-01"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [dplyr, exercise, solution]</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># &lt;span style="color:red;"&gt; Solution &lt;/span&gt;</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="fu">## DPLYR Value Counts with Gubernatorial Data</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color:green;"</span><span class="dt">&gt;</span> <span class="co">[</span><span class="ot">Exercise Without Solutions</span><span class="co">](Gubernatorial-Data-Value-Counts-Exercise.qmd)</span> <span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>These exercises use data about U.S. state governors. For more context about the dataset, see the <span class="co">[</span><span class="ot">data essay</span><span class="co">](../index.qmd)</span>.</span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a>**Concepts covered:**</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Counting categorical values with <span class="in">`count()`</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sorting and ranking with <span class="in">`arrange()`</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Binning continuous variables with <span class="in">`cut()`</span></span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Filtering for outliers with <span class="in">`filter()`</span></span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># Load the data</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="co">#| message: false</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv"</span>,</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 1</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a>What are the top 5 birth states for governors?</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>Save as <span class="in">`top_birth_states`</span> and then view the resulting dataframe.</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(birth_state_territory) <span class="sc">%&gt;%</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>top_birth_states</span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>Discuss/consider: What states are the most common birth spots for governors? Are there similar traits between the top states?</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 2</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a>Let's now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let's look at the distribution across the entire dataframe.</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>First, let's cut the <span class="in">`age_at_start`</span> variable into bins, so people between ages 20 and 30 get mapped to the "(20,30]" bucket, 30 and 40 to "(30,40]", etc. Let's call this new column <span class="in">`age_bucket`</span>. We will use the R function <span class="in">`cut()`</span>.</span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a>Now let's display the counts of the <span class="in">`age_bucket`</span> column and sort by the age bucket.</span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>age_bucket <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>age_at_start, <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>))</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(age_bucket) <span class="sc">%&gt;%</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(age_bucket)</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a>Discuss/consider: Which age range has the most governors?</span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exercise 3:</span></span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a>Let's look at the outlier governors who started office at or below the age of 30. Let's filter the dataset down to this set by filtering on the <span class="in">`age_at_start`</span> column, call it <span class="in">`young_governors`</span> and display it.</span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>young_governors <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(age_at_start <span class="sc">&lt;=</span> <span class="dv">30</span>)</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>young_governors</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>Discuss/consider: Who are the youngest governors in American History? What era are they from? Take a look at some of their Wikipedia pages and NGA biographies online.</span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

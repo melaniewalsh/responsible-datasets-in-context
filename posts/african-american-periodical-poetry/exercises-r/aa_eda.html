@@ -1,0 +1,1532 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2024-02-26">
+
+<title>Visualize Author Gender By Year (Solution) – Responsible Datasets in Context</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MZHBEJTWJ4"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-MZHBEJTWJ4', { 'anonymize_ip': true});
+</script>
+<script type="application/json" class="js-hypothesis-config">
+{
+  "theme": "clean",
+  "openSidebar": false,
+  "showHighlights": "whenSidebarOpen"
+}
+</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
+<script>
+            document.addEventListener("DOMContentLoaded", function() {
+              // Select the original footnotes container
+              var originalFootnotes = document.querySelector(".footnotes");
+
+              // Select the custom footnotes placeholder
+              var customFootnotes = document.getElementById("custom-footnotes");
+
+              // If both elements exist, move the footnotes
+              if (originalFootnotes && customFootnotes) {
+                customFootnotes.innerHTML = originalFootnotes.innerHTML;
+
+                // Optionally, remove the original footnotes
+                originalFootnotes.remove();
+              }
+            });
+          </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to convert string to title case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
+
+  // Function to generate TOC
+  function generateTOC(tabId, tocContainerId) {
+    const tabContent = document.querySelector(tabId);
+    const tocContainer = document.querySelector(tocContainerId);
+    tocContainer.innerHTML = ''; // Clear previous TOC content
+
+    console.log(`Generating TOC for: ${tabId}`);
+
+    // Add "Table of Contents" heading
+    const tocHeading = document.createElement("h6");
+    tocHeading.textContent = "Table of Contents";
+    tocContainer.appendChild(tocHeading);
+
+    // Select only h2 headers, including nested tabsets
+    const headers = tabContent.querySelectorAll("h2");
+    console.log(`Found ${headers.length} h2 headers`);
+
+    const tocList = document.createElement("ul");
+    headers.forEach((header) => {
+      console.log(`Header: ${header.textContent}`);
+      if (!header.id) {
+        header.id = header.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]+/g, '');
+      }
+      const tocItem = document.createElement("li");
+      tocItem.className = `toc-${header.tagName.toLowerCase()}`; // Add class for styling
+      const tocLink = document.createElement("a");
+      tocLink.href = `#${header.id}`;
+      tocLink.textContent = toTitleCase(header.textContent); // Convert to title case
+      tocItem.appendChild(tocLink);
+      tocList.appendChild(tocItem);
+    });
+
+    tocContainer.appendChild(tocList);
+  }
+
+  // Gets the highest number of the layer of the tabsets
+  function getMaxTabsetNumber() {
+    const tabPanes = document.querySelectorAll('.tab-pane[id^="tabset-"]');
+    let maxTabsetNumber = 1;
+    tabPanes.forEach(tabPane => {
+      const match = tabPane.id.match(/^tabset-(\d+)/);
+      if (match) {
+        const number = parseInt(match[1], 10);
+        if (number > maxTabsetNumber) {
+          maxTabsetNumber = number;
+        }
+      }
+    });
+    return maxTabsetNumber;
+  }
+
+
+  // Function to update TOC when tab changes
+  function updateActiveTabTOC() {
+    const maxTabsetNumber = getMaxTabsetNumber();
+    const activeTab = document.querySelector(`.tab-pane[id^="tabset-${maxTabsetNumber}"].active`);
+    const tocContainer = document.querySelector('#quarto-margin-sidebar-toc');
+    if (activeTab) {
+      generateTOC(`#${activeTab.id}`, '#quarto-margin-sidebar-toc');
+    }
+  }
+
+  // Create and insert TOC container if it doesn't exist
+  function createTOCContainer() {
+    const sidebar = document.querySelector('#quarto-margin-sidebar');
+    if (sidebar) {
+      const existingTOC = document.querySelector('#quarto-margin-sidebar-toc');
+      if (!existingTOC) {
+        const tocContainer = document.createElement('div');
+        tocContainer.id = 'quarto-margin-sidebar-toc';
+        tocContainer.style.position = 'relative';
+        tocContainer.style.padding = '10px';
+        // tocContainer.style.border = '1px solid #ddd';
+        sidebar.appendChild(tocContainer);
+      }
+    }
+  }
+
+  // Initialize TOC container and run the TOC generation
+  createTOCContainer();
+  updateActiveTabTOC();
+
+  // Listen for tab changes to regenerate the TOC
+  document.addEventListener('shown.bs.tab', function(event) {
+    setTimeout(updateActiveTabTOC, 100);  // Delay to wait for the tab to become active
+  });
+});
+
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+
+<link rel="stylesheet" href="../../../styles.css">
+<meta name="twitter:title" content="Visualize Author Gender By Year (Solution) – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/exercises-r/aa_eda_files/figure-html/unnamed-chunk-5-1.png">
+<meta name="twitter:image-height" content="960">
+<meta name="twitter:image-width" content="1344">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../../../index.html" class="navbar-brand navbar-brand-logo">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="../../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Responsible Datasets in Context</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../datasets.html"> 
+<span class="menu-text">Datasets</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../mission.html"> 
+<span class="menu-text">Mission</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../team.html"> 
+<span class="menu-text">Team</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-about" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">About</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
+        <li>
+    <a class="dropdown-item" href="../../../sponsors.html">
+ <span class="dropdown-text">Sponsors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../get-in-touch.html">
+ <span class="dropdown-text">Get In Touch</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/melaniewalsh/responsible-datasets-in-context"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <div class="quarto-title-block"><div><h1 class="title">Visualize Author Gender By Year (Solution)</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+                                <div class="quarto-categories">
+                <div class="quarto-category">ggplot2</div>
+                <div class="quarto-category">dplyr</div>
+                <div class="quarto-category">line-plot</div>
+                <div class="quarto-category">bar-plot</div>
+                <div class="quarto-category">groupby</div>
+                <div class="quarto-category">R</div>
+                <div class="quarto-category">solution</div>
+                <div class="quarto-category">exercise</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 26, 2024</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#load-libraries" id="toc-load-libraries" class="nav-link active" data-scroll-target="#load-libraries">Load libraries</a></li>
+  <li><a href="#read-in-csv" id="toc-read-in-csv" class="nav-link" data-scroll-target="#read-in-csv">Read in CSV</a></li>
+  <li><a href="#view-first-5-rows" id="toc-view-first-5-rows" class="nav-link" data-scroll-target="#view-first-5-rows">View first 5 rows</a></li>
+  <li><a href="#group-by-year-count-instances-of-author-by-gender" id="toc-group-by-year-count-instances-of-author-by-gender" class="nav-link" data-scroll-target="#group-by-year-count-instances-of-author-by-gender">Group by year, count instances of author by gender</a></li>
+  <li><a href="#visualize-with-ggplot2---line-plot" id="toc-visualize-with-ggplot2---line-plot" class="nav-link" data-scroll-target="#visualize-with-ggplot2---line-plot">Visualize with ggplot2 - Line Plot</a></li>
+  <li><a href="#visualize-with-ggplot2---bar-plot" id="toc-visualize-with-ggplot2---bar-plot" class="nav-link" data-scroll-target="#visualize-with-ggplot2---bar-plot">Visualize with ggplot2 - Bar Plot</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>These exercises explore data about African American periodical poetry from 1900–1928, originally compiled by Amardeep Singh and Kate Hennessey at Lehigh University. For more context about the dataset, see the <a href="../../../posts/african-american-periodical-poetry/aa-periodical-poetry.html">data essay</a>.</p>
+<p><strong>Concepts covered:</strong></p>
+<ul>
+<li>Groupby with multiple columns</li>
+<li>Value counts within groups</li>
+<li>Line plots and bar plots with categorical coloring (ggplot2)</li>
+</ul>
+<section id="load-libraries" class="level1">
+<h1>Load libraries</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="read-in-csv" class="level1">
+<h1>Read in CSV</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>aa_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+</section>
+<section id="view-first-5-rows" class="level1">
+<h1>View first 5 rows</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aa_df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 91%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 0%">
+<col style="width: 2%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">title</th>
+<th style="text-align: left;">author..first.last.</th>
+<th style="text-align: left;">author..last.name.</th>
+<th style="text-align: left;">text</th>
+<th style="text-align: left;">month</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">venue</th>
+<th style="text-align: left;">edited.by</th>
+<th style="text-align: left;">form..if.known.</th>
+<th style="text-align: left;">gender..if.known.</th>
+<th style="text-align: left;">themes</th>
+<th style="text-align: left;">second.venue</th>
+<th style="text-align: left;">published.in..city.</th>
+<th style="text-align: left;">Magazine.Type</th>
+<th style="text-align: left;">Author.Bio.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">New Wars</td>
+<td style="text-align: left;">Benjamin Griffith Brawley</td>
+<td style="text-align: left;">Brawley</td>
+<td style="text-align: left;">HURL on the lance! Break up the ancient peace!</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Now let the arrow hiss in air and sing; Now let the spear-point on the armor ring; Sound forth the call to wars that never cease!</p>
+<p>Ye hoot the yellow Mongol from your land; But forth to regions all his own ye go To reap the riches of his overflow, And just ye call the working of your hand!</p>
+<p>Now see the scramble of the Christian host– Them all press forward for the spoil that’s won; New wars! new wars! ris’n on the olden one– And this, this the enlightened freeman’s boast!</p>
+<p>But greater is the strife than here would seem, And wider realms embracing than the East, For that is but the remnant of the feast. I had a vision. (Was it all a dream?)</p>
+<p>The weary Titan groaned beneath the weight Of nations growing weaker day by day, Whose men he deemed but men of minor clay, And destinies he wrought for them their fate.</p>
+<p>And why, methought, does not the giant’s creed Cast off the weaklings that would warp his might, And leave alone the wretches in their plight? No answer save “I would not” from his greed.</p>
+<p>So freedom hails th’ advance of king and queen; The march of mind goes on o’er field and flood; Republics curb the weak with shows of blood; And lordly priests profess the Nazarene!</p>
+<p>Yet hear the trumpet and the cannon’s roar, The orphan’s crying and the widow’s wail; But what of them? Unfurl the sail! flay! flail! On! on! on to the mighty breach once more! |November | 1900|Colored American |Walter W. Wallace |Common Measure |male |Spanish-American War, Empire | |Boston |Predom. Black |https://en.wikipedia.org/wiki/Benjamin_Griffith_Brawley | |A Picture |Olivia Ward Bush-Banks |Bush-Banks |I drew a picture long ago — A picture of a sullen sea; A picture that I value now Because it clears Life’s mystery. My sea was dark and full of gloom; I painted rocks of sombre hue. My sky alone bespoke of light, And that I painted palest blue. But e’en across my sky of blue Stretched troubled clouds of sodden gray, Through which the sun shone weak and dim, With only here and there a ray. Around my rocks the yellow foam Seemed surging, moaning in despair As if the waves, their fury spent, Left naught but desolation there. Three crafts with fluttering sails I drew, And one sailed near the rocks of gray, The other on its westward course, Went speeding out of danger’s way. The other still outdistanced them Where sky and water seemed to meet. I painted that with sails full set, And then my picture was complete. My life was like the sullen sea, Misfortune’s woes, my rocks of gray; The crafts portrayed Life’s changing scenes, The clouded sky Life’s troubled Day I long to paint that picture o’er, Without the rocks of sombre hue; Without the troubled clouds of gray, I’ll paint the sky of brightest blue. My sea shall lay in calm repose, No hint of surging, moaning sigh. My crafts, unhindered by the rocks, Shall speed in joyous swiftness by. But this will be when brightest hours Of hope and cheer are given me. I’ll paint this picture when Life’s sun Shines clear upon Prosperity. |June | 1900|Colored American |Walter W. Wallace |Common Measure |female | | |Boston |Predom. Black |https://en.wikipedia.org/wiki/Olivia_Ward_Bush-Banks | |The Christmas Reunion |Augustus M. Hodges |Hodges |Twas a bright Christmas morning in “Ole Kentuck”; Aunt Sallie was busy disrobing a duck- A featherless turkey close by her side lay, Prepared for the dinner that bright Christmas day. ‘Twas a family reunion, and Uncle Joe Moore And his good wife Aunt Sallie, both ten and threescore, Had gathered around them their “girls” and their “boys,” With these “children’s” children - the grandparents’ joys. The “girls” (all past thirty) were helping to make The “sweet tater puddin’s,” the pies, and the cake; The “boys” and the grand-boys the fires were making, The oldest granddaughter the biscuits was baking, The little grandchildren a dozen or more Were tumbling about just outside of the door; While Uncle Joe Moore, the venerable sire, Sat smoking his pipe with his back to the fire. When the clock tolled the midday the feast was complete, And after each member had taken his seat, The venerable sire rose up from his chair, And with uplifted arms he offered this prayer: “We thank Thee, our Father in heaven,” he said, “For the abundance of good things before us now spread; We thank Thee, dear Lord, that I and my wife Have been spared by thy goodness to reach an old life; We thank Thee, of all things, the sweetest and best, For our dear children’s presence from North, South and West. Continue Thy blessings, Thy goodness, Thy love, And prepare us to meet Thee in heaven above.” The grace being over the feast was begun. The duck and the turkey were carved one by one; The big chicken pot-pie received the same fate, And a generous helping was piled on each plate. After the meats came the puddings and pies; Then how the grandchildren all opened their eyes When one of their uncles from far Illinois Brought out from the closet a basket of toys. As dinner was over, the venerable sire Rose up from his seat and stood by the fire, Where he called to his side each lamb of his fold, And blessed and caressed them like Jacob of old. “What changes we’ve seen, Sal,” remarked Uncle Joe, “These years we’ve been married, some forty or so. Now let me see, forty? Yes, forty-one years Today, since we met at Uncle Bill Steer’s. I remember, ole ‘oman, you looked mighty gran’, And I was then, children, er good-lookin’ man. I walked with your mother from Clayton that night, And ‘fore we got home, why I got in a fight. Tom Scott, a ’patroller,’ insulted your mother, So I knocked him down, and Ed, his big brother. I then asked your mother if she’d be my wife. Her answer was: ‘Yes, Joe, since you risked your life For me up the road, and licked old Tom Scott, Yes, I’ll be your wife; why, Joseph, why not?’ But the next day, my children, my master sold me To an ole Nigger trader’ from East Tennessee, Where I worked on a farm without seeing your mother For eighty long days, till me and another. Plantation hand run away and met with good luck, For we soon found ourselves on the soil of Kentuck. ’Fore my ole master knowed I run erway We two was married that same Christmas day. We was married at Scottsville by ole Peter Brown, Who was a white minister that lived in the town, And would marry us slave folks no matter or not If our masters was willing, if we only had got A couple of chickens or a barrel of corn. The very next Christmas our Lucy was born, And the next of the past that I now can remember Is when we moved here the following September. Then came the war, Sal, and ole marster died, While Missus and you, Sal, stood by his side. Then I left you and children, and went out to fight For the Union and Freedom one warm summer’s night. Then good Abr’am Lincoln, he sot us all free, And we had in the county a big jubilee. Then you boys and you girls all worked hand to hand To buy me and your mother this house and this land. Then some of you married, and some went out West, While me and your mother, along with the rest, Stayed on the old homestead and worked night and day, A farming and trucking, and made the work pay. We are glad for to meet you all back here once more, And see your dear babies together, before</p>
+<p>Sat smoking his pipe with his back to the fire. Me and your mother (we are both old and gray) Receive old Death’s summons to call us away. God bless you, my children, through life, is my prayer,” And the venerable sire sat down in his chair. The rest of the evening was passed in a measure Receiving old friends or by chatting in pleasure Till long after midnight, with hearts light and gay. ’Twas a happy reunion that bright Christmas day. |December | 1900|Colored American |Walter W. Wallace | |male |Slavery | |Boston |Predom. Black |https://en.wikipedia.org/wiki/Augustus_M._Hodges | |A Memorial of Frederick Douglass |C. Henry Holmes |Holmes |He was a noble hero, born in an humble state, But with a will like Nero, his cruel chains did break. If in the glorious transept, worth and fitness reign, If in the unknown regions, all are rewarded the same, If to the hero modern, honor is rightly given, His is a sapphired crown in the bright kingdom of heaven. Tell of sagacious raids on the black tiller of soil, Bringing from under-byways Into freedom’s sunshine and joy. Tell of the noble plea the companion of martyred John Brown, Earth but records - heaven rewards The worthy with worthy renown. Tell of the noble traits of character true as steel, Tell of the fear-fraught days which every true patriot feels. Tell of the powerful mind that forces the just decree, Fair Ethiope placed with thee her hopes in blessed security. Wet are the cheeks of millions; loudly do they lament, Whence thou art swiftly riven from the mundane transient. Death- unsatiable devourer thou checkmate of good men’s deeds, - Visiting earth each hour, unmindful of worldly needs, But to thy name and prestige, posterity ever lauds, Honor in life, happy in death, near the throne of the living God. |September | 1900|Colored American |Walter W. Wallace |Elegy |male |Frederick Douglass | |Boston |Predom. Black | | |The Negro’s Worth |Alonzo Milton Skrine |Skrine |Who casts a slur on Negro worth, a stain on Negro fame? Who dreads to own his Negro blood, or hear his Negro name? Who scorns the warmth of Negro hearts [illegible] the clasp of Negro hands? If he but shows his traitor’s face, we [illegible] him where he stands.</p>
+<p>The Negro’s blood! Its crimson tide has watered hill and plain Wherever there were wrongs to crush, or freemen’s rights to gain. No dastard thought, no cowardly fear his had it tamely by When there were noble deeds to do [illegible] to die.&nbsp;</p>
+<p>The Negro’s heart! The Negro’s heart! God keeping pure and free The fullness of its kindly thought its wealth of honest glee; Its generous strength; its ardent faith; its uncomplaining trust; Though every worshipped idol break and crumble into dust.</p>
+<p>The Negro’s hands! Ah, lift them up. made strong by honest toil. The champion of the Civil War and of the Cuban soil: Their battle swords they flash aloft, though death in front they see ; The Negro’s hands did valiant deeds tot brave Cuba free.</p>
+<p>They bore the old flag bravely, and were there at Lincoln’s call. They stood beside the foremost rank, with the bravest of them all. And when before the enemy’s guns they held the Gray at bay — O never could the Afric heart beat prouder than that day.</p>
+<p>So if some proud Caucasian cavils at the darkness of your race, Or speaks in scorn of Africa before her children’s face, Then lay aside the flag of truce, and denounce him where he stands&nbsp; For Negro’s worth and Negro’s fame were won by Negro’s hands.</p>
+<p>Published in&nbsp;Colored American Magazine,&nbsp;December 1900 |December | 1900|Colored American |Walter W. Wallace | |male |Civil War, Spanish-American War, Labor, Slavery, Progress and Racial Uplift | |Boston |Predom. Black |https://scalar.lehigh.edu/african-american-poetry-a-digital-anthology/charles-frederick-white-author-page | |Afro-American |Charles Frederick White |White |O, country, ’tis of thee, Land of the Lynching Bee, Of thee I sing. How long will this base wrong Pollute thy freedom’s song? Perpetrated by a throng Of heartless fiends. My native country, thee, How I long to be free! Thy name to love. I long to se ethe time When this most heinous crime Will be changed to deeds divine, Like those above. Let wailings swell the breeze, And ring from all the trees: “God’s will be done.” Let mortal souls awake– Let all that breathe partake– This spell of crimes to break, Ere the nation’s gone. O gracious God, to thee, In thine all-wise mercy, We now appeal! May this land soon be brought Out of this doome it’s wrought; For long, in vain, we’ve sought Freedom to feel. |September | 1900|Colored American |Walter W. Wallace | |male |Lynching and Racialized Violence, Patriotism, Racism | |Boston |Predom. Black |https://scalar.lehigh.edu/african-american-poetry-a-digital-anthology/charles-frederick-white-author-page |</p>
+</div>
+</div>
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(aa_df<span class="sc">$</span>gender..if.known.)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+       female   male 
+     9    317    657 </code></pre>
+</div>
+</div>
+</section>
+<section id="group-by-year-count-instances-of-author-by-gender" class="level1">
+<h1>Group by year, count instances of author by gender</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="ot">&lt;-</span> aa_df <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, gender..if.known.) <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="kable-table">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">gender..if.known.</th>
+<th style="text-align: right;">count</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1900</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1900</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1901</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1901</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1902</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1902</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1903</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1903</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1903</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">15</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1904</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1905</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1905</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">44</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1906</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1906</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1906</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">55</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1907</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1907</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1907</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">37</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1908</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1908</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1908</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1909</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1909</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1910</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1910</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1911</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1912</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1912</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1913</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1914</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1914</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1915</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1915</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1916</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1916</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1917</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1917</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1918</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1918</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1919</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1919</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1919</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1920</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1920</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1921</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1921</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1922</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1922</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1923</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1923</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1923</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1924</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1924</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1924</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">26</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1925</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">27</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1925</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">57</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1926</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">30</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1926</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">47</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1927</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">58</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1927</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">94</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1928</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">33</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1928</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">66</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-with-ggplot2---line-plot" class="level1">
+<h1>Visualize with ggplot2 - Line Plot</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aa_gender_by_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count, <span class="at">color =</span> gender..if.known.)) <span class="sc">+</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1900</span>, <span class="dv">1930</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Author Gender by Year"</span>,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Gender (if known)"</span>) <span class="sc">+</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aa_eda_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="visualize-with-ggplot2---bar-plot" class="level1">
+<h1>Visualize with ggplot2 - Bar Plot</h1>
+<div class="cell">
+<details open="" class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aa_gender_by_year, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> count, <span class="at">fill =</span> gender..if.known.)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Author Gender by Year"</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Gender (if known)"</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="aa_eda_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function () {
+    // Assign data-tab-name attribute based on the inner text of the tab links
+    $('.nav-tabs .nav-link').each(function () {
+        var tabName = $(this).text().toLowerCase().replace(/ /g, '-');
+        $(this).attr('data-tab-name', tabName);
+    });
+
+    function activaTab(tabName, container = document) {
+        var tabLink = $(container).find('.nav-tabs .nav-link[data-tab-name="' + tabName + '"]');
+        if (tabLink.length) {
+            tabLink.tab('show');
+            tabLink.trigger('click'); // Explicitly trigger the click event
+        }
+    }
+
+    function scrollToAnchor(anchorId) {
+        var element = $('[data-anchor-id="' + anchorId + '"]');
+        if (element.length) {
+            $('html, body').animate({
+                scrollTop: element.offset().top
+            }, 500);
+        }
+    }
+
+    function activateTabAndHeaderFromUrl() {
+        var urlParams = new URLSearchParams(window.location.search);
+        var tabName = urlParams.get('tab');
+        var anchorId = urlParams.get('anchor');
+        var nestedTabName = urlParams.get('nested-tab');
+
+        if (tabName) {
+            activaTab(tabName);
+            if (anchorId) {
+                setTimeout(function() {
+                    scrollToAnchor(anchorId);
+                }, 100); // Delay to ensure tab content is visible
+            }
+            if (nestedTabName) {
+                setTimeout(function() {
+                    var parentContainer = $('.nav-link[data-tab-name="' + tabName + '"]').attr('data-bs-target');
+                    activaTab(nestedTabName, parentContainer); // Dynamically find the parent container
+                }, 200); // Delay to ensure parent tab content is visible
+            }
+        } else {
+            // Default to the first tab if no tab is specified
+            var firstTabName = $('.nav-tabs .nav-link').first().attr('data-tab-name');
+            activaTab(firstTabName);
+        }
+    }
+
+    function clearPreviousAnchor() {
+        var url = new URL(window.location.href);
+        url.hash = ''; // Clear the hash part of the URL
+        history.replaceState(null, null, url.toString());
+    }
+
+    // Activate the tab and scroll to anchor based on the URL when the page loads
+    activateTabAndHeaderFromUrl();
+
+    // Update URL query parameters when a tab is shown
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        clearPreviousAnchor(); // Clear any previous anchors before switching tabs
+        var tabName = $(e.target).attr('data-tab-name');
+        var parentTabPane = $(e.target).closest('.tab-content').prev('.nav-tabs').find('.nav-link.active').attr('data-tab-name');
+        var url = new URL(window.location.href);
+
+        if (parentTabPane) {
+            url.searchParams.set('tab', parentTabPane);
+            url.searchParams.set('nested-tab', tabName);
+        } else {
+            url.searchParams.set('tab', tabName);
+            url.searchParams.delete('nested-tab');
+        }
+
+        url.searchParams.delete('anchor'); // Remove anchor parameter when switching tabs
+        history.replaceState(null, null, url.toString());
+    });
+
+    // Re-activate the tab and scroll to anchor if the query parameters change
+    $(window).on('popstate', function () {
+        activateTabAndHeaderFromUrl();
+    });
+});
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/www\.responsible-datasets-in-context\.com");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Visualize Author Gender By Year (Solution)"</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> "2024-02-26"</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> [ggplot2, dplyr, line-plot, bar-plot, groupby, R, solution, exercise]</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">   html: default</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="an">code-fold:</span><span class="co"> show</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> visual</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="an">df-print:</span><span class="co"> kable</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">R.options:</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">  warn: false</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="an">code-tools:</span><span class="co"> true</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">  eval: true</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>These exercises explore data about African American periodical poetry from 1900–1928, originally compiled by Amardeep Singh and Kate Hennessey at Lehigh University. For more context about the dataset, see the <span class="co">[</span><span class="ot">data essay</span><span class="co">](../aa-periodical-poetry.qmd)</span>.</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>**Concepts covered:**</span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Groupby with multiple columns</span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Value counts within groups</span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Line plots and bar plots with categorical coloring (ggplot2)</span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a><span class="fu"># Load libraries</span></span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="fu"># Read in CSV</span></span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a>aa_df <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv"</span>,</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="fu"># View first 5 rows</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(aa_df)</span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(aa_df<span class="sc">$</span>gender..if.known.)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a><span class="fu"># Group by year, count instances of author by gender</span></span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year <span class="ot">&lt;-</span> aa_df <span class="sc">%&gt;%</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year, gender..if.known.) <span class="sc">%&gt;%</span></span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">count =</span> <span class="fu">n</span>(), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a>aa_gender_by_year</span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a><span class="fu"># Visualize with ggplot2 - Line Plot</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aa_gender_by_year, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> count, <span class="at">color =</span> gender..if.known.)) <span class="sc">+</span></span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">1900</span>, <span class="dv">1930</span>, <span class="at">by =</span> <span class="dv">5</span>)) <span class="sc">+</span></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Author Gender by Year"</span>,</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>       <span class="at">color =</span> <span class="st">"Gender (if known)"</span>) <span class="sc">+</span></span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a><span class="fu"># Visualize with ggplot2 - Bar Plot</span></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aa_gender_by_year, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(year), <span class="at">y =</span> count, <span class="at">fill =</span> gender..if.known.)) <span class="sc">+</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Author Gender by Year"</span>,</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Count"</span>,</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a>       <span class="at">fill =</span> <span class="st">"Gender (if known)"</span>) <span class="sc">+</span></span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p style="color:white">
+Supported by<a href="https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/"><img src="https://assets.mofoprod.net/network/images/mo-fo_logo-w.2e16d0ba.fill-890x890-c100.format-jpeg.jpg" class="img-fluid" alt="Mozilla" width="65"></a>and partners
+</p>
+</div>   
+    <div class="nav-footer-center">
+<p style="color:white">
+Made with <a href="https://quarto.org/"><img src="https://raw.githubusercontent.com/github/explore/80f119e965a9a3df7b74c3f7b63a502e3d0ded36/topics/quarto/quarto.png" class="img-fluid" alt="Quarto" width="65"></a>
+</p>
+</div>
+    <div class="nav-footer-right">
+<p style="color:white">
+Copyright © 2024
+</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
