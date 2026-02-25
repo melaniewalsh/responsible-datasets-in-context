@@ -22,6 +22,9 @@
     "posts/gubernatorial-bios/index.qmd": [
       "exercises-r",
       "exercises-python"
+    ],
+    "posts/spl-500-novels/index.qmd": [
+      "exercises-python"
     ]
   }
 }

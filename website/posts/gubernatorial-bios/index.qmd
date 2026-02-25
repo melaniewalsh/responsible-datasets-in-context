@@ -1,9 +1,9 @@
 ---
-title: "A Historical Dataset on Governors of the United States and Its Territories"
+title: "A Historical Dataset of U.S. Governors"
 author: Sydney White, Theo Serlin, Neel Gupta, and Kenneth Scheve
 date: "2026-02"
 categories: [government, biographies, history, politics, governors]
-image: "https://upload.wikimedia.org/wikipedia/commons/a/af/National_Governors_Association_logo.svg"
+image: images/ross.png
 format-links: [ipynb, pdf, docx]
 
 # toc: true
@@ -89,6 +89,9 @@ generateTabulatorTableFromCSV(
       // Core identity & office
       "state_territory",
       "governor",
+      "gender",
+      "race/ethnicity",
+
       "party",
       "first_year",
       "years_in_office",
@@ -104,7 +107,7 @@ generateTabulatorTableFromCSV(
       "birth_state_territory",
       "birth_date",
       "age_at_start",
-      "gender",
+      
       "born_in_state_territory",
       "intl_born",
       "intl_born_details",
@@ -115,6 +118,8 @@ generateTabulatorTableFromCSV(
     columnPopups: [
       "U.S. state or territory governed.",
       "Governor’s name.",
+      "Gender based on research.",
+    "Race/ethnicity based on research.",
       "Political party affiliation.",
       "First year they served as governor.",
       "Spans/terms served (as listed in the bio).",
@@ -128,7 +133,6 @@ generateTabulatorTableFromCSV(
       "Birth state or territory.",
       "Birth date (YYYY-MM-DD where available).",
       "Age at the start of first term.",
-      "Gender as recorded in the dataset.",
       "Whether born in the state/territory they govern (1/0).",
       "Whether born outside the U.S. (1/0).",
       "Details about international birthplace if applicable.",
@@ -476,7 +480,7 @@ Here, we show some descriptive statistics. We plot the underlying yearly data, a
 
 Due to these data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.
 
-![Nellie Taylor Ross was the first female US governor.](images/ross.png)
+![Nellie Taylor Ross was elected the first female US governor (of Wyoming) in 1925.](images/ross.png){width=60%}
 
 ```{r}
 

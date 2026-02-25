@@ -15,6 +15,7 @@ format-links: [ipynb, pdf, docx]
 code-fold: true
 editor: visual
 df-print: kable
+date: "2023-07"
 R.options:
   warn: false
 code-tools: true
@@ -22,7 +23,6 @@ bibliography: ../../references/references.bib
 ---
 
 ::: {.panel-tabset .nav-pills}
-
 # Data Essay {#data-essay .tab-pane}
 
 ## Introduction

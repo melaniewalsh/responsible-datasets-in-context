@@ -9,7 +9,7 @@ format:
   pdf: default
   #docx: default
   #r: default
-categories: [llms, pretraining data, audit]
+categories: [llms, pretraining data, audit, draft]
 image: "https://raw.githubusercontent.com/allenai/dolma/main/docs/assets/AI2_Blog_1400x685_2x.webp"
 format-links: [ipynb, pdf, docx]
 code-fold: true
@@ -22,7 +22,6 @@ bibliography: ../../references/references.bib
 ---
 
 ::: {.panel-tabset .nav-pills}
-
 # Data Essay {#data-essay .tab-pane}
 
 ## Introduction
