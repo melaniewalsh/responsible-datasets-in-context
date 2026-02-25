@@ -72,7 +72,9 @@ import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
 
 ## When NPS Visit Data Became Political
 
+::: {.content-hidden when-format="pdf"}
 ![Credit: [SFGATE](https://www.sfgate.com/national-parks/article/national-park-protests-yosemite-webcams-20196304.php). Yosemite’s High Sierra webcam at 12:25 p.m., March 1, 2025. Screenshot via National Park Service.](https://s.hdnux.com/photos/01/47/41/44/27138314/3/ratio16x9_960.webp){#fig-protest}
+:::
 
 The context and significance of the National Park visit data shifted radically in early 2025. In March, the National Park Service was told to [keep quiet](https://www.nytimes.com/2025/03/06/climate/national-parks-record-visitors-trump.html) about the previous year's visit data, according to an [internal memo](https://drive.proton.me/urls/R5GHVKN21R#gasgVJ72Xh5G) shared by [Resistance Rangers](https://www.resistancerangers.org/). There would be no public communications rollout about visit numbers, as there had been in the past. This is especially surprising because 2024 was a record year. With more than 331 total million visits, more people had visited NPS sites than ever. Why would the NPS be told to keep quiet about their most popular year ever?
 
