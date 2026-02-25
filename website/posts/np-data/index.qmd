@@ -6,7 +6,7 @@ format:
     css: ../../styles.css
     # page-layout: full
   # ipynb: default
-  #pdf: default
+  pdf: default
   #docx: default
   #r: default
 listing:
@@ -46,7 +46,7 @@ bibliography: ../../references/references.bib
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
-# Data Essay {#data-essay .tab-pane}
+# Data Essay
 
 ## Introduction
 
@@ -61,6 +61,13 @@ If you use our materials in your class or another setting, we would love to [hea
 ```{ojs}
 //|echo: false
 import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles, viewof all_park_chart} from "ac13d95a907715bf"
+```
+
+```{ojs}
+//|echo: false
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
 ```
 
 ## When NPS Visit Data Became Political
@@ -490,46 +497,103 @@ The NPS's visitation data is a valuable resource that gives us a glimpse into th
 ::: {#custom-footnotes}
 :::
 
-# Explore the Data {#tabset-1-2}
+# Explore the Data
 
 ## Explore the Data
 
-::: {.content-hidden when-format="pdf"}
-```{ojs}
-//|echo: false
-import {viewof alldataSummaryView, viewof allselectedColumns, viewof alldataSet, alltableContainer, alltable, viewof alltwobuttons, alltableStyles} from "878f51be5dd541f5"
-```
-
-```{ojs}
-//|echo: false
-viewof alldataSet
-```
-
-```{ojs}
-//|echo: false
-alltableContainer
-```
-
-```{ojs}
-//|echo: false
-viewof alltwobuttons
-```
-
+::::::: {.content-hidden when-format="pdf"}
 ```{ojs}
 //|echo: false
 //|output: false
-alltable
+
+generateTabulatorTableFromCSV(
+  "#table-container-np",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
+  {
+    displayedColumns: [
+      "ParkName",
+      "Region",
+      "State",
+      "Year",
+      "RecreationVisits"
+    ],
+
+    columnPopups: [
+      "Name of the National Park.",
+      "NPS region the park belongs to.",
+      "U.S. state where the park is located.",
+      "Calendar year of the visit count.",
+      "Total recreation visits for that year."
+    ],
+
+    numericColumns: ["Year", "RecreationVisits"],
+
+    categoryColumns: [
+      "ParkName",
+      "Region",
+      "State"
+    ],
+
+    sortColumns: ["ParkName", "Year"],
+    sortOrders: ["asc", "desc"],
+
+    buttonContainerId: "#button-container-np",
+    rawButtonId: "#download-raw-np",
+    urlCopyButtonId: "#copy-url-np",
+  }
+);
 ```
 
-```{ojs}
-//|echo: false
-viewof allselectedColumns
-viewof alldataSummaryView
-
-```
+::: {#table-container-np style="height: 500px"}
 :::
 
-# Exercises {#exercises}
+Download Full Data
+
+::: {#button-container-raw-np}
+<button id="download-raw-np">
+
+<i class="fas fa-download"></i> Download Full Data
+
+</button>
+
+<button id="copy-url-np"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+:::
+
+Download Table Data (including filtered options)
+
+::: {#button-container-np}
+<button id="download-csv">
+
+<i class="fas fa-download"></i> Download CSV
+
+</button>
+
+<button id="download-json"><i class="fas fa-download"></i> Download JSON</button> <button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
+:::
+
+:::: {#progress-container style="width: 100%; display: block;"}
+<progress id="progress-bar" style="width: 100%;" max="100" value="0">
+
+</progress>
+
+::: {#progress-text style="text-align: center; margin-top: 5px;"}
+:::
+::::
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
+
+<!-- Excel script -->
+
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
+:::::::
+
+# Exercises
 
 ## Programming Exercises
 
@@ -553,7 +617,7 @@ When working on visualization methods, we often ask students to share plots in a
 :::
 :::::
 
-# Discussion & Activities {#discussion-and-activities}
+# Discussion & Activities
 
 ## Activity 1
 

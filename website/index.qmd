@@ -16,8 +16,8 @@ listing:
   categories: unnumbered 
   sort-ui: false
   filter-ui: true
-  max-description-length: 500  
-  # image-height: 200px
+  max-description-length: 200  
+  image-height: 200px
 repo-actions: false
 description: | 
   Responsible Datasets in Context

@@ -1,0 +1,82 @@
+---
+title: "SPL Top 500 Data Exploration (Exercise)"
+date: "2026-02-25"
+categories: [dplyr, exercise]
+format:
+  html: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: false
+---
+
+# <span style="color:green;"> Exercises </span>
+
+## SPL Top 500 Data Exploration
+
+<span style="color:red;"> [Solutions](SPL-Top-500-Data-Exploration-Solutions.qmd) </span>
+
+These exercises explore checkout data from the Seattle Public Library for the Top 500 "Greatest" Novels — the novels most widely held in libraries according to OCLC. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Groupby and aggregation (sum of checkouts)
+- Sorting and ranking (top N values)
+- Time series line plots (monthly checkouts over time)
+- String filtering (finding titles that contain a keyword)
+- Pivot tables
+- Correlation matrices and heatmaps — a correlation coefficient measures how closely two variables move together, ranging from -1 (perfect inverse relationship) to 1 (perfect positive relationship), with 0 meaning no relationship
+
+# Load the data
+
+```{r}
+#| message: false
+library(dplyr)
+library(ggplot2)
+library(tidyr)
+
+spl_df <- read.csv("https://responsible-datasets-in-context.s3.us-west-2.amazonaws.com/top_500_spl_df.csv",
+  stringsAsFactors = FALSE)
+head(spl_df)
+```
+
+# Exercise 1
+
+Find the top 10 authors and top 10 books by total checkouts in the SPL Top 500 dataset. Display them as tables.
+
+Save the results as `top_authors` and `top_books`.
+
+```{r}
+# Your code here
+```
+
+Discuss/consider: Which authors and books are most popular at the Seattle Public Library? Are there any surprises?
+
+# Exercise 2
+
+Create a time series line plot of monthly checkouts for "Pride and Prejudice" over time.
+
+Filter the data for "Pride and Prejudice", group by year and month, and plot the results.
+
+```{r}
+# Your code here
+```
+
+Discuss/consider: What patterns do you notice in the checkout trends? Are there any seasonal patterns or notable changes over time?
+
+# Exercise 3
+
+Calculate the correlation between the monthly checkout patterns of Harry Potter books and display the results as a heatmap.
+
+Filter for Harry Potter titles, pivot the data so each book is a column, compute the correlation matrix, and visualize it.
+
+```{r}
+# Your code here
+```
+
+Discuss/consider: Which Harry Potter books have the most correlated checkout patterns? What might explain these correlations?

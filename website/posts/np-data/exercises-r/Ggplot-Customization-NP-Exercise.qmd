@@ -1,0 +1,96 @@
+---
+title: "ggplot Customization with National Park Visitation Data (Exercise)"
+date: "2024-02-26"
+categories: [ggplot, advanced, exercise]
+format:
+  html: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: false
+---
+
+# <span style="color:green;"> Exercises </span>
+
+## ggplot Customization with National Park Visitation Data
+
+<span style="color:red;"> [Solutions](Ggplot-Customization-NP-Solutions.qmd) </span>
+
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Filtering data for a specific category
+- Line plots with custom colors and titles
+- Customizing x-axis tick intervals
+- Abbreviating y-axis labels (millions, thousands)
+- Adjusting axis limits to zoom into a time period
+
+## Load National Park Visitation data
+```{r}
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
+ stringsAsFactors = FALSE)
+```
+
+View the np_data dataframe by clicking on the spreadsheet icon in the Global Environment
+
+## Load libraries
+
+```{r}
+#| message: false
+library("dplyr")
+library("stringr")
+library("ggplot2")
+library("scales")
+```
+
+- How have visits to a particular National Park changed over time?
+- What is the most interesting period of change?
+
+# Exercise 1
+First, filter the dataframe for a park of your choice. Then, pick a National Park that you haven't worked with yet, and filter the data for only that park.
+
+```{r}
+# Your code here
+```
+
+# Exercise 2
+
+Now, make a line plot that shows the number of visits per year to that park from 1979 to 2022.
+
+### 2a.
+Choose a color for the line.
+
+### 2b.
+Give the plot a title that also functions as a kind of "headline" for the most interesting story of the plot.
+
+### 2c.
+Change the x-axis ticks so that they increase 5 years at a time.
+
+### 2d.
+Change the y-axis tick labels so that they abbreviate millions to M and thousands to K.
+
+
+```{r}
+# Your code here
+```
+
+## Exercise 3
+
+Now, create a plot that zooms in on the most interesting time period for this particular National Park.
+
+### 3a.
+Change the x-axis limits so that it only shows the most interesting years.
+
+### 3b.
+Come up with a new title that describes this time period.
+
+
+```{r}
+# Your code here
+```

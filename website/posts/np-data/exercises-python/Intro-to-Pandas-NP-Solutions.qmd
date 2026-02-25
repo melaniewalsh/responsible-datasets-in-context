@@ -1,0 +1,81 @@
+---
+title: "Introduction to Pandas with National Park Visitation Data (Solution)"
+date: "2024-02-26"
+categories: [pandas, exercise, solution]
+format:
+  html: default
+  ipynb: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+execute:
+  eval: true
+---
+
+# <span style="color:red;"> Solution </span>
+
+## Introduction to Pandas with National Park Visitation Data
+
+<span style="color:green;"> [Exercise Without Solutions](Intro-to-Pandas-NP-Exercise.qmd) </span>
+
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Selecting columns
+- Filtering rows by a condition
+- Aggregation (sum)
+- Comparing summary statistics across groups
+
+# Load National Park Visitation data
+
+```{python}
+import pandas as pd
+
+np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv")
+np_data.head()
+```
+
+# Exercise 1
+Select 2 columns from the data.
+Save this 2-column dataframe to the variable `smaller_df`.
+
+```{python}
+smaller_df = np_data[['Year', 'RecreationVisits']]
+
+smaller_df.head()
+```
+
+# Question: How does the number of visits to Washington national parks compare to another state?
+
+# Exercise 2
+Filter the dataframe for only values in the state of Washington and save to the variable `wa_parks`.
+
+```{python}
+wa_parks = np_data[np_data['State'] == 'WA']
+
+wa_parks.head()
+```
+
+# Exercise 3
+Calculate the sum total of RecreationVisits to Washington by using `.sum()` on the smaller dataframe `wa_parks`.
+
+```{python}
+wa_parks['RecreationVisits'].sum()
+```
+
+# Exercise 4
+
+Filter the dataframe for only values in another state (your choice) and save to a variable.
+Calculate the sum total of RecreationVisits to this state by using `.sum()`.
+
+```{python}
+ca_parks = np_data[np_data['State'] == 'CA']
+ca_parks['RecreationVisits'].sum()
+```
+
+# Question: How do the number of visits to these 2 states compare to one another?
+
+```{python}
+wa_parks['RecreationVisits'].sum() - ca_parks['RecreationVisits'].sum()
+```

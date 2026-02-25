@@ -28,9 +28,19 @@ execute:
 
 <span style="color:red;"> [Solutions](Intro-to-DPLYR-NP-Solutions.qmd) </span>
 
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Selecting columns with `select()`
+- Filtering rows with `filter()`
+- Aggregation with `summarize()`
+- Using the pipe `%>%` operator
+- Comparing summary statistics across groups
+
 # Load National Park Visitation data
 ```{r}
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv",
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
  stringsAsFactors = FALSE)
 ```
 

@@ -3,6 +3,7 @@ title: "Anna Preus"
 last: Preus
 first: Anna
 people_group: pi
+order: 2
 education: PhD English
 subtitle: Assistant Professor | University of Washington
 image: profile.jpg

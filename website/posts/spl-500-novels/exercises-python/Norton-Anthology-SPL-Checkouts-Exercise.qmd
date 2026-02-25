@@ -1,0 +1,75 @@
+---
+title: "Norton Anthology & SPL Checkouts Data Exploration (Exercise)"
+date: "2026-02-25"
+categories: [pandas, exercise]
+format:
+  html: default
+  ipynb: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+execute:
+  eval: false
+---
+
+# <span style="color:green;"> Exercises </span>
+
+## Norton Anthology & SPL Checkouts Data Exploration
+
+<span style="color:red;"> [Solutions](Norton-Anthology-SPL-Checkouts-Solutions.qmd) </span>
+
+These exercises explore checkout data from the Seattle Public Library for authors in the post-1945 volumes of the *Norton Anthology of American Literature*, one of the most widely used literary anthologies in U.S. college classrooms. The dataset was compiled as part of the research paper ["The Canon in Circulation"](https://doi.org/10.63744/P6qPH135jhY2) (Gupta et al., 2025). The code and data are available on [GitHub](https://github.com/melaniewalsh/Canon-in-Circulation), and you can explore more of the analysis [here](https://melaniewalsh.github.io/whats-seattle-reading/posts/norton-anthology-american/). For more context, see the [Library Checkouts for the Top 500 "Greatest" Novels data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Groupby and aggregation (sum of checkouts)
+- Sorting and ranking (top N values)
+- Horizontal bar charts
+- Filtering by a specific author
+- Time series line plots (monthly checkouts over time)
+
+# Load the data
+
+```{python}
+import pandas as pd
+import plotly.express as px
+
+norton_df = pd.read_csv("https://seattle-library-checkout-data.s3.us-west-2.amazonaws.com/norton-anthology_spl-checkouts_2005-2025.csv")
+norton_df.head()
+```
+
+# Exercise 1
+
+Find the top 10 authors by total checkouts in the Norton Anthology SPL checkouts dataset. Create a horizontal bar chart to visualize the results.
+
+Save the top authors as `top_authors`.
+
+```{python}
+# Your code here
+```
+
+Discuss/consider: Which authors from the Norton Anthology are most popular at the Seattle Public Library? Are these authors you expected to see at the top?
+
+# Exercise 2
+
+Find the top 10 titles by total checkouts. Create a horizontal bar chart to visualize the results.
+
+Save the top titles as `top_titles`.
+
+```{python}
+# Your code here
+```
+
+Discuss/consider: Which titles are checked out most frequently? How do these compare to the most popular authors?
+
+# Exercise 3
+
+Create a time series line plot showing monthly checkouts for Octavia E. Butler over time.
+
+Filter the data for Octavia E. Butler, group by year and month, and plot the results.
+
+```{python}
+# Your code here
+```
+
+Discuss/consider: What patterns do you notice in the checkout trends for Octavia E. Butler? Are there any notable spikes or dips? What might explain them?

@@ -2,7 +2,7 @@
 title: "Os Keyes"
 last: Keyes
 first: Os
-people_group: member
+people_group: former
 education: 
 subtitle: PhD Candidate | University of Washington
 image: profile.jpg

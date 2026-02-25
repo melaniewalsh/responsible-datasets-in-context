@@ -1,3 +1,6 @@
 /.quarto/
 .DS_Store
 website/site/
+website/_site/
+*.quarto_ipynb
+**/figure-pdf/

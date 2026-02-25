@@ -11,17 +11,26 @@ format:
   #docx: default
   #r: default
 listing:
-  id: exercise-posts
-  contents: exercises
-  exclude:
-    categories: "dataset"
-  sort: "date desc"
-  type: table
-  fields: [date, title, categories]
-  categories: false
-  sort-ui: false
-  filter-ui: true
-#   image-height: 200px
+  - id: exercise-posts-python
+    contents: exercises-python
+    exclude:
+      categories: "dataset"
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    categories: false
+    sort-ui: false
+    filter-ui: true
+  - id: exercise-posts-r
+    contents: exercises-r
+    exclude:
+      categories: "dataset"
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    categories: false
+    sort-ui: false
+    filter-ui: true
 date: "2024-07"
 categories: [literature, poetry, gender, race, metadata, full-text, public domain]
 image: "images/aa-anthology.png"
@@ -39,7 +48,7 @@ bibliography: ../../references/references.bib
 
 ::: {.panel-tabset .nav-pills}
 
-# Data Essay {#data-essay}
+# Data Essay
 
 ## Introduction {#introduction}
 
@@ -138,7 +147,7 @@ The lead researcher on this project is Amardeep Singh, a professor of English at
 Kate Hennessey, a Lehigh University graduate student, assisted with the collection of the data as well as the editing and formatting of poems during the spring of 2024. Other Lehigh graduate students have been involved with the project, either as paid graduate research assistants or as students in seminars, whose research and editing skills have at times been added to the project (with full credit and permission). Other recent students who have contributed to the project include Miranda Alvarez Guillen and Christian Farrior. Several of the students involved in the project are people who identify as Black. 
 
 
-# Explore the Data {#explore-the-data}
+# Explore the Data
 
 
 
@@ -177,7 +186,7 @@ viewof alldataSummaryView
 :::
 
 
-# How to Use {#how-to-use}
+# How to Use
 
 ## **How might this dataset – and the collection of texts behind it – be used? **
 
@@ -203,18 +212,21 @@ As of this writing, we are unaware of any African American poets from this perio
 
 **Exploring lesser-known authors. **Many poems in the dataset were published by poets who did not aspire to have careers as poets; they may have only published one or two poems. Others (such as Edward S. Silvera and Lewis Alexander) were accomplished poets who were well-known to their peers, but might have dropped off abruptly (Edward Silvera died quite young, at age 31). And there are a few authors who published five or more poems included in this collection about whom we have been able to find nothing (one such name might be Ann Lawrence [also known as Ann Lawrence-Lucas]; she published several thoughtful poems in _The Messenger_ in the mid-1920s). 
 
-# Exercises {#exercises}
+# Exercises
 
 ::: {.panel-tabset .nav-pills}
 # Python
 
-::: {#exercise-posts}
+::: {#exercise-posts-python}
 :::
 
 # R
+
+::: {#exercise-posts-r}
+:::
 :::
 
-# Discussion & Activities {#discussion-and-activities}
+# Discussion & Activities
 
 ## 1. Gender distribution over time or by venue.
 

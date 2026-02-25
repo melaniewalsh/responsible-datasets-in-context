@@ -3,6 +3,7 @@ title: "Amardeep Singh"
 last: Singh
 first: Amardeep
 people_group: pi
+order: 2
 education: PhD
 subtitle: Professor | Lehigh Universiy
 image: profile.jpg

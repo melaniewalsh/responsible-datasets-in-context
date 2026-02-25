@@ -12,12 +12,20 @@ execute:
   eval: true
 ---
 
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Groupby with aggregation (mean, count)
+- Counting distinct values within groups
+- Descriptive statistics by category
+
 # Load the data
 
 ```{python}
 import pandas as pd
 
-np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv")
+np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv")
 ```
 
 # Exercise 1

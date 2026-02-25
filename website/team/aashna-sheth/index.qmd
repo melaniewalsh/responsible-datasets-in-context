@@ -2,7 +2,7 @@
 title: "Aashna Sheth"
 last: Sheth
 first: Aashna
-people_group: member
+people_group: former
 education: 
 subtitle: Master's Computer Science | University of Washington
 image: profile.jpg

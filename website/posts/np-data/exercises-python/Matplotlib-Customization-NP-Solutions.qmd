@@ -1,0 +1,118 @@
+---
+title: "Matplotlib Customization with National Park Visitation Data (Solution)"
+date: "2024-02-26"
+categories: [matplotlib, advanced, solution]
+format:
+  html: default
+  ipynb: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+execute:
+  eval: true
+  warning: false
+---
+
+# <span style="color:red;"> Solution </span>
+
+## Matplotlib Customization with National Park Visitation Data
+
+<span style="color:green;"> [Exercise Without Solutions](Matplotlib-Customization-NP-Exercise.qmd) </span>
+
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Filtering data for a specific category
+- Line plots with custom colors and titles
+- Customizing x-axis tick intervals
+- Abbreviating y-axis labels (millions, thousands)
+- Adjusting axis limits to zoom into a time period
+
+# Load National Park Visitation data
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+import matplotlib.ticker as ticker
+
+np_data = pd.read_csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv")
+np_data.head()
+```
+
+- How have visits to a particular National Park changed over time?
+- What is the most interesting period of change?
+
+# Exercise 1
+
+First, filter the dataframe for a park of your choice. Pick a National Park that you haven't worked with yet, and filter the data for only that park.
+
+```{python}
+my_parks_df = np_data[np_data['ParkName'] == 'Mount Rainier NP']
+
+my_parks_df.head()
+```
+
+# Exercise 2
+
+Now, make a line plot that shows the number of visits per year to that park from 1979 to 2022.
+
+### 2a.
+Choose a color for the line.
+
+### 2b.
+Give the plot a title that also functions as a kind of "headline" for the most interesting story of the plot.
+
+### 2c.
+Change the x-axis ticks so that they increase 5 years at a time.
+
+### 2d.
+Change the y-axis tick labels so that they abbreviate millions to M and thousands to K.
+
+```{python}
+def abbreviate_number(x, pos):
+    if x >= 1_000_000:
+        return f'{x/1_000_000:.1f}M'
+    elif x >= 1_000:
+        return f'{x/1_000:.0f}K'
+    return str(int(x))
+
+fig, ax = plt.subplots()
+
+ax.plot(my_parks_df['Year'], my_parks_df['RecreationVisits'], color='green')
+ax.set_xticks(range(1980, 2025, 5))
+ax.yaxis.set_major_formatter(ticker.FuncFormatter(abbreviate_number))
+ax.set_ylim(0, 2_000_000)
+ax.set_title('Visits to Mt. Rainier Are Surprisingly Stable')
+ax.set_xlabel('Year')
+ax.set_ylabel('Recreation Visits')
+
+plt.tight_layout()
+plt.show()
+```
+
+# Exercise 3
+
+Now, create a plot that zooms in on the most interesting time period for this particular National Park.
+
+### 3a.
+Change the x-axis limits so that it only shows the most interesting years.
+
+### 3b.
+Come up with a new title that describes this time period.
+
+```{python}
+fig, ax = plt.subplots()
+
+ax.plot(my_parks_df['Year'], my_parks_df['RecreationVisits'], color='green')
+ax.set_xticks(range(1980, 2025, 5))
+ax.set_xlim(2005, 2023)
+ax.yaxis.set_major_formatter(ticker.FuncFormatter(abbreviate_number))
+ax.set_ylim(0, 2_000_000)
+ax.set_title('After a COVID Dip, Mt. Rainier Visits Are Higher Than Ever')
+ax.set_xlabel('Year')
+ax.set_ylabel('Recreation Visits')
+
+plt.tight_layout()
+plt.show()
+```

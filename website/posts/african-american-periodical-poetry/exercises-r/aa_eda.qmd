@@ -1,0 +1,84 @@
+---
+title: "Visualize Author Gender By Year (Solution)"
+date: "2024-02-26"
+categories: [ggplot2, dplyr, line-plot, bar-plot, groupby, R, solution, exercise]
+toc: true
+format:
+   html: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: true
+  message: false
+  warning: false
+---
+
+These exercises explore data about African American periodical poetry from 1900–1928, originally compiled by Amardeep Singh and Kate Hennessey at Lehigh University. For more context about the dataset, see the [data essay](../aa-periodical-poetry.qmd).
+
+**Concepts covered:**
+
+- Groupby with multiple columns
+- Value counts within groups
+- Line plots and bar plots with categorical coloring (ggplot2)
+
+# Load libraries
+
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
+# Read in CSV
+
+```{r}
+aa_df <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/aa-periodical-poetry/African-American-Periodical-Poetry_1900-1928-Created-by-Amardeep-Singh-and-Kate-Hennessey,-Lehigh-University.csv",
+  stringsAsFactors = FALSE)
+```
+
+# View first 5 rows
+
+```{r}
+head(aa_df)
+table(aa_df$gender..if.known.)
+```
+
+# Group by year, count instances of author by gender
+
+```{r}
+aa_gender_by_year <- aa_df %>%
+  group_by(year, gender..if.known.) %>%
+  summarize(count = n(), .groups = "drop")
+
+aa_gender_by_year
+```
+
+# Visualize with ggplot2 - Line Plot
+
+```{r}
+ggplot(aa_gender_by_year, aes(x = year, y = count, color = gender..if.known.)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1900, 1930, by = 5)) +
+  labs(title = "Author Gender by Year",
+       x = "Year",
+       y = "Count",
+       color = "Gender (if known)") +
+  theme_minimal()
+```
+
+# Visualize with ggplot2 - Bar Plot
+
+```{r}
+ggplot(aa_gender_by_year, aes(x = factor(year), y = count, fill = gender..if.known.)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  labs(title = "Author Gender by Year",
+       x = "Year",
+       y = "Count",
+       fill = "Gender (if known)") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```

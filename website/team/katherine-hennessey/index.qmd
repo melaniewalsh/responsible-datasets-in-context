@@ -2,7 +2,7 @@
 title: "Katherine Hennessey"
 last: Hennessey
 first: Katherine
-people_group: member
+people_group: former
 education: B.A. English Literature
 subtitle: Graduate Research Assistant | Lehigh University
 image: profile.jpg

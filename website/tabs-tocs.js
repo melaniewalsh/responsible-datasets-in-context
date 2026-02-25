@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     return maxTabsetNumber;
   }
-  
+
 
   // Function to update TOC when tab changes
   function updateActiveTabTOC() {

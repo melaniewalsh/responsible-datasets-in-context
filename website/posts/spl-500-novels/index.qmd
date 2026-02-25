@@ -14,7 +14,8 @@ format-links: [ipynb, pdf, docx]
 format:
   html:
     css: ../../styles.css
-    
+  pdf: default
+
 df-print: kable
 code-fold: true
 code-tools: true
@@ -25,20 +26,17 @@ R.options:
   warn: false
   knitr.graphics.auto_pdf: true
 
-# (rest of your listing blocks unchanged)
 listing:
-# add back if there are R exercises
-  # - id: exercise-posts-r
-  #   contents: exercises-r
-  #   exclude:
-  #     categories: "dataset, draft"
-  #   sort: "date desc"
-  #   type: table
-  #   fields: [date, title, categories]
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: true
-  #   image-height: 200px
+  - id: exercise-posts-r
+    contents: exercises-r
+    exclude:
+      categories: "dataset, draft"
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    categories: false
+    sort-ui: false
+    filter-ui: true
   - id: exercise-posts-python
     contents: exercises-python
     exclude:
@@ -54,7 +52,7 @@ bibliography: ../../references/references.bib
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
-# Data Essay {#data-essay .tab-pane}
+# Data Essay
 
 ## Introduction
 
@@ -296,6 +294,14 @@ Note that we provide two titles and two different author fields. One is sourced 
 For more details on the Top 500 "Greatest" Novels, refer to the initial [post](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html) written by Anna Preus and Aashna Sheth, which summarizes the criterion and processes used to generate the source list of texts in the first place.
 
 The SPL's open checkout data was organized by David Christensen, Data Analysis Lead at the Seattle Public Library. The data from 2005 to 2016 is originally from the digital artwork, "Making Visible the Invisible," by studios of George Legrady.
+
+![George Legrady, "Making Visible the Invisible" (2005). Digital art installation at the Seattle Central Library. Credit: [Seattle Public Library](https://blog.spl.org/2022/12/06/how-a-digital-artwork-helped-the-seattle-public-library-lead-in-book-data/).](https://i0.wp.com/blog.spl.org/wp-content/uploads/2022/12/legrady-stats-visualiation.jpg?resize=640%2C480&ssl=1){fig-alt="George Legrady's digital art installation at the Seattle Central Library showing six LCD screens with colorful data visualizations of library checkouts"}
+
+::: {.callout-note collapse="true" title="Fun Fact: The Art Installation Behind the Data"}
+
+The checkout data powering this dataset has an unusual origin: a digital art installation. In 2005, artist and UC Santa Barbara professor [George Legrady](https://www.mat.ucsb.edu/g.legrady/glWeb/Projects/spl/spl.html) installed "Making Visible the Invisible" on six LCD screens in the Seattle Central Library's Mixing Chamber. The screens display real-time visualizations of anonymous checkout activity across all 27 library locations, including running totals, floating titles, and a colorful "Keyword Map Attack" organized by Dewey Decimal categories. By 2017, the library realized the installation had quietly accumulated 12 years of historic checkout data, which became the foundation for [Seattle's open data portal](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) and, eventually, this dataset. Read more on the [SPL blog](https://blog.spl.org/2022/12/06/how-a-digital-artwork-helped-the-seattle-public-library-lead-in-book-data/).
+
+:::
 
 To our knowledge, the SPL is the only library to release checkout data by item with this level of temporal detail in the United States. Their published data is a result of the [Seattle Open Data Program](https://www.seattle.gov/tech/reports-and-data/open-data), which is an initiative designed to increase transparency into city operations for the public.
 
@@ -852,7 +858,7 @@ If you want to explore more library checkout data, you can
 ::: {#custom-footnotes}
 :::
 
-# Explore the Data {#tabset-1-2}
+# Explore the Data
 
 ## Explore the Data
 
@@ -1001,7 +1007,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 :::
 :::::::
 
-# Exercises {#exercises}
+# Exercises
 
 ## Programming Exercises
 
@@ -1011,6 +1017,11 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 # Python
 
 ::: {#exercise-posts-python}
+:::
+
+# R
+
+::: {#exercise-posts-r}
 :::
 ::::
 :::::::::::::::::::

@@ -3,6 +3,7 @@ title: "Miriam Posner"
 last: Posner
 first: Miriam
 people_group: pi
+order: 2
 education: PhD Film Studies and American Studies
 subtitle: Assistant Professor | University of California, Los Angeles, Department of Information Studies
 image: profile.jpg

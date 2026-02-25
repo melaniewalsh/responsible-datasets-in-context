@@ -39,7 +39,7 @@ bibliography: ../../references/references.bib
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
-# Data Essay {#data-essay}
+# Data Essay
 
 ## Introduction
 
@@ -638,7 +638,7 @@ While each of these works deserves individual attention, looking at literary dat
 ::: {#custom-footnotes}
 :::
 
-# Explore the Data {#tabset-1-2}
+# Explore the Data
 
 <!-- Importing from https://observablehq.com/d/8bb63a6cde9addff -->
 
@@ -740,7 +740,7 @@ Download Table Data (including filtered options)
 <!-- <button id="download-xlsx"><i class="fas fa-download"></i></i> Download Excel</button> -->
 :::
 
-# Discussion & Activities {#discussion-and-activities}
+# Discussion & Activities
 
 ## Activity 1 {#exercise-1}
 
@@ -762,7 +762,7 @@ In our [Full Text Analysis notebook](https://colab.research.google.com/drive/14d
 
 What other quantitative measures could you apply to the full-text of these novels? How can we connect these measures to our metadata analysis? For example, what is the average length of novels on the list written by authors labeled as male, vs. those labeled as female?
 
-# Exercises {#exercises}
+# Exercises
 
 :::: {.panel-tabset .nav-pills}
 ## Python {#exercise-posts-python}

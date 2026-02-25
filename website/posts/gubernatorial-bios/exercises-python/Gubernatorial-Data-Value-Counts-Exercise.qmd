@@ -12,6 +12,15 @@ execute:
   eval: true
 ---
 
+These exercises use data about U.S. state governors. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Value counts (counting categorical values)
+- Sorting and ranking
+- Binning continuous variables into categories
+- Filtering for outliers
+
 # Load the data
 
 ``` python

@@ -2,7 +2,7 @@
 title: "Paulina Hernandez Trejo"
 last: Hernandez Trejo
 first: Paulina
-people_group: member
+people_group: former
 education: M.A. English
 subtitle: Doctoral Student | University of Notre Dame
 image: profile.jpg

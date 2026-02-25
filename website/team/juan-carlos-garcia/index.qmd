@@ -2,7 +2,7 @@
 title: "Juan Carlos Garcia"
 first: Juan
 last: Garcia
-people_group: member
+people_group: former
 education: B.S. Informatics
 subtitle: Web Developer | University of Washington
 image: profile.jpg

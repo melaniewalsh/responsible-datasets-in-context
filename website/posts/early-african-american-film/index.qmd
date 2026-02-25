@@ -23,7 +23,7 @@ bibliography: ../../references/references.bib
 ---
 
 ::: {.panel-tabset .nav-pills}
-# Data Essay {#data-essay .tab-pane}
+# Data Essay
 
 ## Introduction
 

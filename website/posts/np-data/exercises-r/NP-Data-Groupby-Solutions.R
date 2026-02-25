@@ -1,7 +1,7 @@
 # NP Data Groupby
 
 # Load the data
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv", stringsAsFactors = FALSE)
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv", stringsAsFactors = FALSE)
 
 # Load dplyr library
 library(dplyr)

@@ -1,0 +1,21 @@
+---
+title: "Neel Gupta"
+last: Gupta
+first: Neel
+people_group: member
+education: PhD Information Science
+subtitle: PhD Student | Information School, University of Washington
+image: profile.jpg
+about:
+  template: trestles
+  image: profile.jpg
+  links:
+    - icon: github
+      text: Github
+      href: https://github.com/neelgupta2112
+    - icon: person-circle
+      text: Personal Website
+      href: https://neelgupta2112.github.io/
+---
+
+Neel Gupta is a Ph.D student at the University of Washington working with Professor Melanie Walsh on topics in cultural analytics. He researches contemporary culture with both humanistic and computational methods, thinking about how aesthetic production and consumption is shaped by technologies and capitalism. Before starting his Ph.D, he worked as a data scientist in marketing analytics, and studied English Literature, Mathematics, and Computer Science as part of the Honors Program at Swarthmore College.

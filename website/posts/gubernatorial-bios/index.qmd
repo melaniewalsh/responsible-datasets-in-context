@@ -14,7 +14,8 @@ format-links: [ipynb, pdf, docx]
 format:
   html:
     css: ../../styles.css
-    
+  pdf: default
+
 df-print: kable
 code-fold: true
 code-tools: true
@@ -27,18 +28,16 @@ R.options:
 
 # (rest of your listing blocks unchanged)
 listing:
-# add back if there are R exercises
-  # - id: exercise-posts-r
-  #   contents: exercises-r
-  #   exclude:
-  #     categories: "dataset, draft"
-  #   sort: "date desc"
-  #   type: table
-  #   fields: [date, title, categories]
-  #   categories: false
-  #   sort-ui: false
-  #   filter-ui: true
-  #   image-height: 200px
+  - id: exercise-posts-r
+    contents: exercises-r
+    exclude:
+      categories: "dataset, draft"
+    sort: "date desc"
+    type: table
+    fields: [date, title, categories]
+    categories: false
+    sort-ui: false
+    filter-ui: true
   - id: exercise-posts-python
     contents: exercises-python
     exclude:
@@ -54,7 +53,7 @@ bibliography: ../../references/references.bib
 ---
 
 ::::::::::::::::::: {.panel-tabset .nav-pills}
-# Data Essay {#data-essay .tab-pane}
+# Data Essay
 
 ## Introduction
 
@@ -781,7 +780,7 @@ The gubernatorial biography dataset gives us perspective on the range of backgro
 ::: {#custom-footnotes}
 :::
 
-# Explore the Data {#tabset-1-2}
+# Explore the Data
 
 ## Explore the Data
 
@@ -953,7 +952,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 :::
 :::::::
 
-# Exercises {#exercises}
+# Exercises
 
 ## Programming Exercises
 
@@ -963,6 +962,11 @@ The Historical Gubernatorial Dataset is useful as a dataset for presenting inter
 # Python
 
 ::: {#exercise-posts-python}
+:::
+
+# R
+
+::: {#exercise-posts-r}
 :::
 ::::
 :::::::::::::::::::

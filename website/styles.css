@@ -146,10 +146,8 @@ nav[data-toggle="toc"] {
     .quarto-banner nav.quarto-secondary-nav {
         margin-bottom: 1em;
         color: #000000;
-        background: #a2d58b;}}
-   
-    color: #000000;
-  
+        background: #a2d58b;
+    }
 }
 
 #downloadbutton {
@@ -275,7 +273,7 @@ button#quarto-code-tools-menu i::before {
  /* Ensure the TOC container is on top */
 #quarto-margin-sidebar-toc  {
     /* position: fixed; */
-    top: 0px !important; 
+    top: 0px !important;
     margin-left: -10px;
     z-index: 1000;
 

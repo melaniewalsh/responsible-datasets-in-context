@@ -1,0 +1,90 @@
+---
+title: "DPLYR Value Counts with Gubernatorial Data (Solution)"
+date: "2024-08-01"
+categories: [dplyr, exercise, solution]
+format:
+  html: default
+code-overflow: wrap
+code-fold: show
+editor: visual
+df-print: kable
+R.options:
+  warn: false
+code-tools: true
+execute:
+  eval: true
+---
+
+# <span style="color:red;"> Solution </span>
+
+## DPLYR Value Counts with Gubernatorial Data
+
+<span style="color:green;"> [Exercise Without Solutions](Gubernatorial-Data-Value-Counts-Exercise.qmd) </span>
+
+These exercises use data about U.S. state governors. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Counting categorical values with `count()`
+- Sorting and ranking with `arrange()`
+- Binning continuous variables with `cut()`
+- Filtering for outliers with `filter()`
+
+# Load the data
+
+```{r}
+#| message: false
+library(dplyr)
+
+df <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/refs/heads/main/datasets/gubernatorial-bios/gubernatorial_bios_final.csv",
+  stringsAsFactors = FALSE)
+head(df)
+```
+
+# Exercise 1
+
+What are the top 5 birth states for governors?
+
+Save as `top_birth_states` and then view the resulting dataframe.
+
+```{r}
+top_birth_states <- df %>%
+  count(birth_state_territory) %>%
+  arrange(desc(n)) %>%
+  head(5)
+
+top_birth_states
+```
+
+Discuss/consider: What states are the most common birth spots for governors? Are there similar traits between the top states?
+
+# Exercise 2
+
+Let's now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let's look at the distribution across the entire dataframe.
+
+First, let's cut the `age_at_start` variable into bins, so people between ages 20 and 30 get mapped to the "(20,30]" bucket, 30 and 40 to "(30,40]", etc. Let's call this new column `age_bucket`. We will use the R function `cut()`.
+
+Now let's display the counts of the `age_bucket` column and sort by the age bucket.
+
+```{r}
+df$age_bucket <- cut(df$age_at_start, breaks = c(20, 30, 40, 50, 60, 70, 80))
+
+df %>%
+  count(age_bucket) %>%
+  arrange(age_bucket)
+```
+
+Discuss/consider: Which age range has the most governors?
+
+# Exercise 3:
+
+Let's look at the outlier governors who started office at or below the age of 30. Let's filter the dataset down to this set by filtering on the `age_at_start` column, call it `young_governors` and display it.
+
+```{r}
+young_governors <- df %>%
+  filter(age_at_start <= 30)
+
+young_governors
+```
+
+Discuss/consider: Who are the youngest governors in American History? What era are they from? Take a look at some of their Wikipedia pages and NGA biographies online.

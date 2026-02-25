@@ -3,6 +3,7 @@ title: "Sylvia Fernandez"
 last: Fernandez
 first: Sylvia
 people_group: pi
+order: 2
 education: PhD Hispanic Studies
 subtitle: Assistant Professor | The University of Texas at San Antonio
 image: profile.jpg

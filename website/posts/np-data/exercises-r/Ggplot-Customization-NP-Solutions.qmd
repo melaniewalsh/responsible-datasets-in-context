@@ -27,11 +27,21 @@ execute:
 
 <a href="Ggplot-Customization-NP-Solutions.R" download="Ggplot-Customization-NP-Solutions.R">Download as R Script</a>  
 
-<span style="color:green;"> [Exercise Without Solutions](Intro-to-DPLYR-NP.qmd) </span>
+<span style="color:green;"> [Exercise Without Solutions](Ggplot-Customization-NP-Exercise.qmd) </span>
+
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Filtering data for a specific category
+- Line plots with custom colors and titles
+- Customizing x-axis tick intervals
+- Abbreviating y-axis labels (millions, thousands)
+- Adjusting axis limits to zoom into a time period
 
 ## Load National Park Visitation data
 ```{r}
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2022-National-Park-Visits-By-State.csv",
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
  stringsAsFactors = FALSE)
 ```
 

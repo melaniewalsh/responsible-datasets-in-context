@@ -1,10 +1,11 @@
 ---
 title: "Melanie Walsh"
 last: Walsh
+order: 1
 first: Melanie
 people_group: pi
 education: PhD English Literature
-subtitle: Assistant Professor | Information School, University of Washington
+subtitle: "Lead PI | Assistant Professor | Information School, University of Washington"
 image: profile.jpg
 about:
   template: trestles

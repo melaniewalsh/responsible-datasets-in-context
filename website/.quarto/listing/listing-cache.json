@@ -4,7 +4,9 @@
       "exercises"
     ],
     "posts/african-american-periodical-poetry/aa-periodical-poetry.qmd": [
-      "exercises"
+      "exercises",
+      "exercises-python",
+      "exercises-r"
     ],
     "posts/np-data/index.qmd": [
       "exercises-r",
@@ -24,7 +26,8 @@
       "exercises-python"
     ],
     "posts/spl-500-novels/index.qmd": [
-      "exercises-python"
+      "exercises-python",
+      "exercises-r"
     ]
   }
 }

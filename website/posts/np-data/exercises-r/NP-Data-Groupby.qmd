@@ -16,12 +16,21 @@ R.options:
   warn: false
 code-tools: true
 execute:
-  eval: true
+  eval: false
 ---
+
+These exercises use National Park visitation data from 1979–2024. For more context about the dataset, see the [data essay](../index.qmd).
+
+**Concepts covered:**
+
+- Groupby with `group_by()` and `summarize()`
+- Aggregation (mean, distinct count)
+- Descriptive statistics by category
+
 # Load the data
 
 ```{r} 
-np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/Neat-Datasets/main/1979-2020-National-Park-Visits-By-State.csv", stringsAsFactors = FALSE)
+np_data <- read.csv("https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv", stringsAsFactors = FALSE)
 ```
 
 # Load dplyr library

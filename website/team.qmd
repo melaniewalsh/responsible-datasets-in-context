@@ -14,12 +14,23 @@ listing:
     exclude:
       external: true
     template: embedded_js/people-card.ejs
-    sort: last
+    sort:
+      - "order"
+      - "last"
     type: grid
     fields: [title, subtitle, image, education]
   - id: member
     include:
       people_group: "member"
+    exclude:
+      external: true
+    template: embedded_js/people-card.ejs
+    sort: last
+    type: grid
+    fields: [title, subtitle, image, education]
+  - id: former
+    include:
+      people_group: "former"
     exclude:
       external: true
     template: embedded_js/people-card.ejs
@@ -36,7 +47,13 @@ listing:
 
 # Team Members
 
-:::{#member}
+::: {#member}
+:::
+
+
+# Former Team Members
+
+::: {#former}
 :::
 
 
