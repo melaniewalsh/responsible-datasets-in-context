@@ -15,12 +15,13 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/np-data/index.html",
+      "/posts/early-african-american-film/index.html",
+      "/posts/spl-500-novels/index.html",
+      "/posts/gubernatorial-bios/index.html",
+      "/posts/gender-violence/index.html",
       "/posts/top-500-novels/top-500-novels.html",
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
-      "/posts/gender-violence/index.html",
-      "/posts/gubernatorial-bios/index.html",
-      "/posts/early-african-american-film/index.html"
+      "/posts/np-data/index.html"
     ]
   },
   {
@@ -66,13 +67,14 @@
   {
     "listing": "/datasets.html",
     "items": [
-      "/posts/np-data/index.html",
+      "/posts/early-african-american-film/index.html",
+      "/posts/dolma/index.html",
+      "/posts/spl-500-novels/index.html",
+      "/posts/gubernatorial-bios/index.html",
+      "/posts/gender-violence/index.html",
       "/posts/top-500-novels/top-500-novels.html",
       "/posts/african-american-periodical-poetry/aa-periodical-poetry.html",
-      "/posts/gender-violence/index.html",
-      "/posts/gubernatorial-bios/index.html",
-      "/posts/early-african-american-film/index.html",
-      "/posts/dolma/index.html"
+      "/posts/np-data/index.html"
     ]
   }
 ]
