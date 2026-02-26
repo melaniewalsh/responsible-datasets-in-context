@@ -381,7 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 <section id="load-national-park-visitation-data" class="level1">
 <h1>Load National Park Visitation data</h1>
-<div id="9cce582c" class="cell" data-execution_count="1">
+<div id="6abbc85d" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -455,7 +455,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-1" class="level1">
 <h1>Exercise 1</h1>
 <p>Select 2 columns from the data. Save this 2-column dataframe to the variable <code>smaller_df</code>.</p>
-<div id="a9c5743f" class="cell" data-execution_count="2">
+<div id="7c719bb3" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> np_data[[<span class="st">'Year'</span>, <span class="st">'RecreationVisits'</span>]]</span>
@@ -513,7 +513,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-2" class="level1">
 <h1>Exercise 2</h1>
 <p>Filter the dataframe for only values in the state of Washington and save to the variable <code>wa_parks</code>.</p>
-<div id="55416798" class="cell" data-execution_count="3">
+<div id="5cb467a3" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wa_parks <span class="op">=</span> np_data[np_data[<span class="st">'State'</span>] <span class="op">==</span> <span class="st">'WA'</span>]</span>
@@ -586,7 +586,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-3" class="level1">
 <h1>Exercise 3</h1>
 <p>Calculate the sum total of RecreationVisits to Washington by using <code>.sum()</code> on the smaller dataframe <code>wa_parks</code>.</p>
-<div id="c30ba1a7" class="cell" data-execution_count="4">
+<div id="cef4c07c" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wa_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-4" class="level1">
 <h1>Exercise 4</h1>
 <p>Filter the dataframe for only values in another state (your choice) and save to a variable. Calculate the sum total of RecreationVisits to this state by using <code>.sum()</code>.</p>
-<div id="a2716723" class="cell" data-execution_count="5">
+<div id="05cd1ec2" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ca_parks <span class="op">=</span> np_data[np_data[<span class="st">'State'</span>] <span class="op">==</span> <span class="st">'CA'</span>]</span>
@@ -612,7 +612,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 <section id="question-how-do-the-number-of-visits-to-these-2-states-compare-to-one-another" class="level1">
 <h1>Question: How do the number of visits to these 2 states compare to one another?</h1>
-<div id="ad3da9ba" class="cell" data-execution_count="6">
+<div id="1fb0c95d" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wa_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>() <span class="op">-</span> ca_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
