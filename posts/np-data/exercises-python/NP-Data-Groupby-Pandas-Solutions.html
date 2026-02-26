@@ -285,6 +285,10 @@ document.addEventListener("DOMContentLoaded", function () {
 <span class="menu-text">Mission</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../../impact.html"> 
+<span class="menu-text">Impact</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../../team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
@@ -365,7 +369,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </ul>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="e5296999" class="cell" data-execution_count="1">
+<div id="e2374b33" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -378,7 +382,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What is the average number of visits for <em>each state</em>?</p>
 <p>Save as <code>avg_state_visits</code> and then view the resulting dataframe.</p>
-<div id="83826af4" class="cell" data-execution_count="2">
+<div id="77484bf4" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>avg_state_visits <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -559,7 +563,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 2</h1>
 <p>What is the average number of visits for <em>each National Park</em>?</p>
 <p>Save as <code>avg_park_visits</code> and then view the resulting dataframe.</p>
-<div id="89ea2e9c" class="cell" data-execution_count="3">
+<div id="f61e0cdd" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>avg_park_visits <span class="op">=</span> np_data.groupby(<span class="st">'ParkName'</span>)[<span class="st">'RecreationVisits'</span>].mean().reset_index()</span>
@@ -646,7 +650,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 3:</h1>
 <p>How many National Parks are there in <em>each state</em>?</p>
 <p>Save your answer as <code>distinct_parks</code>.</p>
-<div id="f91fbc37" class="cell" data-execution_count="4">
+<div id="a8ebeef8" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>distinct_parks <span class="op">=</span> np_data.groupby(<span class="st">'State'</span>)[<span class="st">'ParkName'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'NumParks'</span>)</span>
