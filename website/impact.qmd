@@ -1,0 +1,88 @@
+---
+title: "Impact"
+sidebar: false
+page-layout: article
+toc: true
+title-block-banner: true
+---
+
+## Overview
+
+**Responsible Datasets in Context** is an open educational resource that provides curated datasets paired with long-form essays, programming exercises, and discussion activities for undergraduate computing and data science education. Supported by a [Mozilla Responsible Computing Challenge](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/) grant, the project has grown into a widely adopted resource used by instructors, students, librarians, and researchers across disciplines and institutions.
+
+## By the Numbers
+
+::: {.grid}
+
+::: {.g-col-4 style="text-align: center; padding: 1rem;"}
+### 20,000+
+unique website visitors
+:::
+
+::: {.g-col-4 style="text-align: center; padding: 1rem;"}
+### 230+
+students who have worked with our materials in a class setting
+:::
+
+::: {.g-col-4 style="text-align: center; padding: 1rem;"}
+### 10+
+university library guides
+:::
+
+::: {.g-col-4 style="text-align: center; padding: 1rem;"}
+### 7+
+institutions with courses using our materials
+:::
+
+:::
+
+## Awards & Recognition
+
+- [**American Studies Association Digital Project Award**](https://www.theasa.net/about/news-events/announcements/2024-award-recipients) --- awarded to Responsible Datasets in Context for its contribution to digital scholarship in American Studies.
+
+- [**POEM (Project on Open and Evolving Metaliteracies)**](https://www.cmu.edu/dietrich/english/research/poem.html) --- forthcoming in this IMLS-funded open educational resource collection at Carnegie Mellon University.
+
+- [**Big Ten Data Visualization Championship**](https://publish.illinois.edu/lovedataweek/love-data-week-2025/) (Love Data Week 2025) --- our National Park visit dataset was selected as the featured dataset for this multi-institution data visualization competition.
+
+<!-- ## Student Impact
+
+Students who have engaged with our materials report that they transform how they think about data:
+
+> "I had thought about the politics involved with data before, but I feel like this is the first time I was explicitly examining specific examples of politics of data collection, and I found it genuinely interesting. I can definitely see myself thinking about these ideas the next time I'm looking at a dataset."
+>
+> --- Student reflecting on NPS visit data and the politics of data collection
+
+> "I find it very interesting how the formation of a 'National Park' could lead to the displacement of the Native peoples who originally occupied the land."
+>
+> --- Student reflecting on Indigenous land displacement and the National Parks
+
+> "I didn't know about the Wayback Machine, but it's actually amazing that there's a massive archive of stuff from the internet."
+>
+> --- Student discovering digital archiving through course exercises -->
+
+## Press, Media, & Citations
+
+- ["Trump Administration Bars NPS from Reporting Visitor Data"](https://mountainjournal.org/trump-admin-bars-nps-from-reporting-data) --- *Mountain Journal*
+- ["Miriam Posner Awarded Mozilla Grant"](https://seis.ucla.edu/news/miriam-posner-mozilla-grant) --- *UCLA School of Education & Information Studies*
+- ["B1G Data Viz Contest"](https://siebelschool.illinois.edu/about/news/big-data-viz-contest) --- *University of Illinois Siebel School of Computing and Data Science*
+- Cited in:
+    - ["Provocations from the Humanities for Generative AI"](https://arxiv.org/abs/2502.19190) --- Klein et al.
+    - ["Design Studio as Method: Reparative Archives and Beyond"](https://doi.org/10.3998/jep.6168) --- Lindblad, Grumbach, & Boyles (*Journal of Electronic Publishing*)
+    - ["Border Women Literature and Feminist Cartographies"](https://doi.org/10.1002/sgp2.70025) --- Esmaeili, Corona, & Medrano (*Signs: Gender and Policy*)
+    - [Combatting Bias](https://combattingbias.huygens.knaw.nl/) toolkit --- Huygens Institute / Dutch Research Council
+    - ["Bias in AI: How to Spot It, Why It Matters, and What You Can Do"](https://www.library.jhu.edu/news/2025/09/bias-in-ai-how-to-spot-it-why-it-matters-and-what-you-can-do/) --- McKone (*Johns Hopkins University Libraries*)
+
+## Presentations
+
+- **Digital Humanities 2024** (DH2024)
+- **Modern Language Association 2025** (MLA 2025)
+- **Data Advocacy for All**, CU Boulder 2025
+- **University of Texas at San Antonio**
+- **UW Open Scholarship Commons**: "Situating Data: Strategies for Curation and Contextualization"
+
+## Student Projects
+
+Our datasets have inspired independent student projects and creative work:
+
+- **Big Ten Love Data Week** --- students created data visualizations using our National Park dataset as part of the multi-institution [data visualization competition](https://publish.illinois.edu/lovedataweek/love-data-week-2025/).
+- Student-driven analyses published on [RPubs](https://rpubs.com/) using R and our datasets.

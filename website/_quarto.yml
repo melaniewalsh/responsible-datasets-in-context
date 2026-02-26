@@ -30,6 +30,8 @@ website:
       - datasets.qmd
       - text: "Mission"
         href: mission.qmd
+      - text: "Impact"
+        href: impact.qmd
       - text: "Team"
         href: team.qmd
       - text: "About"

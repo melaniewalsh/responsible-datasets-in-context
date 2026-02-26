@@ -1,6 +1,8 @@
 ---
 title: "U.S. National Park Visit Data (1979-2024)"
-author: Melanie Walsh and Os Keyes
+author:
+  - Melanie Walsh
+  - Os Keyes
 format: 
   html:
     css: ../../styles.css
@@ -43,6 +45,15 @@ R.options:
   knitr.graphics.auto_pdf: true
 code-tools: true
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
@@ -60,7 +71,7 @@ If you use our materials in your class or another setting, we would love to [hea
 
 ```{ojs}
 //|echo: false
-import {viewof dataSummaryView, viewof selectedColumns, viewof dataUrl, viewof dataSet, tableContainer, table, viewof twobuttons, viewof selectedPark, viewof park_chart, viewof datasetHeader, tableStyles, viewof all_park_chart} from "ac13d95a907715bf"
+import {viewof selectedPark, viewof park_chart, viewof all_park_chart} from "ac13d95a907715bf"
 ```
 
 ```{ojs}
@@ -104,32 +115,72 @@ viewof park_chart
 
 ```{ojs}
 //|echo: false
-viewof datasetHeader
-tableContainer
-```
-
-```{ojs}
-//|echo: false
-viewof twobuttons
-```
-
-```{ojs}
-//|echo: false
 //|output: false
-table
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
+
+generateTabulatorTableFromCSV(
+  "#table-container-np-essay",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
+  {
+    displayedColumns: [
+      "ParkName",
+      "Region",
+      "State",
+      "Year",
+      "RecreationVisits"
+    ],
+
+    columnPopups: [
+      "Name of the National Park.",
+      "NPS region the park belongs to.",
+      "U.S. state where the park is located.",
+      "Calendar year of the visit count.",
+      "Total recreation visits for that year."
+    ],
+
+    numericColumns: ["Year", "RecreationVisits"],
+
+    categoryColumns: [
+      "ParkName",
+      "Region",
+      "State"
+    ],
+
+    sortColumns: ["ParkName", "Year"],
+    sortOrders: ["asc", "desc"],
+
+    buttonContainerId: "#button-container-np-essay",
+    rawButtonId: "#download-raw-np-essay",
+    urlCopyButtonId: "#copy-url-np-essay",
+  }
+);
 ```
+
+::: {#table-container-np-essay style="height: 500px"}
 :::
 
-::: {.callout-note icon="false" collapse="true"}
-## View Summary of Columns
+Download Full Data
 
-```{ojs}
-//|echo: false
-viewof selectedColumns
-viewof dataSummaryView
+<div>
+<button id="download-raw-np-essay"><i class="fas fa-download"></i> Download Full Data</button>
+<button id="copy-url-np-essay"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
 
+Download Table Data (including filtered options)
+
+<div id="button-container-np-essay">
+<button id="download-csv"><i class="fas fa-download"></i> Download CSV</button>
+<button id="download-json"><i class="fas fa-download"></i> Download JSON</button>
+<button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
+</div>
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
+
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 ```
 :::
 

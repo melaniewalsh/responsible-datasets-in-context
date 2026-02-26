@@ -1,6 +1,8 @@
 ---
 title: "Gender Violence at the Border (1993-1998)"
-author: Sylvia Fernández and Paulina Hernandez Trejo
+author:
+  - Sylvia Fernández
+  - Paulina Hernandez Trejo
 date: "2024-08"
 categories: [gender, human rights, social justice activism, missing-data, communities]
 image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/US-Mexico_barrier_map.png"
@@ -16,6 +18,15 @@ R.options:
   warn: false
 code-tools: true
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 ::::::: {.panel-tabset .nav-pills}
@@ -32,47 +43,106 @@ This dataset includes information about feminicdes, or cases of women who have b
 **Translated and digized dataset (2023):** Jasbeth Medrano (Leader), Judith Ordonez, Carolina Vlaun, Alex Sanchez, and Samuel Hille
 
 :::: {.content-hidden when-format="pdf"}
-<!-- Importing ojs variables from https://observablehq.com/d/93035b1c4fe02eed (forked, collaborative) -->
 
-```{ojs when-format="html"}
+```{ojs}
 //| echo: false
-import {viewof dataSummaryView, viewof dataSet, tableContainer, table, tableStyles, viewof selectedColumns, viewof twobuttons, viewof datasetHeader} from "93035b1c4fe02eed"
+// Using the Post45 Data Viewer
+// https://observablehq.com/d/8bb63a6cde9addff
+import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
 ```
 
 ```{ojs}
-//|echo: false
-viewof dataSet
-```
-
-```{ojs when-format="html"}
-//|echo: false
-viewof datasetHeader
-tableContainer
-```
-
-```{ojs}
-//|echo: false
-viewof twobuttons
-```
-
-```{ojs when-format="html"}
 //|echo: false
 //|output: false
-table
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
+
+generateTabulatorTableFromCSV(
+  "#table-container-gv",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/English_Bilingual_Database_of_El%20Silencio_de_la_Voz.csv",
+  {
+    displayedColumns: [
+      "Case Number",
+      "Age",
+      "Name",
+      "Date Found",
+      "Details of Disappearance",
+      "Place found",
+      "Physical Characteristics",
+      "Facts About the Victim's Life",
+      "Cause of death",
+      "Characteristics of Death: position, state",
+      "Clothing Details",
+      "Potential Attackers",
+      "Case ",
+      "Incongruencies",
+      "Articles",
+      "Photos",
+      "Notes"
+    ],
+
+    columnPopups: [
+      "Case file number.",
+      "Age of the victim.",
+      "Name of the victim.",
+      "Date the victim was found.",
+      "Details about the victim's disappearance.",
+      "Location where the victim was found.",
+      "Physical characteristics of the victim.",
+      "Facts about the victim's life.",
+      "Cause of death.",
+      "Characteristics of death including position and state.",
+      "Details about the victim's clothing.",
+      "Information about potential attackers.",
+      "Case details.",
+      "Incongruencies in the case.",
+      "Related articles.",
+      "Related photos.",
+      "Additional notes."
+    ],
+
+    numericColumns: [],
+
+    categoryColumns: [
+      "Cause of death",
+      "Place found"
+    ],
+
+    sortColumns: ["Case Number"],
+    sortOrders: ["asc"],
+
+    buttonContainerId: "#button-container-gv",
+    rawButtonId: "#download-raw-gv",
+    urlCopyButtonId: "#copy-url-gv",
+  }
+);
 ```
 
-::: {.callout-note icon="false" collapse="true"}
-## View Summary of Columns
-
-```{ojs}
-//|echo: false
-viewof selectedColumns
-viewof dataSummaryView
-
-```
+::: {#table-container-gv style="height: 500px"}
 :::
+
+Download Full Data
+
+<div>
+<button id="download-raw-gv"><i class="fas fa-download"></i> Download Full Data</button>
+<button id="copy-url-gv"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
+
+Download Table Data (including filtered options)
+
+<div id="button-container-gv">
+<button id="download-csv"><i class="fas fa-download"></i> Download CSV</button>
+<button id="download-json"><i class="fas fa-download"></i> Download JSON</button>
+<button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
+</div>
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+```
+
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
 ::::
 
 ::: {.callout-tip icon="false"}
@@ -328,45 +398,97 @@ In the ***Final Module---\>Atando cabos***, students were divided into six teams
 
 This page includes all the datasets that were created by students in "Border Women Literature & Feminist Cartographies" (Fall 2023) at the University of Texas at San Antonio. Descriptions and authors of each dataset are included below.
 
-<!-- Importing ojs variables from https://observablehq.com/d/662315b062d668fb (forked, collaborative) -->
-
-```{ojs}
-//| echo: false
-import {viewof alldataSummaryView, viewof alltwobuttons, viewof alldataSet, alltableContainer, alltable, alltableStyles, viewof allselectedColumns, viewof alldatasetHeader} from "662315b062d668fb"
-
-```
-
 ```{ojs}
 //|echo: false
-viewof alldataSet
+//|output: false
+
+generateTabulatorTableFromCSV(
+  "#table-container-gv-all",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/gender-violence/English_Bilingual_Database_of_El%20Silencio_de_la_Voz.csv",
+  {
+    displayedColumns: [
+      "Case Number",
+      "Age",
+      "Name",
+      "Date Found",
+      "Details of Disappearance",
+      "Place found",
+      "Physical Characteristics",
+      "Facts About the Victim's Life",
+      "Cause of death",
+      "Characteristics of Death: position, state",
+      "Clothing Details",
+      "Potential Attackers",
+      "Case ",
+      "Incongruencies",
+      "Articles",
+      "Photos",
+      "Notes"
+    ],
+
+    columnPopups: [
+      "Case file number.",
+      "Age of the victim.",
+      "Name of the victim.",
+      "Date the victim was found.",
+      "Details about the victim's disappearance.",
+      "Location where the victim was found.",
+      "Physical characteristics of the victim.",
+      "Facts about the victim's life.",
+      "Cause of death.",
+      "Characteristics of death including position and state.",
+      "Details about the victim's clothing.",
+      "Information about potential attackers.",
+      "Case details.",
+      "Incongruencies in the case.",
+      "Related articles.",
+      "Related photos.",
+      "Additional notes."
+    ],
+
+    numericColumns: [],
+
+    categoryColumns: [
+      "Cause of death",
+      "Place found"
+    ],
+
+    sortColumns: ["Case Number"],
+    sortOrders: ["asc"],
+
+    buttonContainerId: "#button-container-gv-all",
+    rawButtonId: "#download-raw-gv-all",
+    urlCopyButtonId: "#copy-url-gv-all",
+  }
+);
 ```
 
-```{ojs}
-//|echo: false
-viewof alldatasetHeader
-alltableContainer
+::: {#table-container-gv-all style="height: 500px"}
+:::
+
+Download Full Data
+
+<div>
+<button id="download-raw-gv-all"><i class="fas fa-download"></i> Download Full Data</button>
+<button id="copy-url-gv-all"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+</div>
+
+Download Table Data (including filtered options)
+
+<div id="button-container-gv-all">
+<button id="download-csv"><i class="fas fa-download"></i> Download CSV</button>
+<button id="download-json"><i class="fas fa-download"></i> Download JSON</button>
+<button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
+</div>
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+
+```{=html}
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
 ```
 
-```{ojs}
-//|echo: false
-viewof alltwobuttons
-```
-
-```{ojs}
-// |echo: false
-// |output: false
-alltable
-html`<link href='https://unpkg.com/tabulator-tables@5.3.1/dist/css/tabulator.min.css' rel='stylesheet' />
-tabulator.min.css`
-```
-
-<br>
-
-```{ojs}
-//|echo: false
-viewof allselectedColumns
-viewof alldataSummaryView
-
+```{=html}
+<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 ```
 
 -   **Dataset #1: [*Tracing Feminicides in El Paso, Texas Using the Hispanic-American Newspaper Newsbank-Readex Collection*](https://utsacloud-my.sharepoint.com/:x:/g/personal/sylvia_fernandez_utsa_edu/ERRyEGE0CLtCpx2UwXke8hgBA-WigVSJKZz6E7iSB_EvkA?e=5dUC0k)**

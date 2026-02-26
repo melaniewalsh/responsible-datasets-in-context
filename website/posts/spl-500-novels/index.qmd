@@ -49,6 +49,15 @@ listing:
     filter-ui: true
   
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
@@ -848,7 +857,7 @@ Sci-fi and horror are the most internally correlated genres, while political, bi
 
 This essays demonstrates some of the cool research directions you can explore with the SPL's open checkout data. The Top 500 "Greatest" Novels represents a particularly canonical and popular set of books, featuring both contemporary and historical authors, and a diverse range of genres. Our work here points to some interesting dynamics that you can analyze within book series, between and within genres, and around prominent external events that may drive readership.
 
-If you want to explore more library checkout data, you can 
+Findally, if you want to explore more library circulation data, you can also checkout the ["What's Seattle Reading?"](https://melaniewalsh.github.io/whats-seattle-reading/) project. 
 
 ## References
 

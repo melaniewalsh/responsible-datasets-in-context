@@ -1,6 +1,10 @@
 ---
 title: "A Historical Dataset of U.S. Governors"
-author: Sydney White, Theo Serlin, Neel Gupta, and Kenneth Scheve
+author:
+  - Sydney White
+  - Theo Serlin
+  - Neel Gupta
+  - Kenneth Scheve
 date: "2026-02"
 categories: [government, biographies, history, politics, governors]
 image: images/ross.png
@@ -50,6 +54,15 @@ listing:
     filter-ui: true
   
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 ::::::::::::::::::: {.panel-tabset .nav-pills}

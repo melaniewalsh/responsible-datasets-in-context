@@ -1,108 +1,81 @@
 ---
-title: 'Responsible Datasets in Context'
+title: "Responsible Datasets in Context, or the Anti-Kaggle: Curated Resources for More Ethical, Humanistic Data Education"
 tags:
   - Data
   - Datasheets
 authors:
   - name: Melanie Walsh
-    affiliation: 1 # (Multiple affiliations must be quoted)
-  - name: Anna Preuss
+    affiliation: 1
+  - name: Anna Preus
     affiliation: 2
   - name: Sylvia Fernandez
     affiliation: 3
   - name: Miriam Posner
     affiliation: 4
   - name: Amardeep Singh
-    affiliation: 5 
+    affiliation: 5
   - name: Neel Gupta
-    affiliation:1
-  affiliations:
- - name: Information School, University of Washington
-   index: 1
- - name: Department of English, University of Washington
-   index: 2
- - name: Modern Languages and Literatures, The University of Texas at San Antonio
-   index: 3
- - name: Department of Information Studies, University of California, Los Angeles
-   index: 4
- - name: Department of English, Lehigh University
-   index: 5
+    affiliation: 1
+affiliations:
+  - name: Information School, University of Washington
+    index: 1
+  - name: Department of English, University of Washington
+    index: 2
+  - name: Modern Languages and Literatures, The University of Texas at San Antonio
+    index: 3
+  - name: Department of Information Studies, University of California, Los Angeles
+    index: 4
+  - name: Department of English, Lehigh University
+    index: 5
 date: 4 March 2025
 bibliography: paper.bib
-
 ---
 
 # Summary
 
-Our project, [“Responsible Datasets in Context: Collaboratively Designing for Ethical Humanities Data Education”](https://www.responsible-datasets-in-context.com/), seeks to strengthen students’ capacity to work with data responsibly. We provide curated datasets that are carefully documented and paired with long-form essays, which both explore and interrogate each dataset’s construction, history, quirks, flaws, and strengths from different humanistic perspectives. We thus provide useable datasets and models for responsible data curation, documentation, story-telling, and analysis.
+["Responsible Datasets in Context"](https://www.responsible-datasets-in-context.com/) is an online repository of datasets that are paired with rich documentation, data essays, and teaching resources, all of which foreground context and humanities perspectives and methods. Each dataset is accompanied by coding exercises in both Python and R, as well as discussion and activity prompts. The project provides usable datasets and models for responsible data curation, documentation, story-telling, and analysis, targeting undergraduate, graduate, and even high school students in the humanities, social sciences, and STEM.
 
-Beyond our specific educational goals, we also hope these datasets, essays, and accompanying materials will be useful and informative for the broader public. Our target audience is high school, undergraduate, or early graduate students in both the humanities and the social sciences.
+Our repository continues to grow, but some current datasets include:
 
-Our current set of datasets include["US National Park Visit Data (1979-2023)"](https://www.responsible-datasets-in-context.com/posts/np-data/), ["Top 500 'Greatest' Novels (1021-2015)"](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html), ["African American Periodical Poetry (1900-1928)"](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html), and ["Gender Violence at the Border (1993-1998)"](https://www.responsible-datasets-in-context.com/posts/gender-violence/). 
+- ["Top 500 'Greatest' Novels"](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html) — metadata about novels from a composite "greatest novels" list, interrogating canon formation and whose voices are represented (Preus and Sheth)
+- ["Library Checkouts for the Top 500 'Greatest' Novels"](https://www.responsible-datasets-in-context.com/posts/spl-500-novels/) — Seattle Public Library checkout data for the Top 500 novels, exploring how library circulation data reflects reading patterns and community interests (Gupta)
+- ["African American Periodical Poetry"](https://www.responsible-datasets-in-context.com/posts/african-american-periodical-poetry/aa-periodical-poetry.html) — full-text poetry and metadata from early 20th-century African American periodicals, raising questions about digitization, metadata, and literary recovery (Singh and Hennessey)
+- ["U.S. National Park Visit Data"](https://www.responsible-datasets-in-context.com/posts/np-data/) — visit counts for all U.S. National Parks, contextualized within the politics of government data and the fundamentally flawed nature of all data collection (Walsh and Keyes)
+- ["Gender Violence at the Border"](https://www.responsible-datasets-in-context.com/posts/gender-violence/) — data about feminicides at the U.S.-Mexico border, digitized (by students) from _El Silencio Que La Voz De Todas Quiebra_ [@benitez_silencio_1999] (Fernández and Hernandez Trejo)
+- ["A Historical Dataset of U.S. Governors"](https://www.responsible-datasets-in-context.com/posts/gubernatorial-bios/) — biographical data on 2,486 governors from 55 states and territories (1775-present), examining political representation and historical bias (White, Serlin, Gupta, and Scheve)
 
-Our general website can be found at [https://www.responsible-datasets-in-context.com/](https://www.responsible-datasets-in-context.com/) and materials are licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/). 
-
+All materials are licensed under the [Creative Commons Attribution 4.0 (CC BY 4.0) License](https://creativecommons.org/licenses/by/4.0/).
 
 # Statement of Need
 
-Data cannot be analyzed responsibly without deep knowledge of its social and historical context, provenance, and limitations. Anyone who works with data—from academic researchers to industry professionals—will know this claim to be true. 
+We jokingly refer to our project as "the anti-Kaggle," not because we are actually opposed to Kaggle—a popular website where users share and download datasets—but because we are opposed to some of the uncritical data habits that this website (often unintentionally) encourages in students. In computing classes, students often turn to Kaggle to find data for assignments and projects. Kaggle is a valuable platform in many respects, and it has fostered a large, engaged community, and worked toward its own forms of responsible curation and documentation over the years. But because of the way it is often used, especially in education, Kaggle, in our view, has come to represent a broader culture of data work that is irresponsible and even harmful. This is a culture where data circulates with minimal documentation, little historical context, and brief if any discussion of ethical considerations.
 
-But despite its significance, social and historical knowledge and methodologies are one of the most neglected areas in undergraduate computing education. In classes, it is very common for students to use datasets that they find on websites like Kaggle, datasets that are poorly documented and that students thus don’t fully understand. This is a recipe for irresponsible data work and a bad habit that can become a dangerous habit as the stakes get higher. 
+We've seen students hurriedly download CSV or JSON files from Kaggle or other websites, and then rush to apply the fanciest computational techniques, hoping to get results that will impress their teachers and future employers. But these analyses usually lack depth or even, frankly, coherence because the students did not understand where the data came from, who collected it, why, or what might be missing. This is simply a recipe for sloppy data work—and a bad habit that becomes a dangerous habit as the stakes get higher.
 
-The motivation for our data essays is also inspired by "Datasheets for Datasets" `[@Gebru:2021]` which argues that "every dataset be accompanied with a datasheet that documents its motivation, composition, collection process, recommended uses, and so on." Our data essays resemble these datasheets and do more, with a focus on sites of uncertainty and ambiguity within the datasets and the collection process.
+Indeed, we have seen these very same habits, this same carelessness about data, in developers and technicians working at the highest levels of the tech industry, producing technologies, like AI models, that impact nearly all of our lives. To take just one example, recent audits by the Data Provenance Initiative [@longpre_data_2024] found that over 80% of source content in widely-used AI datasets carry non-commercial restrictions that are frequently violated.
 
+Clearly data is one of the most contested and consequential issues in contemporary society—from fights over AI training data to debates about who controls public records. Yet students are rarely taught to engage with these questions critically. While there are many reasons for this, one is that, from a pedagogical perspective, finding good datasets is... hard. By "good" datasets, we mean datasets that lends themselves well to exploration and discussion from technical, ethical, _and_ humanistic angles.
 
-# Our Data Essays
+Responsible Datasets in Context grew out of this shared frustration. We set out to create an alternative—a collection of datasets that are not only technically rich but accompanied by the social and historical context needed to work with them responsibly. As Johanna Drucker [@drucker_humanities_2021] and many others have argued, data is never simply "given." Datasets have stories behind them, and those stories are integrally connected any use of the data.
 
-The general structure of our data essays are inspired by Heather Krause’s concept of a ["data biography"](https://gijn.org/stories/data-biographies-getting-to-know-your-data/). 
+In our "Mission Statement," we also advance several "data principles." For example, scholarship on Indigenous data sovereignty [@christen_relationships_2018] underscores that responsible data work must attend not only to documentation and provenance but also to the relational and ethical dimensions of who has the right to access, share, and benefit from data.
 
-A data essay will and should differ depending on the data it describes, but most of our data essays try to address the following questions:
+# Related Work
 
-What is the historical context of the data?
-Where did the data come from? Who collected it?
-Why was the data collected?
-How was the data collected?
-How is the data used?
-What’s in the data?
-What “counts” as a data point?
-What data is missing?
-How is uncertainty handled?
+Our project builds on foundational work addressing dataset documentation, including Datasheets for Datasets [@gebru_datasheets_2021], Data Statements for NLP [@bender_data_2018], Model Cards for Model Reporting [@mitchell_model_2019], HuggingFace Dataset Cards [@huggingface_dataset_cards_2024], the FAIR Guiding Principles [@wilkinson_fair_2016], and Heather Krause's concept of "data biographies" [@krause_data_2017]. Cultural data collectives such as the Post45 Data Collective [@post45_data_collective] and the Nineteenth Century Data Collective [@c19_data_collective] also demonstrate models of community-driven data curation in the humanities.
 
+We build on the model of "Datasheets for Datasets," [@gebru_datasheets_2021] which argues that every dataset should be accompanied by documentation of its motivation, composition, collection process, and recommended uses. We extend this model by drawing on history, literary studies, cultural and media studies, and critical theory to interrogate each dataset's back story and social stakes in ways that purely technical documentation cannot. We also highlight related work that has shaped our data principles.
 
-# Instructional Design
+Throughout our essays, and in our data principles, we also seek to emphasize that some data should remain off-limits or private, and that the communities represented in datasets should have a meaningful say in how their data is shared and used [@christen_relationships_2018]. Iin a related vein, the Colored Conventions Project [@foreman_colored_conventions] has argued that data about Black communities has historically served in the recording and devaluation of Black lives, and that there is an urgent need to affirm the humanity inherent in such data.
 
-Alongside our data essays, each data resource is complimented with two pedagogical tools:
-- Exercises
-- Discussion and Activities
+# Content and Instructional Design
 
-Our Exercises section consists of coding tutorials and challenges specific to each dataset. Accompanying exercises are across both Python and R, and are designed around specific libraries and techniques in both languages. Exercises come with accompanying code and detailed instructions to help students work through data manipulation, visualization, and metric extraction. This approach to learning code for data science is grounded in contextual data and situates the code content around naturally emerging questions from the dataset and the data essays.
+Inspired by Krause's "data biographies" [@krause_data_2017], each data essay addresses questions such as: What is the historical context of the data? Who collected it, and why? What "counts" as a data point? What data is missing? How is uncertainty handled? A data essay will and should differ depending on the dataset it describes, but these questions ground each essay's humanistic inquiry.
 
-The Discussion and Activites section focues more on interpretation, implications, and usability of the data rather than specific coding techniques. Although Activities often leverage skills or code from the exercise implicitly, the questions and content are more broad and wide-ranging. As a result, although we provide specific solutions for Exercises, we do not for the Discussion and Activities section. The Discussion and Activities section teaches a humanistic approach to the data by posing either suites of questions around a theme, or open ended questions that can support multiple different lines of inquiry.
+Alongside data essays, each resource includes coding exercises in Python and R—designed around questions that emerge from the data and scholarship—and discussion activities that teach a humanistic approach to interpretation and analysis, encouraging students to grapple with the ambiguity, historical contingency, context, uncertainty, and fundamentally flawed nature of the data they analyze.
 
+# Impact and Recognition
 
-
-# Our Data Principles
-Based on our work and conversations, we also offer the following principles to help guide ethically responsible dataset curation, consumption, and analysis:
-
-## Tell the Data’s Story / Know the Data’s Story
-As scholars like Johanna Drucker and others have been arguing for more than a decade, data is not simply objectively “there” in the world. Datasets have human-oriented stories behind them and implicit within them, and the stories of how and why data was created ought to be integrally connected to the datasets themselves.
-
-What are the constraints of the source material? What material might be simply absent from the historical record, and how do those absences shape what data we can effectively construct? Also, where are there elements of uncertainty or fuzziness in the data? If choices had to be made regarding, for instance, the dating of a creative work, how were those choices made, and why?
-
-## Provide Metadata / Understand Metadata
-Metadata is often overlooked. But understanding what each data point and feature represents is fundamental to ethically responsible data work, so it is important to gives users a way to access and understand that metadata. Which categories were deemed important to catalog and measure, and which were excluded? If gender is an aspect of metadata, is gender only available under binarized categories? Is race included or discussed – and why?
-
-## Touch Every Data Point
-For creators and users of datasets, it is important to actually explore and try out datasets to make sure they’re accurate and glitch-free, and that they represent what we think they represent—in other words, it is important to actually open a dataset in Excel, Google Sheets, etc., and examine individual cells. When data is too large for these kinds of applications, it is important to examine individual data points in other ways. This is a basic yet surprisingly radical concept! It is especially important when we use automated processes to create datasets, like web scraping, which are also more likely to distance us from individual data points.
-
-## Consider When Data Should Remain Off-Limits or Private
-There is a growing movement in data science to think carefully about who can ethically access certain kinds of data. Representations of tribal rituals among indigenous communities are often only meant for members of those communities, so accessing photographs or other sorts of quantitative data about that traditional knowledge should probably be restricted. Projects like [Mukurtu](https://mukurtu.org/) have specifically addressed this issue and developed platforms where communities can choose who they share their data with.
-
-Similarly, the editors of sites like the [Colored Conventions Project](https://coloredconventions.org/) have argued that data about enslaved people and their descendents has historically “served in the processes and recording of the destruction and devaluation of Black lives and communities.” They maintain that there is an urgent need to affirm “the Black humanity inherent in Black data/curation.” In other words, when data is about real people who may have been marginalized or oppressed, it is important that those people be named and recognized.
-
-# Future Contributions
-
- If you would like to get in touch with the editorial team or propose a submission, refer to this ["link"](https://www.responsible-datasets-in-context.com/get-in-touch.html) for up to date instructions.
+Supported by a Mozilla Responsible Computing Challenge grant [@mozilla_rcc_2021], Responsible Datasets in Context has reached more than 20,000 unique website visitors, over 230 students in classroom settings, 10+ university library guides, and courses at more than seven institutions. The project received the American Studies Association Digital Project Award [@asa_digital_award_2024] in 2025. Our work has also been cited in publications spanning digital humanities, feminist studies, and AI ethics.
 
 # References
-

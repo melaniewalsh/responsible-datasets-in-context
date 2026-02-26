@@ -1,6 +1,8 @@
 ---
 title: "African American Periodical Poetry (1900-1928)"
-author: Amardeep Singh and Kate Hennessey
+author:
+  - Amardeep Singh
+  - Kate Hennessey
 format: 
   html:
     css: ../../styles.css
@@ -43,6 +45,15 @@ df-print: kable
 jupyter: python3
 code-tools: true
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 

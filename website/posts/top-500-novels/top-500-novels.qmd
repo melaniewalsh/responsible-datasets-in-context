@@ -1,6 +1,8 @@
 ---
 title: "Top 500 \"Greatest\" Novels (1021-2015)"
-author: Anna Preus and Aashna Sheth
+author:
+  - Anna Preus
+  - Aashna Sheth
 format: 
   html:
     css: ../../styles.css
@@ -36,6 +38,15 @@ df-print: kable
 jupyter: python3
 code-tools: true
 bibliography: ../../references/references.bib
+citation:
+  container-title: "Responsible Datasets in Context"
+  editor:
+  - Melanie Walsh
+  - Anna Preus
+  - Amardeep Singh
+  - Sylvia Fernandez
+  - Miriam Posner
+google-scholar: true
 ---
 
 :::::::::::::::::::: {.panel-tabset .nav-pills}
