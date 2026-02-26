@@ -300,6 +300,10 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
         <li>
+    <a class="dropdown-item" href="../../../how-we-made-this.html">
+ <span class="dropdown-text">How We Made This</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../../sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
   </li>  
@@ -380,7 +384,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 <section id="load-national-park-visitation-data" class="level1">
 <h1>Load National Park Visitation data</h1>
-<div id="c1a75343" class="cell" data-execution_count="1">
+<div id="d7c82938" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -460,7 +464,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-1" class="level1">
 <h1>Exercise 1</h1>
 <p>First, filter the dataframe for a park of your choice. Pick a National Park that you haven’t worked with yet, and filter the data for only that park.</p>
-<div id="9cb16bf0" class="cell" data-execution_count="2">
+<div id="6891bea2" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>my_parks_df <span class="op">=</span> np_data[np_data[<span class="st">'ParkName'</span>] <span class="op">==</span> <span class="st">'Mount Rainier NP'</span>]</span>
@@ -548,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="d." class="level3">
 <h3 class="anchored" data-anchor-id="d.">2d.</h3>
 <p>Change the y-axis tick labels so that they abbreviate millions to M and thousands to K.</p>
-<div id="eed944d0" class="cell" data-execution_count="3">
+<div id="b821b571" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> abbreviate_number(x, pos):</span>
@@ -591,7 +595,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="b.-1" class="level3">
 <h3 class="anchored" data-anchor-id="b.-1">3b.</h3>
 <p>Come up with a new title that describes this time period.</p>
-<div id="6397fb3e" class="cell" data-execution_count="4">
+<div id="5b5c0cce" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>

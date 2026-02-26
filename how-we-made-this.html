@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Paulina Hernandez Trejo – Responsible Datasets in Context</title>
+<title>How We Made This – Responsible Datasets in Context</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<link href="../../images/responsible-logo-white.png" rel="icon" type="image/png">
-<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./images/responsible-logo-white.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -206,27 +242,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="../../styles.css">
-<meta name="twitter:title" content="Paulina Hernandez Trejo – Responsible Datasets in Context">
-<meta name="twitter:description" content="Doctoral Student | University of Notre Dame">
-<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/team/paulina-hernandez-trejo/profile.jpg">
+<link rel="stylesheet" href="styles.css">
+<meta name="twitter:title" content="How We Made This – Responsible Datasets in Context">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://www.responsible-datasets-in-context.com/images/responsible-logo.png">
+<meta name="twitter:image-height" content="1200">
+<meta name="twitter:image-width" content="1200">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="../../index.html" class="navbar-brand navbar-brand-logo">
-    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
-    <img src="../../images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/responsible-logo-white.png" alt="" class="navbar-logo light-content">
+    <img src="./images/responsible-logo-white.png" alt="" class="navbar-logo dark-content">
     </a>
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Responsible Datasets in Context</span>
     </a>
   </div>
@@ -237,19 +277,19 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../datasets.html"> 
+    <a class="nav-link" href="./datasets.html"> 
 <span class="menu-text">Datasets</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../mission.html"> 
+    <a class="nav-link" href="./mission.html"> 
 <span class="menu-text">Mission</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../impact.html"> 
+    <a class="nav-link" href="./impact.html"> 
 <span class="menu-text">Impact</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../team.html"> 
+    <a class="nav-link" href="./team.html"> 
 <span class="menu-text">Team</span></a>
   </li>  
   <li class="nav-item dropdown ">
@@ -258,15 +298,15 @@ document.addEventListener("DOMContentLoaded", function () {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-about">    
         <li>
-    <a class="dropdown-item" href="../../how-we-made-this.html">
+    <a class="dropdown-item" href="./how-we-made-this.html">
  <span class="dropdown-text">How We Made This</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../sponsors.html">
+    <a class="dropdown-item" href="./sponsors.html">
  <span class="dropdown-text">Sponsors</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../get-in-touch.html">
+    <a class="dropdown-item" href="./get-in-touch.html">
  <span class="dropdown-text">Get In Touch</span></a>
   </li>  
     </ul>
@@ -284,31 +324,174 @@ document.addEventListener("DOMContentLoaded", function () {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">How We Made This</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#quarto" id="toc-quarto" class="nav-link active" data-scroll-target="#quarto">Quarto</a></li>
+  <li><a href="#observable-notebooks-the-post45-data-viewer" id="toc-observable-notebooks-the-post45-data-viewer" class="nav-link" data-scroll-target="#observable-notebooks-the-post45-data-viewer">Observable Notebooks &amp; the Post45 Data Viewer</a>
+  <ul class="collapse">
+  <li><a href="#use-the-post45-data-viewer-with-your-own-data" id="toc-use-the-post45-data-viewer-with-your-own-data" class="nav-link" data-scroll-target="#use-the-post45-data-viewer-with-your-own-data">Use the Post45 Data Viewer with Your Own Data</a></li>
+  </ul></li>
+  <li><a href="#other-resources" id="toc-other-resources" class="nav-link" data-scroll-target="#other-resources">Other Resources</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles">
-  <div class="about-entity">
-    <img src="profile.jpg" class="about-image
-  rounded " style="width: 20em;">
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Paulina Hernandez Trejo</h1>
-<p class="subtitle lead">Doctoral Student | University of Notre Dame</p>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header>
-  </div>
-  <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Paulina (she/her/ella) is from the Ciudad Juárez/El Paso U.S.-Mexico Borderland region. Having graduated in 2018 with her English B.A. from UT Austin and in 2023 with her English M.A.&nbsp;from UT San Antonio, Paulina will be starting her English Ph.D.&nbsp;program at the University of Notre Dame in Fall 2024. She researches (im)migrant multiethnic literature from the U.S.-Mexico Borderlands, focusing on folklore and other forms of haunting within literature and cultural expressions. Paulina’s research intersects public and digital humanities with her literary study, having worked on literary digital mapping and archival projects during her Master’s</p>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</main></div>
+
+
+
+<section id="quarto" class="level2">
+<h2 class="anchored" data-anchor-id="quarto">Quarto</h2>
+<p>This website is built with <a href="https://quarto.org/">Quarto</a>, an open-source scientific and technical publishing system. Quarto supports Python, R, and JavaScript (in the form of Observable notebooks), making it possible to combine narrative text, code, and interactive elements in a single, reproducible workflow. Quarto can also render to multiple output formats, including PDFs and Word documents.</p>
+</section>
+<section id="observable-notebooks-the-post45-data-viewer" class="level2">
+<h2 class="anchored" data-anchor-id="observable-notebooks-the-post45-data-viewer">Observable Notebooks &amp; the Post45 Data Viewer</h2>
+<p>The interactive data tables on this site are powered by <a href="http://tabulator.info/">Tabulator</a> and <a href="https://observablehq.com/">Observable</a> notebooks, built on top of the <a href="https://observablehq.com/d/8bb63a6cde9addff">Post45 Data Viewer</a>. The Post45 Data Viewer was developed by Melanie Walsh and Juan Carlos Garcia with support from the <a href="https://data.post45.org/">Post45 Data Collective</a> and <a href="https://foundation.mozilla.org/en/what-we-fund/awards/responsible-computing-challenge/">Mozilla’s Responsible Computing Challenge</a>.</p>
+<p>These tables allow users to filter, sort, search, and download data; view tooltips with additional context; and customize which columns are displayed. Here’s an example using the U.S. National Park visit data:</p>
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="24" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 23;"><span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {generateTabulatorTableFromCSV} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-1" data-nodetype="declaration">
+
 </div>
- <!-- /main -->
+</div>
+</div>
+<div class="cell hidden">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="30" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 29;"><span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#table-container-example"</span><span class="op">,</span></span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv"</span><span class="op">,</span></span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ParkName"</span><span class="op">,</span></span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Region"</span><span class="op">,</span></span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">"State"</span><span class="op">,</span></span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Year"</span><span class="op">,</span></span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">"RecreationVisits"</span></span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [</span>
+<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Name of the National Park."</span><span class="op">,</span></span>
+<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>      <span class="st">"NPS region the park belongs to."</span><span class="op">,</span></span>
+<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a>      <span class="st">"U.S. state where the park is located."</span><span class="op">,</span></span>
+<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Calendar year of the visit count."</span><span class="op">,</span></span>
+<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Total recreation visits for that year."</span></span>
+<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"Year"</span><span class="op">,</span> <span class="st">"RecreationVisits"</span>]<span class="op">,</span></span>
+<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [</span>
+<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a>      <span class="st">"ParkName"</span><span class="op">,</span></span>
+<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Region"</span><span class="op">,</span></span>
+<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>      <span class="st">"State"</span></span>
+<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"ParkName"</span><span class="op">,</span> <span class="st">"Year"</span>]<span class="op">,</span></span>
+<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span><span class="op">,</span> <span class="st">"desc"</span>]</span>
+<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display hidden">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<div id="table-container-example" style="height: 500px">
+
+</div>
+<section id="use-the-post45-data-viewer-with-your-own-data" class="level3">
+<h3 class="anchored" data-anchor-id="use-the-post45-data-viewer-with-your-own-data">Use the Post45 Data Viewer with Your Own Data</h3>
+<p>You can integrate the Post45 Data Viewer into any Quarto page. For more detailed documentation, see the <a href="https://observablehq.com/d/8bb63a6cde9addff">Post45 Data Viewer Observable notebook</a>. To get started, load the required libraries and import the viewer, then call <code>generateTabulatorTableFromCSV()</code> with a URL or file path to your CSV and a configuration object.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Example Code">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Example Code
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Load the required libraries</strong> by adding these lines to your <code>.qmd</code> file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> href</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css"</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">script</span><span class="ot"> src</span><span class="op">=</span><span class="st">"https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"</span><span class="dt">&gt;&lt;/</span><span class="kw">script</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>2. Import the Data Viewer</strong> in an OJS code block. The string <code>"8bb63a6cde9addff"</code> is the unique ID of the <a href="https://observablehq.com/d/8bb63a6cde9addff">Post45 Data Viewer Observable notebook</a> — this is how Observable identifies and imports shared notebooks:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {generateTabulatorTableFromCSV} <span class="im">from</span> <span class="st">"8bb63a6cde9addff"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>3. Call the function</strong> with your data URL and configuration:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{ojs}</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">//| output: false</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">generateTabulatorTableFromCSV</span>(</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">"#my-table"</span><span class="op">,</span>                          <span class="co">// CSS selector for the table container</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">"https://your-url.com/data.csv"</span><span class="op">,</span>      <span class="co">// &lt;-- plug in your CSV URL or file path here</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="dt">displayedColumns</span><span class="op">:</span> [                 <span class="co">// columns to show (in order)</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">"column_a"</span><span class="op">,</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">"column_b"</span><span class="op">,</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">"column_c"</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">columnPopups</span><span class="op">:</span> [                     <span class="co">// tooltip for each displayed column (same order)</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Description of column A."</span><span class="op">,</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Description of column B."</span><span class="op">,</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Description of column C."</span></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    ]<span class="op">,</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="dt">numericColumns</span><span class="op">:</span> [<span class="st">"column_c"</span>]<span class="op">,</span>       <span class="co">// columns to treat as numbers (enables range filters)</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="dt">categoryColumns</span><span class="op">:</span> [<span class="st">"column_a"</span>]<span class="op">,</span>      <span class="co">// columns to treat as categories (enables dropdown filters)</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortColumns</span><span class="op">:</span> [<span class="st">"column_a"</span>]<span class="op">,</span>          <span class="co">// default sort column(s)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="dt">sortOrders</span><span class="op">:</span> [<span class="st">"asc"</span>]                 <span class="co">// "asc" or "desc" for each sort column</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>)<span class="op">;</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>4. Add a container div</strong> where you want the table to appear:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {#my-table style="height: 500px"}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The <code>#my-table</code> ID must match the first argument to <code>generateTabulatorTableFromCSV()</code>.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="other-resources" class="level2">
+<h2 class="anchored" data-anchor-id="other-resources">Other Resources</h2>
+<p><a href="https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview">Claude Code</a> assisted with some aspects of this site’s development.</p>
+
+
+</section>
+
+</main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
 $(document).ready(function () {
@@ -395,8 +578,26 @@ $(document).ready(function () {
     });
 });
 </script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImltcG9ydCB7Z2VuZXJhdGVUYWJ1bGF0b3JUYWJsZUZyb21DU1Z9IGZyb20gXCI4YmI2M2E2Y2RlOWFkZGZmXCJcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMiIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImdlbmVyYXRlVGFidWxhdG9yVGFibGVGcm9tQ1NWKFxuICBcIiN0YWJsZS1jb250YWluZXItZXhhbXBsZVwiLFxuICBcImh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9tZWxhbmlld2Fsc2gvcmVzcG9uc2libGUtZGF0YXNldHMtaW4tY29udGV4dC9tYWluL2RhdGFzZXRzL25hdGlvbmFsLXBhcmtzL1VTLU5hdGlvbmFsLVBhcmtzX1JlY3JlYXRpb25WaXNpdHNfMTk3OS0yMDI0LmNzdlwiLFxuICB7XG4gICAgZGlzcGxheWVkQ29sdW1uczogW1xuICAgICAgXCJQYXJrTmFtZVwiLFxuICAgICAgXCJSZWdpb25cIixcbiAgICAgIFwiU3RhdGVcIixcbiAgICAgIFwiWWVhclwiLFxuICAgICAgXCJSZWNyZWF0aW9uVmlzaXRzXCJcbiAgICBdLFxuICAgIGNvbHVtblBvcHVwczogW1xuICAgICAgXCJOYW1lIG9mIHRoZSBOYXRpb25hbCBQYXJrLlwiLFxuICAgICAgXCJOUFMgcmVnaW9uIHRoZSBwYXJrIGJlbG9uZ3MgdG8uXCIsXG4gICAgICBcIlUuUy4gc3RhdGUgd2hlcmUgdGhlIHBhcmsgaXMgbG9jYXRlZC5cIixcbiAgICAgIFwiQ2FsZW5kYXIgeWVhciBvZiB0aGUgdmlzaXQgY291bnQuXCIsXG4gICAgICBcIlRvdGFsIHJlY3JlYXRpb24gdmlzaXRzIGZvciB0aGF0IHllYXIuXCJcbiAgICBdLFxuICAgIG51bWVyaWNDb2x1bW5zOiBbXCJZZWFyXCIsIFwiUmVjcmVhdGlvblZpc2l0c1wiXSxcbiAgICBjYXRlZ29yeUNvbHVtbnM6IFtcbiAgICAgIFwiUGFya05hbWVcIixcbiAgICAgIFwiUmVnaW9uXCIsXG4gICAgICBcIlN0YXRlXCJcbiAgICBdLFxuICAgIHNvcnRDb2x1bW5zOiBbXCJQYXJrTmFtZVwiLCBcIlllYXJcIl0sXG4gICAgc29ydE9yZGVyczogW1wiYXNjXCIsIFwiZGVzY1wiXVxuICB9XG4pO1xuIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../..";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
     const isCodeAnnotation = (el) => {
       for (const clz of el.classList) {
         if (clz.startsWith('code-annotation-')) {                     
