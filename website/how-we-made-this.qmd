@@ -1,0 +1,134 @@
+---
+title: "How We Made This"
+sidebar: false
+page-layout: article
+toc: true
+title-block-banner: true
+---
+
+## Quarto
+
+This website is built with [Quarto](https://quarto.org/), an open-source scientific and technical publishing system. Quarto supports Python, R, and JavaScript (in the form of Observable notebooks), making it possible to combine narrative text, code, and interactive elements in a single, reproducible workflow. Quarto can also render to multiple output formats, including PDFs and Word documents.
+
+## Observable Notebooks & the Post45 Data Viewer
+
+The interactive data tables on this site are powered by [Tabulator](http://tabulator.info/) and [Observable](https://observablehq.com/) notebooks, built on top of the [Post45 Data Viewer](https://observablehq.com/d/8bb63a6cde9addff). The Post45 Data Viewer was developed by Melanie Walsh and Juan Carlos Garcia with support from the [Post45 Data Collective](https://data.post45.org/) and [Mozilla's Responsible Computing Challenge](https://foundation.mozilla.org/en/what-we-fund/awards/responsible-computing-challenge/).
+
+These tables allow users to filter, sort, search, and download data; view tooltips with additional context; and customize which columns are displayed. Here's an example using the U.S. National Park visit data:
+
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+
+```{ojs}
+//|echo: false
+import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
+```
+
+```{ojs}
+//|echo: false
+//|output: false
+generateTabulatorTableFromCSV(
+  "#table-container-example",
+  "https://raw.githubusercontent.com/melaniewalsh/responsible-datasets-in-context/main/datasets/national-parks/US-National-Parks_RecreationVisits_1979-2024.csv",
+  {
+    displayedColumns: [
+      "ParkName",
+      "Region",
+      "State",
+      "Year",
+      "RecreationVisits"
+    ],
+    columnPopups: [
+      "Name of the National Park.",
+      "NPS region the park belongs to.",
+      "U.S. state where the park is located.",
+      "Calendar year of the visit count.",
+      "Total recreation visits for that year."
+    ],
+    numericColumns: ["Year", "RecreationVisits"],
+    categoryColumns: [
+      "ParkName",
+      "Region",
+      "State"
+    ],
+    sortColumns: ["ParkName", "Year"],
+    sortOrders: ["asc", "desc"]
+  }
+);
+```
+
+::: {#table-container-example style="height: 500px"}
+:::
+
+### Use the Post45 Data Viewer with Your Own Data
+
+You can integrate the Post45 Data Viewer into any Quarto page. For more detailed documentation, see the [Post45 Data Viewer Observable notebook](https://observablehq.com/d/8bb63a6cde9addff). To get started, load the required libraries and import the viewer, then call `generateTabulatorTableFromCSV()` with a URL or file path to your CSV and a configuration object.
+
+::: {.callout-tip collapse="true" title="Example Code"}
+
+**1. Load the required libraries** by adding these lines to your `.qmd` file:
+
+```html
+<link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
+<script src="https://unpkg.com/tabulator-tables@6.3.0/dist/js/tabulator.min.js"></script>
+<script src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+```
+
+**2. Import the Data Viewer** in an OJS code block. The string `"8bb63a6cde9addff"` is the unique ID of the [Post45 Data Viewer Observable notebook](https://observablehq.com/d/8bb63a6cde9addff) — this is how Observable identifies and imports shared notebooks:
+
+````markdown
+```{ojs}
+//| echo: false
+import {generateTabulatorTableFromCSV} from "8bb63a6cde9addff"
+```
+````
+
+**3. Call the function** with your data URL and configuration:
+
+````markdown
+```{ojs}
+//| echo: false
+//| output: false
+generateTabulatorTableFromCSV(
+  "#my-table",                          // CSS selector for the table container
+  "https://your-url.com/data.csv",      // <-- plug in your CSV URL or file path here
+
+  {
+    displayedColumns: [                 // columns to show (in order)
+      "column_a",
+      "column_b",
+      "column_c"
+    ],
+
+    columnPopups: [                     // tooltip for each displayed column (same order)
+      "Description of column A.",
+      "Description of column B.",
+      "Description of column C."
+    ],
+
+    numericColumns: ["column_c"],       // columns to treat as numbers (enables range filters)
+
+    categoryColumns: ["column_a"],      // columns to treat as categories (enables dropdown filters)
+
+    sortColumns: ["column_a"],          // default sort column(s)
+    sortOrders: ["asc"]                 // "asc" or "desc" for each sort column
+  }
+);
+```
+````
+
+**4. Add a container div** where you want the table to appear:
+
+```markdown
+::: {#my-table style="height: 500px"}
+:::
+```
+
+The `#my-table` ID must match the first argument to `generateTabulatorTableFromCSV()`.
+
+:::
+
+## Other Resources
+
+[Claude Code](https://docs.anthropic.com/en/docs/agents-and-tools/claude-code/overview) assisted with some aspects of this site's development.

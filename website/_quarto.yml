@@ -35,7 +35,9 @@ website:
       - text: "Team"
         href: team.qmd
       - text: "About"
-        menu: 
+        menu:
+        - text: "How We Made This"
+          href: how-we-made-this.qmd
         - text: "Sponsors"
           href: sponsors.qmd
         - text: "Get In Touch"
