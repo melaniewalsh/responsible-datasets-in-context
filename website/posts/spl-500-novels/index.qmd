@@ -60,7 +60,7 @@ citation:
 google-scholar: true
 ---
 
-:::::::::::::::::::: {.panel-tabset .nav-pills}
+:::::::::::::::::::::::: {.panel-tabset .nav-pills}
 # Data Essay
 
 ## Introduction
@@ -74,6 +74,17 @@ The library checkout data comes from the city of Seattle. The Seattle Public Lib
 
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
+
+```{ojs}
+//|echo: false
+import {viewof tableTopTitles, plot, headingBlock, viewof selectionInput, viewof tableTopTitlesMode} from "f7ac620243f16079"
+
+viewof tableTopTitlesMode
+
+headingBlock
+plot
+viewof selectionInput
+```
 
 ## Dataset
 
@@ -192,18 +203,41 @@ generateTabulatorTableFromCSV(
 
 Download Full Data
 
-<div id="button-container">
-<button id="download-raw1"><i class="fas fa-download"></i> Download Full Data</button>
-<button id="copy-url1"><i class="fas fa-copy"></i> Copy Full Data URL</button>
-</div>
+::: {#button-container}
+<button id="download-raw1">
+
+<i class="fas fa-download"></i> Download Full Data
+
+</button>
+
+<button id="copy-url1">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
+:::
 
 Download Table Data (including filtered options)
 
-<div id="button-container1">
-<button id="download-csv"><i class="fas fa-download"></i> Download CSV</button>
-<button id="download-json"><i class="fas fa-download"></i> Download JSON</button>
-<button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
-</div>
+::: {#button-container1}
+<button id="download-csv">
+
+<i class="fas fa-download"></i> Download CSV
+
+</button>
+
+<button id="download-json">
+
+<i class="fas fa-download"></i> Download JSON
+
+</button>
+
+<button id="download-xlsx">
+
+<i class="fas fa-download"></i> Download Excel
+
+</button>
+:::
 
 <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
 
@@ -247,8 +281,6 @@ From the Seattle Public Library, we inherit the following columns.
 The dataset contains extensive metadata information on the [Top 500 "Greatest" Novels](https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html).
 
 ::: {.callout-note collapse="true" title="Click to view all metadata fields"}
-
-
 ### Basic Info on Novels:
 
 -   **top_500_rank:** numeric rank of text in oclc's original top 500 list.
@@ -293,7 +325,6 @@ The dataset contains extensive metadata information on the [Top 500 "Greatest" N
 -   **pg_eng_url:** url for english-language text on project gutenberg.
 -   **pg_orig_url:** url for original-language text (where applicable) on project gutenberg.
 -   **full_text:** full text of the novel, if it is in the public domain.
-
 :::
 
 Note that we provide two titles and two different author fields. One is sourced from the Top 500 "Greatest" Novels, and the other from the SPL's open checkout data. Reconciling book data is difficult, and different versions and editions of the same text can have slightly different title and author variants.
@@ -307,9 +338,7 @@ The SPL's open checkout data was organized by David Christensen, Data Analysis L
 ![George Legrady, "Making Visible the Invisible" (2005). Digital art installation at the Seattle Central Library. Credit: [Seattle Public Library](https://blog.spl.org/2022/12/06/how-a-digital-artwork-helped-the-seattle-public-library-lead-in-book-data/).](https://i0.wp.com/blog.spl.org/wp-content/uploads/2022/12/legrady-stats-visualiation.jpg?resize=640%2C480&ssl=1){fig-alt="George Legrady's digital art installation at the Seattle Central Library showing six LCD screens with colorful data visualizations of library checkouts"}
 
 ::: {.callout-note collapse="true" title="Fun Fact: The Art Installation Behind the Data"}
-
 The checkout data powering this dataset has an unusual origin: a digital art installation. In 2005, artist and UC Santa Barbara professor [George Legrady](https://www.mat.ucsb.edu/g.legrady/glWeb/Projects/spl/spl.html) installed "Making Visible the Invisible" on six LCD screens in the Seattle Central Library's Mixing Chamber. The screens display real-time visualizations of anonymous checkout activity across all 27 library locations, including running totals, floating titles, and a colorful "Keyword Map Attack" organized by Dewey Decimal categories. By 2017, the library realized the installation had quietly accumulated 12 years of historic checkout data, which became the foundation for [Seattle's open data portal](https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data) and, eventually, this dataset. Read more on the [SPL blog](https://blog.spl.org/2022/12/06/how-a-digital-artwork-helped-the-seattle-public-library-lead-in-book-data/).
-
 :::
 
 To our knowledge, the SPL is the only library to release checkout data by item with this level of temporal detail in the United States. Their published data is a result of the [Seattle Open Data Program](https://www.seattle.gov/tech/reports-and-data/open-data), which is an initiative designed to increase transparency into city operations for the public.
@@ -857,7 +886,7 @@ Sci-fi and horror are the most internally correlated genres, while political, bi
 
 This essays demonstrates some of the cool research directions you can explore with the SPL's open checkout data. The Top 500 "Greatest" Novels represents a particularly canonical and popular set of books, featuring both contemporary and historical authors, and a diverse range of genres. Our work here points to some interesting dynamics that you can analyze within book series, between and within genres, and around prominent external events that may drive readership.
 
-Findally, if you want to explore more library circulation data, you can also checkout the ["What's Seattle Reading?"](https://melaniewalsh.github.io/whats-seattle-reading/) project. 
+Findally, if you want to explore more library circulation data, you can also checkout the ["What's Seattle Reading?"](https://melaniewalsh.github.io/whats-seattle-reading/) project.
 
 ## References
 
@@ -879,7 +908,6 @@ Findally, if you want to explore more library circulation data, you can also che
 ::: {#progress-text style="text-align: center; margin-top: 5px;"}
 :::
 ::::
-
 
 ::::::: {.content-hidden when-format="pdf"}
 ```{ojs}
@@ -981,17 +1009,42 @@ generateTabulatorTableFromCSV(
 Download Full Data
 
 <div>
-<button id="download-raw2"><i class="fas fa-download"></i> Download Full Data</button>
-<button id="copy-url2"><i class="fas fa-copy"></i> Copy Full Data URL</button>
+
+<button id="download-raw2">
+
+<i class="fas fa-download"></i> Download Full Data
+
+</button>
+
+<button id="copy-url2">
+
+<i class="fas fa-copy"></i> Copy Full Data URL
+
+</button>
+
 </div>
 
 Download Table Data (including filtered options)
 
-<div id="button-container2">
-<button id="download-csv"><i class="fas fa-download"></i> Download CSV</button>
-<button id="download-json"><i class="fas fa-download"></i> Download JSON</button>
-<button id="download-xlsx"><i class="fas fa-download"></i> Download Excel</button>
-</div>
+::: {#button-container2}
+<button id="download-csv">
+
+<i class="fas fa-download"></i> Download CSV
+
+</button>
+
+<button id="download-json">
+
+<i class="fas fa-download"></i> Download JSON
+
+</button>
+
+<button id="download-xlsx">
+
+<i class="fas fa-download"></i> Download Excel
+
+</button>
+:::
 
 <link href="https://unpkg.com/tabulator-tables@6.3.0/dist/css/tabulator.min.css" rel="stylesheet">
 
@@ -1022,7 +1075,7 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 
 <!-- The Historical Gubernatorial Dataset is useful as a dataset for presenting interesting examples and prompting future independent exploration. Information about the governors in the dataset is well-available online, and finding historical outliers can be a fun way to engage with the history of the American Government. The exercise we present here introduces basic data exploration skills to look at common instances in a dataframe column, and then prompts the student to explore further on their own. -->
 
-:::: {.panel-tabset .nav-pills}
+::::: {.panel-tabset .nav-pills}
 # Python
 
 ::: {#exercise-posts-python}
@@ -1032,5 +1085,5 @@ This work is licensed under <a href="https://creativecommons.org/licenses/by/4.0
 
 ::: {#exercise-posts-r}
 :::
-::::
-:::::::::::::::::::
+:::::
+::::::::::::::::::::::::

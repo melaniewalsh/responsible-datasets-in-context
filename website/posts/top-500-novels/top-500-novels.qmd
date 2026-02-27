@@ -73,6 +73,7 @@ If you use our materials in your class or another setting, we would love to [hea
 import {viewof dataSummaryView, viewof copyUrlButton, viewof selectedColumns, viewof dataUrl, viewof tableOptions, viewof dataSet, tableContainer, table, tableStyles} from "ac5fc74c20ef36a6"
 ```
 
+
 ```{ojs}
 //|echo: false
 // viewof dataSet
