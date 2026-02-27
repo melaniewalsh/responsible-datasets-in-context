@@ -1,0 +1,280 @@
+author,total_checkouts,num_titles,titles,author_birth,author_death,author_gender,author_primary_lang,author_nationality,author_field_of_activity,author_occupation
+J.K. Rowling,145161,7,Harry Potter and the Chamber of Secrets; Harry Potter and the Deathly Hallows; Harry Potter and the Goblet of Fire; Harry Potter and the Half-Blood Prince; Harry Potter and the Order of the Phoenix; Harry Potter and the Prisoner of Azkaban; Harry Potter and the Sorcerer's Stone,1965,ALIVE,female,eng,GB,"young adult fiction,young adult fantasy,fantasy fiction,fantasy,novels","novelists,authors,writers"
+Suzanne Collins,67500,3,Catching Fire; Mockingjay; The Hunger Games,1962,ALIVE,female,eng,US,"young adult fiction,television plays,television authorship,motion picture plays,motion picture authorship","television writers,screenwriters,novelists"
+Jane Austen,53731,5,Mansfield Park; Northanger Abbey; Persuasion; Pride and Prejudice; Sense and Sensibility,1775,1817,female,eng,GB,"fiction,novels","novelists,authors"
+J.R.R. Tolkien,52374,5,"The Fellowship of the Ring; The Hobbit, or, There and Back Again; The Return of the King; The Silmarillion; The Two Towers",1892,1973,male,eng,GB,"poetry,philology,novels,fiction,fantasy fiction,english literature,education higher","poets,philologists,novelists,college teachers,authors"
+Stieg Larsson,45227,3,The Girl Who Kicked the Hornet's Nest; The Girl Who Played With Fire; The Girl With the Dragon Tattoo,1954,2004,male,swe,SE,crime fiction,"journalists,authors swedish"
+Stephen King,39926,7,Carrie; Dreamcatcher; It; Misery; The Gunslinger; The Shining; The Stand,1947,ALIVE,male,eng,US,"horror tales,science fiction,novels,horror fiction,fiction,fantasy fiction,television production and direction,television authorship,short stories,motion pictures production and direction,motion picture authorship,acting","novelists,television writers,television producers and directors,screenwriters,motion picture producers and directors,authors,actors"
+Charles Dickens,37749,15,A Christmas Carol; A Tale of Two Cities; Barnaby Rudge; Bleak House; David Copperfield; Dombey And Son; Great Expectations; Hard Times; Little Dorrit; Nicholas Nickleby; Oliver Twist; Our Mutual Friend; The Mystery of Edwin Drood; The Old Curiosity Shop; The Pickwick Papers,1812,1870,male,eng,GB,english literature,"authors english,writers,novelists"
+Stephenie Meyer,37370,2,Breaking Dawn; Twilight,1973,ALIVE,female,eng,US,,
+Gillian Flynn,35366,1,Gone Girl,1971,ALIVE,female,eng,US,"writing,motion pictures production and direction,detective and mystery stories,suspense fiction","motion picture producers and directors,authors"
+John Grisham,33372,19,A Painted House; A Time to Kill; Bleachers; The Appeal; The Associate; The Brethren; The Broker; The Chamber; The Client; The Firm; The King of Torts; The Last Juror; The Partner; The Pelican Brief; The Rainmaker; The Runaway Jury; The Street Lawyer; The Summons; The Testament,1955,ALIVE,male,eng,US,"motion pictures production and direction,motion picture authorship,law,fiction authorship,acting","screenwriters,novelists,motion picture producers and directors,lawyers,authors,actors"
+Margaret Atwood,33240,1,The Handmaid's Tale,1939,,female,eng,CA,"poetry,novels,literature,fiction","environmental activist,poets,novelists,essayists,critics"
+Lois Lowry,32798,2,Number the Stars; The Giver,1937,ALIVE,female,eng,US,,"childrens author,photographer"
+Philip Pullman,32775,3,The Amber Spyglass; The Golden Compass; The Subtle Knife,1946,ALIVE,male,eng,GB,,"authors,teachers,dramatists"
+Rick Riordan,32415,2,The Lightning Thief; The Sea of Monsters,1964,ALIVE,male,eng,US,"teaching,authorship","teachers,authors"
+Markus Zusak,30549,1,The Book Thief,1975,ALIVE,male,eng,AU,fiction,"authors,writers"
+Roald Dahl,30311,4,James and the Giant Peach; Matilda; The BFG; The Witches,1916,1990,male,eng,GB,,"screenwriter,poet,novelist"
+C.S. Lewis,29119,8,"Prince Caspian: The Return to Narnia; The Horse and His Boy; The Last Battle; The Lion, the Witch, and the Wardrobe; The Magician's Nephew; The Screwtape Letters; The Silver Chair; The Voyage of the Dawn Treader",1898,1963,male,eng,GB,"science fiction,novels,fiction,childrens literature","scholars,broadcasters,authors"
+Dan Brown,27981,5,Angels & Demons; Deception Point; Inferno; The Da Vinci Code; The Lost Symbol,1964,ALIVE,male,eng,US,"suspense fiction,fiction","novelists american,authors american"
+John Steinbeck,27086,8,Cannery Row; East of Eden; Of Mice and Men; The Grapes of Wrath; The Pearl; The Red Pony; The Winter of Our Discontent; Tortilla Flat,1902,1968,male,eng,US,literature,authors
+Paula Hawkins,26610,1,The Girl on the Train,1972,ALIVE,female,eng,GB,,"novelists,journalists"
+Toni Morrison,26276,4,Beloved; Song of Solomon; Sula; The Bluest Eye,1931,2019,female,eng,US,"united states race relations,racism,african americans,african american women,african american girls,literature","english teachers,college teachers,novelists,authors,writers,university and college faculty members,literature teachers,english teachers of"
+Madeleine L'Engle,24762,1,A Wrinkle in Time,,,female,eng,US,childrens stories,"teachers,authors"
+Harper Lee,24708,2,Go Set a Watchman; To Kill a Mockingbird,1926,2016,female,eng,US,"novels,fiction",novelists
+Beverly Cleary,23903,5,"Dear Mr. Henshaw; Ramona Quimby, Age 8; Ramona and her Father; Ramona the Pest; The Mouse and the Motorcycle",1916,2021,female,eng,US,"young adult literature,childrens literature",authors
+John Green,23813,3,Looking for Alaska; Paper Towns; The Fault In Our Stars,1977,ALIVE,male,eng,US,"novels,fiction authorship,childrens literature authorship,book reviewing","periodical editors,novelists,authors"
+Laura Ingalls Wilder,23789,7,By the Shores of Silver Lake; Little House In the Big Woods; Little House on the Prairie; Little Town on the Prairie; On the Banks of Plum Creek; The Long Winter; These Happy Golden Years,1867,1957,female,eng,US,,women authors
+Agatha Christie,19640,3,And Then There Were None; Murder on the Orient Express; The Murder of Roger Ackroyd,1890,1976,female,eng,GB,"poetry,literature,drama","short story writer,novelist english,poet,playwright"
+Khaled Hosseini,19164,2,A Thousand Splendid Suns; The Kite Runner,1965,ALIVE,male,eng,US,"medicine,fiction","physicians,novelists,authors"
+Ernest Hemingway,18818,5,A Farewell to Arms; For Whom the Bell Tolls; The Old Man and the Sea; The Sun Also Rises; To Have and Have Not,1899,1961,male,eng,US,"short stories,novels,journalism,fiction","novelists,journalists"
+Leo Tolstoy,18751,4,Anna Karenina; Resurrection; The Death of Ivan Ilych; War and Peace,1828,1910,male,rus,RU,"philosophy and religion,literature","authors,writers"
+Gabriel García Márquez,17544,3,Chronicle of a Death Foretold; Love in the Time of Cholera; One Hundred Years of Solitude,1927,2014,male,spa,CO,"magic realist fiction,magic realism literature,journalism,screenplays","novelists,journalists,authors"
+Kathryn Stockett,17499,1,The Help,1969,ALIVE,female,eng,US,,author
+Ransom Riggs,17183,1,Miss Peregrine's Home for Peculiar Children,1979,ALIVE,male,eng,US,,"photographers,motion picture producers and directors,journalists,authors"
+Kate DiCamillo,16897,3,Because of Winn-Dixie; The Miraculous Journey of Edward Tulane; The Tale of Despereaux,1964,ALIVE,female,eng,US,,authors
+Neil Gaiman,16597,2,Coraline; The Graveyard Book,1960,ALIVE,male,eng,GB,"motion picture plays,horror tales,graphic novels,fiction,fantasy fiction",authors
+L.M. Montgomery,16538,3,Anne of Avonlea; Anne of Green Gables; Anne of the Island,1874,1942,female,eng,CA,"novels,fiction,childrens stories","novelists,authors"
+F. Scott Fitzgerald,16326,3,Tender is the Night; The Great Gatsby; This Side of Paradise,1896,1940,male,eng,US,"fiction,short stories,novels","novelists,authors"
+Ray Bradbury,16234,2,Fahrenheit 451; The Martian Chronicles,1920,2012,male,eng,US,"science fiction,literature",author
+E.B. White,15777,3,Charlotte's Web; Stuart Little; The Trumpet of the Swan,1899,1985,male,eng,US,childrens literature,author
+Mark Twain,15086,4,A Connecticut Yankee in King Arthur's Court; The Adventures of Huckleberry Finn; The Adventures of Tom Sawyer; The Prince and the Pauper,1835,1910,male,eng,US,"wit and humor,literature,humor","lecturers,humorists,authors"
+Nicholas Sparks,14918,7,A Walk to Remember; Dear John; Nights in Rodanthe; The Choice; The Lucky One; The Notebook; The Wedding,1965,ALIVE,male,eng,US,"motion pictures production and direction,motion picture authorship,generosity,fiction","screenwriters,philanthropists,motion picture producers and directors,authors"
+James Dashner,14050,1,The Maze Runner,1972,ALIVE,male,eng,US,,"authors,novelists"
+George Orwell,13755,2,Animal Farm; Nineteen Eighty-Four,1903,1950,male,eng,GB,fiction,"novelists,authors"
+Kurt Vonnegut,13282,2,Cat's Cradle; Slaughterhouse-Five,1922,2007,male,eng,US,"short stories,science fiction,novels,literature,fiction","novelists,authors"
+Ken Follett,13228,1,The Pillars of the Earth,1949,ALIVE,male,eng,GB,,novelists
+Alexandre Dumas,13189,3,The Count of Monte Cristo; The Man In the Iron Mask; The Three Musketeers,1802,1870,male,fre,FR,,"author,novelist,dramatist,novelists,dramatists,authors"
+Paulo Coelho,12686,1,The Alchemist,1947,ALIVE,male,por,BR,,
+Louisa May Alcott,12633,1,Little Women,1832,1888,female,eng,US,"short stories,poetry,novels,fiction","authors,poets,novelists"
+Douglas Adams,12598,1,The Hitchhiker's Guide to the Galaxy,1952,2001,male,eng,GB,"science fiction,radio plays,novels,screenplays,humorous fiction","screenwriters,radio writers,novelists,humorists,computer game writer,authors"
+Jeff Kinney,12503,2,Diary of a Wimpy Kid; Diary of a Wimpy Kid: The Long Haul,1971,ALIVE,male,eng,US,"computer games design,childrens literature,caricatures and cartoons","designers,cartoonists,authors"
+Aldous Huxley,12129,1,Brave New World,1894,1963,male,eng,GB,,authors
+Sherman Alexie,11867,1,The Absolutely True Diary of a Part-time Indian,1966,ALIVE,male,eng,US,"short stories,poetry,novels,native american literature,motion pictures production and direction,fiction","poets,novelists,authors,writers,motion picture directors"
+Cormac McCarthy,11372,1,The Road,1933,2023,male,eng,US,"drama,motion pictures production and direction,motion picture plays,motion picture authorship,fiction,acting","screenwriters,novelists,motion picture producers and directors,dramatists,actors"
+James Patterson,10694,5,Alex Cross's Trial; Cross Country; Cross Fire; Swimsuit; Worst Case,1947,ALIVE,male,eng,US,"suspense fiction american,advertising","novelists,advertising executives,authors"
+Jack London,10506,3,The Call of the Wild; The Sea Wolf; White Fang,1876,1916,male,eng,US,,"novelists american,authors american"
+P.L. Travers,10245,1,Mary Poppins,1899,1996,female,eng,GB,"journalism,childrens stories,acting","journalists,authors,actresses,actors"
+Orson Scott Card,10194,1,Ender's Game,1951,ALIVE,male,eng,US,"science fiction,mainstream fiction,fantasy fiction,computer games",authors
+Jules Verne,10113,4,"20,000 Leagues Under the Sea; A Journey to the Center of the Earth; Around the World in Eighty Days; The Mysterious Island",1828,1905,male,fre,FR,"drama,voyages imaginary,science fiction,poetry,novels,action and adventure fiction","poets,novelists,authors french,playwrights"
+George Eliot,9873,4,Adam Bede; Middlemarch; Silas Marner; The Mill on the Floss,1819,1880,female,eng,GB,"novels,fiction","translators,poets,novelists,journalists"
+Sara Gruen,9745,1,Water for Elephants,1969,ALIVE,female,eng,US,"historical fiction,animals",authors
+Herman Melville,9607,1,Moby Dick,1819,1891,male,eng,US,"short stories,sea fiction,poetry,novels","short story writer,customs inspector,teachers,sailors,poets,novelists,lecturers"
+Eoin Colfer,9434,1,Artemis Fowl,1965,ALIVE,male,eng,IE,writing fantasy for children and teens,"teacher,author"
+Lewis Carroll,9420,2,"Alice's Adventures in Wonderland; Through the Looking-Glass, and What Alice Found There",1832,1898,male,eng,GB,"writing,teaching,photography,mathematics","authors,teachers,photographers,mathematicians"
+David Baldacci,9388,2,First Family; The Camel Club,1960,ALIVE,male,eng,US,"law,novels,fiction authorship,corporation law,political science","lawyers,authors,novelists,corporate lawyers"
+Christopher Paolini,9344,1,Eragon,1983,ALIVE,male,eng,US,,author
+Robert Louis Stevenson,9135,4,Kidnapped: The Adventures of David Balfour; The Black Arrow: A Tale of the Two Roses; The Strange Case of Dr. Jekyll and Mr. Hyde; Treasure Island,1850,1894,male,eng,GB,,"travel writers,poets,novelists"
+Virginia Woolf,9112,3,Mrs. Dalloway; Orlando; To the Lighthouse,1882,1941,female,eng,GB,"intellectuals,feminists,bloomsbury group","publishers and publishing,authors"
+Albert Camus,9060,3,The Fall; The Plague; The Stranger,1913,1960,male,fre,FR,existentialism,"philosophers,journalists,authors"
+William Faulkner,9055,4,"Absalom, Absalom!; As I Lay Dying; Light in August; The Sound and the Fury",1897,1962,male,eng,US,"short stories,novels,fiction",novelists
+Judy Blume,9050,2,"Are You There God? It's Me, Margaret; Tales of a Fourth Grade Nothing",1938,ALIVE,female,eng,US,childrens literature,authors
+Yann Martel,8823,1,Life of Pi,1963,,male,eng,CA,,authors
+Ayn Rand,8725,2,Atlas Shrugged; The Fountainhead,1905,1982,female,eng,US,objectivism philosophy,"philosophers,authors"
+George R.R. Martin,8448,1,A Game of Thrones,1948,ALIVE,male,eng,US,"television production and direction,american fiction","television producers and directors,teachers,screenwriters,authors american"
+Edith Wharton,8396,3,Ethan Frome; The Age of Innocence; The House of Mirth,1862,1937,female,eng,US,"novels,fiction","novelists,designers,authors"
+James Joyce,8325,3,A Portrait of the Artist as a Young Man; Finnegans Wake; Ulysses,1882,1941,male,eng,IE,"short stories,novels",novelists
+Kazuo Ishiguro,8287,1,The Remains of the Day,1954,ALIVE,male,eng,GB,"short stories,novels,motion picture plays,fiction,screenplays","screenwriters,novelists,authors,writers"
+Willa Cather,8284,3,Death Comes for the Archbishop; My Ántonia; O Pioneers!,1873,1947,female,eng,US,,
+Hermann Hesse,8112,2,Siddhartha; Steppenwolf,1877,1962,male,ger,DE,"novels,fiction,editing","authors german,novelists,editors"
+Mary Shelley,8044,1,"Frankenstein, or, the Modern Prometheus",1797,1851,female,eng,GB,literature,"authors,writers"
+Gary Paulsen,7794,1,Hatchet,1939,2021,male,eng,US,,authors
+Mark Haddon,7730,1,The Curious Incident of the Dog In the Night-Time,1962,ALIVE,male,eng,GB,"poetry,fiction","teachers,poets,authors"
+Bram Stoker,7617,1,Dracula,1847,1912,male,eng,IE,,"business manager,novelist"
+Joseph Conrad,7588,4,Heart of Darkness; Lord Jim; Nostromo; The Secret Agent,1857,1924,male,eng,GB,english literature,novelists
+Emma Donoghue,7576,1,Room,1969,ALIVE,female,eng,IE,"fiction,drama,motion picture authorship,editing","novelists,authors,screenwriters,editors,dramatists"
+Kenneth Grahame,7481,1,The Wind in the Willows,1859,1932,male,eng,GB,childrens literature,author
+Norton Juster,7258,1,The Phantom Tollbooth,1929,2021,male,eng,US,"childrens literature,architecture","authors,architects"
+J.D. Salinger,7257,1,The Catcher in the Rye,1919,2010,male,eng,US,,novelists american
+Oscar Wilde,7197,1,The Picture of Dorian Gray,1854,1900,male,eng,IE,literature,"poets,novelists,dramatists,critics"
+Miguel de Cervantes,7123,1,Don Quixote,1547,1616,male,spa,ES,,"soldiers,poets spanish,novelists spanish,dramatists spanish,authors spanish"
+E.M. Forster,7086,3,A Passage to India; A Room With a View; Howards End,1879,1970,male,eng,GB,,"novelists,essayists"
+Zora Neale Hurston,7031,1,Their Eyes Were Watching God,1891,1960,female,eng,US,"vodou research,harlem renaissance,folklore,anthropology","novelists,folklorists,editors,authors,anthropologists"
+Daphne Du Maurier,6921,1,Rebecca,1907,1989,female,eng,GB,,author
+Louis Sachar,6876,1,Holes,1954,ALIVE,male,eng,US,,
+Jean Craighead George,6807,2,Julie of the Wolves; My Side of the Mountain,1919,2012,female,eng,US,childrens literature,author
+Charlotte Brontë,6740,3,Jane Eyre; Shirley; Villette,1816,1855,female,eng,GB,"poetry,novels","poets,novelists,governesses"
+H.G. Wells,6656,3,The Invisible Man; The Time Machine; The War of the Worlds,1866,1946,male,eng,GB,science fiction,authors
+Thomas Hardy,6636,5,Far from the Madding Crowd; Jude the Obscure; Tess of the d'Urbervilles; The Mayor of Casterbridge; The Return of the Native,1840,1928,male,eng,GB,english literature,writers
+Isabel Allende,6626,2,Daughter of Fortune; The House of the Spirits,1942,ALIVE,female,spa,CL,"fiction,novels","authors,novelists"
+Arundhati Roy,6619,1,The God of Small Things,1961,ALIVE,female,eng,IN,,
+Victor Hugo,6539,2,Les Misérables; The Hunchback of Notre Dame,1802,1885,male,fre,FR,,authors french
+Audrey Niffenegger,6408,1,The Time Traveler's Wife,1963,ALIVE,female,eng,US,,
+William Golding,6237,1,Lord of the Flies,1911,1993,male,eng,GB,,"poets,novelists,dramatists"
+Rebecca Stead,6222,1,When You Reach Me,1968,ALIVE,female,eng,US,childrens literature,authors
+Joseph Heller,6206,1,Catch-22,1923,1999,male,eng,US,"writing,fiction,college teaching,advertising copy","teachers,novelists,fulbright scholars,college teachers,authors,actors"
+Astrid Lindgren,6195,1,Pippi Longstocking,1907,2002,female,swe,SE,"motion picture plays,fiction,childrens stories,childrens literature,screenplays",authors
+Franz Kafka,6191,3,The Castle; The Metamorphosis; The Trial,1883,1924,male,ger,CZ,"fiction,drawing","novelists,insurance companies employees"
+L. Frank Baum,6138,1,The Wizard of Oz,1856,1919,male,eng,US,,
+Susan Cooper,5960,2,The Dark Is Rising; The Grey King,1935,ALIVE,female,eng,US,writing,"screenwriter,journalist,author"
+Frances Hodgson Burnett,5916,1,The Secret Garden,1849,1924,female,eng,GB,,"novelists,authors"
+Richard Adams,5897,1,Watership Down,1920,2016,male,eng,GB,"childrens literature,poetry,fiction","poets,novelists"
+Betty Smith,5839,1,A Tree Grows in Brooklyn,1896,1972,female,eng,US,,"dramatists,authors"
+Mikhail Bulgakov,5803,1,The Master and Margarita,1891,1940,male,rus,RU,"russian literature,medicine","physicians,dramatists,authors russian"
+Cornelia Funke,5753,2,Inkheart; Inkspell,1958,ALIVE,female,ger,DE,childrens literature,authors
+Fyodor Dostoyevsky,5713,2,Crime and Punishment; The Idiot,1821,1881,male,rus,RU,"short stories,philosophy,fiction,essays","philosophers,novelists,essayists,psychologists"
+Truman Capote,5647,2,Breakfast at Tiffany's; In Cold Blood,1924,1984,male,eng,US,,"screenwriters,dramatists,authors"
+Emily Brontë,5515,1,Wuthering Heights,1818,1848,female,eng,GB,"novels,fiction","poets,novelists"
+Wilkie Collins,5482,2,The Moonstone; The Woman In White,1824,1889,male,eng,GB,,authors english
+Chinua Achebe,5420,1,Things Fall Apart,1930,2013,male,eng,NG,,"poets,novelists,college teachers"
+Jack Kerouac,5416,1,On the Road,1922,1969,male,eng,US,,
+Henry James,5301,4,The Ambassadors; The Portrait of a Lady; The Wings of the Dove; Washington Square,1843,1916,male,eng,US,,"authors,writers"
+Barbara Kingsolver,5221,1,The Poisonwood Bible,1955,ALIVE,female,eng,US,"writing,novels,literature,fiction authorship,creative nonficton","poets,journalists,biologists,authors"
+D.H. Lawrence,5134,4,Lady Chatterley's Lover; Sons and Lovers; The Rainbow; Women in Love,1885,1930,male,eng,GB,english literature,"poets,novelists,dramatists"
+Alice Walker,5126,1,The Color Purple,1944,ALIVE,female,eng,US,,"poets,novelists,educators,civil rights workers"
+Sylvia Plath,5092,1,The Bell Jar,1932,1963,female,eng,US,"poetry,fiction","poets,novelists"
+Ralph Ellison,5080,1,Invisible Man,1914,1994,male,eng,US,,"novelists,lecturers,essayists,college teachers"
+Katherine Paterson,4982,2,Bridge to Terabithia; Jacob Have I Loved,1932,ALIVE,female,eng,US,"literacy,childrens literature,authorship",authors
+Ian McEwan,4918,1,Atonement,1948,ALIVE,male,eng,GB,"playwriting,motion picture authorship","screenwriters,dramatists,authors"
+Antoine de Saint-Exupéry,4916,1,The Little Prince,1900,1944,male,fre,FR,"fiction,essays,childrens literature,autobiography","novelists,essayists,air pilots"
+E.L. Konigsburg,4863,1,From the Mixed-Up Files of Mrs. Basil E. Frankweiler,1930,2013,female,eng,US,"young adult fiction,childrens stories","illustrator,author"
+Vladimir Vladimirovich Nabokov,4805,1,Lolita,1899,1977,male,rus,US,,authors
+Graham Greene,4679,3,The Heart of the Matter; The Power and the Glory; The Quiet American,1904,1991,male,eng,GB,"short stories,novels,fiction,drama,spy fiction","novelists,dramatists,authors,spy,novelist,playwrights,playwright,intelligence agent"
+Arthur Conan Doyle,4626,2,The Complete Sherlock Holmes; The Hound of the Baskervilles,1859,1930,male,eng,GB,"spiritualism,medicine,literature","spiritualists,physicians,authors english"
+Robert A. Heinlein,4593,1,Stranger in a Strange Land,1907,1988,male,eng,US,science fiction,authors american
+J.M. Barrie,4451,1,Peter Pan,1860,1937,male,eng,GB,,"novelist,dramatist,author"
+Christopher Paul Curtis,4320,2,"Bud, Not Buddy; Elijah of Buxton",1953,ALIVE,male,eng,US,childrens literature,authors
+Nathaniel Hawthorne,4310,2,The House of the Seven Gables; The Scarlet Letter,1804,1864,male,eng,US,,"novelists,authors"
+Janet Evanovich,4200,1,Fearless Fourteen,1943,ALIVE,female,eng,US,crime writing,"novelists american,authors american"
+S.E. Hinton,4128,1,The Outsiders,1951,ALIVE,female,eng,US,young adult fiction american,
+Alice Sebold,4089,1,The Lovely Bones,1963,ALIVE,female,eng,US,,novelists
+James Baldwin,4082,1,Go Tell It on the Mountain,1924,1987,male,eng,US,"poetry,fiction,drama,civil rights","poets,novelists,dramatists,civil rights workers,authors"
+John Irving,3989,2,A Prayer for Owen Meany; The Cider House Rules,1942,ALIVE,male,eng,US,,"screenwriters,novelists"
+Marcel Proust,3906,2,Remembrance of Things Past; Swann's Way,1871,1922,male,fre,FR,,"novelists,essayists,critics"
+Robert C. O'Brien,3871,1,Mrs. Frisby and the Rats of NIMH,1918,1973,male,eng,US,"science fiction,fantasy fiction,chindrens literature","journalists,authors"
+W. Somerset Maugham,3847,3,Of Human Bondage; The Moon and Sixpence; The Razor's Edge,1874,1965,male,eng,GB,,"spy,playwright,novelist,intelligence agent"
+Ellen Raskin,3791,1,The Westing Game,1928,1984,female,eng,US,,"illustrators,authors"
+Daniel Keyes,3735,1,Flowers for Algernon,1927,2014,male,eng,US,,authors
+Sharon Creech,3661,1,Walk Two Moons,1969,ALIVE,female,eng,US,,
+David Guterson,3632,1,Snow Falling on Cedars,1956,ALIVE,male,eng,US,,
+John Le Carré,3571,1,The Spy Who Came In from the Cold,1931,2020,male,eng,GB,"spy fiction,novels,intelligence service","authors english,spies,novelists,intelligence officers"
+William P. Young,3559,1,The Shack,1955,ALIVE,male,eng,CA,"novels,fiction authorship","novelists,authors"
+Sandra Cisneros,3542,1,The House on Mango Street,1954,ALIVE,female,eng,US,creative writing,authors
+Wilson Rawls,3515,1,Where the Red Fern Grows,1913,1984,male,eng,US,author,
+Umberto Eco,3502,1,The Name of the Rose,1932,2016,male,ita,IT,semiotics,"semioticians,novelists,college teachers"
+Louise Fitzhugh,3473,1,"Harriet, the Spy",1928,1974,female,eng,US,,
+Ken Kesey,3281,1,One Flew Over the Cuckoo's Nest,1935,2001,male,eng,US,,"novelists,essayists"
+Pearl S. Buck,3230,1,The Good Earth,1892,1973,female,eng,US,,"women nobel prize winners,teachers,missionaries,authors"
+Amy Tan,3192,1,The Joy Luck Club,1952,ALIVE,female,eng,US,"picture books,novels,fiction,childrens stories","screenwriters,novelists,librettists,authors"
+Jean M. Auel,3124,2,The Clan of the Cave Bear; The Mammoth Hunters,1936,ALIVE,female,eng,US,,novelists
+Dashiell Hammett,3106,1,The Maltese Falcon,1894,1961,male,eng,US,,authors american
+Tim O'Brien,3082,1,The Things they Carried,1946,ALIVE,male,eng,US,"fiction,creative writing higher education","novelists,college teachers,authors"
+Jodi Picoult,3022,1,My Sister's Keeper,1966,ALIVE,female,eng,US,"novels,fiction,creative writing",authors
+Upton Sinclair,2974,1,The Jungle,1878,1968,male,eng,US,,novelists
+Erich Maria Remarque,2900,1,All Quiet on the Western Front,1898,1970,male,ger,DE,,"novelists,authors german"
+Natalie Babbitt,2889,1,Tuck Everlasting,1932,2016,female,eng,US,composition music,"novelists,lyricists,illustrators,composers"
+George Selden,2883,1,The Cricket in Times Square,1929,1989,male,eng,US,childrens literature,authors
+Alexander McCall Smith,2873,1,The No. 1 Ladies' Detective Agency,1948,ALIVE,male,eng,GB,"medical laws and legislation study and teaching higher,fiction,motion picture authorship","college teachers,authors,screenwriters"
+Harriet Beecher Stowe,2816,1,Uncle Tom's Cabin,1811,1896,female,eng,US,"fiction,authorship,antislavery movements","authors,novelists,abolitionists"
+Patricia MacLachlan,2807,1,"Sarah, Plain and Tall",1938,2022,female,eng,US,childrens literature,"english teachers,authors"
+Gustave Flaubert,2738,1,Madame Bovary: Patterns of Provincial life,1821,1880,male,fre,FR,,authors
+Margaret Mitchell,2736,1,Gone with the Wind,1900,1949,female,eng,US,,"journalists,authors"
+Phyllis Reynolds Naylor,2736,1,Shiloh,1933,ALIVE,female,eng,US,,authors
+Sue Monk Kidd,2698,1,The Secret Life of Bees,1948,ALIVE,female,eng,US,"nursing,fiction,education","nurses,educators,authors"
+Mildred D. Taylor,2655,1,"Roll of Thunder, Hear My Cry",1943,ALIVE,female,eng,US,childrens literature,author
+Thomas Mann,2581,3,Buddenbrooks; Death In Venice; The Magic Mountain (Der Zauberberg),1875,1955,male,ger,DE,"novels,humanitarianism,essays",authors
+Elizabeth George Speare,2578,1,The Witch of Blackbird Pond,1908,1994,female,eng,US,"teaching,historical fiction,childrens fiction",teacher
+Kim Edwards,2578,1,The Memory Keeper's Daughter,1958,,female,eng,US,"short stories,fiction",authors
+Johann David Wyss,2498,1,The Swiss Family Robinson,1743,1818,male,ger,CH,,author
+Anna Sewell,2466,1,Black Beauty,1820,1878,female,eng,GB,,novelists
+Mitch Albom,2456,1,The Five People You Meet In Heaven,1958,ALIVE,male,eng,US,"music,journalism,generosity,fiction","philanthropists,musicians,journalists,authors"
+Michael Crichton,2432,1,Jurassic Park,1942,2008,male,eng,US,,"physicians,novelists,authors,television producer,film producer,film director"
+Carson McCullers,2426,1,The Heart Is a Lonely Hunter,1917,1967,female,eng,US,,"poets,authors,dramatist"
+Daniel Defoe,2396,1,Robinson Crusoe,1661?,1731,male,eng,GB,,
+Jonathan Swift,2341,1,Gulliver's Travels,1667,1745,male,eng,IE,"satirical literature,satire,poetry,fiction,essays","satirists,poets,essayists,authors"
+Sue Grafton,2310,1,P Is for Peril,1940,2017,female,eng,US,"education,detective and mystery stories","novelists,college teachers"
+Arthur Golden,2300,1,Memoirs of a Geisha,1957,ALIVE,male,eng,US,,"novelists,authors"
+Evelyn Waugh,2285,1,Brideshead Revisited,1903,1966,male,eng,GB,,
+Donald J. Sobol,2158,1,Encyclopedia Brown: Boy Detective,1924,2012,male,eng,US,childrens literature,authors
+Rudyard Kipling,2152,2,Captains Courageous; Kim,1865,1936,male,eng,GB,"poetry,fiction","poets,novelists,authors"
+Voltaire,2092,1,Candide,1694,1778,male,fre,FR,"philosophy modern 18th century,french literature 18th century","philosopher,author,poet,activist,historian,dramatist"
+Michael Ondaatje,2070,1,The English Patient,1943,ALIVE,male,eng,CA,"poetry,novels","poets,novelists"
+Tracy Chevalier,2046,1,Girl With a Pearl Earring,1962,ALIVE,female,eng,US,historical fiction,novelists
+Richard Wright,1994,1,Native Son,1908,1960,male,eng,US,"poetry,fiction,essay","poets,novelists,actors"
+Charles Frazier,1932,1,Cold Mountain,1950,ALIVE,male,eng,US,,
+Nora Roberts,1918,1,Vision in White,1965,ALIVE,female,eng,US,"novels,fiction",novelists
+Lynne Reid Banks,1884,1,The Indian in the Cupboard,1929,ALIVE,female,eng,GB,"literature,childrens literature",authors
+Johanna Spyri,1882,1,Heidi,1827,1901,female,ger,CH,,novelists
+Laura Esquivel,1855,1,Like Water for Chocolate,1950,ALIVE,female,spa,MX,"motion picture authorship,fiction,acting","screenwriters,novelists,authors,actresses,actors"
+Boris Leonidovich Pasternak,1851,1,Doctor Zhivago,1890,1960,male,rus,RU,,authors russian
+Anthony Trollope,1819,2,Barchester Towers and the Warden; The Warden,1815,1882,male,eng,GB,novels,novelists
+Carlo Collodi,1808,1,Pinocchio,1826,1890,male,ita,IT,,
+Marguerite Henry,1807,2,King of the Wind; Misty of Chincoteague,1902,1997,female,eng,US,childrens literature,author
+Robert Penn Warren,1792,1,All the King's Men,1905,1989,male,eng,US,"poetry,novels,fiction,literary criticism","poets,novelists,critics"
+Anthony Burgess,1761,1,A Clockwork Orange,1917,1993,male,eng,GB,,"novelists english,linguists,critics,composers"
+Sinclair Lewis,1757,3,Arrowsmith; Babbitt; Main Street,1885,1951,male,eng,US,,"novelists,nobel prize winners,dramatists"
+Susan Patron,1753,1,The Higher Power of Lucky,1948,ALIVE,female,eng,US,,
+Alan Paton,1712,1,"Cry, The Beloved Country",1903,1988,male,eng,ZA,,"novelists,anti apartheid activists"
+T. H. White,1662,1,The Once and Future King,1906,1964,,,,,
+Theodore Dreiser,1659,2,An American Tragedy; Sister Carrie,1871,1945,male,eng,US,,"political activist,editor,author,political activists,editors,authors"
+Giovanni Boccaccio,1654,1,The Decameron,1313,1375,male,ita,IT,,"poets,humanists,authors"
+Edwin A. Abbott,1618,1,Flatland,1838,1926,male,eng,GB,"theology,science fiction,grammar comparative and general,english language grammar","theologians,school principals,clergy,authors"
+William Makepeace Thackeray,1598,1,Vanity Fair,1811,1863,male,eng,GB,,"novelists,illustrators,authors"
+Stephen Crane,1579,1,The Red Badge of Courage,1871,1900,male,eng,US,,
+Colleen McCullough,1538,1,The Thorn Birds,1937,2015,female,eng,AU,"neurosciences,fiction","novelists australian,neuroscientists"
+Fannie Flagg,1525,1,Fried Green Tomatoes at the Whistle-Stop Cafe,1944,ALIVE,female,eng,US,"motion picture authorship,humorous stories,acting","screenwriters,novelists,actors"
+John Knowles,1515,1,A Separate Peace,1926,2001,male,eng,US,,
+Murasaki Shikibu,1458,1,The Tale of Genji,978?,1016?,female,jpn,JP,,
+Bernhard Schlink,1453,1,The Reader,1944,ALIVE,male,ger,DE,,"lawyers,authors german"
+Robert Cormier,1443,1,The Chocolate War,1925,2000,male,eng,US,,
+Walter Scott,1434,3,Ivanhoe; Kenilworth; Rob Roy,1771,1832,male,eng,GB,,"poet,novelist,historian,biographer"
+Fred Gipson,1379,1,Old Yeller,1908,1973,male,eng,US,,
+Alex Haley,1335,1,Roots,1921,1992,male,eng,US,"african diaspora,african americans history","novelists,journalists,authors"
+Sherwood Anderson,1321,1,"Winesburg, Ohio",1876,1941,male,eng,US,,novelists
+Esther Forbes,1282,1,Johnny Tremain,1891,1967,female,eng,US,,"novelists,historians"
+Howard Pyle,1280,1,The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire,1853,1911,male,eng,US,,"illustrators,authors"
+Sid Fleischman,1270,1,The Whipping Boy,1920,2010,male,eng,US,,
+Michael Shaara,1245,1,The Killer Angels,1928,1988,male,eng,US,,
+Carol Ryrie Brink,1242,1,Caddie Woodlawn,1895,1981,female,eng,US,childrens literature,"women novelists,women authors"
+Giuseppe Tomasi di Lampedusa,1159,1,The Leopard,1896,1957,male,ita,IT,,novelists
+William H. Armstrong,1150,1,Sounder,1914,1999,male,eng,US,education,"history teacher,author"
+John Bunyan,1146,1,The Pilgrim's Progress,1628,1688,male,eng,GB,,"preacher,author"
+William Styron,1106,1,Sophie's Choice,1925,2006,male,eng,US,,
+Sheila Burnford,1093,1,The Incredible Journey,1918,1984,female,eng,CA,childrens literature,childrens author
+John Galsworthy,1063,1,The Forsyte Saga,1867,1933,male,eng,GB,,authors english
+James Fenimore Cooper,1015,1,The Last of the Mohicans,1789,1851,male,eng,US,,author
+Elizabeth Cleghorn Gaskell,991,1,Cranford,1810,1865,female,eng,GB,"short stories,novels,biographies","novelists,biographers,authors"
+Richard Bach,956,1,Jonathan Livingston Seagull,1936,ALIVE,male,eng,US,"philosophy,aviation","pilot,author"
+Thornton Wilder,912,1,The Bridge of San Luis Rey,1897,1975,male,eng,US,,"novelists,dramatists,playwrights"
+Herman Wouk,870,1,The Caine Mutiny,1915,2019,male,eng,US,,authors
+Thomas Wolfe,865,1,"Look Homeward, Angel",1900,1938,male,eng,US,,novelists
+Émile Zola,864,2,Germinal; Nana,1840,1902,male,fre,FR,,authors french
+Gaston Leroux,850,1,The Phantom of the Opera,1868,1927,male,fre,FR,,
+Ivan Sergeevich Turgenev,815,1,Fathers and Sons,1818,1883,male,rus,RU,,authors russian
+Anne Brontë,814,1,The Tenant of Wildfell Hall,1820,1849,female,eng,GB,"poetry,fiction","poets,novelists"
+Robert James Waller,800,1,The Bridges of Madison County,1939,2017,male,eng,US,,"deans education,college teachers,business teachers,authors"
+Kate Douglas Smith Wiggin,796,1,Rebecca of Sunnybrook Farm,1856,1923,female,eng,US,"education,editing,childrens literature","authors,educators,editors,composers"
+H. Rider Haggard,787,1,King Solomon's Mines,1856,1925,male,eng,GB,,"novelists,authors"
+Thomas Keneally,739,1,Schindler's List,1935,ALIVE,male,eng,AU,"playwriting,novels,fiction authorship,drama,acting","novelists,authors,dramatists,actors"
+Arthur Koestler,737,1,Darkness at Noon,1905,1983,male,eng,GB,,authors
+Armstrong Sperry,721,1,Call It Courage,1897,1976,male,eng,US,fiction authorship,authors
+Stendhal,720,1,The Red & the Black,1783,1842,male,fre,FR,,authors
+Aleksandr Isaevich Solzhenitsyn,711,1,One Day in the Life of Ivan Denisovich,1918,2008,male,rus,RU,,authors russian
+Johann Wolfgang von Goethe,702,1,The Sorrows of Young Werther,1749,1832,male,ger,DE,,poets
+Laurence Sterne,626,2,A Sentimental Journey Through France and Italy; The Life and Opinions of Tristram Shandy,1713,1768,male,eng,GB,,
+Owen Wister,599,1,The Virginian: A Horseman of the Plains,1860,1938,male,eng,US,western stories authorship,authors
+Thomas More,593,1,Utopia,1478,1535,male,eng,GB,"utopias,poetry,humanism,christianity,christian heresies","statesmen,politicians,lord chancellor,lawyers,humanists,authors,philosophers"
+Henry Fielding,569,1,"The History of Tom Jones, a Foundling",1707,1754,male,eng,GB,,
+Jean-Paul Sartre,564,1,Nausea,1905,1980,male,fre,FR,,"political activists,philosophers,novelists,dramatists,critics,biographers"
+Marjorie Kinnan Rawlings,549,1,The Yearling,1896,1953,female,eng,US,,authors
+Paula Fox,548,1,The Slave Dancer,1923,2017,female,eng,US,fiction,"authors,novelists"
+Alessandro Manzoni,539,1,The Betrothed,1785,1873,male,ita,IT,literature,
+Betsy Cromer Byars,503,1,The Summer of the Swans,1928,2020,female,eng,US,childrens litearture,authors
+Norman Mailer,480,1,The Naked and the Dead,1923,2007,male,eng,US,"literature,creative nonfiction,world war 1939 1945","soldiers,novelists,authors"
+Cao Xueqin,456,1,Dream of the Red Chamber,1717,1763,male,chi,CN,,
+Thomas Malory,448,1,Le Morte D'Arthur,1408?,1471,male,eng,GB,,
+Samuel Butler,439,1,The Way of All Flesh,1835,1902,male,eng,GB,"translating and interpetring,satirical literature,art","translators,satirists,authors,artists"
+James Hilton,436,1,Lost Horizon,1900,1954,male,eng,GB,,"scriptwriter,novelist"
+Lew Wallace,366,1,Ben-Hur,1827,1905,male,eng,US,"public administration,military art and science,diplomacy,american literature","territorial governors,generals,diplomats,authors"
+R.D. Blackmore,350,1,Lorna Doone,1825,1900,male,eng,GB,,
+Honoré de Balzac,278,2,Eugénie Grandet; Père Goriot,1799,1850,male,fre,FR,"literature,drama","novelist,playwright,dramatists,authors french"
+Choderlos de Laclos,248,1,Dangerous Liaisons,1741,1803,male,fre,FR,,
+Oliver Goldsmith,244,1,The Vicar of Wakefield,1730?,1774,male,eng,GB,,"poets,novelists,playwrights"
+Nicholas Evans,231,1,The Horse Whisperer,1950,2022,male,eng,GB,,
+Edward Bellamy,203,1,"Looking Backward, 2000-1887",1850,1898,male,eng,US,,authors
+Virginia Hamilton,158,1,"M.C. Higgins, The Great",1934,2002,female,eng,US,,"novelists,essayists"
+Madame de (Marie-Madeleine Pioche de La Vergne) La Fayett,79,1,The Princess of Cleves,1634,1693,female,fre,FR,,
+William Dean Howells,63,1,The Rise of Silas Lapham,1837,1920,male,eng,US,,"dramatists,critics,authors"
+Henryk Sienkiewicz,42,1,Quo Vadis,1846,1916,male,pol,PL,,authors polish
+Montesquieu,37,1,Persian Letters,1689,1755,male,fre,FR,,
+Edward Bulwer Lytton,19,1,The Last Days of Pompeii,1803,1873,male,eng,GB,literature,"politicians,authors"
