@@ -1,500 +1,500 @@
-top_500_title,total_checkouts,author,top_500_rank,pub_year,orig_lang,genre,author_birth,author_death,author_gender,author_nationality,gr_avg_rating,gr_num_ratings,gr_num_reviews,oclc_holdings,oclc_eholdings,oclc_total_editions,gr_url,wiki_url
-Gone Girl,35366,Gillian Flynn,324,2012,English,thrillers,1971,ALIVE,female,US,4.13,"3,072,358","153,867",7383.0,697.0,252.0,https://www.goodreads.com/book/show/19288043-gone-girl?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Gone_Girl_(novel)
-The Handmaid's Tale,33240,Margaret Atwood,166,1985,English,na,1939,,female,CA,4.14,"2,031,277","95,560",13920.0,860.0,599.0,https://www.goodreads.com/book/show/38447.The_Handmaid_s_Tale?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Handmaid%27s_Tale
-Harry Potter and the Sorcerer's Stone,31386,J.K. Rowling,45,1997,English,fantasy,1965,ALIVE,female,GB,4.47,"9,977,698","160,913",20745.0,1067.0,997.0,https://www.goodreads.com/book/show/42844155-harry-potter-and-the-sorcerer-s-stone?ref=nav_sb_ss_1_37,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Philosopher%27s_Stone
-The Book Thief,30549,Markus Zusak,193,2006,English,history,1975,ALIVE,male,AU,4.39,"2,538,966","143,813",9536.0,988.0,383.0,https://www.goodreads.com/book/show/19063.The_Book_Thief?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Book_Thief
-Twilight,29289,Stephenie Meyer,132,2005,English,romance,1973,ALIVE,female,US,3.65,"6,536,249","129,360",9646.0,611.0,440.0,https://www.goodreads.com/book/show/41865.Twilight?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Twilight_(Meyer_novel)
-The Hunger Games,27960,Suzanne Collins,173,2008,English,scifi,1962,ALIVE,female,US,4.34,"8,603,378","216,829",10269.0,407.0,212.0,https://www.goodreads.com/book/show/2767052-the-hunger-games?from_search=true&from_srp=true&qid=XAuY5J89Xg&rank=1,https://en.wikipedia.org/wiki/The_Hunger_Games_(novel)
-The Giver,27906,Lois Lowry,139,1993,English,scifi,1937,ALIVE,female,US,4.12,"2,459,417","78,879",12471.0,954.0,394.0,https://www.goodreads.com/book/show/3636.The_Giver?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/The_Giver
-Pride and Prejudice,27250,Jane Austen,6,1813,English,romance,1775,1817,female,GB,4.29,"4,239,555","113,241",36023.0,15545.0,4889.0,https://www.goodreads.com/book/show/1885.Pride_and_Prejudice?from_search=true&from_srp=true&qid=YfouvjieOf&rank=1,https://en.wikipedia.org/wiki/Pride_and_Prejudice
-The Girl on the Train,26610,Paula Hawkins,402,2015,English,na,1972,ALIVE,female,GB,3.96,"2,924,281","126,289",7828.0,549.0,303.0,https://www.goodreads.com/book/show/22557272-the-girl-on-the-train?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Girl_on_the_Train_(novel)
-A Wrinkle in Time,24762,Madeleine L'Engle,108,1962,English,scifi,,,female,US,3.98,"1,197,521","39,424",15967.0,649.0,426.0,https://www.goodreads.com/book/show/33574273-a-wrinkle-in-time?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/A_Wrinkle_in_Time
-Harry Potter and the Chamber of Secrets,24504,J.K. Rowling,66,1998,English,fantasy,1965,ALIVE,female,GB,4.43,"3,895,830","78,904",18109.0,947.0,831.0,https://www.goodreads.com/book/show/15881.Harry_Potter_and_the_Chamber_of_Secrets?ref=nav_sb_ss_1_39,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Chamber_of_Secrets
-The Girl With the Dragon Tattoo,20581,Stieg Larsson,221,2005,Swedish,thrillers,1954,2004,male,SE,4.17,"3,168,810","77,358",8986.0,749.0,413.0,https://www.goodreads.com/book/show/2429135.The_Girl_with_the_Dragon_Tattoo?ref=nav_sb_ss_1_31,https://en.wikipedia.org/wiki/The_Girl_with_the_Dragon_Tattoo
-Catching Fire,20230,Suzanne Collins,197,2009,English,scifi,1962,ALIVE,female,US,4.33,"3,545,636","123,566",10269.0,407.0,212.0,https://www.goodreads.com/book/show/6148028-catching-fire?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Catching_Fire
-Harry Potter and the Prisoner of Azkaban,19564,J.K. Rowling,103,1999,English,fantasy,1965,ALIVE,female,GB,4.58,"4,146,575","83,149",16909.0,845.0,788.0,https://www.goodreads.com/book/show/5.Harry_Potter_and_the_Prisoner_of_Azkaban?from_search=true&from_srp=true&qid=kpy1qZNbJq&rank=1,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Prisoner_of_Azkaban
-The Lightning Thief,19389,Rick Riordan,325,2005,English,fantasy,1964,ALIVE,male,US,4.31,"2,983,515","101,619",8277.0,697.0,258.0,https://www.goodreads.com/book/show/28187.The_Lightning_Thief?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Lightning_Thief
-Mockingjay,19310,Suzanne Collins,286,2010,English,scifi,1962,ALIVE,female,US,4.09,"3,203,569","129,006",8512.0,336.0,206.0,https://www.goodreads.com/book/show/7260188-mockingjay?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Mockingjay
-Harry Potter and the Half-Blood Prince,18311,J.K. Rowling,447,2005,English,fantasy,1965,ALIVE,female,GB,4.58,"3,253,828","57,233",6431.0,484.0,62.0,https://www.goodreads.com/book/show/1.Harry_Potter_and_the_Half_Blood_Prince?ref=nav_sb_ss_1_38,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Half-Blood_Prince
-Harry Potter and the Goblet of Fire,17797,J.K. Rowling,106,2000,English,fantasy,1965,ALIVE,female,GB,4.57,"3,665,172","68,527",15444.0,788.0,651.0,https://www.goodreads.com/book/show/6.Harry_Potter_and_the_Goblet_of_Fire?ref=nav_sb_ss_1_35,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Goblet_of_Fire
-"The Hobbit, or, There and Back Again",17526,J.R.R. Tolkien,18,1937,English,fantasy,1892,1973,male,GB,4.29,"3,941,429","70,212",19117.0,702.0,717.0,https://www.goodreads.com/book/show/437049.The_Hobbit_or_There_and_Back_Again?from_search=true&from_srp=true&qid=O4psAw3Arv&rank=1,https://en.wikipedia.org/wiki/The_Hobbit
-The Help,17499,Kathryn Stockett,206,2009,English,history,1969,ALIVE,female,US,4.47,"2,749,154","90,220",9222.0,717.0,330.0,https://www.goodreads.com/book/show/4667024-the-help?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/The_Help
-The Golden Compass,17289,Philip Pullman,301,1995,English,na,1946,ALIVE,male,GB,4.02,"1,519,979","27,728",6923.0,561.0,112.0,https://www.goodreads.com/book/show/119322.The_Golden_Compass?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Northern_Lights_(Pullman_novel)
-Miss Peregrine's Home for Peculiar Children,17183,Ransom Riggs,453,2011,English,na,1979,ALIVE,male,US,3.92,"1,256,626","66,624",4902.0,710.0,78.0,https://www.goodreads.com/book/show/9460487-miss-peregrine-s-home-for-peculiar-children?ref=nav_sb_ss_1_43,https://en.wikipedia.org/wiki/Miss_Peregrine%27s_Home_for_Peculiar_Children
-Harry Potter and the Deathly Hallows,16971,J.K. Rowling,179,2007,English,fantasy,1965,ALIVE,female,GB,4.62,"3,683,808","84,835",11755.0,761.0,404.0,https://www.goodreads.com/book/show/136251.Harry_Potter_and_the_Deathly_Hallows?ref=nav_sb_ss_1_36,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Deathly_Hallows
-Harry Potter and the Order of the Phoenix,16628,J.K. Rowling,125,2003,English,fantasy,1965,ALIVE,female,GB,4.5,"3,360,257","62,909",13641.0,749.0,589.0,https://www.goodreads.com/book/show/2.Harry_Potter_and_the_Order_of_the_Phoenix?ref=nav_sb_ss_1_41,https://en.wikipedia.org/wiki/Harry_Potter_and_the_Order_of_the_Phoenix
-The Fellowship of the Ring,16591,J.R.R. Tolkien,94,1954,English,fantasy,1892,1973,male,GB,4.39,"2,795,660","38,982",10170.0,482.0,373.0,https://www.goodreads.com/book/show/61215351-the-fellowship-of-the-ring?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/The_Fellowship_of_the_Ring
-To Kill a Mockingbird,14244,Harper Lee,29,1960,English,na,1926,2016,female,US,4.26,"6,080,747","116,479",21870.0,414.0,1115.0,https://www.goodreads.com/book/show/2657.To_Kill_a_Mockingbird?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/To_Kill_a_Mockingbird
-The Maze Runner,14050,James Dashner,408,2009,English,scifi,1972,ALIVE,male,US,4.05,"1,517,070","65,020",7044.0,781.0,164.0,https://www.goodreads.com/book/show/6186357-the-maze-runner?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Maze_Runner
-The Pillars of the Earth,13228,Ken Follett,287,1989,English,history,1949,ALIVE,male,GB,4.34,"760,462","37,340",7814.0,701.0,480.0,https://www.goodreads.com/book/show/5043.The_Pillars_of_the_Earth?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Pillars_of_the_Earth
-Beloved,13059,Toni Morrison,121,1987,English,history,1931,2019,female,US,3.95,"431,996","21,086",12806.0,693.0,564.0,https://www.goodreads.com/book/show/6149.Beloved?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Beloved_(novel)
-The Sea of Monsters,13026,Rick Riordan,495,2006,English,fantasy,1964,ALIVE,male,US,4.25,"1,159,205","48,139",6507.0,517.0,173.0,,https://en.wikipedia.org/wiki/The_Sea_of_Monsters
-The Great Gatsby,12768,F. Scott Fitzgerald,34,1925,English,na,1896,1940,male,US,3.93,"5,198,202","103,746",23406.0,2873.0,2228.0,https://www.goodreads.com/book/show/4671.The_Great_Gatsby?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Great_Gatsby
-The Alchemist,12686,Paulo Coelho,140,1988,Portuguese,na,1947,ALIVE,male,BR,3.91,"3,029,282","119,325",11302.0,879.0,994.0,https://www.goodreads.com/book/show/18144590-the-alchemist?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Alchemist_(novel)
-Little Women,12633,Louisa May Alcott,16,1868,English,na,1832,1888,female,US,4.15,"2,218,654","50,769",28866.0,8889.0,3155.0,https://www.goodreads.com/book/show/1934.Little_Women?from_search=true&from_srp=true&qid=KL7XlkIgEY&rank=1,https://en.wikipedia.org/wiki/Little_Women
-The Hitchhiker's Guide to the Galaxy,12598,Douglas Adams,275,1979,English,scifi,1952,2001,male,GB,4.23,"1,831,346","45,112",7049.0,625.0,347.0,https://www.goodreads.com/book/show/11.The_Hitchhiker_s_Guide_to_the_Galaxy?ref=nav_sb_ss_1_36,https://en.wikipedia.org/wiki/The_Hitchhiker%27s_Guide_to_the_Galaxy_(novel)
-The Girl Who Kicked the Hornet's Nest,12452,Stieg Larsson,330,2007,Swedish,thrillers,1954,2004,male,SE,4.24,"732,839","31,302",6989.0,628.0,287.0,https://www.goodreads.com/book/show/6892870-the-girl-who-kicked-the-hornet-s-nest?ref=nav_sb_ss_1_37,https://en.wikipedia.org/wiki/The_Girl_Who_Kicked_the_Hornets%27_Nest
-The Girl Who Played With Fire,12194,Stieg Larsson,283,2009,English,thrillers,1954,2004,male,SE,4.25,"920,438","37,170",7750.0,691.0,300.0,https://www.goodreads.com/book/show/5060378-the-girl-who-played-with-fire?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/The_Girl_Who_Played_with_Fire
-Brave New World,12129,Aldous Huxley,27,1932,English,na,1894,1963,male,GB,3.99,"1,843,997","47,130",14646.0,702.0,1439.0,https://www.goodreads.com/book/show/5129.Brave_New_World?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Brave_New_World
-Fahrenheit 451,12115,Ray Bradbury,73,1953,English,scifi,1920,2012,male,US,3.97,"2,397,851","73,042",14960.0,544.0,1137.0,https://www.goodreads.com/book/show/13079982-fahrenheit-451?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Fahrenheit_451
-The Absolutely True Diary of a Part-time Indian,11867,Sherman Alexie,431,2007,English,na,1966,ALIVE,male,US,4.07,"269,101","27,450",7021.0,489.0,159.0,https://www.goodreads.com/book/show/693208.The_Absolutely_True_Diary_of_a_Part_Time_Indian?ref=nav_sb_ss_1_47,https://en.wikipedia.org/wiki/The_Absolutely_True_Diary_of_a_Part-Time_Indian
-Inferno,11864,Dan Brown,370,2013,English,thrillers,1964,ALIVE,male,US,3.88,"548,626","39,276",7017.0,777.0,361.0,https://www.goodreads.com/book/show/17212231-inferno?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Inferno_(Brown_novel)
-The Fault In Our Stars,11612,John Green,303,2012,English,romance,1977,ALIVE,male,US,4.14,"5,106,984","178,231",8222.0,656.0,308.0,https://www.goodreads.com/book/show/11870085-the-fault-in-our-stars?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Fault_in_Our_Stars
-The Road,11372,Cormac McCarthy,247,2006,English,na,1933,2023,male,US,3.99,"898,552","58,866",8575.0,526.0,270.0,https://www.goodreads.com/book/show/6288.The_Road?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/The_Road
-Anne of Green Gables,10773,L.M. Montgomery,57,1908,English,na,1874,1942,female,CA,4.31,"971,942","38,454",17732.0,4722.0,1475.0,https://www.goodreads.com/book/show/8127.Anne_of_Green_Gables?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Anne_of_Green_Gables
-Go Set a Watchman,10464,Harper Lee,481,2015,English,na,1926,2016,female,US,3.31,"272,837","32,622",7170.0,405.0,145.0,,https://en.wikipedia.org/wiki/Go_Set_a_Watchman
-Mary Poppins,10245,P.L. Travers,345,1934,English,fantasy,1899,1996,female,GB,4.01,"133,037","6,854",5714.0,408.0,309.0,https://www.goodreads.com/book/show/152380.Mary_Poppins?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Mary_Poppins_(book_series)
-Ender's Game,10194,Orson Scott Card,269,1985,English,scifi,1951,ALIVE,male,US,4.31,"1,368,168","49,471",8490.0,310.0,256.0,https://www.goodreads.com/book/show/375802.Ender_s_Game?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Ender%27s_Game
-The Stand,10167,Stephen King,373,1978,English,horror,1947,ALIVE,male,US,4.35,"756,854","29,312",4255.0,158.0,218.0,https://www.goodreads.com/book/show/87591651-the-stand?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/The_Stand
-The Lost Symbol,10158,Dan Brown,322,2009,English,thrillers,1964,ALIVE,male,US,3.75,"607,162","29,582",7501.0,709.0,264.0,https://www.goodreads.com/book/show/6411961-the-lost-symbol?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Lost_Symbol
-Persuasion,10145,Jane Austen,89,1818,English,romance,1775,1817,female,GB,4.15,"697,703","32,466",36023.0,15545.0,4889.0,https://www.goodreads.com/book/show/2156.Persuasion?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Persuasion_(novel)
-The Kite Runner,9979,Khaled Hosseini,146,2003,English,bildung,1965,ALIVE,male,US,4.34,"3,129,915","97,291",10428.0,759.0,463.0,https://www.goodreads.com/book/show/77203.The_Kite_Runner?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Kite_Runner
-Water for Elephants,9745,Sara Gruen,272,2006,English,romance,1969,ALIVE,female,US,4.11,"1,609,846","62,344",7773.0,769.0,238.0,https://www.goodreads.com/book/show/43641.Water_for_Elephants?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Water_for_Elephants
-Moby Dick,9607,Herman Melville,9,1851,English,na,1819,1891,male,US,3.54,"557,743","22,513",31460.0,10137.0,3672.0,https://www.goodreads.com/book/show/153747.Moby_Dick_or_The_Whale?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Moby-Dick
-Charlotte's Web,9523,E.B. White,97,1952,English,fantasy,1899,1985,male,US,4.2,"1,821,579","23,617",13719.0,249.0,512.0,https://www.goodreads.com/book/show/24178.Charlotte_s_Web?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Charlotte%27s_Web
-One Hundred Years of Solitude,9494,Gabriel García Márquez,54,1967,Spanish,na,1927,2014,male,CO,4.11,"965,067","45,234",9508.0,112.0,273.0,https://www.goodreads.com/book/show/320.One_Hundred_Years_of_Solitude?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/One_Hundred_Years_of_Solitude
-Artemis Fowl,9434,Eoin Colfer,346,2001,English,fantasy,1965,ALIVE,male,IE,3.86,"545,619","13,676",7756.0,507.0,317.0,https://www.goodreads.com/book/show/249747.Artemis_Fowl?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Artemis_Fowl_(novel)
-The Graveyard Book,9385,Neil Gaiman,355,2008,English,na,1960,ALIVE,male,GB,4.16,"536,316","39,825",8250.0,526.0,147.0,https://www.goodreads.com/book/show/2213661.The_Graveyard_Book?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Graveyard_Book
-Eragon,9344,Christopher Paolini,274,2002,English,fantasy,1983,ALIVE,male,US,3.95,"1,767,120","28,002",6499.0,642.0,199.0,https://www.goodreads.com/book/show/113436.Eragon?ref=nav_sb_ss_1_6,https://en.wikipedia.org/wiki/Eragon
-The Count of Monte Cristo,9314,Alexandre Dumas,49,1846,French,history,1802,1870,male,FR,4.3,"908,474","31,025",16964.0,8717.0,2334.0,https://www.goodreads.com/book/show/7126.The_Count_of_Monte_Cristo?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Count_of_Monte_Cristo
-Anna Karenina,9198,Leo Tolstoy,38,1878,Russian,romance,1828,1910,male,RU,4.09,"843,157","35,039",23393.0,7096.0,2915.0,https://www.goodreads.com/book/show/15823480-anna-karenina?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Anna_Karenina
-A Thousand Splendid Suns,9185,Khaled Hosseini,277,2007,English,na,1965,ALIVE,male,US,4.43,"1,519,768","75,957",8119.0,523.0,346.0,https://www.goodreads.com/book/show/128029.A_Thousand_Splendid_Suns?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/A_Thousand_Splendid_Suns
-James and the Giant Peach,9074,Roald Dahl,158,1961,English,na,1916,1990,male,GB,4.03,"470,959","8,920",10977.0,456.0,413.0,https://www.goodreads.com/book/show/6689.James_and_the_Giant_Peach?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/James_and_the_Giant_Peach
-Animal Farm,8992,George Orwell,33,1945,English,political,1903,1950,male,GB,3.99,"3,853,020","94,736",21494.0,1148.0,2468.0,https://www.goodreads.com/book/show/170448.Animal_Farm?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Animal_Farm
-The Gunslinger,8967,Stephen King,445,1982,English,fantasy,1947,ALIVE,male,US,3.92,"607,928","24,687",6297.0,542.0,218.0,https://www.goodreads.com/book/show/43615.The_Gunslinger?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Dark_Tower:_The_Gunslinger
-Life of Pi,8823,Yann Martel,178,2001,English,na,1963,,male,CA,3.94,"1,616,734","53,171",9834.0,891.0,543.0,https://www.goodreads.com/book/show/4214.Life_of_Pi?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Life_of_Pi
-The BFG,8488,Roald Dahl,234,1982,English,na,1916,1990,male,GB,4.23,"479,665","12,414",8411.0,456.0,261.0,https://www.goodreads.com/book/show/6319.The_BFG?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/The_BFG
-A Game of Thrones,8448,George R.R. Martin,364,1996,English,fantasy,1948,ALIVE,male,US,4.44,"2,477,572","63,237",6587.0,856.0,299.0,https://www.goodreads.com/book/show/13496.A_Game_of_Thrones?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/A_Game_of_Thrones
-It,8440,Stephen King,378,1986,English,horror,1947,ALIVE,male,US,4.24,"1,103,157","35,659",7587.0,572.0,371.0,https://www.goodreads.com/book/show/830502.It?from_search=true&from_srp=true&qid=J6v283vVaU&rank=3,https://en.wikipedia.org/wiki/It_(novel)
-The Subtle Knife,8296,Philip Pullman,421,1997,English,fantasy,1946,ALIVE,male,GB,4.15,"433,615","12,772",6783.0,519.0,244.0,https://www.goodreads.com/book/show/41637836-the-subtle-knife?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Subtle_Knife
-The Remains of the Day,8287,Kazuo Ishiguro,478,1989,English,history,1954,ALIVE,male,GB,4.14,"300,925","23,933",,,,https://www.goodreads.com/book/show/28921.The_Remains_of_the_Day?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Remains_of_the_Day
-Murder on the Orient Express,8212,Agatha Christie,207,1934,English,mystery,1890,1976,female,GB,4.2,"616,572","39,944",9642.0,618.0,875.0,https://www.goodreads.com/book/show/853510.Murder_on_the_Orient_Express?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/Murder_on_the_Orient_Express
-Diary of a Wimpy Kid: The Long Haul,8129,Jeff Kinney,249,2014,English,na,1971,ALIVE,male,US,4.45,22,2,5563.0,628.0,180.0,https://www.goodreads.com/book/show/34302304-diary-of-a-wimpy-kid-the-long-haul?ref=nav_sb_ss_2_35,https://en.wikipedia.org/wiki/Diary_of_a_Wimpy_Kid:_The_Long_Haul
-"The Lion, the Witch, and the Wardrobe",8105,C.S. Lewis,51,1950,English,fantasy,1898,1963,male,GB,4.24,"2,780,127","32,995",17651.0,521.0,817.0,https://www.goodreads.com/book/show/100915.The_Lion_the_Witch_and_the_Wardrobe?ref=nav_sb_ss_1_37,"https://en.wikipedia.org/wiki/The_Lion,_the_Witch_and_the_Wardrobe"
-Breaking Dawn,8081,Stephenie Meyer,281,2008,English,romance,1973,ALIVE,female,US,3.74,"1,697,282","53,451",7614.0,539.0,230.0,https://www.goodreads.com/book/show/1162543.Breaking_Dawn?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Breaking_Dawn
-"Frankenstein, or, the Modern Prometheus",8044,Mary Shelley,19,1818,English,horror,1797,1851,female,GB,3.87,"1,585,172","61,660",27338.0,10280.0,2777.0,https://www.goodreads.com/book/show/18488.Frankenstein_or_the_Modern_Prometheus?ref=nav_sb_ss_1_39,https://en.wikipedia.org/wiki/Frankenstein
-Matilda,7956,Roald Dahl,257,1988,English,na,1916,1990,male,GB,4.34,"939,799","23,215",10051.0,531.0,662.0,https://www.goodreads.com/book/show/39988.Matilda?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Matilda_(novel)
-The Two Towers,7954,J.R.R. Tolkien,110,1954,English,fantasy,1892,1973,male,GB,4.48,"960,309","19,045",8907.0,433.0,294.0,https://www.goodreads.com/book/show/61215372-the-two-towers?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Two_Towers
-Slaughterhouse-Five,7831,Kurt Vonnegut,211,1969,English,scifi,1922,2007,male,US,4.1,"1,364,525","39,355",5720.0,674.0,223.0,https://www.goodreads.com/book/show/4981.Slaughterhouse_Five?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Slaughterhouse-Five
-Hatchet,7794,Gary Paulsen,145,1986,English,action,1939,2021,male,US,3.78,"390,445","18,251",11343.0,314.0,276.0,https://www.goodreads.com/book/show/50.Hatchet?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Hatchet_(novel)
-The Curious Incident of the Dog In the Night-Time,7730,Mark Haddon,251,2003,English,mystery,1962,ALIVE,male,GB,3.89,"1,472,856","55,234",7900.0,696.0,375.0,https://www.goodreads.com/book/show/1618.The_Curious_Incident_of_the_Dog_in_the_Night_Time?ref=nav_sb_ss_1_49,https://en.wikipedia.org/wiki/The_Curious_Incident_of_the_Dog_in_the_Night-Time
-Dracula,7617,Bram Stoker,25,1897,English,na,1847,1912,male,IE,4.01,"1,266,607","45,632",21540.0,13875.0,2518.0,https://www.goodreads.com/book/show/17245.Dracula?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Dracula
-Room,7576,Emma Donoghue,499,2010,English,na,1969,ALIVE,female,IE,4.07,"801,989","50,594",5963.0,380.0,215.0,,https://en.wikipedia.org/wiki/Room_(novel)
-The Wind in the Willows,7481,Kenneth Grahame,39,1908,English,fantasy,1859,1932,male,GB,4.01,"216,887","9,012",17564.0,5592.0,1874.0,https://www.goodreads.com/book/show/5659.The_Wind_in_the_Willows?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Wind_in_the_Willows
-The Phantom Tollbooth,7258,Norton Juster,472,1961,English,fantasy,1929,2021,male,US,4.2,"285,680","13,243",6478.0,595.0,215.0,https://www.goodreads.com/book/show/378.The_Phantom_Tollbooth?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Phantom_Tollbooth
-The Catcher in the Rye,7257,J.D. Salinger,72,1951,English,bildung,1919,2010,male,US,3.8,"3,503,812","84,269",15149.0,724.0,1028.0,https://www.goodreads.com/book/show/5107.The_Catcher_in_the_Rye?from_search=true&from_srp=true&qid=cmOhlqqyD1&rank=1,https://en.wikipedia.org/wiki/The_Catcher_in_the_Rye
-Sense and Sensibility,7253,Jane Austen,42,1811,English,romance,1775,1817,female,GB,4.08,"1,184,039","26,962",17906.0,9986.0,1972.0,https://www.goodreads.com/book/show/14935.Sense_and_Sensibility?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/Sense_and_Sensibility
-Middlemarch,7231,George Eliot,112,1872,English,na,1819,1880,female,GB,4.02,"161,972","10,975",13007.0,8326.0,1469.0,https://www.goodreads.com/book/show/19089.Middlemarch?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Middlemarch
-Coraline,7212,Neil Gaiman,307,2002,English,na,1960,ALIVE,male,GB,4.12,"686,847","36,496",8129.0,710.0,365.0,https://www.goodreads.com/book/show/17061.Coraline?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Coraline
-The Picture of Dorian Gray,7197,Oscar Wilde,40,1890,English,na,1854,1900,male,IE,4.12,"1,518,854","68,658",18146.0,11362.0,2715.0,https://www.goodreads.com/book/show/5297.The_Picture_of_Dorian_Gray?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/The_Picture_of_Dorian_Gray
-The Amber Spyglass,7190,Philip Pullman,464,2000,English,fantasy,1946,ALIVE,male,GB,4.1,"358,718","13,370",6597.0,504.0,256.0,https://www.goodreads.com/book/show/18122.The_Amber_Spyglass?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Amber_Spyglass
-The Adventures of Huckleberry Finn,7168,Mark Twain,3,1884,English,action,1835,1910,male,US,3.83,"1,262,480","19,440",32602.0,11783.0,4119.0,https://www.goodreads.com/book/show/2956.The_Adventures_of_Huckleberry_Finn?from_search=true&from_srp=true&qid=lTplsbK1Jk&rank=2,https://en.wikipedia.org/wiki/Adventures_of_Huckleberry_Finn
-Don Quixote,7123,Miguel de Cervantes,1,1605,Spanish,action,1547,1616,male,ES,3.9,"269,435","12,053",30840.0,4992.0,9017.0,https://www.goodreads.com/book/show/3836.Don_Quixote?from_search=true&from_srp=true&qid=Npjwg6DCCM&rank=1,https://en.wikipedia.org/wiki/Don_Quixote
-The Return of the King,7106,J.R.R. Tolkien,24,1955,English,fantasy,1892,1973,male,GB,4.56,"896,361","18,133",5828.0,232.0,189.0,https://www.goodreads.com/book/show/61215384-the-return-of-the-king?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Return_of_the_King
-A Tale of Two Cities,7067,Charles Dickens,15,1859,English,history,1812,1870,male,GB,3.87,"943,466","23,243",28144.0,10044.0,3683.0,https://www.goodreads.com/book/show/1953.A_Tale_of_Two_Cities?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities
-Love in the Time of Cholera,7059,Gabriel García Márquez,129,1985,Spanish,romance,1927,2014,male,CO,3.94,"502,086","27,128",12140.0,419.0,641.0,https://www.goodreads.com/book/show/9712.Love_in_the_Time_of_Cholera?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/Love_in_the_Time_of_Cholera
-Their Eyes Were Watching God,7031,Zora Neale Hurston,194,1937,English,na,1891,1960,female,US,3.98,"344,692","20,411",10466.0,454.0,343.0,https://www.goodreads.com/book/show/37415.Their_Eyes_Were_Watching_God?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/Their_Eyes_Were_Watching_God
-And Then There Were None,7005,Agatha Christie,279,1939,English,mystery,1890,1976,female,GB,4.28,"1,343,305","63,674",6854.0,480.0,328.0,https://www.goodreads.com/book/show/16299.And_Then_There_Were_None?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/And_Then_There_Were_None
-Rebecca,6921,Daphne Du Maurier,130,1938,English,romance,1907,1989,female,GB,4.24,"624,347","39,700",11533.0,271.0,1116.0,https://www.goodreads.com/book/show/17899948-rebecca?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Rebecca_(novel)
-Holes,6876,Louis Sachar,185,1998,English,na,1954,ALIVE,male,US,4.0,"1,190,912","26,384",10615.0,682.0,320.0,https://www.goodreads.com/book/show/38709.Holes?ref=nav_sb_ss_1_5,https://en.wikipedia.org/wiki/Holes_(novel)
-Looking for Alaska,6850,John Green,456,2005,English,bildung,1977,ALIVE,male,US,3.97,"1,590,084","75,075",6879.0,673.0,258.0,https://www.goodreads.com/book/show/99561.Looking_for_Alaska?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Looking_for_Alaska
-Siddhartha,6691,Hermann Hesse,186,1922,German,na,1877,1962,male,DE,4.07,"766,357","26,790",11899.0,3642.0,1646.0,https://www.goodreads.com/book/show/52036.Siddhartha?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Siddhartha_(novel)
-The Bluest Eye,6690,Toni Morrison,213,1970,English,bildung,1931,2019,female,US,4.11,"250,073","16,845",10212.0,675.0,426.0,https://www.goodreads.com/book/show/11337.The_Bluest_Eye?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Bluest_Eye
-Ramona and her Father,6649,Beverly Cleary,449,1977,English,na,1916,2021,female,US,4.05,"30,534",983,6608.0,305.0,134.0,https://www.goodreads.com/book/show/91247.Ramona_and_Her_Father?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/Ramona_and_Her_Father
-The God of Small Things,6619,Arundhati Roy,491,1997,English,na,1961,ALIVE,female,IN,3.95,"296,531","19,027",6028.0,352.0,276.0,,https://en.wikipedia.org/wiki/The_God_of_Small_Things
-The Grapes of Wrath,6609,John Steinbeck,41,1939,English,na,1902,1968,male,US,4.01,"902,261","23,772",19861.0,583.0,1497.0,https://www.goodreads.com/book/show/18114322-the-grapes-of-wrath?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Grapes_of_Wrath
-East of Eden,6607,John Steinbeck,116,1952,English,na,1902,1968,male,US,4.41,"535,229","29,065",11207.0,387.0,659.0,https://www.goodreads.com/book/show/4406.East_of_Eden?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/East_of_Eden_(novel)
-The Shining,6600,Stephen King,398,1977,English,horror,1947,ALIVE,male,US,4.27,"1,478,831","38,366",7117.0,568.0,513.0,https://www.goodreads.com/book/show/11588.The_Shining?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/The_Shining_(novel)
-The Time Traveler's Wife,6408,Audrey Niffenegger,386,2003,English,na,1963,ALIVE,female,US,3.99,"1,780,483","53,343",6588.0,195.0,261.0,https://www.goodreads.com/book/show/18619684-the-time-traveler-s-wife?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Time_Traveler%27s_Wife
-War and Peace,6376,Leo Tolstoy,28,1869,Russian,history,1828,1910,male,RU,4.16,"326,220","17,136",11222.0,2470.0,620.0,https://www.goodreads.com/book/show/656.War_and_Peace?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/War_and_Peace
-The Call of the Wild,6300,Jack London,36,1903,English,action,1876,1916,male,US,3.9,"426,724","15,327",18081.0,7967.0,2062.0,https://www.goodreads.com/book/show/1852.The_Call_of_the_Wild?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Call_of_the_Wild
-Because of Winn-Dixie,6278,Kate DiCamillo,318,2000,English,na,1964,ALIVE,female,US,4.09,"255,830","11,242",8393.0,620.0,186.0,https://www.goodreads.com/book/show/357664.Because_of_Winn_Dixie?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/Because_of_Winn-Dixie
-Lord of the Flies,6237,William Golding,62,1954,English,na,1911,1993,male,GB,3.69,"2,888,642","55,326",16876.0,638.0,1233.0,https://www.goodreads.com/book/show/7624.Lord_of_the_Flies?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Lord_of_the_Flies
-When You Reach Me,6222,Rebecca Stead,422,2009,English,na,1968,ALIVE,female,US,4.08,"110,019","13,506",6991.0,526.0,93.0,https://www.goodreads.com/book/show/5310515-when-you-reach-me?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/When_You_Reach_Me
-Catch-22,6206,Joseph Heller,118,1961,English,war,1923,1999,male,US,3.99,"828,780","23,316",12255.0,368.0,779.0,https://www.goodreads.com/book/show/168668.Catch_22?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Catch-22
-Pippi Longstocking,6195,Astrid Lindgren,215,1945,Swedish,na,1907,2002,female,SE,4.15,"199,322","5,183",9102.0,130.0,761.0,https://www.goodreads.com/book/show/19302.Pippi_Longstocking?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Pippi_Longstocking_(novel)
-Alice's Adventures in Wonderland,6171,Lewis Carroll,2,1865,English,fantasy,1832,1898,male,GB,4.06,"561,016","15,380",24125.0,6698.0,2694.0,https://www.goodreads.com/book/show/24213.Alice_s_Adventures_in_Wonderland_Through_the_Looking_Glass?from_search=true&from_srp=true&qid=rbCacLxvKx&rank=1,https://en.wikipedia.org/wiki/Alice%27s_Adventures_in_Wonderland
-The Wizard of Oz,6138,L. Frank Baum,30,1900,English,fantasy,1856,1919,male,US,4.0,"451,144","17,204",9678.0,5067.0,1163.0,https://www.goodreads.com/book/show/236093.The_Wonderful_Wizard_of_Oz?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Wonderful_Wizard_of_Oz
-Great Expectations,6030,Charles Dickens,17,1861,English,bildung,1812,1870,male,GB,3.79,"798,588","21,978",28144.0,10044.0,3683.0,https://www.goodreads.com/book/show/2623.Great_Expectations?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Great_Expectations
-The Camel Club,5990,David Baldacci,342,2005,English,political,1960,ALIVE,male,US,4.06,"91,920","3,350",5230.0,488.0,183.0,https://www.goodreads.com/book/show/15158.The_Camel_Club?from_search=true&from_srp=true&qid=sa1jkfkWRo&rank=1,https://en.wikipedia.org/wiki/The_Camel_Club_(novel)
-Little House on the Prairie,5982,Laura Ingalls Wilder,239,1935,English,autobio,1867,1957,female,US,4.21,"289,969","5,566",9576.0,204.0,329.0,https://www.goodreads.com/book/show/77767.Little_House_on_the_Prairie?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/Little_House_on_the_Prairie_(novel)
-The Tale of Despereaux,5968,Kate DiCamillo,329,2003,English,na,1964,ALIVE,female,US,4.07,"198,186","12,171",7633.0,515.0,157.0,https://www.goodreads.com/book/show/37190.The_Tale_of_Despereaux?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Tale_of_Despereaux
-The Secret Garden,5916,Frances Hodgson Burnett,32,1911,English,na,1849,1924,female,GB,4.16,"1,162,708","28,154",16799.0,5751.0,1801.0,https://www.goodreads.com/book/show/2998.The_Secret_Garden?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Secret_Garden
-The Adventures of Tom Sawyer,5907,Mark Twain,4,1876,English,action,1835,1910,male,US,3.92,"931,898","13,603",32602.0,11783.0,4119.0,https://www.goodreads.com/book/show/24583.The_Adventures_of_Tom_Sawyer?from_search=true&from_srp=true&qid=9VcOB7x62W&rank=1,https://en.wikipedia.org/wiki/The_Adventures_of_Tom_Sawyer
-Watership Down,5897,Richard Adams,223,1972,English,allegories,1920,2016,male,GB,4.08,"479,467","17,361",9149.0,323.0,364.0,https://www.goodreads.com/book/show/76620.Watership_Down?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Watership_Down
-Jane Eyre,5895,Charlotte Brontë,8,1847,English,romance,1816,1855,female,GB,4.15,"2,084,999","64,277",34599.0,10607.0,4552.0,https://www.goodreads.com/book/show/10210.Jane_Eyre?from_search=true&from_srp=true&qid=69NNTGE2Ph&rank=1,https://en.wikipedia.org/wiki/Jane_Eyre
-A Tree Grows in Brooklyn,5839,Betty Smith,187,1943,English,na,1896,1972,female,US,4.29,"463,200","26,886",9593.0,428.0,393.0,https://www.goodreads.com/book/show/14891.A_Tree_Grows_in_Brooklyn?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/A_Tree_Grows_in_Brooklyn_(novel)
-The Master and Margarita,5803,Mikhail Bulgakov,335,1967,Russian,political,1891,1940,male,RU,4.29,"350,042","20,451",7387.0,538.0,1026.0,https://www.goodreads.com/book/show/117833.The_Master_and_Margarita?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Master_and_Margarita
-A Christmas Carol,5736,Charles Dickens,13,1843,English,na,1812,1870,male,GB,4.08,"838,828","31,968",25567.0,12115.0,4096.0,https://www.goodreads.com/book/show/5326.A_Christmas_Carol?from_search=true&from_srp=true&qid=PC8NRaRnFL&rank=1,https://en.wikipedia.org/wiki/A_Christmas_Carol
-Little House In the Big Woods,5695,Laura Ingalls Wilder,214,1932,English,history,1867,1957,female,US,4.2,"268,115","7,826",9576.0,204.0,329.0,https://www.goodreads.com/book/show/8337.Little_House_in_the_Big_Woods?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/Little_House_in_the_Big_Woods
-Ramona the Pest,5667,Beverly Cleary,451,1968,English,na,1916,2021,female,US,4.08,"65,977","1,828",6548.0,340.0,150.0,https://www.goodreads.com/book/show/78039.Ramona_the_Pest?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Ramona_the_Pest
-The Old Man and the Sea,5604,Ernest Hemingway,50,1952,English,allegories,1899,1961,male,US,3.8,"1,139,566","39,222",17642.0,609.0,2088.0,https://www.goodreads.com/book/show/2165.The_Old_Man_and_the_Sea?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Old_Man_and_the_Sea
-Ulysses,5520,James Joyce,47,1922,English,na,1882,1941,male,IE,3.75,"127,499","9,351",17773.0,1352.0,1955.0,https://www.goodreads.com/book/show/338798.Ulysses?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Ulysses_(novel)
-Wuthering Heights,5515,Emily Brontë,7,1847,English,na,1818,1848,female,GB,3.89,"1,793,015","61,175",33337.0,11972.0,3933.0,https://www.goodreads.com/book/show/6185.Wuthering_Heights?from_search=true&from_srp=true&qid=Ls52Sag11l&rank=1,https://en.wikipedia.org/wiki/Wuthering_Heights
-The Magician's Nephew,5477,C.S. Lewis,124,1955,English,fantasy,1898,1963,male,GB,4.05,"537,714","20,664",11893.0,491.0,523.0,https://www.goodreads.com/book/show/65605.The_Magician_s_Nephew?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Magician%27s_Nephew
-Cat's Cradle,5451,Kurt Vonnegut,485,1963,English,scifi,1922,2007,male,US,4.16,"401,172","15,247",6351.0,624.0,321.0,,https://en.wikipedia.org/wiki/Cat%27s_Cradle
-Things Fall Apart,5420,Chinua Achebe,229,1958,English,history,1930,2013,male,NG,3.73,"369,511","19,602",9295.0,561.0,544.0,https://www.goodreads.com/book/show/37781.Things_Fall_Apart?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Things_Fall_Apart
-On the Road,5416,Jack Kerouac,117,1957,English,autobio,1922,1969,male,US,3.61,"409,488","19,595",9948.0,372.0,724.0,https://www.goodreads.com/book/show/70401.On_the_Road?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/On_the_Road
-Of Mice and Men,5380,John Steinbeck,79,1937,English,na,1902,1968,male,US,3.88,"2,529,003","52,115",19861.0,583.0,1497.0,https://www.goodreads.com/book/show/890.Of_Mice_and_Men?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Of_Mice_and_Men
-David Copperfield,5359,Charles Dickens,14,1850,English,bildung,1812,1870,male,GB,4.03,"237,403","9,833",28144.0,10044.0,3683.0,https://www.goodreads.com/book/show/58696.David_Copperfield?from_search=true&from_srp=true&qid=SqkF9mVGUk&rank=1,https://en.wikipedia.org/wiki/David_Copperfield
-Paper Towns,5351,John Green,259,1908,English,bildung,1977,ALIVE,male,US,3.71,"1,349,342","55,833",7132.0,548.0,214.0,https://www.goodreads.com/book/show/6442769-paper-towns?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Paper_Towns_(novel)
-The Mouse and the Motorcycle,5345,Beverly Cleary,321,1965,English,na,1916,2021,female,US,3.96,"85,460","2,575",7141.0,303.0,164.0,https://www.goodreads.com/book/show/232109.The_Mouse_and_the_Motorcycle?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/The_Mouse_and_the_Motorcycle
-The Poisonwood Bible,5221,Barbara Kingsolver,380,1998,English,na,1955,ALIVE,female,US,4.09,"741,144","27,382",7096.0,445.0,178.0,https://www.goodreads.com/book/show/7244.The_Poisonwood_Bible?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Poisonwood_Bible
-The Appeal,5191,John Grisham,209,2008,English,na,1955,ALIVE,male,US,3.63,"57,644","4,711",6622.0,624.0,218.0,https://www.goodreads.com/book/show/1248179.The_Appeal?ref=nav_sb_ss_2_10,https://en.wikipedia.org/wiki/The_Appeal
-The Color Purple,5126,Alice Walker,114,1982,English,na,1944,ALIVE,female,US,4.27,"679,776","25,378",12645.0,678.0,517.0,https://www.goodreads.com/book/show/52892857-the-color-purple?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Color_Purple
-The Bell Jar,5092,Sylvia Plath,162,1963,English,na,1932,1963,female,US,4.05,"947,410","54,775",10945.0,268.0,581.0,https://www.goodreads.com/book/show/6514.The_Bell_Jar?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Bell_Jar
-Invisible Man,5080,Ralph Ellison,180,1952,English,na,1914,1994,male,US,3.91,"186,954","8,217",10666.0,410.0,456.0,https://www.goodreads.com/book/show/16981.Invisible_Man?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Invisible_Man
-Heart of Darkness,5049,Joseph Conrad,308,1902,English,na,1857,1924,male,GB,3.43,"510,594","20,462",8995.0,6585.0,1440.0,https://www.goodreads.com/book/show/4900.Heart_of_Darkness?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Heart_of_Darkness
-Atlas Shrugged,5037,Ayn Rand,264,1957,English,scifi,1905,1982,female,US,3.69,"389,268","20,042",8344.0,395.0,258.0,https://www.goodreads.com/book/show/662.Atlas_Shrugged?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Atlas_Shrugged
-The Sun Also Rises,4982,Ernest Hemingway,126,1926,English,history,1899,1961,male,US,3.8,"442,318","18,788",16995.0,474.0,1410.0,https://www.goodreads.com/book/show/3876.The_Sun_Also_Rises?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Sun_Also_Rises
-Atonement,4918,Ian McEwan,298,2001,English,na,1948,ALIVE,male,GB,3.94,"517,674","22,428",7565.0,1135.0,324.0,https://www.goodreads.com/book/show/6867.Atonement?ref=nav_sb_ss_1_9#CommunityReviews,https://en.wikipedia.org/wiki/Atonement_(novel)
-The Little Prince,4916,Antoine de Saint-Exupéry,35,1943,English,na,1900,1944,male,FR,4.32,"2,095,592","66,986",15631.0,1009.0,3301.0,https://www.goodreads.com/book/show/157993.The_Little_Prince?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Little_Prince
-Number the Stars,4892,Lois Lowry,266,1989,English,history,1937,ALIVE,female,US,4.19,"564,735","16,519",8686.0,603.0,237.0,https://www.goodreads.com/book/show/47281.Number_the_Stars?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Number_the_Stars
-Les Misérables,4887,Victor Hugo,31,1862,French,na,1802,1885,male,FR,4.2,"794,697","22,665",23444.0,5909.0,3183.0,https://www.goodreads.com/book/show/24280.Les_Mis_rables?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Les_Mis%C3%A9rables
-"Are You There God? It's Me, Margaret",4883,Judy Blume,261,1970,English,na,1938,ALIVE,female,US,3.94,"238,301","11,849",8238.0,383.0,214.0,https://www.goodreads.com/book/show/37732.Are_You_There_God_It_s_Me_Margaret?ref=nav_sb_ss_1_36,"https://en.wikipedia.org/wiki/Are_You_There_God%3F_It%27s_Me,_Margaret."
-From the Mixed-Up Files of Mrs. Basil E. Frankweiler,4863,E.L. Konigsburg,263,1967,English,na,1930,2013,female,US,4.16,"210,158","9,026",8418.0,334.0,214.0,https://www.goodreads.com/book/show/3980.From_the_Mixed_Up_Files_of_Mrs_Basil_E_Frankweiler?ref=nav_sb_ss_1_52,https://en.wikipedia.org/wiki/From_the_Mixed-Up_Files_of_Mrs._Basil_E._Frankweiler
-Mansfield Park,4860,Jane Austen,90,1814,English,romance,1775,1817,female,GB,3.86,"347,543","14,726",15034.0,7208.0,1894.0,https://www.goodreads.com/book/show/45032.Mansfield_Park?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Mansfield_Park
-Lolita,4805,Vladimir Vladimirovich Nabokov,258,1955,Russian,romance,1899,1977,male,US,3.88,"845,526","39,480",4798.0,287.0,111.0,https://www.goodreads.com/book/show/7604.Lolita?ref=nav_sb_ss_1_6,https://en.wikipedia.org/wiki/Lolita
-The House of the Spirits,4795,Isabel Allende,190,1982,Spanish,na,1942,ALIVE,female,CL,4.28,"266,062","14,720",9860.0,302.0,725.0,https://www.goodreads.com/book/show/9328.The_House_of_the_Spirits?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_House_of_the_Spirits
-The Witches,4793,Roald Dahl,420,1983,English,na,1916,1990,male,GB,4.18,"394,173","10,341",6854.0,329.0,315.0,https://www.goodreads.com/book/show/6327.The_Witches?ref=nav_sb_ss_3_11,https://en.wikipedia.org/wiki/The_Witches_(novel)
-Nineteen Eighty-Four,4763,George Orwell,86,1949,English,political,1903,1950,male,GB,4.19,"4,558,358","113,880",16690.0,321.0,1189.0,https://www.goodreads.com/book/show/5471.Nineteen_Eighty_Four?from_search=true&from_srp=true&qid=Exz83MvWKn&rank=1,https://en.wikipedia.org/wiki/Nineteen_Eighty-Four
-The Dark Is Rising,4665,Susan Cooper,350,1973,English,fantasy,1935,ALIVE,female,US,4.04,"57,159","3,141",6986.0,222.0,226.0,https://www.goodreads.com/book/show/210329.The_Dark_Is_Rising?ref=nav_sb_ss_2_18,https://en.wikipedia.org/wiki/The_Dark_Is_Rising
-The Miraculous Journey of Edward Tulane,4651,Kate DiCamillo,465,2006,English,na,1964,ALIVE,female,US,4.38,"108,569","12,750",6951.0,446.0,102.0,https://www.goodreads.com/book/show/37186.The_Miraculous_Journey_of_Edward_Tulane?ref=nav_sb_ss_1_39,https://en.wikipedia.org/wiki/The_Miraculous_Journey_of_Edward_Tulane
-Stranger in a Strange Land,4593,Robert A. Heinlein,496,1961,English,scifi,1907,1988,male,US,3.92,"311,859","9,961",6352.0,268.0,273.0,,https://en.wikipedia.org/wiki/Stranger_in_a_Strange_Land
-Treasure Island,4549,Robert Louis Stevenson,5,1883,English,action,1850,1894,male,GB,3.84,"486,155","16,307",37702.0,14286.0,5555.0,https://www.goodreads.com/book/show/295.Treasure_Island?from_search=true&from_srp=true&qid=iUWx7VMfKk&rank=1,https://en.wikipedia.org/wiki/Treasure_Island
-The Stranger,4460,Albert Camus,68,1942,French,na,1913,1960,male,FR,4.02,"1,080,389","48,517",16742.0,626.0,1898.0,https://www.goodreads.com/book/show/49552.The_Stranger?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Stranger_(Camus_novel)
-Peter Pan,4451,J.M. Barrie,59,1911,English,fantasy,1860,1937,male,GB,4.04,"345,693","16,296",10517.0,1311.0,725.0,https://www.goodreads.com/book/show/34268.Peter_Pan?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Peter_and_Wendy
-Mrs. Dalloway,4450,Virginia Woolf,122,1925,English,na,1882,1941,female,GB,3.79,"303,770","18,117",12579.0,1767.0,1218.0,https://www.goodreads.com/book/show/14942.Mrs_Dalloway?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Mrs_Dalloway
-The Murder of Roger Ackroyd,4423,Agatha Christie,377,1926,English,mystery,1890,1976,female,GB,4.27,"271,014","22,125",6842.0,458.0,567.0,https://www.goodreads.com/book/show/16328.The_Murder_of_Roger_Ackroyd?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/The_Murder_of_Roger_Ackroyd
-Diary of a Wimpy Kid,4374,Jeff Kinney,467,2007,English,na,1971,ALIVE,male,US,3.98,"690,759","21,651",9080.0,794.0,114.0,https://www.goodreads.com/book/show/389627.Diary_of_a_Wimpy_Kid?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Diary_of_a_Wimpy_Kid_(book)
-"Ramona Quimby, Age 8",4365,Beverly Cleary,367,1981,English,na,1916,2021,female,US,4.1,"71,796","1,819",7439.0,328.0,159.0,https://www.goodreads.com/book/show/91253.Ramona_Quimby_Age_8?ref=nav_sb_ss_1_20,"https://en.wikipedia.org/wiki/Ramona_Quimby,_Age_8"
-In Cold Blood,4298,Truman Capote,189,1966,English,na,1924,1984,male,US,4.09,"655,404","23,534",9649.0,520.0,353.0,https://www.goodreads.com/book/show/168642.In_Cold_Blood?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/In_Cold_Blood
-Stuart Little,4282,E.B. White,241,1945,English,action,1899,1985,male,US,3.9,"125,340","3,732",8897.0,217.0,280.0,https://www.goodreads.com/book/show/138959.Stuart_Little?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Stuart_Little
-Northanger Abbey,4223,Jane Austen,115,1818,English,romance,1775,1817,female,GB,3.85,"398,340","21,067",11913.0,7564.0,1492.0,https://www.goodreads.com/book/show/50398.Northanger_Abbey?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Northanger_Abbey
-Fearless Fourteen,4200,Janet Evanovich,352,2008,English,mystery,1943,ALIVE,female,US,4.05,"94,410","3,721",4926.0,146.0,79.0,https://www.goodreads.com/book/show/2292384.Fearless_Fourteen?ref=nav_sb_ss_1_17#CommunityReviews,https://en.wikipedia.org/wiki/Fearless_Fourteen
-Tales of a Fourth Grade Nothing,4167,Judy Blume,291,1972,English,na,1938,ALIVE,female,US,4.11,"139,000","3,412",7829.0,141.0,178.0,https://www.goodreads.com/book/show/37741.Tales_of_a_Fourth_Grade_Nothing?from_search=true&from_srp=true&qid=fEvhG3jbYR&rank=1,https://en.wikipedia.org/wiki/Tales_of_a_Fourth_Grade_Nothing
-Bridge to Terabithia,4166,Katherine Paterson,183,1977,English,fantasy,1932,ALIVE,female,US,4.04,"543,640","16,285",10731.0,402.0,320.0,https://www.goodreads.com/book/show/40940121-bridge-to-terabithia?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Bridge_to_Terabithia_(novel)
-"20,000 Leagues Under the Sea",4153,Jules Verne,37,1870,French,scifi,1828,1905,male,FR,3.89,"11,238",716,19018.0,10711.0,2844.0,https://www.goodreads.com/book/show/15762322-20-000-leagues-under-the-sea-and-other-classic-novels?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/Twenty_Thousand_Leagues_Under_the_Seas
-The Outsiders,4128,S.E. Hinton,149,1967,English,na,1951,ALIVE,female,US,4.12,"1,324,596","46,549",11536.0,520.0,504.0,https://www.goodreads.com/book/show/231804.The_Outsiders?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Outsiders_(novel)
-The Martian Chronicles,4119,Ray Bradbury,246,1950,English,scifi,1920,2012,male,US,4.15,"260,278","11,072",8226.0,247.0,523.0,https://www.goodreads.com/book/show/76778.The_Martian_Chronicles?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Martian_Chronicles
-The Lovely Bones,4089,Alice Sebold,208,2002,English,na,1963,ALIVE,female,US,3.85,"2,345,653","46,272",8283.0,580.0,283.0,https://www.goodreads.com/book/show/12232938-the-lovely-bones?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Lovely_Bones
-Go Tell It on the Mountain,4082,James Baldwin,314,1953,English,bildung,1924,1987,male,US,4.04,"67,966","4,942",8052.0,350.0,410.0,https://www.goodreads.com/book/show/17143.Go_Tell_It_on_the_Mountain?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/Go_Tell_It_on_the_Mountain_(novel)
-The Metamorphosis,4073,Franz Kafka,156,1915,German,na,1883,1924,male,CZ,3.86,"1,043,646","40,290",15489.0,2842.0,2548.0,https://www.goodreads.com/book/show/485894.The_Metamorphosis?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Metamorphosis
-My Ántonia,4064,Willa Cather,78,1918,English,na,1873,1947,female,US,3.83,"137,245","9,062",15154.0,6909.0,780.0,https://www.goodreads.com/book/show/17150.My_ntonia?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/My_%C3%81ntonia
-A Farewell to Arms,3981,Ernest Hemingway,60,1929,English,war,1899,1961,male,US,3.82,"320,119","13,881",16995.0,474.0,1410.0,https://www.goodreads.com/book/show/10799.A_Farewell_to_Arms?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/A_Farewell_to_Arms
-Inkheart,3958,Cornelia Funke,448,2003,German,fantasy,1958,ALIVE,female,DE,3.92,"422,581","14,321",6301.0,299.0,241.0,https://www.goodreads.com/book/show/28194.Inkheart?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Inkheart
-My Side of the Mountain,3900,Jean Craighead George,319,1959,English,na,1919,2012,female,US,4.09,"77,035","4,431",7468.0,88.0,163.0,https://www.goodreads.com/book/show/41667.My_Side_of_the_Mountain?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/My_Side_of_the_Mountain
-Mrs. Frisby and the Rats of NIMH,3871,Robert C. O'Brien,415,1971,English,fantasy,1918,1973,male,US,4.16,"178,156","4,635",7109.0,132.0,166.0,https://www.goodreads.com/book/show/9822.Mrs_Frisby_and_the_Rats_of_NIMH?ref=nav_sb_ss_1_32,https://en.wikipedia.org/wiki/Mrs._Frisby_and_the_Rats_of_NIMH
-The Westing Game,3791,Ellen Raskin,409,1978,English,mystery,1928,1984,female,US,4.0,"211,873","14,250",7041.0,403.0,136.0,https://www.goodreads.com/book/show/902.The_Westing_Game?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Westing_Game
-Flowers for Algernon,3735,Daniel Keyes,349,1966,English,na,1927,2014,male,US,4.21,"666,428","32,848",6995.0,296.0,193.0,https://www.goodreads.com/book/show/18373.Flowers_for_Algernon?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Flowers_for_Algernon
-The Lucky One,3724,Nicholas Sparks,436,2008,English,romance,1965,ALIVE,male,US,4.12,"360,982","10,907",6574.0,558.0,187.0,https://www.goodreads.com/book/show/3063499-the-lucky-one?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Lucky_One_(novel)
-The Associate,3715,John Grisham,492,2009,English,thrillers,1955,ALIVE,male,US,3.7,"70,002","4,490",6139.0,545.0,198.0,,https://en.wikipedia.org/wiki/The_Associate_(novel)
-The Fountainhead,3688,Ayn Rand,265,1943,English,na,1905,1982,female,US,3.88,"322,673","14,214",8305.0,279.0,324.0,https://www.goodreads.com/book/show/2122.The_Fountainhead?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Fountainhead
-The Da Vinci Code,3670,Dan Brown,88,2003,English,mystery,1964,ALIVE,male,US,3.91,"2,341,900","54,616",13507.0,756.0,705.0,https://www.goodreads.com/book/show/968.The_Da_Vinci_Code?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Da_Vinci_Code
-Walk Two Moons,3661,Sharon Creech,452,1994,English,bildung,1969,ALIVE,female,US,3.99,"167,240","8,056",6830.0,269.0,171.0,https://www.goodreads.com/book/show/53496.Walk_Two_Moons?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Walk_Two_Moons
-Snow Falling on Cedars,3632,David Guterson,359,1994,English,na,1956,ALIVE,male,US,3.86,"186,517","5,858",6339.0,347.0,227.0,https://www.goodreads.com/book/show/77142.Snow_Falling_on_Cedars?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/Snow_Falling_on_Cedars
-The Scarlet Letter,3587,Nathaniel Hawthorne,10,1850,English,na,1804,1864,male,US,3.43,"862,399","20,214",27927.0,12713.0,2916.0,https://www.goodreads.com/book/show/12296.The_Scarlet_Letter?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Scarlet_Letter
-The Spy Who Came In from the Cold,3571,John Le Carré,363,1963,English,na,1931,2020,male,GB,4.08,"109,258","6,658",6700.0,338.0,508.0,https://www.goodreads.com/book/show/19494.The_Spy_Who_Came_In_from_the_Cold?ref=nav_sb_ss_1_33,https://en.wikipedia.org/wiki/The_Spy_Who_Came_in_from_the_Cold
-The Age of Innocence,3561,Edith Wharton,113,1920,English,na,1862,1937,female,US,3.96,"172,989","10,251",12376.0,7939.0,1012.0,https://www.goodreads.com/book/show/53835.The_Age_of_Innocence?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Age_of_Innocence
-The Shack,3559,William P. Young,493,2007,English,na,1955,ALIVE,male,CA,3.82,"648,375","35,650",6421.0,427.0,179.0,,https://en.wikipedia.org/wiki/The_Shack_(Young_novel)
-The House on Mango Street,3542,Sandra Cisneros,313,1984,English,bildung,1954,ALIVE,female,US,3.69,"188,095","16,629",6424.0,354.0,197.0,https://www.goodreads.com/book/show/139253.The_House_on_Mango_Street?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_House_on_Mango_Street
-The Horse and His Boy,3524,C.S. Lewis,159,1954,English,fantasy,1898,1963,male,GB,3.91,"348,512","11,973",10449.0,543.0,439.0,https://www.goodreads.com/book/show/84119.The_Horse_and_His_Boy?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Horse_and_His_Boy
-Where the Red Fern Grows,3515,Wilson Rawls,284,1961,English,bildung,1913,1984,male,US,4.11,"404,857","13,948",7631.0,432.0,139.0,https://www.goodreads.com/book/show/10365.Where_the_Red_Fern_Grows?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/Where_the_Red_Fern_Grows
-Crime and Punishment,3507,Fyodor Dostoyevsky,22,1866,Russian,na,1821,1881,male,RU,4.27,"894,492","35,710",15747.0,5814.0,948.0,https://www.goodreads.com/book/show/7144.Crime_and_Punishment?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Crime_and_Punishment
-The Name of the Rose,3502,Umberto Eco,270,1980,Italian,history,1932,2016,male,IT,4.14,"363,123","12,818",8612.0,444.0,841.0,https://www.goodreads.com/book/show/119073.The_Name_of_the_Rose?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Name_of_the_Rose
-"Harriet, the Spy",3473,Louise Fitzhugh,488,1964,English,mystery,1928,1974,female,US,3.95,"99,335","2,951",6327.0,484.0,173.0,,https://en.wikipedia.org/wiki/Harriet_the_Spy
-First Family,3398,David Baldacci,400,2009,English,thrillers,1960,ALIVE,male,US,4.09,"44,079","2,316",4272.0,450.0,91.0,https://www.goodreads.com/book/show/5509321-first-family?from_search=true&from_srp=true&qid=DOLGOmTApy&rank=8,https://en.wikipedia.org/wiki/First_Family_(novel)
-Sula,3381,Toni Morrison,290,1973,English,na,1931,2019,female,US,4.02,"97,287","7,449",8221.0,390.0,367.0,https://www.goodreads.com/book/show/11346.Sula?ref=nav_sb_ss_1_4,https://en.wikipedia.org/wiki/Sula_(novel)
-Anne of Avonlea,3357,L.M. Montgomery,232,1909,English,na,1874,1942,female,CA,4.22,"197,271","9,507",8673.0,3635.0,583.0,https://www.goodreads.com/book/show/77390.Anne_of_Avonlea?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Anne_of_Avonlea
-The Broker,3346,John Grisham,341,2005,English,thrillers,1955,ALIVE,male,US,3.83,"95,978","3,588",7356.0,633.0,298.0,https://www.goodreads.com/book/show/1110.The_Broker?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Broker
-The Three Musketeers,3315,Alexandre Dumas,26,1844,French,history,1802,1870,male,FR,4.09,"320,932","9,380",23943.0,6822.0,4028.0,https://www.goodreads.com/book/show/7190.The_Three_Musketeers?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Three_Musketeers
-Oliver Twist,3285,Charles Dickens,20,1838,English,bildung,1812,1870,male,GB,3.88,"386,350","10,633",25567.0,12115.0,4096.0,https://www.goodreads.com/book/show/18254.Oliver_Twist?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Oliver_Twist
-The Hound of the Baskervilles,3284,Arthur Conan Doyle,109,1902,English,mystery,1859,1930,male,GB,4.13,"343,048","12,213",12622.0,5644.0,1903.0,https://www.goodreads.com/book/show/8921.The_Hound_of_the_Baskervilles?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/The_Hound_of_the_Baskervilles
-One Flew Over the Cuckoo's Nest,3281,Ken Kesey,147,1962,English,na,1935,2001,male,US,4.2,"729,801","15,847",11535.0,495.0,576.0,https://www.goodreads.com/book/show/332613.One_Flew_Over_the_Cuckoo_s_Nest?ref=nav_sb_ss_1_31,https://en.wikipedia.org/wiki/One_Flew_Over_the_Cuckoo%27s_Nest_(novel)
-The Woman In White,3252,Wilkie Collins,218,1860,English,na,1824,1889,male,GB,4.01,"153,824","9,855",8726.0,5712.0,1095.0,https://www.goodreads.com/book/show/5890.The_Woman_in_White?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Woman_in_White_(novel)
-"Through the Looking-Glass, and What Alice Found There",3249,Lewis Carroll,188,1872,English,fantasy,1832,1898,male,GB,4.02,"134,965","4,570",24125.0,6698.0,2694.0,https://www.goodreads.com/book/show/83346.Through_the_Looking_Glass_and_What_Alice_Found_There?ref=nav_sb_ss_1_53,https://en.wikipedia.org/wiki/Through_the_Looking-Glass
-The Sound and the Fury,3248,William Faulkner,105,1929,English,na,1897,1962,male,US,3.86,"181,324","9,253",9361.0,137.0,773.0,https://www.goodreads.com/book/show/10975.The_Sound_and_the_Fury?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Sound_and_the_Fury
-The Good Earth,3230,Pearl S. Buck,127,1931,English,na,1892,1973,female,US,4.0,"248,991","11,610",11823.0,941.0,653.0,https://www.goodreads.com/book/show/1078.The_Good_Earth?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Good_Earth
-The Silmarillion,3197,J.R.R. Tolkien,237,1977,English,fantasy,1892,1973,male,GB,4.0,"290,495","12,944",9207.0,375.0,716.0,https://www.goodreads.com/book/show/7332.The_Silmarillion?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Silmarillion
-The House of Mirth,3196,Edith Wharton,200,1905,English,na,1862,1937,female,US,3.97,"97,419","6,349",9724.0,7806.0,688.0,https://www.goodreads.com/book/show/17728.The_House_of_Mirth?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_House_of_Mirth
-The Joy Luck Club,3192,Amy Tan,236,1989,English,na,1952,ALIVE,female,US,3.97,"681,621","13,087",8294.0,441.0,303.0,https://www.goodreads.com/book/show/7763.The_Joy_Luck_Club?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Joy_Luck_Club_(novel)
-The Plague,3164,Albert Camus,134,1947,French,na,1913,1960,male,FR,4.02,"261,066","15,051",12522.0,474.0,1549.0,https://www.goodreads.com/book/show/11989.The_Plague?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Plague_(novel)
-The Firm,3160,John Grisham,267,1991,English,na,1955,ALIVE,male,US,4.06,"622,945","3,772",7043.0,556.0,432.0,https://www.goodreads.com/book/show/5358.The_Firm?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/The_Firm_(novel)
-Song of Solomon,3146,Toni Morrison,253,1977,English,na,1931,2019,female,US,4.14,"112,082","6,204",8673.0,377.0,347.0,https://www.goodreads.com/book/show/11334.Song_of_Solomon?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Song_of_Solomon_(novel)
-White Fang,3132,Jack London,82,1906,English,action,1876,1916,male,US,4.02,"189,034","6,305",18081.0,7967.0,2062.0,https://www.goodreads.com/book/show/43035.White_Fang?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/White_Fang
-To the Lighthouse,3111,Virginia Woolf,123,1927,English,na,1882,1941,female,GB,3.8,"181,798","13,095",12132.0,1027.0,1175.0,https://www.goodreads.com/book/show/59716.To_the_Lighthouse?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/To_the_Lighthouse
-The Maltese Falcon,3106,Dashiell Hammett,382,1930,English,mystery,1894,1961,male,US,3.88,"106,465","6,509",6155.0,318.0,489.0,https://www.goodreads.com/book/show/29999.The_Maltese_Falcon?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Maltese_Falcon_(novel)
-The Screwtape Letters,3098,C.S. Lewis,440,1942,English,na,1898,1963,male,GB,4.26,"443,871","16,224",6395.0,265.0,180.0,https://www.goodreads.com/book/show/8130077-the-screwtape-letters?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Screwtape_Letters
-The Things they Carried,3082,Tim O'Brien,461,1990,English,na,1946,ALIVE,male,US,4.14,"311,760","18,678",6916.0,578.0,165.0,https://www.goodreads.com/book/show/133518.The_Things_They_Carried?ref=nav_sb_ss_3_10,https://en.wikipedia.org/wiki/The_Things_They_Carried
-Lady Chatterley's Lover,3076,D.H. Lawrence,70,1928,English,na,1885,1930,male,GB,3.5,"124,934","7,700",13228.0,4074.0,1316.0,https://www.goodreads.com/book/show/32049.Lady_Chatterley_s_Lover?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/Lady_Chatterley%27s_Lover
-For Whom the Bell Tolls,3048,Ernest Hemingway,92,1940,English,war,1899,1961,male,US,3.98,"292,256","8,891",14237.0,353.0,1371.0,https://www.goodreads.com/book/show/46170.For_Whom_the_Bell_Tolls?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/For_Whom_the_Bell_Tolls
-My Sister's Keeper,3022,Jodi Picoult,338,2004,English,na,1966,ALIVE,female,US,4.1,"1,214,523","37,356",7104.0,307.0,211.0,https://www.goodreads.com/book/show/10917.My_Sister_s_Keeper?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/My_Sister%27s_Keeper_(novel)
-Swann's Way,2995,Marcel Proust,268,1913,French,autobio,1871,1922,male,FR,4.14,"59,819","5,331",8148.0,1838.0,809.0,https://www.goodreads.com/book/show/133539.Swann_s_Way?ref=nav_sb_ss_2_11,https://en.wikipedia.org/wiki/In_Search_of_Lost_Time
-The Jungle,2974,Upton Sinclair,87,1906,English,political,1878,1968,male,US,3.77,"144,955","7,162",13314.0,5698.0,856.0,https://www.goodreads.com/book/show/41681.The_Jungle?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Jungle
-The Choice,2959,Nicholas Sparks,405,2007,English,romance,1965,ALIVE,male,US,4.01,"183,247","8,745",6576.0,585.0,178.0,https://www.goodreads.com/book/show/25402194-the-choice?ref=nav_sb_ss_2_10,https://en.wikipedia.org/wiki/The_Choice_(novel)
-Julie of the Wolves,2907,Jean Craighead George,439,1972,English,action,1919,2012,female,US,3.83,"59,554","2,079",6693.0,402.0,148.0,https://www.goodreads.com/book/show/386286.Julie_of_the_Wolves?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Julie_of_the_Wolves
-All Quiet on the Western Front,2900,Erich Maria Remarque,76,1929,German,war,1898,1970,male,DE,4.07,"456,883","17,865",15690.0,1675.0,1712.0,https://www.goodreads.com/book/show/355697.All_Quiet_on_the_Western_Front?ref=nav_sb_ss_1_30,https://en.wikipedia.org/wiki/All_Quiet_on_the_Western_Front
-Tuck Everlasting,2889,Natalie Babbitt,233,1975,English,fantasy,1932,2016,female,US,3.9,"273,089","11,783",8979.0,292.0,241.0,https://www.goodreads.com/book/show/84981.Tuck_Everlasting?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Tuck_Everlasting
-Around the World in Eighty Days,2885,Jules Verne,119,1873,French,action,1828,1905,male,FR,3.94,"246,234","11,023",19018.0,10711.0,2844.0,https://www.goodreads.com/book/show/54479.Around_the_World_in_Eighty_Days?ref=nav_sb_ss_1_31,https://en.wikipedia.org/wiki/Around_the_World_in_Eighty_Days
-The Cricket in Times Square,2883,George Selden,471,1960,English,na,1929,1989,male,US,4.04,"65,074","2,175",6040.0,162.0,194.0,https://www.goodreads.com/book/show/24384.The_Cricket_in_Times_Square?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/The_Cricket_in_Times_Square
-The No. 1 Ladies' Detective Agency,2873,Alexander McCall Smith,442,1998,English,mystery,1948,ALIVE,male,GB,3.81,"264,434","13,193",6260.0,471.0,178.0,https://www.goodreads.com/book/show/7061.The_No_1_Ladies_Detective_Agency?ref=nav_sb_ss_1_34,https://en.wikipedia.org/wiki/The_No._1_Ladies%27_Detective_Agency_(novel)
-"Bud, Not Buddy",2848,Christopher Paul Curtis,390,1999,English,history,1953,ALIVE,male,US,3.96,"109,898","6,123",6680.0,500.0,98.0,https://www.goodreads.com/book/show/368468.Bud_Not_Buddy?ref=nav_sb_ss_1_14,"https://en.wikipedia.org/wiki/Bud,_Not_Buddy"
-Uncle Tom's Cabin,2816,Harriet Beecher Stowe,21,1852,English,political,1811,1896,female,US,3.9,"226,482","9,800",23785.0,11286.0,3644.0,https://www.goodreads.com/book/show/46787.Uncle_Tom_s_Cabin?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Uncle_Tom%27s_Cabin
-"Sarah, Plain and Tall",2807,Patricia MacLachlan,361,1985,English,na,1938,2022,female,US,3.83,"85,857","3,341",7880.0,230.0,163.0,https://www.goodreads.com/book/show/106264.Sarah_Plain_and_Tall?ref=nav_sb_ss_1_21,"https://en.wikipedia.org/wiki/Sarah,_Plain_and_Tall"
-As I Lay Dying,2787,William Faulkner,282,1930,English,na,1897,1962,male,US,3.72,"167,360","10,672",9419.0,404.0,502.0,https://www.goodreads.com/book/show/77013.As_I_Lay_Dying?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/As_I_Lay_Dying
-The Time Machine,2780,H.G. Wells,273,1895,English,scifi,1866,1946,male,GB,3.9,"516,589","16,102",11525.0,6660.0,1317.0,https://www.goodreads.com/book/show/2493.The_Time_Machine?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Time_Machine
-Madame Bovary: Patterns of Provincial life,2738,Gustave Flaubert,23,1857,French,na,1821,1880,male,FR,3.7,"332,461","16,153",18577.0,5360.0,1246.0,https://www.goodreads.com/book/show/357469.Madame_Bovary?ref=nav_sb_ss_1_42,https://en.wikipedia.org/wiki/Madame_Bovary
-Gone with the Wind,2736,Margaret Mitchell,77,1936,English,history,1900,1949,female,US,4.31,"1,205,120","24,146",13414.0,416.0,875.0,https://www.goodreads.com/book/show/18405.Gone_with_the_Wind?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Gone_with_the_Wind_(novel)
-Shiloh,2736,Phyllis Reynolds Naylor,375,1991,English,na,1933,ALIVE,female,US,3.96,"85,442","2,854",7207.0,203.0,112.0,https://www.goodreads.com/book/show/207153.Shiloh?ref=nav_sb_ss_1_6,https://en.wikipedia.org/wiki/Shiloh_(Naylor_novel)
-The Secret Life of Bees,2698,Sue Monk Kidd,302,2001,English,na,1948,ALIVE,female,US,4.09,"1,287,367","35,515",7654.0,520.0,196.0,https://www.goodreads.com/book/show/37435.The_Secret_Life_of_Bees?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Secret_Life_of_Bees_(novel)
-On the Banks of Plum Creek,2663,Laura Ingalls Wilder,309,1937,English,autobio,1867,1957,female,US,4.22,"101,148","2,341",7615.0,216.0,192.0,https://www.goodreads.com/book/show/7882.On_the_Banks_of_Plum_Creek?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/On_the_Banks_of_Plum_Creek
-"Roll of Thunder, Hear My Cry",2655,Mildred D. Taylor,198,1976,English,history,1943,ALIVE,female,US,3.89,"124,507","6,179",9669.0,369.0,232.0,https://www.goodreads.com/book/show/310459.Roll_of_Thunder_Hear_My_Cry?ref=nav_sb_ss_1_28,"https://en.wikipedia.org/wiki/Roll_of_Thunder,_Hear_My_Cry"
-The Death of Ivan Ilych,2640,Leo Tolstoy,474,1886,Russian,na,1828,1910,male,RU,4.13,"161,880","12,127",5690.0,2896.0,598.0,https://www.goodreads.com/book/show/18386.The_Death_of_Ivan_Ilych?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Death_of_Ivan_Ilyich
-A Room With a View,2634,E.M. Forster,222,1908,English,na,1879,1970,male,GB,3.9,"183,027","8,578",8194.0,2681.0,780.0,https://www.goodreads.com/book/show/3087.A_Room_with_a_View?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/A_Room_with_a_View
-Misery,2633,Stephen King,416,1987,English,horror,1947,ALIVE,male,US,4.21,"692,704","25,834",6670.0,482.0,454.0,https://www.goodreads.com/book/show/10614.Misery?ref=nav_sb_ss_1_6,https://en.wikipedia.org/wiki/Misery_(novel)
-Carrie,2619,Stephen King,423,1974,English,horror,1947,ALIVE,male,US,3.98,"716,051","24,629",6527.0,594.0,443.0,https://www.goodreads.com/book/show/10592.Carrie?ref=nav_sb_ss_2_6,https://en.wikipedia.org/wiki/Carrie_(novel)
-The Witch of Blackbird Pond,2578,Elizabeth George Speare,278,1958,English,na,1908,1994,female,US,4.02,"151,881","7,405",8047.0,625.0,199.0,https://www.goodreads.com/book/show/703292.The_Witch_of_Blackbird_Pond?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/The_Witch_of_Blackbird_Pond
-The Memory Keeper's Daughter,2578,Kim Edwards,468,2005,English,na,1958,,female,US,3.7,"599,472","20,623",5469.0,274.0,151.0,https://www.goodreads.com/book/show/10441.The_Memory_Keeper_s_Daughter?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/The_Memory_Keeper%27s_Daughter
-The Voyage of the Dawn Treader,2556,C.S. Lewis,161,1952,English,fantasy,1898,1963,male,GB,4.09,"467,281","10,772",10487.0,532.0,419.0,https://www.goodreads.com/book/show/140225.The_Voyage_of_the_Dawn_Treader?ref=nav_sb_ss_1_30,https://en.wikipedia.org/wiki/The_Voyage_of_the_Dawn_Treader
-The Long Winter,2539,Laura Ingalls Wilder,360,1940,English,autobio,1867,1957,female,US,4.17,"87,422","2,499",7221.0,213.0,175.0,https://www.goodreads.com/book/show/8282.The_Long_Winter?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Long_Winter_(novel)
-Death Comes for the Archbishop,2539,Willa Cather,199,1927,English,history,1873,1947,female,US,3.96,"37,301","3,791",9674.0,337.0,435.0,https://www.goodreads.com/book/show/545951.Death_Comes_for_the_Archbishop?ref=nav_sb_ss_1_30,https://en.wikipedia.org/wiki/Death_Comes_for_the_Archbishop
-A Prayer for Owen Meany,2507,John Irving,490,1989,English,na,1942,ALIVE,male,US,4.24,"320,040","16,305",6436.0,432.0,231.0,,https://en.wikipedia.org/wiki/A_Prayer_for_Owen_Meany
-The Swiss Family Robinson,2498,Johann David Wyss,98,1812,German,na,1743,1818,male,CH,3.91,"105,769","2,996",12664.0,3335.0,1528.0,https://www.goodreads.com/book/show/62111.The_Swiss_Family_Robinson?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Swiss_Family_Robinson
-Black Beauty,2466,Anna Sewell,58,1877,English,na,1820,1878,female,GB,3.99,"277,174","6,704",13376.0,2685.0,1541.0,https://www.goodreads.com/book/show/3685.Black_Beauty?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Black_Beauty
-The Five People You Meet In Heaven,2456,Mitch Albom,334,2003,English,na,1958,ALIVE,male,US,3.99,"717,021","28,217",7346.0,268.0,182.0,https://www.goodreads.com/book/show/3431.The_Five_People_You_Meet_in_Heaven?ref=nav_sb_ss_1_34,https://en.wikipedia.org/wiki/The_Five_People_You_Meet_in_Heaven
-Worst Case,2455,James Patterson,443,2010,English,thrillers,1947,ALIVE,male,US,4.08,"30,053","1,597",4504.0,302.0,79.0,https://www.goodreads.com/book/show/6455256-worst-case?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Worst_Case
-The Silver Chair,2449,C.S. Lewis,172,1953,English,fantasy,1898,1963,male,GB,3.95,"295,811","8,580",10306.0,428.0,485.0,https://www.goodreads.com/book/show/65641.The_Silver_Chair?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Silver_Chair
-Jurassic Park,2432,Michael Crichton,430,1990,English,scifi,1942,2008,male,US,4.1,"954,137","19,702",6405.0,333.0,276.0,https://www.goodreads.com/book/show/40604658-jurassic-park?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Jurassic_Park_(novel)
-Far from the Madding Crowd,2427,Thomas Hardy,93,1874,English,romance,1840,1928,male,GB,3.96,"152,559","8,220",13214.0,6199.0,1410.0,https://www.goodreads.com/book/show/31463.Far_From_the_Madding_Crowd?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/Far_from_the_Madding_Crowd
-The Heart Is a Lonely Hunter,2426,Carson McCullers,217,1940,English,na,1917,1967,female,US,3.99,"109,727","8,145",9014.0,419.0,548.0,https://www.goodreads.com/book/show/37380.The_Heart_Is_a_Lonely_Hunter?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/The_Heart_Is_a_Lonely_Hunter
-The Strange Case of Dr. Jekyll and Mr. Hyde,2420,Robert Louis Stevenson,141,1886,English,na,1850,1894,male,GB,3.92,"128,414","2,879",9506.0,7526.0,1598.0,https://www.goodreads.com/book/show/51497.The_Strange_Case_of_Dr_Jekyll_and_Mr_Hyde_and_Other_Tales_of_Terror?ref=nav_sb_ss_1_43,https://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde
-By the Shores of Silver Lake,2408,Laura Ingalls Wilder,369,1939,English,autobio,1867,1957,female,US,4.17,"77,707","1,717",7232.0,169.0,180.0,https://www.goodreads.com/book/show/8248.By_the_Shores_of_Silver_Lake?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/By_the_Shores_of_Silver_Lake
-Anne of the Island,2408,L.M. Montgomery,396,1915,English,na,1874,1942,female,CA,4.27,"172,512","7,581",6699.0,2966.0,497.0,https://www.goodreads.com/book/show/123280461-anne-of-the-island?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Anne_of_the_Island
-A Portrait of the Artist as a Young Man,2399,James Joyce,64,1916,English,bildung,1882,1941,male,IE,3.64,"151,213","7,577",15478.0,5442.0,1499.0,https://www.goodreads.com/book/show/7588.A_Portrait_of_the_Artist_as_a_Young_Man?ref=nav_sb_ss_1_39,https://en.wikipedia.org/wiki/A_Portrait_of_the_Artist_as_a_Young_Man
-Robinson Crusoe,2396,Daniel Defoe,142,1719,English,action,1661?,1731,male,GB,3.68,"303,303","9,554",9899.0,4110.0,1364.0,https://www.goodreads.com/book/show/2932.Robinson_Crusoe?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Robinson_Crusoe
-Little Town on the Prairie,2384,Laura Ingalls Wilder,462,1941,English,history,1867,1957,female,US,4.19,"89,010","1,677",6977.0,164.0,172.0,https://www.goodreads.com/book/show/11991.The_Fall?ref=nav_sb_ss_4_8,https://en.wikipedia.org/wiki/Little_Town_on_the_Prairie
-Cannery Row,2373,John Steinbeck,235,1945,English,romance,1902,1968,male,US,4.06,"137,008","7,500",8310.0,369.0,464.0,https://www.goodreads.com/book/show/4799.Cannery_Row?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Cannery_Row_(novel)
-Cross Country,2373,James Patterson,362,2008,English,thrillers,1947,ALIVE,male,US,3.88,"41,427","2,257",4895.0,488.0,96.0,https://www.goodreads.com/book/show/1713912.Cross_Country?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Cross_Country_(novel)
-Gulliver's Travels,2341,Jonathan Swift,11,1726,English,fantasy,1667,1745,male,IE,3.58,"272,891","7,528",23054.0,8261.0,2574.0,https://www.goodreads.com/book/show/7733.Gulliver_s_Travels?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Gulliver%27s_Travels
-The Quiet American,2312,Graham Greene,356,1955,English,political,1904,1991,male,GB,3.97,"62,912","4,285",7132.0,198.0,636.0,https://www.goodreads.com/book/show/3698.The_Quiet_American?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/The_Quiet_American
-P Is for Peril,2310,Sue Grafton,337,2001,English,mystery,1940,2017,female,US,3.88,"27,820","1,153",5421.0,399.0,108.0,https://www.goodreads.com/book/show/380976.P_is_for_Peril?from_search=true&from_srp=true&qid=qUZs8qPcFu&rank=1,https://en.wikipedia.org/wiki/%22P%22_Is_for_Peril
-Memoirs of a Geisha,2300,Arthur Golden,224,1997,English,history,1957,ALIVE,male,US,4.15,"1,994,289","35,826",8359.0,436.0,467.0,https://www.goodreads.com/book/show/929.Memoirs_of_a_Geisha?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Memoirs_of_a_Geisha
-A Passage to India,2290,E.M. Forster,133,1924,English,political,1879,1970,male,GB,3.68,"79,995","4,164",11546.0,672.0,946.0,https://www.goodreads.com/book/show/45195.A_Passage_to_India?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/A_Passage_to_India
-Brideshead Revisited,2285,Evelyn Waugh,296,1945,English,na,1903,1966,male,GB,4.0,"112,443","6,771",6275.0,161.0,351.0,https://www.goodreads.com/book/show/30933.Brideshead_Revisited?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/Brideshead_Revisited
-The Pearl,2276,John Steinbeck,136,1947,English,na,1902,1968,male,US,3.53,"236,508","12,432",19861.0,583.0,1497.0,https://www.goodreads.com/book/show/5308.The_Pearl?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/The_Pearl_(novella)
-The Notebook,2272,Nicholas Sparks,262,1996,English,romance,1965,ALIVE,male,US,4.15,"1,682,325","25,198",8262.0,542.0,358.0,https://www.goodreads.com/book/show/33648131-the-notebook?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Notebook_(novel)
-The War of the Worlds,2234,H.G. Wells,111,1898,English,scifi,1866,1946,male,GB,3.83,"312,138","12,123",12238.0,6877.0,1425.0,https://www.goodreads.com/book/show/8909.The_War_of_the_Worlds?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_War_of_the_Worlds
-The Moonstone,2230,Wilkie Collins,167,1868,English,mystery,1824,1889,male,GB,3.91,"92,757","5,971",10308.0,7915.0,1300.0,https://www.goodreads.com/book/show/6138.The_Moonstone?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Moonstone
-Tender is the Night,2225,F. Scott Fitzgerald,143,1934,English,na,1896,1940,male,US,3.79,"135,868","6,781",10782.0,487.0,804.0,https://www.goodreads.com/book/show/46164.Tender_Is_the_Night?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Tender_Is_the_Night
-The Idiot,2206,Fyodor Dostoyevsky,144,1869,Russian,history,1821,1881,male,RU,4.21,"181,000","8,744",9700.0,3096.0,1223.0,https://www.goodreads.com/book/show/12505.The_Idiot?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/The_Idiot
-Alex Cross's Trial,2171,James Patterson,475,2009,English,thrillers,1947,ALIVE,male,US,3.99,"29,081","1,872",4385.0,446.0,52.0,https://www.goodreads.com/book/show/6266907-alex-cross-s-trial?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Alex_Cross%27s_Trial
-A Journey to the Center of the Earth,2162,Jules Verne,74,1864,French,scifi,1828,1905,male,FR,3.85,"199,026","8,524",13543.0,2881.0,2026.0,https://www.goodreads.com/book/show/32829.Journey_to_the_Center_of_the_Earth,https://en.wikipedia.org/wiki/Journey_to_the_Center_of_the_Earth
-Howards End,2162,E.M. Forster,340,1910,English,na,1879,1970,male,GB,3.96,"89,233","4,288",8253.0,2014.0,726.0,https://www.goodreads.com/book/show/38374795-howards-end?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Howards_End
-Encyclopedia Brown: Boy Detective,2158,Donald J. Sobol,385,1963,English,mystery,1924,2012,male,US,4.05,"39,548",875,4116.0,317.0,114.0,https://www.goodreads.com/book/show/789344.Encyclopedia_Brown_Boy_Detective?ref=nav_sb_ss_1_33,https://en.wikipedia.org/wiki/Encyclopedia_Brown
-The Last Battle,2140,C.S. Lewis,153,1956,English,fantasy,1898,1963,male,GB,4.01,"274,476","10,195",9927.0,481.0,331.0,https://www.goodreads.com/book/show/84369.The_Last_Battle?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Last_Battle
-These Happy Golden Years,2118,Laura Ingalls Wilder,437,1943,English,history,1867,1957,female,US,4.21,"74,547","1,843",6691.0,224.0,175.0,https://www.goodreads.com/book/show/77770.These_Happy_Golden_Years?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/These_Happy_Golden_Years
-Of Human Bondage,2112,W. Somerset Maugham,176,1915,English,bildung,1874,1965,male,GB,4.14,"56,881","4,031",9920.0,2973.0,726.0,https://www.goodreads.com/book/show/31548.Of_Human_Bondage?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Of_Human_Bondage
-Candide,2092,Voltaire,91,1759,French,na,1694,1778,male,FR,3.76,"274,958","11,453",17861.0,6757.0,2068.0,https://www.goodreads.com/book/show/19380.Candide?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Candide
-Bleak House,2087,Charles Dickens,99,1853,English,na,1812,1870,male,GB,4.02,"108,341","5,462",13894.0,5992.0,1703.0,https://www.goodreads.com/book/show/31242.Bleak_House?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Bleak_House
-The English Patient,2070,Michael Ondaatje,358,1992,English,history,1943,ALIVE,male,CA,3.87,"131,600","5,963",6890.0,328.0,451.0,https://www.goodreads.com/book/show/11713.The_English_Patient?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_English_Patient
-The Clan of the Cave Bear,2057,Jean M. Auel,316,1980,English,history,1936,ALIVE,female,US,4.09,"266,166","8,012",6821.0,379.0,209.0,https://www.goodreads.com/book/show/40611463-the-clan-of-the-cave-bear?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Clan_of_the_Cave_Bear
-The Wings of the Dove,2048,Henry James,427,1902,English,romance,1843,1916,male,US,3.79,"17,030",750,7460.0,2607.0,484.0,https://www.goodreads.com/book/show/124272.The_Wings_of_the_Dove?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Wings_of_the_Dove
-Girl With a Pearl Earring,2046,Tracy Chevalier,376,1999,English,na,1962,ALIVE,female,US,3.92,"734,415","12,431",6818.0,384.0,318.0,https://www.goodreads.com/book/show/2865.Girl_with_a_Pearl_Earring?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring_(novel)
-Tess of the d'Urbervilles,1998,Thomas Hardy,44,1891,English,na,1840,1928,male,GB,3.83,"282,350","11,666",18773.0,8213.0,2040.0,https://www.goodreads.com/book/show/32261.Tess_of_the_D_Urbervilles?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/Tess_of_the_d%27Urbervilles
-Native Son,1994,Richard Wright,240,1940,English,na,1908,1960,male,US,4.03,"98,730","4,966",8995.0,280.0,394.0,https://www.goodreads.com/book/show/15622.Native_Son?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Native_Son
-Cross Fire,1976,James Patterson,242,2010,English,na,1947,ALIVE,male,US,4.11,"35,423","1,559",4462.0,265.0,91.0,https://www.goodreads.com/book/show/7856305-cross-fire?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Cross_Fire_(novel)
-A Time to Kill,1975,John Grisham,271,1989,English,na,1955,ALIVE,male,US,4.11,"799,832","6,989",7344.0,504.0,311.0,https://www.goodreads.com/book/show/32542.A_Time_to_Kill?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/A_Time_to_Kill_(Grisham_novel)
-The Trumpet of the Swan,1972,E.B. White,435,1970,English,fantasy,1899,1985,male,US,4.1,"77,490","3,061",6664.0,135.0,141.0,https://www.goodreads.com/book/show/24335.The_Trumpet_of_the_Swan?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Trumpet_of_the_Swan
-Cold Mountain,1932,Charles Frazier,348,1997,English,romance,1950,ALIVE,male,US,3.88,"242,352","6,534",7047.0,289.0,257.0,https://www.goodreads.com/book/show/10920.Cold_Mountain?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Cold_Mountain_(novel)
-Dear John,1928,Nicholas Sparks,347,2007,English,romance,1965,ALIVE,male,US,4.04,"597,236","12,735",7048.0,569.0,207.0,https://www.goodreads.com/book/show/5526.Dear_John?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Dear_John_(novel)
-Vision in White,1918,Nora Roberts,497,2009,English,romance,1965,ALIVE,female,US,4.12,"138,445","4,652",4499.0,458.0,111.0,,https://en.wikipedia.org/wiki/Vision_in_White
-The Indian in the Cupboard,1884,Lynne Reid Banks,381,1980,English,fantasy,1929,ALIVE,female,GB,3.93,"105,462","2,700",6851.0,316.0,195.0,https://www.goodreads.com/book/show/125404.The_Indian_in_the_Cupboard?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/The_Indian_in_the_Cupboard
-Heidi,1882,Johanna Spyri,46,1880,English,na,1827,1901,female,CH,4.02,"198,602","6,119",16581.0,4607.0,2393.0,https://www.goodreads.com/book/show/93.Heidi?ref=nav_sb_ss_1_5,https://en.wikipedia.org/wiki/Heidi
-Dear Mr. Henshaw,1877,Beverly Cleary,331,1983,English,na,1916,2021,female,US,3.78,"40,597","1,967",7243.0,294.0,165.0,https://www.goodreads.com/book/show/105999.Dear_Mr_Henshaw?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Dear_Mr._Henshaw
-Like Water for Chocolate,1855,Laura Esquivel,300,1989,Spanish,romance,1950,ALIVE,female,MX,3.95,"365,541","13,400",4782.0,189.0,50.0,https://www.goodreads.com/book/show/6952.Like_Water_for_Chocolate?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/Like_Water_for_Chocolate_(novel)
-Doctor Zhivago,1851,Boris Leonidovich Pasternak,84,1957,Russian,history,1890,1960,male,RU,4.01,"96,443","4,363",8178.0,230.0,347.0,https://www.goodreads.com/book/show/130440.Doctor_Zhivago?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Doctor_Zhivago_(novel)
-Daughter of Fortune,1831,Isabel Allende,388,1998,Spanish,romance,1942,ALIVE,female,CL,3.93,"131,303","5,208",6938.0,188.0,322.0,https://www.goodreads.com/book/show/16527.Daughter_of_Fortune?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Daughter_of_Fortune
-Pinocchio,1808,Carlo Collodi,53,1883,Italian,na,1826,1890,male,IT,3.85,"80,317","3,667",5546.0,2606.0,395.0,https://www.goodreads.com/book/show/180617.Pinocchio?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/The_Adventures_of_Pinocchio
-Inkspell,1795,Cornelia Funke,450,2005,German,fantasy,1958,ALIVE,female,DE,3.94,"126,826","4,715",6516.0,162.0,150.0,https://www.goodreads.com/book/show/28195.Inkspell?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Inkspell
-All the King's Men,1792,Robert Penn Warren,228,1946,English,political,1905,1989,male,US,4.09,"63,326","3,223",10219.0,260.0,421.0,https://www.goodreads.com/book/show/5527.All_the_King_s_Men?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/All_the_King%27s_Men
-The Portrait of a Lady,1782,Henry James,148,1881,English,na,1843,1916,male,US,3.79,"80,269","3,806",12853.0,7368.0,1154.0,https://www.goodreads.com/book/show/264.The_Portrait_of_a_Lady?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Portrait_of_a_Lady
-Prince Caspian: The Return to Narnia,1770,C.S. Lewis,170,1951,English,fantasy,1898,1963,male,GB,3.98,"435,366","11,713",9439.0,432.0,247.0,https://www.goodreads.com/book/show/140222.Prince_Caspian?ref=nav_sb_ss_1_36,https://en.wikipedia.org/wiki/Prince_Caspian
-A Clockwork Orange,1761,Anthony Burgess,244,1962,English,scifi,1917,1993,male,GB,4.0,"709,183","20,506",8539.0,254.0,662.0,https://www.goodreads.com/book/show/41817486-a-clockwork-orange?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/A_Clockwork_Orange_(novel)
-The Higher Power of Lucky,1753,Susan Patron,425,2006,English,na,1948,ALIVE,female,US,3.58,"13,401","1,631",6771.0,88.0,49.0,https://www.goodreads.com/book/show/62151.The_Higher_Power_of_Lucky?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Higher_Power_of_Lucky
-Kidnapped: The Adventures of David Balfour,1743,Robert Louis Stevenson,71,1886,English,history,1850,1894,male,GB,3.79,"64,477","2,559",1231.0,25.0,26.0,https://www.goodreads.com/book/show/43186363-kidnapped?ref=nav_sb_ss_1_42,https://en.wikipedia.org/wiki/Kidnapped_(novel)
-A Painted House,1737,John Grisham,220,2001,English,na,1955,ALIVE,male,US,3.75,"93,602","4,927",7091.0,444.0,251.0,https://www.goodreads.com/book/show/5360.A_Painted_House?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/A_Painted_House
-Light in August,1736,William Faulkner,201,1932,English,na,1897,1962,male,US,3.94,"61,696","3,218",9748.0,335.0,485.0,https://www.goodreads.com/book/show/10979.Light_in_August?from_search=true&from_srp=true&qid=e1cnXUzA2Y&rank=1,https://en.wikipedia.org/wiki/Light_in_August
-Swimsuit,1719,James Patterson,484,2009,English,mystery,1947,ALIVE,male,US,3.67,"26,200","2,015",4534.0,487.0,94.0,,unavailable
-"Cry, The Beloved Country",1712,Alan Paton,152,1948,English,political,1903,1988,male,ZA,3.92,"74,518","4,796",10665.0,202.0,646.0,https://www.goodreads.com/book/show/6150.Cry_the_Beloved_Country?ref=nav_sb_ss_1_24,"https://en.wikipedia.org/wiki/Cry,_the_Beloved_Country"
-O Pioneers!,1681,Willa Cather,165,1913,English,na,1873,1947,female,US,3.89,"53,507","4,088",10613.0,6200.0,499.0,https://www.goodreads.com/book/show/140963.O_Pioneers_?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/O_Pioneers!
-The Once and Future King,1662,T. H. White,419,1958,English,fantasy,1906,1964,,,4.07,"107,858","4,844",6651.0,273.0,259.0,https://www.goodreads.com/book/show/43545.The_Once_and_Future_King?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Once_and_Future_King
-The Decameron,1654,Giovanni Boccaccio,85,1351,Italian,na,1313,1375,male,IT,3.88,"39,870","1,910",15444.0,1311.0,3294.0,https://www.goodreads.com/book/show/51799.The_Decameron?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Decameron
-The Hunchback of Notre Dame,1652,Victor Hugo,52,1831,French,history,1802,1885,male,FR,4.01,"200,247","7,354",20030.0,7775.0,3086.0,https://www.goodreads.com/book/show/30597.The_Hunchback_of_Notre_Dame?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/The_Hunchback_of_Notre-Dame
-The Invisible Man,1642,H.G. Wells,184,1897,English,na,1866,1946,male,GB,3.64,"192,315","9,544",11525.0,6660.0,1317.0,https://www.goodreads.com/book/show/17184.The_Invisible_Man?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Invisible_Man
-Ethan Frome,1639,Edith Wharton,137,1911,English,na,1862,1937,female,US,3.44,"126,656","7,443",11262.0,5061.0,796.0,https://www.goodreads.com/book/show/5246.Ethan_Frome?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Ethan_Frome
-Flatland,1618,Edwin A. Abbott,466,1884,English,na,1838,1926,male,GB,3.81,"69,755","5,633",6278.0,5208.0,541.0,https://www.goodreads.com/book/show/433567.Flatland?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Flatland
-Vanity Fair,1598,William Makepeace Thackeray,75,1848,English,na,1811,1863,male,GB,3.8,"127,840","4,451",15173.0,4972.0,1907.0,https://www.goodreads.com/book/show/5797.Vanity_Fair?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Vanity_Fair_(novel)
-The Red Badge of Courage,1579,Stephen Crane,56,1895,English,history,1871,1900,male,US,3.29,"103,976","4,404",14572.0,6822.0,1125.0,https://www.goodreads.com/book/show/35220.The_Red_Badge_of_Courage_Annotated_Enriched_Classics_?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Red_Badge_of_Courage
-Orlando,1551,Virginia Woolf,460,1928,English,history,1882,1941,female,GB,3.87,"92,080","7,811",7810.0,714.0,915.0,https://www.goodreads.com/book/show/18839.Orlando?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Orlando:_A_Biography
-The Thorn Birds,1538,Colleen McCullough,365,1977,English,na,1937,2015,female,AU,4.24,"349,139","7,878",6790.0,317.0,537.0,https://www.goodreads.com/book/show/3412.The_Thorn_Birds?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/The_Thorn_Birds
-Fried Green Tomatoes at the Whistle-Stop Cafe,1525,Fannie Flagg,470,1987,English,na,1944,ALIVE,female,US,4.28,"305,592","9,852",6214.0,349.0,188.0,https://www.goodreads.com/book/show/9375.Fried_Green_Tomatoes_at_the_Whistle_Stop_Cafe?ref=nav_sb_ss_1_45,https://en.wikipedia.org/wiki/Fried_Green_Tomatoes_at_the_Whistle_Stop_Cafe
-A Separate Peace,1515,John Knowles,280,1959,English,history,1926,2001,male,US,3.59,"218,273","9,481",8110.0,119.0,245.0,https://www.goodreads.com/book/show/5148.A_Separate_Peace?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/A_Separate_Peace
-A Connecticut Yankee in King Arthur's Court,1505,Mark Twain,81,1889,English,fantasy,1835,1910,male,US,3.77,"103,170","3,887",15409.0,7072.0,1654.0,https://www.goodreads.com/book/show/162898.A_Connecticut_Yankee_in_King_Arthur_s_Court?ref=nav_sb_ss_1_43,https://en.wikipedia.org/wiki/A_Connecticut_Yankee_in_King_Arthur%27s_Court
-The Testament,1503,John Grisham,315,1999,English,thrillers,1955,ALIVE,male,US,3.9,"118,653","3,738",7211.0,507.0,373.0,https://www.goodreads.com/book/show/5348.The_Testament?ref=nav_sb_ss_2_13,https://en.wikipedia.org/wiki/The_Testament_(Grisham_novel)
-The Cider House Rules,1482,John Irving,417,1985,English,bildung,1942,ALIVE,male,US,4.16,"184,556","5,073",6185.0,184.0,238.0,https://www.goodreads.com/book/show/4687.The_Cider_House_Rules?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Cider_House_Rules
-Elijah of Buxton,1472,Christopher Paul Curtis,483,2007,English,na,1953,ALIVE,male,US,3.95,"13,780","1,704",6514.0,86.0,36.0,,https://en.wikipedia.org/wiki/Elijah_of_Buxton
-The Tale of Genji,1458,Murasaki Shikibu,138,1021,Japanese,na,978?,1016?,female,JP,3.72,"13,275","1,385",12048.0,628.0,1359.0,https://www.goodreads.com/book/show/7042.The_Tale_of_Genji?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Tale_of_Genji
-The Wedding,1457,Nicholas Sparks,469,2003,English,romance,1965,ALIVE,male,US,3.99,"160,265","7,072",6267.0,446.0,156.0,https://www.goodreads.com/book/show/3466.The_Wedding?ref=nav_sb_ss_2_11,https://en.wikipedia.org/wiki/The_Wedding_(Sparks_novel)
-The Reader,1453,Bernhard Schlink,327,1995,German,na,1944,ALIVE,male,DE,3.78,"209,610","12,796",7358.0,465.0,394.0,https://www.goodreads.com/book/show/101299.The_Reader?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Reader
-Kim,1443,Rudyard Kipling,104,1901,English,action,1865,1936,male,GB,3.7,"37,537","2,276",13144.0,5426.0,1592.0,https://www.goodreads.com/book/show/210834.Kim?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Kim_(novel)
-The Chocolate War,1443,Robert Cormier,454,1974,English,bildung,1925,2000,male,US,3.49,"44,750","3,470",6321.0,352.0,193.0,https://www.goodreads.com/book/show/17162.The_Chocolate_War?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Chocolate_War
-The Fall,1436,Albert Camus,441,1956,English,na,1913,1960,male,FR,4.04,"105,008","6,121",16742.0,626.0,1898.0,https://www.goodreads.com/book/show/11991.The_Fall?ref=nav_sb_ss_4_8,https://en.wikipedia.org/wiki/The_Fall_(Camus_novel)
-Steppenwolf,1421,Hermann Hesse,181,1927,German,na,1877,1962,male,DE,4.13,"184,044","8,036",10081.0,1786.0,1562.0,https://www.goodreads.com/book/show/16631.Steppenwolf?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Steppenwolf_(novel)
-The Red Pony,1413,John Steinbeck,227,1937,English,bildung,1902,1968,male,US,3.48,"55,067","2,965",11450.0,462.0,1021.0,https://www.goodreads.com/book/show/8732.The_Red_Pony?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Red_Pony
-Nights in Rodanthe,1401,Nicholas Sparks,463,2002,English,romance,1965,ALIVE,male,US,3.85,"172,005","5,220",5908.0,386.0,164.0,https://www.goodreads.com/book/show/15926.Nights_in_Rodanthe?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Nights_in_Rodanthe_(novel)
-Old Yeller,1379,Fred Gipson,366,1956,English,bildung,1908,1973,male,US,4.1,"97,785","2,731",7259.0,282.0,175.0,https://www.goodreads.com/book/show/130580.Old_Yeller?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Old_Yeller
-The Street Lawyer,1369,John Grisham,392,1998,English,thrillers,1955,ALIVE,male,US,3.88,"115,688","3,084",6817.0,506.0,344.0,https://www.goodreads.com/book/show/5351.The_Street_Lawyer?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Street_Lawyer
-Breakfast at Tiffany's,1349,Truman Capote,457,1958,English,na,1924,1984,male,US,3.85,"263,596","15,506",6364.0,398.0,582.0,https://www.goodreads.com/book/show/251688.Breakfast_at_Tiffany_s_and_Three_Stories?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/Breakfast_at_Tiffany%27s_(novella)
-The Complete Sherlock Holmes,1342,Arthur Conan Doyle,48,1930,English,mystery,1859,1930,male,GB,4.5,"198,572","4,893",5462.0,447.0,228.0,https://www.goodreads.com/book/show/188572.The_Complete_Sherlock_Holmes?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/A_Study_in_Scarlet
-Nicholas Nickleby,1336,Charles Dickens,135,1839,English,bildung,1812,1870,male,GB,3.94,"44,671","2,036",5123.0,2821.0,835.0,https://www.goodreads.com/book/show/325085.Nicholas_Nickleby?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Nicholas_Nickleby
-Roots,1335,Alex Haley,238,1976,English,na,1921,1992,male,US,4.44,"159,516","4,206",8318.0,850.0,250.0,https://www.goodreads.com/book/show/546018.Roots?ref=nav_sb_ss_2_5,https://en.wikipedia.org/wiki/Roots:_The_Saga_of_an_American_Family
-This Side of Paradise,1333,F. Scott Fitzgerald,174,1920,English,bildung,1896,1940,male,US,3.64,"73,374","4,742",10059.0,6034.0,612.0,https://www.goodreads.com/book/show/46165.This_Side_of_Paradise?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/This_Side_of_Paradise
-"Winesburg, Ohio",1321,Sherwood Anderson,336,1919,English,na,1876,1941,male,US,3.84,"34,596","2,857",6172.0,2925.0,500.0,https://www.goodreads.com/book/show/80176.Winesburg_Ohio?ref=nav_sb_ss_1_15,"https://en.wikipedia.org/wiki/Winesburg,_Ohio"
-The Grey King,1295,Susan Cooper,432,1975,English,fantasy,1935,ALIVE,female,US,4.16,"38,794","1,112",6272.0,168.0,124.0,https://www.goodreads.com/book/show/222576.The_Grey_King?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Grey_King
-"Absalom, Absalom!",1284,William Faulkner,219,1936,English,na,1897,1962,male,US,3.98,"44,370","2,797",6119.0,102.0,384.0,https://www.goodreads.com/book/show/373755.Absalom_Absalom_?ref=nav_sb_ss_1_17,"https://en.wikipedia.org/wiki/Absalom,_Absalom!"
-Johnny Tremain,1282,Esther Forbes,231,1943,English,history,1891,1967,female,US,3.69,"48,226","2,818",8932.0,416.0,267.0,https://www.goodreads.com/book/show/816870.Johnny_Tremain?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Johnny_Tremain
-The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire,1280,Howard Pyle,292,1883,English,na,1853,1911,male,US,4.07,"64,249","1,428",6636.0,2829.0,401.0,https://www.goodreads.com/book/show/1277190.The_Merry_Adventures_of_Robin_Hood_of_Great_Renown_in_Nottinghamshire?ref=nav_sb_ss_1_69,https://en.wikipedia.org/wiki/The_Merry_Adventures_of_Robin_Hood
-Death In Venice,1271,Thomas Mann,368,1912,German,na,1875,1955,male,DE,3.7,"55,994","3,884",5024.0,435.0,911.0,https://www.goodreads.com/book/show/53061.Death_in_Venice?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Death_in_Venice
-The Whipping Boy,1270,Sid Fleischman,498,1986,English,action,1920,2010,male,US,3.59,"27,444","1,623",6113.0,184.0,106.0,,https://en.wikipedia.org/wiki/The_Whipping_Boy
-The Winter of Our Discontent,1257,John Steinbeck,397,1961,English,na,1902,1968,male,US,4.0,"47,691","2,944",7028.0,224.0,225.0,https://www.goodreads.com/book/show/4796.The_Winter_of_Our_Discontent?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/The_Winter_of_Our_Discontent
-The Last Juror,1245,John Grisham,374,2004,English,thrillers,1955,ALIVE,male,US,3.94,"99,275","2,943",6390.0,502.0,182.0,https://www.goodreads.com/book/show/5346.The_Last_Juror?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/The_Last_Juror
-The Killer Angels,1245,Michael Shaara,332,1974,English,history,1928,1988,male,US,4.33,"85,836","5,524",7248.0,359.0,181.0,https://www.goodreads.com/book/show/682804.The_Killer_Angels?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Killer_Angels
-Caddie Woodlawn,1242,Carol Ryrie Brink,328,1935,English,na,1895,1981,female,US,4.02,"51,949","1,786",7395.0,149.0,197.0,https://www.goodreads.com/book/show/205821.Caddie_Woodlawn?ref=nav_sb_noss_l_15,https://en.wikipedia.org/wiki/Caddie_Woodlawn
-The Trial,1224,Franz Kafka,69,1925,German,allegories,1883,1924,male,CZ,3.96,"322,494","14,247",15489.0,2842.0,2548.0,https://www.goodreads.com/book/show/17690.The_Trial?ref=nav_sb_ss_2_9,https://en.wikipedia.org/wiki/The_Trial
-The Partner,1222,John Grisham,401,1997,English,thrillers,1955,ALIVE,male,US,3.96,"127,490","3,260",6356.0,510.0,306.0,https://www.goodreads.com/book/show/5350.The_Partner?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/The_Partner_(Grisham_novel)
-The Heart of the Matter,1220,Graham Greene,487,1948,English,na,1904,1991,male,GB,3.97,"29,061","1,720",5870.0,164.0,476.0,,https://en.wikipedia.org/wiki/The_Heart_of_the_Matter
-The Warden,1219,Anthony Trollope,383,1855,English,na,1815,1882,male,GB,3.74,"16,922","1,895",7049.0,4610.0,737.0,https://www.goodreads.com/book/show/267123.The_Warden?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Warden
-Deception Point,1207,Dan Brown,500,2001,English,political,1964,ALIVE,male,US,3.76,"658,866","10,464",5382.0,229.0,240.0,,https://en.wikipedia.org/wiki/Deception_Point
-To Have and Have Not,1203,Ernest Hemingway,394,1937,English,action,1899,1961,male,US,3.52,"32,443","2,199",6569.0,154.0,503.0,https://www.goodreads.com/book/show/4630.To_Have_and_Have_Not?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/To_Have_and_Have_Not
-A Walk to Remember,1177,Nicholas Sparks,407,1999,English,romance,1965,ALIVE,male,US,4.2,"802,633","16,573",6046.0,429.0,147.0,https://www.goodreads.com/book/show/35545737-a-walk-to-remember?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/A_Walk_to_Remember_(novel)
-Tortilla Flat,1171,John Steinbeck,293,1935,English,na,1902,1968,male,US,3.83,"55,496","3,378",8310.0,369.0,464.0,https://www.goodreads.com/book/show/163977.Tortilla_Flat?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Tortilla_Flat
-Silas Marner,1163,George Eliot,128,1861,English,na,1819,1880,female,GB,3.68,"86,616","4,871",15313.0,7666.0,1945.0,https://www.goodreads.com/book/show/54539.Silas_Marner?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Silas_Marner
-The Leopard,1159,Giuseppe Tomasi di Lampedusa,433,1958,Italian,history,1896,1957,male,IT,4.01,"36,856","2,955",6810.0,230.0,1001.0,https://www.goodreads.com/book/show/625094.The_Leopard?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/The_Leopard
-The Rainmaker,1159,John Grisham,379,1995,English,na,1955,ALIVE,male,US,4.0,"195,819","2,633",7054.0,510.0,332.0,https://www.goodreads.com/book/show/5349.The_Rainmaker?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/The_Rainmaker_(novel)
-Ivanhoe,1157,Walter Scott,55,1819,English,history,1771,1832,male,GB,3.76,"94,551","3,071",18279.0,9165.0,3861.0,https://www.goodreads.com/book/show/6440.Ivanhoe?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Ivanhoe
-Jude the Obscure,1155,Thomas Hardy,131,1895,English,na,1840,1928,male,GB,3.83,"71,550","4,209",11542.0,6059.0,1076.0,https://www.goodreads.com/book/show/50798.Jude_the_Obscure?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Jude_the_Obscure
-Sounder,1150,William H. Armstrong,260,1969,English,na,1914,1999,male,US,3.97,"30,263","1,425",8295.0,240.0,153.0,https://www.goodreads.com/book/show/598117.Sounder?from_search=true&from_srp=true&qid=ufE8HTKIj2&rank=3,https://en.wikipedia.org/wiki/Sounder_(novel)
-The Power and the Glory,1147,Graham Greene,243,1940,English,mystery,1904,1991,male,GB,3.98,"39,283","2,844",8600.0,178.0,951.0,https://www.goodreads.com/book/show/3690.The_Power_and_the_Glory?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/The_Power_and_the_Glory
-The Pilgrim's Progress,1146,John Bunyan,12,1678,English,allegories,1628,1688,male,GB,4.05,"137,395","4,644",21524.0,7208.0,3498.0,https://www.goodreads.com/book/show/29797.The_Pilgrim_s_Progress?from_search=true&from_srp=true&qid=3nXmE324BM&rank=1,https://en.wikipedia.org/wiki/The_Pilgrim%27s_Progress
-The Summons,1138,John Grisham,384,2002,English,thrillers,1955,ALIVE,male,US,3.72,"77,756","2,620",6966.0,449.0,280.0,https://www.goodreads.com/book/show/5352.The_Summons?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/The_Summons_(Grisham_novel)
-An American Tragedy,1127,Theodore Dreiser,212,1925,English,romance,1871,1945,male,US,3.96,"36,726","1,631",9445.0,542.0,687.0,https://www.goodreads.com/book/show/331319.An_American_Tragedy?ref=nav_sb_ss_2_19,https://en.wikipedia.org/wiki/An_American_Tragedy
-Sophie's Choice,1106,William Styron,455,1979,English,bildung,1925,2006,male,US,4.17,"90,844","3,038",6236.0,554.0,287.0,https://www.goodreads.com/book/show/228560.Sophie_s_Choice?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Sophie%27s_Choice_(novel)
-The Brethren,1105,John Grisham,306,2000,English,thrillers,1955,ALIVE,male,US,3.76,"95,463","2,370",7482.0,539.0,350.0,https://www.goodreads.com/book/show/5354.The_Brethren?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Brethren_(Grisham_novel)
-Little Dorrit,1094,Charles Dickens,169,1857,English,na,1812,1870,male,GB,4.0,"47,690","2,099",9978.0,5116.0,1466.0,https://www.goodreads.com/book/show/31250.Little_Dorrit?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Little_Dorrit
-The Incredible Journey,1093,Sheila Burnford,387,1961,English,action,1918,1984,female,CA,4.16,"51,453","1,251",6888.0,298.0,341.0,https://www.goodreads.com/book/show/231821.The_Incredible_Journey?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Incredible_Journey
-Bleachers,1090,John Grisham,482,2003,English,na,1955,ALIVE,male,US,3.52,"42,668","2,393",5989.0,501.0,202.0,,https://en.wikipedia.org/wiki/Bleachers_(novel)
-Angels & Demons,1082,Dan Brown,160,2000,English,thrillers,1964,ALIVE,male,US,3.94,"3,183,837","33,786",,,,https://www.goodreads.com/book/show/960.Angels_Demons?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Angels_%26_Demons
-The Client,1075,John Grisham,289,1993,English,na,1955,ALIVE,male,US,4.05,"444,257","3,228",7054.0,510.0,332.0,https://www.goodreads.com/book/show/5359.The_Client?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/The_Client_(novel)
-The Sea Wolf,1074,Jack London,196,1904,English,na,1876,1916,male,US,4.05,"30,339","1,869",18081.0,7967.0,2062.0,https://www.goodreads.com/book/show/43049.The_Sea_Wolf?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Sea-Wolf
-Our Mutual Friend,1073,Charles Dickens,225,1865,English,romance,1812,1870,male,GB,4.09,"29,420","1,882",9104.0,4396.0,1212.0,https://www.goodreads.com/book/show/31244.Our_Mutual_Friend?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Our_Mutual_Friend
-The Pickwick Papers,1073,Charles Dickens,202,1837,English,na,1812,1870,male,GB,3.85,"29,651","2,287",5540.0,2368.0,1162.0,https://www.goodreads.com/book/show/229432.The_Pickwick_Papers?from_search=true&from_srp=true&qid=YnFXeRLGLf&rank=1,https://en.wikipedia.org/wiki/The_Pickwick_Papers
-The Mammoth Hunters,1067,Jean M. Auel,434,1985,English,history,1936,ALIVE,female,US,3.94,"72,281","1,975",6098.0,350.0,206.0,https://www.goodreads.com/book/show/49824.The_Mammoth_Hunters?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Mammoth_Hunters
-The Forsyte Saga,1063,John Galsworthy,323,1922,English,na,1867,1933,male,GB,4.18,"19,963",994,7544.0,1599.0,718.0,https://www.goodreads.com/book/show/103159.The_Forsyte_Saga?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Forsyte_Saga
-The Last of the Mohicans,1015,James Fenimore Cooper,43,1826,English,history,1789,1851,male,US,3.7,"97,745","3,254",14506.0,5032.0,2290.0,https://www.goodreads.com/book/show/38296.The_Last_of_the_Mohicans?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Last_of_the_Mohicans
-The Runaway Jury,1013,John Grisham,320,1996,English,thrillers,1955,ALIVE,male,US,4.02,"303,076","2,702",6479.0,467.0,246.0,https://www.goodreads.com/book/show/24192.The_Runaway_Jury?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Runaway_Jury
-Lord Jim,1004,Joseph Conrad,65,1900,English,na,1857,1924,male,GB,3.62,"30,981","1,687",15227.0,5955.0,1892.0,https://www.goodreads.com/book/show/12194.Lord_Jim?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Lord_Jim
-The King of Torts,995,John Grisham,354,2003,English,thrillers,1955,ALIVE,male,US,3.72,"85,763","2,673",7116.0,472.0,287.0,https://www.goodreads.com/book/show/5356.The_King_of_Torts?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_King_of_Torts
-Cranford,991,Elizabeth Cleghorn Gaskell,317,1853,English,na,1810,1865,female,GB,3.84,"43,847","3,312",7766.0,5124.0,1164.0,https://www.goodreads.com/book/show/182381.Cranford?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Cranford_(novel)
-Chronicle of a Death Foretold,991,Gabriel García Márquez,333,1981,Spanish,na,1927,2014,male,CO,3.97,"191,299","11,131",7505.0,321.0,725.0,https://www.goodreads.com/book/show/23878.Chronicle_of_a_Death_Foretold?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/Chronicle_of_a_Death_Foretold
-Misty of Chincoteague,988,Marguerite Henry,410,1947,English,na,1902,1997,female,US,4.07,"45,434","1,464",6659.0,131.0,187.0,https://www.goodreads.com/book/show/17461.Misty_of_Chincoteague?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/Misty_of_Chincoteague_(novel)
-Sons and Lovers,981,D.H. Lawrence,96,1913,English,na,1885,1930,male,GB,3.64,"52,987","2,451",13228.0,4074.0,1316.0,https://www.goodreads.com/book/show/32071.Sons_and_Lovers?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Sons_and_Lovers
-Jonathan Livingston Seagull,956,Richard Bach,372,1970,English,allegories,1936,ALIVE,male,US,3.86,"250,571","10,909",4928.0,95.0,206.0,https://www.goodreads.com/book/show/71728.Jonathan_Livingston_Seagull?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/Jonathan_Livingston_Seagull
-The Razor's Edge,928,W. Somerset Maugham,458,1944,English,bildung,1874,1965,male,GB,4.19,"48,106","4,162",6206.0,182.0,437.0,https://www.goodreads.com/book/show/31196.The_Razor_s_Edge?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Razor%27s_Edge
-The Mysterious Island,913,Jules Verne,252,1875,French,scifi,1828,1905,male,FR,4.13,"53,973","2,365",13543.0,2881.0,2026.0,https://www.goodreads.com/book/show/32831.The_Mysterious_Island?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Mysterious_Island
-The Bridge of San Luis Rey,912,Thornton Wilder,205,1927,English,history,1897,1975,male,US,3.79,"34,917","2,682",9304.0,223.0,717.0,https://www.goodreads.com/book/show/92508.The_Bridge_of_San_Luis_Rey?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/The_Bridge_of_San_Luis_Rey
-Remembrance of Things Past,911,Marcel Proust,203,1913,French,autobio,1871,1922,male,FR,4.29,"3,395",317,9909.0,321.0,1074.0,https://www.goodreads.com/book/show/190576.Remembrance_of_Things_Past?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/In_Search_of_Lost_Time
-The Secret Agent,908,Joseph Conrad,312,1907,English,political,1857,1924,male,GB,3.59,"22,615","1,735",7606.0,3486.0,1140.0,https://www.goodreads.com/book/show/86658.The_Secret_Agent?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Secret_Agent
-The Castle,894,Franz Kafka,155,1926,German,allegories,1883,1924,male,CZ,3.94,"62,214","3,532",10900.0,1959.0,1599.0,https://www.goodreads.com/book/show/333538.The_Castle?ref=nav_sb_ss_5_10,https://en.wikipedia.org/wiki/The_Castle_(novel)
-The Mill on the Floss,871,George Eliot,107,1860,English,na,1819,1880,female,GB,3.82,"55,099","2,859",13200.0,5920.0,1684.0,https://www.goodreads.com/book/show/20564.The_Mill_on_the_Floss?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Mill_on_the_Floss
-The Caine Mutiny,870,Herman Wouk,486,1951,English,na,1915,2019,male,US,4.28,"25,131","1,294",6257.0,122.0,316.0,,https://en.wikipedia.org/wiki/The_Caine_Mutiny
-"Look Homeward, Angel",865,Thomas Wolfe,294,1929,English,na,1900,1938,male,US,3.92,"14,790","1,273",7888.0,111.0,370.0,https://www.goodreads.com/book/show/12448.Look_Homeward_Angel?ref=nav_sb_ss_1_20,"https://en.wikipedia.org/wiki/Look_Homeward,_Angel"
-The Mystery of Edwin Drood,858,Charles Dickens,295,1870,English,na,1812,1870,male,GB,3.67,"12,253","1,003",7338.0,4480.0,1306.0,https://www.goodreads.com/book/show/329957.The_Mystery_of_Edwin_Drood?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/The_Mystery_of_Edwin_Drood
-The Phantom of the Opera,850,Gaston Leroux,245,1910,French,horror,1868,1927,male,FR,3.96,"240,739","11,145",8513.0,4697.0,840.0,https://www.goodreads.com/book/show/480204.The_Phantom_of_the_Opera?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Phantom_of_the_Opera_(novel)
-King of the Wind,819,Marguerite Henry,418,1948,English,history,1902,1997,female,US,4.21,"26,436",920,6702.0,154.0,176.0,https://www.goodreads.com/book/show/423156.King_of_the_Wind?ref=nav_sb_ss_2_16,https://en.wikipedia.org/wiki/King_of_the_Wind
-Jacob Have I Loved,816,Katherine Paterson,414,1980,English,na,1932,ALIVE,female,US,3.69,"34,192","2,339",6528.0,195.0,122.0,https://www.goodreads.com/book/show/337058.Jacob_Have_I_Loved?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Jacob_Have_I_Loved
-Fathers and Sons,815,Ivan Sergeevich Turgenev,83,1862,Russian,na,1818,1883,male,RU,3.99,"88,818","4,073",12709.0,3577.0,1193.0,https://www.goodreads.com/book/show/19117.Fathers_and_Sons?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Fathers_and_Sons_(novel)
-The Tenant of Wildfell Hall,814,Anne Brontë,399,1848,English,na,1820,1849,female,GB,4.01,"115,181","7,561",6528.0,6031.0,766.0,https://www.goodreads.com/book/show/337113.The_Tenant_of_Wildfell_Hall?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/The_Tenant_of_Wildfell_Hall
-The Moon and Sixpence,807,W. Somerset Maugham,424,1919,English,na,1874,1965,male,GB,4.13,"24,133","1,746",6463.0,2958.0,735.0,https://www.goodreads.com/book/show/44796.The_Moon_and_Sixpence?ref=nav_sb_ss_1_21,https://en.wikipedia.org/wiki/The_Moon_and_Sixpence
-The Magic Mountain (Der Zauberberg),804,Thomas Mann,157,1924,German,bildung,1875,1955,male,DE,4.13,"49,080","3,552",12310.0,277.0,1894.0,https://www.goodreads.com/book/show/729376.The_Magic_Mountain?ref=nav_sb_ss_1_35,https://en.wikipedia.org/wiki/The_Magic_Mountain
-Babbitt,800,Sinclair Lewis,226,1922,English,na,1885,1951,male,US,3.69,"23,543","1,585",8957.0,4243.0,837.0,https://www.goodreads.com/book/show/169718.Babbitt?ref=nav_sb_ss_2_7,https://en.wikipedia.org/wiki/Babbitt_(novel)
-The Bridges of Madison County,800,Robert James Waller,395,1992,English,romance,1939,2017,male,US,3.69,"96,678","6,126",5938.0,190.0,202.0,https://www.goodreads.com/book/show/83674.The_Bridges_of_Madison_County?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/The_Bridges_of_Madison_County
-Rebecca of Sunnybrook Farm,796,Kate Douglas Smith Wiggin,310,1903,English,na,1856,1923,female,US,3.87,"34,831",981,7021.0,2628.0,285.0,https://www.goodreads.com/book/show/17529.Rebecca_of_Sunnybrook_Farm?ref=nav_sb_ss_1_26,https://en.wikipedia.org/wiki/Rebecca_of_Sunnybrook_Farm
-King Solomon's Mines,787,H. Rider Haggard,412,1885,English,action,1856,1925,male,GB,3.79,"49,460","2,608",6174.0,4407.0,703.0,https://www.goodreads.com/book/show/23814.King_Solomon_s_Mines?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/King_Solomon%27s_Mines
-The Old Curiosity Shop,784,Charles Dickens,168,1841,English,na,1812,1870,male,GB,3.79,"21,844","1,682",10530.0,5455.0,1443.0,https://www.goodreads.com/book/show/429024.The_Old_Curiosity_Shop?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Old_Curiosity_Shop
-Hard Times,779,Charles Dickens,120,1854,English,na,1812,1870,male,GB,3.54,"68,020","4,209",12228.0,4440.0,1604.0,https://www.goodreads.com/book/show/5344.Hard_Times?from_search=true&from_srp=true&qid=o2qlWm2Fwt&rank=1,https://en.wikipedia.org/wiki/Hard_Times_(novel)
-The Pelican Brief,772,John Grisham,297,1992,English,mystery,1955,ALIVE,male,US,4.05,"427,885","3,454",6715.0,461.0,360.0,https://www.goodreads.com/book/show/32499.The_Pelican_Brief?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/The_Pelican_Brief
-The Ambassadors,769,Henry James,311,1903,English,na,1843,1916,male,US,3.64,"12,411",767,7704.0,5428.0,705.0,https://www.goodreads.com/book/show/775366.The_Ambassadors?ref=nav_sb_ss_2_15,https://en.wikipedia.org/wiki/The_Ambassadors
-Schindler's List,739,Thomas Keneally,371,1993,English,na,1935,ALIVE,male,AU,4.34,"159,999","2,935",7565.0,149.0,386.0,https://www.goodreads.com/book/show/375013.Schindler_s_List?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/Schindler%27s_List
-Darkness at Noon,737,Arthur Koestler,489,1940,English,history,1905,1983,male,GB,4.11,"30,455","2,109",6215.0,232.0,591.0,,https://en.wikipedia.org/wiki/Darkness_at_Noon
-The House of the Seven Gables,723,Nathaniel Hawthorne,61,1851,English,na,1804,1864,male,US,3.45,"39,746","2,861",14410.0,7043.0,1371.0,https://www.goodreads.com/book/show/90192.The_House_of_the_Seven_Gables?ref=nav_sb_ss_1_29,https://en.wikipedia.org/wiki/The_House_of_the_Seven_Gables
-Call It Courage,721,Armstrong Sperry,480,1940,English,history,1897,1976,male,US,3.76,"13,766","1,186",6290.0,145.0,139.0,https://www.goodreads.com/book/show/857528.Call_It_Courage?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Call_It_Courage
-The Red & the Black,720,Stendhal,67,1830,French,bildung,1783,1842,male,FR,3.87,"74,618","3,236",,,,https://www.goodreads.com/book/show/14662.The_Red_and_the_Black?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Red_and_the_Black
-Main Street,715,Sinclair Lewis,256,1920,English,na,1885,1951,male,US,3.78,"25,815","1,369",8276.0,3927.0,578.0,https://www.goodreads.com/book/show/11376.Main_Street?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Main_Street_(novel)
-Barnaby Rudge,711,Charles Dickens,339,1841,English,political,1812,1870,male,GB,3.82,"10,737",779,12228.0,4440.0,1604.0,https://www.goodreads.com/book/show/11026.Barnaby_Rudge?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Barnaby_Rudge
-One Day in the Life of Ivan Denisovich,711,Aleksandr Isaevich Solzhenitsyn,195,1962,Russian,na,1918,2008,male,RU,3.98,"113,811","6,023",9168.0,251.0,317.0,https://www.goodreads.com/book/show/17125.One_Day_in_the_Life_of_Ivan_Denisovich?ref=nav_sb_ss_1_38,https://en.wikipedia.org/wiki/One_Day_in_the_Life_of_Ivan_Denisovich
-Captains Courageous,709,Rudyard Kipling,154,1897,English,bildung,1865,1936,male,GB,3.86,"21,288","1,051",9915.0,2999.0,1051.0,https://www.goodreads.com/book/show/34057.Captains_Courageous?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/Captains_Courageous
-Washington Square,702,Henry James,299,1880,English,na,1843,1916,male,US,3.7,"23,257","1,997",7798.0,4331.0,784.0,https://www.goodreads.com/book/show/133954.Washington_Square?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Washington_Square_(novel)
-The Sorrows of Young Werther,702,Johann Wolfgang von Goethe,182,1774,German,autobio,1749,1832,male,DE,3.69,"129,949","8,335",14697.0,4794.0,3706.0,https://www.goodreads.com/book/show/16640.The_Sorrows_of_Young_Werther?ref=nav_sb_ss_1_28,https://en.wikipedia.org/wiki/The_Sorrows_of_Young_Werther
-The Return of the Native,638,Thomas Hardy,95,1878,English,romance,1840,1928,male,GB,3.87,"38,401","1,995",13617.0,4805.0,1191.0,https://www.goodreads.com/book/show/32650.The_Return_of_the_Native?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Return_of_the_Native
-Villette,632,Charlotte Brontë,250,1853,English,na,1816,1855,female,GB,3.77,"72,764","5,420",8803.0,4061.0,1104.0,https://www.goodreads.com/book/show/31173.Villette?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Villette_(novel)
-Nostromo,627,Joseph Conrad,304,1904,English,political,1857,1924,male,GB,3.81,"16,888",824,7976.0,4800.0,939.0,https://www.goodreads.com/book/show/115476.Nostromo?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Nostromo
-Adam Bede,608,George Eliot,191,1859,English,romance,1819,1880,female,GB,3.81,"25,288","1,241",9888.0,4818.0,1398.0,https://www.goodreads.com/book/show/20563.Adam_Bede?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Adam_Bede
-The Rainbow,608,D.H. Lawrence,343,1915,English,na,1885,1930,male,GB,3.7,"20,561",997,7143.0,3137.0,631.0,https://www.goodreads.com/book/show/31491.The_Rainbow?ref=nav_sb_ss_3_11#CommunityReviews,https://en.wikipedia.org/wiki/The_Rainbow
-Barchester Towers and the Warden,600,Anthony Trollope,204,1857,English,na,1815,1882,male,GB,4.2,83,10,996.0,35.0,21.0,https://www.goodreads.com/book/show/198186.Barchester_Towers_and_The_Warden?ref=nav_sb_ss_1_32,https://en.wikipedia.org/wiki/Barchester_Towers
-The Virginian: A Horseman of the Plains,599,Owen Wister,406,1902,English,na,1860,1938,male,US,3.91,"9,116","1,037",6619.0,620.0,369.0,https://www.goodreads.com/book/show/23502804-the-virginian?ref=nav_sb_ss_1_39,https://en.wikipedia.org/wiki/The_Virginian_(novel)
-Utopia,593,Thomas More,101,1516,Latin,na,1478,1535,male,GB,3.55,"74,619","4,255",13909.0,6729.0,1798.0,https://www.goodreads.com/book/show/18414.Utopia?from_search=true&from_srp=true&qid=ngtDZbPNwH&rank=2,https://en.wikipedia.org/wiki/Utopia_(book)
-The Life and Opinions of Tristram Shandy,592,Laurence Sterne,477,1759,English,na,1713,1768,male,GB,3.73,"21,733","1,626",9731.0,6325.0,1540.0,https://www.goodreads.com/book/show/76527.The_Life_and_Opinions_of_Tristram_Shandy_Gentleman?ref=nav_sb_ss_1_40,"https://en.wikipedia.org/wiki/The_Life_and_Opinions_of_Tristram_Shandy,_Gentleman"
-"The History of Tom Jones, a Foundling",569,Henry Fielding,102,1749,English,na,1707,1754,male,GB,3.75,"33,358","1,333",15176.0,6930.0,1865.0,https://www.goodreads.com/book/show/99329.The_History_of_Tom_Jones_a_Foundling?ref=nav_sb_ss_1_37,"https://en.wikipedia.org/wiki/The_History_of_Tom_Jones,_a_Foundling"
-Nausea,564,Jean-Paul Sartre,393,1938,French,na,1905,1980,male,FR,3.94,"118,382","5,722",7154.0,135.0,893.0,https://www.goodreads.com/book/show/298275.Nausea?ref=nav_sb_ss_1_6,https://en.wikipedia.org/wiki/Nausea_(novel)
-The Chamber,562,John Grisham,357,1994,English,na,1955,ALIVE,male,US,3.84,"139,782","2,130",6868.0,511.0,341.0,https://www.goodreads.com/book/show/5355.The_Chamber?ref=nav_sb_ss_3_11,https://en.wikipedia.org/wiki/The_Chamber_(novel)
-The Man In the Iron Mask,560,Alexandre Dumas,344,1850,French,history,1802,1870,male,FR,3.99,"65,587","1,082",6611.0,4172.0,474.0,https://www.goodreads.com/book/show/54499.The_Man_in_the_Iron_Mask?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Vicomte_of_Bragelonne:_Ten_Years_Later#Part_Three:_The_Man_in_the_Iron_Mask_(Chapters_181%E2%80%93269)
-The Yearling,549,Marjorie Kinnan Rawlings,164,1938,English,na,1896,1953,female,US,4.02,"28,873","1,395",10445.0,172.0,433.0,https://www.goodreads.com/book/show/159582.The_Yearling?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/The_Yearling
-The Slave Dancer,548,Paula Fox,446,1973,English,history,1923,2017,female,US,3.7,"10,352",600,6273.0,251.0,139.0,https://www.goodreads.com/book/show/172111.The_Slave_Dancer?ref=nav_sb_ss_1_16,https://en.wikipedia.org/wiki/The_Slave_Dancer
-Germinal,546,Émile Zola,216,1885,French,political,1840,1902,male,FR,4.18,"37,549","2,112",9474.0,1006.0,1585.0,https://www.goodreads.com/book/show/28407.Germinal?ref=nav_sb_ss_1_8,https://en.wikipedia.org/wiki/Germinal_(novel)
-The Betrothed,539,Alessandro Manzoni,192,1827,Italian,history,1785,1873,male,IT,3.85,"14,973",966,8687.0,909.0,2516.0,https://www.goodreads.com/book/show/566328.The_Betrothed?ref=nav_sb_ss_3_13,https://en.wikipedia.org/wiki/The_Betrothed_(Manzoni_novel)
-Resurrection,537,Leo Tolstoy,351,1899,Russian,na,1828,1910,male,RU,4.16,"24,249","1,824",5604.0,3957.0,1039.0,https://www.goodreads.com/book/show/42641.Resurrection?ref=nav_sb_ss_4_12,https://en.wikipedia.org/wiki/Resurrection_(Tolstoy_novel)
-Sister Carrie,532,Theodore Dreiser,171,1900,English,na,1871,1945,male,US,3.77,"40,062","1,782",10389.0,4399.0,830.0,https://www.goodreads.com/book/show/126609.Sister_Carrie?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Sister_Carrie
-The Prince and the Pauper,506,Mark Twain,63,1881,English,history,1835,1910,male,US,3.87,"119,064","2,806",15409.0,7072.0,1654.0,https://www.goodreads.com/book/show/62446.The_Prince_and_the_Pauper?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Prince_and_the_Pauper
-Buddenbrooks,506,Thomas Mann,276,1901,German,na,1875,1955,male,DE,4.19,"30,095","1,896",5996.0,213.0,913.0,https://www.goodreads.com/book/show/80890.Buddenbrooks?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Buddenbrooks
-The Summer of the Swans,503,Betsy Cromer Byars,428,1970,English,na,1928,2020,female,US,3.59,"10,641",687,6057.0,209.0,101.0,https://www.goodreads.com/book/show/325636.The_Summer_of_the_Swans?ref=nav_sb_ss_1_23,https://en.wikipedia.org/wiki/Summer_of_the_Swans
-Dreamcatcher,500,Stephen King,459,2001,English,horror,1947,ALIVE,male,US,3.65,"174,932","3,525",5150.0,133.0,157.0,https://www.goodreads.com/book/show/11570.Dreamcatcher?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Dreamcatcher_(novel)
-The Naked and the Dead,480,Norman Mailer,494,1948,English,history,1923,2007,male,US,3.95,"25,380",997,6083.0,119.0,465.0,,https://en.wikipedia.org/wiki/The_Naked_and_the_Dead
-Dombey And Son,477,Charles Dickens,210,1848,English,na,1812,1870,male,GB,3.96,"15,748","1,009",9606.0,5740.0,1479.0,https://www.goodreads.com/book/show/50827.Dombey_and_Son?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Dombey_and_Son
-Women in Love,469,D.H. Lawrence,163,1920,English,na,1885,1930,male,GB,3.66,"32,095","1,393",10229.0,3058.0,850.0,https://www.goodreads.com/book/show/9784.Women_in_Love?ref=nav_sb_ss_1_13,https://en.wikipedia.org/wiki/Women_in_Love
-Dream of the Red Chamber,456,Cao Xueqin,177,1791,Chinese,na,1717,1763,male,CN,4.21,"2,140",235,6079.0,1765.0,1258.0,https://www.goodreads.com/book/show/139874.The_Story_of_the_Stone_or_The_Dream_of_the_Red_Chamber_Vol_1,https://en.wikipedia.org/wiki/Dream_of_the_Red_Chamber
-Le Morte D'Arthur,448,Thomas Malory,285,1485,English,na,1408?,1471,male,GB,3.92,"37,568","1,171",7200.0,1172.0,559.0,https://www.goodreads.com/book/show/672875.Le_Morte_d_Arthur?ref=nav_sb_ss_1_17,https://en.wikipedia.org/wiki/Le_Morte_d%27Arthur
-The Way of All Flesh,439,Samuel Butler,248,1903,English,na,1835,1902,male,GB,3.61,"9,194",580,8544.0,4263.0,831.0,https://www.goodreads.com/book/show/126512.The_Way_of_All_Flesh?ref=nav_sb_ss_1_20,https://en.wikipedia.org/wiki/The_Way_of_All_Flesh
-Lost Horizon,436,James Hilton,444,1933,English,fantasy,1900,1954,male,GB,3.95,"22,463","2,062",6348.0,401.0,411.0,https://www.goodreads.com/book/show/39092290-lost-horizon?ref=nav_sb_ss_1_12,https://en.wikipedia.org/wiki/Lost_Horizon
-The Black Arrow: A Tale of the Two Roses,423,Robert Louis Stevenson,403,1888,English,history,1850,1894,male,GB,3.8,"18,676",831,6745.0,4608.0,1002.0,https://www.goodreads.com/book/show/57932829-the-black-arrow?ref=nav_sb_ss_2_40,https://en.wikipedia.org/wiki/The_Black_Arrow:_A_Tale_of_the_Two_Roses
-The Mayor of Casterbridge,418,Thomas Hardy,151,1886,English,na,1840,1928,male,GB,3.85,"62,218","3,034",9460.0,6077.0,1081.0,https://www.goodreads.com/book/show/56759.The_Mayor_of_Casterbridge?ref=nav_sb_ss_1_25,https://en.wikipedia.org/wiki/The_Mayor_of_Casterbridge
-Finnegans Wake,406,James Joyce,305,1939,English,na,1882,1941,male,IE,3.68,"12,857","1,217",8108.0,211.0,561.0,https://www.goodreads.com/book/show/11013.Finnegans_Wake?ref=nav_sb_ss_1_14,https://en.wikipedia.org/wiki/Finnegans_Wake
-Ben-Hur,366,Lew Wallace,150,1880,English,history,1827,1905,male,US,4.03,"35,964","1,381",10477.0,5502.0,1749.0,https://www.goodreads.com/book/show/387749.Ben_Hur?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Ben-Hur:_A_Tale_of_the_Christ
-Lorna Doone,350,R.D. Blackmore,230,1869,English,history,1825,1900,male,GB,3.73,"15,794",769,8616.0,2606.0,1231.0,https://www.goodreads.com/book/show/73960.Lorna_Doone?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/Lorna_Doone
-Nana,318,Émile Zola,254,1880,French,na,1840,1902,male,FR,3.84,"24,872","1,044",8395.0,2226.0,1602.0,https://www.goodreads.com/book/show/371456.Nana?ref=nav_sb_ss_3_4,https://en.wikipedia.org/wiki/Nana_(novel)
-Dangerous Liaisons,248,Choderlos de Laclos,429,1782,French,na,1741,1803,male,FR,4.06,"53,068","2,387",1777.0,205.0,402.0,https://www.goodreads.com/book/show/326768.Dangerous_Liaisons?ref=nav_sb_ss_1_18,https://en.wikipedia.org/wiki/Les_Liaisons_dangereuses
-Rob Roy,245,Walter Scott,473,1817,English,history,1771,1832,male,GB,3.69,"9,885",448,6557.0,2604.0,1215.0,https://www.goodreads.com/book/show/543686.Rob_Roy?ref=nav_sb_ss_1_7,https://en.wikipedia.org/wiki/Rob_Roy_(novel)
-The Vicar of Wakefield,244,Oliver Goldsmith,80,1766,English,na,1730?,1774,male,GB,3.46,"10,125",662,15582.0,12231.0,3798.0,https://www.goodreads.com/book/show/112510.The_Vicar_of_Wakefield?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/The_Vicar_of_Wakefield
-Arrowsmith,242,Sinclair Lewis,438,1925,English,na,1885,1951,male,US,3.83,"7,961",585,6691.0,492.0,461.0,https://www.goodreads.com/book/show/11389.Arrowsmith?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Arrowsmith_(novel)
-The Horse Whisperer,231,Nicholas Evans,391,1995,English,na,1950,2022,male,GB,3.85,"58,422","2,299",5763.0,226.0,250.0,https://www.goodreads.com/book/show/479415.The_Horse_Whisperer?ref=nav_sb_ss_1_19,https://en.wikipedia.org/wiki/The_Horse_Whisperer_(novel)
-Shirley,213,Charlotte Brontë,389,1849,English,history,1816,1855,female,GB,3.76,"34,582","1,608",7141.0,3784.0,1051.0,https://www.goodreads.com/book/show/31168.Shirley?ref=nav_sb_ss_3_7,https://en.wikipedia.org/wiki/Shirley_(novel)
-"Looking Backward, 2000-1887",203,Edward Bellamy,426,1888,English,na,1850,1898,male,US,3.29,"6,214",809,6891.0,2347.0,623.0,https://www.goodreads.com/book/show/296977.Looking_Backward?ref=nav_sb_ss_1_27,https://en.wikipedia.org/wiki/Looking_Backward
-"M.C. Higgins, The Great",158,Virginia Hamilton,479,1974,English,bildung,1934,2002,female,US,3.44,"4,279",319,6089.0,354.0,98.0,https://www.goodreads.com/book/show/69666.M_C_Higgins_the_Great?ref=nav_sb_ss_1_23,"https://en.wikipedia.org/wiki/M._C._Higgins,_the_Great"
-Père Goriot,157,Honoré de Balzac,100,1835,French,bildung,1799,1850,male,FR,3.85,"59,008","2,901",14071.0,3309.0,2391.0,https://www.goodreads.com/book/show/59145.P_re_Goriot?ref=nav_sb_ss_1_11,https://en.wikipedia.org/wiki/P%C3%A8re_Goriot
-Eugénie Grandet,121,Honoré de Balzac,175,1833,French,allegories,1799,1850,male,FR,3.79,"23,137","1,184",14071.0,3309.0,2391.0,https://www.goodreads.com/book/show/59142.Eug_nie_Grandet?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Eug%C3%A9nie_Grandet
-The Princess of Cleves,79,Madame de (Marie-Madeleine Pioche de La Vergne) La Fayett,413,1678,French,na,1634,1693,female,FR,3.35,"16,080",932,,,,https://www.goodreads.com/book/show/1048601.The_Princess_of_Cleves?ref=nav_sb_ss_1_22,https://en.wikipedia.org/wiki/La_Princesse_de_Cl%C3%A8ves
-The Rise of Silas Lapham,63,William Dean Howells,404,1885,English,na,1837,1920,male,US,3.42,"4,090",281,,,,https://www.goodreads.com/book/show/381362.The_Rise_of_Silas_Lapham?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Rise_of_Silas_Lapham
-Quo Vadis,42,Henryk Sienkiewicz,255,1896,Polish,history,1846,1916,male,PL,4.01,"37,655","2,327",7439.0,864.0,2057.0,https://www.goodreads.com/book/show/538845.Quo_Vadis?ref=nav_sb_ss_1_9,https://en.wikipedia.org/wiki/Quo_Vadis_(novel)
-Persian Letters,37,Montesquieu,288,1721,French,na,1689,1755,male,FR,3.65,"7,320",250,7262.0,2812.0,1145.0,https://www.goodreads.com/book/show/509686.Persian_Letters?ref=nav_sb_ss_1_15,https://en.wikipedia.org/wiki/Persian_Letters
-A Sentimental Journey Through France and Italy,34,Laurence Sterne,353,1768,English,na,1713,1768,male,GB,3.32,"5,996",377,9731.0,6325.0,1540.0,https://www.goodreads.com/book/show/1190227.A_Sentimental_Journey_through_France_and_Italy?ref=nav_sb_ss_1_46,https://en.wikipedia.org/wiki/A_Sentimental_Journey_Through_France_and_Italy
-Kenilworth,32,Walter Scott,476,1821,English,history,1771,1832,male,GB,3.68,998,107,18279.0,9165.0,3861.0,https://www.goodreads.com/book/show/745289.Kenilworth?ref=nav_sb_ss_1_10,https://en.wikipedia.org/wiki/Kenilworth_(novel)
-The Last Days of Pompeii,19,Edward Bulwer Lytton,326,1834,English,history,1803,1873,male,GB,3.58,"2,331",218,6677.0,2493.0,1203.0,https://www.goodreads.com/book/show/888.The_Last_Days_of_Pompeii?ref=nav_sb_ss_1_24,https://en.wikipedia.org/wiki/The_Last_Days_of_Pompeii
+Title,Creator,Checkouts
+Gone Girl,Gillian Flynn,35366
+The Handmaid's Tale,Margaret Atwood,33240
+Harry Potter and the Sorcerer's Stone,J.K. Rowling,31386
+The Book Thief,Markus Zusak,30549
+Twilight,Stephenie Meyer,29289
+The Hunger Games,Suzanne Collins,27960
+The Giver,Lois Lowry,27906
+Pride and Prejudice,Jane Austen,27250
+The Girl on the Train,Paula Hawkins,26610
+A Wrinkle in Time,Madeleine L'Engle,24762
+Harry Potter and the Chamber of Secrets,J.K. Rowling,24504
+The Girl With the Dragon Tattoo,Stieg Larsson,20581
+Catching Fire,Suzanne Collins,20230
+Harry Potter and the Prisoner of Azkaban,J.K. Rowling,19564
+The Lightning Thief,Rick Riordan,19389
+Mockingjay,Suzanne Collins,19310
+Harry Potter and the Half-Blood Prince,J.K. Rowling,18311
+Harry Potter and the Goblet of Fire,J.K. Rowling,17797
+"The Hobbit, or, There and Back Again",J.R.R. Tolkien,17526
+The Help,Kathryn Stockett,17499
+The Golden Compass,Philip Pullman,17289
+Miss Peregrine's Home for Peculiar Children,Ransom Riggs,17183
+Harry Potter and the Deathly Hallows,J.K. Rowling,16971
+Harry Potter and the Order of the Phoenix,J.K. Rowling,16628
+The Fellowship of the Ring,J.R.R. Tolkien,16591
+To Kill a Mockingbird,Harper Lee,14244
+The Maze Runner,James Dashner,14050
+The Pillars of the Earth,Ken Follett,13228
+Beloved,Toni Morrison,13059
+The Sea of Monsters,Rick Riordan,13026
+The Great Gatsby,F. Scott Fitzgerald,12768
+The Alchemist,Paulo Coelho,12686
+Little Women,Louisa May Alcott,12633
+The Hitchhiker's Guide to the Galaxy,Douglas Adams,12598
+The Girl Who Kicked the Hornet's Nest,Stieg Larsson,12452
+The Girl Who Played With Fire,Stieg Larsson,12194
+Brave New World,Aldous Huxley,12129
+Fahrenheit 451,Ray Bradbury,12115
+The Absolutely True Diary of a Part-time Indian,Sherman Alexie,11867
+Inferno,Dan Brown,11864
+The Fault In Our Stars,John Green,11612
+The Road,Cormac McCarthy,11372
+Anne of Green Gables,L.M. Montgomery,10773
+Go Set a Watchman,Harper Lee,10464
+Mary Poppins,P.L. Travers,10245
+Ender's Game,Orson Scott Card,10194
+The Stand,Stephen King,10167
+The Lost Symbol,Dan Brown,10158
+Persuasion,Jane Austen,10145
+The Kite Runner,Khaled Hosseini,9979
+Water for Elephants,Sara Gruen,9745
+Moby Dick,Herman Melville,9607
+Charlotte's Web,E.B. White,9523
+One Hundred Years of Solitude,Gabriel García Márquez,9494
+Artemis Fowl,Eoin Colfer,9434
+The Graveyard Book,Neil Gaiman,9385
+Eragon,Christopher Paolini,9344
+The Count of Monte Cristo,Alexandre Dumas,9314
+Anna Karenina,Leo Tolstoy,9198
+A Thousand Splendid Suns,Khaled Hosseini,9185
+James and the Giant Peach,Roald Dahl,9074
+Animal Farm,George Orwell,8992
+The Gunslinger,Stephen King,8967
+Life of Pi,Yann Martel,8823
+The BFG,Roald Dahl,8488
+A Game of Thrones,George R.R. Martin,8448
+It,Stephen King,8440
+The Subtle Knife,Philip Pullman,8296
+The Remains of the Day,Kazuo Ishiguro,8287
+Murder on the Orient Express,Agatha Christie,8212
+Diary of a Wimpy Kid: The Long Haul,Jeff Kinney,8129
+"The Lion, the Witch, and the Wardrobe",C.S. Lewis,8105
+Breaking Dawn,Stephenie Meyer,8081
+"Frankenstein, or, the Modern Prometheus",Mary Shelley,8044
+Matilda,Roald Dahl,7956
+The Two Towers,J.R.R. Tolkien,7954
+Slaughterhouse-Five,Kurt Vonnegut,7831
+Hatchet,Gary Paulsen,7794
+The Curious Incident of the Dog In the Night-Time,Mark Haddon,7730
+Dracula,Bram Stoker,7617
+Room,Emma Donoghue,7576
+The Wind in the Willows,Kenneth Grahame,7481
+The Phantom Tollbooth,Norton Juster,7258
+The Catcher in the Rye,J.D. Salinger,7257
+Sense and Sensibility,Jane Austen,7253
+Middlemarch,George Eliot,7231
+Coraline,Neil Gaiman,7212
+The Picture of Dorian Gray,Oscar Wilde,7197
+The Amber Spyglass,Philip Pullman,7190
+The Adventures of Huckleberry Finn,Mark Twain,7168
+Don Quixote,Miguel de Cervantes,7123
+The Return of the King,J.R.R. Tolkien,7106
+A Tale of Two Cities,Charles Dickens,7067
+Love in the Time of Cholera,Gabriel García Márquez,7059
+Their Eyes Were Watching God,Zora Neale Hurston,7031
+And Then There Were None,Agatha Christie,7005
+Rebecca,Daphne Du Maurier,6921
+Holes,Louis Sachar,6876
+Looking for Alaska,John Green,6850
+Siddhartha,Hermann Hesse,6691
+The Bluest Eye,Toni Morrison,6690
+Ramona and her Father,Beverly Cleary,6649
+The God of Small Things,Arundhati Roy,6619
+The Grapes of Wrath,John Steinbeck,6609
+East of Eden,John Steinbeck,6607
+The Shining,Stephen King,6600
+The Time Traveler's Wife,Audrey Niffenegger,6408
+War and Peace,Leo Tolstoy,6376
+The Call of the Wild,Jack London,6300
+Because of Winn-Dixie,Kate DiCamillo,6278
+Lord of the Flies,William Golding,6237
+When You Reach Me,Rebecca Stead,6222
+Catch-22,Joseph Heller,6206
+Pippi Longstocking,Astrid Lindgren,6195
+Alice's Adventures in Wonderland,Lewis Carroll,6171
+The Wizard of Oz,L. Frank Baum,6138
+Great Expectations,Charles Dickens,6030
+The Camel Club,David Baldacci,5990
+Little House on the Prairie,Laura Ingalls Wilder,5982
+The Tale of Despereaux,Kate DiCamillo,5968
+The Secret Garden,Frances Hodgson Burnett,5916
+The Adventures of Tom Sawyer,Mark Twain,5907
+Watership Down,Richard Adams,5897
+Jane Eyre,Charlotte Brontë,5895
+A Tree Grows in Brooklyn,Betty Smith,5839
+The Master and Margarita,Mikhail Bulgakov,5803
+A Christmas Carol,Charles Dickens,5736
+Little House In the Big Woods,Laura Ingalls Wilder,5695
+Ramona the Pest,Beverly Cleary,5667
+The Old Man and the Sea,Ernest Hemingway,5604
+Ulysses,James Joyce,5520
+Wuthering Heights,Emily Brontë,5515
+The Magician's Nephew,C.S. Lewis,5477
+Cat's Cradle,Kurt Vonnegut,5451
+Things Fall Apart,Chinua Achebe,5420
+On the Road,Jack Kerouac,5416
+Of Mice and Men,John Steinbeck,5380
+David Copperfield,Charles Dickens,5359
+Paper Towns,John Green,5351
+The Mouse and the Motorcycle,Beverly Cleary,5345
+The Poisonwood Bible,Barbara Kingsolver,5221
+The Appeal,John Grisham,5191
+The Color Purple,Alice Walker,5126
+The Bell Jar,Sylvia Plath,5092
+Invisible Man,Ralph Ellison,5080
+Heart of Darkness,Joseph Conrad,5049
+Atlas Shrugged,Ayn Rand,5037
+The Sun Also Rises,Ernest Hemingway,4982
+Atonement,Ian McEwan,4918
+The Little Prince,Antoine de Saint-Exupéry,4916
+Number the Stars,Lois Lowry,4892
+Les Misérables,Victor Hugo,4887
+"Are You There God? It's Me, Margaret",Judy Blume,4883
+From the Mixed-Up Files of Mrs. Basil E. Frankweiler,E.L. Konigsburg,4863
+Mansfield Park,Jane Austen,4860
+Lolita,Vladimir Vladimirovich Nabokov,4805
+The House of the Spirits,Isabel Allende,4795
+The Witches,Roald Dahl,4793
+Nineteen Eighty-Four,George Orwell,4763
+The Dark Is Rising,Susan Cooper,4665
+The Miraculous Journey of Edward Tulane,Kate DiCamillo,4651
+Stranger in a Strange Land,Robert A. Heinlein,4593
+Treasure Island,Robert Louis Stevenson,4549
+The Stranger,Albert Camus,4460
+Peter Pan,J.M. Barrie,4451
+Mrs. Dalloway,Virginia Woolf,4450
+The Murder of Roger Ackroyd,Agatha Christie,4423
+Diary of a Wimpy Kid,Jeff Kinney,4374
+"Ramona Quimby, Age 8",Beverly Cleary,4365
+In Cold Blood,Truman Capote,4298
+Stuart Little,E.B. White,4282
+Northanger Abbey,Jane Austen,4223
+Fearless Fourteen,Janet Evanovich,4200
+Tales of a Fourth Grade Nothing,Judy Blume,4167
+Bridge to Terabithia,Katherine Paterson,4166
+"20,000 Leagues Under the Sea",Jules Verne,4153
+The Outsiders,S.E. Hinton,4128
+The Martian Chronicles,Ray Bradbury,4119
+The Lovely Bones,Alice Sebold,4089
+Go Tell It on the Mountain,James Baldwin,4082
+The Metamorphosis,Franz Kafka,4073
+My Ántonia,Willa Cather,4064
+A Farewell to Arms,Ernest Hemingway,3981
+Inkheart,Cornelia Funke,3958
+My Side of the Mountain,Jean Craighead George,3900
+Mrs. Frisby and the Rats of NIMH,Robert C. O'Brien,3871
+The Westing Game,Ellen Raskin,3791
+Flowers for Algernon,Daniel Keyes,3735
+The Lucky One,Nicholas Sparks,3724
+The Associate,John Grisham,3715
+The Fountainhead,Ayn Rand,3688
+The Da Vinci Code,Dan Brown,3670
+Walk Two Moons,Sharon Creech,3661
+Snow Falling on Cedars,David Guterson,3632
+The Scarlet Letter,Nathaniel Hawthorne,3587
+The Spy Who Came In from the Cold,John Le Carré,3571
+The Age of Innocence,Edith Wharton,3561
+The Shack,William P. Young,3559
+The House on Mango Street,Sandra Cisneros,3542
+The Horse and His Boy,C.S. Lewis,3524
+Where the Red Fern Grows,Wilson Rawls,3515
+Crime and Punishment,Fyodor Dostoyevsky,3507
+The Name of the Rose,Umberto Eco,3502
+"Harriet, the Spy",Louise Fitzhugh,3473
+First Family,David Baldacci,3398
+Sula,Toni Morrison,3381
+Anne of Avonlea,L.M. Montgomery,3357
+The Broker,John Grisham,3346
+The Three Musketeers,Alexandre Dumas,3315
+Oliver Twist,Charles Dickens,3285
+The Hound of the Baskervilles,Arthur Conan Doyle,3284
+One Flew Over the Cuckoo's Nest,Ken Kesey,3281
+The Woman In White,Wilkie Collins,3252
+"Through the Looking-Glass, and What Alice Found There",Lewis Carroll,3249
+The Sound and the Fury,William Faulkner,3248
+The Good Earth,Pearl S. Buck,3230
+The Silmarillion,J.R.R. Tolkien,3197
+The House of Mirth,Edith Wharton,3196
+The Joy Luck Club,Amy Tan,3192
+The Plague,Albert Camus,3164
+The Firm,John Grisham,3160
+Song of Solomon,Toni Morrison,3146
+White Fang,Jack London,3132
+To the Lighthouse,Virginia Woolf,3111
+The Maltese Falcon,Dashiell Hammett,3106
+The Screwtape Letters,C.S. Lewis,3098
+The Things they Carried,Tim O'Brien,3082
+Lady Chatterley's Lover,D.H. Lawrence,3076
+For Whom the Bell Tolls,Ernest Hemingway,3048
+My Sister's Keeper,Jodi Picoult,3022
+Swann's Way,Marcel Proust,2995
+The Jungle,Upton Sinclair,2974
+The Choice,Nicholas Sparks,2959
+Julie of the Wolves,Jean Craighead George,2907
+All Quiet on the Western Front,Erich Maria Remarque,2900
+Tuck Everlasting,Natalie Babbitt,2889
+Around the World in Eighty Days,Jules Verne,2885
+The Cricket in Times Square,George Selden,2883
+The No. 1 Ladies' Detective Agency,Alexander McCall Smith,2873
+"Bud, Not Buddy",Christopher Paul Curtis,2848
+Uncle Tom's Cabin,Harriet Beecher Stowe,2816
+"Sarah, Plain and Tall",Patricia MacLachlan,2807
+As I Lay Dying,William Faulkner,2787
+The Time Machine,H.G. Wells,2780
+Madame Bovary: Patterns of Provincial life,Gustave Flaubert,2738
+Gone with the Wind,Margaret Mitchell,2736
+Shiloh,Phyllis Reynolds Naylor,2736
+The Secret Life of Bees,Sue Monk Kidd,2698
+On the Banks of Plum Creek,Laura Ingalls Wilder,2663
+"Roll of Thunder, Hear My Cry",Mildred D. Taylor,2655
+The Death of Ivan Ilych,Leo Tolstoy,2640
+A Room With a View,E.M. Forster,2634
+Misery,Stephen King,2633
+Carrie,Stephen King,2619
+The Witch of Blackbird Pond,Elizabeth George Speare,2578
+The Memory Keeper's Daughter,Kim Edwards,2578
+The Voyage of the Dawn Treader,C.S. Lewis,2556
+The Long Winter,Laura Ingalls Wilder,2539
+Death Comes for the Archbishop,Willa Cather,2539
+A Prayer for Owen Meany,John Irving,2507
+The Swiss Family Robinson,Johann David Wyss,2498
+Black Beauty,Anna Sewell,2466
+The Five People You Meet In Heaven,Mitch Albom,2456
+Worst Case,James Patterson,2455
+The Silver Chair,C.S. Lewis,2449
+Jurassic Park,Michael Crichton,2432
+Far from the Madding Crowd,Thomas Hardy,2427
+The Heart Is a Lonely Hunter,Carson McCullers,2426
+The Strange Case of Dr. Jekyll and Mr. Hyde,Robert Louis Stevenson,2420
+By the Shores of Silver Lake,Laura Ingalls Wilder,2408
+Anne of the Island,L.M. Montgomery,2408
+A Portrait of the Artist as a Young Man,James Joyce,2399
+Robinson Crusoe,Daniel Defoe,2396
+Little Town on the Prairie,Laura Ingalls Wilder,2384
+Cannery Row,John Steinbeck,2373
+Cross Country,James Patterson,2373
+Gulliver's Travels,Jonathan Swift,2341
+The Quiet American,Graham Greene,2312
+P Is for Peril,Sue Grafton,2310
+Memoirs of a Geisha,Arthur Golden,2300
+A Passage to India,E.M. Forster,2290
+Brideshead Revisited,Evelyn Waugh,2285
+The Pearl,John Steinbeck,2276
+The Notebook,Nicholas Sparks,2272
+The War of the Worlds,H.G. Wells,2234
+The Moonstone,Wilkie Collins,2230
+Tender is the Night,F. Scott Fitzgerald,2225
+The Idiot,Fyodor Dostoyevsky,2206
+Alex Cross's Trial,James Patterson,2171
+A Journey to the Center of the Earth,Jules Verne,2162
+Howards End,E.M. Forster,2162
+Encyclopedia Brown: Boy Detective,Donald J. Sobol,2158
+The Last Battle,C.S. Lewis,2140
+These Happy Golden Years,Laura Ingalls Wilder,2118
+Of Human Bondage,W. Somerset Maugham,2112
+Candide,Voltaire,2092
+Bleak House,Charles Dickens,2087
+The English Patient,Michael Ondaatje,2070
+The Clan of the Cave Bear,Jean M. Auel,2057
+The Wings of the Dove,Henry James,2048
+Girl With a Pearl Earring,Tracy Chevalier,2046
+Tess of the d'Urbervilles,Thomas Hardy,1998
+Native Son,Richard Wright,1994
+Cross Fire,James Patterson,1976
+A Time to Kill,John Grisham,1975
+The Trumpet of the Swan,E.B. White,1972
+Cold Mountain,Charles Frazier,1932
+Dear John,Nicholas Sparks,1928
+Vision in White,Nora Roberts,1918
+The Indian in the Cupboard,Lynne Reid Banks,1884
+Heidi,Johanna Spyri,1882
+Dear Mr. Henshaw,Beverly Cleary,1877
+Like Water for Chocolate,Laura Esquivel,1855
+Doctor Zhivago,Boris Leonidovich Pasternak,1851
+Daughter of Fortune,Isabel Allende,1831
+Pinocchio,Carlo Collodi,1808
+Inkspell,Cornelia Funke,1795
+All the King's Men,Robert Penn Warren,1792
+The Portrait of a Lady,Henry James,1782
+Prince Caspian: The Return to Narnia,C.S. Lewis,1770
+A Clockwork Orange,Anthony Burgess,1761
+The Higher Power of Lucky,Susan Patron,1753
+Kidnapped: The Adventures of David Balfour,Robert Louis Stevenson,1743
+A Painted House,John Grisham,1737
+Light in August,William Faulkner,1736
+Swimsuit,James Patterson,1719
+"Cry, The Beloved Country",Alan Paton,1712
+O Pioneers!,Willa Cather,1681
+The Once and Future King,T. H. White,1662
+The Decameron,Giovanni Boccaccio,1654
+The Hunchback of Notre Dame,Victor Hugo,1652
+The Invisible Man,H.G. Wells,1642
+Ethan Frome,Edith Wharton,1639
+Flatland,Edwin A. Abbott,1618
+Vanity Fair,William Makepeace Thackeray,1598
+The Red Badge of Courage,Stephen Crane,1579
+Orlando,Virginia Woolf,1551
+The Thorn Birds,Colleen McCullough,1538
+Fried Green Tomatoes at the Whistle-Stop Cafe,Fannie Flagg,1525
+A Separate Peace,John Knowles,1515
+A Connecticut Yankee in King Arthur's Court,Mark Twain,1505
+The Testament,John Grisham,1503
+The Cider House Rules,John Irving,1482
+Elijah of Buxton,Christopher Paul Curtis,1472
+The Tale of Genji,Murasaki Shikibu,1458
+The Wedding,Nicholas Sparks,1457
+The Reader,Bernhard Schlink,1453
+Kim,Rudyard Kipling,1443
+The Chocolate War,Robert Cormier,1443
+The Fall,Albert Camus,1436
+Steppenwolf,Hermann Hesse,1421
+The Red Pony,John Steinbeck,1413
+Nights in Rodanthe,Nicholas Sparks,1401
+Old Yeller,Fred Gipson,1379
+The Street Lawyer,John Grisham,1369
+Breakfast at Tiffany's,Truman Capote,1349
+The Complete Sherlock Holmes,Arthur Conan Doyle,1342
+Nicholas Nickleby,Charles Dickens,1336
+Roots,Alex Haley,1335
+This Side of Paradise,F. Scott Fitzgerald,1333
+"Winesburg, Ohio",Sherwood Anderson,1321
+The Grey King,Susan Cooper,1295
+"Absalom, Absalom!",William Faulkner,1284
+Johnny Tremain,Esther Forbes,1282
+The Merry Adventures of Robin Hood of Great Renown In Nottinghamshire,Howard Pyle,1280
+Death In Venice,Thomas Mann,1271
+The Whipping Boy,Sid Fleischman,1270
+The Winter of Our Discontent,John Steinbeck,1257
+The Last Juror,John Grisham,1245
+The Killer Angels,Michael Shaara,1245
+Caddie Woodlawn,Carol Ryrie Brink,1242
+The Trial,Franz Kafka,1224
+The Partner,John Grisham,1222
+The Heart of the Matter,Graham Greene,1220
+The Warden,Anthony Trollope,1219
+Deception Point,Dan Brown,1207
+To Have and Have Not,Ernest Hemingway,1203
+A Walk to Remember,Nicholas Sparks,1177
+Tortilla Flat,John Steinbeck,1171
+Silas Marner,George Eliot,1163
+The Leopard,Giuseppe Tomasi di Lampedusa,1159
+The Rainmaker,John Grisham,1159
+Ivanhoe,Walter Scott,1157
+Jude the Obscure,Thomas Hardy,1155
+Sounder,William H. Armstrong,1150
+The Power and the Glory,Graham Greene,1147
+The Pilgrim's Progress,John Bunyan,1146
+The Summons,John Grisham,1138
+An American Tragedy,Theodore Dreiser,1127
+Sophie's Choice,William Styron,1106
+The Brethren,John Grisham,1105
+Little Dorrit,Charles Dickens,1094
+The Incredible Journey,Sheila Burnford,1093
+Bleachers,John Grisham,1090
+Angels & Demons,Dan Brown,1082
+The Client,John Grisham,1075
+The Sea Wolf,Jack London,1074
+Our Mutual Friend,Charles Dickens,1073
+The Pickwick Papers,Charles Dickens,1073
+The Mammoth Hunters,Jean M. Auel,1067
+The Forsyte Saga,John Galsworthy,1063
+The Last of the Mohicans,James Fenimore Cooper,1015
+The Runaway Jury,John Grisham,1013
+Lord Jim,Joseph Conrad,1004
+The King of Torts,John Grisham,995
+Cranford,Elizabeth Cleghorn Gaskell,991
+Chronicle of a Death Foretold,Gabriel García Márquez,991
+Misty of Chincoteague,Marguerite Henry,988
+Sons and Lovers,D.H. Lawrence,981
+Jonathan Livingston Seagull,Richard Bach,956
+The Razor's Edge,W. Somerset Maugham,928
+The Mysterious Island,Jules Verne,913
+The Bridge of San Luis Rey,Thornton Wilder,912
+Remembrance of Things Past,Marcel Proust,911
+The Secret Agent,Joseph Conrad,908
+The Castle,Franz Kafka,894
+The Mill on the Floss,George Eliot,871
+The Caine Mutiny,Herman Wouk,870
+"Look Homeward, Angel",Thomas Wolfe,865
+The Mystery of Edwin Drood,Charles Dickens,858
+The Phantom of the Opera,Gaston Leroux,850
+King of the Wind,Marguerite Henry,819
+Jacob Have I Loved,Katherine Paterson,816
+Fathers and Sons,Ivan Sergeevich Turgenev,815
+The Tenant of Wildfell Hall,Anne Brontë,814
+The Moon and Sixpence,W. Somerset Maugham,807
+The Magic Mountain (Der Zauberberg),Thomas Mann,804
+Babbitt,Sinclair Lewis,800
+The Bridges of Madison County,Robert James Waller,800
+Rebecca of Sunnybrook Farm,Kate Douglas Smith Wiggin,796
+King Solomon's Mines,H. Rider Haggard,787
+The Old Curiosity Shop,Charles Dickens,784
+Hard Times,Charles Dickens,779
+The Pelican Brief,John Grisham,772
+The Ambassadors,Henry James,769
+Schindler's List,Thomas Keneally,739
+Darkness at Noon,Arthur Koestler,737
+The House of the Seven Gables,Nathaniel Hawthorne,723
+Call It Courage,Armstrong Sperry,721
+The Red & the Black,Stendhal,720
+Main Street,Sinclair Lewis,715
+Barnaby Rudge,Charles Dickens,711
+One Day in the Life of Ivan Denisovich,Aleksandr Isaevich Solzhenitsyn,711
+Captains Courageous,Rudyard Kipling,709
+Washington Square,Henry James,702
+The Sorrows of Young Werther,Johann Wolfgang von Goethe,702
+The Return of the Native,Thomas Hardy,638
+Villette,Charlotte Brontë,632
+Nostromo,Joseph Conrad,627
+Adam Bede,George Eliot,608
+The Rainbow,D.H. Lawrence,608
+Barchester Towers and the Warden,Anthony Trollope,600
+The Virginian: A Horseman of the Plains,Owen Wister,599
+Utopia,Thomas More,593
+The Life and Opinions of Tristram Shandy,Laurence Sterne,592
+"The History of Tom Jones, a Foundling",Henry Fielding,569
+Nausea,Jean-Paul Sartre,564
+The Chamber,John Grisham,562
+The Man In the Iron Mask,Alexandre Dumas,560
+The Yearling,Marjorie Kinnan Rawlings,549
+The Slave Dancer,Paula Fox,548
+Germinal,Émile Zola,546
+The Betrothed,Alessandro Manzoni,539
+Resurrection,Leo Tolstoy,537
+Sister Carrie,Theodore Dreiser,532
+The Prince and the Pauper,Mark Twain,506
+Buddenbrooks,Thomas Mann,506
+The Summer of the Swans,Betsy Cromer Byars,503
+Dreamcatcher,Stephen King,500
+The Naked and the Dead,Norman Mailer,480
+Dombey And Son,Charles Dickens,477
+Women in Love,D.H. Lawrence,469
+Dream of the Red Chamber,Cao Xueqin,456
+Le Morte D'Arthur,Thomas Malory,448
+The Way of All Flesh,Samuel Butler,439
+Lost Horizon,James Hilton,436
+The Black Arrow: A Tale of the Two Roses,Robert Louis Stevenson,423
+The Mayor of Casterbridge,Thomas Hardy,418
+Finnegans Wake,James Joyce,406
+Ben-Hur,Lew Wallace,366
+Lorna Doone,R.D. Blackmore,350
+Nana,Émile Zola,318
+Dangerous Liaisons,Choderlos de Laclos,248
+Rob Roy,Walter Scott,245
+The Vicar of Wakefield,Oliver Goldsmith,244
+Arrowsmith,Sinclair Lewis,242
+The Horse Whisperer,Nicholas Evans,231
+Shirley,Charlotte Brontë,213
+"Looking Backward, 2000-1887",Edward Bellamy,203
+"M.C. Higgins, The Great",Virginia Hamilton,158
+Père Goriot,Honoré de Balzac,157
+Eugénie Grandet,Honoré de Balzac,121
+The Princess of Cleves,Madame de (Marie-Madeleine Pioche de La Vergne) La Fayett,79
+The Rise of Silas Lapham,William Dean Howells,63
+Quo Vadis,Henryk Sienkiewicz,42
+Persian Letters,Montesquieu,37
+A Sentimental Journey Through France and Italy,Laurence Sterne,34
+Kenilworth,Walter Scott,32
+The Last Days of Pompeii,Edward Bulwer Lytton,19
