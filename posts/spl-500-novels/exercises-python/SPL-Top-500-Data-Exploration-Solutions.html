@@ -389,7 +389,7 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
 </section>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="400afc47" class="cell" data-execution_count="1">
+<div id="3ef442dc" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -399,7 +399,7 @@ if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.M
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>spl_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_8344/3933414714.py:4: DtypeWarning:
+<pre><code>/tmp/ipykernel_8375/3933414714.py:4: DtypeWarning:
 
 Columns (12) have mixed types. Specify dtype option on import or set low_memory=False.
 </code></pre>
@@ -568,7 +568,7 @@ Columns (12) have mixed types. Specify dtype option on import or set low_memory=
 <h1>Exercise 1</h1>
 <p>Find the top 10 authors and top 10 books by total checkouts in the SPL Top 500 dataset. Display them as styled tables.</p>
 <p>Save the results as <code>top_authors</code> and <code>top_books</code>.</p>
-<div id="beed1d8e" class="cell" data-execution_count="2">
+<div id="77cf489f" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>top_authors <span class="op">=</span> spl_df.groupby(<span class="st">'author'</span>)[<span class="st">'checkouts'</span>].<span class="bu">sum</span>().nlargest(<span class="dv">10</span>).reset_index()</span>
@@ -577,112 +577,112 @@ Columns (12) have mixed types. Specify dtype option on import or set low_memory=
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <style type="text/css">
-#T_abc4f_row0_col1 {
+#T_e164c_row0_col1 {
   background-color: #08306b;
   color: #f1f1f1;
 }
-#T_abc4f_row1_col1 {
+#T_e164c_row1_col1 {
   background-color: #b4d3e9;
   color: #000000;
 }
-#T_abc4f_row2_col1 {
+#T_e164c_row2_col1 {
   background-color: #d3e4f3;
   color: #000000;
 }
-#T_abc4f_row3_col1 {
+#T_e164c_row3_col1 {
   background-color: #d6e5f4;
   color: #000000;
 }
-#T_abc4f_row4_col1 {
+#T_e164c_row4_col1 {
   background-color: #e2edf8;
   color: #000000;
 }
-#T_abc4f_row5_col1 {
+#T_e164c_row5_col1 {
   background-color: #ebf3fb;
   color: #000000;
 }
-#T_abc4f_row6_col1 {
+#T_e164c_row6_col1 {
   background-color: #eff6fc;
   color: #000000;
 }
-#T_abc4f_row7_col1 {
+#T_e164c_row7_col1 {
   background-color: #f0f6fd;
   color: #000000;
 }
-#T_abc4f_row8_col1 {
+#T_e164c_row8_col1 {
   background-color: #f4f9fe;
   color: #000000;
 }
-#T_abc4f_row9_col1 {
+#T_e164c_row9_col1 {
   background-color: #f7fbff;
   color: #000000;
 }
 </style>
 
-<table id="T_abc4f" class="caption-top table table-sm table-striped small">
+<table id="T_e164c" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_abc4f_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Author</th>
-<th id="T_abc4f_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total Checkouts</th>
+<th id="T_e164c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Author</th>
+<th id="T_e164c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_abc4f_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_abc4f_row0_col0" class="data row0 col0">J.K. Rowling</td>
-<td id="T_abc4f_row0_col1" class="data row0 col1">145161</td>
+<th id="T_e164c_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_e164c_row0_col0" class="data row0 col0">J.K. Rowling</td>
+<td id="T_e164c_row0_col1" class="data row0 col1">145161</td>
 </tr>
 <tr class="even">
-<th id="T_abc4f_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_abc4f_row1_col0" class="data row1 col0">Suzanne Collins</td>
-<td id="T_abc4f_row1_col1" class="data row1 col1">67500</td>
+<th id="T_e164c_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_e164c_row1_col0" class="data row1 col0">Suzanne Collins</td>
+<td id="T_e164c_row1_col1" class="data row1 col1">67500</td>
 </tr>
 <tr class="odd">
-<th id="T_abc4f_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_abc4f_row2_col0" class="data row2 col0">Jane Austen</td>
-<td id="T_abc4f_row2_col1" class="data row2 col1">53731</td>
+<th id="T_e164c_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_e164c_row2_col0" class="data row2 col0">Jane Austen</td>
+<td id="T_e164c_row2_col1" class="data row2 col1">53731</td>
 </tr>
 <tr class="even">
-<th id="T_abc4f_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_abc4f_row3_col0" class="data row3 col0">J.R.R. Tolkien</td>
-<td id="T_abc4f_row3_col1" class="data row3 col1">52374</td>
+<th id="T_e164c_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_e164c_row3_col0" class="data row3 col0">J.R.R. Tolkien</td>
+<td id="T_e164c_row3_col1" class="data row3 col1">52374</td>
 </tr>
 <tr class="odd">
-<th id="T_abc4f_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_abc4f_row4_col0" class="data row4 col0">Stieg Larsson</td>
-<td id="T_abc4f_row4_col1" class="data row4 col1">45227</td>
+<th id="T_e164c_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_e164c_row4_col0" class="data row4 col0">Stieg Larsson</td>
+<td id="T_e164c_row4_col1" class="data row4 col1">45227</td>
 </tr>
 <tr class="even">
-<th id="T_abc4f_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_abc4f_row5_col0" class="data row5 col0">Stephen King</td>
-<td id="T_abc4f_row5_col1" class="data row5 col1">39926</td>
+<th id="T_e164c_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_e164c_row5_col0" class="data row5 col0">Stephen King</td>
+<td id="T_e164c_row5_col1" class="data row5 col1">39926</td>
 </tr>
 <tr class="odd">
-<th id="T_abc4f_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_abc4f_row6_col0" class="data row6 col0">Charles Dickens</td>
-<td id="T_abc4f_row6_col1" class="data row6 col1">37749</td>
+<th id="T_e164c_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_e164c_row6_col0" class="data row6 col0">Charles Dickens</td>
+<td id="T_e164c_row6_col1" class="data row6 col1">37749</td>
 </tr>
 <tr class="even">
-<th id="T_abc4f_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_abc4f_row7_col0" class="data row7 col0">Stephenie Meyer</td>
-<td id="T_abc4f_row7_col1" class="data row7 col1">37370</td>
+<th id="T_e164c_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_e164c_row7_col0" class="data row7 col0">Stephenie Meyer</td>
+<td id="T_e164c_row7_col1" class="data row7 col1">37370</td>
 </tr>
 <tr class="odd">
-<th id="T_abc4f_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_abc4f_row8_col0" class="data row8 col0">Gillian Flynn</td>
-<td id="T_abc4f_row8_col1" class="data row8 col1">35366</td>
+<th id="T_e164c_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_e164c_row8_col0" class="data row8 col0">Gillian Flynn</td>
+<td id="T_e164c_row8_col1" class="data row8 col1">35366</td>
 </tr>
 <tr class="even">
-<th id="T_abc4f_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_abc4f_row9_col0" class="data row9 col0">John Grisham</td>
-<td id="T_abc4f_row9_col1" class="data row9 col1">33372</td>
+<th id="T_e164c_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_e164c_row9_col0" class="data row9 col0">John Grisham</td>
+<td id="T_e164c_row9_col1" class="data row9 col1">33372</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-<div id="3b09ce70" class="cell" data-execution_count="3">
+<div id="c4ff093a" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>top_books <span class="op">=</span> spl_df.groupby(<span class="st">'top_500_title'</span>)[<span class="st">'checkouts'</span>].<span class="bu">sum</span>().nlargest(<span class="dv">10</span>).reset_index()</span>
@@ -691,106 +691,106 @@ Columns (12) have mixed types. Specify dtype option on import or set low_memory=
 </details>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <style type="text/css">
-#T_b4f8a_row0_col1 {
+#T_f4892_row0_col1 {
   background-color: #00441b;
   color: #f1f1f1;
 }
-#T_b4f8a_row1_col1 {
+#T_f4892_row1_col1 {
   background-color: #157f3b;
   color: #f1f1f1;
 }
-#T_b4f8a_row2_col1 {
+#T_f4892_row2_col1 {
   background-color: #42ab5d;
   color: #f1f1f1;
 }
-#T_b4f8a_row3_col1 {
+#T_f4892_row3_col1 {
   background-color: #62bb6d;
   color: #f1f1f1;
 }
-#T_b4f8a_row4_col1 {
+#T_f4892_row4_col1 {
   background-color: #8ed08b;
   color: #000000;
 }
-#T_b4f8a_row5_col1 {
+#T_f4892_row5_col1 {
   background-color: #b7e2b1;
   color: #000000;
 }
-#T_b4f8a_row6_col1 {
+#T_f4892_row6_col1 {
   background-color: #bae3b3;
   color: #000000;
 }
-#T_b4f8a_row7_col1 {
+#T_f4892_row7_col1 {
   background-color: #cbeac4;
   color: #000000;
 }
-#T_b4f8a_row8_col1 {
+#T_f4892_row8_col1 {
   background-color: #daf0d4;
   color: #000000;
 }
-#T_b4f8a_row9_col1 {
+#T_f4892_row9_col1 {
   background-color: #f7fcf5;
   color: #000000;
 }
 </style>
 
-<table id="T_b4f8a" class="caption-top table table-sm table-striped small">
+<table id="T_f4892" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
-<th id="T_b4f8a_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Title</th>
-<th id="T_b4f8a_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total Checkouts</th>
+<th id="T_f4892_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Title</th>
+<th id="T_f4892_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Total Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<th id="T_b4f8a_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
-<td id="T_b4f8a_row0_col0" class="data row0 col0">Gone Girl</td>
-<td id="T_b4f8a_row0_col1" class="data row0 col1">35366</td>
+<th id="T_f4892_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</th>
+<td id="T_f4892_row0_col0" class="data row0 col0">Gone Girl</td>
+<td id="T_f4892_row0_col1" class="data row0 col1">35366</td>
 </tr>
 <tr class="even">
-<th id="T_b4f8a_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
-<td id="T_b4f8a_row1_col0" class="data row1 col0">The Handmaid's Tale</td>
-<td id="T_b4f8a_row1_col1" class="data row1 col1">33240</td>
+<th id="T_f4892_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</th>
+<td id="T_f4892_row1_col0" class="data row1 col0">The Handmaid's Tale</td>
+<td id="T_f4892_row1_col1" class="data row1 col1">33240</td>
 </tr>
 <tr class="odd">
-<th id="T_b4f8a_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
-<td id="T_b4f8a_row2_col0" class="data row2 col0">Harry Potter and the Sorcerer's Stone</td>
-<td id="T_b4f8a_row2_col1" class="data row2 col1">31386</td>
+<th id="T_f4892_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</th>
+<td id="T_f4892_row2_col0" class="data row2 col0">Harry Potter and the Sorcerer's Stone</td>
+<td id="T_f4892_row2_col1" class="data row2 col1">31386</td>
 </tr>
 <tr class="even">
-<th id="T_b4f8a_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
-<td id="T_b4f8a_row3_col0" class="data row3 col0">The Book Thief</td>
-<td id="T_b4f8a_row3_col1" class="data row3 col1">30549</td>
+<th id="T_f4892_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</th>
+<td id="T_f4892_row3_col0" class="data row3 col0">The Book Thief</td>
+<td id="T_f4892_row3_col1" class="data row3 col1">30549</td>
 </tr>
 <tr class="odd">
-<th id="T_b4f8a_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
-<td id="T_b4f8a_row4_col0" class="data row4 col0">Twilight</td>
-<td id="T_b4f8a_row4_col1" class="data row4 col1">29289</td>
+<th id="T_f4892_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</th>
+<td id="T_f4892_row4_col0" class="data row4 col0">Twilight</td>
+<td id="T_f4892_row4_col1" class="data row4 col1">29289</td>
 </tr>
 <tr class="even">
-<th id="T_b4f8a_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
-<td id="T_b4f8a_row5_col0" class="data row5 col0">The Hunger Games</td>
-<td id="T_b4f8a_row5_col1" class="data row5 col1">27960</td>
+<th id="T_f4892_level0_row5" class="row_heading level0 row5" data-quarto-table-cell-role="th">5</th>
+<td id="T_f4892_row5_col0" class="data row5 col0">The Hunger Games</td>
+<td id="T_f4892_row5_col1" class="data row5 col1">27960</td>
 </tr>
 <tr class="odd">
-<th id="T_b4f8a_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
-<td id="T_b4f8a_row6_col0" class="data row6 col0">The Giver</td>
-<td id="T_b4f8a_row6_col1" class="data row6 col1">27906</td>
+<th id="T_f4892_level0_row6" class="row_heading level0 row6" data-quarto-table-cell-role="th">6</th>
+<td id="T_f4892_row6_col0" class="data row6 col0">The Giver</td>
+<td id="T_f4892_row6_col1" class="data row6 col1">27906</td>
 </tr>
 <tr class="even">
-<th id="T_b4f8a_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
-<td id="T_b4f8a_row7_col0" class="data row7 col0">Pride and Prejudice</td>
-<td id="T_b4f8a_row7_col1" class="data row7 col1">27250</td>
+<th id="T_f4892_level0_row7" class="row_heading level0 row7" data-quarto-table-cell-role="th">7</th>
+<td id="T_f4892_row7_col0" class="data row7 col0">Pride and Prejudice</td>
+<td id="T_f4892_row7_col1" class="data row7 col1">27250</td>
 </tr>
 <tr class="odd">
-<th id="T_b4f8a_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
-<td id="T_b4f8a_row8_col0" class="data row8 col0">The Girl on the Train</td>
-<td id="T_b4f8a_row8_col1" class="data row8 col1">26610</td>
+<th id="T_f4892_level0_row8" class="row_heading level0 row8" data-quarto-table-cell-role="th">8</th>
+<td id="T_f4892_row8_col0" class="data row8 col0">The Girl on the Train</td>
+<td id="T_f4892_row8_col1" class="data row8 col1">26610</td>
 </tr>
 <tr class="even">
-<th id="T_b4f8a_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
-<td id="T_b4f8a_row9_col0" class="data row9 col0">A Wrinkle in Time</td>
-<td id="T_b4f8a_row9_col1" class="data row9 col1">24762</td>
+<th id="T_f4892_level0_row9" class="row_heading level0 row9" data-quarto-table-cell-role="th">9</th>
+<td id="T_f4892_row9_col0" class="data row9 col0">A Wrinkle in Time</td>
+<td id="T_f4892_row9_col1" class="data row9 col1">24762</td>
 </tr>
 </tbody>
 </table>
@@ -802,7 +802,7 @@ Columns (12) have mixed types. Specify dtype option on import or set low_memory=
 <h1>Exercise 2</h1>
 <p>Create a time series line plot of monthly checkouts for “Pride and Prejudice” over time.</p>
 <p>Filter the data for “Pride and Prejudice”, group by year and month, and plot the results.</p>
-<div id="5ad78596" class="cell" data-execution_count="4">
+<div id="f68fd7db" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pride_df <span class="op">=</span> spl_df[spl_df[<span class="st">'top_500_title'</span>] <span class="op">==</span> <span class="st">'Pride and Prejudice'</span>]</span>
@@ -817,9 +817,9 @@ Columns (12) have mixed types. Specify dtype option on import or set low_memory=
 </details>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.1.min.js" integrity="sha256-4rD3fugVb/nVJYUv5Ky3v+fYXoouHaBSP20WIJuEiWg=" crossorigin="anonymous"></script>                <div id="39e4764e-8321-48df-8f37-66a1b4c06e56" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("39e4764e-8321-48df-8f37-66a1b4c06e56")) {                    Plotly.newPlot(                        "39e4764e-8321-48df-8f37-66a1b4c06e56",                        [{"hovertemplate":"date=%{x}\u003cbr\u003echeckouts=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":["2006-01-01T00:00:00.000000000","2006-02-01T00:00:00.000000000","2006-03-01T00:00:00.000000000","2006-04-01T00:00:00.000000000","2006-05-01T00:00:00.000000000","2006-06-01T00:00:00.000000000","2006-07-01T00:00:00.000000000","2006-08-01T00:00:00.000000000","2006-09-01T00:00:00.000000000","2006-10-01T00:00:00.000000000","2006-11-01T00:00:00.000000000","2006-12-01T00:00:00.000000000","2007-01-01T00:00:00.000000000","2007-02-01T00:00:00.000000000","2007-03-01T00:00:00.000000000","2007-04-01T00:00:00.000000000","2007-05-01T00:00:00.000000000","2007-06-01T00:00:00.000000000","2007-07-01T00:00:00.000000000","2007-08-01T00:00:00.000000000","2007-09-01T00:00:00.000000000","2007-10-01T00:00:00.000000000","2007-11-01T00:00:00.000000000","2007-12-01T00:00:00.000000000","2008-01-01T00:00:00.000000000","2008-02-01T00:00:00.000000000","2008-03-01T00:00:00.000000000","2008-04-01T00:00:00.000000000","2008-05-01T00:00:00.000000000","2008-06-01T00:00:00.000000000","2008-07-01T00:00:00.000000000","2008-08-01T00:00:00.000000000","2008-09-01T00:00:00.000000000","2008-10-01T00:00:00.000000000","2008-11-01T00:00:00.000000000","2008-12-01T00:00:00.000000000","2009-01-01T00:00:00.000000000","2009-02-01T00:00:00.000000000","2009-03-01T00:00:00.000000000","2009-04-01T00:00:00.000000000","2009-05-01T00:00:00.000000000","2009-06-01T00:00:00.000000000","2009-07-01T00:00:00.000000000","2009-08-01T00:00:00.000000000","2009-09-01T00:00:00.000000000","2009-10-01T00:00:00.000000000","2009-11-01T00:00:00.000000000","2009-12-01T00:00:00.000000000","2010-01-01T00:00:00.000000000","2010-02-01T00:00:00.000000000","2010-03-01T00:00:00.000000000","2010-04-01T00:00:00.000000000","2010-05-01T00:00:00.000000000","2010-06-01T00:00:00.000000000","2010-07-01T00:00:00.000000000","2010-08-01T00:00:00.000000000","2010-09-01T00:00:00.000000000","2010-10-01T00:00:00.000000000","2010-11-01T00:00:00.000000000","2010-12-01T00:00:00.000000000","2011-01-01T00:00:00.000000000","2011-02-01T00:00:00.000000000","2011-03-01T00:00:00.000000000","2011-04-01T00:00:00.000000000","2011-05-01T00:00:00.000000000","2011-06-01T00:00:00.000000000","2011-07-01T00:00:00.000000000","2011-08-01T00:00:00.000000000","2011-09-01T00:00:00.000000000","2011-10-01T00:00:00.000000000","2011-11-01T00:00:00.000000000","2011-12-01T00:00:00.000000000","2012-01-01T00:00:00.000000000","2012-02-01T00:00:00.000000000","2012-03-01T00:00:00.000000000","2012-04-01T00:00:00.000000000","2012-05-01T00:00:00.000000000","2012-06-01T00:00:00.000000000","2012-07-01T00:00:00.000000000","2012-08-01T00:00:00.000000000","2012-09-01T00:00:00.000000000","2012-10-01T00:00:00.000000000","2012-11-01T00:00:00.000000000","2012-12-01T00:00:00.000000000","2013-01-01T00:00:00.000000000","2013-02-01T00:00:00.000000000","2013-03-01T00:00:00.000000000","2013-04-01T00:00:00.000000000","2013-05-01T00:00:00.000000000","2013-06-01T00:00:00.000000000","2013-07-01T00:00:00.000000000","2013-08-01T00:00:00.000000000","2013-09-01T00:00:00.000000000","2013-10-01T00:00:00.000000000","2013-11-01T00:00:00.000000000","2013-12-01T00:00:00.000000000","2014-01-01T00:00:00.000000000","2014-02-01T00:00:00.000000000","2014-03-01T00:00:00.000000000","2014-04-01T00:00:00.000000000","2014-05-01T00:00:00.000000000","2014-06-01T00:00:00.000000000","2014-07-01T00:00:00.000000000","2014-08-01T00:00:00.000000000","2014-09-01T00:00:00.000000000","2014-10-01T00:00:00.000000000","2014-11-01T00:00:00.000000000","2014-12-01T00:00:00.000000000","2015-01-01T00:00:00.000000000","2015-02-01T00:00:00.000000000","2015-03-01T00:00:00.000000000","2015-04-01T00:00:00.000000000","2015-05-01T00:00:00.000000000","2015-06-01T00:00:00.000000000","2015-07-01T00:00:00.000000000","2015-08-01T00:00:00.000000000","2015-09-01T00:00:00.000000000","2015-10-01T00:00:00.000000000","2015-11-01T00:00:00.000000000","2015-12-01T00:00:00.000000000","2016-01-01T00:00:00.000000000","2016-02-01T00:00:00.000000000","2016-03-01T00:00:00.000000000","2016-04-01T00:00:00.000000000","2016-05-01T00:00:00.000000000","2016-06-01T00:00:00.000000000","2016-07-01T00:00:00.000000000","2016-08-01T00:00:00.000000000","2016-09-01T00:00:00.000000000","2016-10-01T00:00:00.000000000","2016-11-01T00:00:00.000000000","2016-12-01T00:00:00.000000000","2017-01-01T00:00:00.000000000","2017-02-01T00:00:00.000000000","2017-03-01T00:00:00.000000000","2017-04-01T00:00:00.000000000","2017-05-01T00:00:00.000000000","2017-06-01T00:00:00.000000000","2017-07-01T00:00:00.000000000","2017-08-01T00:00:00.000000000","2017-09-01T00:00:00.000000000","2017-10-01T00:00:00.000000000","2017-11-01T00:00:00.000000000","2017-12-01T00:00:00.000000000","2018-01-01T00:00:00.000000000","2018-02-01T00:00:00.000000000","2018-03-01T00:00:00.000000000","2018-04-01T00:00:00.000000000","2018-05-01T00:00:00.000000000","2018-06-01T00:00:00.000000000","2018-07-01T00:00:00.000000000","2018-08-01T00:00:00.000000000","2018-09-01T00:00:00.000000000","2018-10-01T00:00:00.000000000","2018-11-01T00:00:00.000000000","2018-12-01T00:00:00.000000000","2019-01-01T00:00:00.000000000","2019-02-01T00:00:00.000000000","2019-03-01T00:00:00.000000000","2019-04-01T00:00:00.000000000","2019-05-01T00:00:00.000000000","2019-06-01T00:00:00.000000000","2019-07-01T00:00:00.000000000","2019-08-01T00:00:00.000000000","2019-09-01T00:00:00.000000000","2019-10-01T00:00:00.000000000","2019-11-01T00:00:00.000000000","2019-12-01T00:00:00.000000000","2020-01-01T00:00:00.000000000","2020-02-01T00:00:00.000000000","2020-03-01T00:00:00.000000000","2020-04-01T00:00:00.000000000","2020-05-01T00:00:00.000000000","2020-06-01T00:00:00.000000000","2020-07-01T00:00:00.000000000","2020-08-01T00:00:00.000000000","2020-09-01T00:00:00.000000000","2020-10-01T00:00:00.000000000","2020-11-01T00:00:00.000000000","2020-12-01T00:00:00.000000000","2021-01-01T00:00:00.000000000","2021-02-01T00:00:00.000000000","2021-03-01T00:00:00.000000000","2021-04-01T00:00:00.000000000","2021-05-01T00:00:00.000000000","2021-06-01T00:00:00.000000000","2021-07-01T00:00:00.000000000","2021-08-01T00:00:00.000000000","2021-09-01T00:00:00.000000000","2021-10-01T00:00:00.000000000","2021-11-01T00:00:00.000000000","2021-12-01T00:00:00.000000000","2022-01-01T00:00:00.000000000","2022-02-01T00:00:00.000000000","2022-03-01T00:00:00.000000000","2022-04-01T00:00:00.000000000","2022-05-01T00:00:00.000000000","2022-06-01T00:00:00.000000000","2022-07-01T00:00:00.000000000","2022-08-01T00:00:00.000000000","2022-09-01T00:00:00.000000000","2022-10-01T00:00:00.000000000","2022-11-01T00:00:00.000000000","2022-12-01T00:00:00.000000000","2023-01-01T00:00:00.000000000","2023-02-01T00:00:00.000000000","2023-03-01T00:00:00.000000000","2023-04-01T00:00:00.000000000","2023-05-01T00:00:00.000000000","2023-06-01T00:00:00.000000000","2023-07-01T00:00:00.000000000","2023-08-01T00:00:00.000000000","2023-09-01T00:00:00.000000000","2023-10-01T00:00:00.000000000","2023-11-01T00:00:00.000000000","2023-12-01T00:00:00.000000000","2024-01-01T00:00:00.000000000","2024-02-01T00:00:00.000000000","2024-03-01T00:00:00.000000000","2024-04-01T00:00:00.000000000","2024-07-01T00:00:00.000000000","2024-08-01T00:00:00.000000000","2024-09-01T00:00:00.000000000","2024-10-01T00:00:00.000000000","2024-11-01T00:00:00.000000000","2024-12-01T00:00:00.000000000","2025-01-01T00:00:00.000000000","2025-02-01T00:00:00.000000000"],"xaxis":"x","y":{"dtype":"i2","bdata":"FQAVABIAGAAWACQAJgAdABkAHAAaABoAIgAaABIAFAATAB0AHgAfABwAFAAZABsAJwAfABsALgAUACYAMwArACUAIgAcACMAJwAlABsAIAAgAC8ALQArABsAGwAaABkAHQAZACAAGgAXAB4AHAAcABYAEgAaABoAIAAZABoAGAAhAB0AIQAiAB8AIQAiACwAJQAiABoAJgAiACQALgApACoAKgAsACcANgAwACAALAAkACsAMgAzADkAMQA2ACsAKgAtADMAKAAtADcANAAwADEANAA6ADkAQAApAD0ANgA5ACsAPQBIAEYANwAxAEIAUwBBAE8ARwBHAF8AWwBJADsANABLADkAOgA7ADUANgAvADQAVQBIAFIAWgBiAFMARAA4ADQAPQBCAE4AUABJAEgASQBHAH4AsgCXAKUAogCcAJkApQCwANYA0wCjAKMAuwC2AAYBEAEJAa4A1gDCALIAyACuALcAvgC1AK0AjwCQAIcAoACkAAkBFQEGAQkBQQHyAA0B3gDTAPIACQEsAUkBHgEEATUBaQE6AU0BOgFVAUIBpAHWAbQBmAGrAewB6QHNAegBtwF+AZcBhAG0AdYBzgENAtkB"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"date"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"checkouts"}},"legend":{"tracegroupgap":0},"title":{"text":"Monthly SPL Checkouts for Pride and Prejudice"}},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.1.min.js" integrity="sha256-4rD3fugVb/nVJYUv5Ky3v+fYXoouHaBSP20WIJuEiWg=" crossorigin="anonymous"></script>                <div id="828bf050-0d8d-4b13-9529-ebe6bf738abf" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("828bf050-0d8d-4b13-9529-ebe6bf738abf")) {                    Plotly.newPlot(                        "828bf050-0d8d-4b13-9529-ebe6bf738abf",                        [{"hovertemplate":"date=%{x}\u003cbr\u003echeckouts=%{y}\u003cextra\u003e\u003c\u002fextra\u003e","legendgroup":"","line":{"color":"#636efa","dash":"solid"},"marker":{"symbol":"circle"},"mode":"lines","name":"","orientation":"v","showlegend":false,"x":["2006-01-01T00:00:00.000000000","2006-02-01T00:00:00.000000000","2006-03-01T00:00:00.000000000","2006-04-01T00:00:00.000000000","2006-05-01T00:00:00.000000000","2006-06-01T00:00:00.000000000","2006-07-01T00:00:00.000000000","2006-08-01T00:00:00.000000000","2006-09-01T00:00:00.000000000","2006-10-01T00:00:00.000000000","2006-11-01T00:00:00.000000000","2006-12-01T00:00:00.000000000","2007-01-01T00:00:00.000000000","2007-02-01T00:00:00.000000000","2007-03-01T00:00:00.000000000","2007-04-01T00:00:00.000000000","2007-05-01T00:00:00.000000000","2007-06-01T00:00:00.000000000","2007-07-01T00:00:00.000000000","2007-08-01T00:00:00.000000000","2007-09-01T00:00:00.000000000","2007-10-01T00:00:00.000000000","2007-11-01T00:00:00.000000000","2007-12-01T00:00:00.000000000","2008-01-01T00:00:00.000000000","2008-02-01T00:00:00.000000000","2008-03-01T00:00:00.000000000","2008-04-01T00:00:00.000000000","2008-05-01T00:00:00.000000000","2008-06-01T00:00:00.000000000","2008-07-01T00:00:00.000000000","2008-08-01T00:00:00.000000000","2008-09-01T00:00:00.000000000","2008-10-01T00:00:00.000000000","2008-11-01T00:00:00.000000000","2008-12-01T00:00:00.000000000","2009-01-01T00:00:00.000000000","2009-02-01T00:00:00.000000000","2009-03-01T00:00:00.000000000","2009-04-01T00:00:00.000000000","2009-05-01T00:00:00.000000000","2009-06-01T00:00:00.000000000","2009-07-01T00:00:00.000000000","2009-08-01T00:00:00.000000000","2009-09-01T00:00:00.000000000","2009-10-01T00:00:00.000000000","2009-11-01T00:00:00.000000000","2009-12-01T00:00:00.000000000","2010-01-01T00:00:00.000000000","2010-02-01T00:00:00.000000000","2010-03-01T00:00:00.000000000","2010-04-01T00:00:00.000000000","2010-05-01T00:00:00.000000000","2010-06-01T00:00:00.000000000","2010-07-01T00:00:00.000000000","2010-08-01T00:00:00.000000000","2010-09-01T00:00:00.000000000","2010-10-01T00:00:00.000000000","2010-11-01T00:00:00.000000000","2010-12-01T00:00:00.000000000","2011-01-01T00:00:00.000000000","2011-02-01T00:00:00.000000000","2011-03-01T00:00:00.000000000","2011-04-01T00:00:00.000000000","2011-05-01T00:00:00.000000000","2011-06-01T00:00:00.000000000","2011-07-01T00:00:00.000000000","2011-08-01T00:00:00.000000000","2011-09-01T00:00:00.000000000","2011-10-01T00:00:00.000000000","2011-11-01T00:00:00.000000000","2011-12-01T00:00:00.000000000","2012-01-01T00:00:00.000000000","2012-02-01T00:00:00.000000000","2012-03-01T00:00:00.000000000","2012-04-01T00:00:00.000000000","2012-05-01T00:00:00.000000000","2012-06-01T00:00:00.000000000","2012-07-01T00:00:00.000000000","2012-08-01T00:00:00.000000000","2012-09-01T00:00:00.000000000","2012-10-01T00:00:00.000000000","2012-11-01T00:00:00.000000000","2012-12-01T00:00:00.000000000","2013-01-01T00:00:00.000000000","2013-02-01T00:00:00.000000000","2013-03-01T00:00:00.000000000","2013-04-01T00:00:00.000000000","2013-05-01T00:00:00.000000000","2013-06-01T00:00:00.000000000","2013-07-01T00:00:00.000000000","2013-08-01T00:00:00.000000000","2013-09-01T00:00:00.000000000","2013-10-01T00:00:00.000000000","2013-11-01T00:00:00.000000000","2013-12-01T00:00:00.000000000","2014-01-01T00:00:00.000000000","2014-02-01T00:00:00.000000000","2014-03-01T00:00:00.000000000","2014-04-01T00:00:00.000000000","2014-05-01T00:00:00.000000000","2014-06-01T00:00:00.000000000","2014-07-01T00:00:00.000000000","2014-08-01T00:00:00.000000000","2014-09-01T00:00:00.000000000","2014-10-01T00:00:00.000000000","2014-11-01T00:00:00.000000000","2014-12-01T00:00:00.000000000","2015-01-01T00:00:00.000000000","2015-02-01T00:00:00.000000000","2015-03-01T00:00:00.000000000","2015-04-01T00:00:00.000000000","2015-05-01T00:00:00.000000000","2015-06-01T00:00:00.000000000","2015-07-01T00:00:00.000000000","2015-08-01T00:00:00.000000000","2015-09-01T00:00:00.000000000","2015-10-01T00:00:00.000000000","2015-11-01T00:00:00.000000000","2015-12-01T00:00:00.000000000","2016-01-01T00:00:00.000000000","2016-02-01T00:00:00.000000000","2016-03-01T00:00:00.000000000","2016-04-01T00:00:00.000000000","2016-05-01T00:00:00.000000000","2016-06-01T00:00:00.000000000","2016-07-01T00:00:00.000000000","2016-08-01T00:00:00.000000000","2016-09-01T00:00:00.000000000","2016-10-01T00:00:00.000000000","2016-11-01T00:00:00.000000000","2016-12-01T00:00:00.000000000","2017-01-01T00:00:00.000000000","2017-02-01T00:00:00.000000000","2017-03-01T00:00:00.000000000","2017-04-01T00:00:00.000000000","2017-05-01T00:00:00.000000000","2017-06-01T00:00:00.000000000","2017-07-01T00:00:00.000000000","2017-08-01T00:00:00.000000000","2017-09-01T00:00:00.000000000","2017-10-01T00:00:00.000000000","2017-11-01T00:00:00.000000000","2017-12-01T00:00:00.000000000","2018-01-01T00:00:00.000000000","2018-02-01T00:00:00.000000000","2018-03-01T00:00:00.000000000","2018-04-01T00:00:00.000000000","2018-05-01T00:00:00.000000000","2018-06-01T00:00:00.000000000","2018-07-01T00:00:00.000000000","2018-08-01T00:00:00.000000000","2018-09-01T00:00:00.000000000","2018-10-01T00:00:00.000000000","2018-11-01T00:00:00.000000000","2018-12-01T00:00:00.000000000","2019-01-01T00:00:00.000000000","2019-02-01T00:00:00.000000000","2019-03-01T00:00:00.000000000","2019-04-01T00:00:00.000000000","2019-05-01T00:00:00.000000000","2019-06-01T00:00:00.000000000","2019-07-01T00:00:00.000000000","2019-08-01T00:00:00.000000000","2019-09-01T00:00:00.000000000","2019-10-01T00:00:00.000000000","2019-11-01T00:00:00.000000000","2019-12-01T00:00:00.000000000","2020-01-01T00:00:00.000000000","2020-02-01T00:00:00.000000000","2020-03-01T00:00:00.000000000","2020-04-01T00:00:00.000000000","2020-05-01T00:00:00.000000000","2020-06-01T00:00:00.000000000","2020-07-01T00:00:00.000000000","2020-08-01T00:00:00.000000000","2020-09-01T00:00:00.000000000","2020-10-01T00:00:00.000000000","2020-11-01T00:00:00.000000000","2020-12-01T00:00:00.000000000","2021-01-01T00:00:00.000000000","2021-02-01T00:00:00.000000000","2021-03-01T00:00:00.000000000","2021-04-01T00:00:00.000000000","2021-05-01T00:00:00.000000000","2021-06-01T00:00:00.000000000","2021-07-01T00:00:00.000000000","2021-08-01T00:00:00.000000000","2021-09-01T00:00:00.000000000","2021-10-01T00:00:00.000000000","2021-11-01T00:00:00.000000000","2021-12-01T00:00:00.000000000","2022-01-01T00:00:00.000000000","2022-02-01T00:00:00.000000000","2022-03-01T00:00:00.000000000","2022-04-01T00:00:00.000000000","2022-05-01T00:00:00.000000000","2022-06-01T00:00:00.000000000","2022-07-01T00:00:00.000000000","2022-08-01T00:00:00.000000000","2022-09-01T00:00:00.000000000","2022-10-01T00:00:00.000000000","2022-11-01T00:00:00.000000000","2022-12-01T00:00:00.000000000","2023-01-01T00:00:00.000000000","2023-02-01T00:00:00.000000000","2023-03-01T00:00:00.000000000","2023-04-01T00:00:00.000000000","2023-05-01T00:00:00.000000000","2023-06-01T00:00:00.000000000","2023-07-01T00:00:00.000000000","2023-08-01T00:00:00.000000000","2023-09-01T00:00:00.000000000","2023-10-01T00:00:00.000000000","2023-11-01T00:00:00.000000000","2023-12-01T00:00:00.000000000","2024-01-01T00:00:00.000000000","2024-02-01T00:00:00.000000000","2024-03-01T00:00:00.000000000","2024-04-01T00:00:00.000000000","2024-07-01T00:00:00.000000000","2024-08-01T00:00:00.000000000","2024-09-01T00:00:00.000000000","2024-10-01T00:00:00.000000000","2024-11-01T00:00:00.000000000","2024-12-01T00:00:00.000000000","2025-01-01T00:00:00.000000000","2025-02-01T00:00:00.000000000"],"xaxis":"x","y":{"dtype":"i2","bdata":"FQAVABIAGAAWACQAJgAdABkAHAAaABoAIgAaABIAFAATAB0AHgAfABwAFAAZABsAJwAfABsALgAUACYAMwArACUAIgAcACMAJwAlABsAIAAgAC8ALQArABsAGwAaABkAHQAZACAAGgAXAB4AHAAcABYAEgAaABoAIAAZABoAGAAhAB0AIQAiAB8AIQAiACwAJQAiABoAJgAiACQALgApACoAKgAsACcANgAwACAALAAkACsAMgAzADkAMQA2ACsAKgAtADMAKAAtADcANAAwADEANAA6ADkAQAApAD0ANgA5ACsAPQBIAEYANwAxAEIAUwBBAE8ARwBHAF8AWwBJADsANABLADkAOgA7ADUANgAvADQAVQBIAFIAWgBiAFMARAA4ADQAPQBCAE4AUABJAEgASQBHAH4AsgCXAKUAogCcAJkApQCwANYA0wCjAKMAuwC2AAYBEAEJAa4A1gDCALIAyACuALcAvgC1AK0AjwCQAIcAoACkAAkBFQEGAQkBQQHyAA0B3gDTAPIACQEsAUkBHgEEATUBaQE6AU0BOgFVAUIBpAHWAbQBmAGrAewB6QHNAegBtwF+AZcBhAG0AdYBzgENAtkB"},"yaxis":"y","type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"title":{"text":"date"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"title":{"text":"checkouts"}},"legend":{"tracegroupgap":0},"title":{"text":"Monthly SPL Checkouts for Pride and Prejudice"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('39e4764e-8321-48df-8f37-66a1b4c06e56');
+var gd = document.getElementById('828bf050-0d8d-4b13-9529-ebe6bf738abf');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
@@ -850,7 +850,7 @@ if (outputEl) {{
 <h1>Exercise 3</h1>
 <p>Calculate the correlation between the monthly checkout patterns of Harry Potter books and display the results as a heatmap.</p>
 <p>Filter for Harry Potter titles, pivot the data so each book is a column, compute the correlation matrix, and visualize it.</p>
-<div id="94e5382e" class="cell" data-execution_count="5">
+<div id="9d9cfe31" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>hp_df <span class="op">=</span> spl_df[spl_df[<span class="st">'top_500_title'</span>].<span class="bu">str</span>.contains(<span class="st">'Harry Potter'</span>, case<span class="op">=</span><span class="va">False</span>)]</span>
@@ -869,9 +869,9 @@ if (outputEl) {{
 </details>
 <div class="cell-output cell-output-display">
 <div>            <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_SVG"></script><script type="text/javascript">if (window.MathJax && window.MathJax.Hub && window.MathJax.Hub.Config) {window.MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}</script>                <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
-        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.1.min.js" integrity="sha256-4rD3fugVb/nVJYUv5Ky3v+fYXoouHaBSP20WIJuEiWg=" crossorigin="anonymous"></script>                <div id="b58b9ebc-a202-46b5-82b6-4fd06c75b9ac" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("b58b9ebc-a202-46b5-82b6-4fd06c75b9ac")) {                    Plotly.newPlot(                        "b58b9ebc-a202-46b5-82b6-4fd06c75b9ac",                        [{"coloraxis":"coloraxis","name":"0","texttemplate":"%{z:.2f}","x":["Harry Potter and the Chamber of Secrets","Harry Potter and the Deathly Hallows","Harry Potter and the Goblet of Fire","Harry Potter and the Half-Blood Prince","Harry Potter and the Order of the Phoenix","Harry Potter and the Prisoner of Azkaban","Harry Potter and the Sorcerer's Stone"],"y":["Harry Potter and the Chamber of Secrets","Harry Potter and the Deathly Hallows","Harry Potter and the Goblet of Fire","Harry Potter and the Half-Blood Prince","Harry Potter and the Order of the Phoenix","Harry Potter and the Prisoner of Azkaban","Harry Potter and the Sorcerer's Stone"],"z":{"dtype":"f8","bdata":"AAAAAAAA8D8Ke6xzlnDeP\u002fWURyQK9+4\u002fDYPSvACg5T96R8xzD3vuP7kbq+3BGu8\u002fyN629NNb2T8Ke6xzlnDePwAAAAAAAPA\u002fbwal5Lti3z\u002fy+efC5p\u002ffP3J6ihr0qd8\u002fWpqOC9kv4D9QM+SrdsDKP\u002fWURyQK9+4\u002fbwal5Lti3z8AAAAAAADwP2PCvZIPo+U\u002fBiZMzi407z8jl8E13kTvP3fPmAzfDts\u002fDYPSvACg5T\u002fy+efC5p\u002ffP2PCvZIPo+U\u002fAAAAAAAA8D99m+ehuY\u002fnPxJ3Noa5TOY\u002fnX43Sp6p0T96R8xzD3vuP3J6ihr0qd8\u002fBiZMzi407z99m+ehuY\u002fnPwAAAAAAAPA\u002fbDJMrsIK7z+mRtR4ehHbP7kbq+3BGu8\u002fWpqOC9kv4D8jl8E13kTvPxJ3Noa5TOY\u002fbDJMrsIK7z8AAAAAAADwP6VAFJpAdNk\u002fyN629NNb2T9QM+SrdsDKP3fPmAzfDts\u002fnX43Sp6p0T+mRtR4ehHbP6VAFJpAdNk\u002fAAAAAAAA8D8=","shape":"7, 7"},"type":"heatmap","xaxis":"x","yaxis":"y","hovertemplate":"top_500_title: %{x}\u003cbr\u003etop_500_title: %{y}\u003cbr\u003ecolor: %{z}\u003cextra\u003e\u003c\u002fextra\u003e"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"scaleanchor":"y","constrain":"domain","title":{"text":"top_500_title"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"autorange":"reversed","constrain":"domain","title":{"text":"top_500_title"}},"coloraxis":{"colorscale":[[0.0,"rgb(5,48,97)"],[0.1,"rgb(33,102,172)"],[0.2,"rgb(67,147,195)"],[0.3,"rgb(146,197,222)"],[0.4,"rgb(209,229,240)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(253,219,199)"],[0.7,"rgb(244,165,130)"],[0.8,"rgb(214,96,77)"],[0.9,"rgb(178,24,43)"],[1.0,"rgb(103,0,31)"]]},"title":{"text":"Correlation Between Harry Potter Book Checkouts"}},                        {"responsive": true}                    ).then(function(){
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-3.3.1.min.js" integrity="sha256-4rD3fugVb/nVJYUv5Ky3v+fYXoouHaBSP20WIJuEiWg=" crossorigin="anonymous"></script>                <div id="80132208-6e86-4541-9501-7036bedb8fec" class="plotly-graph-div" style="height:525px; width:100%;"></div>            <script type="text/javascript">                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("80132208-6e86-4541-9501-7036bedb8fec")) {                    Plotly.newPlot(                        "80132208-6e86-4541-9501-7036bedb8fec",                        [{"coloraxis":"coloraxis","name":"0","texttemplate":"%{z:.2f}","x":["Harry Potter and the Chamber of Secrets","Harry Potter and the Deathly Hallows","Harry Potter and the Goblet of Fire","Harry Potter and the Half-Blood Prince","Harry Potter and the Order of the Phoenix","Harry Potter and the Prisoner of Azkaban","Harry Potter and the Sorcerer's Stone"],"y":["Harry Potter and the Chamber of Secrets","Harry Potter and the Deathly Hallows","Harry Potter and the Goblet of Fire","Harry Potter and the Half-Blood Prince","Harry Potter and the Order of the Phoenix","Harry Potter and the Prisoner of Azkaban","Harry Potter and the Sorcerer's Stone"],"z":{"dtype":"f8","bdata":"AAAAAAAA8D8Ke6xzlnDeP\u002fWURyQK9+4\u002fDYPSvACg5T96R8xzD3vuP7kbq+3BGu8\u002fyN629NNb2T8Ke6xzlnDePwAAAAAAAPA\u002fbwal5Lti3z\u002fy+efC5p\u002ffP3J6ihr0qd8\u002fWpqOC9kv4D9QM+SrdsDKP\u002fWURyQK9+4\u002fbwal5Lti3z8AAAAAAADwP2PCvZIPo+U\u002fBiZMzi407z8jl8E13kTvP3fPmAzfDts\u002fDYPSvACg5T\u002fy+efC5p\u002ffP2PCvZIPo+U\u002fAAAAAAAA8D99m+ehuY\u002fnPxJ3Noa5TOY\u002fnX43Sp6p0T96R8xzD3vuP3J6ihr0qd8\u002fBiZMzi407z99m+ehuY\u002fnPwAAAAAAAPA\u002fbDJMrsIK7z+mRtR4ehHbP7kbq+3BGu8\u002fWpqOC9kv4D8jl8E13kTvPxJ3Noa5TOY\u002fbDJMrsIK7z8AAAAAAADwP6VAFJpAdNk\u002fyN629NNb2T9QM+SrdsDKP3fPmAzfDts\u002fnX43Sp6p0T+mRtR4ehHbP6VAFJpAdNk\u002fAAAAAAAA8D8=","shape":"7, 7"},"type":"heatmap","xaxis":"x","yaxis":"y","hovertemplate":"top_500_title: %{x}\u003cbr\u003etop_500_title: %{y}\u003cbr\u003ecolor: %{z}\u003cextra\u003e\u003c\u002fextra\u003e"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"},"margin":{"b":0,"l":0,"r":0,"t":30}}},"xaxis":{"anchor":"y","domain":[0.0,1.0],"scaleanchor":"y","constrain":"domain","title":{"text":"top_500_title"}},"yaxis":{"anchor":"x","domain":[0.0,1.0],"autorange":"reversed","constrain":"domain","title":{"text":"top_500_title"}},"coloraxis":{"colorscale":[[0.0,"rgb(5,48,97)"],[0.1,"rgb(33,102,172)"],[0.2,"rgb(67,147,195)"],[0.3,"rgb(146,197,222)"],[0.4,"rgb(209,229,240)"],[0.5,"rgb(247,247,247)"],[0.6,"rgb(253,219,199)"],[0.7,"rgb(244,165,130)"],[0.8,"rgb(214,96,77)"],[0.9,"rgb(178,24,43)"],[1.0,"rgb(103,0,31)"]]},"title":{"text":"Correlation Between Harry Potter Book Checkouts"}},                        {"responsive": true}                    ).then(function(){
                             
-var gd = document.getElementById('b58b9ebc-a202-46b5-82b6-4fd06c75b9ac');
+var gd = document.getElementById('80132208-6e86-4541-9501-7036bedb8fec');
 var x = new MutationObserver(function (mutations, observer) {{
         var display = window.getComputedStyle(gd).display;
         if (!display || display === 'none') {{
