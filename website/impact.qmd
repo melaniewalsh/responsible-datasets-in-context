@@ -2,13 +2,13 @@
 title: "Impact"
 sidebar: false
 page-layout: article
-toc: true
+toc: false
 title-block-banner: true
 ---
 
 ## Overview
 
-**Responsible Datasets in Context** is an open educational resource that provides curated datasets paired with long-form essays, programming exercises, and discussion activities for undergraduate computing and data science education. Supported by a [Mozilla Responsible Computing Challenge](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/) grant, the project has grown into a widely adopted resource used by instructors, students, librarians, and researchers across disciplines and institutions.
+Supported by a [Mozilla Responsible Computing Challenge](https://foundation.mozilla.org/en/blog/mozilla-announces-15-new-responsible-computing-challenge-awardees-in-the-us/) grant, **Responsible Datasets in Context** has grown into a widely adopted resource used by instructors, students, librarians, and researchers across disciplines and institutions.
 
 ## By the Numbers
 
@@ -20,7 +20,7 @@ unique website visitors
 :::
 
 ::: {.g-col-4 style="text-align: center; padding: 1rem;"}
-### 230+
+### 500+
 students who have worked with our materials in a class setting
 :::
 
@@ -38,9 +38,9 @@ institutions with courses using our materials
 
 ## Awards & Recognition
 
-- [**American Studies Association Digital Project Award**](https://www.theasa.net/about/news-events/announcements/2024-award-recipients) --- awarded to Responsible Datasets in Context for its contribution to digital scholarship in American Studies.
+- [**Digital Project Award**](https://www.theasa.net/about/news-events/announcements/press-release-immediate-release-american-studies-association)—American Studies Association --- awarded to Responsible Datasets in Context for its contribution to digital scholarship in American Studies.
 
-- [**POEM (Project on Open and Evolving Metaliteracies)**](https://www.cmu.edu/dietrich/english/research/poem.html) --- forthcoming in this IMLS-funded open educational resource collection at Carnegie Mellon University.
+- [**POEM (Project on Open and Evolving Metaliteracies)**](https://library.cmu.edu/poem) --- forthcoming in this IMLS-funded open educational resource collection at Carnegie Mellon University.
 
 - [**Big Ten Data Visualization Championship**](https://publish.illinois.edu/lovedataweek/love-data-week-2025/) (Love Data Week 2025) --- our National Park visit dataset was selected as the featured dataset for this multi-institution data visualization competition.
 
@@ -62,9 +62,9 @@ Students who have engaged with our materials report that they transform how they
 
 ## Press, Media, & Citations
 
-- ["Trump Administration Bars NPS from Reporting Visitor Data"](https://mountainjournal.org/trump-admin-bars-nps-from-reporting-data) --- *Mountain Journal*
-- ["Miriam Posner Awarded Mozilla Grant"](https://seis.ucla.edu/news/miriam-posner-mozilla-grant) --- *UCLA School of Education & Information Studies*
-- ["B1G Data Viz Contest"](https://siebelschool.illinois.edu/about/news/big-data-viz-contest) --- *University of Illinois Siebel School of Computing and Data Science*
+- ["Trump Administration Bars NPS from Reporting Visitor Data"](https://mountainjournal.org/trump-administration-bars-national-park-service-from-reporting-visitation-data/) --- *Mountain Journal*
+- ["Miriam Posner Awarded Mozilla Grant"](https://seis.ucla.edu/news/information-studies-scholar-miriam-posner-is-part-of-team-awarded-mozilla-foundation-grant/) --- *UCLA School of Education & Information Studies*
+- [**Big Ten Data Visualization Championship**](https://publish.illinois.edu/lovedataweek/love-data-week-2025/) --- *University of Illinois Siebel School of Computing and Data Science*
 - Cited in:
     - ["Provocations from the Humanities for Generative AI"](https://arxiv.org/abs/2502.19190) --- Klein et al.
     - ["Design Studio as Method: Reparative Archives and Beyond"](https://doi.org/10.3998/jep.6168) --- Lindblad, Grumbach, & Boyles (*Journal of Electronic Publishing*)

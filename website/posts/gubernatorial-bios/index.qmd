@@ -444,20 +444,13 @@ ggplot() +
 
 ## How Was The Data Collected?
 
-To build a new individual-level data set, we web-scrape all former United States governors from the NGA. The function reads in a web-page for a given state and returns the basic information that NGA has for that state, e.g., [California](https://www.nga.org/former-governors/california/). The function then searches into each governor's subpage. Here, the NGA has a biographical background paragraph on each governor, e.g., [Arnold Schwarnegger](https://www.nga.org/governor/arnold-schwarzenegger/). We repeat for the current set of governors, found [here](https://www.nga.org/governors/).
-
-We also scrape terms from the top of their page. For example, consider the background of Arnold Schwarzenegger. This allows us to ascertain his political party, his terms in office, birthdate (and therefore age when entering office), his university, and that his birthplace is outside the US.
+To build a new individual-level data set, we scrape information for all former United States governors from the NGA website. We also scrape biographical information for each governor. 
 
 ![Arnold Schwarzenegger's NGA page](images/arnold.png)
 
-We use basic text extraction techniques to identify certain key biographical attributes. With Arnold Schwarnegger, we extract his birth country from his text bio.
+We use basic text extraction techniques to identify certain key biographical attributes from these biographies, such as their birth country, military service, or any legal background. 
 
-
-::: {style="font-size: 70%;"}
-"Arnold Schwarzenegger came to the governorship of California following a distinguished career in body building, business, and entertainment. Schwarzenegger was born in **Austria** and at 20 became the youngest person to win the Mr. Universe title. He won an unprecedented 12 more world bodybuilding titles. Schwarzenegger earned a college degree from the University of Wisconsin and became a U.S. citizen in 1983. Former President George H.W. Bush appointed him Chair of the President’s Council on Physical Fitness and Sports in 1990. He also served as Chair of the California Governor’s Council on Physical Fitness and Sports under California Governor Pete Wilson. He married Maria Shriver in 1986 and has remained closely involved in Special Olympics, an organization founded by her late mother, Eunice Kennedy Shriver.
-
-Schwarzenegger became the 38th Governor of California pursuant to a recall election to replace Governor Gray Davis. Schwarzenegger’s accomplishments as governor include a bipartisan agreement to reduce California’s greenhouse gas emissions by signing landmark legislation in 2006, increasing the minimum wage while lowering the state’s unemployment rate, and overhauling the workers’ compensation system—cutting costs by more than 35 percent. Schwarzenegger made major investments in improving California’s aging infrastructure through his Strategic Growth Plan, helping to reduce congestion and clean the air."
-:::
+> Arnold Schwarzenegger came to the governorship of California following a distinguished career in body building, business, and entertainment. **Schwarzenegger was born in Austria** and at 20 became the youngest person to win the Mr. Universe title. He won an unprecedented 12 more world bodybuilding titles. **Schwarzenegger earned a college degree from the University of Wisconsin** and became a U.S. citizen in 1983. Former President George H.W. Bush appointed him Chair of the President’s Council on Physical Fitness and Sports in 1990. He also served as Chair of the California Governor’s Council on Physical Fitness and Sports under California Governor Pete Wilson. He married Maria Shriver in 1986 and has remained closely involved in Special Olympics, an organization founded by her late mother, Eunice Kennedy Shriver.
 
 In total, the full sample is of 2,486 individuals from 55 states and territories, including governors from Puerto Rico (1949-present), American Samoa, Guam, the Northern Mariana Islands, and the US Virgin Islands. The latter territories do not have full federal representation or rights.
 
@@ -472,15 +465,15 @@ head(gov_dataset[c("state_territory", "governor", "party", "first_year", "school
 
 ## Uncertainty in the Data
 
-The **lawyer** indicator indicator is likely among the more error-prone variables in the dataset. It is constructed first by considering whether the governor listed his/her law school in the \`\`school" listing, as was occasionally done. Then, it uses regular expression matching to identify whether a governor's biography contains terms such as **lawyer**, **law degree**, **studied law**, **legal practice**, or **school of law**. This approach may miss individuals who practiced law but whose biographies do not contain these specific phrases, particularly in earlier periods.
+The **lawyer** indicator is likely among the more error-prone variables in the dataset. It is constructed first by considering whether the governor listed his/her law school in the "school" listing, as was occasionally done. Next, we use regular expressions to identify whether a governor's biography contains terms such as **lawyer**, **law degree**, **studied law**, **legal practice**, or **school of law**. This approach may miss individuals who practiced law but whose biographies do not contain these specific phrases, particularly in earlier periods.
 
 Another interesting inconsistency in the data is the **birth_date** column. For example, let's take a look at [Gov. Sam Houston Jones](https://www.nga.org/governor/sam-houston-jones/) of Louisiana.
 
 ![Sam Houston Jones' NGA page where his birth year is after his term start](images/jones.png)
 
-Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which unless Jones was a time traveler, isn't passing a basic sanity check. Obviously, the NGA made a mistake, Jones was born in 1897, but Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.
+Despite having his term start in 1940, the NGA site has Jones' birth date in 1987, which—unless Jones was a time traveler—isn't passing a basic sanity check. Obviously, the NGA made a mistake. Jones was born in 1897. But Jones is not the only one. We found 17 governors in the dataset whose birth date was **after** their term start. We manually corrected the subset whose birth date was after or too close to their term start in the dataset, but those are unlikely to be all the errors.
 
-We extract the **school** column based on a similar method, of identifying the **school** tag on the NGA site. However, some governors like [Kenneth Hood Mackay](https://www.nga.org/governor/kenneth-hood-mackay/) attended college but don't have an NGA tag for it. We did not attempt to locate the set of governors who attended college but didn't have a dedicated school tag on their NGA site, so we are likely underestimating the number of governors who attended college.
+We extract the **school** column based on a similar method, using the **school** tag on the NGA site. However, some governors like [Kenneth Hood Mackay](https://www.nga.org/governor/kenneth-hood-mackay/) attended college, but the NGA doesn't list this information. We did not attempt to locate the set of governors without NGA-provided school information who may have indeed attended college, so we are likely underestimating the number of governors who attended college.
 
 ![Kenneth Hood Mackay's NGA page where he has no school listed in the table.](images/mackay.png)
 
@@ -490,7 +483,7 @@ The **birth_date** and **school** columns are instructive examples of how even r
 
 Here, we show some descriptive statistics. We plot the underlying yearly data, along with binned averages from each 25-year period, plotted in purple.
 
-Due to these data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.
+Thanks to this data, we can now visualize the rise in female governors in the last half-century. Historically, women have rarely been represented in the executive branch of government. The first female governor, Nellie Taylor Ross, was elected to office in Wyoming in 1925. To date, approximately 50 female governors have held office.
 
 ![Nellie Taylor Ross was elected the first female US governor (of Wyoming) in 1925.](images/ross.png){width=60%}
 
@@ -540,7 +533,8 @@ ggplot() +
     ggtitle("Have elected governors become more gender diverse?") +
     ylab("Percent Female Governors") +
     theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) +
+    scale_y_continuous(limits = c(0, 100))
 
 ```
 
@@ -591,11 +585,12 @@ ggplot() +
     ggtitle("Have elected governors become more Ivy-educated?") +
     ylab("Percent with Ivy Attendance") +
     theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) +
+    scale_y_continuous(limits = c(0, 100))
 
 ```
 
-Have gubernatorial offices become more professionalized over the course of American history? We track the share of governors with law degrees as a simple proxy for how "professionalized” the office is. Law has long been a standard path into politics--lawyers gain legal expertise and entry into elite social networks. The share rises through the mid-19th century and then plateaus. Since roughly 2000, it declines modestly, consistent with more governors coming from business and other non-law fields.
+Have gubernatorial offices become more professionalized over the course of American history? We track the share of governors with law degrees as a simple proxy for how "professionalized” the office is. Law has long been a standard path into politics--lawyers gain both legal expertise and entry into elite social networks. The share rises through the mid-19th century and then plateaus. Since roughly 2000, it declines modestly, consistent with more governors coming from business and other non-legal fields.
 
 ```{r}
 
@@ -642,7 +637,8 @@ ggplot() +
     ggtitle("Have elected governors become more likely to be lawyers?") +
     ylab("Percent Lawyers") +
     theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) +
+    scale_y_continuous(limits = c(0, 100))
 
 ```
 
@@ -730,7 +726,8 @@ ggplot() +
     ggtitle("Percent of Governors Born in the State/Territory They Governed") +
     ylab("Percent Born In-State") +
     theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) +
+    scale_y_continuous(limits = c(0, 100))
 
 ```
 
@@ -778,12 +775,13 @@ ggplot() +
     ggtitle("Average Age of Governors at Start of Office") +
     ylab("Average Age") +
     theme(plot.title = element_text(size = 8)) +
-    scale_x_continuous(breaks = seq(1775, 2025, by = 25))
+    scale_x_continuous(breaks = seq(1775, 2025, by = 25)) +
+    scale_y_continuous(limits = c(20, 70))
 ```
 
 ## Conclusion
 
-The gubernatorial biography dataset gives us perspective on the range of backgrounds for important politicians in American history. Generating features for tabular data out of web-scraped text is challenging and imperfect. But, efforts like this help us notice demographic trends among US governors, and we've pointed out a couple interesting results around gender, professionalization, and governor age. We think future work could refine our methods and extend them to other offices, to help complete a more full picture of the history of American government.
+The gubernatorial biography dataset gives us perspective on the range of backgrounds for important politicians in American history. Generating features for tabular data out of scraped text from the web is challenging and imperfect. But efforts like this help us notice demographic trends among US governors. We've pointed out a couple of interesting results around gender, professionalization, and governor age. We think future work could refine our methods and extend them to other offices, to help complete a fuller picture of the history of American government.
 
 ## References
 

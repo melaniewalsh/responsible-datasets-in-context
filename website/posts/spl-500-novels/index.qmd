@@ -1,5 +1,5 @@
 ---
-title: "Library Checkouts for the Top 500 'Greatest' Novels"
+title: 'Library Checkouts for the Top 500 "Greatest" Novels'
 author: Neel Gupta
 date: "2026-02-25"
 categories: [libraries, literature, readers, circulation, metadata]
@@ -75,16 +75,30 @@ The library checkout data comes from the city of Seattle. The Seattle Public Lib
 If you use our materials in your class or another setting, we would love to [hear about it](https://forms.gle/yJpQscUH9k9Rn4Qy9)!
 :::
 
+## Which Books Are Most Popular?
+
 ```{ojs}
 //|echo: false
-import {viewof tableTopTitles, plot, headingBlock, viewof selectionInput, viewof tableTopTitlesMode} from "f7ac620243f16079"
+import {viewof tableTopTitles, plot, headingBlock, viewof selectionInput, viewof tableTopTitlesMode, viewof search} from "f7ac620243f16079"
+```
 
+```{ojs}
+//|echo: false
+
+viewof search
 viewof tableTopTitlesMode
+```
+
+
+```{ojs}
+//|echo: false
 
 headingBlock
 plot
 viewof selectionInput
+
 ```
+
 
 ## Dataset
 
@@ -103,7 +117,6 @@ viewof selectionInput
 // https://observablehq.com/d/8bb63a6cde9addff
 import {viewof dataSummaryView, Tabulator, viewof selectedColumns, viewof dataSet, tableContainer, fetchData, generateTabulatorTableFromCSV, progress, progressbar} from "8bb63a6cde9addff"
 ```
-
 
 ```{ojs}
 //|echo: false
