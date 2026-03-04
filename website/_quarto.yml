@@ -13,6 +13,7 @@ execute:
 
 website:
   image: images/responsible-logo.png
+  open-graph: true
   twitter-card: true
   bread-crumbs: false
   title: "Responsible Datasets in Context"
