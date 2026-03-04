@@ -1,6 +1,6 @@
 ---
 pagetitle: "Home"
-image: images/responsible-logo.png
+image: images/responsible-logo-white.png
 # page-layout: full
 section-divs: false
 editor: source

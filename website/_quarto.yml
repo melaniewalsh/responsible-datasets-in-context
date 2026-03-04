@@ -12,7 +12,7 @@ execute:
   freeze: auto
 
 website:
-  image: images/responsible-logo.png
+  image: images/responsible-logo-white.png
   open-graph: true
   twitter-card: true
   bread-crumbs: false
