@@ -1,21 +1,34 @@
 ---
-
-title: **"Responsible Datasets in Context : Curated Resources for More Ethical, Humanistic Data Education"** tags:
-
-- Data  
-- Datasheets authors:  
-- name: Melanie Walsh affiliation: 1  
-- name: Anna Preus affiliation: 2  
-- name: Amardeep Singh affiliation: 5  
-- name: Sylvia Fernandez affiliation: 3  
-- name: Miriam Posner affiliation: 4  
-- name: Neel Gupta affiliation: 1 affiliations:  
-- name: Information School, University of Washington index: 1  
-- name: Department of English, University of Washington index: 2  
-- name: Modern Languages and Literatures, The University of Texas at San Antonio index: 3  
-- name: Department of Information Studies, University of California, Los Angeles index: 4  
-- name: Department of English, Lehigh University index: 5 date: 4 March 2025 bibliography: paper.bib
-
+title: "Responsible Datasets in Context: Curated Resources for More Ethical, Humanistic Data Education"
+tags:
+  - Data
+  - Datasheets
+authors:
+  - name: Melanie Walsh
+    affiliation: 1
+  - name: Anna Preus
+    affiliation: 2
+  - name: Amardeep Singh
+    affiliation: 5
+  - name: Sylvia Fernandez
+    affiliation: 3
+  - name: Miriam Posner
+    affiliation: 4
+  - name: Neel Gupta
+    affiliation: 1
+affiliations:
+  - name: Information School, University of Washington
+    index: 1
+  - name: Department of English, University of Washington
+    index: 2
+  - name: Modern Languages and Literatures, The University of Texas at San Antonio
+    index: 3
+  - name: Department of Information Studies, University of California, Los Angeles
+    index: 4
+  - name: Department of English, Lehigh University
+    index: 5
+date: 4 March 2025
+bibliography: paper.bib
 ---
 
 # Summary
