@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.27">
+<meta name="generator" content="quarto-1.9.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -11,6 +11,9 @@
 
 <title>Library Checkouts for the Top 500 “Greatest” Novels – Responsible Datasets in Context</title>
 <style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -61,7 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
-  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -92,15 +94,14 @@ div.csl-indent {
 <script src="../../site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-9fafd16664083bf95137f77e290cabe9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-8d6c3d9af3502705b91e3af939a093e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -330,7 +331,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -545,7 +546,7 @@ window.Quarto = {
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>This dataset contains library circulation information for books in the <a href="https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html">Top 500 “Greatest” Novels</a>—that is, the novels most widely held in libraries according to <a href="https://www.oclc.org/en/about.html?cmpid=md_ab">OCLC</a>, a major library consortium.</p>
-<p>The library checkout data comes from the city of Seattle. The Seattle Public Library’s (SPL) <a href="https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data">open checkout data</a> is one of the only publicly available sources of book reception data in the country <span class="citation" data-cites="Gupta_Christensen_Walsh_2025 Walsh2024">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, and Walsh 2025</a>; <a href="#ref-Walsh2024" role="doc-biblioref">Walsh 2022</a>)</span>. The dataset presented here is a combination of both the <a href="https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html">Top 500 “Greatest” Novels</a> and <a href="https://zenodo.org/records/15792698">a mirrored version of the SPL’s open checkout data</a>, recording checkouts from 2005 until February 2025.</p>
+<p>The library checkout data comes from the city of Seattle. The Seattle Public Library’s (SPL) <a href="https://data.seattle.gov/Community-and-Culture/Checkouts-by-Title/tmmm-ytt6/about_data">open checkout data</a> is one of the only publicly available sources of book reception data in the country <span class="citation" data-cites="Gupta_Christensen_Walsh_2025 Walsh2024">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, et al. 2025</a>; <a href="#ref-Walsh2024" role="doc-biblioref">Walsh 2022</a>)</span>. The dataset presented here is a combination of both the <a href="https://www.responsible-datasets-in-context.com/posts/top-500-novels/top-500-novels.html">Top 500 “Greatest” Novels</a> and <a href="https://zenodo.org/records/15792698">a mirrored version of the SPL’s open checkout data</a>, recording checkouts from 2005 until February 2025.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -915,12 +916,12 @@ window.Quarto = {
 <section id="why-was-the-data-collected-how-is-the-data-used" class="level2">
 <h2 class="anchored" data-anchor-id="why-was-the-data-collected-how-is-the-data-used">Why Was The Data Collected? How Is The Data Used?</h2>
 <p>While the SPL uses the data internally to help inform acquisition decisions, reading programs, marketing, and more, we as humanities researchers are interested in using checkout data to study cultural trends at scale. Thus, the data collected here is a subset of the SPL’s open checkout data, and part of an <a href="https://melaniewalsh.github.io/whats-seattle-reading/">ongoing project</a> to track the dynamics of literary popularity through this data.</p>
-<p>Though a powerful resource, the SPL’s open checkout data, like all book data, struggles with persistent book identifiers. The same underlying “work” can often have different editions, author name variants, and metadata—for instance, Toni Morrison’s <em>Beloved</em> is listed as “Beloved,” “Beloved (unabridged),” “Beloved : a novel / by Toni Morrison.” It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpora of interest <span class="citation" data-cites="Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta et al. 2025</a>)</span>.</p>
+<p>Though a powerful resource, the SPL’s open checkout data, like all book data, struggles with persistent book identifiers. The same underlying “work” can often have different editions, author name variants, and metadata—for instance, Toni Morrison’s <em>Beloved</em> is listed as “Beloved,” “Beloved (unabridged),” “Beloved : a novel / by Toni Morrison.” It is difficult to cluster different versions of the same underlying work together at scale, but we have experimented previously with using a combination of semi-automated methods and manual oversight to cluster smaller sized corpora of interest <span class="citation" data-cites="Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta, Maor, et al. 2025</a>)</span>.</p>
 <p>The Top 500 “Greatest” Novels presents a set of works that have persisted in popularity and relevance well past their first publication date. These are exceptionally popular titles that have avoided the fate of the majority of books, which often fall out of circulation soon after publication <span class="citation" data-cites="cohen_sentimental_2018 sorensen_bestseller_2007">(<a href="#ref-cohen_sentimental_2018" role="doc-biblioref">Cohen 2018</a>; <a href="#ref-sorensen_bestseller_2007" role="doc-biblioref">Sorensen 2007</a>)</span>. Studying novels like these is useful to understand how popularity and reception is working for novels that are cultural touchstones.</p>
 </section>
 <section id="how-was-the-data-collected" class="level2">
 <h2 class="anchored" data-anchor-id="how-was-the-data-collected">How Was The Data Collected?</h2>
-<p>The SPL’s internal approach to capturing the checkout data includes an anonymization process that keeps data collection disconnected from identifiable patrons <span class="citation" data-cites="Gupta_Christensen_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, and Walsh 2025</a>)</span>. The library counts each checkout but uses a de-identification approach at the point of data capture to keep the data anonymous ensuring that even internal researchers can’t access damaging personally identifiable information.</p>
+<p>The SPL’s internal approach to capturing the checkout data includes an anonymization process that keeps data collection disconnected from identifiable patrons <span class="citation" data-cites="Gupta_Christensen_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, et al. 2025</a>)</span>. The library counts each checkout but uses a de-identification approach at the point of data capture to keep the data anonymous ensuring that even internal researchers can’t access damaging personally identifiable information.</p>
 <p>On our side, the most challenging task is merging and reconciling the SPL’s open checkout data with the Top 500 “Greatest” Novels. To reconcile the data, we employ a multi-step algorithm to capture all the records in the library data that may match one of the novels in our source list.</p>
 <p>We manipulate the title and author fields in the SPL’s open checkout data to normalize against common variants. For example, many titles have “(unabridged)” appended to them, and many authors have a last name, first name formatting (e.g Collins, Suzanne). Once we’ve simplified the SPL’s open checkout data to basic versions of title and creator, we group by those fields to reduce our dataset down to about 800,000 unique titles.</p>
 <p>We then run a two-stage algorithm to pair novels from the Top 500 “Greatest” Novels to checkout records. We iterate through all 500 of our novels and compare the last name of the author to the creator field in the SPL’s open checkout data, checking if the creator field contains the last name of the author somewhere in its text. We then use the <a href="https://rapidfuzz.github.io/RapidFuzz/">Python RapidFuzz library</a> to run a fuzzy matching of the Top 500 “Greatest” Novels title against the title field in the SPL’s open checkout data. We use the <a href="https://rapidfuzz.github.io/RapidFuzz/Usage/fuzz.html">Partial Ratio</a> algorithm which identifies the optimal alignment of the shorter string in the longer string. We use a threshold of 85.</p>
@@ -932,9 +933,9 @@ window.Quarto = {
 </section>
 <section id="uncertainty-in-the-data" class="level2">
 <h2 class="anchored" data-anchor-id="uncertainty-in-the-data">Uncertainty in the Data</h2>
-<p>We do not claim our matching to be perfect. Besides alternate language editions, it is likely that other strange variants have been missed by our method. Additionally, the SPL’s open checkout data is not a perfect proxy for book popularity. Library checkout data is affected by regional dynamics, library programming, and the nature of the library system <span class="citation" data-cites="Gupta_Christensen_Walsh_2025 Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, and Walsh 2025</a>; <a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta et al. 2025</a>)</span>. Perfect matching would require large-scale manual inspection, which is part of the reason why this type of book reconciliation work is difficult and labor-intensive.</p>
+<p>We do not claim our matching to be perfect. Besides alternate language editions, it is likely that other strange variants have been missed by our method. Additionally, the SPL’s open checkout data is not a perfect proxy for book popularity. Library checkout data is affected by regional dynamics, library programming, and the nature of the library system <span class="citation" data-cites="Gupta_Christensen_Walsh_2025 Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, et al. 2025</a>; <a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta, Maor, et al. 2025</a>)</span>. Perfect matching would require large-scale manual inspection, which is part of the reason why this type of book reconciliation work is difficult and labor-intensive.</p>
 <p>We also don’t know specifically what a library checkout <em>means.</em> Does a library checkout indicate a discrete “read” of a book? Not necessarily. Just because you check out a book doesn’t mean you read it. By contrast, you may have checked out a book once and read it 5 times in quick succession.</p>
-<p>More broadly, do library checkouts correlate with book purchasing behavior form the same region? Do checkouts from the Seattle system indicate national interest from library patrons or just regional interest? These are difficult questions to answer, and we talk more about how we can use library checkouts as proxies for constructs of interest in prior work <span class="citation" data-cites="Gupta_Christensen_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, and Walsh 2025</a>)</span>.</p>
+<p>More broadly, do library checkouts correlate with book purchasing behavior form the same region? Do checkouts from the Seattle system indicate national interest from library patrons or just regional interest? These are difficult questions to answer, and we talk more about how we can use library checkouts as proxies for constructs of interest in prior work <span class="citation" data-cites="Gupta_Christensen_Walsh_2025">(<a href="#ref-Gupta_Christensen_Walsh_2025" role="doc-biblioref">Gupta, Christensen, et al. 2025</a>)</span>.</p>
 <p>Library checkouts in Seattle have risen over time partly due to increased participation in the library system and the rise of digital books. As a result, the SPL’s open checkout data does not represent a stable configuration of patrons engaging in consistent checkout behavior. You should not treat the longitudinal checkout data as representing the same relationship to readership across the time series. In other words, be careful about making claims about change over time. Increases and decreases in number of checkouts often need to be contextualized against changing library policies, the proliferation of different licensing models and digital alternatives, and other confounding variables.</p>
 </section>
 <section id="what-can-we-do-with-the-data" class="level2">
@@ -942,7 +943,7 @@ window.Quarto = {
 <section id="top-10-authors-and-books-in-the-dataset" class="level3">
 <h3 class="anchored" data-anchor-id="top-10-authors-and-books-in-the-dataset">Top 10 Authors and Books in the Dataset</h3>
 <p>The first question we may ask of the data is which of these widely held library book and authors actually get read. To that end, we’ll present the top 10 authors below.</p>
-<div id="0ef4b05a" class="cell" data-execution_count="1">
+<div id="92e74445" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
@@ -983,79 +984,79 @@ window.Quarto = {
 </details>
 <div class="cell-output cell-output-display" data-execution_count="1">
 <style type="text/css">
-#T_bd47c th {
+#T_0352a th {
   text-align: left;
   font-weight: bold;
 }
-#T_bd47c td {
+#T_0352a td {
   text-align: left;
 }
 </style>
 
-<div id="T_bd47c" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_0352a" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_bd47c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_0352a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;1: Top 10 Authors by Total Checkouts
 </figcaption>
-<div aria-describedby="T_bd47c-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_bd47c" class="caption-top table table-sm table-striped small">
+<div aria-describedby="T_0352a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_0352a" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_bd47c_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
-<th id="T_bd47c_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Author</th>
-<th id="T_bd47c_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Total Checkouts</th>
+<th id="T_0352a_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
+<th id="T_0352a_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Author</th>
+<th id="T_0352a_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Total Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_bd47c_row0_col0" class="data row0 col0">1</td>
-<td id="T_bd47c_row0_col1" class="data row0 col1">J.K. Rowling</td>
-<td id="T_bd47c_row0_col2" class="data row0 col2">145,161</td>
+<td id="T_0352a_row0_col0" class="data row0 col0">1</td>
+<td id="T_0352a_row0_col1" class="data row0 col1">J.K. Rowling</td>
+<td id="T_0352a_row0_col2" class="data row0 col2">145,161</td>
 </tr>
 <tr class="even">
-<td id="T_bd47c_row1_col0" class="data row1 col0">2</td>
-<td id="T_bd47c_row1_col1" class="data row1 col1">Suzanne Collins</td>
-<td id="T_bd47c_row1_col2" class="data row1 col2">67,500</td>
+<td id="T_0352a_row1_col0" class="data row1 col0">2</td>
+<td id="T_0352a_row1_col1" class="data row1 col1">Suzanne Collins</td>
+<td id="T_0352a_row1_col2" class="data row1 col2">67,500</td>
 </tr>
 <tr class="odd">
-<td id="T_bd47c_row2_col0" class="data row2 col0">3</td>
-<td id="T_bd47c_row2_col1" class="data row2 col1">Jane Austen</td>
-<td id="T_bd47c_row2_col2" class="data row2 col2">53,731</td>
+<td id="T_0352a_row2_col0" class="data row2 col0">3</td>
+<td id="T_0352a_row2_col1" class="data row2 col1">Jane Austen</td>
+<td id="T_0352a_row2_col2" class="data row2 col2">53,731</td>
 </tr>
 <tr class="even">
-<td id="T_bd47c_row3_col0" class="data row3 col0">4</td>
-<td id="T_bd47c_row3_col1" class="data row3 col1">J.R.R. Tolkien</td>
-<td id="T_bd47c_row3_col2" class="data row3 col2">52,374</td>
+<td id="T_0352a_row3_col0" class="data row3 col0">4</td>
+<td id="T_0352a_row3_col1" class="data row3 col1">J.R.R. Tolkien</td>
+<td id="T_0352a_row3_col2" class="data row3 col2">52,374</td>
 </tr>
 <tr class="odd">
-<td id="T_bd47c_row4_col0" class="data row4 col0">5</td>
-<td id="T_bd47c_row4_col1" class="data row4 col1">Stieg Larsson</td>
-<td id="T_bd47c_row4_col2" class="data row4 col2">45,227</td>
+<td id="T_0352a_row4_col0" class="data row4 col0">5</td>
+<td id="T_0352a_row4_col1" class="data row4 col1">Stieg Larsson</td>
+<td id="T_0352a_row4_col2" class="data row4 col2">45,227</td>
 </tr>
 <tr class="even">
-<td id="T_bd47c_row5_col0" class="data row5 col0">6</td>
-<td id="T_bd47c_row5_col1" class="data row5 col1">Stephen King</td>
-<td id="T_bd47c_row5_col2" class="data row5 col2">39,926</td>
+<td id="T_0352a_row5_col0" class="data row5 col0">6</td>
+<td id="T_0352a_row5_col1" class="data row5 col1">Stephen King</td>
+<td id="T_0352a_row5_col2" class="data row5 col2">39,926</td>
 </tr>
 <tr class="odd">
-<td id="T_bd47c_row6_col0" class="data row6 col0">7</td>
-<td id="T_bd47c_row6_col1" class="data row6 col1">Charles Dickens</td>
-<td id="T_bd47c_row6_col2" class="data row6 col2">37,749</td>
+<td id="T_0352a_row6_col0" class="data row6 col0">7</td>
+<td id="T_0352a_row6_col1" class="data row6 col1">Charles Dickens</td>
+<td id="T_0352a_row6_col2" class="data row6 col2">37,749</td>
 </tr>
 <tr class="even">
-<td id="T_bd47c_row7_col0" class="data row7 col0">8</td>
-<td id="T_bd47c_row7_col1" class="data row7 col1">Stephenie Meyer</td>
-<td id="T_bd47c_row7_col2" class="data row7 col2">37,370</td>
+<td id="T_0352a_row7_col0" class="data row7 col0">8</td>
+<td id="T_0352a_row7_col1" class="data row7 col1">Stephenie Meyer</td>
+<td id="T_0352a_row7_col2" class="data row7 col2">37,370</td>
 </tr>
 <tr class="odd">
-<td id="T_bd47c_row8_col0" class="data row8 col0">9</td>
-<td id="T_bd47c_row8_col1" class="data row8 col1">Gillian Flynn</td>
-<td id="T_bd47c_row8_col2" class="data row8 col2">35,366</td>
+<td id="T_0352a_row8_col0" class="data row8 col0">9</td>
+<td id="T_0352a_row8_col1" class="data row8 col1">Gillian Flynn</td>
+<td id="T_0352a_row8_col2" class="data row8 col2">35,366</td>
 </tr>
 <tr class="even">
-<td id="T_bd47c_row9_col0" class="data row9 col0">10</td>
-<td id="T_bd47c_row9_col1" class="data row9 col1">John Grisham</td>
-<td id="T_bd47c_row9_col2" class="data row9 col2">33,372</td>
+<td id="T_0352a_row9_col0" class="data row9 col0">10</td>
+<td id="T_0352a_row9_col1" class="data row9 col1">John Grisham</td>
+<td id="T_0352a_row9_col2" class="data row9 col2">33,372</td>
 </tr>
 </tbody>
 </table>
@@ -1065,7 +1066,7 @@ Table&nbsp;1: Top 10 Authors by Total Checkouts
 </div>
 </div>
 <p>Perhaps unsurprisingly, we see J.K. Rowling at the top of the list, in part because of the per-book popularity of the <em>Harry Potter</em> series, and in-part because of the raw number of <em>Harry Potter</em> books in our database. Let’s also take a look at the top-10 books as well.</p>
-<div id="10d35111" class="cell" data-execution_count="2">
+<div id="96b9a716" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>top_books <span class="op">=</span> (</span>
@@ -1089,79 +1090,79 @@ Table&nbsp;1: Top 10 Authors by Total Checkouts
 </details>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <style type="text/css">
-#T_19d0a th {
+#T_a1c38 th {
   text-align: left;
   font-weight: bold;
 }
-#T_19d0a td {
+#T_a1c38 td {
   text-align: left;
 }
 </style>
 
-<div id="T_19d0a" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
+<div id="T_a1c38" class="quarto-float quarto-figure quarto-figure-center anchored" data-quarto-postprocess="true">
 <figure class="quarto-float quarto-float-tbl figure">
-<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_19d0a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="T_a1c38-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Table&nbsp;2: Top 10 Books by Total Checkouts
 </figcaption>
-<div aria-describedby="T_19d0a-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table id="T_19d0a" class="caption-top table table-sm table-striped small">
+<div aria-describedby="T_a1c38-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="T_a1c38" class="caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
-<th id="T_19d0a_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
-<th id="T_19d0a_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Title</th>
-<th id="T_19d0a_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Total Checkouts</th>
+<th id="T_a1c38_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Rank</th>
+<th id="T_a1c38_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Title</th>
+<th id="T_a1c38_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">Total Checkouts</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td id="T_19d0a_row0_col0" class="data row0 col0">1</td>
-<td id="T_19d0a_row0_col1" class="data row0 col1">Gone Girl</td>
-<td id="T_19d0a_row0_col2" class="data row0 col2">35,366</td>
+<td id="T_a1c38_row0_col0" class="data row0 col0">1</td>
+<td id="T_a1c38_row0_col1" class="data row0 col1">Gone Girl</td>
+<td id="T_a1c38_row0_col2" class="data row0 col2">35,366</td>
 </tr>
 <tr class="even">
-<td id="T_19d0a_row1_col0" class="data row1 col0">2</td>
-<td id="T_19d0a_row1_col1" class="data row1 col1">The Handmaid's Tale</td>
-<td id="T_19d0a_row1_col2" class="data row1 col2">33,240</td>
+<td id="T_a1c38_row1_col0" class="data row1 col0">2</td>
+<td id="T_a1c38_row1_col1" class="data row1 col1">The Handmaid's Tale</td>
+<td id="T_a1c38_row1_col2" class="data row1 col2">33,240</td>
 </tr>
 <tr class="odd">
-<td id="T_19d0a_row2_col0" class="data row2 col0">3</td>
-<td id="T_19d0a_row2_col1" class="data row2 col1">Harry Potter and the Sorcerer's Stone</td>
-<td id="T_19d0a_row2_col2" class="data row2 col2">31,386</td>
+<td id="T_a1c38_row2_col0" class="data row2 col0">3</td>
+<td id="T_a1c38_row2_col1" class="data row2 col1">Harry Potter and the Sorcerer's Stone</td>
+<td id="T_a1c38_row2_col2" class="data row2 col2">31,386</td>
 </tr>
 <tr class="even">
-<td id="T_19d0a_row3_col0" class="data row3 col0">4</td>
-<td id="T_19d0a_row3_col1" class="data row3 col1">The Book Thief</td>
-<td id="T_19d0a_row3_col2" class="data row3 col2">30,549</td>
+<td id="T_a1c38_row3_col0" class="data row3 col0">4</td>
+<td id="T_a1c38_row3_col1" class="data row3 col1">The Book Thief</td>
+<td id="T_a1c38_row3_col2" class="data row3 col2">30,549</td>
 </tr>
 <tr class="odd">
-<td id="T_19d0a_row4_col0" class="data row4 col0">5</td>
-<td id="T_19d0a_row4_col1" class="data row4 col1">Twilight</td>
-<td id="T_19d0a_row4_col2" class="data row4 col2">29,289</td>
+<td id="T_a1c38_row4_col0" class="data row4 col0">5</td>
+<td id="T_a1c38_row4_col1" class="data row4 col1">Twilight</td>
+<td id="T_a1c38_row4_col2" class="data row4 col2">29,289</td>
 </tr>
 <tr class="even">
-<td id="T_19d0a_row5_col0" class="data row5 col0">6</td>
-<td id="T_19d0a_row5_col1" class="data row5 col1">The Hunger Games</td>
-<td id="T_19d0a_row5_col2" class="data row5 col2">27,960</td>
+<td id="T_a1c38_row5_col0" class="data row5 col0">6</td>
+<td id="T_a1c38_row5_col1" class="data row5 col1">The Hunger Games</td>
+<td id="T_a1c38_row5_col2" class="data row5 col2">27,960</td>
 </tr>
 <tr class="odd">
-<td id="T_19d0a_row6_col0" class="data row6 col0">7</td>
-<td id="T_19d0a_row6_col1" class="data row6 col1">The Giver</td>
-<td id="T_19d0a_row6_col2" class="data row6 col2">27,906</td>
+<td id="T_a1c38_row6_col0" class="data row6 col0">7</td>
+<td id="T_a1c38_row6_col1" class="data row6 col1">The Giver</td>
+<td id="T_a1c38_row6_col2" class="data row6 col2">27,906</td>
 </tr>
 <tr class="even">
-<td id="T_19d0a_row7_col0" class="data row7 col0">8</td>
-<td id="T_19d0a_row7_col1" class="data row7 col1">Pride and Prejudice</td>
-<td id="T_19d0a_row7_col2" class="data row7 col2">27,250</td>
+<td id="T_a1c38_row7_col0" class="data row7 col0">8</td>
+<td id="T_a1c38_row7_col1" class="data row7 col1">Pride and Prejudice</td>
+<td id="T_a1c38_row7_col2" class="data row7 col2">27,250</td>
 </tr>
 <tr class="odd">
-<td id="T_19d0a_row8_col0" class="data row8 col0">9</td>
-<td id="T_19d0a_row8_col1" class="data row8 col1">The Girl on the Train</td>
-<td id="T_19d0a_row8_col2" class="data row8 col2">26,610</td>
+<td id="T_a1c38_row8_col0" class="data row8 col0">9</td>
+<td id="T_a1c38_row8_col1" class="data row8 col1">The Girl on the Train</td>
+<td id="T_a1c38_row8_col2" class="data row8 col2">26,610</td>
 </tr>
 <tr class="even">
-<td id="T_19d0a_row9_col0" class="data row9 col0">10</td>
-<td id="T_19d0a_row9_col1" class="data row9 col1">A Wrinkle in Time</td>
-<td id="T_19d0a_row9_col2" class="data row9 col2">24,762</td>
+<td id="T_a1c38_row9_col0" class="data row9 col0">10</td>
+<td id="T_a1c38_row9_col1" class="data row9 col1">A Wrinkle in Time</td>
+<td id="T_a1c38_row9_col2" class="data row9 col2">24,762</td>
 </tr>
 </tbody>
 </table>
@@ -1171,7 +1172,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 </div>
 <p>Let’s take a look at one of the major books in our dataset, Jane Austen’s <em>Pride and Prejudice</em> .</p>
-<div id="a41abb59" class="cell" data-execution_count="3">
+<div id="4cfc2d12" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>pride_prejudice_checkouts <span class="op">=</span> top_500_df[top_500_df[<span class="st">'top_500_title'</span>] <span class="op">==</span> <span class="st">'Pride and Prejudice'</span>]</span>
@@ -1210,9 +1211,9 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </section>
 <section id="authorial-death" class="level3">
 <h3 class="anchored" data-anchor-id="authorial-death">Authorial Death</h3>
-<p>In prior work <span class="citation" data-cites="Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta et al. 2025</a>)</span>, we present evidence that an author’s death leads to a temporary boost in library checkouts for that author (at least if they’re famous).</p>
+<p>In prior work <span class="citation" data-cites="Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025">(<a href="#ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" role="doc-biblioref">Gupta, Maor, et al. 2025</a>)</span>, we present evidence that an author’s death leads to a temporary boost in library checkouts for that author (at least if they’re famous).</p>
 <p>We verify that relationship by generating time-series plots of authors who died in the last 20 years.</p>
-<div id="c0dbb151" class="cell" data-execution_count="4">
+<div id="461c7674" class="cell" data-execution_count="4">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Note on installation: https://statsandr.com/blog/an-efficient-way-to-install-and-load-r-packages/</span></span>
@@ -1406,7 +1407,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 <h3 class="anchored" data-anchor-id="backlist-titles">Backlist Titles</h3>
 <p><span class="citation" data-cites="berglund_is_2021">Berglund and Steiner (<a href="#ref-berglund_is_2021" role="doc-biblioref">2021</a>)</span> present evidence from Scandinavian fiction that an author’s new releases boost interest in their previous titles. Books by the same author affect each other’s success. The Top 500 “Greatest” Novels has 89 different authors with multiple releases, which raises a natural question: do works by the same author tend to have similar patterns of interest over time?</p>
 <p>To test this, we looked at whether books by the same author tend to get checked out at similar rates. For example, if Stephen King’s <em>The Shining</em> is getting checked out a lot this month, are his other books also getting checked out more than usual? We measured this using a correlation coefficient — a number between 0 and 1 that captures how closely two things move together, where 0 means no relationship and 1 means a perfect one. On average, we found a moderate correlation of 0.42, meaning that knowing one book’s checkout trend explains about 42% of what’s happening with the same author’s other books. The remaining 58% depends on factors specific to each book, like whether it was assigned in a class or got a recent news mention.</p>
-<div id="52d980eb" class="cell" data-execution_count="5">
+<div id="622560b8" class="cell" data-execution_count="5">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># grabbing the subset of the df with authors that show up multiple times</span></span>
@@ -1467,7 +1468,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 </div>
 <p>It’s hard to interpret that number without context. If we look at just the correlations on average between every book in the Top 500 “Greatest” Novels, we only observe a coefficient of 0.16. So books by the same author are almost 3x more correlated than what we would expect on average.</p>
-<div id="6a4268af" class="cell" data-execution_count="6">
+<div id="a150a13a" class="cell" data-execution_count="6">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>wide_df <span class="op">=</span> top_500_df.pivot_table(</span>
@@ -1495,7 +1496,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 </div>
 <p>Let’s look at a few specific examples. A lot of books by the same author belong to a book series. For example, all of J.K. Rowling’s <em>Harry Potter</em> books are in the Top 500 “Greatest” Novels, so we can generate a correlation heatmap for her books.</p>
-<div id="8426e8ec" class="cell" data-execution_count="7">
+<div id="65f7e80e" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>jk_corr <span class="op">=</span> <span class="bu">next</span>((corr <span class="cf">for</span> author, corr <span class="kw">in</span> all_correlations <span class="cf">if</span> author <span class="op">==</span> <span class="st">'J.K. Rowling'</span>), <span class="va">None</span>)</span>
@@ -1530,7 +1531,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 <p>The heatmap is really striking. The middle four books of the series are highly correlated with each other, while the first book and the final two seem to have their own dynamics.</p>
 <p>Let’s look at some time-series plots to figure out what’s going on with the edge books.</p>
 <p>First, <em>The Prisoner of Azkaban</em> vs.&nbsp;<em>The Chamber of Secrets</em></p>
-<div id="206911b0" class="cell" data-execution_count="8">
+<div id="25d4e1b1" class="cell" data-execution_count="8">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>wide_df[[<span class="st">"Harry Potter and the Prisoner of Azkaban"</span>, <span class="st">"Harry Potter and the Chamber of Secrets"</span>]].plot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1545,7 +1546,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 <p>These have a correlation coefficient of 0.97, and that lines up with what we’re seeing in the time-series plot.</p>
 <p>How about if we compare <em>The Prisoner of Azkaban</em> to <em>The Sorceror’s Stone</em>?</p>
-<div id="4d2e6827" class="cell" data-execution_count="9">
+<div id="90debd48" class="cell" data-execution_count="9">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>wide_df[[<span class="st">"Harry Potter and the Prisoner of Azkaban"</span>, <span class="st">"Harry Potter and the Sorcerer's Stone"</span>]].plot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1560,7 +1561,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 <p>They actually track really well together for most of the time frame, but we see a huge spike for <em>The Sorceror’s Stone</em> in 2020, which is going to really confound the correlation coefficient.</p>
 <p>How about <em>The Deathly Hallows</em> and <em>The Half-Blood Prince</em>?</p>
-<div id="2978d16b" class="cell" data-execution_count="10">
+<div id="45969e97" class="cell" data-execution_count="10">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>wide_df[[<span class="st">"Harry Potter and the Deathly Hallows"</span>, <span class="st">"Harry Potter and the Half-Blood Prince"</span>]].plot()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1575,7 +1576,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 </div>
 <p>These have a more obvious explanation. Both these books were released in the last 20 years, so they have large numbers of checkouts following their actual release. This follows what we know about how books function commercially, where a large share of their sales come immediately around their release <span class="citation" data-cites="sorensen_bestseller_2007">(<a href="#ref-sorensen_bestseller_2007" role="doc-biblioref">Sorensen 2007</a>)</span>.</p>
 <p>Outside of their release date behavior, we see that these books still tend to follow the same dynamics. In fact, if we trim out the first few years of our timeframe and only look at our data after 2007, the correlation coefficients go straight back up!</p>
-<div id="c9d07bcb" class="cell" data-execution_count="11">
+<div id="b4fed991" class="cell" data-execution_count="11">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>multi_book_df_post_2009 <span class="op">=</span> multi_book_df[multi_book_df[<span class="st">'checkoutyear'</span>] <span class="op">&gt;=</span> <span class="dv">2009</span>]</span>
@@ -1642,7 +1643,7 @@ Table&nbsp;2: Top 10 Books by Total Checkouts
 <h3 class="anchored" data-anchor-id="genres">Genres</h3>
 <p>Another affordance of the Top 500 “Greatest” Novels is its genre information. Although only about half of the entries are filled out, the genre metadata allows us to compare books within the same genre to see if there are any relationships between their reception.</p>
 <p>We can conduct the same correlation test as we did with authors to inspect which genres are the most internally correlated.</p>
-<div id="5a89af63" class="cell" data-execution_count="12">
+<div id="6552cca5" class="cell" data-execution_count="12">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>genre_correlations <span class="op">=</span> {}</span>
@@ -1699,22 +1700,22 @@ allegories             0.268
 <section id="conclusion" class="level2">
 <h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
 <p>This essays demonstrates some of the cool research directions you can explore with the SPL’s open checkout data. The Top 500 “Greatest” Novels represents a particularly canonical and popular set of books, featuring both contemporary and historical authors, and a diverse range of genres. Our work here points to some interesting dynamics that you can analyze within book series, between and within genres, and around prominent external events that may drive readership.</p>
-<p>Findally, if you want to explore more library circulation data, you can also checkout the <a href="https://melaniewalsh.github.io/whats-seattle-reading/">“What’s Seattle Reading?”</a> project.</p>
+<p>Finally, if you want to explore more library circulation data, you can also checkout the <a href="https://melaniewalsh.github.io/whats-seattle-reading/">“What’s Seattle Reading?”</a> project.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-berglund_is_2021" class="csl-entry" role="listitem">
 Berglund, Karl, and Ann Steiner. 2021. <span>“Is <span>Backlist</span> the <span>New</span> <span>Frontlist</span>?: <span>Large</span>-Scale Data Analysis of Bestseller Book Consumption in Streaming Services.”</span> <em>Logos</em> 32 (1): 7–24. <a href="https://doi.org/10.1163/18784712-03104006">https://doi.org/10.1163/18784712-03104006</a>.
 </div>
 <div id="ref-cohen_sentimental_2018" class="csl-entry" role="listitem">
-Cohen, Margaret. 2018. <em>The <span>Sentimental</span> <span>Education</span> of the <span>Novel</span></em>. Princeton: Princeton University Press. <a href="https://muse.jhu.edu/book/61065">https://muse.jhu.edu/book/61065</a>.
+Cohen, Margaret. 2018. <em>The <span>Sentimental</span> <span>Education</span> of the <span>Novel</span></em>. Princeton University Press. <a href="https://muse.jhu.edu/book/61065">https://muse.jhu.edu/book/61065</a>.
 </div>
 <div id="ref-Gupta_Christensen_Walsh_2025" class="csl-entry" role="listitem">
 Gupta, Neel, David Christensen, and Melanie Walsh. 2025. <span>“Seattle Public Library’s Open Checkout Data: What Can It Tell Us about Readers and Book Popularity More Broadly?”</span> <em>Journal of Open Humanities Data</em> 11 (August): 46. <a href="https://doi.org/10.5334/johd.332">https://doi.org/10.5334/johd.332</a>.
 </div>
 <div id="ref-Gupta_Maor_Harris_Backstrom_Dong_Walsh_2025" class="csl-entry" role="listitem">
-Gupta, Neel, Daniella Maor, Karalee Harris, Emily Backstrom, Hongyuan Dong, and Melanie Walsh. 2025. <span>“The Canon in Circulation: Tracking the Reception of _Norton Anthology_ Authors in Library Checkout Data.”</span> Edited by Taylor Arnold Margherita Fantoli and Ruben Ros. <em>Anthology of Computers and the Humanities</em> 3: 1510–22. <a href="https://doi.org/10.63744/P6qPH135jhY2">https://doi.org/10.63744/P6qPH135jhY2</a>.
+Gupta, Neel, Daniella Maor, Karalee Harris, Emily Backstrom, Hongyuan Dong, and Melanie Walsh. 2025. <span>“The Canon in Circulation: Tracking the Reception of _Norton Anthology_ Authors in Library Checkout Data.”</span> <em>Anthology of Computers and the Humanities</em> 3: 1510–22. <a href="https://doi.org/10.63744/P6qPH135jhY2">https://doi.org/10.63744/P6qPH135jhY2</a>.
 </div>
 <div id="ref-sorensen_bestseller_2007" class="csl-entry" role="listitem">
 Sorensen, Alan T. 2007. <span>“<span class="nocase">Bestseller Lists and Product Variety</span>.”</span> <em>The Journal of Industrial Economics</em> 55 (4): 715–38. <a href="https://doi.org/10.1111/j.1467-6451.2007.00327.x">https://doi.org/10.1111/j.1467-6451.2007.00327.x</a>.
@@ -1913,7 +1914,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Solution)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Solutions.qmd">
+<tr data-index="0" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Solution)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -1926,7 +1927,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401" data-listing-title-sort="SPL Top 500 Data Exploration (Solution)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Solutions.qmd">
+<tr data-index="1" data-categories="cGFuZGFzJTJDZXhlcmNpc2UlMkNzb2x1dGlvbg==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="401" data-listing-title-sort="SPL Top 500 Data Exploration (Solution)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -1939,7 +1940,7 @@ Categories
 
 </tr>
 
-<tr data-index="2" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="278" data-listing-title-sort="SPL Top 500 Data Exploration (Exercise)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Exercise.qmd">
+<tr data-index="2" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="278" data-listing-title-sort="SPL Top 500 Data Exploration (Exercise)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Exercise.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -1952,7 +1953,7 @@ Categories
 
 </tr>
 
-<tr data-index="3" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Exercise)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Exercise.qmd">
+<tr data-index="3" data-categories="cGFuZGFzJTJDZXhlcmNpc2U=" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297281" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Exercise)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Exercise.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -1998,7 +1999,7 @@ Categories
 </thead>
 <tbody class="list">
 
-<tr data-index="0" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="478" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Solution)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Solutions.qmd">
+<tr data-index="0" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="478" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Solution)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -2011,7 +2012,7 @@ Categories
 
 </tr>
 
-<tr data-index="1" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="503" data-listing-title-sort="SPL Top 500 Data Exploration (Solution)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Solutions.qmd">
+<tr data-index="1" data-categories="ZHBseXIlMkNleGVyY2lzZSUyQ3NvbHV0aW9u" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="503" data-listing-title-sort="SPL Top 500 Data Exploration (Solution)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Solutions.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -2024,7 +2025,7 @@ Categories
 
 </tr>
 
-<tr data-index="2" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277" data-listing-title-sort="SPL Top 500 Data Exploration (Exercise)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Exercise.qmd">
+<tr data-index="2" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="277" data-listing-title-sort="SPL Top 500 Data Exploration (Exercise)" data-listing-filename-sort="SPL-Top-500-Data-Exploration-Exercise.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -2037,7 +2038,7 @@ Categories
 
 </tr>
 
-<tr data-index="3" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1772836097464" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Exercise)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Exercise.qmd">
+<tr data-index="3" data-categories="ZHBseXIlMkNleGVyY2lzZQ==" data-listing-date-sort="1771977600000" data-listing-file-modified-sort="1774292297282" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="292" data-listing-title-sort="Norton Anthology &amp; SPL Checkouts Data Exploration (Exercise)" data-listing-filename-sort="Norton-Anthology-SPL-Checkouts-Exercise.qmd">
 <td>
 <span class="listing-date">Feb 25, 2026</span>
 </td>
@@ -2080,7 +2081,7 @@ Categories
 Gupta, Neel. 2026. <span>“Library Checkouts for the Top 500
 <span>‘Greatest’</span> Novels.”</span> Edited by Melanie Walsh, Anna
 Preus, Amardeep Singh, Sylvia Fernandez, and Miriam Posner. Responsible
-Datasets in Context. February 25, 2026. <a href="https://www.responsible-datasets-in-context.com/posts/spl-500-novels/">https://www.responsible-datasets-in-context.com/posts/spl-500-novels/</a>.
+Datasets in Context, February 25. <a href="https://www.responsible-datasets-in-context.com/posts/spl-500-novels/">https://www.responsible-datasets-in-context.com/posts/spl-500-novels/</a>.
 </div></div></section></div></main> <!-- /main -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
@@ -3525,7 +3526,7 @@ window._ojs.runtime.interpretFromScriptTags();
 <span id="cb25-927"><a href="#cb25-927" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-928"><a href="#cb25-928" aria-hidden="true" tabindex="-1"></a>This essays demonstrates some of the cool research directions you can explore with the SPL's open checkout data. The Top 500 "Greatest" Novels represents a particularly canonical and popular set of books, featuring both contemporary and historical authors, and a diverse range of genres. Our work here points to some interesting dynamics that you can analyze within book series, between and within genres, and around prominent external events that may drive readership.</span>
 <span id="cb25-929"><a href="#cb25-929" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-930"><a href="#cb25-930" aria-hidden="true" tabindex="-1"></a>Findally, if you want to explore more library circulation data, you can also checkout the <span class="co">[</span><span class="ot">"What's Seattle Reading?"</span><span class="co">](https://melaniewalsh.github.io/whats-seattle-reading/)</span> project.</span>
+<span id="cb25-930"><a href="#cb25-930" aria-hidden="true" tabindex="-1"></a>Finally, if you want to explore more library circulation data, you can also checkout the <span class="co">[</span><span class="ot">"What's Seattle Reading?"</span><span class="co">](https://melaniewalsh.github.io/whats-seattle-reading/)</span> project.</span>
 <span id="cb25-931"><a href="#cb25-931" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-932"><a href="#cb25-932" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
 <span id="cb25-933"><a href="#cb25-933" aria-hidden="true" tabindex="-1"></a></span>
