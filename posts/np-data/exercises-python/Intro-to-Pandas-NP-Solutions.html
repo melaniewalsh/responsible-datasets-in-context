@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-8d6c3d9af3502705b91e3af939a093e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-bc9b1661f0d4ba9ec9d33e8547592532.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -387,7 +387,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 <section id="load-national-park-visitation-data" class="level1">
 <h1>Load National Park Visitation data</h1>
-<div id="bd9bd314" class="cell" data-execution_count="1">
+<div id="86ecf84a" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -461,7 +461,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-1" class="level1">
 <h1>Exercise 1</h1>
 <p>Select 2 columns from the data. Save this 2-column dataframe to the variable <code>smaller_df</code>.</p>
-<div id="af3d1532" class="cell" data-execution_count="2">
+<div id="d99e8afa" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>smaller_df <span class="op">=</span> np_data[[<span class="st">'Year'</span>, <span class="st">'RecreationVisits'</span>]]</span>
@@ -519,7 +519,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-2" class="level1">
 <h1>Exercise 2</h1>
 <p>Filter the dataframe for only values in the state of Washington and save to the variable <code>wa_parks</code>.</p>
-<div id="99b826ca" class="cell" data-execution_count="3">
+<div id="c2aa1f30" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wa_parks <span class="op">=</span> np_data[np_data[<span class="st">'State'</span>] <span class="op">==</span> <span class="st">'WA'</span>]</span>
@@ -592,7 +592,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-3" class="level1">
 <h1>Exercise 3</h1>
 <p>Calculate the sum total of RecreationVisits to Washington by using <code>.sum()</code> on the smaller dataframe <code>wa_parks</code>.</p>
-<div id="8e5ef3d8" class="cell" data-execution_count="4">
+<div id="13245699" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wa_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -605,7 +605,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <section id="exercise-4" class="level1">
 <h1>Exercise 4</h1>
 <p>Filter the dataframe for only values in another state (your choice) and save to a variable. Calculate the sum total of RecreationVisits to this state by using <code>.sum()</code>.</p>
-<div id="d9e44ba1" class="cell" data-execution_count="5">
+<div id="27ce1dca" class="cell" data-execution_count="5">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>ca_parks <span class="op">=</span> np_data[np_data[<span class="st">'State'</span>] <span class="op">==</span> <span class="st">'CA'</span>]</span>
@@ -618,7 +618,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </section>
 <section id="question-how-do-the-number-of-visits-to-these-2-states-compare-to-one-another" class="level1">
 <h1>Question: How do the number of visits to these 2 states compare to one another?</h1>
-<div id="071bc44b" class="cell" data-execution_count="6">
+<div id="c9aafd11" class="cell" data-execution_count="6">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wa_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>() <span class="op">-</span> ca_parks[<span class="st">'RecreationVisits'</span>].<span class="bu">sum</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>

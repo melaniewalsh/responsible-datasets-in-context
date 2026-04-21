@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.9.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -76,10 +76,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-8d6c3d9af3502705b91e3af939a093e4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-bc9b1661f0d4ba9ec9d33e8547592532.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -380,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </ul>
 <section id="load-the-data" class="level1">
 <h1>Load the data</h1>
-<div id="75c1b8bd" class="cell" data-execution_count="1">
+<div id="e0c5ca99" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
@@ -392,7 +392,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <h1>Exercise 1</h1>
 <p>What are the top 5 birth states for governors?</p>
 <p>Save as <code>top_birth_states</code> and then view the resulting dataframe.</p>
-<div id="50b8df07" class="cell" data-execution_count="2">
+<div id="67073cf2" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>top_birth_states <span class="op">=</span> (</span>
@@ -419,7 +419,7 @@ Name: count, dtype: int64</code></pre>
 <p>Let’s now look at the initial age for governors and the distribution. We already visualized the average starting age in the main data essay, but let’s look at the distribution across the entire dataframe</p>
 <p>First, let’s cut the age_at_start variable into bins, so people between ages 20 and 30 get mapped to 20, 30 and 40 to 30 etc. Let’s call this new column <code>age_bucket</code>. We will use the Pandas function [pd.cut]{https://pandas.pydata.org/docs/reference/api/pandas.cut.html}.</p>
 <p>Now let’s display the <code>value_counts</code> of the <code>age_bucket</code> column and let’s sort by the age.</p>
-<div id="4910d64c" class="cell" data-execution_count="3">
+<div id="74604d5d" class="cell" data-execution_count="3">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'age_bucket'</span>] <span class="op">=</span> pd.cut(df[<span class="st">'age_at_start'</span>], bins<span class="op">=</span>[<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>,<span class="dv">60</span>,<span class="dv">70</span>,<span class="dv">80</span>])</span>
@@ -441,7 +441,7 @@ Name: count, dtype: int64</code></pre>
 <section id="exercise-3" class="level1">
 <h1>Exercise 3:</h1>
 <p>Let’s look at the outlier governors who started office at or below the age of 30. Let’s filter the dataset down to this set by filtering on the <code>age_at_start</code> column, call it <code>young_governors</code> and display it.</p>
-<div id="d28127fa" class="cell" data-execution_count="4">
+<div id="2849fac0" class="cell" data-execution_count="4">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>young_governors <span class="op">=</span> df[df[<span class="st">'age_at_start'</span>] <span class="op">&lt;=</span> <span class="dv">30</span>]</span>
