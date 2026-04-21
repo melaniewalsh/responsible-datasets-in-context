@@ -38,6 +38,8 @@ institutions with courses using our materials
 
 ## Awards & Recognition
 
+- [**Best Digital Humanities Training Material**](http://dhawards.org/dhawards2025/results/) --- Digital Humanities Awards 2025. Awarded to Responsible Datasets in Context by community vote as the best DH training resource of the year.
+
 - [**Digital Project Award**](https://www.theasa.net/about/news-events/announcements/press-release-immediate-release-american-studies-association)—American Studies Association --- awarded to Responsible Datasets in Context for its contribution to digital scholarship in American Studies.
 
 - [**POEM (Project on Open and Evolving Metaliteracies)**](https://library.cmu.edu/poem) --- forthcoming in this IMLS-funded open educational resource collection at Carnegie Mellon University.
